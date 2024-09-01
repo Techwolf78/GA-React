@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Import components
 import Home from "./Components/Home";
-import CollegeTraining from "./components/CollegeTraining";
-import CorporateTraining from "./components/CorporateTraining";
-import FacultyTraining from "./components/FacultyTraining";
-import Contact from "./components/Contact";
-import About from "./components/About.jsx";
-import Placement from "./components/Placement";
-import Digital from "./components/Digital";
-import RegistrationForm from "./components/RegistrationForm";
+import CollegeTraining from "./Components/CollegeTraining";
+import CorporateTraining from "./Components/CorporateTraining";
+import FacultyTraining from "./Components/FacultyTraining";
+import Contact from "./Components/Contact";
+import About from "./Components/About";
+import Placement from "./Components/Placement";
+import Digital from "./Components/Digital";
+import RegistrationForm from "./Components/RegistrationForm";
 
 const App = () => {
   return (
