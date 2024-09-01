@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Import components
-import Home from "./components/Home";
+import Home from "./Components/Home";
 import CollegeTraining from "./components/CollegeTraining";
 import CorporateTraining from "./components/CorporateTraining";
 import FacultyTraining from "./components/FacultyTraining";
