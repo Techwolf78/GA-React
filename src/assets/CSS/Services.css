@@ -1,0 +1,80 @@
+/* Services Section Styles */
+.services-section {
+    background: linear-gradient(180deg, #f9f9f9, #dac9ff);
+    padding: 4rem 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #be55fe;
+    margin-bottom: 4rem; /* Adjust margin as needed */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    background: #1e0333;
+    border-radius: 10px;
+    padding: 2rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect */
+.service-card:hover {
+    transform: translateY(-10px);
+    background-color: #6f498d;
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #6c63ff;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    color: #fff;
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Adding animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card {
+    animation: fadeInUp 0.6s ease-out;
+}

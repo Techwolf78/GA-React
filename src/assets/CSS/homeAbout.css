@@ -1,6 +1,6 @@
 /* About Us Section Styles */
 .about-us {
-  background: #f4f4f4;
+  background: linear-gradient(180deg, #f9f9f9, #dac9ff);
   padding: 4rem 2rem;
   text-align: center;
   position: relative;
@@ -10,7 +10,7 @@
 .about-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 0;
@@ -19,20 +19,24 @@
 .about-left {
   flex: 1;
   padding-right: 2rem;
+  align-items: left;
+  text-align: left;
 }
 
-.about-left h2 {
+.about-head {
+  font-size: 0.875rem !important;
+  color: #000000 !important;
+  font-weight: normal !important;
+}
+
+
+.about-text {
   font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.about-left p {
-  font-size: 1.125rem;
-  color: #666;
+  color: #000000;
   max-width: 800px;
-  margin: 0 auto;
+  padding-left: 6px;
+  font-weight: bold;
+  font-family: 'Varela', sans-serif; /* Apply the Varela font */
 }
 
 .about-right {
@@ -41,11 +45,6 @@
   text-align: left;
 }
 
-.about-right h3 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
 
 .about-right p {
   font-size: 1rem;
@@ -56,33 +55,61 @@
 .more-about-link {
   display: inline-block;
   font-size: 1rem;
-  color: #6c63ff;
-  text-decoration: none;
+  color: #000; /* Set the text color to black */
+  text-decoration: none; /* Remove default underline */
   font-weight: bold;
-  transition: color 0.3s ease;
+  position: relative;
 }
 
-.more-about-link:hover {
-  color: #3f3d56;
+.more-about-link::after {
+  content: '';
+  position: absolute;
+  width: 0; /* Start with no underline */
+  height: 2px;
+  background: #6c63ff; /* Default underline color: purple */
+  left: 0;
+  bottom: -2px; /* Position it right below the text */
+  transition: width 1s ease; /* Smooth transition for the width */
 }
+
+.more-about-link:hover::after {
+  width: 100%; /* Expand underline to full width */
+  background:  #6c63ff; /* Change to lighter purple on hover */
+}
+
+.more-about-link:focus::after,
+.more-about-link:active::after,
+.more-about-link:not(:hover)::after {
+  width: 0; /* Shrink back to 0 when not hovered */
+  background: #b19cd9; /* Revert back to the original color */
+  transition: width 0.5s ease; /* Smooth return */
+}
+
+
 
 .features {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
+  align-items: flex-start; /* Align cards to the top */
+  flex-wrap: nowrap; /* Prevent wrapping */
   gap: 2rem;
   margin-top: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
 }
 
 .feature-card {
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 50px;
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  flex: 1 1 250px;
-  max-width: 300px;
+  text-align: left; /* Align text to the left */
+  flex: 1 1 300px;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 350px; /* Fixed width for each card */
 }
 
 .feature-card:hover {
@@ -90,19 +117,73 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.feature-card i {
-  font-size: 2.5rem;
-  color: #6c63ff;
+.feature-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
+  justify-content: left; /* Align the icon and title to the left */
+  width: 100%; /* Ensure it takes the full width of the card */
+}
+
+.feature-card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+
+.feature-card-icon i {
+  font-size: 2rem;
+  color: #6c63ff;
 }
 
 .feature-card h4 {
   font-size: 1.25rem;
   color: #333;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
 .feature-card p {
   font-size: 1rem;
   color: #666;
+  text-align: left;
 }
+
+.feature-header-link {
+  display: inline-block;
+  font-size: 1.25rem;
+  color: #333; /* Set the text color */
+  text-decoration: none; /* Remove default underline */
+  font-weight: bold;
+  position: relative;
+  cursor: pointer; /* Add pointer for better UX */
+}
+
+.feature-header-link::after {
+  content: '';
+  position: absolute;
+  width: 0; /* Start with no underline */
+  height: 2px;
+  background: #6c63ff; /* Default underline color */
+  left: 0;
+  bottom: -2px; /* Position it right below the text */
+  transition: width 1s ease; /* Smooth transition for the width */
+}
+
+.feature-header-link:hover::after {
+  width: 100%; /* Expand underline to full width */
+  background: #6c63ff; /* Keep the underline color consistent */
+}
+
+.feature-header-link:focus::after,
+.feature-header-link:active::after,
+.feature-header-link:not(:hover)::after {
+  width: 0; /* Shrink back to 0 when not hovered */
+  background: #b19cd9; /* Lighter purple on hover */
+  transition: width 0.5s ease; /* Smooth return */
+}
+

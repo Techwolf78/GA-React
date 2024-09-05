@@ -1,11 +1,42 @@
 /* Navbar Styles */
 .navbar {
-  background: #fff;
+  background: #6f3ef5; /* Adjust to your desired color */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: -10px;
 }
 
-/* Hover effect for links */
-.navbar a:hover {
-  color: #gray-300;
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 150px; /* Adjust size as needed */
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-link {
+  position: relative;
+  color: rgb(255, 255, 255); /* Updated text color to contrast with the background */
+  text-decoration: none;
+  padding: 0.5rem;
   transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #007bff; /* Adjust color as needed */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
