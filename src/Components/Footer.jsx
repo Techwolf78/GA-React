@@ -1,11 +1,37 @@
 import React from 'react';
-import '../assets/CSS/Footer.css';
-
-
 
 const Footer = () => {
   return (
     <footer className="home-footer">
+      <style>
+        {`
+          .home-footer {
+            background: #333;
+            color: #fff;
+          }
+
+          .footer-logo {
+            font-size: 2rem;
+          }
+
+          .footer-nav a {
+            color: #fff;
+            font-size: 1rem;
+          }
+
+          .footer-nav a:hover {
+            color: #ddd;
+          }
+
+          .social-media a {
+            font-size: 1.5rem;
+          }
+
+          .social-media a:hover {
+            color: #ddd;
+          }
+        `}
+      </style>
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="footer-logo text-2xl font-bold text-white mb-4 md:mb-0">
