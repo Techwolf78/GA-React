@@ -1,12 +1,11 @@
 import React from "react";
-import Navbar from "./Navbar"; // Adjust the path if necessary
-import Footer from "./Footer"; // Adjust the path if necessary
+
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const Contact = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar /> {/* Navbar component */}
+
       <main className="flex-grow">
         <section className="contact-section">
           <div className="container mx-auto px-4 py-8">
@@ -48,7 +47,6 @@ const Contact = () => {
           </div>
         </section>
       </main>
-      <Footer /> {/* Footer component */}
     </div>
   );
 };
