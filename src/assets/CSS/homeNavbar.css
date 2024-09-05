@@ -1,13 +1,11 @@
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px); /* Adjust the floating distance */
-  }
+/* Navbar Styles */
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+/* Hover effect for links */
+.navbar a:hover {
+  color: #gray-300;
+  transition: color 0.3s ease;
 }

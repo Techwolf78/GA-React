@@ -1,35 +1,25 @@
-/* Additional styling for footer, if needed */
-
-.logo-footer {
-  max-width: 200px; /* Adjust based on design */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.logo-footer:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
-}
-
-/* Styling for contact icons */
-.address-links a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.address-links i {
-  font-size: 1.2rem;
-}
-
-/* Footer bottom section styling */
-.copy-right-sec {
-  background: #000000;
+.home-footer {
+  background: #333;
   color: #fff;
-  text-align: center;
-  padding: 1rem;
 }
 
-.copy-right-sec a {
-  color: #fdd700;
-  font-weight: 500;
+.footer-logo {
+  font-size: 2rem;
+}
+
+.footer-nav a {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.footer-nav a:hover {
+  color: #ddd;
+}
+
+.social-media a {
+  font-size: 1.5rem;
+}
+
+.social-media a:hover {
+  color: #ddd;
 }

@@ -26,16 +26,19 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbw8tyrnuM9482ls2kBx5RYvqI3iJfTBQhi8a659dphBjee536gVpCWa7AP-g2DGqCKMjQ/exec",
+        "https://script.google.com/macros/s/AKfycbwdj2JO1snqHmynjCUevpkC1mLPzGSPvTGz5gyLkRYig19AZhceYKwXLpQIjHYQMoR2/exec",
         {
           method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
           body: new URLSearchParams(formData),
         }
       );
-
+  
       if (response.ok) {
         toast.success("Your form has been successfully submitted!");
         setFormData({
@@ -58,6 +61,7 @@ const RegistrationForm = () => {
       toast.error("There was an error submitting your form. Please try again.");
     }
   };
+  
 
   return (
     <div className="flex flex-col min-h-screen">
