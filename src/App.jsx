@@ -6,8 +6,8 @@ import GAX from './components/GAX'; // Import the GAX component
 import Blogs from './components/Blogs'; // Import the Blogs component
 import Footer from './components/Footer'; // Import the Footer component
 import Navbar from './components/Navbar'; // Import the generic Navbar component
-import Placement from './Components/Placement';
-import Contact from './Components/Contact';
+import Placement from './components/Placement'; // Corrected path to components
+import Contact from './components/Contact'; // Corrected path to components
 
 function App() {
   return (
@@ -19,7 +19,6 @@ function App() {
         <Route path="/blogs" element={<><Navbar /><Blogs /></>} />
         <Route path="/placement" element={<><Navbar /><Placement /></>} />
         <Route path="/contact" element={<><Navbar /><Contact /></>} />
-
       </Routes>
       <Footer /> {/* Render Footer on all pages */}
     </Router>
