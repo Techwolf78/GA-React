@@ -1,14 +1,15 @@
 import React from "react";
+import HeroPlacement from "./HeroPlacement"; // Adjust the import path as needed
+import PartneredUniversities from "./PartneredUniversities";
 
 const Placement = () => {
   return (
     <div>
 
       <div className="p-8">
-        <h1 className="text-4xl font-bold mb-4">About Us</h1>
-        <p className="text-xl">
-          Detailed information about the organization goes here.
-        </p>
+        {/* Render the HeroPlacement component here */}
+        <HeroPlacement />
+        <PartneredUniversities />
       </div>
 
     </div>

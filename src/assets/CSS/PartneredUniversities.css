@@ -1,0 +1,29 @@
+/* Animation for the connecting line */
+@keyframes animate-line {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+}
+
+.animate-line {
+    background: linear-gradient(90deg, #4A90E2, #E94E77);
+    background-size: 200% 200%;
+    animation: animate-line 2s linear infinite;
+}
+
+/* Horizontal lines styling */
+.bg-gradient-to-r {
+    background: linear-gradient(to right, #FF6F61, #FFB6C1);
+}
+
+.bg-gradient-to-b {
+    background: linear-gradient(to bottom, #4A90E2, #E94E77);
+}
+
+/* Background gradient for the component */
+.bg-gradient-to-b {
+    background: linear-gradient(180deg, #f9f9f9, #dac9ff);
+}
