@@ -43,7 +43,8 @@ const Home = () => {
     <div className="bg-blue-200 rounded-lg h-[260px] w-[260px] flex flex-col items-center justify-center relative hover:shadow-2xl transition-shadow duration-300">
       <img src={learningAndDevelopmentImg} alt="Learning And Development" className="w-full h-full object-cover rounded-lg" />
       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-        <h3 className="text-xl font-bold text-black mb-2">Learning And Development</h3>
+      <h3 className="text-xl font-bold text-black mb-2 text-shadow">Learning And Development</h3>
+
         <a href="/learningAndDevelopment" className="text-purple-200 font-bold flex items-center space-x-2 hover:text-purple-800">
           <span>Know More</span>
           <i className="fas fa-arrow-right"></i>
