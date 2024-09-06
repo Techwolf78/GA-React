@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "boxicons/css/boxicons.min.css";
 
-const Header = () => {
+const Navbar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -138,4 +138,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
