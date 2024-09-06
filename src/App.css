@@ -1,12 +1,12 @@
 @font-face {
-    font-family: 'SpaceMono';
-    src: url('../src/assets/Fonts/spacemono/SpaceMono-Regular.ttf') format('truetype');
+    font-family: 'Sans';
+    src: url('../src/assets/Fonts/Web Fonts/JUST\ Sans\ Bold.woff.woff') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
   
   /* Apply it globally */
   body {
-    font-family: 'SpaceMono', sans-serif;
+    font-family: 'Sans', sans-serif;
   }
   

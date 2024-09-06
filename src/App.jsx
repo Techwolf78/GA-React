@@ -11,6 +11,7 @@ import Placement from './Components/Placement'; // Corrected path to Components
 import Contact from './Components/Contact'; // Corrected path to Components
 import LearningAndDevelopment from './Components/LearningAndDevelopment';
 import BrandPositioning from './Components/BrandPositioning';
+import CollegeTraining from './Components/CollegeTraining';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/contact" element={<><Navbar /><Contact /></>} />
         <Route path="/brandPositioning" element={<><Navbar /><BrandPositioning /></>} />
         <Route path="/learningAndDevelopment" element={<><Navbar /><LearningAndDevelopment /></>} />
+        <Route path="/collegeTraining" element={<><Navbar /><CollegeTraining /></>} />
       </Routes>
       <Footer /> {/* Render Footer on all pages */}
     </Router>
