@@ -139,7 +139,7 @@ const Contact = () => {
           <div className="p-6 text-center bg-white rounded-lg shadow-lg transition-transform hover:scale-105">
             <i className="bx bx-location-plus text-4xl text-purple-700 mb-4"></i>
             <h4 className="text-xl font-bold text-gray-800 mb-2">Address</h4>
-            <p className="text-gray-600">Seasons business square, Office no 301, Aundh, Pune, Maharashtra 411007</p>
+            <p className="text-gray-600">9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Banglore, Highway Baner, Pune Maharashtra - 411045</p>
           </div>
 
           {/* Phone */}
