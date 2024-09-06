@@ -148,10 +148,7 @@ const Footer = () => {
             <ul className="contact-info">
               <li>
                 <p>
-Seasons Business Square
-by Naiknavare Office no 301,
-3rd floor, Seasons Rd, Sanewadi,
-Aundh, Pune, Maharashtra 411007</p>
+                9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Banglore, Highway Baner, Pune Maharashtra - 411045</p>
               </li>
               <li>
                 <p>Phone: <a href="tel:+91 89836 14509 ">+91 89836 14509 / 8983339099</a></p>
