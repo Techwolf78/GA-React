@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -126,18 +127,25 @@ const Footer = () => {
           <div className="footer-column">
             <span className="footer-heading">Useful Links</span>
             <ul className="footer-nav">
-              {['About', 'GAX', 'Learning and Development', 'Blogs'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="hover:text-gray-300 transition-all duration-300">{item}</a>
-                </li>
-              ))}
+              <li>
+                <Link to="/contact" className="hover:text-gray-300 transition-all duration-300">Contact Us</Link>
+              </li>
+              <li>
+                <Link to="/gax" className="hover:text-gray-300 transition-all duration-300">GAX</Link>
+              </li>
+              <li>
+                <Link to="/learningAndDevelopment" className="hover:text-gray-300 transition-all duration-300">Learning and Development</Link>
+              </li>
+              <li>
+                <Link to="/blogs" className="hover:text-gray-300 transition-all duration-300">Blogs</Link>
+              </li>
             </ul>
           </div>
           <div className="footer-column">
             <span className="footer-heading">Follow Us</span>
             <div className="social-media">
               {['facebook', 'instagram', 'linkedin'].map((platform) => (
-                <a key={platform} href="#">
+                <a key={platform} href={`https://www.${platform}.com`} target="_blank" rel="noopener noreferrer">
                   <i className={`fab fa-${platform}`}></i>
                 </a>
               ))}
@@ -147,15 +155,14 @@ const Footer = () => {
             <span className="footer-heading">Contact Us</span>
             <ul className="contact-info">
               <li>
-                <p>
-                9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Banglore, Highway Baner, Pune Maharashtra - 411045</p>
+                <p> <a href="https://maps.app.goo.gl/LbkaqWULoGY2k7bq8">
+                9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Banglore, Highway Baner, Pune Maharashtra - 411045 </a></p>
               </li>
               <li>
                 <p>Phone: <a href="tel:+91 89836 14509 ">+91 89836 14509 / 8983339099</a></p>
               </li>
               <li>
-                <p>Email: <a href="gryphonx@gryphonacademy.co.in">
-                gryphonx@gryphonacademy.co.in</a></p>
+                <p>Email: <a href="mailto:gryphonx@gryphonacademy.co.in">gryphonx@gryphonacademy.co.in</a></p>
               </li>
             </ul>
           </div>

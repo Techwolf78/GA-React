@@ -25,16 +25,16 @@
 .stats-section h2 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #333;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
 .stats-section p {
   font-size: 1.125rem;
-  color: #666;
+  color: #000000;
   max-width: 800px;
   margin: 0 auto;
-  margin-bottom: 2rem;
+  margin-bottom: 2.1rem;
 }
 
 .stats-wrapper {
@@ -73,13 +73,13 @@
 
 .stat-card h3 {
   font-size: 2rem;
-  color: #333;
+  color: #000000;
   margin: 0;
 }
 
 .stat-card p {
   font-size: 1rem;
-  color: #666;
+  color: #000000;
   margin: 0.5rem 0 0;
 }
 
@@ -106,6 +106,12 @@
 }
 
 /* Card hover effect */
+
+.card-wrapper img {
+  transform: scale(2.20); /* Scale up by 5% */
+  transition: transform 0.3s ease;
+}
+
 .card-wrapper:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -282,3 +288,4 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 20;
 }
+

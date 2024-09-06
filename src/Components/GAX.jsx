@@ -4,7 +4,8 @@ import React from 'react';
 const GAX = () => {
   return (
     <div>
-      <h1>Blogs</h1>
+      <h1>GAX</h1>
+      
     </div>
   );
 };

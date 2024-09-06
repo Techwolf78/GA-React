@@ -12,6 +12,9 @@ import Contact from './Components/Contact'; // Corrected path to Components
 import LearningAndDevelopment from './Components/LearningAndDevelopment';
 import BrandPositioning from './Components/BrandPositioning';
 import CollegeTraining from './Components/CollegeTraining';
+import CorporateTraining from './Components/CorporateTraining';
+import FacultyTraining from './Components/FacultyTraining'; // Corrected path to Components
+import Digital from './Components/Digital'; // Corrected path to Components
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
         <Route path="/brandPositioning" element={<><Navbar /><BrandPositioning /></>} />
         <Route path="/learningAndDevelopment" element={<><Navbar /><LearningAndDevelopment /></>} />
         <Route path="/collegeTraining" element={<><Navbar /><CollegeTraining /></>} />
+        <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
+        <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />
+        <Route path="/digital" element={<><Navbar /><Digital /></>} />
       </Routes>
       <Footer /> {/* Render Footer on all pages */}
     </Router>
