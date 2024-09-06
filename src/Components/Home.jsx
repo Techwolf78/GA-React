@@ -50,7 +50,7 @@ const Home = () => {
       </div>
     </div>
     <div className="flex flex-col items-center bg-yellow-300 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-      <h2 className="text-xl font-bold text-black mb-2">Get Your Dream Job Now</h2>
+      <h2 className="text-xl font-bold text-black mb-2">Have any questions?</h2>
       <a
         href="#"
         className="cta-button bg-black text-white font-bold py-2 px-4 rounded-lg shadow-lg flex items-center space-x-2 hover:bg-gradient-to-b from-purple-500 to-purple-600 transition-all duration-300"
