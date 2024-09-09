@@ -3,6 +3,8 @@ import HeroPlacement from "./HeroPlacement";
 import PartneredUniversities from "./PartneredUniversities";
 import PartneredCollege from "./PartneredColllege"; // Fixed typo
 import '../assets/CSS/Placement.css'; // You may not need this if using Tailwind for all styles
+import IndustryOverview from "./IndustryOverview";
+import Advisory from "./Advisory";
 
 const Placement = () => {
   const hookLineText = "ZERO! COST INVOLVED during all stages of recruitment.";
@@ -47,6 +49,8 @@ const Placement = () => {
           />
         </div>
       </div>
+      <IndustryOverview />
+      <Advisory />
     </div>
   );
 };

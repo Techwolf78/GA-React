@@ -6,13 +6,13 @@ const HeroPlacement = () => {
     <div className="relative z-10 w-full h-[60vh] overflow-hidden bg-[#e9e5ff]">
       <div className="relative w-full h-full">
         <img 
-          src="https://via.placeholder.com/1200x800?text=Your+Image+Here" 
-          className="w-full h-full object-cover opacity-50" 
+          src="Clgimage/Placement.jpg" 
+          className="w-full h-full object-cover opacity-60" 
           alt="Placeholder" 
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-[#3d3d5c] animate-slideIn">Gryphon Academy</h1>
-          <p className="text-lg md:text-2xl mt-4 text-[#3d3d5c] animate-slideIn">Partnering for Inclusive Placements, Empowering All Students.</p>
+          <h1 className="text-4xl md:text-6xl font-bold text-[#000000] animate-slideIn">One stop commercial free solution to recruiter’s complete fresher’s hiring needs </h1>
+     
         </div>
       </div>
       <style jsx>{`

@@ -3,31 +3,38 @@ import '../assets/CSS/Testimonials.css'; // Import the Testimonials CSS
 
 const testimonials = [
   {
-    review: "This service was exceptional. It truly helped my business grow.",
-    name: "Neon Jacky",
-    designation: "Dean of DSPM",
-    rating: "★★★★"
-  },
-  {
-    review: "An amazing experience! The support team was fantastic.",
-    name: "Jane Doe",
-    designation: "Marketing Manager",
-    rating: "★★★★☆"
-  },
-  {
-    review: "Highly recommend! Professional and efficient service.",
-    name: "John Smith",
-    designation: "Product Lead",
+    review: "Gryphon Academy provided me with the skills and knowledge I needed to excel in my career. ",
+    name: "Sarah Lewis",
+    designation: "Software Engineer",
     rating: "★★★★★"
   },
   {
-    review: "The results exceeded my expectations. Great job!",
-    name: "Alice Johnson",
-    designation: "CEO",
+    review: "The mentorship and resources at Gryphon Academy are top-notch. My time here was invaluable",
+    name: "Suchitra Sharma",
+    designation: "Digital Marketer",
     rating: "★★★★☆"
   },
+  {
+    review: "Gryphon Academy offers a transformative learning experience. ",
+    name: "Emily Davis",
+    designation: "Entrepreneur",
+    rating: "★★★★★"
+  },
+  {
+    review: "Attending Gryphon Academy was a pivotal moment in my academic career.  ",
+    name: "Prabhas Kumar",
+    designation: "Research Scientist",
+    rating: "★★★★☆"
+  },
+  {
+    review: "The mentorship and resources at Gryphon Academy are top-notch. My time here was invaluable.",
+    name: "Shakti Desai",
+    designation: "Design Engineer",
+    rating: "★★★★☆"
+  }
   // Add more testimonials if needed
 ];
+
 
 const Testimonials = () => {
   return (
