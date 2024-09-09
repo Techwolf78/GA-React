@@ -1,0 +1,32 @@
+.hook-line-container {
+    background-color: #7e67fc; /* Cool background color */
+    padding: 20px 0; /* Vertical padding */
+    overflow: hidden; /* Hide overflow to create scrolling effect */
+    position: relative; /* Position relative for absolute child */
+    height: 50px; /* Increase height of the container */
+    display: flex; /* Center the content vertically */
+    align-items: center; /* Center items vertically */
+}
+
+.hook-line {
+    display: flex; /* Use flex for horizontal layout */
+    white-space: nowrap; /* Prevent line breaks */
+    font-size: 24px; /* Font size */
+    color: white; /* Text color */
+    position: absolute; /* Position absolute for animation */
+    animation: scroll 25s linear infinite; /* Animation for scrolling */
+}
+
+.divider {
+    margin: 0 20px; /* Spacing around the divider */
+    color: white; /* Divider color */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Start at the beginning */
+    }
+    100% {
+        transform: translateX(-50%); /* End halfway to create seamless effect */
+    }
+}

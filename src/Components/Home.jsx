@@ -9,6 +9,7 @@ import placementImg from '../assets/Images/3.png';
 import brandPositioningImg from '../assets/Images/4.png';
 import JourneySection from './JourneySection';
 import Revolution from './Revolution';
+import MissionVisionSection from './MissionVisionSection';
 
 const Home = () => {
   return (
@@ -33,7 +34,7 @@ const Home = () => {
   {/* Cards */}
   <div className="card-wrapper bg-purple-200 rounded-lg p-6 flex flex-col items-center h-[260px] w-[260px] hover:bg-purple-300 transition-all duration-300 shadow-lg">
     <img src={ placementImg} alt="Placement" className="w-20 h-20 mb-2 mt-2" />
-    <p className="text-lg font-semibold text-black text-center mt-4">Placement </p>
+    <p className="text-lg font-semibold text-black text-center mt-4">PLACEMENTS </p>
     <a href="/placement" className="mt-2 text-purple-600 font-bold flex items-center space-x-2 hover:text-purple-800">
       <span>Know More</span>
       <i className="fas fa-arrow-right"></i>
@@ -43,7 +44,7 @@ const Home = () => {
     <div className="bg-blue-200 rounded-lg h-[260px] w-[260px] flex flex-col items-center justify-center relative hover:shadow-2xl transition-shadow duration-300">
       <img src={learningAndDevelopmentImg} alt="Learning And Development" className="w-full h-full object-cover rounded-lg" />
       <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-      <h3 className="text-xl font-bold text-black mb-2 text-shadow">Learning And Development</h3>
+      <h3 className="text-xl font-bold text-black mb-2 text-shadow">LEARNING AND DEVELOPMENT</h3>
 
         <a href="/learningAndDevelopment" className="text-purple-200 font-bold flex items-center space-x-2 hover:text-purple-800">
           <span>Know More</span>
@@ -54,7 +55,7 @@ const Home = () => {
     <div className="flex flex-col items-center bg-yellow-300 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
       <h2 className="text-xl font-bold text-black mb-2">Have any questions?</h2>
       <a
-        href="#"
+        href="/contact"
         className="cta-button bg-black text-white font-bold py-2 px-4 rounded-lg shadow-lg flex items-center space-x-2 hover:bg-gradient-to-b from-purple-500 to-purple-600 transition-all duration-300"
       >
         <span>Let's Talk</span>
@@ -64,7 +65,7 @@ const Home = () => {
   </div>
   <div className="card-wrapper bg-purple-200 rounded-lg p-6 flex flex-col items-center h-[260px] w-[260px] hover:bg-purple-300 transition-all duration-300 shadow-lg">
     <img src={brandPositioningImg} alt="Brand Positioning" className="w-20 h-20 mb-2 mt-2" />
-    <p className="text-lg font-semibold text-black mt-4">Brand Positioning</p>
+    <p className="text-lg font-semibold text-black mt-4">BRAND POSITIONING</p>
     <a href="/brandPositioning" className="mt-2 text-purple-600 font-bold flex items-center space-x-2 hover:text-purple-800">
       <span>Know More</span>
       <i className="fas fa-arrow-right"></i>
@@ -78,8 +79,14 @@ const Home = () => {
       <div id="about">
         <HomeAbout />
       </div>
+      <div id="missionVision">
+        <MissionVisionSection />
+      </div>
       <div id="stats" className="stats-section">
-  <h2>Our Impact</h2>
+      <h3 className="text-3xl font-bold text-black mb-4 underline">
+  Our Impact
+</h3>
+
   <div className="stats-wrapper fade-in-stats">
     {[
       { icon: 'user-graduate', color: '#6c63ff', value: '60,000+', label: 'Students Trained' },

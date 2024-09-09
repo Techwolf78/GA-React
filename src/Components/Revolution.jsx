@@ -47,13 +47,26 @@ const StorySection = () => {
     })
   };
 
+  const headingVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+
   return (
     <section
       ref={sectionRef}
       className="relative h-screen flex flex-col items-center justify-center bg-[#e9e5ff] text-center px-4 overflow-hidden"
     >
       {/* Heading */}
-      <h2 className="text-3xl md:text-5xl font-bold mb-8  relative z-10">Beginning of Revolution</h2>
+      <motion.p
+        className="text-3xl md:text-5xl font-bold mb-8 relative z-10"
+        variants={headingVariants}
+        initial="hidden"
+        animate={controls}
+      >
+        Beginning of Revolution
+        <span className="absolute left-0 bottom-0 w-full h-1 bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 transform translate-y-1 rounded-full" />
+      </motion.p>
 
       {/* Storytelling Items */}
       <div className="relative z-10 flex flex-col items-start max-w-4xl mx-auto">

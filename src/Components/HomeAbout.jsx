@@ -20,7 +20,7 @@ const HomeAbout = () => {
             className="about-text"
             style={{ fontFamily: "Varela, sans-serif" }}
           >
-            We provide 360<sup>°</sup> Approach.
+            We provide a 360<sup>°</sup> Approach.
           </h1>
         </div>
         <div className="about-right">
@@ -33,7 +33,7 @@ const HomeAbout = () => {
             industry with ease.
           </p>
           <a href="/contact" className="more-about-link">
-            GET IN TOUCH
+            GET IN TOUCH WITH US 
           </a>
         </div>
       </div>

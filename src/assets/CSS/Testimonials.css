@@ -80,3 +80,7 @@
     width: 100%;
   }
   
+  /* Custom CSS */
+.underline-custom {
+  text-decoration: underline;
+}
