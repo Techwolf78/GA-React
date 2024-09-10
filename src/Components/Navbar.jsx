@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   const handleTrainingClick = () => {
-    navigate("/learningAndDevelopment");
+    navigate("/training");
     setDropdownOpen(false); // Close dropdown on click
   };
 
@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-[#7157ff] text-[#2e2e2e] flex justify-between items-center p-4">
+    <header className="bg-[#7157ff] text-[#ffffff] flex justify-between items-center p-4">
       <a className="navbar-brand" href="/">
         <img
           src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png"
@@ -127,7 +127,7 @@ const Navbar = () => {
           HOME
         </Link>
         <Link
-          to="/learningAndDevelopment"
+          to="/training"
           className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#d0c6f7] hover:text-[#1a1a1a] transition-colors duration-300"
         >
           TRAINING

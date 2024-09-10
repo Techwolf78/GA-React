@@ -1,0 +1,183 @@
+/* About Us Section Styles */
+.about-us {
+    background: linear-gradient(180deg, #f9f9f9, #dac9ff);
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+  .about-left {
+    flex: 1;
+    padding-right: 2rem;
+    text-align: left;
+  }
+  
+  .about-head {
+    font-size: 0.875rem !important;
+    color: #000000 !important;
+    font-weight: normal !important;
+  }
+  
+  .about-text {
+    font-size: 2.5rem;
+    color: #000000;
+    max-width: 800px;
+    padding-left: 6px;
+    font-weight: bold;
+    font-family: 'Varela', sans-serif;
+  }
+  
+  .about-right {
+    flex: 1;
+    padding-left: 2rem;
+    text-align: left;
+  }
+  
+  .about-right p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .more-about-link {
+    display: inline-block;
+    font-size: 1rem;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .more-about-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #6c63ff;
+    left: 0;
+    bottom: -2px;
+    transition: width 1s ease;
+  }
+  
+  .more-about-link:hover::after {
+    width: 100%;
+    background: #6c63ff;
+  }
+  
+  .more-about-link:focus::after,
+  .more-about-link:active::after,
+  .more-about-link:not(:hover)::after {
+    width: 0;
+    background: #b19cd9;
+    transition: width 0.5s ease;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensures all cards stretch to the tallest one */
+    flex-wrap: wrap; /* Allows wrapping if needed */
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+  }
+  
+  .feature-card {
+    background: #ffffff;
+    border-radius: 50px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    flex: 1 1 300px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the start of the card */
+    max-width: 350px; /* Fixed width for each card */
+    min-height: 220px; /* Ensures cards have a minimum height */
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .feature-card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+  }
+  
+  .feature-card-icon i {
+    font-size: 2rem;
+    color: #6c63ff;
+  }
+  
+  .feature-card h4 {
+    font-size: 1.10rem;
+    color: #333;
+    margin-bottom: 0;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #666;
+    text-align: left;
+  }
+  
+  .feature-header-link {
+    display: inline-block;
+    font-size: 1.25rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .feature-header-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #6c63ff;
+    left: 0;
+    bottom: -2px;
+    transition: width 1s ease;
+  }
+  
+  .feature-header-link:hover::after {
+    width: 100%;
+    background: #6c63ff;
+  }
+  
+  .feature-header-link:focus::after,
+  .feature-header-link:active::after,
+  .feature-header-link:not(:hover)::after {
+    width: 0;
+    background: #b19cd9;
+    transition: width 0.5s ease;
+  }
+  

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'tailwindcss/tailwind.css';
 
-// Sample course data
+// Course data and button labels
 const courses = {
   MECH: [
     { title: 'AutoCAD', description: 'Learn the fundamentals of AutoCAD for 2D and 3D drafting and design in mechanical engineering.', image: '/MECH/1.jpg' },
@@ -34,7 +34,11 @@ const courses = {
     { title: 'PIC & SCADA', description: 'Learn about Programmable Interface Controllers (PIC) and Supervisory Control and Data Acquisition (SCADA) systems for automation and control.', image: 'Electrical Eng/6.jpg' }
   ],
   AIDS: [
-    { title: 'Introduction to Data Science', description: 'Learn the basics of data science and how it applies to artificial intelligence.', image: 'AIDS/1.jpg' },
+    {
+      title: 'Introduction to Data Science',
+      description: 'Learn the basics of data science and how it applies to artificial intelligence.',
+      image: 'https://placeholder.com/200x200'
+    },
     { title: 'Machine Learning with Python', description: 'Explore machine learning techniques using Python, including regression and classification.', image: 'AIDS/2.jpg' },
     { title: 'Data Visualization', description: 'Understand how to visualize data effectively to gain insights and make decisions.', image: 'AIDS/3.jpg' },
     { title: 'Big Data Analytics', description: 'Learn about big data technologies and how to process and analyze large datasets.', image: 'AIDS/4.jpg' },
@@ -69,19 +73,36 @@ const courses = {
     { title: 'Java', description: 'Gain expertise in Java programming language, focusing on object-oriented programming and software development.', image: 'MCA/1.jpg' },
     { title: 'OOPs', description: 'Study Object-Oriented Programming (OOP) principles and their application in software development.', image: 'MCA/2.jpg' },
     { title: 'Python', description: 'Learn Python for data analysis, web development, and automation.', image: 'MCA/3.jpg' },
-    { title: 'DSA', description: 'Master Data Structures and Algorithms (DSA) to solve complex computational problems efficiently.', image: 'MCA/4.jpg' }
+    { title: 'Database Management', description: 'Understand database systems and management techniques for effective data handling.', image: 'MCA/4.jpg' },
+    { title: 'Software Engineering', description: 'Explore software development methodologies and project management practices.', image: 'MCA/5.jpg' },
+    { title: 'Web Technologies', description: 'Get hands-on experience with web technologies including HTML, CSS, and JavaScript.', image: 'MCA/6.jpg' }
   ],
   BBA: [
-    { title: 'Business Communication', description: 'Learn effective communication skills essential for business environments.', image: 'BBA/1.jpg' },
+    { title: 'Business Communication', description: 'Develop communication skills essential for business environments.', image: 'BBA/1.jpg' },
     { title: 'Financial Management', description: 'Understand the principles of financial management and how to make sound financial decisions.', image: 'BBA/2.jpg' },
     { title: 'Human Resource Management', description: 'Explore the fundamentals of managing human resources in an organization.', image: 'BBA/3.jpg' },
     { title: 'Marketing Management', description: 'Study marketing strategies and practices used to engage customers and drive business growth.', image: 'BBA/4.jpg' },
     { title: 'Organizational Behavior', description: 'Understand the dynamics of behavior within organizations and how to manage it effectively.', image: 'BBA/5.jpg' },
     { title: 'Business Law', description: 'Learn the legal aspects of running a business, including contracts, liability, and compliance.', image: 'BBA/6.jpg' }
+  ],
+  GERMANY: [
+    { title: 'German Language Basics', description: 'Introduction to the German language, including basic vocabulary and grammar.', image: 'Germany/1.jpg' },
+    { title: 'Advanced German Language', description: 'Expand your German language skills with advanced vocabulary and complex grammar.', image: 'Germany/2.jpg' },
+    { title: 'German Culture and Society', description: 'Explore German culture, history, and social norms.', image: 'Germany/3.jpg' }
+  ],
+  JAPANESE: [
+    { title: 'Japanese Language Basics', description: 'Learn basic Japanese language skills, including essential vocabulary and grammar.', image: 'Japanese/1.jpg' },
+    { title: 'Intermediate Japanese', description: 'Enhance your Japanese language proficiency with intermediate-level content.', image: 'Japanese/2.jpg' },
+    { title: 'Japanese Culture and Traditions', description: 'Discover Japanese culture and traditions through language and customs.', image: 'Japanese/3.jpg' }
+  ],
+  DIPLOMA: [
+    { title: 'Diploma in Business Administration', description: 'Comprehensive program in business administration with practical and theoretical knowledge.', image: 'Diploma/1.jpg' },
+    { title: 'Diploma in Computer Science', description: 'In-depth study of computer science fundamentals and programming.', image: 'Diploma/2.jpg' },
+    { title: 'Diploma in Mechanical Engineering', description: 'Focus on mechanical engineering principles and applications.', image: 'Diploma/3.jpg' }
   ]
 };
 
-// Mapping short keys to long button names
+// Button labels
 const buttonLabels = {
   MECH: 'MECHANICAL ENGINEERING',
   CIVIL: 'CIVIL ENGINEERING',
@@ -92,7 +113,10 @@ const buttonLabels = {
   PHARMA: 'PHARMACY',
   MBA: 'MASTER OF BUSINESS ADMINISTRATION',
   MCA: 'MASTER OF COMPUTER APPLICATIONS',
-  BBA: 'BACHELOR OF BUSINESS ADMINISTRATION'
+  BBA: 'BACHELOR OF BUSINESS ADMINISTRATION',
+  GERMANY: 'GERMAN LANGUAGE',
+  JAPANESE: 'JAPANESE LANGUAGE',
+  DIPLOMA: 'DIPLOMA'
 };
 
 const CourseSection = () => {
@@ -103,22 +127,34 @@ const CourseSection = () => {
   };
 
   return (
-    <section className="py-5 bg-gray-900">
+    <section className="py-5 bg-purple-100">
       <div className="mb-8">
-        <h2 className="text-yellow-300 text-4xl text-center font-bold mb-4">Technical Training</h2>
+        <p className="text-purple-700 text-4xl text-center font-bold mb-4">Technical Training</p>
       </div>
       <div className="container mx-auto flex flex-wrap">
+        {/* Sidebar */}
         <div className="course-sidebar w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
-          {Object.keys(courses).map((key) => (
-            <button
-              key={key}
-              onClick={() => changeCourse(key)}
-              className="block w-full py-3 px-6 mb-4 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105"
-            >
-              {buttonLabels[key]}
-            </button>
-          ))}
+          <div className="bg-purple-100 shadow-lg rounded-lg">
+            {Object.keys(courses).map((key) => (
+              <button
+                key={key}
+                onClick={() => changeCourse(key)}
+                className="block w-full py-3 px-6 mb-2 text-white rounded-lg"
+                style={{
+                  backgroundColor: 'rgb(113, 87, 255)',
+                  transition: 'all 0.3s ease-in-out',
+                  transform: 'scale(1)',
+                }}
+                onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgb(103, 77, 238)'}
+                onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgb(113, 87, 255)'}
+              >
+                {buttonLabels[key]}
+              </button>
+            ))}
+          </div>
         </div>
+
+        {/* Content Area */}
         <div className="content w-full lg:w-3/4 px-4">
           <div className="course-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses[selectedCourse].map((course, index) => (
@@ -126,7 +162,6 @@ const CourseSection = () => {
                 <img src={course.image} alt={course.title} className="w-full h-40 object-cover rounded-t-lg mb-4" />
                 <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
                 <p className="text-gray-800 mb-4">{course.description}</p>
-                <button className="py-2 px-6 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 ease-in-out">Enroll</button>
               </div>
             ))}
           </div>

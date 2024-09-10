@@ -6,12 +6,12 @@ const HeroPlacement = () => {
     <div className="relative z-10 w-full h-[60vh] overflow-hidden bg-[#e9e5ff]">
       <div className="relative w-full h-full">
         <img 
-          src="Clgimage/Placement.jpg" 
-          className="w-full h-full object-cover opacity-60" 
+          src="/placement-bg/5471985.jpg" 
+          className="w-full h-full object-cover opacity-90" 
           alt="Placeholder" 
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-[#000000] animate-slideIn">One stop commercial free solution to recruiter’s complete fresher’s hiring needs </h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-[#ffffff] animate-slideIn">One stop commercial free solution to recruiter’s complete fresher’s hiring needs </h1>
      
         </div>
       </div>

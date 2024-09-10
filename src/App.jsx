@@ -9,7 +9,7 @@ import Footer from './Components/Footer'; // Import the Footer component
 import Navbar from './Components/Navbar'; // Import the generic Navbar component
 import Placement from './Components/Placement'; // Corrected path to Components
 import Contact from './Components/Contact'; // Corrected path to Components
-import LearningAndDevelopment from './Components/LearningAndDevelopment';
+import Training from './Components/Training';
 import BrandPositioning from './Components/BrandPositioning';
 import CollegeTraining from './Components/CollegeTraining';
 import CorporateTraining from './Components/CorporateTraining';
@@ -27,7 +27,7 @@ function App() {
         <Route path="/placement" element={<><Navbar /><Placement /></>} />
         <Route path="/contact" element={<><Navbar /><Contact /></>} />
         <Route path="/brandPositioning" element={<><Navbar /><BrandPositioning /></>} />
-        <Route path="/learningAndDevelopment" element={<><Navbar /><LearningAndDevelopment /></>} />
+        <Route path="/training" element={<><Navbar /><Training /></>} />
         <Route path="/collegeTraining" element={<><Navbar /><CollegeTraining /></>} />
         <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />

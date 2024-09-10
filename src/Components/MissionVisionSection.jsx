@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const images = [
   'Clgimage/our-mission.jpg', // Path to the Mission image
@@ -6,6 +6,16 @@ const images = [
 ];
 
 const MissionVisionSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="w-full py-8 px-4 md:px-8 lg:px-16 bg-gradient-to-br from-white to-purple-100 relative">
       <style>
@@ -28,7 +38,7 @@ const MissionVisionSection = () => {
             background: #6c63ff;
             left: 0;
             bottom: -2px;
-            transition: width 1s ease;
+            transition: width 2s ease;
           }
 
           .feature-header-link:hover::after {
@@ -48,32 +58,25 @@ const MissionVisionSection = () => {
             position: relative;
             width: 100%;
             overflow: hidden;
-            padding-top: 56.25%; /* Aspect ratio of 16:9 */
+            height: 300px; /* Adjust as needed */
           }
 
           .carousel-container {
             display: flex;
-            width: 200%;
+            transition: transform 1s ease-in-out; /* Smooth transition */
+            width: 100%;
             height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            animation: scroll 12s linear infinite;
           }
 
           .carousel-image {
-            width: 50%;
+            width: 100%;
             height: 100%;
             object-fit: cover;
           }
 
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
+          .carousel-slide {
+            flex: 0 0 100%;
+            height: 100%;
           }
         `}
       </style>
@@ -114,14 +117,18 @@ const MissionVisionSection = () => {
         {/* Carousel */}
         <div className="relative w-full md:w-1/2 p-4 flex items-center justify-center overflow-hidden">
           <div className="carousel-wrapper">
-            <div className="carousel-container">
-              {images.concat(images).map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`Slide ${index + 1}`}
-                  className="carousel-image"
-                />
+            <div 
+              className="carousel-container"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {images.map((image, index) => (
+                <div key={index} className="carousel-slide">
+                  <img
+                    src={image}
+                    alt={`Slide ${index + 1}`}
+                    className="carousel-image"
+                  />
+                </div>
               ))}
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPinIcon } from '@heroicons/react/24/solid'; // Import Heroicons location icon
+import { MapPinIcon } from '@heroicons/react/24/solid';
 
 const PartneredCollege = () => {
   const colleges = [
@@ -25,18 +25,17 @@ const PartneredCollege = () => {
     <div className="bg-gradient-to-b from-white via-purple-50 to-purple-100 py-16 min-h-screen">
       <div className="container mx-auto px-4">
         <p className="text-5xl font-bold mb-12 text-center text-black">Few Partnered Colleges</p>
-        <div className="relative">
-          {/* Grid Layout: 4 Rows of 4 Items */}
+        <div className="relative overflow-hidden">
           {Array.from({ length: 4 }).map((_, rowIndex) => (
             <div key={rowIndex} className="mb-12">
-              <div className={`grid grid-cols-1 md:grid-cols-4 gap-y-8 gap-x-4`}>
+              <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4`}>
                 {colleges.slice(rowIndex * 4, rowIndex * 4 + 4).map((college, index) => (
                   <div key={index} className="flex flex-col items-center">
                     <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
                       <img 
                         src={college.imageUrl} 
                         alt={college.name} 
-                        className="max-w-full max-h-32 object-cover rounded-t-lg" 
+                        className="w-full h-auto max-w-full object-cover rounded-t-lg" 
                       />
                     </div>
                     <div className="mt-4 text-center">

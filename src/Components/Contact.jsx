@@ -26,10 +26,10 @@ const Contact = () => {
   return (
     <>
       {/* Contact Us Section */}
-      <section className="py-16 bg-[#e9e5ff] mx-auto mt-6 mb-6 px-4 md:max-w-4xl">
+      <section className="py-16 bg-[#e9e5ff] mx-auto mt-6 mb-6 px-4 md:max-w-6xl">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-          <h1 className="text-5xl font-bold text-gray-800 text-center ">
+          <h1 className="text-7xl font-bold text-gray-800 text-center ">
            Let's <span className="text-[#000000]">Bridge</span> <br />
             <span className="text-orange-500 text-center">the Gap</span>
           </h1>

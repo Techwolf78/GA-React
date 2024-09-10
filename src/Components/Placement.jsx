@@ -5,6 +5,8 @@ import PartneredCollege from "./PartneredColllege"; // Fixed typo
 import '../assets/CSS/Placement.css'; // You may not need this if using Tailwind for all styles
 import IndustryOverview from "./IndustryOverview";
 import Advisory from "./Advisory";
+import RecruiterTestimonial from "./RecruiterTestimonial";
+import SuccessfulDrives from "./SucessfulDrives";
 
 const Placement = () => {
   const hookLineText = "ZERO! COST INVOLVED during all stages of recruitment.";
@@ -51,6 +53,8 @@ const Placement = () => {
       </div>
       <IndustryOverview />
       <Advisory />
+      <SuccessfulDrives />
+      <RecruiterTestimonial />
     </div>
   );
 };
