@@ -17,15 +17,19 @@ const Home = () => {
     <div className="relative bg-gradient-to-b from-white to-purple-100 min-h-screen overflow-hidden">
       <HomeNavbar />
       <div id="home" className="hero-section">
-        <div className="hero-circles">
-          <ul className="circles">
-            {[...Array(10)].map((_, i) => (
-              <li key={i} className={i === 0 ? 'big-circle' : ''}>
-                {i === 0 && <div className="circle-content">GOALS</div>}
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="hero-circles">
+  <ul className="circles">
+    {[...Array(10)].map((_, i) => (
+      <li key={i} className={i === 0 ? 'big-circle' : ''}>
+        {i === 0 && <div className="circle-content">GOALS</div>}
+        {i === 6 && <div className="circle-content">COMMITMENT</div>}
+        {i === 5 && <div className="circle-content">OBJECTIVES</div>}
+        {i === 9 && <div className="circle-content">INNOVATION</div>}
+        {i === 3 && <div className="circle-content">GROW</div>}
+      </li>
+    ))}
+  </ul>
+</div>
         <div className="relative z-10">
           <div className="container mx-auto px-4 py-32">
             <div className="text-center">

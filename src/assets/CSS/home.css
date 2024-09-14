@@ -212,7 +212,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white; /* Adjust text color */
+  color: rgb(146, 20, 205); /* Adjust text color */
   text-align: center;
   font-size: 1rem; /* Adjust text size */
   font-weight: bold;
