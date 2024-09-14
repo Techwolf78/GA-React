@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  'Clgimage/our-mission.jpg', // Path to the Mission image
-  'Clgimage/our-vision.jpg',  // Path to the Vision image
+  'Clgimage/our-mission.jpg',
+  'Clgimage/our-vision.jpg',
 ];
 
 const MissionVisionSection = () => {
@@ -11,7 +11,7 @@ const MissionVisionSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -58,12 +58,12 @@ const MissionVisionSection = () => {
             position: relative;
             width: 100%;
             overflow: hidden;
-            height: 300px; /* Adjust as needed */
+            height: 300px;
           }
 
           .carousel-container {
             display: flex;
-            transition: transform 1s ease-in-out; /* Smooth transition */
+            transition: transform 1s ease-in-out;
             width: 100%;
             height: 100%;
           }
@@ -83,7 +83,7 @@ const MissionVisionSection = () => {
 
       <div className="text-center mb-12">
         <p
-          className="text-3xl font-bold md:text-4xl lg:text-5xl text-black mb-4 relative inline-block"
+          className="text-4xl font-bold md:text-4xl lg:text-4xl text-black mb-4 relative inline-block"
           style={{ 
             textDecoration: 'none', 
             position: 'relative' 
@@ -98,7 +98,6 @@ const MissionVisionSection = () => {
       </div>
       
       <div className="flex flex-col md:flex-row justify-center items-start">
-        {/* Text content */}
         <div className="md:w-1/2 p-4">
           <div className="mb-8">
             <p className="text-4xl font-bold text-black mb-2 feature-header-link">Our Mission</p>
@@ -114,7 +113,6 @@ const MissionVisionSection = () => {
           </div>
         </div>
 
-        {/* Carousel */}
         <div className="relative w-full md:w-1/2 p-4 flex items-center justify-center overflow-hidden">
           <div className="carousel-wrapper">
             <div 

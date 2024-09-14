@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "boxicons/css/boxicons.min.css";
 
 const Navbar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
   const toggleSidebar = () => {
@@ -19,6 +20,20 @@ const Navbar = () => {
   const handleDropdownItemClick = () => {
     setDropdownOpen(false); // Close dropdown on item click
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="bg-[#7157ff] text-[#ffffff] flex justify-between items-center p-4">
@@ -41,15 +56,18 @@ const Navbar = () => {
           className="relative"
           onMouseEnter={() => setDropdownOpen(true)}
           onMouseLeave={() => setDropdownOpen(false)}
+          ref={dropdownRef}
         >
           <button
             onClick={handleTrainingClick}
+            aria-haspopup="true"
+            aria-expanded={isDropdownOpen}
             className="hover:bg-[#d0c6f7] hover:text-[#1a1a1a] py-2 px-4 rounded flex items-center justify-center w-48 transition-colors duration-300"
           >
             TRAINING <i className="bx bx-chevron-down ml-1"></i>
           </button>
           {isDropdownOpen && (
-            <div className="absolute top-full left-0 w-48 bg-[#d0c6f7] text-[#1a1a1a] rounded-md shadow-lg transition-all duration-300">
+            <div className="absolute top-full left-0 mt-0 w-48 bg-[#d0c6f7] text-[#1a1a1a] rounded-md shadow-lg transition-all duration-300 z-50">
               <Link
                 to="/collegeTraining"
                 className="block px-4 py-2 hover:bg-[#b8aef6] transition-colors duration-300"
@@ -74,6 +92,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
+
         <Link
           to="/placement"
           className="hover:bg-[#d0c6f7] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
@@ -81,19 +100,13 @@ const Navbar = () => {
           PLACEMENT
         </Link>
         <Link
-          to="/digital"
+          to="/brandPositioning"
           className="hover:bg-[#d0c6f7] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
         >
           DIGITAL MARKETING
         </Link>
         <Link
-          to="/gax"
-          className="hover:bg-[#d0c6f7] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
-        >
-          GAX
-        </Link>
-        <Link
-          to="/blog"
+          to="/blogs"
           className="hover:bg-[#d0c6f7] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
         >
           BLOG
@@ -110,7 +123,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`fixed top-0 left-0 w-0 h-full bg-[#e9e5ff] z-40 overflow-x-hidden transition-width duration-500 ease-in-out ${
+        className={`fixed top-0 left-0 h-full bg-[#e9e5ff] z-40 overflow-x-hidden transition-width duration-500 ease-in-out ${
           isSidebarOpen ? "w-64" : "w-0"
         }`}
       >
@@ -143,12 +156,6 @@ const Navbar = () => {
           className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#d0c6f7] hover:text-[#1a1a1a] transition-colors duration-300"
         >
           DIGITAL MARKETING
-        </Link>
-        <Link
-          to="/gax"
-          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#d0c6f7] hover:text-[#1a1a1a] transition-colors duration-300"
-        >
-          GAX
         </Link>
         <Link
           to="/blog"

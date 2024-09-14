@@ -1,55 +1,84 @@
-import React from 'react';
-import '../assets/CSS/Blogs.css'; // Import the Blogs CSS
-import forest2 from '../assets/Images/forest-2.png';
-import forest from '../assets/Images/forest.png';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const SHEET_ID = 'YOUR_SHEET_ID'; // Replace with your Google Sheet ID
+const API_KEY = 'YOUR_API_KEY'; // Replace with your API key
 
 const Blog = () => {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "It takes a planet to explore the universe.",
-      description: "80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending.",
-      image: forest2,
-      link: "post-1.html",
-    },
-    {
-      id: 2,
-      title: "I would like to die on Mars. Just not on impact.",
-      description: "Join us on a journey to the red planet, where the possibilities are endless and the risks are high.",
-      image: forest,
-      link: "post-2.html",
-    },
-    {
-      id: 3,
-      title: "Explore the wonders of the universe.",
-      description: "Embark on a journey through the cosmos and discover the beauty of the stars.",
-      image: forest2,
-      link: "post-3.html",
-    },
-  ];
+  const [posts, setPosts] = useState([]);
+  const [selectedPost, setSelectedPost] = useState(null);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get(
+          `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1?key=${API_KEY}`
+        );
+        const rows = response.data.values;
+
+        // Assuming the first row is the header
+        const [headers, ...data] = rows;
+
+        // Map data to blog post format
+        const postsData = data.map(row => {
+          return headers.reduce((acc, header, index) => {
+            acc[header] = row[index];
+            return acc;
+          }, {});
+        });
+
+        setPosts(postsData);
+      } catch (error) {
+        console.error('Error fetching data from Google Sheets:', error);
+      }
+    };
+
+    fetchPosts();
+  }, []); // Empty dependency array ensures this runs once on mount
 
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-12 text-center blog-section">
+    <section className="py-20 px-4 text-center bg-gray-100">
       <div className="container mx-auto">
-        <h2 className="text-gray-900 mb-12 text-3xl md:text-4xl font-bold">
+        <p className="text-gray-900 mb-12 text-3xl font-bold underline">
           Latest Blog Posts
-        </h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {blogPosts.map(post => (
-            <div key={post.id} className="w-full md:w-1/3 lg:w-1/4 mb-8 px-4 mt-4">
-              <div className="blog-card rounded-2xl overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-xl cursor-pointer">
-                <img src={post.image} alt={post.title} className="w-full h-64 object-cover rounded-t-2xl" />
+        </p>
+        <div className="flex flex-wrap -mx-4">
+          {posts.map(post => (
+            <div key={post.ID} className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
+              <div className="bg-white border border-gray-300 rounded-2xl overflow-hidden">
+                <img
+                  src={post.Image} // Use the image URL from Google Sheets
+                  alt={post.Title}
+                  className="w-full h-64 object-cover rounded-t-2xl"
+                />
                 <div className="p-6">
-                  <h3 className="blog-card-title text-2xl mb-3">{post.title}</h3>
-                  <p className="blog-card-description mb-4">{post.description}</p>
-                  <a href={post.link} className="blog-card-link inline-block px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors duration-300">
+                  <h3 className="text-gray-900 text-2xl mb-3">{post.Title}</h3>
+                  <p className="text-gray-600 mb-4">{post.Description}</p>
+                  <button
+                    onClick={() => setSelectedPost(post)}
+                    className="bg-purple-500 text-white px-6 py-2 rounded-lg"
+                  >
                     Continue Reading →
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
+        {selectedPost && (
+          <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+            <div className="bg-white w-full h-[90vh] rounded-t-2xl p-6 overflow-y-auto">
+              <button
+                onClick={() => setSelectedPost(null)}
+                className="text-gray-600 float-right text-2xl mb-4"
+              >
+                &times;
+              </button>
+              <p className="text-3xl font-bold mb-4">{selectedPost.DrawerTitle}</p>
+              <p className="text-gray-800 text-2xl">{selectedPost.DrawerContent}</p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

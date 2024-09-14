@@ -1,29 +1,77 @@
 /* Animation for the connecting line */
 @keyframes animate-line {
-    0% {
-      background-position: 0% 0%;
-    }
-    100% {
-      background-position: 100% 100%;
-    }
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 .animate-line {
-    background: linear-gradient(90deg, #4A90E2, #E94E77);
-    background-size: 200% 200%;
-    animation: animate-line 2s linear infinite;
+  background: linear-gradient(90deg, #4A90E2, #E94E77);
+  background-size: 200% 200%;
+  animation: animate-line 2s linear infinite;
 }
 
-/* Horizontal lines styling */
+/* Responsive Styling */
 .bg-gradient-to-r {
-    background: linear-gradient(to right, #FF6F61, #FFB6C1);
+  background: linear-gradient(to right, #FF6F61, #FFB6C1);
 }
 
 .bg-gradient-to-b {
-    background: linear-gradient(to bottom, #4A90E2, #E94E77);
+  background: linear-gradient(to bottom, #4A90E2, #E94E77);
 }
 
-/* Background gradient for the component */
-.bg-gradient-to-b {
-    background: linear-gradient(180deg, #f9f9f9, #dac9ff);
+@media (min-width: 768px) {
+  .w-full {
+    width: 100%;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .gap-4 {
+    gap: 1rem;
+  }
+
+  .gap-6 {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-5xl {
+    font-size: 2rem;
+  }
+
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+
+  .text-xl {
+    font-size: 1.125rem;
+  }
+
+  .text-lg {
+    font-size: 1rem;
+  }
+
+  .h-16 {
+    height: 3rem;
+  }
+
+  .h-12 {
+    height: 2.5rem;
+  }
+
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

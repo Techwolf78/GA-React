@@ -85,20 +85,16 @@ const courses = {
     { title: 'Organizational Behavior', description: 'Understand the dynamics of behavior within organizations and how to manage it effectively.', image: 'BBA/5.jpg' },
     { title: 'Business Law', description: 'Learn the legal aspects of running a business, including contracts, liability, and compliance.', image: 'BBA/6.jpg' }
   ],
-  GERMANY: [
-    { title: 'German Language Basics', description: 'Introduction to the German language, including basic vocabulary and grammar.', image: 'Germany/1.jpg' },
-    { title: 'Advanced German Language', description: 'Expand your German language skills with advanced vocabulary and complex grammar.', image: 'Germany/2.jpg' },
-    { title: 'German Culture and Society', description: 'Explore German culture, history, and social norms.', image: 'Germany/3.jpg' }
-  ],
-  JAPANESE: [
-    { title: 'Japanese Language Basics', description: 'Learn basic Japanese language skills, including essential vocabulary and grammar.', image: 'Japanese/1.jpg' },
-    { title: 'Intermediate Japanese', description: 'Enhance your Japanese language proficiency with intermediate-level content.', image: 'Japanese/2.jpg' },
-    { title: 'Japanese Culture and Traditions', description: 'Discover Japanese culture and traditions through language and customs.', image: 'Japanese/3.jpg' }
-  ],
   DIPLOMA: [
     { title: 'Diploma in Business Administration', description: 'Comprehensive program in business administration with practical and theoretical knowledge.', image: 'Diploma/1.jpg' },
     { title: 'Diploma in Computer Science', description: 'In-depth study of computer science fundamentals and programming.', image: 'Diploma/2.jpg' },
     { title: 'Diploma in Mechanical Engineering', description: 'Focus on mechanical engineering principles and applications.', image: 'Diploma/3.jpg' }
+  ],
+  FOREIGN: [
+    { title: 'German Language Basics', description: 'Introduction to the German language, including basic vocabulary and grammar.', image: 'Germany/1.jpg' },
+    
+    { title: 'Japanese Language Basics', description: 'Learn basic Japanese language skills, including essential vocabulary and grammar.', image: 'Japanese/1.jpg' },
+
   ]
 };
 
@@ -114,8 +110,7 @@ const buttonLabels = {
   MBA: 'MASTER OF BUSINESS ADMINISTRATION',
   MCA: 'MASTER OF COMPUTER APPLICATIONS',
   BBA: 'BACHELOR OF BUSINESS ADMINISTRATION',
-  GERMANY: 'GERMAN LANGUAGE',
-  JAPANESE: 'JAPANESE LANGUAGE',
+  FOREIGN: 'FOREIGN LANGUAGES',
   DIPLOMA: 'DIPLOMA'
 };
 
@@ -129,7 +124,7 @@ const CourseSection = () => {
   return (
     <section className="py-5 bg-purple-100">
       <div className="mb-8">
-        <p className="text-purple-700 text-4xl text-center font-bold mb-4">Technical Training</p>
+        <p className="text-purple-700 text-4xl text-center font-bold mb-4 underline">Technical Training</p>
       </div>
       <div className="container mx-auto flex flex-wrap">
         {/* Sidebar */}

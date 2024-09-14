@@ -55,11 +55,11 @@ const StorySection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen flex flex-col items-center justify-center bg-[#e9e5ff] text-center px-4 overflow-hidden"
+      className="relative  flex flex-col items-center justify-center bg-[#e9e5ff] text-center px-4 overflow-hidden"
     >
       {/* Heading */}
       <motion.p
-        className="text-3xl md:text-5xl font-bold mb-8 relative z-10"
+        className="text-4xl md:text-4xl font-bold mb-5 relative z-10 mt-4" // Updated font size class
         variants={headingVariants}
         initial="hidden"
         animate={controls}

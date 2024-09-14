@@ -1,14 +1,15 @@
 import React from "react";
+import FacultyHero from "./FacultyHero";
+import FacultyWhy from "./FacultyWhy";
+import FacultyModule from "./FacultyModule";
 
 
 const FacultyTraining = () => {
   return (
     <div>
-      <div className="faculty-training-content">
-        <h1>Faculty Training Programs</h1>
-        {/* Your content here */}
-      </div>
-
+     <FacultyHero />
+     <FacultyWhy />
+     <FacultyModule />
     </div>
   );
 };

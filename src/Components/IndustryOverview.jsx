@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Card, Typography } from "@material-tailwind/react";
 
 const ENGINEERING_TABLE_HEAD = ["Subject", "Topics"];
@@ -56,11 +56,21 @@ const MBA_TABLE_ROWS = [
   // Add more rows as needed
 ];
 
+const calculateMaxSubjectWidth = (rows) => {
+  const maxSubjectLength = Math.max(...rows.map(row => row.subject.length));
+  return maxSubjectLength * 10; // Adjust multiplier as needed for padding
+};
+
 const IndustryOverview = () => {
+  // Calculate maximum subject width from both tables
+  const maxWidthEng = calculateMaxSubjectWidth(ENGINEERING_TABLE_ROWS);
+  const maxWidthMBA = calculateMaxSubjectWidth(MBA_TABLE_ROWS);
+  const subjectColumnWidth = Math.max(maxWidthEng, maxWidthMBA);
+
   return (
     <div className="p-6 bg-gradient-to-b from-white via-purple-50 to-purple-100">
-      <Typography variant="h2" color="blue-gray" className="text-center mb-12 font-bold text-4xl">
-        Industry Oriented Training Overview
+      <Typography variant="p" className="text-center mb-12 font-bold text-4xl underline text-purple-700">
+        INDUSTRY ORIENTED TRAINING OVERVIEW
       </Typography>
 
       {/* Engineering Table */}
@@ -92,7 +102,7 @@ const IndustryOverview = () => {
                 
                 return (
                   <tr key={subject}>
-                    <td className={classes}>
+                    <td className={`w-[${subjectColumnWidth}px] ${classes}`}>
                       <Typography variant="large" color="blue-gray" className="font-normal">
                         {subject}
                       </Typography>
@@ -139,7 +149,7 @@ const IndustryOverview = () => {
                 
                 return (
                   <tr key={subject}>
-                    <td className={classes}>
+                    <td className={`w-[${subjectColumnWidth}px] ${classes}`}>
                       <Typography variant="large" color="blue-gray" className="font-normal">
                         {subject}
                       </Typography>

@@ -26,9 +26,6 @@ const Footer = () => {
                 <Link to="/contact" className="hover:text-gray-300 transition duration-300">Contact Us</Link>
               </li>
               <li>
-                <Link to="/gax" className="hover:text-gray-300 transition duration-300">GAX</Link>
-              </li>
-              <li>
                 <Link to="/training" className="hover:text-gray-300 transition duration-300">Training</Link>
               </li>
               <li>

@@ -14,7 +14,7 @@
     font-size: 24px; /* Font size */
     color: white; /* Text color */
     position: absolute; /* Position absolute for animation */
-    animation: scroll 25s linear infinite; /* Animation for scrolling */
+    animation: scroll 65s linear infinite; /* Animation for scrolling */
 }
 
 .divider {

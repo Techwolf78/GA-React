@@ -5,7 +5,7 @@ const SuccessfulDrives = () => {
     <div className="relative p-5 bg-cover bg-center" style={{ backgroundImage: "url('/drive.avif')" }}>
       <div className="relative z-10">
         {/* Main Heading */}
-        <h1 className="text-3xl font-bold text-white mb-8 text-center underline">OUR SUCCESSFUL DRIVES</h1>
+        <h1 className="text-3xl font-bold mb-8 text-center underline text-cyan-400 ">OUR SUCCESSFUL DRIVES</h1>
 
         <div className="flex justify-between">
           {/* Left Side */}

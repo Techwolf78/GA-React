@@ -3,13 +3,18 @@ import { FaChalkboardTeacher, FaTools } from "react-icons/fa"; // Import new ico
 
 const HeroTraining = () => {
   return (
-    <div className="flex h-screen bg-gradient-to-r from-purple-400 to-red-100">
+    <div className="flex flex-col md:flex-row h-screen bg-gradient-to-r from-purple-400 to-red-100">
       {/* Left Section: Heading, Paragraph, and Button */}
-      <div className="flex-1 flex flex-col items-center justify-center p-8">
-        <div className="text-center">
+      <div className="flex-1 flex flex-col items-center justify-center p-8 order-2 md:order-1">
+        <div className="text-center md:text-left">
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-4 text-white">
             Better <span className="text-purple-800">Learning Future</span> Starts With Us
           </h1>
+          <img
+            src="/Hero-bg.png"
+            alt="Placeholder"
+            className="w-full max-w-[500px] mx-auto mb-8 border-0 shadow-none md:hidden" // Hide image on larger screens
+          />
           <p className="text-lg md:text-xl lg:text-2xl text-gray-100 mb-8">
             It is a long established fact that reader will be distracted readable content of a page when.
           </p>
@@ -37,22 +42,22 @@ const HeroTraining = () => {
         </div>
       </div>
       {/* Right Section: Image and Floating Stat Boxes */}
-      <div className="relative flex-1 flex items-center justify-center p-8">
+      <div className="relative flex-1 flex items-center justify-center p-8 order-1 md:order-2">
+        {/* For larger screens, show the image in the right section */}
         <img
           src="/Hero-bg.png"
           alt="Placeholder"
-          className="max-w-full h-auto border-0 shadow-none" // Ensure no border or shadow
+          className="hidden md:block w-full max-w-[500px] h-auto border-0 shadow-none" // Show image on larger screens
         />
-        {/* Expert Trainers Box */}
-        <div className="absolute bottom-100 right-10 bg-white p-4 mb-10 rounded-3xl shadow-lg flex items-center space-x-4">
+        {/* Stat boxes */}
+        <div className="absolute bottom-10 right-10 bg-white p-4 rounded-3xl shadow-lg flex items-center space-x-4 hidden md:flex">
           <FaChalkboardTeacher className="text-red-400 text-3xl" />
           <div className="text-center">
             <h3 className="text-xl font-bold text-gray-800">Expert Trainers</h3>
             <span className="text-gray-600 block">Learn from industry experts</span>
           </div>
         </div>
-        {/* Customized Trainings Box */}
-        <div className="absolute top-2/3 left-1/4 transform -translate-y-1/2 -translate-x-1/2 bg-white p-4 rounded-3xl shadow-lg flex items-center space-x-4">
+        <div className="absolute top-1/2 left-1/4 transform -translate-y-1/2 -translate-x-1/2 bg-white p-4 rounded-3xl shadow-lg flex items-center space-x-4 hidden md:flex">
           <FaTools className="text-green-500 text-3xl" />
           <div className="text-center">
             <h3 className="text-xl font-bold text-gray-800">Customized Trainings</h3>

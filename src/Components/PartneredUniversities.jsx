@@ -1,45 +1,10 @@
 import React from 'react';
-import { Bar } from 'react-chartjs-2';
-import 'chart.js/auto';
+import CountUp from 'react-countup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMale, faFemale } from '@fortawesome/free-solid-svg-icons';
 import '../assets/CSS/PartneredUniversities.css';
 
 const PartneredUniversities = () => {
-  // Data for the bar chart
-  const data = {
-    labels: ['Male', 'Female'],
-    datasets: [
-      {
-        label: 'Student Gender Distribution',
-        data: [55, 45],
-        backgroundColor: ['#4A90E2', '#E94E77'],
-        borderColor: ['#4A90E2', '#E94E77'],
-        borderWidth: 1,
-      },
-    ],
-  };
-
-  const options = {
-    scales: {
-      x: {
-        beginAtZero: true,
-        grid: {
-          display: false,
-        },
-      },
-      y: {
-        beginAtZero: true,
-        grid: {
-          display: false,
-        },
-      },
-    },
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-  };
-
   const domains = [
     { name: 'MBA/PGDM', count: 8000 },
     { name: 'BE/BTECH', count: 15000 },
@@ -51,48 +16,67 @@ const PartneredUniversities = () => {
   return (
     <div className="relative p-6 bg-gradient-to-b from-gray-50 to-[#dac9ff]">
       {/* Heading */}
-      <h1 className="text-5xl font-bold text-center mb-4 mx-auto max-w-full">
+      <h1 className="text-3xl md:text-5xl font-bold text-center mb-4 mx-auto max-w-full underline text-purple-700">
         Partnered with 60+ Colleges/Universities
       </h1>
       {/* Sub Heading with Lines */}
       <div className="text-center mb-12 relative">
-        <h2 className="text-3xl font-semibold text-blue-500 mb-4">
+        <p className="text-xl md:text-3xl font-semibold text-blue-500 mb-4">
           PAN INDIA
-        </h2>
+        </p>
         {/* Connecting Line */}
-        <div className="absolute inset-x-0 flex justify-center top-16">
-          <div className="relative w-full">
-            <div className="absolute inset-x-1/2 transform -translate-x-1/2 top-0">
-              <div className="w-1 h-16 bg-gradient-to-b from-blue-400 to-purple-600 animate-line"></div>
-            </div>
-            <div className="absolute inset-x-0 top-16 flex justify-between w-full px-4">
-              {domains.map((domain) => (
-                <div key={domain.name} className="w-1/5 h-1 bg-gradient-to-r from-red-400 to-yellow-500"></div>
-              ))}
+        <div className="relative w-full">
+          <div className="absolute inset-x-0 flex justify-center top-1/2 transform -translate-y-1/2">
+            <div className="relative w-full">
+              <div className="absolute inset-x-1/2 transform -translate-x-1/2">
+                <div className="w-1 h-12 md:h-16 bg-gradient-to-b from-blue-400 to-purple-600 animate-line"></div>
+              </div>
+              <div className="absolute inset-x-0 flex justify-between w-full px-2 md:px-4 top-16">
+                {domains.map((domain) => (
+                  <div
+                    key={domain.name}
+                    className="w-1/5 h-1 bg-gradient-to-r from-red-400 to-yellow-500"
+                  ></div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
       {/* Information Section */}
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-5 mb-6">
+      <div className="grid grid-cols-2 gap-4 md:gap-6 md:grid-cols-5 mb-6">
         {domains.map((domain) => (
           <div
             key={domain.name}
             className="bg-white border border-gray-300 rounded-lg p-4 shadow-md text-center relative"
           >
-            <p className="text-lg font-semibold">{domain.name}</p>
-            <p className="text-sm text-gray-500 mt-2">+{domain.count} students</p>
+            <p className="text-base md:text-lg font-semibold mb-2">{domain.name}</p>
+            <p className="text-lg md:text-xl font-bold">
+              <CountUp
+                start={0}
+                end={domain.count}
+                duration={2.5}
+                separator=","
+                className="inline"
+              />
+              <span className="text-lg md:text-xl font-bold">+ students</span>
+            </p>
           </div>
         ))}
       </div>
-      {/* Bar Chart Visualization */}
+      {/* Gender Distribution Section */}
       <div className="text-center mb-6">
-        <h3 className="text-2xl font-semibold text-gray-700 mb-4">
+        <h3 className="text-xl md:text-2xl font-semibold text-gray-700 mb-4">
           Gender Distribution of Students
         </h3>
-        <div className="flex justify-center">
-          <div className="w-64 h-auto">
-            <Bar data={data} options={options} />
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8">
+          <div className="flex items-center">
+            <FontAwesomeIcon icon={faMale} size="2x" className="text-blue-600 mr-2 md:mr-3" />
+            <span className="text-lg md:text-xl font-bold">55% MALE</span>
+          </div>
+          <div className="flex items-center">
+            <FontAwesomeIcon icon={faFemale} size="2x" className="text-pink-600 mr-2 md:mr-3" />
+            <span className="text-lg md:text-xl font-bold">45% FEMALE</span>
           </div>
         </div>
       </div>

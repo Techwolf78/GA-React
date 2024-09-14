@@ -1,18 +1,14 @@
-import React from "react";
+import React from 'react';
+import CollectionSection from './CollectionSection';
+import ExploreSection from './ExploreSection';
+import VideoSection from './VideoSection';
 
-const brandPositioning = () => {
-  return (
-    <div>
+const BrandPositioning = () => (
+  <div>
+    <CollectionSection />
+    <ExploreSection />
+    <VideoSection />
+  </div>
+);
 
-      <div className="p-8">
-        <h1 className="text-4xl font-bold mb-4">Brand Positioning</h1>
-        <p className="text-xl">
-          Detailed information about the Brand Positioning goes here.
-        </p>
-      </div>
-
-    </div>
-  );
-};
-
-export default brandPositioning;
+export default BrandPositioning;
