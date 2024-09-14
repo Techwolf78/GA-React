@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function FacultyModule() {
   return (
@@ -58,12 +59,12 @@ function FacultyModule() {
             <p className="text-lg sm:text-xl mb-8">
               Embark on a transformative journey towards academic excellence. Empower your faculty, inspire your students, and lead your institution to greater heights with us.
             </p>
-            <a 
-              href="/contact" 
+            <Link 
+              to="/contact" 
               className="inline-block bg-white text-purple-600 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-100 transition duration-300 hover:underline"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </main>

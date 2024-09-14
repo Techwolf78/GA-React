@@ -19,7 +19,7 @@ const Home = () => {
       <div id="home" className="hero-section">
         <div className="hero-circles">
           <ul className="circles">
-            {[...Array(10,9)].map((_, i) => (
+            {[...Array(10)].map((_, i) => (
               <li key={i} className={i === 0 ? 'big-circle' : ''}>
                 {i === 0 && <div className="circle-content">GOALS</div>}
               </li>
