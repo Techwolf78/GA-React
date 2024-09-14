@@ -173,7 +173,6 @@
   color: white; /* Default text color to ensure readability */
 }
 
-
 /* Hero Section Styles */
 .hero-section {
   position: relative;
@@ -197,15 +196,30 @@
   position: absolute;
   display: block;
   list-style: none;
-  width: 20px;
-  height: 20px;
   background: rgba(195, 158, 255, 0.993);
   animation: animate 25s linear infinite;
   bottom: -150px;
 }
 
-/* (Rest of the circles styles remain the same) */
+/* Big Circle Specific Styles */
+.hero-circles li.big-circle {
+  width: 150px; /* Adjust size as needed */
+  height: 150px; /* Adjust size as needed */
+}
 
+.hero-circles .circle-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Adjust text color */
+  text-align: center;
+  font-size: 1rem; /* Adjust text size */
+  font-weight: bold;
+  padding: 10px; /* Adjust padding */
+}
+
+/* Example: Styling for specific circles */
 .circles li:nth-child(1) {
   left: 25%;
   width: 80px;
@@ -315,32 +329,12 @@
   color: #666;
   max-width: 800px;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
-.about-us .section-content {
-  position: relative;
-}
-
-.about-us .fade-in {
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Navbar Styles for smooth appearance */
-.navbar-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 20;
+.about-us img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

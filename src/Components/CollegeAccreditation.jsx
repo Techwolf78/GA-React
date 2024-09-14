@@ -66,7 +66,7 @@ function CollegeAccreditation() {
             className="w-full h-48 object-cover rounded-lg shadow-md"
           />
           <div className="mt-4 text-center text-xl font-bold">
-            <h3 className="text-lg mb-2">NMBA Accredited</h3>
+            <h3 className="text-lg mb-2">MBA Accredited</h3>
             <div>
               <CountUp start={0} end={7} duration={2} /> <span className="text-lg">colleges</span>
             </div>
