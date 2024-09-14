@@ -22,7 +22,7 @@ const MissionVisionSection = () => {
           MISSION
         </h3>
         <p className="text-lg text-black text-center">
-          To ensure that every student has an offer letter in their hands and are prepared to succeed in their chosen fields.
+          To ensure that every student has an <br />offer letter in their hands and are prepared to <br /> succeed in their chosen fields.
         </p>
       </div>
 
