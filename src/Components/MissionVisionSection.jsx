@@ -17,7 +17,7 @@ const MissionVisionSection = () => {
       </h1>
 
       {/* Bottom Left Section - Mission */}
-      <div className="absolute bottom-10 left-0 w-1/2 h-1/5 p-4">
+      <div className="absolute bottom-20 left-0 w-1/2 h-1/5 p-4">
         <h3 className="text-2xl font-semibold text-black text-center mb-2">
           MISSION
         </h3>
@@ -27,12 +27,12 @@ const MissionVisionSection = () => {
       </div>
 
       {/* Bottom Right Section - Vision */}
-      <div className="absolute bottom-10 right-0 w-1/2 h-1/5 p-4">
+      <div className="absolute bottom-20 right-0 w-1/2 h-1/5 p-4">
         <h3 className="text-2xl font-semibold text-black text-center mb-2">
           VISION
         </h3>
         <p className="text-lg text-black text-center">
-          To bridge the gap between industry and academia, ensuring a comprehensive understanding of requirements on both sides, and empowering students to be industry-ready from multiple perspectives.
+          To bridge the gap between industry and <br /> academia, ensuring a comprehensive understanding <br /> of requirements on both sides, and empowering students <br /> to be industry-ready from multiple perspectives.
         </p>
       </div>
     </section>

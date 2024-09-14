@@ -111,8 +111,8 @@ const Blog = () => {
   return (
     <section className="py-20 px-4 md:px-8 lg:px-12 text-center bg-gray-100">
       <div className="container mx-auto">
-        <p className="text-gray-900 mb-12 text-3xl md:text-4xl font-bold underline">
-          Latest Blog Posts
+        <p className="text-gray-900 mb-12 text-4xl md:text-4xl font-bold ">
+          LATEST BLOG POSTS
         </p>
         <div className="flex flex-wrap -mx-4">
           {blogPosts.map((post) => (

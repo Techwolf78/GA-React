@@ -16,12 +16,12 @@ const PartneredUniversities = () => {
   return (
     <div className="relative p-6 bg-gradient-to-b from-gray-50 to-[#dac9ff]">
       {/* Heading */}
-      <h1 className="text-3xl md:text-5xl font-bold text-center mb-4 mx-auto max-w-full underline text-purple-700">
+      <h1 className="text-3xl md:text-5xl font-bold text-center mb-4 mx-auto max-w-full underline text-black">
         Partnered with 60+ Colleges/Universities
       </h1>
       {/* Sub Heading with Lines */}
       <div className="text-center mb-12 relative">
-        <p className="text-xl md:text-3xl font-semibold text-blue-500 mb-4">
+        <p className="text-xl md:text-3xl font-semibold text-purple-700 mb-4">
           PAN INDIA
         </p>
         {/* Connecting Line */}
@@ -48,19 +48,23 @@ const PartneredUniversities = () => {
         {domains.map((domain) => (
           <div
             key={domain.name}
-            className="bg-white border border-gray-300 rounded-lg p-4 shadow-md text-center relative"
+            className="bg-white border border-gray-300 rounded-lg p-4 shadow-md text-center relative card-info"
           >
-            <p className="text-base md:text-lg font-semibold mb-2">{domain.name}</p>
-            <p className="text-lg md:text-xl font-bold">
-              <CountUp
-                start={0}
-                end={domain.count}
-                duration={2.5}
-                separator=","
-                className="inline"
-              />
-              <span className="text-lg md:text-xl font-bold">+ students</span>
-            </p>
+            <div className="text-base md:text-lg font-semibold mb-2">{domain.name}</div>
+            <div className="text-lg md:text-xl font-bold">
+              <span className="count-up-text">
+                <CountUp
+                  start={0}
+                  end={domain.count}
+                  duration={2.5}
+                  separator=","
+                  className="inline"
+                />
+                {' '}
+                +
+              </span>
+            </div>
+            <div className="text-lg md:text-xl ">Students</div>
           </div>
         ))}
       </div>

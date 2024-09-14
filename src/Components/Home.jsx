@@ -58,8 +58,8 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-center bg-yellow-300 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <h2 className="text-xl font-bold text-black mb-2">Have any questions?</h2>
+                <div className="flex flex-col items-center bg-yellow-500 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <p className="text-xl font-bold text-gray-700 mb-2">Have any questions?</p>
                   <Link
                     to="/contact"
                     className="cta-button bg-black text-white font-bold py-2 px-4 rounded-lg shadow-lg flex items-center space-x-2 hover:bg-gradient-to-b from-purple-500 to-purple-600 transition-all duration-300"
@@ -92,10 +92,10 @@ const Home = () => {
       <div id="stats" className="stats-section">
         <h3 className="text-4xl font-bold text-black mb-4">OUR IMPACT</h3>
         <div className="stats-wrapper fade-in-stats">
-          {[{ icon: 'user-graduate', color: '#3182ce', value: '60,000+', label: 'Students Trained' },
-            { icon: 'calendar-alt', color: '#3182ce', value: '65,000+', label: 'Training Hours' },
-            { icon: 'building', color: '#3182ce', value: '450+', label: 'Corporate Partners' },
-            { icon: 'university', color: '#3182ce', value: '55+', label: 'Educational Partners' }].map((stat, idx) => (
+          {[{ icon: 'user-graduate', color: '#783cf0', value: '60,000+', label: 'Students Trained' },
+            { icon: 'calendar-alt', color: '#783cf0', value: '65,000+', label: 'Training Hours' },
+            { icon: 'building', color: '#783cf0', value: '450+', label: 'Corporate Partners' },
+            { icon: 'university', color: '#783cf0', value: '55+', label: 'Educational Partners' }].map((stat, idx) => (
               <div key={idx} className="stat-card">
                 <i className={`fas fa-${stat.icon}`} style={{ color: stat.color, fontSize: '3em' }}></i>
                 <h3 style={{ fontWeight: 'bold' }}>{stat.value}</h3>

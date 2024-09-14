@@ -1,3 +1,21 @@
+/* Custom styling for card info */
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-info .text-lg {
+  margin: 2px 0; /* Adjust spacing between lines as needed */
+}
+
+/* Custom font size for CountUp component */
+.count-up-text {
+  font-size: 2rem; /* Adjust the size as needed */
+  font-weight: bold;
+}
+
 /* Animation for the connecting line */
 @keyframes animate-line {
   0% {

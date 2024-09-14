@@ -52,33 +52,64 @@ const StorySection = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
+  // Separate odd and even items
+  const oddItems = storyItems.filter(item => item.id % 2 !== 0);
+  const evenItems = storyItems.filter(item => item.id % 2 === 0);
+
   return (
     <section
       ref={sectionRef}
-      className="relative  flex flex-col items-center justify-center bg-[#e9e5ff] text-center px-4 overflow-hidden"
+      className="relative flex flex-col items-center justify-center bg-[#e9e5ff] text-center px-4 overflow-hidden"
     >
       {/* Heading */}
       <h1 className="text-4xl md:text-4xl font-bold mb-5 relative z-10 mt-4">BEGINNING OF REVOLUTION</h1>
 
       {/* Storytelling Items */}
-      <div className="relative z-10 flex flex-col items-start max-w-4xl mx-auto">
-        {storyItems.map((item, index) => (
-          <motion.div
-            key={item.id}
-            custom={index}
-            initial="hidden"
-            animate={controls}
-            variants={itemVariants}
-            className="flex items-center mb-4 w-full px-2"
-          >
-            {/* Sleek Dash */}
-            <span className="text-lg font-bold text-gray-800 mr-4">-</span>
-            {/* Story text */}
-            <p className="text-base md:text-lg font-semibold text-gray-800">
-              {item.text}
-            </p>
-          </motion.div>
-        ))}
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto items-start">
+        {/* Odd ID Items */}
+        <div className="col-span-1 flex flex-col items-start">
+          {oddItems.map((item, index) => (
+            <motion.div
+              key={item.id}
+              custom={index}
+              initial="hidden"
+              animate={controls}
+              variants={itemVariants}
+              className="flex items-center mb-4 w-full px-2"
+            >
+              {/* Sleek Dash */}
+              <span className="text-lg font-bold text-gray-800 mr-4">-</span>
+              {/* Story text */}
+              <p className="text-base md:text-lg font-semibold text-gray-800">
+                {item.text}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Vertical Line */}
+        <div className="hidden md:block border-l-2 border-gray-400 h-full mx-auto"></div>
+
+        {/* Even ID Items */}
+        <div className="col-span-1 flex flex-col items-end">
+          {evenItems.map((item, index) => (
+            <motion.div
+              key={item.id}
+              custom={index}
+              initial="hidden"
+              animate={controls}
+              variants={itemVariants}
+              className="flex items-center mb-4 w-full px-2"
+            >
+              {/* Sleek Dash */}
+              <span className="text-lg font-bold text-gray-800 mr-4">-</span>
+              {/* Story text */}
+              <p className="text-base md:text-lg font-semibold text-gray-800 text-left">
+                {item.text}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
