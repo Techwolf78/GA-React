@@ -31,7 +31,7 @@ const Home = () => {
             </div>
             <div className="flex justify-center items-center mt-12 space-x-4">
               {/* Cards */}
-              <div className="bg-blue-200 rounded-lg h-[260px] w-[260px] flex flex-col items-center justify-center relative hover:shadow-2xl transition-shadow duration-300">
+              <div className="bg-purple-700 rounded-lg h-[260px] w-[260px] flex flex-col items-center justify-center relative hover:shadow-2xl transition-shadow duration-300">
                 <img src={placementImg} alt="Learning And Development" className="w-full h-full object-cover rounded-lg" />
                 <div className="card-text">
                   
@@ -43,16 +43,16 @@ const Home = () => {
               </div>
 
               <div className="flex flex-col items-center space-y-4">
-                <div className="bg-blue-200 rounded-lg h-[260px] w-[260px] flex flex-col items-center justify-center relative hover:shadow-2xl transition-shadow duration-300">
-                  <img src={learningAndDevelopmentImg} alt="Placement" className="w-full h-full object-cover rounded-lg" />
-                  <div className="card-text">
-                   
-                    <a href="/training" className="text-blue-700 font-bold flex items-center space-x-2 hover:text-purple-200">
-                      <span>Know More</span>
-                      <i className="fas fa-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
+              <div className="bg-blue-200 rounded-lg h-[260px] w-[260px] flex flex-col items-center justify-center relative hover:shadow-2xl transition-shadow duration-300 training-card">
+  <img src={learningAndDevelopmentImg} alt="Training" className="w-full h-full object-cover rounded-lg" />
+  <div className="card-text">
+    <a href="/training" className="text-blue-700 font-bold flex items-center space-x-2 hover:text-purple-200">
+      <span>Know More</span>
+      <i className="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</div>
+
                 <div className="flex flex-col items-center bg-yellow-300 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <h2 className="text-xl font-bold text-black mb-2">Have any questions?</h2>
                   <a

@@ -145,7 +145,7 @@
 }
 
 .card-text a {
-  color: #2acbe4; /* Use purple-500 color for the link */
+  color: #a768dc; /* Use purple-500 color for the link */
   font-weight: bold;
   text-decoration: none;
   background-color: transparent; /* Keep the link background transparent */
@@ -157,8 +157,20 @@
 }
 
 .card-text a:hover {
-  color: #4adbf5; /* Use purple-700 color for hover state */
+  color: #6f41b5; /* Use purple-700 color for hover state */
   background-color: transparent; /* Ensure background stays transparent on hover */
+}
+
+/* Position the card-text in the bottom of the top half for the training card */
+.training-card .card-text {
+  position: absolute;
+  bottom: 60%; /* Move it a bit higher from the bottom of the top half */
+  left: 50%;
+  transform: translate(-50%, 55%); /* Adjust vertical alignment */
+  width: 90%;
+  text-align: center;
+  background-color: transparent; /* Ensure container is fully transparent */
+  color: white; /* Default text color to ensure readability */
 }
 
 
