@@ -86,16 +86,16 @@ const Home = () => {
         <MissionVisionSection />
       </div>
       <div id="stats" className="stats-section">
-        <h3 className="text-3xl font-bold text-black mb-4 underline">Our Impact</h3>
+        <h3 className="text-4xl font-bold text-black mb-4">OUR IMPACT</h3>
         <div className="stats-wrapper fade-in-stats">
-          {[{ icon: 'user-graduate', color: '#6c63ff', value: '60,000+', label: 'Students Trained' },
-            { icon: 'calendar-alt', color: '#4caf50', value: '65,000+', label: 'Training Hours' },
-            { icon: 'building', color: '#ff6f61', value: '450+', label: 'Corporate Partners' },
-            { icon: 'university', color: '#ffeb3b', value: '55+', label: 'Educational Partners' }].map((stat, idx) => (
+          {[{ icon: 'user-graduate', color: '#3182ce', value: '60,000+', label: 'Students Trained' },
+            { icon: 'calendar-alt', color: '#3182ce', value: '65,000+', label: 'Training Hours' },
+            { icon: 'building', color: '#3182ce', value: '450+', label: 'Corporate Partners' },
+            { icon: 'university', color: '#3182ce', value: '55+', label: 'Educational Partners' }].map((stat, idx) => (
               <div key={idx} className="stat-card">
                 <i className={`fas fa-${stat.icon}`} style={{ color: stat.color, fontSize: '3em' }}></i>
                 <h3 style={{ fontWeight: 'bold' }}>{stat.value}</h3>
-                <p style={{ fontWeight: 'bold', fontSize: '1.6rem' }}>{stat.label}</p>
+                <p style={{fontSize: '1.4rem' }}>{stat.label}</p>
               </div>
             ))}
         </div>

@@ -24,13 +24,13 @@ const PartneredCollege = () => {
   return (
     <div className="bg-gradient-to-b from-white via-purple-50 to-purple-100 py-16 min-h-screen">
       <div className="container mx-auto px-4">
-        <p className="text-5xl font-bold mb-12 text-center text-black">Few Partnered Colleges</p>
+        <p className="text-4xl font-bold mb-10 text-center text-black">FEW PARTNERED COLLEGES</p>
         <div className="relative overflow-hidden">
-          {Array.from({ length: Math.ceil(colleges.length / 4) }).map((_, rowIndex) => (
+          {Array.from({ length: Math.ceil(colleges.length / 6) }).map((_, rowIndex) => (
             <div key={rowIndex} className="mb-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4">
-                {colleges.slice(rowIndex * 4, rowIndex * 4 + 4).map((college, index) => (
-                  <div key={index} className="flex flex-col rounded-3xl overflow-hidden ">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-y-8 gap-x-4">
+                {colleges.slice(rowIndex * 6, rowIndex * 6 + 6).map((college, index) => (
+                  <div key={index} className="flex flex-col rounded-3xl overflow-hidden">
                     <img 
                       src={college.imageUrl} 
                       alt={college.name} 
@@ -38,11 +38,11 @@ const PartneredCollege = () => {
                     />
                     <div className="flex flex-col flex-grow p-4 bg-transparent">
                       <div className="flex-grow">
-                        <h3 className="text-xl font-bold mb-1 text-center text-black">{college.name}</h3>
+                        {/* <h3 className="text-xl font-bold mb-1 text-center text-black">{college.name}</h3> */}
                       </div>
-                      <div className="text-gray-700 text-lg flex items-center justify-center space-x-2">
+                      <div style={{ fontSize: '0.9rem' }} className="text-gray-700 flex items-center justify-center space-x-2  ">
                         <MapPinIcon className="w-5 h-5 text-gray-600" />
-                        <span>{college.location}</span>
+                        <span className="">{college.location}</span>
                       </div>
                     </div>
                   </div>

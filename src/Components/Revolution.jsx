@@ -58,15 +58,7 @@ const StorySection = () => {
       className="relative  flex flex-col items-center justify-center bg-[#e9e5ff] text-center px-4 overflow-hidden"
     >
       {/* Heading */}
-      <motion.p
-        className="text-4xl md:text-4xl font-bold mb-5 relative z-10 mt-4" // Updated font size class
-        variants={headingVariants}
-        initial="hidden"
-        animate={controls}
-      >
-        Beginning of Revolution
-        <span className="absolute left-0 bottom-0 w-full h-1 bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 transform translate-y-1 rounded-full" />
-      </motion.p>
+      <h1 className="text-4xl md:text-4xl font-bold mb-5 relative z-10 mt-4">BEGINNING OF REVOLUTION</h1>
 
       {/* Storytelling Items */}
       <div className="relative z-10 flex flex-col items-start max-w-4xl mx-auto">
