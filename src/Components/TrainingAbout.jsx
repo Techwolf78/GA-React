@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import WebFont from "webfontloader";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import "../assets/CSS/TrainingAbout.css"; // Import specific styles for About Us
+import { Link } from "react-router-dom";
+import "../assets/CSS/TrainingAbout.css";
 
 const TrainingAbout = () => {
   useEffect(() => {
@@ -17,16 +17,13 @@ const TrainingAbout = () => {
       <div className="about-content">
         <div className="about-left">
           <p className="about-head">BRIDGING ALL GAPS</p>
-          <h1
-            className="about-text"
-            style={{ fontFamily: "Varela, sans-serif" }}
-          >
+          <h1 className="about-text" style={{ fontFamily: "Varela, sans-serif" }}>
             Our 360<sup>°</sup> Approach to Skill Development
           </h1>
         </div>
         <div className="about-right">
           <p>
-            Gryphon specializes in tailored training solutions across three key sectors: educational institutions, corporates and faculty development. We bridge the gap between academia and industry, equipping students with practical skills, while our corporate programs enhance employee capabilities and drive organizational growth. Our faculty development initiatives empower educators with advanced methodologies and industry insights. With a dynamic, industry-aligned approach, we craft each program to address unique client needs, catalyzing transformation and fostering excellence in diverse learning environments.
+            Gryphon specializes in tailored training solutions across three key sectors: educational institutions, corporates, and faculty development. We bridge the gap between academia and industry, equipping students with practical skills, while our corporate programs enhance employee capabilities and drive organizational growth. Our faculty development initiatives empower educators with advanced methodologies and industry insights. With a dynamic, industry-aligned approach, we craft each program to address unique client needs, catalyzing transformation and fostering excellence in diverse learning environments.
           </p>
           <Link to="/triSectorTraining" className="more-about-link">
             OUR TRI-SECTOR TRAINING APPROACH
@@ -34,12 +31,11 @@ const TrainingAbout = () => {
         </div>
       </div>
 
-      {/* Wrap feature cards inside the "features" div */}
       <div className="features">
         <div className="feature-card">
           <div className="feature-card-header">
             <div className="feature-card-icon">
-              <i className="fas fa-graduation-cap"></i> {/* Updated icon */}
+              <i className="fas fa-graduation-cap"></i>
             </div>
             <h4 className="feature-header-link">College Trainings</h4>
           </div>
@@ -54,7 +50,7 @@ const TrainingAbout = () => {
         <div className="feature-card">
           <div className="feature-card-header">
             <div className="feature-card-icon">
-              <i className="fas fa-chalkboard-teacher"></i> {/* Updated icon */}
+              <i className="fas fa-chalkboard-teacher"></i>
             </div>
             <h4 className="feature-header-link">Faculty Programme</h4>
           </div>
@@ -69,7 +65,7 @@ const TrainingAbout = () => {
         <div className="feature-card">
           <div className="feature-card-header">
             <div className="feature-card-icon">
-              <i className="fas fa-briefcase"></i> {/* Updated icon */}
+              <i className="fas fa-briefcase"></i>
             </div>
             <h4 className="feature-header-link">Corporate Trainings</h4>
           </div>

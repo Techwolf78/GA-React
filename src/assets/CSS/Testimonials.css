@@ -13,7 +13,7 @@
 }
 
 .testimonial-item {
-  background: #ffffff;
+  background: #091327;
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,15 +66,10 @@
 
 /* Additional styles */
 section {
-  background: #e9e5ff;
+  background: #091327;
 }
 
-h2 {
-  background: linear-gradient(90deg, #6c63ff, #a45d8c); /* Gradient text */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline;
-}
+
 
 /* Custom CSS */
 .underline-custom {

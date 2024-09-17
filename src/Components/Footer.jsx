@@ -6,81 +6,92 @@ import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-sv
 
 const Footer = () => {
   return (
-    <footer className="bg-[#7a3be7] text-white py-6 font-sans">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
-          {/* Logo Section */}
-          <div className="flex justify-center lg:justify-start lg:w-1/4 mb-6 lg:mb-0">
-            <img
-              src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png"
-              alt="Gryphon Academy Logo"
-              className="w-full max-w-xs"
-            />
-          </div>
+    <footer className="bg-black text-white py-8 px-4">
+      <div className="container mx-auto flex flex-col md:flex-row md:justify-between">
+        {/* Logo Section */}
+        <div className="flex flex-col items-center md:items-start mb-8 md:mb-0 md:w-1/4">
+          <img
+            src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png"
+            alt="Gryphon Academy Logo"
+            className="w-48 md:w-64"
+          />
+        </div>
 
-          {/* Useful Links Section */}
-          <div className="lg:w-1/4 mb-6 lg:mb-0 text-center lg:text-left">
-            <span className="block text-xl font-bold mb-4">Useful Links</span>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/contact" className="hover:text-gray-300 transition duration-300">Contact Us</Link>
-              </li>
-              <li>
-                <Link to="/training" className="hover:text-gray-300 transition duration-300">Training</Link>
-              </li>
-              <li>
-                <Link to="/blogs" className="hover:text-gray-300 transition duration-300">Blogs</Link>
-              </li>
-            </ul>
-          </div>
+        {/* Useful Links Section */}
+        <div className="mb-8 md:mb-0 md:w-1/4">
+          <h2 className="text-xl font-bold mb-4 text-center md:text-left">Useful Links</h2>
+          <ul className="flex flex-col items-center md:items-start space-y-2">
+            <li>
+              <Link to="/contact" className="hover:text-gray-300 transition duration-300">Contact Us</Link>
+            </li>
+            <li>
+              <Link to="/training" className="hover:text-gray-300 transition duration-300">Training</Link>
+            </li>
+            <li>
+              <Link to="/placement" className="hover:text-gray-300 transition duration-300">Placement</Link>
+            </li>
+            <li>
+              <Link to="/blogs" className="hover:text-gray-300 transition duration-300">Blogs</Link>
+            </li>
+          </ul>
+        </div>
 
-          {/* Follow Us Section */}
-          <div className="lg:w-1/4 mb-6 lg:mb-0 text-center lg:text-left">
-            <span className="block text-xl font-bold mb-4">Follow Us</span>
-            <div className="flex justify-center lg:justify-start space-x-4">
-              {['facebook', 'instagram', 'linkedin'].map((platform) => (
-                <a
-                  key={platform}
-                  href={`https://www.${platform}.com`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-2xl"
-                >
-                  <FontAwesomeIcon
-                    icon={platform === 'facebook' ? faFacebook : platform === 'instagram' ? faInstagram : faLinkedin}
-                    className={`text-${platform === 'facebook' ? '[#2602ed]' : platform === 'instagram' ? '[#e1306c]' : '[#0077b5]'}`}
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Us Section */}
-          <div className="lg:w-1/4 text-center lg:text-left lg:mt-0">
-            <span className="block text-xl font-bold mb-4">Contact Us</span>
-            <ul className="space-y-2">
-              <li className="flex items-center space-x-2">
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="text-xl" />
-                <p className="text-sm">
-                  <a href="https://maps.app.goo.gl/LbkaqWULoGY2k7bq8" className="hover:underline">9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Bangalore Highway Baner, Pune Maharashtra - 411045</a>
-                </p>
-              </li>
-              <li className="flex items-center space-x-2">
-                <FontAwesomeIcon icon={faPhoneAlt} className="text-xl" />
-                <p className="text-sm"><a href="tel:+91 89836 14509" className="hover:underline">+91 89836 14509 / 8983339099</a></p>
-              </li>
-              <li className="flex items-center space-x-2">
-                <FontAwesomeIcon icon={faEnvelope} className="text-xl" />
-                <p className="text-sm"><a href="mailto:gryphonx@gryphonacademy.co.in" className="hover:underline">gryphonx@gryphonacademy.co.in</a></p>
-              </li>
-            </ul>
+        {/* Follow Us Section */}
+        <div className="mb-8 md:mb-0 md:w-1/4">
+          <h2 className="text-xl font-bold mb-4 text-center md:text-left">Follow Us</h2>
+          <div className="flex justify-center md:justify-start space-x-4">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl text-[#4267B2] hover:text-[#365899] transition duration-300"
+            >
+              <FontAwesomeIcon icon={faFacebook} />
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl text-[#E1306C] hover:text-[#C13584] transition duration-300"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl text-[#0077B5] hover:text-[#005582] transition duration-300"
+            >
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
           </div>
         </div>
 
-        {/* Footer Bottom */}
-        <div className="text-center mt-4 text-gray-300">
-          <p>&copy; {new Date().getFullYear()} Gryphon Academy Pvt. Ltd. All rights reserved.</p>
+        {/* Contact Us Section */}
+        <div className="md:w-1/4">
+          <h2 className="text-xl font-bold mb-4 text-center md:text-left">Contact Us</h2>
+          <ul className="space-y-2">
+            <li className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faMapMarkerAlt} className="text-xl text-custom-yellow" />
+              <p className="text-sm">
+                <a href="https://maps.app.goo.gl/LbkaqWULoGY2k7bq8" className="hover:underline">9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Bangalore Highway Baner, Pune Maharashtra - 411045</a>
+              </p>
+            </li>
+            <li className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faPhoneAlt} className="text-xl text-custom-yellow" />
+              <p className="text-sm"><a href="tel:+91 89836 14509" className="hover:underline">+91 89836 14509 / 8983339099</a></p>
+            </li>
+            <li className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faEnvelope} className="text-xl text-custom-yellow" />
+              <p className="text-sm"><a href="mailto:gryphonx@gryphonacademy.co.in" className="hover:underline">gryphonx@gryphonacademy.co.in</a></p>
+            </li>
+          </ul>
         </div>
+      </div>
+
+      {/* Footer Bottom */}
+      <div className="text-center mt-8 text-gray-300">
+        <p>Copyright &copy; {new Date().getFullYear()} Gryphon Academy Pvt. Ltd.</p>
       </div>
     </footer>
   );

@@ -1,340 +1,481 @@
-/* Custom hover and transition effects */
-/* Fading effect for text */
-.fade-in-text {
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.text-shadow {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-}
-
-/* Stats Section Styles */
-.stats-section {
-  background: linear-gradient(180deg, #f9f9f9, #dac9ff);
-  padding: 1rem 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.stats-section h3 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #000000;
-  margin-bottom: 1rem;
-}
-
-.stats-section p {
-  font-size: 1.125rem;
-  color: #000000;
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 2.1rem;
-}
-
-.stats-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.stat-card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  text-align: center;
-  flex: 1 1 200px;
-  max-width: 300px;
-}
-
-.stat-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.stat-card i {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #6c63ff;
-  transition: color 0.3s ease;
-}
-
-.stat-card:hover i {
-  color: #3f3d56;
-}
-
-.stat-card h3 {
-  font-size: 2rem;
-  color: #000000;
+/* General Reset */
+body, html {
   margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #091327;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-.stat-card p {
-  font-size: 1rem;
-  color: #000000;
-  margin: 0.5rem 0 0;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-stats {
-  animation: fadeInUp 2s ease-in-out;
-}
-
-/* Hover effect for CTA buttons */
-.cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Card hover effect */
-.card-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.card-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.card-wrapper:hover img {
-  transform: scale(1.05);
-}
-
-/* Ensure the card-text is positioned correctly */
-.card-text {
-  position: absolute;
-  bottom: 10%; /* Adjust this value to position the text lower on the card */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  text-align: center;
-  background-color: transparent; /* Ensure container is fully transparent */
-  color: white; /* Default text color to ensure readability */
-}
-
-/* Adjust the heading and link styles */
-.card-text h3 {
-  font-size: 1.25rem; /* Adjust font size if needed */
-  margin-bottom: 0.5rem;
-  overflow-wrap: break-word; /* Ensure text breaks properly */
-}
-
-.card-text a {
-  color: #a768dc; /* Use purple-500 color for the link */
-  font-weight: bold;
-  text-decoration: none;
-  background-color: transparent; /* Keep the link background transparent */
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  transition: color 0.3s ease; /* Transition for color change */
-  display: inline-block; /* Ensure the link aligns properly */
-  margin-top: 0.5rem; /* Add margin to ensure spacing between heading and link */
-}
-
-.card-text a:hover {
-  color: #6f41b5; /* Use purple-700 color for hover state */
-  background-color: transparent; /* Ensure background stays transparent on hover */
-}
-
-/* Position the card-text in the bottom of the top half for the training card */
-.training-card .card-text {
-  position: absolute;
-  bottom: 60%; /* Move it a bit higher from the bottom of the top half */
-  left: 50%;
-  transform: translate(-50%, 55%); /* Adjust vertical alignment */
-  width: 90%;
-  text-align: center;
-  background-color: transparent; /* Ensure container is fully transparent */
-  color: white; /* Default text color to ensure readability */
-}
-
-/* Hero Section Styles */
-.hero-section {
-  position: relative;
-  background: #e9e5ff;
-  background: -webkit-linear-gradient(to left, #8f94fb, #ffffff);
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-circles {
-  position: absolute;
-  top: 0;
+/* General Navbar Styling */
+.top-navigation {
+  position: fixed;
+  top: 15px;
   left: 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.hero-circles li {
-  position: absolute;
-  display: block;
-  list-style: none;
-  background: rgba(195, 158, 255, 0.993);
-  animation: animate 25s linear infinite;
-  bottom: -150px;
-}
-
-/* Big Circle Specific Styles */
-.hero-circles li.big-circle {
-  width: 150px; /* Adjust size as needed */
-  height: 150px; /* Adjust size as needed */
-}
-
-.hero-circles .circle-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgb(241, 239, 241); /* Adjust text color */
-  text-align: center;
-  font-size: 1rem; /* Adjust text size */
-  font-weight: bold;
-  padding: 10px; /* Adjust padding */
-}
-
-/* Example: Styling for specific circles */
-.circles li:nth-child(1) {
-  left: 25%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 0s;
-}
-
-.circles li:nth-child(2) {
-  left: 10%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 2s;
-  animation-duration: 12s;
-}
-
-.circles li:nth-child(3) {
-  left: 70%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 4s;
-}
-
-.circles li:nth-child(4) {
-  left: 40%;
-  width: 60px;
+  background: transparent;
   height: 60px;
-  animation-delay: 0s;
-  animation-duration: 18s;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.circles li:nth-child(5) {
-  left: 65%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 0s;
+/* Navbar visibility styles */
+.top-navigation.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
-.circles li:nth-child(6) {
-  left: 75%;
-  width: 110px;
-  height: 110px;
-  animation-delay: 3s;
+.top-navigation.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
-.circles li:nth-child(7) {
-  left: 35%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 7s;
-}
-
-.circles li:nth-child(8) {
-  left: 50%;
-  width: 25px;
-  height: 25px;
-  animation-delay: 15s;
-  animation-duration: 45s;
-}
-
-.circles li:nth-child(9) {
-  left: 20%;
-  width: 15px;
-  height: 15px;
-  animation-delay: 2s;
-  animation-duration: 35s;
-}
-
-.circles li:nth-child(10) {
-  left: 85%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 0s;
-  animation-duration: 11s;
-}
-
-@keyframes animate {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-    border-radius: 0;
-  }
-  100% {
-    transform: translateY(-1000px) rotate(720deg);
-    opacity: 0;
-    border-radius: 50%;
-  }
-}
-
-/* About Us Section Styles */
-.about-us {
-  background: #f4f4f4;
-  padding: 4rem 2rem;
-  text-align: center;
+/* Ensure navbar items are in a single line and centered */
+.stick-top-nav-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
   position: relative;
-  overflow: hidden;
+  white-space: nowrap; /* Prevent line breaks */
 }
 
-.about-us h2 {
-  font-size: 2.5rem;
+/* Navbar list items styling */
+.stick-top-nav-ul li {
+  position: relative;
+  margin-right: 20px;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.stick-top-nav-ul li a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  opacity: 0.5; /* Slightly transparent initially */
+}
+
+.stick-top-nav-ul li a:hover {
+  opacity: 1; /* Fully visible on hover */
+}
+
+.stick-top-nav-ul li.nav-active a {
   font-weight: bold;
-  color: #333;
-  margin-bottom: 1rem;
+  opacity: 1; /* Fully visible for active section */
 }
 
-.about-us p {
-  font-size: 1.125rem;
-  color: #666;
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 2rem;
+.stick-top-nav-ul li .line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+  z-index: -1;
 }
 
-.about-us img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.stick-top-nav-ul li.nav-active .line {
+  width: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  /* Hide the navbar items on small screens */
+  .top-navigation {
+    display: none; /* Completely hide the navbar on screens smaller than 768px */
+  }
+
+  /* Apply the background color to sections */
+  .section {
+    background-color: #091327; /* Change background color to match the body */
+    background-image: none !important; /* Remove background image */
+  }
+}
+
+/* Add this to your sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-left: 1px solid #ddd;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 75%, transparent 75%, transparent);
+  background-size: 10px 10px; /* Adjust the size of the pattern */
+}
+
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar Styling */
+.sidebar ul li {
+  margin: 20px 0;
+  position: relative; /* Necessary for positioning the underline */
+  padding-bottom: 5px; /* Space for the underline */
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: color 0.3s ease, padding-bottom 0.3s ease; /* Smooth color and padding transition */
+  position: relative; /* Allow positioning of the pseudo-element */
+}
+
+/* Blue Underline Effect */
+.sidebar ul li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000000; /* Blue underline color */
+  transition: width 0.3s ease; /* Smooth underline transition */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Hover Effect */
+.sidebar ul li a:hover::after {
+  width: 100%; /* Full width underline on hover */
+}
+
+.sidebar ul li a:hover {
+  color: #000000; /* Change text color on hover */
+  padding-bottom: 7px; /* Increase padding to make space for the underline */
+}
+
+/* Sub-Menu Styling */
+.sidebar ul li ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0 20px;
+  display: none; /* Hidden by default */
+  flex-direction: column;
+}
+
+.sidebar ul li:hover ul {
+  display: flex; /* Show sub-menu on hover */
+}
+
+.sidebar ul li ul li {
+  margin: 10px 0; /* Space between sub-menu items */
+}
+
+.sidebar ul li ul li a {
+  font-size: 14px; /* Smaller font for sub-menu items */
+  padding-left: 15px; /* Indentation for sub-menu items */
+  position: relative; /* Allow positioning of the pseudo-element */
+}
+
+/* Blue Underline Effect for Sub-Menu Items */
+.sidebar ul li ul li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000000; /* Blue underline color */
+  transition: width 0.3s ease; /* Smooth underline transition */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Hover Effect for Sub-Menu Items */
+.sidebar ul li ul li a:hover::after {
+  width: 100%; /* Full width underline on hover */
+}
+
+.sidebar ul li ul li a:hover {
+  color: #000000; /* Change text color on hover */
+}
+
+/* Section Styling */
+.section {
+  height: 100vh; /* Full viewport height */
+  background-size: cover; /* Ensure the background image covers the entire section */
+  background-position: center center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  padding: 0 20px; /* General padding for sections */
+}
+.section h2 {
+  color: #ffc700; /* Yellow text color */
+}
+
+/* Unique Section Styles */
+#hero_slider {
+  background-image: url('/LandingImage/Landing-Pages-1.png');
+}
+
+#core_capabilities {
+  background-image: url('/LandingImage/Landing-Pages-2.png');
+}
+
+#operating_models {
+  background-image: url('/LandingImage/Landing-Pages-3.png');
+}
+
+#talent_transformations {
+  background-image: url('/LandingImage/Landing-Pages-4.png');
+}
+
+#do_more {
+  background-image: url('/LandingImage/Landing-Pages-5.png');
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .section {
+    background-color: #091327; /* Background color to apply when navbar is hidden */
+    background-image: none !important; /* Remove background image */
+  }
+}
+
+
+/* Content Alignment and Padding */
+.section-content {
+  max-width: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative; /* Allow positioning of content relative to its container */
+  z-index: 1; /* Ensure content is above the background */
+}
+
+.section-content.left {
+  text-align: left;
+  margin-right: auto;
+  padding-left: 5vw; /* Add padding to the left side */
+}
+
+.section-content.right {
+  text-align: left;
+  margin-left: auto;
+  padding-right: 5vw; /* Add padding to the right side */
+}
+
+/* Heading Styling */
+.section-content h2 {
+  font-size: 2rem; /* Default size for small screens */
+  margin-bottom: 10px;
+}
+
+/* Paragraph Styling */
+.section-content p {
+  font-size: 1.2rem; /* Default size for small screens */
+  margin-bottom: 20px;
+}
+
+/* Responsive font sizes */
+@media (min-width: 768px) {
+  /* For medium screens (tablets) */
+  .section-content h2 {
+    font-size: 2.5rem; /* Increase font size */
+  }
+
+  .section-content p {
+    font-size: 1.4rem; /* Increase font size */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* For large screens (desktops) */
+  .section-content h2 {
+    font-size: 3rem; /* Further increase font size */
+  }
+
+  .section-content p {
+    font-size: 1.6rem; /* Further increase font size */
+  }
+}
+
+/* Optional: For very large screens */
+@media (min-width: 1440px) {
+  .section-content h2 {
+    font-size: 3.5rem; /* Even larger font size */
+  }
+
+  .section-content p {
+    font-size: 1.8rem; /* Even larger font size */
+  }
+}
+
+
+/* Button Styling */
+.btn-know-more {
+  position: relative; /* Make positioning relative to handle the pseudo-element */
+  display: inline-block;
+  font-weight: bold;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #ffffff; /* White text color */
+  background-color: transparent; /* Transparent background */
+  border: 0.5px solid #ffffff; /* White border */
+  text-decoration: none;
+
+  overflow: hidden; /* Hide overflow for smooth effect */
+  transition: color 0.3s ease; /* Transition for text color */
+}
+
+/* Button Hover Effect */
+.btn-know-more::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start off-screen to the left */
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff; /* White background for curtain effect */
+  transition: left 0.3s ease; /* Transition for the curtain effect */
+  z-index: 0; /* Behind the text */
+}
+
+/* Move the white background curtain on hover */
+.btn-know-more:hover::before {
+  left: 0; /* Move the background to cover the button */
+}
+
+.btn-know-more:hover {
+  color: #000000; /* Black text color on hover */
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+.btn-know-more span {
+  position: relative; /* Ensure the text is above the pseudo-element */
+  z-index: 1; /* Above the white background curtain */
+}
+
+
+/* Sidebar Toggle Button */
+/* Sidebar Toggle Button Styling */
+.sidebar-toggle {
+  position: fixed; /* Fixed positioning */
+  top: 15px; /* Distance from top */
+  right: 15px; /* Distance from right */
+  background: #007bff; /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 50%; /* Circular button */
+  width: 50px; /* Button width */
+  height: 50px; /* Button height */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center alignment vertically */
+  justify-content: center; /* Center alignment horizontally */
+  cursor: pointer; /* Pointer cursor on hover */
+  z-index: 11; /* Ensure it's above other elements */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Lines for hamburger icon */
+.sidebar-toggle::before, 
+.sidebar-toggle::after, 
+.sidebar-toggle div {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 24px; /* Line width */
+  height: 2px; /* Line height */
+  background-color: #fff; /* Line color */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
+}
+
+/* Create the vertical lines for hamburger icon */
+.sidebar-toggle::before {
+  top: 12px; /* Position of the first line */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the line */
+}
+
+.sidebar-toggle div {
+  top: 22px; /* Position of the second line */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the line */
+}
+
+.sidebar-toggle::after {
+  top: 32px; /* Position of the third line */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the line */
+}
+
+/* Cross effect when sidebar is open */
+.sidebar-toggle.cross::before {
+  transform: translate(-50%, -50%) rotate(45deg); /* Rotate first line */
+  top: 50%; /* Center vertically */
+}
+
+.sidebar-toggle.cross div {
+  opacity: 0; /* Hide the second line */
+}
+
+.sidebar-toggle.cross::after {
+  transform: translate(-50%, -50%) rotate(-45deg); /* Rotate second line */
+  top: 50%; /* Center vertically */
+}
+
+
+/* Company Logo */
+.company-logo-link {
+  position: fixed;
+  top: -35px;
+  left: 25px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  text-decoration: none; /* Remove underline from link */
+}
+
+.company-logo {
+  width: 100%;
+  height: 100%;
+  background: url("https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png") no-repeat center center;
+  background-size: contain;
+}
+
+/* Disable scrolling */
+.no-scroll {
+  overflow: hidden;
+  /* Optionally, you can also set the height to 100% to ensure no scrolling */
+  height: 100%;
+  position: fixed;
+  width: 100%;
 }

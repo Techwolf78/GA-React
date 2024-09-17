@@ -36,7 +36,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="bg-[#7157ff] text-[#ffffff] flex justify-between items-center p-4">
+    <header className="bg-[#091327] text-[#ffffff] flex justify-between items-center p-4">
       <a className="navbar-brand" href="/">
         <img
           src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png"
@@ -48,7 +48,7 @@ const Navbar = () => {
       <nav className="hidden md:flex space-x-6">
         <Link
           to="/"
-          className="hover:bg-[#d0c6f7] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+          className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
         >
           HOME
         </Link>
@@ -62,29 +62,29 @@ const Navbar = () => {
             onClick={handleTrainingClick}
             aria-haspopup="true"
             aria-expanded={isDropdownOpen}
-            className="hover:bg-[#d0c6f7] hover:text-[#1a1a1a] py-2 px-4 rounded flex items-center justify-center w-48 transition-colors duration-300"
+            className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded flex items-center justify-center w-48 transition-colors duration-300"
           >
             TRAINING <i className="bx bx-chevron-down ml-1"></i>
           </button>
           {isDropdownOpen && (
-            <div className="absolute top-full left-0 mt-0 w-48 bg-[#d0c6f7] text-[#1a1a1a] rounded-md shadow-lg transition-all duration-300 z-50">
+            <div className="absolute top-full left-0 mt-0 w-48 bg-[#ffc700] text-[#1a1a1a] rounded-md shadow-lg transition-all duration-300 z-50">
               <Link
                 to="/collegeTraining"
-                className="block px-4 py-2 hover:bg-[#b8aef6] transition-colors duration-300"
+                className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
                 onClick={handleDropdownItemClick}
               >
                 College Training
               </Link>
               <Link
                 to="/corporateTraining"
-                className="block px-4 py-2 hover:bg-[#b8aef6] transition-colors duration-300"
+                className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
                 onClick={handleDropdownItemClick}
               >
                 Corporate Training
               </Link>
               <Link
                 to="/facultyTraining"
-                className="block px-4 py-2 hover:bg-[#b8aef6] transition-colors duration-300"
+                className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
                 onClick={handleDropdownItemClick}
               >
                 Faculty Training
@@ -95,19 +95,19 @@ const Navbar = () => {
 
         <Link
           to="/placement"
-          className="hover:bg-[#d0c6f7] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+          className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
         >
           PLACEMENT
         </Link>
         <Link
           to="/brandPositioning"
-          className="hover:bg-[#d0c6f7] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+          className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
         >
           DIGITAL MARKETING
         </Link>
         <Link
           to="/blogs"
-          className="hover:bg-[#d0c6f7] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+          className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
         >
           BLOG
         </Link>
@@ -115,7 +115,7 @@ const Navbar = () => {
 
       <div className="md:hidden">
         <button
-          className="text-[#2e2e2e] text-3xl focus:outline-none"
+          className="text-[#ffffff] text-3xl focus:outline-none"
           onClick={toggleSidebar}
         >
           ☰
@@ -135,31 +135,31 @@ const Navbar = () => {
         </button>
         <Link
           to="/"
-          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#d0c6f7] hover:text-[#1a1a1a] transition-colors duration-300"
+          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
         >
           HOME
         </Link>
         <Link
           to="/training"
-          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#d0c6f7] hover:text-[#1a1a1a] transition-colors duration-300"
+          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
         >
           TRAINING
         </Link>
         <Link
           to="/placement"
-          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#d0c6f7] hover:text-[#1a1a1a] transition-colors duration-300"
+          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
         >
           PLACEMENT
         </Link>
         <Link
           to="/digital-marketing"
-          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#d0c6f7] hover:text-[#1a1a1a] transition-colors duration-300"
+          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
         >
           DIGITAL MARKETING
         </Link>
         <Link
           to="/blog"
-          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#d0c6f7] hover:text-[#1a1a1a] transition-colors duration-300"
+          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
         >
           BLOG
         </Link>
