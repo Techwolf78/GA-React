@@ -3,23 +3,38 @@ import { FaCheck } from 'react-icons/fa'; // Import check icon from react-icons
 
 const HeroCollege = () => {
   const [showClassroom, setShowClassroom] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowClassroom(true);
-    }, 4000); // Show "CLASSROOM" after 4 seconds
+    }, 2000); // Show "CLASSROOM" after 2 seconds
 
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const img = new Image();
+    img.src = '/Clgimage/clg-new-3.png'; // Preload background image
+    img.onload = () => setImageLoaded(true);
+  }, []);
+
   return (
-    <main className="relative flex flex-col justify-center bg-purple-100 overflow-hidden">
+    <main className={`relative flex flex-col justify-center bg-[#f0f4f8] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
       <div className="hero-section">
+        {/* Skeleton Loader */}
+        {!imageLoaded && (
+          <div className="skeleton-loader">
+            <div className="skeleton-text"></div>
+            <div className="skeleton-content"></div>
+          </div>
+        )}
+
         <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-16 text-center relative z-10">
           {/* Sliding Text animation */}
-          <div className="font-extrabold text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-100 to-purple-100">
+          <div className="font-extrabold text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r text-white">
             A JOURNEY FROM <span></span>
-            <span className="text-yellow-300 inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
+            <span className="text-[#ffc700] inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
               <ul className={`block ${showClassroom ? 'animate-text-slide-stop' : 'animate-text-slide'} text-left leading-tight`}>
                 <li className="transition-opacity duration-1000">{!showClassroom && 'COLLEGE'}</li>
                 <li className={`transition-opacity duration-1000 ${showClassroom ? 'opacity-100' : 'opacity-0'}`}>CLASSROOM</li>
@@ -28,20 +43,20 @@ const HeroCollege = () => {
           </div>
           {/* End: Sliding Text animation */}
           <br />
-          <p className="text-3xl">Get Industry-Ready with Gryphon!</p>
+          <p className="text-3xl text-[#]">Get Industry-Ready with Gryphon</p>
         </div>
         <div className="hero-overlay"></div>
         
         {/* Full-width Rectangle with Content */}
-        <div className="info-rectangle absolute bottom-0 left-0 w-full p-6 text-gray-800 rounded-lg shadow-lg bg-white bg-opacity-90">
+        <div className="info-rectangle absolute bottom-0 left-0 w-full p-6 text-gray-800 rounded-lg shadow-lg bg-transparent">
           <ul className="list-disc pl-4 custom-list">
-            <li className="flex items-center mb-4 font-bold text-violet-100 text-lg">
+            <li className="flex items-center mb-4 font-bold text-[#ffc700] text-lg">
               <span className="check-icon-wrapper">
                 <FaCheck className="check-icon" />
               </span>
               Content approved by the Industry
             </li>
-            <li className="flex items-center font-bold text-violet-100 text-lg">
+            <li className="flex items-center font-bold text-[#ffc700] text-lg">
               <span className="check-icon-wrapper">
                 <FaCheck className="check-icon" />
               </span>
@@ -63,6 +78,8 @@ const HeroCollege = () => {
           position: relative;
           text-align: center;
           color: white;
+          opacity: ${imageLoaded ? 1 : 0}; /* Fade effect based on image loading */
+          transition: opacity 1s ease-in-out; /* Smooth transition */
         }
 
         .hero-overlay {
@@ -74,6 +91,42 @@ const HeroCollege = () => {
           height: 100%;
           background: rgba(0, 0, 0, 0.4);
           z-index: 1; /* Ensures overlay is above the background but below the text */
+        }
+
+        .skeleton-loader {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(240, 244, 248, 0.8);
+          z-index: 2; /* Ensure it's above the overlay */
+        }
+
+        .skeleton-text {
+          width: 60%;
+          height: 40px;
+          margin-bottom: 20px;
+          background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+          background-size: 200% 100%;
+          animation: loading 1.5s infinite;
+        }
+
+        .skeleton-content {
+          width: 80%;
+          height: 60px;
+          background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+          background-size: 200% 100%;
+          animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+          0% { background-position: 200% 0; }
+          100% { background-position: 0 0; }
         }
 
         /* Keyframes for text sliding animation */
@@ -103,7 +156,7 @@ const HeroCollege = () => {
 
         .info-rectangle {
           padding: 24px;
-          background: rgba(255, 255, 255, 0.0); /* Semi-transparent white background */
+          background: rgba(255, 255, 255, 0); /* Fully transparent background */
           display: flex;
           flex-direction: column;
           align-items: flex-start;

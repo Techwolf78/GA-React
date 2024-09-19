@@ -92,9 +92,7 @@ const courses = {
   ],
   FOREIGN: [
     { title: 'German Language Basics', description: 'Introduction to the German language, including basic vocabulary and grammar.', image: 'Germany/1.jpg' },
-    
-    { title: 'Japanese Language Basics', description: 'Learn basic Japanese language skills, including essential vocabulary and grammar.', image: 'Japanese/1.jpg' },
-
+    { title: 'Japanese Language Basics', description: 'Learn basic Japanese language skills, including essential vocabulary and grammar.', image: 'Japanese/1.jpg' }
   ]
 };
 
@@ -122,26 +120,26 @@ const CourseSection = () => {
   };
 
   return (
-    <section className="py-5 bg-purple-100">
+    <section className="py-5 bg-[#091327]">
       <div className="mb-8">
-        <p className="text-purple-700 text-4xl text-center font-bold mb-4 underline">Technical Training</p>
+        <p className="text-[#ffc700] text-4xl text-center font-bold mb-4 ">TECHNICAL TRAINING</p>
       </div>
       <div className="container mx-auto flex flex-wrap">
         {/* Sidebar */}
         <div className="course-sidebar w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
-          <div className="bg-purple-100 shadow-lg rounded-lg">
+          <div className="bg-[#091327] shadow-lg rounded-lg">
             {Object.keys(courses).map((key) => (
               <button
                 key={key}
                 onClick={() => changeCourse(key)}
                 className="block w-full py-3 px-6 mb-2 text-white rounded-lg"
                 style={{
-                  backgroundColor: 'rgb(113, 87, 255)',
+                  backgroundColor: '#2e4d80',
                   transition: 'all 0.3s ease-in-out',
                   transform: 'scale(1)',
                 }}
-                onMouseEnter={e => e.currentTarget.style.backgroundColor = 'rgb(103, 77, 238)'}
-                onMouseLeave={e => e.currentTarget.style.backgroundColor = 'rgb(113, 87, 255)'}
+                onMouseEnter={e => e.currentTarget.style.backgroundColor = '#1a3b6c'}
+                onMouseLeave={e => e.currentTarget.style.backgroundColor = '#2e4d80'}
               >
                 {buttonLabels[key]}
               </button>
@@ -153,10 +151,10 @@ const CourseSection = () => {
         <div className="content w-full lg:w-3/4 px-4">
           <div className="course-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {courses[selectedCourse].map((course, index) => (
-              <div key={index} className="card bg-white rounded-lg p-4 shadow-md transition-transform duration-300 ease-in-out transform hover:scale-105">
+              <div key={index} className="card bg-[#2e4d80] rounded-lg p-4 shadow-md transition-transform duration-300 ease-in-out transform hover:scale-105">
                 <img src={course.image} alt={course.title} className="w-full h-40 object-cover rounded-t-lg mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
-                <p className="text-gray-800 mb-4">{course.description}</p>
+                <h3 className="text-[#ffc700] text-xl font-semibold mb-2">{course.title}</h3>
+                <p className="text-white mb-4">{course.description}</p>
               </div>
             ))}
           </div>

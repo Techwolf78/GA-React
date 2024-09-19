@@ -301,39 +301,7 @@ body, html {
   margin-bottom: 20px;
 }
 
-/* Responsive font sizes */
-@media (min-width: 768px) {
-  /* For medium screens (tablets) */
-  .section-content h2 {
-    font-size: 2.5rem; /* Increase font size */
-  }
 
-  .section-content p {
-    font-size: 1.4rem; /* Increase font size */
-  }
-}
-
-@media (min-width: 1024px) {
-  /* For large screens (desktops) */
-  .section-content h2 {
-    font-size: 3rem; /* Further increase font size */
-  }
-
-  .section-content p {
-    font-size: 1.6rem; /* Further increase font size */
-  }
-}
-
-/* Optional: For very large screens */
-@media (min-width: 1440px) {
-  .section-content h2 {
-    font-size: 3.5rem; /* Even larger font size */
-  }
-
-  .section-content p {
-    font-size: 1.8rem; /* Even larger font size */
-  }
-}
 
 
 /* Button Styling */
@@ -353,6 +321,7 @@ body, html {
 }
 
 /* Button Hover Effect */
+
 .btn-know-more::before {
   content: '';
   position: absolute;
@@ -360,12 +329,12 @@ body, html {
   left: -100%; /* Start off-screen to the left */
   width: 100%;
   height: 100%;
-  background-color: #ffffff; /* White background for curtain effect */
+  background-color: #ffc700; /* Change the background color to #ffc700 */
   transition: left 0.3s ease; /* Transition for the curtain effect */
   z-index: 0; /* Behind the text */
 }
 
-/* Move the white background curtain on hover */
+/* Move the yellow background curtain on hover */
 .btn-know-more:hover::before {
   left: 0; /* Move the background to cover the button */
 }
@@ -377,7 +346,7 @@ body, html {
 
 .btn-know-more span {
   position: relative; /* Ensure the text is above the pseudo-element */
-  z-index: 1; /* Above the white background curtain */
+  z-index: 1; /* Above the yellow background curtain */
 }
 
 
@@ -478,4 +447,56 @@ body, html {
   height: 100%;
   position: fixed;
   width: 100%;
+}
+
+
+#core_capabilities {
+  position: relative; /* Positioning context for the image */
+}
+
+.right-side-image {
+  position: absolute; /* Position it absolutely */
+  right: 0; /* Align to the right */
+  top: 50%; /* Start from the center vertically */
+  transform: translateY(-50%); /* Center it vertically */
+  width: 25%; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100%; /* Limit height to avoid full section height */
+  z-index: 0; /* Behind the text */
+}
+
+.section-content {
+  position: relative; /* Ensure content is above the image */
+  z-index: 1; /* Bring the text content above the image */
+}
+
+#operating_models {
+  position: relative; /* Positioning context for the image */
+}
+
+.left-side-image {
+  position: absolute; /* Position it absolutely */
+  left: 0; /* Align to the left */
+  top: 50%; /* Start from the center vertically */
+  transform: translateY(-50%) scaleX(-1); /* Center it vertically and flip horizontally */
+  width: 25%; /* Set the desired width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100%; /* Limit height to avoid full section height */
+  z-index: 0; /* Behind the text */
+}
+
+
+.section-content {
+  position: relative; /* Ensure content is above the image */
+  z-index: 1; /* Bring the text content above the image */
+}
+
+
+#talent_transformations {
+  position: relative; /* Positioning context for the image */
+}
+
+
+#do_more {
+  position: relative; /* Positioning context for the image */
 }

@@ -14,23 +14,23 @@ const Placement = () => {
   const repeats = 10;
 
   return (
-    <div>
+    <div className="bg-[#091327]">
       <HeroPlacement />
       <PartneredUniversities />
       
       {/* Infinite Hook Line Section */}
-      <div className="hook-line-container">
-        <div className="hook-line">
+      <div className="hook-line-container py-6 bg-[#2e4d80]">
+        <div className="hook-line text-[#ffc700] text-2xl flex items-center justify-center space-x-4">
           {Array.from({ length: repeats }).map((_, index) => (
             <React.Fragment key={index}>
               <span>{hookLineText}</span>
-              <span className="divider"> | </span>
+              <span className="divider text-[#2e4d80]"> | </span>
             </React.Fragment>
           ))}
           {Array.from({ length: repeats }).map((_, index) => (
             <React.Fragment key={index + repeats}>
               <span>{hookLineText}</span>
-              <span className="divider"> | </span>
+              <span className="divider text-[#2e4d80]"> | </span>
             </React.Fragment>
           ))}
         </div>
@@ -40,9 +40,9 @@ const Placement = () => {
       <CollegeAccreditation />
 
       {/* New Section: Simple Placement Process */}
-      <div className="p-8 text-center bg-gradient-to-b from-white via-purple-50 to-purple-100">
-      <p className="text-4xl font-bold mb-2 text-purple-700 unique-heading underline">
-          We Follow Simple Placement Process
+      <div className="p-8 text-center bg-[#091327]">
+        <p className="text-4xl font-bold mb-2 text-[#ffc700]  ">
+          WE FOLLOW SIMPLE PLACEMENT PROCESS
         </p>
         <div className="w-full max-w-5xl mx-auto">
           {/* Placeholder for the infographic */}

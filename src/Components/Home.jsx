@@ -6,6 +6,10 @@ import Testimonials from './Testimonials';
 const Home = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [isNavbarVisible, setNavbarVisible] = useState(true);
+  const [displayText, setDisplayText] = useState("Bridging Dreams");
+  const fullText = "Dreams";
+  const newText = "Careers";
+  const [isBlinking, setIsBlinking] = useState(true);
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
   const trainingRef = useRef(null);
@@ -13,7 +17,76 @@ const Home = () => {
   const brandingRef = useRef(null);
   const sidebarRef = useRef(null);
 
-  const toggleSidebar = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const brandPositioningSection = brandingRef.current;
+      const sectionHeight = brandPositioningSection.offsetHeight;
+      const scrollY = window.scrollY;
+
+      if (scrollY > (brandPositioningSection.offsetTop + (sectionHeight / 2))) {
+        setNavbarVisible(false);
+      } else {
+        setNavbarVisible(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    let index = 0;
+    let isDeleting = false;
+    let currentText = newText;
+    let textType = 'new';
+
+    const typeEffect = () => {
+      currentText = textType === 'new' ? newText : fullText;
+      setDisplayText(`Bridging ${currentText.slice(0, index)}`);
+
+      const typingSpeed = isDeleting ? 100 : 100;
+
+      if (isDeleting) {
+        index--;
+        if (index < 0) {
+          isDeleting = false;
+          textType = textType === 'new' ? 'full' : 'new';
+          setTimeout(() => {
+            index = 0;
+            typeEffect();
+          }, 500);
+          return;
+        }
+      } else {
+        index++;
+        if (index > currentText.length) {
+          isDeleting = true;
+          setTimeout(() => {
+            typeEffect();
+          }, 2000);
+          return;
+        }
+      }
+
+      setTimeout(typeEffect, typingSpeed);
+    };
+
+    typeEffect();
+
+    const cursorInterval = setInterval(() => {
+      setIsBlinking(prev => !prev);
+    }, 500);
+
+    return () => {
+      clearInterval(cursorInterval);
+    };
+  }, []);
+
+  const toggleSidebar = (event) => {
+    event.preventDefault();
     setSidebarOpen(prev => {
       const newState = !prev;
       if (newState) {
@@ -58,41 +131,6 @@ const Home = () => {
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    const updateSidebarUnderlines = () => {
-      const sidebarItems = sidebarRef.current.querySelectorAll('li > a');
-      sidebarItems.forEach(item => {
-        const { offsetWidth } = item;
-        item.style.setProperty('--underline-width', `${offsetWidth}px`);
-      });
-    };
-
-    updateSidebarUnderlines();
-    window.addEventListener('resize', updateSidebarUnderlines);
-
-    return () => window.removeEventListener('resize', updateSidebarUnderlines);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const brandingSection = brandingRef.current;
-      const scrollY = window.scrollY;
-      const brandingHeight = brandingSection ? brandingSection.offsetHeight : 0;
-      const brandingOffset = brandingSection ? brandingSection.offsetTop : 0;
-
-      // Check if scrolled below 50% of the "Brand Positioning" section
-      if (scrollY > (brandingOffset + brandingHeight / 2)) {
-        setNavbarVisible(false);
-      } else {
-        setNavbarVisible(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleNavClick = (ref) => {
@@ -147,16 +185,21 @@ const Home = () => {
         <div className="company-logo"></div>
       </Link>
 
-      {/* Sections */}
+      {/* Hero Section */}
       <div id="hero_slider" className="section hero-slider-section left" ref={heroRef}>
         <div className="section-content left">
-          <h2>Bridging Dreams and Careers</h2>
+          <h2>
+            {displayText}
+            <span className={`cursor ${isBlinking ? 'blink' : ''}`}>|</span>
+          </h2>
           <p>Making students Industry Ready with our Customized Industry Readiness Programme</p>
           <Link to="/training" className="btn-know-more">
             <span>Know More</span>
           </Link>
         </div>
       </div>
+
+      {/* Other sections */}
       <div id="core_capabilities" className="section core-capabilities-section right" ref={aboutRef}>
         <div className="section-content right">
           <h2>About Us</h2>
@@ -167,11 +210,13 @@ const Home = () => {
             organization facilitate the transition into the industry with ease and
             enabling you to excel.
           </p>
-          <Link to="/" className="btn-know-more">
+          <Link to="/about" className="btn-know-more">
             <span>Know More</span>
           </Link>
         </div>
+        <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
       </div>
+
       <div id="operating_models" className="section operating-models-section left" ref={trainingRef}>
         <div className="section-content left">
           <h2>Training</h2>
@@ -186,7 +231,9 @@ const Home = () => {
             <span>Know More</span>
           </Link>
         </div>
+        <img src="LandingImage/pattern-new.png" alt="Left Side Design" className="left-side-image" />
       </div>
+
       <div id="talent_transformations" className="section talent-transformations-section right" ref={placementRef}>
         <div className="section-content right">
           <h2>Placement</h2>
@@ -199,7 +246,9 @@ const Home = () => {
             <span>Know More</span>
           </Link>
         </div>
+        <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
       </div>
+
       <div id="do_more" className="section do-more-section left" ref={brandingRef}>
         <div className="section-content left">
           <h2>Cross Brand Positioning</h2>
@@ -214,7 +263,9 @@ const Home = () => {
             <span>Know More</span>
           </Link>
         </div>
+        <img src="LandingImage/pattern-new.png" alt="Left Side Design" className="left-side-image" />
       </div>
+
       <div>
         <Testimonials />
       </div>

@@ -40,20 +40,14 @@ const testimonials = [
 
 const Testimonials = () => {
   const cardStyle = {
-    backgroundColor: 'white',
+    backgroundColor: '#2e4d80',
     borderRadius: '8px',
     padding: '24px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    boxShadow: 'none',
     width: '320px',
     textAlign: 'center',
     flexShrink: 0,
-    transition: 'transform 0.3s, box-shadow 0.3s',
     margin: '0 8px'
-  };
-
-  const cardHoverStyle = {
-    transform: 'scale(1.05)',
-    boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)'
   };
 
   const flexContainerStyle = {
@@ -71,25 +65,25 @@ const Testimonials = () => {
   };
 
   return (
-    <section style={{ background: 'linear-gradient(to bottom, white, #e1d2fc)', padding: '64px 0' }}>
+    <section style={{ background: '#091327', padding: '64px 0' }}>
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-        <h3 style={{ fontSize: '36px', fontWeight: 'bold', color: '#333', marginBottom: '16px', textDecoration: 'underline' }}>
+        <h3 className="text-4xl font-bold text-[#ffc700] mb-4">
           RECRUITER TESTIMONIALS
         </h3>
+        <h4 className="text-2xl text-gray-200 mb-4">
+          What Our Graduates Say
+        </h4>
       </div>
       <div style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '320px' }}>
         <div style={{ display: 'flex', gap: '16px', animation: 'slide 20s linear infinite' }}>
           {[...testimonials, ...testimonials].map((testimonial, index) => (
-            <div
-              key={index}
-              style={{ ...cardStyle, ...(index % 2 === 0 ? cardHoverStyle : {}) }}
-            >
-              <p style={{ fontSize: '18px', color: '#333', marginBottom: '16px' }}>{`"${testimonial.review}"`}</p>
-              <p style={{ color: '#f39c12', fontSize: '24px', marginBottom: '16px' }}>{testimonial.rating}</p>
-              <p style={{ color: '#555', fontWeight: 'bold', marginBottom: '16px' }}>{testimonial.name}</p>
+            <div key={index} style={cardStyle}>
+              <p style={{ fontSize: '18px', color: '#f1f1f1', marginBottom: '16px' }}>{`"${testimonial.review}"`}</p>
+              <p style={{ color: '#ffc700', fontSize: '24px', marginBottom: '16px' }}>{testimonial.rating}</p>
+              <p style={{ color: '#f1f1f1', fontWeight: 'bold', marginBottom: '16px' }}>{testimonial.name}</p>
               <div style={flexContainerStyle}>
                 <img src={testimonial.companyLogo} alt={testimonial.companyName} style={logoStyle} />
-                <p style={{ color: '#555' }}>{testimonial.companyName}</p>
+                <p style={{ color: '#f1f1f1' }}>{testimonial.companyName}</p>
               </div>
             </div>
           ))}

@@ -21,12 +21,10 @@ const Advisory = () => {
   const duplicatedImages = getDuplicatedImages(HORIZONTAL_IMAGES);
 
   return (
-    <div className="p-8 bg-[#e9e5ff]">
+    <div className="p-8 bg-[#091327]"> {/* Dark background */}
       {/* Horizontal Images Section */}
       <div className="mb-12">
-        <Typography variant="h2" color="blue-gray" className="text-center mb-6 font-semibold">
-          OUR ADVISORY BOARD
-        </Typography>
+        <h2 className="text-center mb-6 font-bold text-4xl text-[#ffc700]"> OUR ADVISORY BOARD</h2>
         <div className="overflow-hidden relative">
           <div className="flex space-x-6 advisory-scroll">
             {duplicatedImages.map((src, index) => (
@@ -34,7 +32,8 @@ const Advisory = () => {
                 key={index}
                 src={src}
                 alt={`Highlight ${index + 1}`}
-                className="w-96 h-96 object-contain rounded-lg border-4 border-blue-gray-300 shadow-lg"
+                className="w-96 h-96 object-contain rounded-lg" // Removed border and shadow
+                style={{ opacity: 0.8 }} // Adjust opacity as needed
               />
             ))}
           </div>

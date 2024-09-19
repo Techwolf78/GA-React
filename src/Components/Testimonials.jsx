@@ -40,7 +40,7 @@ const Testimonials = () => {
   return (
     <section className="relative overflow-hidden  py-16">
       <div className="container mx-auto text-center mb-8">
-        <h3 className="text-4xl font-bold text-white mb-4 ">
+        <h3 className="text-4xl font-bold text-[#ffc700] mb-4 ">
           TESTIMONIALS
         </h3>
       </div>

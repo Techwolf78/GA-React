@@ -1,6 +1,4 @@
-// ChallengesSolutionsComponent.js
-
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaBuilding, FaBullhorn, FaLightbulb, FaUsers, FaTools, FaProjectDiagram, FaRegStar, FaHandshake, FaSyncAlt } from 'react-icons/fa';
 
@@ -64,45 +62,66 @@ const challenges = [
     title: "Boosting Employee Morale",
     solution: "Conduct stress management and work-life balance workshops, along with recognition and rewards training for managers.",
     icon: <FaUsers />
-  },
-  {
-    title: "Bridging the Employer-Employee Gap for Workplace Clarity",
-    solution: "Offer training on effective feedback mechanisms, transparent communication practices, and aligning individual goals with company objectives.",
-    icon: <FaHandshake />
   }
 ];
 
 const ChallengesSolutionsComponent = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-100 via-purple-200 to-purple-300 p-10 flex items-center justify-center">
+    <div className="min-h-screen bg-[#091327] p-10 flex items-center justify-center">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12 underline ">Challenges & Solutions</h1>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <h1 className="text-4xl font-bold text-center text-[#ffc700] mb-12">CHALLENGES & SOLUTIONS</h1>
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4">
           {challenges.map((challenge, index) => {
-            const cardColor = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
-            const shadowColor = index % 2 === 0 ? 'shadow-lg' : 'shadow-md';
+            const cardColor = index % 2 === 0 ? 'bg-[#2e4d80]' : 'bg-[#1a2b4e]';
+            const isHovered = hoveredIndex === index;
+
+            // Set border color and glow intensity based on hover state
+            const borderColor = isHovered ? '#ffc700' : 'white'; // Yellow glow on hover, white otherwise
+            const glowIntensity = isHovered ? '10px' : '0px';
 
             return (
               <motion.div
+                id={`card-${index}`}
                 key={index}
-                className={`relative w-full max-w-md mx-auto ${cardColor} ${shadowColor} rounded-lg overflow-hidden`}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
+                style={{
+                  backgroundColor: cardColor,
+                  border: `2px solid ${borderColor}`,
+                  position: 'relative',
+                  width: '100%',
+                  maxWidth: '400px',
+                  margin: '0 auto',
+                  borderRadius: '0.5rem',
+                  boxShadow: isHovered ? `0 0 ${glowIntensity} ${borderColor}, 0 0 30px ${borderColor}` : 'none', // No glow if not hovered
+                  transition: 'border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+                  overflow: 'hidden'
+                }}
+                initial={{ opacity: 0, scale: 1 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.4 }}
-                whileHover={{ scale: 1.03, boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)' }}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
               >
                 <div className="p-6">
                   <div className="flex items-start mb-4">
-                    <div className="text-4xl text-purple-600 mr-4 flex-shrink-0">{challenge.icon}</div>
+                    <div className="text-4xl text-[#ffc700] mr-4 flex-shrink-0">{challenge.icon}</div>
                     <div className="flex-1">
-                      <h2 className="text-1xl font-semibold text-gray-800">{challenge.title}</h2>
+                      <h2 className="text-xl font-semibold text-[#ffffff]">{challenge.title}</h2>
                     </div>
                   </div>
-                  <p className="text-gray-700 text-sm">
-                    <span className="font-semibold text-gray-800">Solution:</span> {challenge.solution}
+                  <p className="text-[#ffffff] text-sm">
+                    <span className="font-semibold text-[#ffc700]">Solution:</span> {challenge.solution}
                   </p>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-transparent to-purple-200 opacity-30"></div>
               </motion.div>
             );
           })}

@@ -48,7 +48,7 @@ const departments = [
 const LearningOutcomes = () => {
   return (
     <div className="p-4 bg-[#091327] flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-6 underline text-[#ffc700]">
+      <h1 className="text-4xl font-bold mb-6  text-[#ffc700]">
         LEARNING OUTCOMES OF OUR TRAININGS
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl">

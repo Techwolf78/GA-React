@@ -1,3 +1,24 @@
+/* Define new color variables */
+:root {
+  --primary: #091327; /* Dark Blue */
+  --accent: #ffc700;  /* Yellow */
+  --text-white: #ffffff; /* White */
+}
+
+/* Background color */
+.bg-dark-blue {
+  background-color: var(--primary);
+}
+
+/* Text colors */
+.text-yellow {
+  color: var(--accent);
+}
+
+.text-white {
+  color: var(--text-white);
+}
+
 /* Fade-in animation for F, D, P */
 @keyframes fadeIn {
   from {

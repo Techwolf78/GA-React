@@ -7,7 +7,7 @@ const HeroTraining = () => {
       {/* Left Section: Heading, Paragraph, and Button */}
       <div className="flex-1 flex flex-col items-center justify-center p-8 order-2 md:order-1">
         <div className="text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-4 text-[#ffc700]">
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-4 text-[#ffffff]">
             Better <span className="text-[#ffc700]">Learning Future</span> Starts With Us
           </h1>
           <img

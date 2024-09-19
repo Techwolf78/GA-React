@@ -109,9 +109,9 @@ const Blog = () => {
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-12 text-center bg-gray-100">
+    <section className="py-20 px-4 md:px-8 lg:px-12 text-center bg-[#091327]">
       <div className="container mx-auto">
-        <p className="text-gray-900 mb-12 text-4xl md:text-4xl font-bold ">
+        <p className="text-[#ffc700] mb-12 text-4xl md:text-4xl font-bold">
           LATEST BLOG POSTS
         </p>
         <div className="flex flex-wrap -mx-4">
@@ -121,7 +121,7 @@ const Blog = () => {
               className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-4 mb-8"
             >
               <div
-                className="bg-white border border-gray-300 rounded-2xl overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-xl"
+                className="bg-[#2e4d80] border border-gray-300 rounded-2xl overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-xl"
                 style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
               >
                 <img
@@ -130,11 +130,11 @@ const Blog = () => {
                   className="w-full h-64 object-cover rounded-t-2xl"
                 />
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-gray-900 text-2xl mb-3">{post.title}</h3>
-                  <p className="text-gray-600 mb-4 flex-grow">{post.description}</p>
+                  <h3 className="text-[#ffc700] text-2xl mb-3">{post.title}</h3>
+                  <p className="text-white mb-4 flex-grow">{post.description}</p>
                   <button
                     onClick={() => openDrawer(post)}
-                    className="bg-purple-500 text-white inline-block px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors duration-300"
+                    className="bg-[#ffc700] text-[#091327] inline-block px-6 py-2 rounded-lg hover:bg-[#e6b800] transition-colors duration-300"
                   >
                     Continue Reading →
                   </button>
@@ -146,17 +146,17 @@ const Blog = () => {
       </div>
 
       {drawerContent && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-end justify-center z-50">
-          <div className="bg-white w-full h-[90vh] rounded-t-2xl p-6 overflow-y-auto transition-transform transform translate-y-full duration-300"
+        <div className="fixed inset-0 bg-[#091327] bg-opacity-75 flex items-end justify-center z-50">
+          <div className="bg-[#2e4d80] w-full h-[90vh] rounded-t-2xl p-6 overflow-y-auto transition-transform transform translate-y-full duration-300"
                style={{ transform: drawerContent ? 'translateY(0)' : 'translateY(100%)' }}>
             <button
               onClick={closeDrawer}
-              className="text-gray-600 float-right text-2xl mb-4"
+              className="text-[#ffc700] float-right text-2xl mb-4"
             >
               &times;
             </button>
-            <p className="text-3xl font-bold mb-4">{drawerContent.title}</p>
-            <p className="text-gray-800 text-2xl">{drawerContent.drawerContent}</p>
+            <p className="text-[#ffc700] text-3xl font-bold mb-4">{drawerContent.title}</p>
+            <p className="text-white text-2xl">{drawerContent.drawerContent}</p>
           </div>
         </div>
       )}

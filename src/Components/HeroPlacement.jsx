@@ -1,18 +1,28 @@
-import React from 'react';
-import 'tailwindcss/tailwind.css'; // Ensure Tailwind CSS is imported
+import React, { useEffect, useState } from 'react';
 
 const HeroPlacement = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = '/placement-bg/plac-new.jpg';
+    img.onload = () => setImageLoaded(true);
+  }, []);
+
   return (
-    <div className="relative z-10 w-full h-[60vh] overflow-hidden bg-[#e9e5ff]">
+    <div className={`relative z-10 w-full h-[60vh] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <div className="relative w-full h-full">
-        <img 
-          src="/placement-bg/5471985.jpg" 
-          className="w-full h-full object-cover opacity-90" 
-          alt="Placeholder" 
-        />
+        {imageLoaded && (
+          <img 
+            src="/placement-bg/plac-new.jpg" 
+            className="w-full h-full object-cover opacity-90" 
+            alt="Placeholder" 
+          />
+        )}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-[#ffffff] animate-slideIn">One stop commercial free solution to recruiter’s complete fresher’s hiring needs </h1>
-     
+          <h1 className={`text-4xl md:text-6xl font-bold text-[#ffc700] ${imageLoaded ? 'animate-slideIn' : ''}`}>
+            One stop commercial free solution to recruiter’s complete fresher’s hiring needs 
+          </h1>
         </div>
       </div>
       <style jsx>{`

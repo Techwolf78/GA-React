@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 function FacultyModule() {
   return (
     <div>
-      <main className="flex-1 bg-purple-100">
+      <main className="flex-1 bg-[#091327]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row bg-purple-400 p-6 sm:p-8 lg:p-10 rounded-[20px] shadow-md">
+          <div className="flex flex-col lg:flex-row bg-[#2e4d80] p-6 sm:p-8 lg:p-10 rounded-[20px] shadow-md">
             {/* Left Content */}
             <div className="flex-1 text-white pr-0 lg:pr-8 mb-6 lg:mb-0 flex flex-col justify-center items-center lg:items-start">
               <div className="flex items-center mb-6">
@@ -20,28 +20,28 @@ function FacultyModule() {
             <div className="flex-1 flex items-center justify-center">
               <div className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full md:w-[380px]">
                 <ul className="space-y-3 sm:space-y-4">
-                  <li className="flex items-center text-[#1F2937] font-medium">
-                    <span className="text-[#b564e4] text-base mr-3">●</span>
+                  <li className="flex items-center text-[#000000] font-medium">
+                    <span className="text-[#ffc700] text-base mr-3">●</span>
                     Pedagogy Enhancement
                   </li>
-                  <li className="flex items-center text-[#1F2937] font-medium">
-                    <span className="text-[#b564e4] text-base mr-3">●</span>
+                  <li className="flex items-center text-[#000000] font-medium">
+                    <span className="text-[#ffc700] text-base mr-3">●</span>
                     Curriculum Development
                   </li>
-                  <li className="flex items-center text-[#1F2937] font-medium">
-                    <span className="text-[#b564e4] text-base mr-3">●</span>
+                  <li className="flex items-center text-[#000000] font-medium">
+                    <span className="text-[#ffc700] text-base mr-3">●</span>
                     Technology Integration in Teaching
                   </li>
-                  <li className="flex items-center text-[#1F2937] font-medium">
-                    <span className="text-[#b564e4] text-base mr-3">●</span>
+                  <li className="flex items-center text-[#000000] font-medium">
+                    <span className="text-[#ffc700] text-base mr-3">●</span>
                     Assessment and Evaluation Strategies
                   </li>
-                  <li className="flex items-center text-[#1F2937] font-medium">
-                    <span className="text-[#b564e4] text-base mr-3">●</span>
+                  <li className="flex items-center text-[#000000] font-medium">
+                    <span className="text-[#ffc700] text-base mr-3">●</span>
                     Research and Publication Guidance
                   </li>
-                  <li className="flex items-center text-[#1F2937] font-medium">
-                    <span className="text-[#b564e4] text-base mr-3">●</span>
+                  <li className="flex items-center text-[#000000] font-medium">
+                    <span className="text-[#ffc700] text-base mr-3">●</span>
                     Leadership and Management Skills for Educators
                   </li>
                 </ul>
@@ -51,7 +51,7 @@ function FacultyModule() {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-purple-600 text-white py-12 mt-6 px-6 sm:px-12 shadow-lg">
+        <div className="relative bg-[#2e4d80] text-white py-12 mt-6 px-6 sm:px-12 shadow-lg">
           <div className="container mx-auto text-center">
             <p className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
               Join Gryphon Academy's FDP Today
@@ -61,9 +61,10 @@ function FacultyModule() {
             </p>
             <Link 
               to="/contact" 
-              className="inline-block bg-white text-purple-600 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-100 transition duration-300 hover:underline"
+              className="relative inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-[#ffffff] bg-transparent border border-[#ffffff] rounded-none overflow-hidden group transition-all duration-300 ease-in-out"
             >
-              Contact Us
+              <span className="relative z-10">Contact Us</span>
+              <span className="absolute inset-0 bg-[#091327] transform -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0 z-0"></span>
             </Link>
           </div>
         </div>

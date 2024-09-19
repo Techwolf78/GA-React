@@ -4,8 +4,8 @@ const SlidingCollege = () => {
   return (
     <div className="logo-slider-section bg-[#091327] py-8 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto px-4">
-        <p className="section-heading text-[#ffc700] text-center text-4xl font-bold mb-4 underline">
-          Our College Partners
+        <p className="section-heading text-[#ffc700] text-center text-4xl font-bold mb-4">
+        OUR COLLEGE PARTNERS
         </p>
         <div className="logo-slider relative overflow-hidden w-full">
           <div className="logo-slider-track flex animate-scroll">

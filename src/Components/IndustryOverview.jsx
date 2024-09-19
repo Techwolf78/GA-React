@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 import { Card, Typography } from "@material-tailwind/react";
 
 const ENGINEERING_TABLE_HEAD = ["Subject", "Topics"];
@@ -25,7 +25,6 @@ const ENGINEERING_TABLE_ROWS = [
     subject: "Civil Engineering",
     topics: "Structural Analysis, Fluid Mechanics, Construction Management, Geotechnical Engineering",
   },
-  // Add more rows as needed
 ];
 
 const MBA_TABLE_ROWS = [
@@ -53,7 +52,6 @@ const MBA_TABLE_ROWS = [
     subject: "Health Care",
     topics: "Healthcare Management, Patient Care, Nursing, Medical Administration",
   }
-  // Add more rows as needed
 ];
 
 const calculateMaxSubjectWidth = (rows) => {
@@ -62,33 +60,28 @@ const calculateMaxSubjectWidth = (rows) => {
 };
 
 const IndustryOverview = () => {
-  // Calculate maximum subject width from both tables
   const maxWidthEng = calculateMaxSubjectWidth(ENGINEERING_TABLE_ROWS);
   const maxWidthMBA = calculateMaxSubjectWidth(MBA_TABLE_ROWS);
   const subjectColumnWidth = Math.max(maxWidthEng, maxWidthMBA);
 
   return (
-    <div className="p-6 bg-gradient-to-b from-white via-purple-50 to-purple-100">
-      <Typography variant="p" className="text-center mb-12 font-bold text-4xl underline text-purple-700">
+    <div className="p-6 bg-[#091327] text-white">
+      <Typography variant="p" className="text-center mb-12 font-bold text-4xl  text-[#ffc700]">
         INDUSTRY ORIENTED TRAINING OVERVIEW
       </Typography>
 
       {/* Engineering Table */}
       <div className="mb-12">
-        <Typography variant="h4" color="blue-gray" className="text-center mb-4 font-semibold text-3xl">
-          Engineering
+        <Typography variant="h4" className="text-center mb-4 font-semibold text-3xl text-[#ffc700]">
+          ENGINEERING
         </Typography>
         <Card className="w-full overflow-x-auto shadow-lg rounded-lg bg-white">
           <table className="w-full min-w-max table-auto text-left">
             <thead>
               <tr>
                 {ENGINEERING_TABLE_HEAD.map((head) => (
-                  <th key={head} className="border-b border-blue-gray-200 bg-blue-gray-100 p-4">
-                    <Typography
-                      variant="large"
-                      color="blue-gray"
-                      className="font-normal leading-none opacity-80"
-                    >
+                  <th key={head} className="border-b border-gray-300 bg-gray-200 p-4">
+                    <Typography variant="large" className="font-normal leading-none opacity-80 text-[#091327]">
                       {head}
                     </Typography>
                   </th>
@@ -98,17 +91,17 @@ const IndustryOverview = () => {
             <tbody>
               {ENGINEERING_TABLE_ROWS.map(({ subject, topics }, index) => {
                 const isLast = index === ENGINEERING_TABLE_ROWS.length - 1;
-                const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-200";
+                const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
                 
                 return (
                   <tr key={subject}>
                     <td className={`w-[${subjectColumnWidth}px] ${classes}`}>
-                      <Typography variant="large" color="blue-gray" className="font-normal">
+                      <Typography variant="large" className="font-normal text-[#091327]">
                         {subject}
                       </Typography>
                     </td>
-                    <td className={`${classes} bg-blue-gray-50`}>
-                      <Typography variant="large" color="blue-gray" className="font-normal">
+                    <td className={`${classes} bg-gray-100`}>
+                      <Typography variant="large" className="font-normal text-[#091327]">
                         {topics}
                       </Typography>
                     </td>
@@ -122,7 +115,7 @@ const IndustryOverview = () => {
 
       {/* MBA Table */}
       <div>
-        <Typography variant="h4" color="blue-gray" className="text-center mb-4 font-semibold text-3xl">
+        <Typography variant="h4" className="text-center mb-4 font-semibold text-3xl text-[#ffc700]">
           MBA/PGDM
         </Typography>
         <Card className="w-full overflow-x-auto shadow-lg rounded-lg bg-white">
@@ -130,12 +123,8 @@ const IndustryOverview = () => {
             <thead>
               <tr>
                 {MBA_TABLE_HEAD.map((head) => (
-                  <th key={head} className="border-b border-blue-gray-200 bg-blue-gray-100 p-4">
-                    <Typography
-                      variant="large"
-                      color="blue-gray"
-                      className="font-normal leading-none opacity-80"
-                    >
+                  <th key={head} className="border-b border-gray-300 bg-gray-200 p-4">
+                    <Typography variant="large" className="font-normal leading-none opacity-80 text-[#091327]">
                       {head}
                     </Typography>
                   </th>
@@ -145,17 +134,17 @@ const IndustryOverview = () => {
             <tbody>
               {MBA_TABLE_ROWS.map(({ subject, topics }, index) => {
                 const isLast = index === MBA_TABLE_ROWS.length - 1;
-                const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-200";
+                const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
                 
                 return (
                   <tr key={subject}>
                     <td className={`w-[${subjectColumnWidth}px] ${classes}`}>
-                      <Typography variant="large" color="blue-gray" className="font-normal">
+                      <Typography variant="large" className="font-normal text-[#091327]">
                         {subject}
                       </Typography>
                     </td>
-                    <td className={`${classes} bg-blue-gray-50`}>
-                      <Typography variant="large" color="blue-gray" className="font-normal">
+                    <td className={`${classes} bg-gray-100`}>
+                      <Typography variant="large" className="font-normal text-[#091327]">
                         {topics}
                       </Typography>
                     </td>

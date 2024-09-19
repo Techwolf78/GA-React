@@ -23,43 +23,43 @@ function FacultyHero() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowFullForms(true);
-    }, 3000); // Delay before full forms appear
+    }, 2000); // Delay before full forms appear
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="relative bg-gradient-to-b from-white to-purple-100 overflow-hidden">
+    <div className="relative bg-dark-blue overflow-hidden">
       {/* Main Section */}
       <div className="flex flex-col md:flex-row p-8">
         {/* Left Side: F, D, P */}
         <div className="flex-1 flex flex-col items-start justify-center gap-8">
           <div className={`flex items-center ${showFullForms ? 'fade-in' : ''}`}>
-            <div className="text-6xl font-bold text-[#6d28d9] mr-4 animate-fade-in">
+            <div className="text-6xl font-bold text-yellow mr-4 animate-fade-in">
               F
             </div>
             {showFullForms && (
-              <div className="text-2xl md:text-3xl font-bold text-[#6d28d9] slide-in-left">
+              <div className="text-2xl md:text-3xl font-bold text-yellow slide-in-left">
                 Facilitating Growth
               </div>
             )}
           </div>
           <div className={`flex items-center ${showFullForms ? 'fade-in' : ''}`}>
-            <div className="text-6xl font-bold text-[#6d28d9] mr-4 animate-fade-in">
+            <div className="text-6xl font-bold text-yellow mr-4 animate-fade-in">
               D
             </div>
             {showFullForms && (
-              <div className="text-2xl md:text-3xl font-bold text-[#6d28d9] slide-in-left">
+              <div className="text-2xl md:text-3xl font-bold text-yellow slide-in-left">
                 Diverse Skillsets
               </div>
             )}
           </div>
           <div className={`flex items-center ${showFullForms ? 'fade-in' : ''}`}>
-            <div className="text-6xl font-bold text-[#6d28d9] mr-4 animate-fade-in">
+            <div className="text-6xl font-bold text-yellow mr-4 animate-fade-in">
               P
             </div>
             {showFullForms && (
-              <div className="text-2xl md:text-3xl font-bold text-[#6d28d9] slide-in-left">
+              <div className="text-2xl md:text-3xl font-bold text-yellow slide-in-left">
                 Professional Advancement
               </div>
             )}
@@ -69,11 +69,11 @@ function FacultyHero() {
         {/* Right Side: Heading and Paragraph */}
         <div className="flex-1 flex flex-col items-start justify-center px-4">
           {/* Heading */}
-          <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6d28d9] leading-tight uppercase text-left mb-4">
+          <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-yellow leading-tight uppercase text-left mb-4">
             Where great minds grow greater: FDP
           </p>
           {/* Paragraph */}
-          <p className="text-[#000000] text-base sm:text-lg lg:text-xl leading-relaxed text-left">
+          <p className="text-white text-base sm:text-lg lg:text-xl leading-relaxed text-left">
             {words.map((word, index) => (
               <span
                 key={index}

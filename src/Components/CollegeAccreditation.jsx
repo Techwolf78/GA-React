@@ -3,16 +3,17 @@ import CountUp from 'react-countup';
 
 const cardBackgrounds = {
   naacAPlus: '/Clgimage/new-nac.png',
-  naacAPlusPlus: '/Clgimage/new-nac.png',
-  nirfRanked: '/Clgimage/new-nac.png',
+  naacAPlusPlus: '/Clgimage/naacaplus-new.png',
+  nirfRanked: '/Clgimage/nirf.png',
   nmbaAccredited: '/Clgimage/new-nac.png',
 };
 
 function CollegeAccreditation() {
   return (
-    <div className="relative p-8 bg-gradient-to-b from-white via-purple-50 to-purple-100">
-      <p className="text-3xl font-semibold text-purple-700 mb-6 text-center underline">Partnered Colleges Accreditation</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 bg-opacity-0">
+    <div className="relative p-8 bg-[#091327] text-white">
+      <p className="text-4xl font-bold text-[#ffc700] mb-6 text-center">PARTNERED COLLEGES ACCREDITATION</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
         {/* NAAC A+ */}
         <div className="flex flex-col items-center">
           <img
@@ -21,7 +22,7 @@ function CollegeAccreditation() {
             className="w-full h-48 object-cover rounded-lg shadow-md"
           />
           <div className="mt-4 text-center text-xl font-bold">
-            <h3 className="text-lg mb-2">NAAC A+</h3>
+            <h3 className="text-lg mb-2 text-white">NAAC A+</h3>
             <div>
               <CountUp start={0} end={9} duration={2} /> <span className="text-lg">colleges</span>
             </div>
@@ -36,7 +37,7 @@ function CollegeAccreditation() {
             className="w-full h-48 object-cover rounded-lg shadow-md"
           />
           <div className="mt-4 text-center text-xl font-bold">
-            <h3 className="text-lg mb-2">NAAC A++</h3>
+            <h3 className="text-lg mb-2 text-white">NAAC A++</h3>
             <div>
               <CountUp start={0} end={7} duration={2} /> <span className="text-lg">colleges</span>
             </div>
@@ -51,7 +52,7 @@ function CollegeAccreditation() {
             className="w-full h-48 object-cover rounded-lg shadow-md"
           />
           <div className="mt-4 text-center text-xl font-bold">
-            <h3 className="text-lg mb-2">NIRF Ranked</h3>
+            <h3 className="text-lg mb-2 text-white">NIRF Ranked</h3>
             <div>
               <CountUp start={0} end={8} duration={2} /> <span className="text-lg">colleges</span>
             </div>
@@ -66,7 +67,7 @@ function CollegeAccreditation() {
             className="w-full h-48 object-cover rounded-lg shadow-md"
           />
           <div className="mt-4 text-center text-xl font-bold">
-            <h3 className="text-lg mb-2">MBA Accredited</h3>
+            <h3 className="text-lg mb-2 text-white">MBA Accredited</h3>
             <div>
               <CountUp start={0} end={7} duration={2} /> <span className="text-lg">colleges</span>
             </div>
