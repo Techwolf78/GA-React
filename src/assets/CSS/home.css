@@ -99,6 +99,13 @@ body, html {
   .section {
     background-color: #091327; /* Change background color to match the body */
     background-image: none !important; /* Remove background image */
+    
+
+
+    .left-side-image,
+    .right-side-image {
+      display: none; /* Hide left and right side images */
+    }
   }
 }
 
@@ -500,3 +507,4 @@ body, html {
 #do_more {
   position: relative; /* Positioning context for the image */
 }
+
