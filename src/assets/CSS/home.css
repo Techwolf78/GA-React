@@ -99,8 +99,6 @@ body, html {
   .section {
     background-color: #091327; /* Change background color to match the body */
     background-image: none !important; /* Remove background image */
-    
-
 
     .left-side-image,
     .right-side-image {
