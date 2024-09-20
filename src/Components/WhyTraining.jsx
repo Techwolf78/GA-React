@@ -2,9 +2,9 @@ import React from 'react';
 
 function WhyTraining() {
   // Define color variables
-  const lightBlue = '#2e4d80'; // Light blue background
+  const lightBlue = '#003073'; // Light blue background
   const darkBlue = '#091327'; // Dark blue text
-  const highlightYellow = '#ffc700'; // Highlight yellow
+  const highlightYellow = '#FFC80E'; // Highlight yellow
   const darkGray = '#333333'; // Dark gray text
 
   return (

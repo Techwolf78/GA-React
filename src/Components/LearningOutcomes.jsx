@@ -48,14 +48,14 @@ const departments = [
 const LearningOutcomes = () => {
   return (
     <div className="p-4 bg-[#091327] flex flex-col items-center">
-      <h1 className="text-4xl font-bold mb-6  text-[#ffc700]">
+      <h1 className="text-4xl font-bold mb-6  text-[#FFC80E]">
         LEARNING OUTCOMES OF OUR TRAININGS
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl">
         {departments.map((dept, index) => (
-          <div key={index} className="bg-[#2e4d80] text-white shadow-md rounded-3xl p-4 flex flex-col items-start">
+          <div key={index} className="bg-[#003073] text-white shadow-md rounded-3xl p-4 flex flex-col items-start">
             <div className="flex items-center mb-4">
-              <span className="w-16 h-16 flex items-center justify-center rounded-full bg-[#ffc700] mr-4">
+              <span className="w-16 h-16 flex items-center justify-center rounded-full bg-[#FFC80E] mr-4">
                 {dept.icon}
               </span>
               <p className="text-2xl font-semibold">{dept.name}</p>

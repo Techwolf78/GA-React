@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'custom-yellow': '#ffc700',
+        'custom-yellow': '#FFC80E',
       },
     },
   },

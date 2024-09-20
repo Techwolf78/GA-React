@@ -7,45 +7,42 @@ const HeroTraining = () => {
       {/* Left Section: Heading, Paragraph, and Button */}
       <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
         <div className="text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-[#ffffff]">
-            Better <span className="text-[#ffc700]">Learning Future</span> Starts With Us
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 text-[#ffffff] -mt-8">
+            Better <span className="text-[#FFC80E]">Learning Future</span> Starts With Us
           </h1>
           <img
             src="/Hero-bg.png"
             alt="Placeholder"
-            className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px] mx-auto mb-6 border-0 shadow-none md:hidden"
+            className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px] mx-auto mb-2 -mt-4 border-0 shadow-none md:hidden"
           />
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[#ffffff] mb-6">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-[#ffffff] mb-4 font-light">
             It is a long established fact that reader will be distracted readable content of a page when.
           </p>
+
           <a
-  href="#explore-courses"
-  className="relative inline-flex items-center justify-center px-4 sm:px-3 md:px-3 lg:px-3 xl:px-3 py-2 sm:py-3 md:py-3 lg:py-4 xl:py-4 text-base sm:text-lg md:text-lg lg:text-lg xl:text-lg font-semibold text-[#f1f1f1] bg-[#ffc700] border border-[#ffc700] rounded-full overflow-hidden group transition-all duration-300 ease-in-out"
->
-  <span className="relative z-10">Explore Our Trainings</span>
-  <svg
-    className="ml-2 sm:ml-3 w-4 sm:w-5 h-4 sm:h-5 text-[#ffffff] relative z-10"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="M13 7l5 5m0 0l-5 5m5-5H6"
-    />
-  </svg>
-  <span className="absolute inset-0 bg-[#091327] transform -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0 z-0"></span>
-</a>
-
-
+            href="#explore-courses"
+            className="btn-know-more relative inline-flex items-center justify-center px-5 py-3 text-sm sm:text-base font-semibold text-[#ffffff] group whitespace-nowrap"
+          >
+            <span className="relative z-10">Explore Our Trainings</span>
+            <svg
+              className="ml-2 w-4 h-4 text-[#ffffff] relative z-10 transition-colors duration-300 ease-in-out group-hover:text-[#000000]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </a>
         </div>
       </div>
       {/* Right Section: Image and Floating Stat Boxes */}
       <div className="relative flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
-        {/* For larger screens, show the image in the right section */}
         <div className="relative w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px]">
           <img
             src="/Hero-bg.png"
@@ -53,22 +50,59 @@ const HeroTraining = () => {
             className="w-full h-auto border-0 shadow-none"
           />
           {/* Stat boxes */}
-          <div className="absolute top-4 left-4 bg-[#2e4d80] p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 rounded-3xl shadow-lg flex items-center space-x-2 sm:space-x-3 md:space-x-4">
-            <FaTools className="text-[#ffc700] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl" />
+          <div className="absolute top-4 left-4 bg-[#003073] p-2 sm:p-3 md:p-4 rounded-2xl shadow-md flex items-center space-x-2 sm:space-x-3">
+            <FaTools className="text-[#FFC80E] text-xl sm:text-2xl md:text-3xl" />
             <div className="text-center">
-              <h3 className="text-lg sm:text-xl md:text-xl lg:text-2xl xl:text-2xl font-bold text-[#ffc700]">Customized Trainings</h3>
-              <span className="text-[#ffffff] block text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">Tailored to your needs</span>
+              <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#FFC80E]">Customized Trainings</h3>
+              <span className="text-[#ffffff] block text-xs sm:text-sm md:text-sm">Tailored to your needs</span>
             </div>
           </div>
-          <div className="absolute bottom-4 right-4 bg-[#2e4d80] p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 rounded-3xl shadow-lg flex items-center space-x-2 sm:space-x-3 md:space-x-4">
-            <FaChalkboardTeacher className="text-[#ffc700] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl" />
+          <div className="absolute bottom-4 right-4 bg-[#003073] p-2 sm:p-3 md:p-4 rounded-2xl shadow-md flex items-center space-x-2 sm:space-x-3">
+            <FaChalkboardTeacher className="text-[#FFC80E] text-xl sm:text-2xl md:text-3xl" />
             <div className="text-center">
-              <h3 className="text-lg sm:text-xl md:text-xl lg:text-2xl xl:text-2xl font-bold text-[#ffc700]">Expert Trainers</h3>
-              <span className="text-[#ffffff] block text-sm sm:text-base md:text-base lg:text-lg xl:text-lg">Learn from industry experts</span>
+              <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#FFC80E]">Expert Trainers</h3>
+              <span className="text-[#ffffff] block text-xs sm:text-sm md:text-sm">Learn from industry experts</span>
             </div>
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .btn-know-more {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          font-weight: bold;
+          padding: 10px 20px;
+          font-size: 1rem;
+          background-color: transparent;
+          border: 0.5px solid #ffffff;
+          text-decoration: none;
+          overflow: hidden;
+          transition: color 0.3s ease;
+        }
+        .btn-know-more::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background-color: #FFC80E;
+          transition: left 0.3s ease;
+          z-index: 0;
+        }
+        .btn-know-more:hover::before {
+          left: 0;
+        }
+        .btn-know-more:hover {
+          color: #000000;
+          transform: translateY(-3px);
+        }
+        .btn-know-more span {
+          position: relative;
+          z-index: 1;
+        }
+      `}</style>
     </div>
   );
 };

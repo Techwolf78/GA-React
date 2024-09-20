@@ -23,13 +23,13 @@
 
 .about-head {
   font-size: 0.875rem !important;
-  color: #ffc700 !important;
+  color: #FFC80E !important;
   font-weight: normal !important;
 }
 
 .about-text {
   font-size: 2.5rem;
-  color: #ffc700;
+  color: #FFC80E;
   max-width: 800px;
   padding-left: 6px;
   font-weight: bold;
@@ -51,7 +51,7 @@
 .more-about-link {
   display: inline-block;
   font-size: 1rem;
-  color: #ffc700;
+  color: #FFC80E;
   text-decoration: none;
   font-weight: bold;
   position: relative;
@@ -62,7 +62,7 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background: #ffc700;
+  background: #FFC80E;
   left: 0;
   bottom: -2px;
   transition: width 1s ease;
@@ -70,7 +70,7 @@
 
 .more-about-link:hover::after {
   width: 100%;
-  background: #ffc700;
+  background: #FFC80E;
 }
 
 .more-about-link:focus::after,
@@ -93,7 +93,7 @@
 }
 
 .feature-card {
-  background: #2e4d80;
+  background: #003073;
   border-radius: 50px;
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -126,7 +126,7 @@
   align-items: center;
   width: 55px;
   height: 55px;
-  background-color: #ffc700;
+  background-color: #FFC80E;
   border-radius: 50%;
 }
 
@@ -137,7 +137,7 @@
 
 .feature-card h4 {
   font-size: 1.10rem;
-  color: #ffc700;
+  color: #FFC80E;
   margin-bottom: 0;
 }
 
@@ -150,7 +150,7 @@
 .feature-header-link {
   display: inline-block;
   font-size: 1.25rem;
-  color: #ffc700;
+  color: #FFC80E;
   text-decoration: none;
   font-weight: bold;
   position: relative;
@@ -162,7 +162,7 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background: #ffc700;
+  background: #FFC80E;
   left: 0;
   bottom: -2px;
   transition: width 1s ease;
@@ -170,7 +170,7 @@
 
 .feature-header-link:hover::after {
   width: 100%;
-  background: #ffc700;
+  background: #FFC80E;
 }
 
 .feature-header-link:focus::after,

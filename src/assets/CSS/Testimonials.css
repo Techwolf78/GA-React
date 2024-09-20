@@ -9,11 +9,11 @@
 .testimonials-wrapper {
   display: flex;
   gap: 2rem; /* Space between testimonials */
-  animation: slide 20s linear infinite;
+  animation: slide 10s linear infinite; /* Default speed */
 }
 
 .testimonial-item {
-  background: #091327;
+  background: #01224f;
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -61,15 +61,13 @@
 .animate-slide {
   display: flex;
   gap: 1rem;
-  animation: slide 20s linear infinite;
+  animation: slide linear infinite; /* Speed controlled by JS */
 }
 
 /* Additional styles */
 section {
-  background: #091327;
+  background: #01224f;
 }
-
-
 
 /* Custom CSS */
 .underline-custom {

@@ -133,24 +133,24 @@ const Contact = () => {
       </section>
 
       {/* Information Section */}
-      <div className="py-12 bg-[#2e4d80]">
+      <div className="py-12 bg-[#091327]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
           {/* Address */}
-          <div className="p-6 text-center bg-[#091327] rounded-lg shadow-lg transition-transform hover:scale-105">
+          <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
             <i className="bx bx-location-plus text-4xl text-[#ffc700] mb-4"></i>
             <h4 className="text-xl font-bold text-[#ffc700] mb-2">Address</h4>
             <p className="text-[#ffffff]">9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Banglore, Highway Baner, Pune Maharashtra - 411045</p>
           </div>
 
           {/* Phone */}
-          <div className="p-6 text-center bg-[#091327] rounded-lg shadow-lg transition-transform hover:scale-105">
+          <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
             <i className="bx bx-phone text-4xl text-[#ffc700] mb-4"></i>
             <h4 className="text-xl font-bold text-[#ffc700] mb-2">Phone</h4>
             <p className="text-[#ffffff]">+91 89836 14509 / 8983339099</p>
           </div>
 
           {/* Email */}
-          <div className="p-6 text-center bg-[#091327] rounded-lg shadow-lg transition-transform hover:scale-105">
+          <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
             <i className="bx bx-envelope text-4xl text-[#ffc700] mb-4"></i>
             <h4 className="text-xl font-bold text-[#ffc700] mb-2">Email</h4>
             <p className="text-[#ffffff]">gryphonx@gryphonacademy.co.in</p>

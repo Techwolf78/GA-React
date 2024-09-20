@@ -11,9 +11,9 @@ const CorporateTraining = () => {
       <CorporateAppoarch />
 
       {/* New Section with Updated Contact Us Button */}
-      <div className="bg-[#2e4d80] py-16">
+      <div className="bg-[#003073] py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl font-bold text-[#ffc700] mb-4 underline">Get in Touch</h1>
+          <h1 className="text-3xl font-bold text-[#ffc700] mb-4 ">Get in Touch</h1>
           <p className="text-2xl text-[#ffffff] mb-8">
             We would love to hear from you. Feel free to reach out with any questions or inquiries.
           </p>

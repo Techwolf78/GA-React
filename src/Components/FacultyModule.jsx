@@ -6,14 +6,15 @@ function FacultyModule() {
     <div>
       <main className="flex-1 bg-[#091327]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row bg-[#2e4d80] p-6 sm:p-8 lg:p-10 rounded-[20px] shadow-md">
+          <div className="flex flex-col lg:flex-row bg-[#003073] p-6 sm:p-8 lg:p-10 rounded-[20px] shadow-md">
             {/* Left Content */}
             <div className="flex-1 text-white pr-0 lg:pr-8 mb-6 lg:mb-0 flex flex-col justify-center items-center lg:items-start">
               <div className="flex items-center mb-6">
-                <img src="/whyGA.png" alt="Illustration" className="h-48 sm:h-56 lg:h-64 xl:h-72" />
+              <img src="/whyGA.png" alt="Illustration" className="h-56 sm:h-64 lg:h-72 xl:h-80" />
+
               </div>
-              <p className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-6 text-center lg:text-left underline">
-                What do our FDP modules include?
+              <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-6 text-center lg:text-left text-[#ffc700] ">
+                What Do Our <br />FDP Modules Include?
               </p>
             </div>
             {/* Right Content */}
@@ -51,7 +52,7 @@ function FacultyModule() {
         </div>
 
         {/* CTA Section */}
-        <div className="relative bg-[#2e4d80] text-white py-12 mt-6 px-6 sm:px-12 shadow-lg">
+        <div className="relative bg-[#003073] text-white py-12 mt-6 px-6 sm:px-12 shadow-lg">
           <div className="container mx-auto text-center">
             <p className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
               Join Gryphon Academy's FDP Today

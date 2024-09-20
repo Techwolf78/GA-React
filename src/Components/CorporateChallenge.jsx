@@ -77,12 +77,12 @@ const ChallengesSolutionsComponent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#091327] p-10 flex items-center justify-center">
+    <div className="min-h-screen bg-[#0a1d3d] p-10 flex items-center justify-center"> {/* Darker background */}
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold text-center text-[#ffc700] mb-12">CHALLENGES & SOLUTIONS</h1>
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4">
           {challenges.map((challenge, index) => {
-            const cardColor = index % 2 === 0 ? 'bg-[#2e4d80]' : 'bg-[#1a2b4e]';
+            const cardColor = '#003073'; // Solid red color
             const isHovered = hoveredIndex === index;
 
             // Set border color and glow intensity based on hover state
@@ -101,7 +101,7 @@ const ChallengesSolutionsComponent = () => {
                   maxWidth: '400px',
                   margin: '0 auto',
                   borderRadius: '0.5rem',
-                  boxShadow: isHovered ? `0 0 ${glowIntensity} ${borderColor}, 0 0 30px ${borderColor}` : 'none', // No glow if not hovered
+                  boxShadow: isHovered ? `0 0 ${glowIntensity} ${borderColor}, 0 0 30px ${borderColor}` : 'none',
                   transition: 'border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
                   overflow: 'hidden'
                 }}

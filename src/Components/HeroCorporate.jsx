@@ -74,7 +74,7 @@ function HeroCorporate() {
       </div>
 
       {/* New Section */}
-      <section className="bg-gradient-to-b from-[#091327] to-[#2e4d80] py-16">
+      <section className="bg-[#003073] py-16">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <p className="text-4xl font-semibold mb-6 text-[#ffc700] underline">Elevate Your Workforce</p>

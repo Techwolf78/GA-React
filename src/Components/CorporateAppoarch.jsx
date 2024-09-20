@@ -32,7 +32,7 @@ const CorporateAppoarch = () => {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="bg-[#2e4d80] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
+          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
             <div className="flex items-center mb-4">
               <div className="text-4xl text-[#ffc700] mr-4">
                 <FaCalendarCheck />
@@ -47,7 +47,7 @@ const CorporateAppoarch = () => {
             </p>
           </div>
 
-          <div className="bg-[#2e4d80] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
+          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
             <div className="flex items-center mb-4">
               <div className="text-4xl text-[#ffc700] mr-4">
                 <FaCogs />
@@ -65,7 +65,7 @@ const CorporateAppoarch = () => {
             </p>
           </div>
 
-          <div className="bg-[#2e4d80] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
+          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
             <div className="flex items-center mb-4">
               <div className="text-4xl text-[#ffc700] mr-4">
                 <FaBriefcase />

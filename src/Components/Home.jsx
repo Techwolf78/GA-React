@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../assets/CSS/home.css';
 import Testimonials from './Testimonials';
+import ConnectWithUs from './ConnectWithUs'; // Import the Connect component
 
 const Home = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -28,7 +29,7 @@ const Home = () => {
       } else {
         setNavbarVisible(true);
       }
-    };
+    };   
 
     window.addEventListener('scroll', handleScroll);
 
@@ -269,6 +270,8 @@ const Home = () => {
       <div>
         <Testimonials />
       </div>
+      {/* New Connect Component */}
+      <ConnectWithUs />
     </div>
   );
 };

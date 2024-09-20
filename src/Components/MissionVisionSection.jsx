@@ -10,7 +10,7 @@ const MissionVisionSection = () => {
     >
       {/* Main Heading */}
       <h1 
-        className="absolute top-4 left-1/2 transform -translate-x-1/2 text-4xl font-bold text-black text-center mx-4"
+        className="absolute top-4 left-1/2 transform -translate-x-1/2 text-4xl font-bold text-[#ffc700] text-center mx-4"
         style={{ margin: 0 }}
       >
         OUR MISSION & VISION

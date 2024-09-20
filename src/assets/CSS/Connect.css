@@ -1,0 +1,103 @@
+:root {
+  --color-text: #ffeeff;
+  --color-neon: #1331db;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  font-family: "Nunito", sans-serif;
+  background: #01224f; /* Dark blue background */
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  padding: 20px; /* Optional padding */
+  margin-bottom: 50px; /* Optional margin */
+}
+
+.neon-link-button {
+  font-size: 2rem;
+  border: 0.1em solid var(--color-text);
+  color: var(--color-text);
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 0.25em;
+  text-decoration: none;
+  box-shadow: 0 0 0.75em 0 var(--color-neon),
+    inset 0 0 0.75em 0 var(--color-neon),
+    0 0 0.1em 0.05em var(--color-text),
+    inset 0 0 0.1em 0.05em var(--color-text);
+  text-shadow: 0 0 0.5em var(--color-neon), 0 0 0.1em var(--color-text);
+  background: transparent;
+  padding: 0.2em 1em;
+  position: relative;
+}
+
+.neon-link-button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  transition: opacity 50ms linear;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-neon);
+  transform: perspective(1em) rotateX(45deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.neon-link-button::after {
+  content: "";
+  position: absolute;
+  transition: opacity 50ms linear;
+  top: -0.1em;
+  right: -0.1em;
+  bottom: -0.1em;
+  left: -0.1em;
+  border-radius: 0.25em;
+  border: 0.1em solid var(--color-text);
+  box-shadow: 0 0 2em 0.5em var(--color-neon), inset 0 0 1em 0 var(--color-neon);
+  opacity: 0;
+}
+
+@keyframes blink {
+  0%,
+  10%,
+  55%,
+  90% {
+    color: inherit;
+  }
+  11%,
+  15%,
+  56%,
+  91% {
+    color: black;
+  }
+  16%,
+  58%,
+  99% {
+    color: inherit;
+  }
+}
+
+
+
+.neon-link-button:focus {
+  outline: none;
+}
+
+.neon-link-button:hover::before,
+.neon-link-button:focus::before,
+.neon-link-button:hover::after,
+.neon-link-button:focus::after {
+  opacity: 1;
+}

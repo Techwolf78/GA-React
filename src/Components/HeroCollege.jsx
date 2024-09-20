@@ -34,7 +34,7 @@ const HeroCollege = () => {
           {/* Sliding Text animation */}
           <div className="font-extrabold text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r text-white">
             A JOURNEY FROM <span></span>
-            <span className="text-[#ffc700] inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
+            <span className="text-[#FFC80E] inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
               <ul className={`block ${showClassroom ? 'animate-text-slide-stop' : 'animate-text-slide'} text-left leading-tight`}>
                 <li className="transition-opacity duration-1000">{!showClassroom && 'COLLEGE'}</li>
                 <li className={`transition-opacity duration-1000 ${showClassroom ? 'opacity-100' : 'opacity-0'}`}>CLASSROOM</li>
@@ -50,13 +50,13 @@ const HeroCollege = () => {
         {/* Full-width Rectangle with Content */}
         <div className="info-rectangle absolute bottom-0 left-0 w-full p-6 text-gray-800 rounded-lg shadow-lg bg-transparent">
           <ul className="list-disc pl-4 custom-list">
-            <li className="flex items-center mb-4 font-bold text-[#ffc700] text-lg">
+            <li className="flex items-center mb-4 font-bold text-[#FFC80E] text-lg">
               <span className="check-icon-wrapper">
                 <FaCheck className="check-icon" />
               </span>
               Content approved by the Industry
             </li>
-            <li className="flex items-center font-bold text-[#ffc700] text-lg">
+            <li className="flex items-center font-bold text-[#FFC80E] text-lg">
               <span className="check-icon-wrapper">
                 <FaCheck className="check-icon" />
               </span>

@@ -3,7 +3,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #091327;
+  background-color: #01224f;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
@@ -97,7 +97,7 @@ body, html {
 
   /* Apply the background color to sections */
   .section {
-    background-color: #091327; /* Change background color to match the body */
+    background-color: #01224f; /* Change background color to match the body */
     background-image: none !important; /* Remove background image */
 
     .left-side-image,
@@ -240,16 +240,16 @@ body, html {
   padding: 0 20px; /* General padding for sections */
 }
 .section h2 {
-  color: #ffc700; /* Yellow text color */
+  color: #FFC80E; /* Yellow text color */
 }
 
 /* Unique Section Styles */
 #hero_slider {
-  background-image: url('/LandingImage/Landing-Pages-1.png');
+  background-image: url('/LandingImage/homeland1.png');
 }
 
 #core_capabilities {
-  background-image: url('/LandingImage/Landing-Pages-2.png');
+  background-image: url('/LandingImage/homeland2.png');
 }
 
 #operating_models {
@@ -267,7 +267,7 @@ body, html {
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .section {
-    background-color: #091327; /* Background color to apply when navbar is hidden */
+    background-color: #01224f; /* Background color to apply when navbar is hidden */
     background-image: none !important; /* Remove background image */
   }
 }
@@ -334,7 +334,7 @@ body, html {
   left: -100%; /* Start off-screen to the left */
   width: 100%;
   height: 100%;
-  background-color: #ffc700; /* Change the background color to #ffc700 */
+  background-color: #FFC80E; /* Change the background color to #FFC80E */
   transition: left 0.3s ease; /* Transition for the curtain effect */
   z-index: 0; /* Behind the text */
 }
@@ -345,7 +345,7 @@ body, html {
 }
 
 .btn-know-more:hover {
-  color: #000000; /* Black text color on hover */
+  color: #01224f; /* Black text color on hover */
   transform: translateY(-3px); /* Slight lift effect on hover */
 }
 

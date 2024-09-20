@@ -59,10 +59,10 @@ const StorySection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col items-center justify-center bg-[#e9e5ff] text-center px-4 overflow-hidden"
+      className="relative flex flex-col items-center justify-center bg-[#091327] text-center px-4 overflow-hidden"
     >
       {/* Heading */}
-      <h1 className="text-4xl md:text-4xl font-bold mb-5 relative z-10 mt-4">BEGINNING OF REVOLUTION</h1>
+      <h1 className="text-4xl md:text-4xl font-bold mb-5 relative z-10 mt-4 text-[#ffc700]">BEGINNING OF REVOLUTION</h1>
 
       {/* Storytelling Items */}
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto items-start">
@@ -78,9 +78,9 @@ const StorySection = () => {
               className="flex items-center mb-4 w-full px-2"
             >
               {/* Sleek Dash */}
-              <span className="text-lg font-bold text-gray-800 mr-4">-</span>
+              <span className="text-lg font-bold text-white mr-4">-</span>
               {/* Story text */}
-              <p className="text-base md:text-lg font-semibold text-gray-800">
+              <p className="text-base md:text-lg font-semibold text-white">
                 {item.text}
               </p>
             </motion.div>
@@ -88,7 +88,7 @@ const StorySection = () => {
         </div>
 
         {/* Vertical Line */}
-        <div className="hidden md:block border-l-2 border-gray-400 h-full mx-auto"></div>
+        <div className="hidden md:block border-l-2 border-white h-full mx-auto"></div>
 
         {/* Even ID Items */}
         <div className="col-span-1 flex flex-col items-end">
@@ -102,9 +102,9 @@ const StorySection = () => {
               className="flex items-center mb-4 w-full px-2"
             >
               {/* Sleek Dash */}
-              <span className="text-lg font-bold text-gray-800 mr-4">-</span>
+              <span className="text-lg font-bold text-white mr-4">-</span>
               {/* Story text */}
-              <p className="text-base md:text-lg font-semibold text-gray-800 text-left">
+              <p className="text-base md:text-lg font-semibold text-white text-left">
                 {item.text}
               </p>
             </motion.div>

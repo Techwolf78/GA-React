@@ -45,7 +45,7 @@ const Navbar = () => {
         />
       </a>
 
-      <nav className="hidden md:flex space-x-6">
+      <nav className="hidden md:flex space-x-4">
         <Link
           to="/"
           className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
@@ -53,7 +53,7 @@ const Navbar = () => {
           HOME
         </Link>
         <div
-          className="relative"
+          className="relative inline-block"
           onMouseEnter={() => setDropdownOpen(true)}
           onMouseLeave={() => setDropdownOpen(false)}
           ref={dropdownRef}
@@ -62,12 +62,13 @@ const Navbar = () => {
             onClick={handleTrainingClick}
             aria-haspopup="true"
             aria-expanded={isDropdownOpen}
-            className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded flex items-center justify-center w-48 transition-colors duration-300"
+            className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-2 rounded flex items-center justify-center transition-colors duration-300"
           >
             TRAINING <i className="bx bx-chevron-down ml-1"></i>
           </button>
+
           {isDropdownOpen && (
-            <div className="absolute top-full left-0 mt-0 w-48 bg-[#ffc700] text-[#1a1a1a] rounded-md shadow-lg transition-all duration-300 z-50">
+            <div className="absolute top-full left-0 mt-0 bg-[#ffc700] text-[#1a1a1a] rounded-md shadow-lg transition-all duration-300 z-50 whitespace-nowrap">
               <Link
                 to="/collegeTraining"
                 className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
