@@ -158,16 +158,16 @@ const Home = () => {
       {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`} id="sidebar" ref={sidebarRef}>
         <ul>
-          <li><Link to="/gax"><span>GAX</span></Link></li>
+        <li><Link to="/blogs"><span>Blogs</span></Link></li>
           <li>
             <Link to="/training"><span>Training</span></Link>
             <ul>
-              <li><Link to="/college-training"><span>College Training</span></Link></li>
-              <li><Link to="/corporate"><span>Corporate Training</span></Link></li>
-              <li><Link to="/faculty"><span>Faculty</span></Link></li>
+              <li><Link to="/collegeTraining"><span>College Training</span></Link></li>
+              <li><Link to="/corporateTraining"><span>Corporate Training</span></Link></li>
+              <li><Link to="/facultyTraining"><span>Faculty Training</span></Link></li>
             </ul>
           </li>
-          <li><Link to="/blogs"><span>Blogs</span></Link></li>
+
           <li><Link to="/contact"><span>Contact us</span></Link></li>
         </ul>
       </div>
