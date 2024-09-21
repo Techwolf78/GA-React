@@ -71,7 +71,7 @@ const Testimonials = () => {
           RECRUITER TESTIMONIALS
         </h3>
         <h4 className="text-2xl text-white mb-4">
-          What Our Graduates Say
+          What Our Recruiters Say
         </h4>
       </div>
       <div style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '320px' }}>

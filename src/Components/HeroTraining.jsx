@@ -1,27 +1,40 @@
 import React from "react";
-import { FaChalkboardTeacher, FaTools } from "react-icons/fa"; // Import new icons
+import { FaChalkboardTeacher, FaTools } from "react-icons/fa";
 
 const HeroTraining = () => {
+  const handleScroll = () => {
+    window.scrollTo({
+      top: window.innerHeight * 1, // Scrolls to 90% of the viewport height
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 h-screen bg-[#091327]">
-      {/* Left Section: Heading, Paragraph, and Button */}
-      <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
-        <div className="text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 text-[#ffffff] -mt-8">
-            Better <span className="text-[#FFC80E]">Learning Future</span> Starts With Us
+    <div className="bg-[#091327] relative">
+      {/* Full-Width Section: Background Image for Large Screens */}
+      <div
+        className="hidden lg:flex flex-col justify-between p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 bg-cover bg-center h-screen"
+        style={{ backgroundImage: "url('Training 1 1.png')" }}
+      >
+        {/* Heading at the top */}
+        <div className="text-center md:text-left mt-28 ml-14">
+          <h1 className="text-1xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 text-[#000000]">
+            <span className="text-[#FFC80E] ">The Learning Trinity:</span> <br />
+            <span className="text-xl sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 text-[#000000]">
+              Where Academia Meets Industry Expertise
+            </span>
           </h1>
-          <img
-            src="/Hero-bg.png"
-            alt="Placeholder"
-            className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px] mx-auto mb-2 -mt-4 border-0 shadow-none md:hidden"
-          />
+        </div>
+
+        {/* Paragraph and Button in the bottom-left corner */}
+        <div className="absolute bottom-8 left-4 sm:left-6 md:left-8 lg:left-12 xl:left-16 text-left">
           <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-[#ffffff] mb-4 font-light">
-            It is a long established fact that reader will be distracted readable content of a page when.
+            It is a long established fact that reader will be distracted by readable content of a page when.
           </p>
 
-          <a
-            href="#explore-courses"
-            className="btn-know-more relative inline-flex items-center justify-center px-5 py-3 text-sm sm:text-base font-semibold text-[#ffffff] group whitespace-nowrap"
+          <button
+            onClick={handleScroll}
+            className="btn-know-more relative inline-flex px-5 py-3 text-sm sm:text-base font-semibold text-[#ffffff] group whitespace-nowrap"
           >
             <span className="relative z-10">Explore Our Trainings</span>
             <svg
@@ -38,26 +51,22 @@ const HeroTraining = () => {
                 d="M13 7l5 5m0 0l-5 5m5-5H6"
               />
             </svg>
-          </a>
+          </button>
         </div>
-      </div>
-      {/* Right Section: Image and Floating Stat Boxes */}
-      <div className="relative flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
-        <div className="relative w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px]">
-          <img
-            src="/Hero-bg.png"
-            alt="Placeholder"
-            className="w-full h-auto border-0 shadow-none"
-          />
-          {/* Stat boxes */}
-          <div className="absolute top-4 left-4 bg-[#003073] p-2 sm:p-3 md:p-4 rounded-2xl shadow-md flex items-center space-x-2 sm:space-x-3">
+
+        {/* Stat boxes positioned in corners with padding and margin */}
+        <div className="absolute top-36 right-4 p-2">
+          <div className="bg-[#003073] p-3 rounded-2xl shadow-md flex items-center space-x-2">
             <FaTools className="text-[#FFC80E] text-xl sm:text-2xl md:text-3xl" />
             <div className="text-center">
               <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#FFC80E]">Customized Trainings</h3>
               <span className="text-[#ffffff] block text-xs sm:text-sm md:text-sm">Tailored to your needs</span>
             </div>
           </div>
-          <div className="absolute bottom-4 right-4 bg-[#003073] p-2 sm:p-3 md:p-4 rounded-2xl shadow-md flex items-center space-x-2 sm:space-x-3">
+        </div>
+
+        <div className="absolute bottom-12 right-4 p-2">
+          <div className="bg-[#003073] p-3 rounded-2xl shadow-md flex items-center space-x-2">
             <FaChalkboardTeacher className="text-[#FFC80E] text-xl sm:text-2xl md:text-3xl" />
             <div className="text-center">
               <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#FFC80E]">Expert Trainers</h3>
@@ -66,6 +75,62 @@ const HeroTraining = () => {
           </div>
         </div>
       </div>
+
+      {/* Background for Medium and Small Screens */}
+      <div className="lg:hidden flex flex-col justify-center items-center bg-cover bg-center p-4"
+        style={{ backgroundImage: "url('Training 1 1.png')" }} // Add a smaller image here
+      >
+        <div className="text-center">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#FFC80E] mb-4">
+            The Learning Trinity: Where Academia Meets Industry Expertise
+          </h1>
+          <p className="text-base text-[#ffffff] mb-6">
+            It is a long established fact that reader will be distracted by readable content of a page when.
+          </p>
+          
+        </div>
+        
+        {/* Stat Boxes for Smaller Screens */}
+        <div className="flex flex-row space-x-4 p-4">
+          <div className="bg-[#003073] p-3 rounded-2xl shadow-md flex items-center">
+            <FaTools className="text-[#FFC80E] text-xl sm:text-2xl" />
+            <div className="text-center ml-2">
+              <h3 className="text-sm sm:text-base font-bold text-[#FFC80E]">Customized Trainings</h3>
+              <span className="text-[#ffffff] block text-xs sm:text-sm">Tailored to your needs</span>
+            </div>
+          </div>
+
+          <div className="bg-[#003073] p-3 rounded-2xl shadow-md flex items-center">
+            <FaChalkboardTeacher className="text-[#FFC80E] text-xl sm:text-2xl" />
+            <div className="text-center ml-2">
+              <h3 className="text-sm sm:text-base font-bold text-[#FFC80E]">Expert Trainers</h3>
+              <span className="text-[#ffffff] block text-xs sm:text-sm">Learn from industry experts</span>
+            </div>
+          </div>
+        
+        </div>
+        <button
+            onClick={handleScroll}
+            className="btn-know-more relative inline-flex px-5 py-3 text-sm sm:text-base font-semibold text-[#ffffff] group whitespace-nowrap mb-4"
+          >
+            <span className="relative z-10">Explore Our Trainings</span>
+            <svg
+              className="ml-2 w-4 h-4 text-[#ffffff] relative z-10 transition-colors duration-300 ease-in-out group-hover:text-[#000000]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </button>
+      </div>
+
       <style jsx>{`
         .btn-know-more {
           position: relative;

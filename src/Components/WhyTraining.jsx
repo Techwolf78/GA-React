@@ -11,8 +11,9 @@ function WhyTraining() {
     <div>
       <main className="flex-1 py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Layout for large screens */}
           <div
-            className="flex flex-col lg:flex-row"
+            className="hidden lg:flex flex-col lg:flex-row"
             style={{ backgroundColor: lightBlue, padding: '1.5rem', borderRadius: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}
           >
             {/* Left Content */}
@@ -32,6 +33,51 @@ function WhyTraining() {
             </div>
             {/* Right Content */}
             <div className="flex-1 flex items-center justify-center">
+              <div
+                className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full md:w-[380px]"
+                style={{ backgroundColor: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}
+              >
+                <ul className="space-y-3 sm:space-y-4">
+                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
+                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
+                    Over two decades of instruction from highly skilled professionals
+                  </li>
+                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
+                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
+                    Syllabus crafted to meet current market demands
+                  </li>
+                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
+                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
+                    Advisory board featuring IIT and IIM luminaries
+                  </li>
+                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
+                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
+                    Integrated approach combining technical expertise, soft skills, and aptitude training
+                  </li>
+                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
+                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
+                    LinkedIn testimonials from our students across India
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Layout for medium and small screens */}
+          <div
+            className="flex lg:hidden flex-col"
+            style={{ backgroundColor: lightBlue, padding: '1.5rem', borderRadius: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}
+          >
+            <p
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-6 text-center"
+              style={{ color: highlightYellow }}
+            >
+              How do Our Trainings Differ?
+            </p>
+            <div className="flex items-center mb-6 justify-center">
+              <img src="/whyGA.png" alt="Illustration" className="h-48 sm:h-56 lg:h-64 xl:h-72" />
+            </div>
+            <div className="flex items-center justify-center">
               <div
                 className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full md:w-[380px]"
                 style={{ backgroundColor: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}

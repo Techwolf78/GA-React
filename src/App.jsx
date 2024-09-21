@@ -14,6 +14,7 @@ import BrandPositioning from './Components/BrandPositioning';
 import CollegeTraining from './Components/CollegeTraining';
 import CorporateTraining from './Components/CorporateTraining';
 import FacultyTraining from './Components/FacultyTraining'; // Corrected path to Components
+import WhatsAppWidget from './Components/WhatsAppWidget'; // Import the WhatsAppWidget component
 
 
 function App() {
@@ -31,7 +32,9 @@ function App() {
         <Route path="/collegeTraining" element={<><Navbar /><CollegeTraining /></>} />
         <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />
+       
       </Routes>
+      <WhatsAppWidget /> {/* Render WhatsAppWidget on all pages */}
       <Footer /> {/* Render Footer on all pages */}
     </Router>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 
 const HeroCollege = () => {
@@ -16,7 +16,7 @@ const HeroCollege = () => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = '/Clgimage/clg-new-3.png'; // Preload background image
+    img.src = '/Clgimage/clgmain.png'; // Preload background image
     img.onload = () => {
       setImageLoaded(true);
       setBackgroundImage(img.src); // Set the loaded image as background
@@ -25,16 +25,19 @@ const HeroCollege = () => {
 
   return (
     <main className={`relative flex flex-col justify-center bg-[#f0f4f8] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
+      {/* Blue Background Layer */}
+      <div className="absolute inset-0 bg-[#003073] z-0"></div>
+
       <div
         className="hero-section"
         style={{
           backgroundImage: imageLoaded ? `url('${backgroundImage}')` : 'none',
-          opacity: imageLoaded ? 1 : 0, // Fade effect based on image loading
-          transition: 'opacity 1s ease-in-out', // Smooth transition
+          opacity: imageLoaded ? 1 : 0,
+          transition: 'opacity 1s ease-in-out',
         }}
       >
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-16 text-center relative z-10">
-          {/* Sliding Text animation */}
+        {/* Heading Container */}
+        <div className="heading-container absolute top-1/4 left-1/2 transform -translate-x-1/2 text-center z-10">
           {imageLoaded && (
             <div className="font-extrabold text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r text-white">
               A JOURNEY FROM <span></span>
@@ -46,28 +49,25 @@ const HeroCollege = () => {
               </span> TO CORPORATE
             </div>
           )}
-          {/* End: Sliding Text animation */}
-          <br />
           {imageLoaded && <p className="text-3xl text-[#]">Get Industry-Ready with Gryphon</p>}
         </div>
+
         <div className="hero-overlay"></div>
-        
-        {/* Full-width Rectangle with Content */}
-        <div className="info-rectangle absolute bottom-0 left-0 w-full p-6 text-gray-800 rounded-lg shadow-lg bg-transparent">
-          <ul className="list-disc pl-4 custom-list">
-            <li className="flex items-center mb-4 font-bold text-[#FFC80E] text-lg">
-              <span className="check-icon-wrapper">
-                <FaCheck className="check-icon" />
-              </span>
-              Content approved by the Industry
-            </li>
-            <li className="flex items-center font-bold text-[#FFC80E] text-lg">
-              <span className="check-icon-wrapper">
-                <FaCheck className="check-icon" />
-              </span>
-              Then delivered by us to the students
-            </li>
-          </ul>
+
+        {/* Text Information at the Bottom */}
+        <div className="text-info absolute bottom-1 left-0 w-full p-4 text-gray-800 z-2 flex flex-col items-start">
+          <div className="flex items-center mb-2 font-bold text-[#ffffff] text-lg">
+            <span className="check-icon-wrapper">
+              <FaCheck className="check-icon" />
+            </span>
+            Content approved by the Industry
+          </div>
+          <div className="flex items-center font-bold text-[#ffffff] text-lg">
+            <span className="check-icon-wrapper">
+              <FaCheck className="check-icon" />
+            </span>
+            Then delivered by us to the students
+          </div>
         </div>
       </div>
 
@@ -75,13 +75,17 @@ const HeroCollege = () => {
         .hero-section {
           background-size: cover;
           background-position: center;
-          height: 60vh; /* Adjusted height to 60% of viewport height */
+          height: 100vh;
           display: flex;
           align-items: center;
           justify-content: center;
           position: relative;
           text-align: center;
           color: white;
+        }
+
+        .heading-container {
+          width: 100%;
         }
 
         .hero-overlay {
@@ -92,29 +96,12 @@ const HeroCollege = () => {
           width: 100%;
           height: 100%;
           background: rgba(0, 0, 0, 0.4);
-          z-index: 1; /* Ensures overlay is above the background but below the text */
+          z-index: 1;
         }
 
-        /* Additional styles unchanged */
-
-        .info-rectangle {
-          padding: 24px;
-          background: rgba(255, 255, 255, 0); /* Fully transparent background */
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          z-index: 2; /* Ensure it’s above the hero-overlay */
-          max-width: 100%; /* Ensure it spans full width */
-          box-sizing: border-box; /* Include padding and border in the element’s total width and height */
-        }
-
-        @media (min-width: 1024px) { /* For laptop and larger devices */
-          .info-rectangle {
-            max-width: 50%; /* Adjust to fit 50% width of the viewport if needed */
-            position: absolute;
-            bottom: 0;
-            left: 0;
-          }
+        .text-info {
+          padding: 0 1rem; /* Adjust padding if necessary */
+          z-index: 2;
         }
 
         .check-icon-wrapper {
@@ -123,7 +110,7 @@ const HeroCollege = () => {
           justify-content: center;
           width: 20px;
           height: 20px;
-          background-color: #34D399; /* Tailwind green-400 */
+          background-color: #34D399;
           border-radius: 50%;
           margin-right: 12px;
         }
@@ -131,11 +118,6 @@ const HeroCollege = () => {
         .check-icon {
           color: white;
           font-size: 16px;
-        }
-
-        .custom-list {
-          padding-left: 2rem; /* Shift the list to the right */
-          padding-bottom: 1rem; /* Add padding below the list */
         }
       `}</style>
     </main>

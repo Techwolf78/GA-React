@@ -11,9 +11,8 @@ const LearningAndDevelopment = () => {
     <div>
       <HeroTraining />
       <TrainingAbout />
-      <div className="bg-dark-blue py-8 px-4 sm:px-6 lg:px-8">
   <WhyTraining />
-</div>
+
 
       <LearningOutcomes />
       <AcrossIndia />
