@@ -66,13 +66,13 @@ const IndustryOverview = () => {
 
   return (
     <div className="p-6 bg-[#091327] text-white">
-      <Typography variant="p" className="text-center mb-12 font-bold text-4xl  text-[#ffc700]">
+      <Typography variant="p" className="text-center mb-12 font-bold text-4xl  text-[#FFC80E]">
         INDUSTRY ORIENTED TRAINING OVERVIEW
       </Typography>
 
       {/* Engineering Table */}
       <div className="mb-12">
-        <Typography variant="h4" className="text-center mb-4 font-semibold text-3xl text-[#ffc700]">
+        <Typography variant="h4" className="text-center mb-4 font-semibold text-3xl text-[#FFC80E]">
           ENGINEERING
         </Typography>
         <Card className="w-full overflow-x-auto shadow-lg rounded-lg bg-white">
@@ -115,7 +115,7 @@ const IndustryOverview = () => {
 
       {/* MBA Table */}
       <div>
-        <Typography variant="h4" className="text-center mb-4 font-semibold text-3xl text-[#ffc700]">
+        <Typography variant="h4" className="text-center mb-4 font-semibold text-3xl text-[#FFC80E]">
           MBA/PGDM
         </Typography>
         <Card className="w-full overflow-x-auto shadow-lg rounded-lg bg-white">

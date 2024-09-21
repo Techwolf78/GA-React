@@ -22,7 +22,7 @@ const PartneredCollege = () => {
   ];
 
   return (
-    <div className="bg-[#091327] py-16 min-h-screen">
+    <div className="bg-[#003073] py-16 min-h-screen">
       <div className="container mx-auto px-4">
         <p className="text-4xl font-bold mb-10 text-center text-[#ffc700]">FEW PARTNERED COLLEGES</p>
         <div className="relative overflow-hidden">

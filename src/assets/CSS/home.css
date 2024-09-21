@@ -253,15 +253,15 @@ body, html {
 }
 
 #operating_models {
-  background-image: url('/LandingImage/Landing-Pages-3.png');
+  background-image: url('/LandingImage/homeland3.png');
 }
 
 #talent_transformations {
-  background-image: url('/LandingImage/Landing-Pages-4.png');
+  background-image: url('/LandingImage/homeland4.png');
 }
 
 #do_more {
-  background-image: url('/LandingImage/Landing-Pages-5.png');
+  background-image: url('/LandingImage/homeland5.png');
 }
 
 /* Media Queries for Responsiveness */

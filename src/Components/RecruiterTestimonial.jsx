@@ -40,7 +40,7 @@ const testimonials = [
 
 const Testimonials = () => {
   const cardStyle = {
-    backgroundColor: '#2e4d80',
+    backgroundColor: '#003073',
     borderRadius: '8px',
     padding: '24px',
     boxShadow: 'none',
@@ -67,10 +67,10 @@ const Testimonials = () => {
   return (
     <section style={{ background: '#091327', padding: '64px 0' }}>
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-        <h3 className="text-4xl font-bold text-[#ffc700] mb-4">
+        <h3 className="text-4xl font-bold text-[#FFC80E] mb-4">
           RECRUITER TESTIMONIALS
         </h3>
-        <h4 className="text-2xl text-gray-200 mb-4">
+        <h4 className="text-2xl text-white mb-4">
           What Our Graduates Say
         </h4>
       </div>
@@ -78,12 +78,12 @@ const Testimonials = () => {
         <div style={{ display: 'flex', gap: '16px', animation: 'slide 20s linear infinite' }}>
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div key={index} style={cardStyle}>
-              <p style={{ fontSize: '18px', color: '#f1f1f1', marginBottom: '16px' }}>{`"${testimonial.review}"`}</p>
-              <p style={{ color: '#ffc700', fontSize: '24px', marginBottom: '16px' }}>{testimonial.rating}</p>
-              <p style={{ color: '#f1f1f1', fontWeight: 'bold', marginBottom: '16px' }}>{testimonial.name}</p>
+              <p style={{ fontSize: '18px', color: '#ffffff', marginBottom: '16px' }}>{`"${testimonial.review}"`}</p>
+              <p style={{ color: '#FFC80E', fontSize: '24px', marginBottom: '16px' }}>{testimonial.rating}</p>
+              <p style={{ color: '#ffffff', fontWeight: 'bold', marginBottom: '16px' }}>{testimonial.name}</p>
               <div style={flexContainerStyle}>
                 <img src={testimonial.companyLogo} alt={testimonial.companyName} style={logoStyle} />
-                <p style={{ color: '#f1f1f1' }}>{testimonial.companyName}</p>
+                <p style={{ color: '#ffffff' }}>{testimonial.companyName}</p>
               </div>
             </div>
           ))}

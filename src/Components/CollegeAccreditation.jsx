@@ -11,7 +11,7 @@ const cardBackgrounds = {
 function CollegeAccreditation() {
   return (
     <div className="relative p-8 bg-[#091327] text-white">
-      <p className="text-4xl font-bold text-[#ffc700] mb-6 text-center">PARTNERED COLLEGES ACCREDITATION</p>
+      <p className="text-4xl font-bold text-[#FFC80E] mb-6 text-center">PARTNERED COLLEGES ACCREDITATION</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         
         {/* NAAC A+ */}

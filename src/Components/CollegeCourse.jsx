@@ -20,7 +20,7 @@ const courses = {
 
 const CourseCard = ({ src, alt, title }) => (
   <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 p-2">
-    <div className="bg-[#2e4d80] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+    <div className="bg-[#003073] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
       <div className="flex-grow">
         <div className="h-48 w-full">
           <img

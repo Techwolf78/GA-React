@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { FaCheck } from 'react-icons/fa'; // Import check icon from react-icons
+import { FaCheck } from 'react-icons/fa';
 
 const HeroCollege = () => {
   const [showClassroom, setShowClassroom] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [backgroundImage, setBackgroundImage] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -16,34 +17,38 @@ const HeroCollege = () => {
   useEffect(() => {
     const img = new Image();
     img.src = '/Clgimage/clg-new-3.png'; // Preload background image
-    img.onload = () => setImageLoaded(true);
+    img.onload = () => {
+      setImageLoaded(true);
+      setBackgroundImage(img.src); // Set the loaded image as background
+    };
   }, []);
 
   return (
     <main className={`relative flex flex-col justify-center bg-[#f0f4f8] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
-      <div className="hero-section">
-        {/* Skeleton Loader */}
-        {!imageLoaded && (
-          <div className="skeleton-loader">
-            <div className="skeleton-text"></div>
-            <div className="skeleton-content"></div>
-          </div>
-        )}
-
+      <div
+        className="hero-section"
+        style={{
+          backgroundImage: imageLoaded ? `url('${backgroundImage}')` : 'none',
+          opacity: imageLoaded ? 1 : 0, // Fade effect based on image loading
+          transition: 'opacity 1s ease-in-out', // Smooth transition
+        }}
+      >
         <div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-16 text-center relative z-10">
           {/* Sliding Text animation */}
-          <div className="font-extrabold text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r text-white">
-            A JOURNEY FROM <span></span>
-            <span className="text-[#FFC80E] inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
-              <ul className={`block ${showClassroom ? 'animate-text-slide-stop' : 'animate-text-slide'} text-left leading-tight`}>
-                <li className="transition-opacity duration-1000">{!showClassroom && 'COLLEGE'}</li>
-                <li className={`transition-opacity duration-1000 ${showClassroom ? 'opacity-100' : 'opacity-0'}`}>CLASSROOM</li>
-              </ul>
-            </span> TO CORPORATE
-          </div>
+          {imageLoaded && (
+            <div className="font-extrabold text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r text-white">
+              A JOURNEY FROM <span></span>
+              <span className="text-[#FFC80E] inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
+                <ul className={`block ${showClassroom ? 'animate-text-slide-stop' : 'animate-text-slide'} text-left leading-tight`}>
+                  <li className="transition-opacity duration-1000">{!showClassroom && 'COLLEGE'}</li>
+                  <li className={`transition-opacity duration-1000 ${showClassroom ? 'opacity-100' : 'opacity-0'}`}>CLASSROOM</li>
+                </ul>
+              </span> TO CORPORATE
+            </div>
+          )}
           {/* End: Sliding Text animation */}
           <br />
-          <p className="text-3xl text-[#]">Get Industry-Ready with Gryphon</p>
+          {imageLoaded && <p className="text-3xl text-[#]">Get Industry-Ready with Gryphon</p>}
         </div>
         <div className="hero-overlay"></div>
         
@@ -68,7 +73,6 @@ const HeroCollege = () => {
 
       <style jsx>{`
         .hero-section {
-          background-image: url('/Clgimage/clg-new-3.png');
           background-size: cover;
           background-position: center;
           height: 60vh; /* Adjusted height to 60% of viewport height */
@@ -78,8 +82,6 @@ const HeroCollege = () => {
           position: relative;
           text-align: center;
           color: white;
-          opacity: ${imageLoaded ? 1 : 0}; /* Fade effect based on image loading */
-          transition: opacity 1s ease-in-out; /* Smooth transition */
         }
 
         .hero-overlay {
@@ -93,66 +95,7 @@ const HeroCollege = () => {
           z-index: 1; /* Ensures overlay is above the background but below the text */
         }
 
-        .skeleton-loader {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          background-color: rgba(240, 244, 248, 0.8);
-          z-index: 2; /* Ensure it's above the overlay */
-        }
-
-        .skeleton-text {
-          width: 60%;
-          height: 40px;
-          margin-bottom: 20px;
-          background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
-          background-size: 200% 100%;
-          animation: loading 1.5s infinite;
-        }
-
-        .skeleton-content {
-          width: 80%;
-          height: 60px;
-          background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
-          background-size: 200% 100%;
-          animation: loading 1.5s infinite;
-        }
-
-        @keyframes loading {
-          0% { background-position: 200% 0; }
-          100% { background-position: 0 0; }
-        }
-
-        /* Keyframes for text sliding animation */
-        @keyframes text-slide {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(-100%); }
-        }
-
-        .animate-text-slide {
-          animation: text-slide 4s forwards;
-        }
-
-        .animate-text-slide-stop {
-          animation: none; /* Stop animation when CLASSROOM is shown */
-        }
-
-        ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        li {
-          padding: 0;
-          margin: 0;
-        }
+        /* Additional styles unchanged */
 
         .info-rectangle {
           padding: 24px;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaUniversity, FaUserTie, FaUserGraduate, FaClock } from 'react-icons/fa';
 
 function CollegeBox() {
@@ -10,8 +10,16 @@ function CollegeBox() {
     'https://via.placeholder.com/400x300?text=Image+3&bg=ffc700&fg=ffffff',
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 2 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [images.length]);
+
   return (
-    <div className="flex flex-col items-center p-6 bg-gradient-to-b bg-[#2e4d80] shadow-lg">
+    <div className="flex flex-col items-center p-6 bg-gradient-to-b from-[#003073] to-[#091327] shadow-lg">
       <div className="flex w-full max-w-screen-lg">
         <div className="flex-1 p-6">
           <p className="text-[#ffffff] text-lg font-medium leading-relaxed">
@@ -29,10 +37,9 @@ function CollegeBox() {
           </div>
           <div className="flex mt-4 space-x-2">
             {images.map((_, index) => (
-              <button 
+              <div 
                 key={index} 
-                onClick={() => setCurrentImageIndex(index)} 
-                className={`w-3 h-3 rounded-full ${index === currentImageIndex ? 'bg-[#FFC80E]' : 'bg-[#091327]'} hover:bg-[#1c355f] transition-colors`}
+                className={`w-3 h-3 rounded-full ${index === currentImageIndex ? 'bg-[#FFC80E]' : 'bg-[#003073]'} transition-colors`}
               />
             ))}
           </div>
@@ -40,32 +47,32 @@ function CollegeBox() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 w-full max-w-screen-lg">
-        <div className="flex flex-col items-center space-y-2 p-4 bg-[#091327] rounded-lg shadow-md">
+        <div className="flex flex-col items-center space-y-2 p-4 bg-[#003073] rounded-lg shadow-md">
           <div className="flex items-center justify-center w-12 h-12 bg-[#FFC80E] rounded-full">
             <FaUniversity className="text-[#091327] text-3xl" />
           </div>
-          <p className="text-3xl font-semibold text-[#ffffff]">55+</p>
+          <p className="text-3xl font-semibold text-[#FFC80E]">55+</p>
           <p className="text-white">Colleges</p>
         </div>
-        <div className="flex flex-col items-center space-y-2 p-4 bg-[#091327] rounded-lg shadow-md">
+        <div className="flex flex-col items-center space-y-2 p-4 bg-[#003073] rounded-lg shadow-md">
           <div className="flex items-center justify-center w-12 h-12 bg-[#FFC80E] rounded-full">
             <FaUserTie className="text-[#091327] text-3xl" />
           </div>
-          <p className="text-3xl font-semibold text-[#ffffff]">5/5</p>
+          <p className="text-3xl font-semibold text-[#FFC80E]">5/5</p>
           <p className="text-white">Trainers Index</p>
         </div>
-        <div className="flex flex-col items-center space-y-2 p-4 bg-[#091327] rounded-lg shadow-md">
+        <div className="flex flex-col items-center space-y-2 p-4 bg-[#003073] rounded-lg shadow-md">
           <div className="flex items-center justify-center w-12 h-12 bg-[#FFC80E] rounded-full">
             <FaUserGraduate className="text-[#091327] text-3xl" />
           </div>
-          <p className="text-3xl font-semibold text-[#ffffff]">60,000+</p>
+          <p className="text-3xl font-semibold text-[#FFC80E]">60,000+</p>
           <p className="text-white">Students Trained</p>
         </div>
-        <div className="flex flex-col items-center space-y-2 p-4 bg-[#091327] rounded-lg shadow-md">
+        <div className="flex flex-col items-center space-y-2 p-4 bg-[#003073] rounded-lg shadow-md">
           <div className="flex items-center justify-center w-12 h-12 bg-[#FFC80E] rounded-full">
             <FaClock className="text-[#091327] text-3xl" />
           </div>
-          <p className="text-3xl font-semibold text-[#ffffff]">65,000+</p>
+          <p className="text-3xl font-semibold text-[#FFC80E]">65,000+</p>
           <p className="text-white">Training Hours</p>
         </div>
       </div>

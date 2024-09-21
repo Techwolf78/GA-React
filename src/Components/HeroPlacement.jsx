@@ -20,8 +20,8 @@ const HeroPlacement = () => {
           />
         )}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-          <h1 className={`text-4xl md:text-6xl font-bold text-[#ffc700] ${imageLoaded ? 'animate-slideIn' : ''}`}>
-            One stop commercial free solution to recruiter’s complete fresher’s hiring needs 
+          <h1 className={`text-4xl md:text-6xl font-bold text-[#FFC80E] ${imageLoaded ? 'animate-slideIn' : ''}`}>
+            One Stop Commercial Free Solution to Recruiter’s Complete Fresher’s Hiring Needs 
           </h1>
         </div>
       </div>

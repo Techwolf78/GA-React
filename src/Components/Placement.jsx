@@ -20,7 +20,7 @@ const Placement = () => {
       
       {/* Infinite Hook Line Section */}
       <div className="hook-line-container py-6 bg-[#2e4d80]">
-        <div className="hook-line text-[#ffc700] text-2xl flex items-center justify-center space-x-4">
+        <div className="hook-line text-[#FFC80E] text-2xl flex items-center justify-center space-x-4">
           {Array.from({ length: repeats }).map((_, index) => (
             <React.Fragment key={index}>
               <span>{hookLineText}</span>
@@ -41,7 +41,7 @@ const Placement = () => {
 
       {/* New Section: Simple Placement Process */}
       <div className="p-8 text-center bg-[#091327]">
-        <p className="text-4xl font-bold mb-2 text-[#ffc700]  ">
+        <p className="text-4xl font-bold mb-2 text-[#FFC80E]  ">
           WE FOLLOW SIMPLE PLACEMENT PROCESS
         </p>
         <div className="w-full max-w-5xl mx-auto">

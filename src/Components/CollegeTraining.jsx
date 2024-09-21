@@ -16,7 +16,7 @@ const CollegeTraining = () => {
       <SlidingCollege />
 
       {/* New Section with Updated Contact Us Button */}
-      <div className="relative bg-[#2e4d80] text-white py-12 mt-6 px-6 sm:px-12 shadow-lg">
+      <div className="relative bg-[#003073] text-white py-12  px-6 sm:px-12 shadow-lg">
         <div className="container mx-auto text-center">
           <p className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
             Get in Touch

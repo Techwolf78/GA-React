@@ -26,12 +26,12 @@ const Contact = () => {
   return (
     <>
       {/* Contact Us Section */}
-      <section className="py-16 bg-[#091327] mx-auto mt-6 mb-6 px-4 md:max-w-6xl">
+      <section className="py-16 bg-[ #003073] mx-auto mt-6 mb-6 px-4 md:max-w-6xl">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-7xl font-bold  text-[#ffffff] text-center">
               Let's <span className="text-[#ffffff]">Bridge</span> <br />
-              <span className="text-[#ffc700] text-center">the Gap</span>
+              <span className="text-[#FFC80E] text-center">the Gap</span>
             </h1>
           </div>
 
@@ -48,7 +48,7 @@ const Contact = () => {
                   name="name"
                   placeholder="Your Name"
                   required
-                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#ffc700] focus:border-[#ffc700]"
+                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#FFC80E] focus:border-[#FFC80E]"
                 />
               </div>
 
@@ -63,7 +63,7 @@ const Contact = () => {
                   name="email"
                   placeholder="Your Email"
                   required
-                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#ffc700] focus:border-[#ffc700]"
+                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#FFC80E] focus:border-[#FFC80E]"
                 />
               </div>
 
@@ -78,7 +78,7 @@ const Contact = () => {
                   name="phone"
                   placeholder="Your Phone Number"
                   required
-                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#ffc700] focus:border-[#ffc700]"
+                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#FFC80E] focus:border-[#FFC80E]"
                 />
               </div>
 
@@ -91,7 +91,7 @@ const Contact = () => {
                   id="category"
                   name="category"
                   required
-                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#ffc700] focus:border-[#ffc700]"
+                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#FFC80E] focus:border-[#FFC80E]"
                 >
                   <option value="">Select Category</option>
                   <option value="student">Student</option>
@@ -111,14 +111,14 @@ const Contact = () => {
                   rows="4"
                   placeholder="Your Message"
                   required
-                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#ffc700] focus:border-[#ffc700]"
+                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#FFC80E] focus:border-[#FFC80E]"
                 ></textarea>
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#ffc700] text-[#091327] py-3 rounded-lg font-bold hover:bg-[#e0a800] transition-colors"
+                className="w-full bg-[#FFC80E] text-[#091327] py-3 rounded-lg font-bold hover:bg-[#e0a800] transition-colors"
               >
                 Send Message
               </button>
@@ -126,7 +126,7 @@ const Contact = () => {
 
             {/* Notification */}
             {notification && (
-              <div className="mt-3 text-center text-lg text-[#ffc700]">{notification}</div>
+              <div className="mt-3 text-center text-lg text-[#FFC80E]">{notification}</div>
             )}
           </div>
         </div>
@@ -137,22 +137,22 @@ const Contact = () => {
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
           {/* Address */}
           <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
-            <i className="bx bx-location-plus text-4xl text-[#ffc700] mb-4"></i>
-            <h4 className="text-xl font-bold text-[#ffc700] mb-2">Address</h4>
+            <i className="bx bx-location-plus text-4xl text-[#FFC80E] mb-4"></i>
+            <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Address</h4>
             <p className="text-[#ffffff]">9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Banglore, Highway Baner, Pune Maharashtra - 411045</p>
           </div>
 
           {/* Phone */}
           <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
-            <i className="bx bx-phone text-4xl text-[#ffc700] mb-4"></i>
-            <h4 className="text-xl font-bold text-[#ffc700] mb-2">Phone</h4>
+            <i className="bx bx-phone text-4xl text-[#FFC80E] mb-4"></i>
+            <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Phone</h4>
             <p className="text-[#ffffff]">+91 89836 14509 / 8983339099</p>
           </div>
 
           {/* Email */}
           <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
-            <i className="bx bx-envelope text-4xl text-[#ffc700] mb-4"></i>
-            <h4 className="text-xl font-bold text-[#ffc700] mb-2">Email</h4>
+            <i className="bx bx-envelope text-4xl text-[#FFC80E] mb-4"></i>
+            <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Email</h4>
             <p className="text-[#ffffff]">gryphonx@gryphonacademy.co.in</p>
           </div>
         </div>
@@ -173,7 +173,7 @@ const Contact = () => {
 
           <h1 className="text-7xl font-bold text-[#ffffff] text-center md:text-center">
             Get <span className="text-[#ffffff]">in</span> <br />
-            <span className="text-[#ffc700]">Touch</span>
+            <span className="text-[#FFC80E]">Touch</span>
           </h1>
         </div>
       </section>
