@@ -270,7 +270,7 @@ const Home = () => {
       <div>
         <Testimonials />
       </div>
-      {/* New Connect Component */}
+      {/* New Connect Component As the word */}
       <ConnectWithUs />
     </div>
   );
