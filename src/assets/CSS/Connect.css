@@ -12,14 +12,15 @@
 }
 
 .app-container {
-  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif; /* Use Roboto font */
   background: #01224f; /* Dark blue background */
-  font-weight: 600;
+  font-weight: 600; /* You can change this based on your preference */
   display: grid;
   place-items: center;
   padding: 20px; /* Optional padding */
   margin-bottom: 50px; /* Optional margin */
 }
+
 
 .neon-link-button {
   font-size: 2rem;
@@ -100,4 +101,14 @@
 .neon-link-button:hover::after,
 .neon-link-button:focus::after {
   opacity: 1;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out; /* Slightly longer transition */
+}
+
+.app-container {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease-in-out; /* Ensures smooth transition */
 }

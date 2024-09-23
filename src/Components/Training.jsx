@@ -12,8 +12,6 @@ const LearningAndDevelopment = () => {
       <HeroTraining />
       <TrainingAbout />
   <WhyTraining />
-
-
       <LearningOutcomes />
       <AcrossIndia />
       <SlidingCollege />

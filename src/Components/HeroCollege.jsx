@@ -24,7 +24,7 @@ const HeroCollege = () => {
   }, []);
 
   return (
-    <main className={`relative flex flex-col justify-center bg-[#f0f4f8] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
+    <main className={`relative roboto-regular flex flex-col justify-center bg-[#f0f4f8] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
       {/* Blue Background Layer */}
       <div className="absolute inset-0 bg-[#003073] z-0"></div>
 
@@ -37,7 +37,7 @@ const HeroCollege = () => {
         }}
       >
         {/* Heading Container */}
-        <div className="heading-container absolute top-1/4 left-1/2 transform -translate-x-1/2 text-center z-10">
+        <div className="heading-container absolute top-1/4 left-1/2 transform -translate-x-1/2 text-center z-10 roboto-regular">
           {imageLoaded && (
             <div className="font-extrabold text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r text-white">
               A JOURNEY FROM <span></span>
@@ -49,20 +49,22 @@ const HeroCollege = () => {
               </span> TO CORPORATE
             </div>
           )}
-          {imageLoaded && <p className="text-3xl text-[#]">Get Industry-Ready with Gryphon</p>}
+          {imageLoaded && (
+            <p className="text-2xl md:text-3xl text-white">Get Industry-Ready with Gryphon</p> // Adjusted font size for consistency
+          )}
         </div>
 
         <div className="hero-overlay"></div>
 
         {/* Text Information at the Bottom */}
-        <div className="text-info absolute bottom-1 left-0 w-full p-4 text-gray-800 z-2 flex flex-col items-start">
+        <div className="text-info absolute bottom-1 left-0 w-full p-4 text-gray-800 z-2 flex flex-col sm:flex-row items-center sm:justify-around">
           <div className="flex items-center mb-2 font-bold text-[#ffffff] text-lg">
             <span className="check-icon-wrapper">
               <FaCheck className="check-icon" />
             </span>
             Content approved by the Industry
           </div>
-          <div className="flex items-center font-bold text-[#ffffff] text-lg">
+          <div className="flex items-center sm:mb-0 font-bold text-[#ffffff] text-lg">
             <span className="check-icon-wrapper">
               <FaCheck className="check-icon" />
             </span>

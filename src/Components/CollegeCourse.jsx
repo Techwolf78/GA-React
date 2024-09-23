@@ -3,7 +3,7 @@ import React from 'react';
 // Define the courses object directly in this file
 const courses = {
   softSkills: [
-    { src: 'Training Page/Corporate etiquettes and Mannerism.jpg', alt: 'Corporate etiquettes', title: 'Corporate etiquettes and Mannerism' },
+    { src: 'Training Page/SS 1.png', alt: 'Corporate etiquettes', title: 'Corporate etiquettes and Mannerism' },
     { src: 'Training Page/Effective Communication Skills.jpg', alt: 'Effective Communication Skills', title: 'Effective Communication Skills' },
     { src: 'Training Page/Interview Skills and GD-PI Techniques.jpg', alt: 'Interview Skills', title: 'Interview Skills and GD-PI Techniques' },
     { src: 'Training Page/Presentation Skills.jpg', alt: 'Presentation Skills', title: 'Presentation Skills' },
@@ -19,7 +19,7 @@ const courses = {
 };
 
 const CourseCard = ({ src, alt, title }) => (
-  <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 p-2">
+  <div className="w-1/2 p-1 sm:w-1/2 md:w-1/3 lg:w-1/5">
     <div className="bg-[#003073] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
       <div className="flex-grow">
         <div className="h-48 w-full">
@@ -30,19 +30,23 @@ const CourseCard = ({ src, alt, title }) => (
           />
         </div>
       </div>
-      <div className="p-4 flex-shrink-0 flex items-start">
-        <p className="text-lg font-semibold text-white leading-tight">{title}</p>
+      <div className="p-2 flex-shrink-0 flex items-start">
+        <p className="text-lg font-medium text-white leading-tight">{title}</p> {/* Changed to font-medium */}
       </div>
     </div>
   </div>
 );
 
 const CollegeCourse = () => (
-  <section className="bg-[#091327] py-12">
-    <div className="container mx-auto px-4">
-      <div className="mb-12 text-center">
-        <p className='text-center text-4xl font-bold text-[#ffc700] mb-6'>OUR INDUSTRY READINESS PROGRAMME INCLUDES</p>
-        <p className="text-3xl font-semibold text-[#ffc700] mb-3">Soft Skills</p>
+  <section className="bg-[#091327] py-6 roboto-regular">
+    <div className="container mx-auto px-2">
+      <div className="mb-6 text-center">
+        <p className='text-center text-2xl sm:text-3xl md:text-4xl font-bold text-[#ffc700] mb-4'>
+          OUR INDUSTRY READINESS PROGRAMME INCLUDES
+        </p>
+        <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#ffc700] mb-2"> {/* Changed to font-extrabold */}
+          Soft Skills
+        </p>
         <div className="flex flex-wrap justify-center">
           {courses.softSkills.map((course, index) => (
             <CourseCard key={index} {...course} />
@@ -50,8 +54,10 @@ const CollegeCourse = () => (
         </div>
       </div>
 
-      <div className="mb-12 text-center">
-        <p className="text-3xl font-semibold text-[#ffc700] mb-3">Aptitude</p>
+      <div className="mb-6 text-center">
+        <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#ffc700] mb-2"> {/* Changed to font-extrabold */}
+          Aptitude
+        </p>
         <div className="flex flex-wrap justify-center">
           {courses.aptitude.map((course, index) => (
             <CourseCard key={index} {...course} />

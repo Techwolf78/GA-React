@@ -9,9 +9,9 @@ function AcrossIndia() {
       <div className="w-full max-w-4xl mx-auto">
         {/* India Map Image */}
         <img
-          src="Pan India.png" // Replace with the actual path to your map image
+          src="Pan India 1.png" // Replace with the actual path to your map image
           alt="India Map"
-          className="w-full h-80 object-contain"
+          className="w-full h-full object-contain"
         />
       </div>
     </div>

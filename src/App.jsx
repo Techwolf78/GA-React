@@ -1,6 +1,8 @@
 // import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css'; 
+import '../src/Components/App.css'; // Import the App.css file
+import "@fontsource/roboto";
+import './App.css'; // Corrected path to App.css
 import Home from './Components/Home.jsx'; // Import the Home component
 import About from './Components/About'; // Import the About component
 import GAX from './Components/GAX'; // Import the GAX component

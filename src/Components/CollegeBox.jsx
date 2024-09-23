@@ -5,9 +5,9 @@ function CollegeBox() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    'https://via.placeholder.com/400x300?text=Image+1&bg=091327&fg=ffffff',
-    'https://via.placeholder.com/400x300?text=Image+2&bg=2e4d80&fg=ffffff',
-    'https://via.placeholder.com/400x300?text=Image+3&bg=ffc700&fg=ffffff',
+    '/CollegeSliding/Training Photo 1.png',
+    '/CollegeSliding/Training Photo 2.png',
+    '/CollegeSliding/Training Photo 3.png',
   ];
 
   useEffect(() => {
@@ -19,20 +19,22 @@ function CollegeBox() {
   }, [images.length]);
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gradient-to-b from-[#003073] to-[#091327] shadow-lg">
-      <div className="flex flex-col md:flex-row w-full max-w-screen-lg">
-        <div className="flex-1 p-6">
-          <p className="text-[#ffffff] text-lg font-medium leading-relaxed">
-            Our customized Industry-specific trainings for colleges are carefully designed to meet both academic and industry needs. We incorporate the latest trends and student feedback to ensure relevant and effective programmes. By customizing our training for each institution and learner, we promote student success and build strong partnerships between academia and industry.
-          </p>
+    <div className="flex flex-col items-center p-4 bg-gradient-to-b from-[#003073] to-[#091327] shadow-lg roboto-regular">
+      <div className="flex flex-col md:flex-row w-full max-w-full mx-0">
+        <div className="flex-1 p-4 flex flex-col justify-between"> {/* Added justify-between for full height */}
+          <div className="flex-1">
+            <p className="text-[#ffffff] text-lg md:text-xl lg:text-2xl font-medium leading-relaxed">
+              Our customized Industry-specific trainings for colleges are carefully designed to meet both academic and industry needs. We incorporate the latest trends and student feedback to ensure relevant and effective programmes. By customizing our training for each institution and learner, we promote student success and build strong partnerships between academia and industry.
+            </p>
+          </div>
         </div>
 
-        <div className="flex-1 p-6 flex flex-col items-center">
-          <div className="relative flex items-center justify-center">
+        <div className="flex-1 p-4 flex flex-col items-center">
+          <div className="relative w-full flex items-center justify-center">
             <img 
               src={images[currentImageIndex]} 
               alt="Slider" 
-              className="w-full h-60 object-cover rounded-lg shadow-md"
+              className="w-full h-auto object-cover shadow-md"
             />
           </div>
           <div className="flex mt-4 space-x-2">
@@ -46,7 +48,7 @@ function CollegeBox() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-6 w-full max-w-screen-lg">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 p-4 w-full max-w-full mx-0">
         {[
           { icon: <FaUniversity />, value: '55+', label: 'Colleges' },
           { icon: <FaUserTie />, value: '5/5', label: 'Trainers Index' },
@@ -57,8 +59,8 @@ function CollegeBox() {
             <div className="flex items-center justify-center w-12 h-12 bg-[#FFC80E] rounded-full">
               {React.cloneElement(icon, { className: "text-[#091327] text-3xl" })}
             </div>
-            <p className="text-3xl font-semibold text-[#FFC80E]">{value}</p>
-            <p className="text-white text-center">{label}</p>
+            <p className="text-2xl md:text-3xl font-semibold text-[#FFC80E]">{value}</p>
+            <p className="text-white text-center text-base md:text-lg font-medium">{label}</p>
           </div>
         ))}
       </div>

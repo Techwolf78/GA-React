@@ -226,10 +226,11 @@ body, html {
 }
 
 /* Section Styling */
+/* Section Styling */
 .section {
   height: 100vh; /* Full viewport height */
-  background-size: cover; /* Ensure the background image covers the entire section */
-  background-position: center center; /* Center the image */
+  background-size: 100% 100vh; /* Stretch to full width and fixed height */
+  background-position: center top; /* Align the image at the top center */
   background-repeat: no-repeat; /* Prevent image repetition */
   color: #fff;
   display: flex;
@@ -239,29 +240,30 @@ body, html {
   font-size: 2rem;
   padding: 0 20px; /* General padding for sections */
 }
+
 .section h2 {
   color: #FFC80E; /* Yellow text color */
 }
 
 /* Unique Section Styles */
 #hero_slider {
-  background-image: url('/LandingImage/homeland1.png');
+  background-image: url('/CollegeSliding/homeland1.webp');
 }
 
 #core_capabilities {
-  background-image: url('/LandingImage/homeland2.png');
+  background-image: url('/CollegeSliding/homeland2.webp');
 }
 
 #operating_models {
-  background-image: url('/LandingImage/homeland3.png');
+  background-image: url('/CollegeSliding/homeland3.webp');
 }
 
 #talent_transformations {
-  background-image: url('/LandingImage/homeland4.png');
+  background-image: url('/CollegeSliding/homeland4.webp');
 }
 
 #do_more {
-  background-image: url('/LandingImage/homeland5.png');
+  background-image: url('/CollegeSliding/homeland5.webp');
 }
 
 /* Media Queries for Responsiveness */
@@ -506,3 +508,15 @@ body, html {
   position: relative; /* Positioning context for the image */
 }
 
+/* Lazy Loading Backgrounds */
+.lazy-background {
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image */
+  opacity: 0; /* Start hidden for transition */
+  transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+/* Loaded state */
+.lazy-background.loaded {
+  opacity: 1; /* Show the image when loaded */
+}

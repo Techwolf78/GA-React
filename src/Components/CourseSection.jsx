@@ -98,20 +98,19 @@ const courses = {
   
   // Button labels
   const buttonLabels = {
-  MECH: 'MECHANICAL ENGINEERING',
-  CIVIL: 'CIVIL ENGINEERING',
-  COMP: 'COMPUTER SCIENCE ENGINEERING',
-  ELECT: 'ELECTRICAL ENGINEERING',
-  AIDS: 'ARTIFICIAL INTELLIGENCE AND DATA SCIENCE',
-  AIML: 'ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING',
-  PHARMA: 'PHARMACY',
-  MBA: 'MASTER OF BUSINESS ADMINISTRATION',
-  MCA: 'MASTER OF COMPUTER APPLICATIONS',
-  BBA: 'BACHELOR OF BUSINESS ADMINISTRATION',
-  FOREIGN: 'FOREIGN LANGUAGES',
-  DIPLOMA: 'DIPLOMA'
+    MECH: 'MECHANICAL ENGINEERING',
+    CIVIL: 'CIVIL ENGINEERING',
+    COMP: 'COMPUTER SCIENCE ENGINEERING',
+    ELECT: 'ELECTRICAL ENGINEERING',
+    AIDS: 'ARTIFICIAL INTELLIGENCE AND DATA SCIENCE',
+    AIML: 'ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING',
+    PHARMA: 'PHARMACY',
+    MBA: 'MASTER OF BUSINESS ADMINISTRATION',
+    MCA: 'MASTER OF COMPUTER APPLICATIONS',
+    BBA: 'BACHELOR OF BUSINESS ADMINISTRATION',
+    FOREIGN: 'FOREIGN LANGUAGES',
+    DIPLOMA: 'DIPLOMA'
   };
-
   
   const CourseSection = () => {
     const [selectedCourse, setSelectedCourse] = useState('MECH');
@@ -122,15 +121,15 @@ const courses = {
         setShowCards({ [courseKey]: true }); // Open the selected course's cards
         setSelectedCourse(courseKey);
       } else {
-        // Toggle the current accordion
         setShowCards((prev) => ({ ...prev, [courseKey]: !prev[courseKey] }));
       }
     };
   
     return (
-      <section className="py-5 bg-[#091327]">
+      <section className="py-5 bg-[#091327] roboto-regular">
         <div className="mb-8">
           <p className="text-[#ffc700] text-4xl text-center font-bold mb-4">TECHNICAL TRAINING</p>
+
         </div>
         <div className="container mx-auto flex flex-wrap">
           {/* Sidebar */}
@@ -148,15 +147,15 @@ const courses = {
                       overflow: 'hidden',
                     }}
                   >
-                    <span className="flex-1 text-left break-words">{buttonLabels[key]}</span>
+                    <span className="flex-1 text-left break-words font-semibold">{buttonLabels[key]}</span>
                     <span>{window.innerWidth < 768 ? '▼' : '>'}</span>
                   </button>
                   {showCards[key] && window.innerWidth < 768 && (
                     <div className="course-card bg-[#003073] rounded-lg p-4 shadow-md mt-2">
                       {courses[key].map((course, index) => (
                         <div key={index} className="mb-4 text-center">
-                          <h3 className="text-[#ffc700] text-xl font-semibold mb-1">{course.title}</h3>
-                          <p className="text-white mb-2">{course.description}</p>
+                          <h3 className="text-[#ffc700] text-lg font-semibold mb-1">{course.title}</h3> {/* Updated text size */}
+                          <p className="text-white text-sm mb-2">{course.description}</p> {/* Updated text size */}
                         </div>
                       ))}
                     </div>
@@ -176,8 +175,8 @@ const courses = {
                       {courses[key].map((course, index) => (
                         <div key={index} className="card bg-[#003073] rounded-lg p-4 shadow-md transition-transform duration-300 ease-in-out">
                           <img src={course.image} alt={course.title} className="w-full h-40 object-cover rounded-t-lg mb-4" />
-                          <h3 className="text-[#ffc700] text-xl font-semibold mb-2">{course.title}</h3>
-                          <p className="text-white mb-4">{course.description}</p>
+                          <h3 className="text-[#ffc700] text-lg font-semibold mb-2">{course.title}</h3> {/* Updated text size */}
+                          <p className="text-white text-sm mb-4">{course.description}</p> {/* Updated text size */}
                         </div>
                       ))}
                     </div>
