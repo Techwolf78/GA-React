@@ -14,14 +14,17 @@ const Navbar = () => {
 
   const handleTrainingClick = () => {
     navigate("/training");
-    setDropdownOpen(false); // Close dropdown on click
+    setDropdownOpen(false);
   };
 
   const handleDropdownItemClick = () => {
-    setDropdownOpen(false); // Close dropdown on item click
+    setDropdownOpen(false);
   };
 
-  // Close dropdown when clicking outside
+  const handleSidebarItemClick = () => {
+    setSidebarOpen(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -49,6 +52,7 @@ const Navbar = () => {
         <Link
           to="/"
           className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+          onClick={handleSidebarItemClick}
         >
           HOME
         </Link>
@@ -72,21 +76,21 @@ const Navbar = () => {
               <Link
                 to="/collegeTraining"
                 className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
-                onClick={handleDropdownItemClick}
+                onClick={() => { handleDropdownItemClick(); handleSidebarItemClick(); }}
               >
                 College Training
               </Link>
               <Link
                 to="/corporateTraining"
                 className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
-                onClick={handleDropdownItemClick}
+                onClick={() => { handleDropdownItemClick(); handleSidebarItemClick(); }}
               >
                 Corporate Training
               </Link>
               <Link
                 to="/facultyTraining"
                 className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
-                onClick={handleDropdownItemClick}
+                onClick={() => { handleDropdownItemClick(); handleSidebarItemClick(); }}
               >
                 Faculty Training
               </Link>
@@ -97,18 +101,21 @@ const Navbar = () => {
         <Link
           to="/placement"
           className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+          onClick={handleSidebarItemClick}
         >
           PLACEMENT
         </Link>
         <Link
           to="/brandPositioning"
           className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+          onClick={handleSidebarItemClick}
         >
           DIGITAL MARKETING
         </Link>
         <Link
           to="/blogs"
           className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+          onClick={handleSidebarItemClick}
         >
           BLOG
         </Link>
@@ -124,43 +131,72 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`fixed top-0 left-0 h-full bg-[#e9e5ff] z-40 overflow-x-hidden transition-width duration-500 ease-in-out ${
+        className={`fixed top-0 left-0 h-full bg-[#091327] text-[#ffffff] z-40 overflow-x-hidden transition-width duration-500 ease-in-out ${
           isSidebarOpen ? "w-64" : "w-0"
         }`}
       >
         <button
-          className="absolute top-0 right-4 text-4xl focus:outline-none text-[#2e2e2e]"
+          className="absolute top-0 right-4 text-4xl focus:outline-none text-[#ffffff]"
           onClick={toggleSidebar}
         >
           ×
         </button>
         <Link
           to="/"
-          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+          className="block py-3 pl-8 text-[#ffffff] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+          onClick={handleSidebarItemClick}
         >
           HOME
         </Link>
-        <Link
-          to="/training"
-          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
-        >
-          TRAINING
-        </Link>
+        <div>
+          <Link
+            to="/training"
+            className="block py-3 pl-8 text-[#ffffff] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+            onClick={handleSidebarItemClick}
+          >
+            TRAINING
+          </Link>
+          {/* Sub-links for Training */}
+          <Link
+            to="/collegeTraining"
+            className="block py-2 pl-12 text-[#ffffff] hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
+            onClick={handleSidebarItemClick}
+          >
+            College Training
+          </Link>
+          <Link
+            to="/corporateTraining"
+            className="block py-2 pl-12 text-[#ffffff] hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
+            onClick={handleSidebarItemClick}
+          >
+            Corporate Training
+          </Link>
+          <Link
+            to="/facultyTraining"
+            className="block py-2 pl-12 text-[#ffffff] hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
+            onClick={handleSidebarItemClick}
+          >
+            Faculty Training
+          </Link>
+        </div>
         <Link
           to="/placement"
-          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+          className="block py-3 pl-8 text-[#ffffff] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+          onClick={handleSidebarItemClick}
         >
           PLACEMENT
         </Link>
         <Link
-          to="/digital-marketing"
-          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+          to="/brandPositioning"
+          className="block py-3 pl-8 text-[#ffffff] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+          onClick={handleSidebarItemClick}
         >
           DIGITAL MARKETING
         </Link>
         <Link
-          to="/blog"
-          className="block py-3 pl-8 text-[#2e2e2e] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+          to="/blogs"
+          className="block py-3 pl-8 text-[#ffffff] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+          onClick={handleSidebarItemClick}
         >
           BLOG
         </Link>
