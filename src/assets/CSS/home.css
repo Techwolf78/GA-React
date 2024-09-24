@@ -382,12 +382,12 @@ body, html {
 }
 
 /* Utility Classes */
-.no-scroll {
+/* .no-scroll {
   overflow: hidden;
   height: 100%;
   position: fixed;
   width: 100%;
-}
+} */
 
 /* Image Styles */
 .right-side-image {

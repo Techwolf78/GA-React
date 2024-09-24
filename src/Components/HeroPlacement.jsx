@@ -5,26 +5,42 @@ const HeroPlacement = () => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = '/placement-bg/plac-new.jpg';
+    img.src = 'Clgimage/Heroplace.png';
     img.onload = () => setImageLoaded(true);
   }, []);
 
   return (
-    <div className={`relative z-10 w-full h-[60vh] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
-      <div className="relative w-full h-full">
-        {imageLoaded && (
-          <img 
-            src="/placement-bg/plac-new.jpg" 
-            className="w-full h-full object-cover opacity-90" 
-            alt="Placeholder" 
-          />
+    <div className="relative bg-[#003073] z-10 w-full">
+      {/* Image Section */}
+      <div className={`relative w-full transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        {!imageLoaded && (
+          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+            <span className="text-gray-500">Loading...</span>
+          </div>
         )}
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-          <h1 className={`text-4xl md:text-6xl font-bold text-[#FFC80E] ${imageLoaded ? 'animate-slideIn' : ''}`}>
-            One Stop Commercial Free Solution to Recruiter’s Complete Fresher’s Hiring Needs 
-          </h1>
-        </div>
+        <img
+          src="Clgimage/Heroplace.png"
+          className={`w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          alt="A vibrant scene representing recruitment solutions"
+          style={{ display: imageLoaded ? 'block' : 'none' }} // Prevents the image from occupying space until loaded
+        />
+
+        {/* Overlay */}
+        {imageLoaded && (
+          <div className="absolute inset-0 bg-black opacity-70" />
+        )}
+        
+        {/* Text Section */}
+        {imageLoaded && (
+  <div className="absolute inset-0 flex flex-col items-center" style={{ paddingTop: '120px' }}>
+    <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
+      One Stop Commercial Free Solution to Recruiter’s Complete Fresher’s Hiring Needs
+    </h1>
+  </div>
+)}
+
       </div>
+
       <style jsx>{`
         @keyframes slideIn {
           0% {

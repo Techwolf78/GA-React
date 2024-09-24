@@ -150,7 +150,7 @@ const CourseSection = () => {
     overflow: 'hidden',
   }}
 >
-  <span className="flex-1 text-left break-words font-semibold">{buttonLabels[key]}</span>
+  <span className=" text-left break-words font-semibold">{buttonLabels[key]}</span>
   <span>{window.innerWidth < 768 ? '▼' : '>'}</span>
 </button>
 
