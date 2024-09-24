@@ -121,7 +121,7 @@ const Blog = () => {
               className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-4 mb-8"
             >
               <div
-                className="bg-[#2e4d80] border border-gray-300 rounded-2xl overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-xl"
+                className="bg-[#003073] border border-gray-300 rounded-2xl overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-xl"
                 style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
               >
                 <img

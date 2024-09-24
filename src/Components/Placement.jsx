@@ -8,6 +8,7 @@ import CollegeAccreditation from "./CollegeAccreditation";
 import Advisory from "./Advisory";
 import RecruiterTestimonial from "./RecruiterTestimonial";
 import SuccessfulDrives from "./SucessfulDrives";
+import MajorRecruiter from "./MajorRecruiter";
 
 const Placement = () => {
   const hookLineText = "ZERO COST INVOLVED During All Stages of Recruitment";
@@ -56,7 +57,9 @@ const Placement = () => {
       <IndustryOverview />
       <Advisory />
       <SuccessfulDrives />
+      <MajorRecruiter />
       <RecruiterTestimonial />
+    
     </div>
   );
 };

@@ -1,0 +1,11 @@
+.globe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #f0f0f0; /* Light background color */
+}
+
+canvas {
+    display: block; /* Prevents scroll bars */
+}

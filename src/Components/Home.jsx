@@ -202,21 +202,25 @@ const Home = () => {
 
       {/* Other sections */}
       <div id="core_capabilities" className="section core-capabilities-section right" ref={aboutRef}>
-        <div className="section-content right">
-          <h2>About Us</h2>
-          <p>
-            As India's premier non-ed-tech organization, we are committed to
-            bridging the gap between industry and academia. We provide customized
-            and tailored industry-centric training programmes which help your
-            organization facilitate the transition into the industry with ease and
-            enabling you to excel.
-          </p>
-          <Link to="/about" className="btn-know-more">
-            <span>Know More</span>
-          </Link>
-        </div>
-        <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
-      </div>
+  <div className="section-content right">
+    <h2>About Us</h2>
+    <p>
+      As India&apos;s premier non-ed-tech organization, we are committed to
+      bridging the gap between industry and academia. We provide customized
+      and tailored industry-centric training programmes which help your
+      organization facilitate the transition into the industry with ease and
+      enabling you to excel.
+    </p>
+    <Link to="/about" className="btn-know-more">
+      <span>Know More</span>
+    </Link>
+  </div>
+  <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
+  
+  {/* New Vector Image for Mobile */}
+  <img src="LandingImage/Mobile2.png" alt="Mobile Vector" className="mobile-vector-image" />
+</div>
+
 
       <div id="operating_models" className="section operating-models-section left" ref={trainingRef}>
         <div className="section-content left">
@@ -233,6 +237,10 @@ const Home = () => {
           </Link>
         </div>
         <img src="LandingImage/pattern-new.png" alt="Left Side Design" className="left-side-image" />
+
+        {/* New Vector Image for Mobile */}
+  <img src="LandingImage/Mobile3.png" alt="Mobile Vector" className="mobile-vector-image" />
+        
       </div>
 
       <div id="talent_transformations" className="section talent-transformations-section right" ref={placementRef}>
@@ -248,6 +256,9 @@ const Home = () => {
           </Link>
         </div>
         <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
+
+        {/* New Vector Image for Mobile */}
+  <img src="LandingImage/Mobile4.png" alt="Mobile Vector" className="mobile-vector-image" />
       </div>
 
       <div id="do_more" className="section do-more-section left" ref={brandingRef}>
@@ -265,6 +276,9 @@ const Home = () => {
           </Link>
         </div>
         <img src="LandingImage/pattern-new.png" alt="Left Side Design" className="left-side-image" />
+        
+        {/* New Vector Image for Mobile */}
+  <img src="LandingImage/Mobile5.png" alt="Mobile Vector" className="mobile-vector-image" />
       </div>
 
       <div>

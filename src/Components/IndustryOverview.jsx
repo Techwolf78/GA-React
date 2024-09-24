@@ -72,7 +72,7 @@ const IndustryOverview = () => {
 
       {/* Engineering Table */}
       <div className="mb-12">
-        <Typography variant="h4" className="text-center mb-4 font-semibold text-3xl text-[#FFC80E]">
+        <Typography variant="h4" className="text-center mb-4 font-bold text-3xl text-[#FFC80E]">
           ENGINEERING
         </Typography>
         <Card className="w-full overflow-x-auto shadow-lg rounded-lg bg-white">
@@ -80,8 +80,8 @@ const IndustryOverview = () => {
             <thead>
               <tr>
                 {ENGINEERING_TABLE_HEAD.map((head) => (
-                  <th key={head} className="border-b border-gray-300 bg-gray-200 p-4">
-                    <Typography variant="large" className="font-normal leading-none opacity-80 text-[#091327]">
+                  <th key={head} className="border-b border-gray-300 bg-[#BCE3F9] p-4">
+                    <Typography variant="large" className="font-bold leading-none opacity-80 text-[#091327]">
                       {head}
                     </Typography>
                   </th>
@@ -95,12 +95,12 @@ const IndustryOverview = () => {
                 
                 return (
                   <tr key={subject}>
-                    <td className={`w-[${subjectColumnWidth}px] ${classes}`}>
-                      <Typography variant="large" className="font-normal text-[#091327]">
+                    <td className={`w-[${subjectColumnWidth}px] ${classes} bg-[#E9F6FD]`}>
+                      <Typography variant="large" className="font-bold text-[#000000]">
                         {subject}
                       </Typography>
                     </td>
-                    <td className={`${classes} bg-gray-100`}>
+                    <td className={`${classes} bg-[#DFF1FD]`}>
                       <Typography variant="large" className="font-normal text-[#091327]">
                         {topics}
                       </Typography>
@@ -114,47 +114,49 @@ const IndustryOverview = () => {
       </div>
 
       {/* MBA Table */}
-      <div>
-        <Typography variant="h4" className="text-center mb-4 font-semibold text-3xl text-[#FFC80E]">
-          MBA/PGDM
-        </Typography>
-        <Card className="w-full overflow-x-auto shadow-lg rounded-lg bg-white">
-          <table className="w-full min-w-max table-auto text-left">
-            <thead>
-              <tr>
-                {MBA_TABLE_HEAD.map((head) => (
-                  <th key={head} className="border-b border-gray-300 bg-gray-200 p-4">
-                    <Typography variant="large" className="font-normal leading-none opacity-80 text-[#091327]">
-                      {head}
-                    </Typography>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {MBA_TABLE_ROWS.map(({ subject, topics }, index) => {
-                const isLast = index === MBA_TABLE_ROWS.length - 1;
-                const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
-                
-                return (
-                  <tr key={subject}>
-                    <td className={`w-[${subjectColumnWidth}px] ${classes}`}>
-                      <Typography variant="large" className="font-normal text-[#091327]">
-                        {subject}
-                      </Typography>
-                    </td>
-                    <td className={`${classes} bg-gray-100`}>
-                      <Typography variant="large" className="font-normal text-[#091327]">
-                        {topics}
-                      </Typography>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </Card>
-      </div>
+    {/* MBA Table */}
+<div>
+  <Typography variant="h4" className="text-center mb-4 font-bold text-3xl text-[#FFC80E]">
+    MBA/PGDM
+  </Typography>
+  <Card className="w-full overflow-x-auto shadow-lg rounded-lg bg-white">
+    <table className="w-full min-w-max table-auto text-left">
+      <thead>
+        <tr>
+          {MBA_TABLE_HEAD.map((head) => (
+            <th key={head} className="border-b border-gray-300 bg-[#BCE3F9] p-4">
+              <Typography variant="large" className="font-bold leading-none opacity-80 text-[#091327]">
+                {head}
+              </Typography>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {MBA_TABLE_ROWS.map(({ subject, topics }, index) => {
+          const isLast = index === MBA_TABLE_ROWS.length - 1;
+          const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
+          
+          return (
+            <tr key={subject}>
+              <td className={`w-[${subjectColumnWidth}px] ${classes} bg-[#E9F6FD]`}>
+                <Typography variant="large" className="font-bold text-[#091327]">
+                  {subject}
+                </Typography>
+              </td>
+              <td className={`${classes} bg-[#DFF1FD]`}>
+                <Typography variant="large" className="font-normal text-[#091327]">
+                  {topics}
+                </Typography>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </Card>
+</div>
+
     </div>
   );
 };
