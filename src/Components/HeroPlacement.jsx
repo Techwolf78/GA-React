@@ -32,30 +32,32 @@ const HeroPlacement = () => {
         
         {/* Text Section */}
         {imageLoaded && (
-  <div className="absolute inset-0 flex flex-col items-center" style={{ paddingTop: '120px' }}>
-    <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
-      One Stop Commercial Free Solution to Recruiter’s Complete Fresher’s Hiring Needs
-    </h1>
-  </div>
-)}
-
+          <div className="absolute inset-0 flex flex-col items-center" style={{ paddingTop: '120px' }}>
+            <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
+              One Stop Commercial Free Solution to Recruiter’s Complete Fresher’s Hiring Needs
+            </h1>
+          </div>
+        )}
       </div>
-
-      <style jsx>{`
-        @keyframes slideIn {
-          0% {
-            transform: translateY(-100%);
-            opacity: 0;
+      
+      {/* Animation Style (if needed, use regular CSS) */}
+      <style>
+        {`
+          @keyframes slideIn {
+            0% {
+              transform: translateY(-100%);
+              opacity: 0;
+            }
+            100% {
+              transform: translateY(0);
+              opacity: 1;
+            }
           }
-          100% {
-            transform: translateY(0);
-            opacity: 1;
+          .animate-slideIn {
+            animation: slideIn 2s forwards;
           }
-        }
-        .animate-slideIn {
-          animation: slideIn 2s forwards;
-        }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };

@@ -51,7 +51,7 @@ const SlidingCollege = () => {
       </div>
 
       {/* Inline styles for custom CSS */}
-      <style jsx>{`
+      <style>{`
         .logo-slider-track {
           width: calc(150px * 12); /* Adjust based on the number of logos */
           animation: scroll 20s linear infinite;

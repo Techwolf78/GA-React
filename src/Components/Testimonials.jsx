@@ -55,7 +55,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden py-16">
+    <section className="relative overflow-hidden py-16 roboto-regular">
       <div className="container mx-auto text-center mb-8">
         <h3 className="text-4xl font-bold text-[#FFC80E] mb-4">
           TESTIMONIALS

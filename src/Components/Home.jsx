@@ -141,7 +141,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className= "roboto-regular">
       {/* Navbar */}
       <div className={`top-navigation ${isNavbarVisible ? 'visible' : 'hidden'}`}>
         <nav className="sticky-top-nav">
@@ -187,7 +187,7 @@ const Home = () => {
       </Link>
 
       {/* Hero Section */}
-      <div id="hero_slider" className="section hero-slider-section left" ref={heroRef}>
+      <div id="hero_slider" className="section roboto-regular hero-slider-section left" ref={heroRef}>
         <div className="section-content left">
           <h2>
             {displayText}

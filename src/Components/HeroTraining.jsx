@@ -131,7 +131,7 @@ const HeroTraining = () => {
           </button>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .btn-know-more {
           position: relative;
           display: inline-flex;

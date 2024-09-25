@@ -73,7 +73,7 @@ const HeroCollege = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .hero-section {
           background-size: cover;
           background-position: center;

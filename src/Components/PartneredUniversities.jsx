@@ -21,19 +21,19 @@ const PartneredUniversities = () => {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8">
           <div className="flex items-center">
             <img 
-              src="path/to/your/male-icon.svg" // Replace with your male SVG path
+              src="placement-bg/man.png" // Replace with your male SVG path
               alt="Male Icon"
-              className="w-16 h-16 mr-2 sm:mr-3"
+              className="w-12 h-12 sm:w-16 sm:h-16 mr-2 sm:mr-3" // Responsive sizes
             />
-            <span className="text-base sm:text-lg md:text-2xl font-bold">55% MALE</span>
+            <span className="text-base sm:text-lg md:text-2xl font-bold">55% MALE STUDENTS</span>
           </div>
           <div className="flex items-center">
             <img 
-              src="path/to/your/female-icon.svg" // Replace with your female SVG path
+              src="placement-bg/woman.png" // Replace with your female SVG path
               alt="Female Icon"
-              className="w-16 h-16 mr-2 sm:mr-3"
+              className="w-12 h-12 sm:w-16 sm:h-16 mr-2 sm:mr-3" // Responsive sizes
             />
-            <span className="text-base sm:text-lg md:text-2xl font-bold">45% FEMALE</span>
+            <span className="text-base sm:text-lg md:text-2xl font-bold">45% FEMALE STUDENTS</span>
           </div>
         </div>
       </div>
