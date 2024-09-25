@@ -7,18 +7,19 @@ function HeroCorporate() {
   return (
     <div>
       {/* Heading Section */}
-      <div className="relative w-full p-6">
-        <div className="text-center lg:hidden">
-          <h1 className="text-2xl md:text-3xl font-bold mb-4 text-[#FFC80E]">
-            Invest in Your Employees, Invest in Your Organization’s Future: Gryphon Academy Corporate Training
-          </h1>
-        </div>
-        <div className="hidden lg:flex absolute top-36 left-20 z-20 max-w-[50%]">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#003073] break-words">
-            Invest in Your Employees, Invest in Your Organization’s Future: Gryphon Academy Corporate Training
-          </h1>
-        </div>
-      </div>
+      <div className="relative w-full p-6 roboto-regular">
+  <div className="text-center lg:hidden">
+    <h1 className="text-2xl md:text-3xl font-bold mb-4 text-[#FFC80E] uppercase">
+      Invest in Your Employees, Invest in Your Organization’s Future: Gryphon Academy Corporate Training
+    </h1>
+  </div>
+  <div className="hidden lg:flex absolute top-32 left-12 z-20 max-w-[50%]">
+    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#003073] break-words uppercase">
+      Invest in Your Employees, Invest in Your Organization’s Future: Gryphon Academy Corporate Training
+    </h1>
+  </div>
+</div>
+
 
       {/* Background Image */}
       <div className="relative w-full overflow-hidden">
@@ -39,10 +40,10 @@ function HeroCorporate() {
       </div>
 
       {/* New Section */}
-      <section className="bg-[#003073] py-16">
+      <section className="bg-[#003073] py-6 roboto-regular">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <p className="text-3xl md:text-4xl font-semibold mb-6 text-[#FFC80E] underline">Elevate Your Workforce</p>
+          <p className="text-3xl md:text-4xl font-semibold mb-6 text-[#FFC80E] ">ELEVATE YOUR WORKFORCE</p>
             <p className="text-lg md:text-xl text-[#ffffff]">
               Elevate your workforce to new heights with Gryphon Academy’s time-tested approach to corporate skill development.
             </p>

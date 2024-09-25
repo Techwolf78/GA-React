@@ -22,18 +22,16 @@
 }
 
 .about-head {
-  font-size: 0.875rem !important;
+  font-size: 1.3rem !important;
   color: #FFC80E !important;
   font-weight: normal !important;
 }
 
 .about-text {
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* Base size */
   color: #FFC80E;
   max-width: 800px;
-  padding-left: 6px;
   font-weight: bold;
-  font-family: 'Varela', sans-serif;
 }
 
 .about-right {
@@ -44,8 +42,13 @@
 
 .about-right p {
   font-size: 1rem;
-  color: #ffffff;
+  color: #ffffff; /* Keep the color for regular paragraphs */
   margin-bottom: 1rem;
+}
+
+/* New Rule: Ensure underline-effect has priority */
+.about-right .underline-effect {
+  color: #BCE3F9; /* Ensure this color is applied */
 }
 
 .more-about-link {
@@ -114,7 +117,7 @@
 
 .feature-card-header {
   display: flex;
-  align-items: center;
+  align-items: center; /* Center the icon and heading vertically */
   gap: 1rem;
   margin-bottom: 1rem;
   width: 100%;
@@ -124,10 +127,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55px;
-  height: 55px;
+  width: 55px; /* Fixed width */
+  height: 55px; /* Fixed height */
   background-color: #FFC80E;
   border-radius: 50%;
+  min-width: 55px; /* Prevent shrinking */
+  min-height: 55px; /* Prevent shrinking */
 }
 
 .feature-card-icon i {
@@ -136,9 +141,10 @@
 }
 
 .feature-card h4 {
-  font-size: 1.10rem;
+  font-size: 1.1rem; /* Adjust font size */
   color: #FFC80E;
   margin-bottom: 0;
+  font-weight: bold;
 }
 
 .feature-card p {
@@ -195,6 +201,18 @@
     margin-bottom: 2rem;
   }
 
+  .about-head {
+    font-size: 1.2rem; /* Adjusted */
+  }
+
+  .about-text {
+    font-size: 2rem; /* Adjusted */
+  }
+
+  .about-right p {
+    font-size: 0.9rem; /* Adjusted */
+  }
+
   .features {
     flex-direction: row; /* Keep horizontal layout */
     justify-content: center;
@@ -213,6 +231,18 @@
     margin-bottom: 1.5rem;
   }
 
+  .about-head {
+    font-size: 1.1rem; /* Further decreased */
+  }
+
+  .about-text {
+    font-size: 1.5rem; /* Further decreased */
+  }
+
+  .about-right p {
+    font-size: 0.8rem; /* Further decreased */
+  }
+
   .features {
     flex-direction: column; /* Stack vertically */
     align-items: center;
@@ -226,11 +256,9 @@
   }
 }
 
-
 .underline-effect {
   position: relative;
   color: #FFC80E; /* Change to your desired color */
-
   font-size: 1.25rem; /* Adjust the font size if needed */
   font-weight: bold;
   display: inline-block; /* Ensures the underline effect works */

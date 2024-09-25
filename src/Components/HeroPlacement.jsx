@@ -10,7 +10,7 @@ const HeroPlacement = () => {
   }, []);
 
   return (
-    <div className="relative bg-[#003073] z-10 w-full">
+    <div className="relative bg-[#003073] z-10 w-full roboto-regular">
       {/* Image Section */}
       <div className={`relative w-full transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
         {!imageLoaded && (
@@ -33,7 +33,7 @@ const HeroPlacement = () => {
         {/* Text Section */}
         {imageLoaded && (
           <div className="absolute inset-0 flex flex-col items-center" style={{ paddingTop: '120px' }}>
-            <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
+            <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center px-6">
               One Stop Commercial Free Solution to Recruiter’s Complete Fresher’s Hiring Needs
             </h1>
           </div>

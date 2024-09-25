@@ -22,7 +22,7 @@ const CourseCard = ({ src, alt, title }) => (
   <div className="w-1/2 p-1 sm:w-1/2 md:w-1/3 lg:w-1/5">
     <div className="bg-[#003073] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
       <div className="flex-grow">
-        <div className="h-full w-full ">
+        <div className="h-full w-full">
           <img
             src={src}
             alt={alt}
@@ -30,23 +30,27 @@ const CourseCard = ({ src, alt, title }) => (
           />
         </div>
       </div>
-      <div className="p-2 flex-shrink-0 flex items-center justify-center h-12"> {/* Fixed height for title area */}
+      <div className="p-2 flex-shrink-0 flex items-center justify-center h-12">
         <p className="text-base font-medium text-white leading-tight text-center">{title}</p>
       </div>
     </div>
   </div>
 );
 
-
 const CollegeCourse = () => (
   <section className="bg-[#091327] py-6 roboto-regular">
     <div className="container mx-auto px-2">
+      {/* Main Heading */}
       <div className="mb-6 text-center">
-        <p className='text-center text-2xl sm:text-3xl md:text-4xl font-bold text-[#ffc700] mb-4'>
+        <p className='text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#ffc700] mb-4'>
           OUR INDUSTRY READINESS PROGRAMME INCLUDES
         </p>
+      </div>
+
+      {/* Soft Skills Section */}
+      <div className="mb-6 text-center">
         <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#ffc700] mb-2">
-          Soft Skills
+          SOFT SKILLS
         </p>
         <div className="flex flex-wrap justify-center">
           {courses.softSkills.map((course, index) => (
@@ -55,9 +59,10 @@ const CollegeCourse = () => (
         </div>
       </div>
 
+      {/* Aptitude Section */}
       <div className="mb-6 text-center">
         <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#ffc700] mb-2">
-          Aptitude
+          APTITUDE
         </p>
         <div className="flex flex-wrap justify-center">
           {courses.aptitude.map((course, index) => (

@@ -2,10 +2,11 @@ import React from 'react';
 
 function AcrossIndia() {
   return (
-    <div className="p-8 bg-[#091327] flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-[#FFC80E] text-center mb-4">
+    <div className="p-8 bg-[#091327] flex flex-col items-center roboto-regular">
+      <h1 className="heading">
         OUR TRAININGS ACROSS INDIA
       </h1>
+
       <div className="w-full max-w-4xl mx-auto">
         {/* India Map Image */}
         <img

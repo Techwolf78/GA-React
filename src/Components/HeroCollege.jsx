@@ -39,9 +39,9 @@ const HeroCollege = () => {
         {/* Heading Container */}
         <div className="heading-container absolute top-1/4 left-1/2 transform -translate-x-1/2 text-center z-10 roboto-regular">
           {imageLoaded && (
-            <div className="font-extrabold text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-r text-white">
+            <div className="font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl bg-clip-text text-transparent bg-gradient-to-r text-white">
               A JOURNEY FROM <span></span>
-              <span className="text-[#FFC80E] inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
+              <span className="text-[#FFC80E] inline-flex flex-col h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
                 <ul className={`block ${showClassroom ? 'animate-text-slide-stop' : 'animate-text-slide'} text-left leading-tight`}>
                   <li className="transition-opacity duration-1000">{!showClassroom && 'COLLEGE'}</li>
                   <li className={`transition-opacity duration-1000 ${showClassroom ? 'opacity-100' : 'opacity-0'}`}>CLASSROOM</li>
@@ -50,14 +50,14 @@ const HeroCollege = () => {
             </div>
           )}
           {imageLoaded && (
-            <p className="text-2xl md:text-3xl text-white">Get Industry-Ready with Gryphon</p> // Adjusted font size for consistency
+            <p className="text-1xl sm:text-2xl lg:text-3xl xl:text-4xl text-white mt-2">Get Industry-Ready with Gryphon</p>
           )}
         </div>
 
         <div className="hero-overlay"></div>
 
         {/* Text Information at the Bottom */}
-        <div className="text-info absolute bottom-1 left-0 w-full p-4 text-gray-800 z-2 flex flex-col sm:flex-row items-center sm:justify-around">
+        <div className="text-info absolute bottom-4 left-1/2 transform -translate-x-1/2 w-full p-4 text-gray-800 z-2 flex flex-col sm:flex-row items-center sm:justify-around">
           <div className="flex items-center mb-2 font-bold text-[#ffffff] text-lg">
             <span className="check-icon-wrapper">
               <FaCheck className="check-icon" />
@@ -104,6 +104,7 @@ const HeroCollege = () => {
         .text-info {
           padding: 0 1rem; /* Adjust padding if necessary */
           z-index: 2;
+          margin-top: 20px; /* Spacing from the bottom */
         }
 
         .check-icon-wrapper {

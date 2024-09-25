@@ -8,7 +8,7 @@ function WhyTraining() {
   const darkGray = '#333333'; // Dark gray text
 
   return (
-    <div>
+    <div className='roboto-regular'>
       <main className="flex-1 py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Layout for large screens */}
@@ -18,46 +18,43 @@ function WhyTraining() {
           >
             {/* Left Content */}
             <div
-              className="flex-1 text-dark-blue pr-0 lg:pr-8 mb-6 lg:mb-0 flex flex-col justify-center items-center lg:items-start"
+              className="flex-1 text-dark-blue pr-4 lg:pr-2 mb-6 lg:mb-0 flex flex-col justify-center items-center lg:items-start"
               style={{ color: darkBlue }}
             >
-              <div className="flex items-center mb-6">
-                <img src="/whyGA.png" alt="Illustration" className="h-48 sm:h-56 lg:h-64 xl:h-72" />
+              <div className="flex items-center mb-6 justify-center"> {/* Center the image */}
+                <img
+                  src="/Training - Thinking Man.png"
+                  alt="Illustration"
+                  className="h-64 sm:h-72 lg:h-80 xl:h-96"
+                  style={{ transform: 'scaleX(-1)' }} // Flip image horizontally
+                />
               </div>
               <p
-                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-6 text-center lg:text-left"
+                className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-6 text-center lg:text-left"
                 style={{ color: highlightYellow }}
               >
-                How do Our Trainings Differ?
+                HOW DO OUR TRAININGS DIFFER?
               </p>
             </div>
             {/* Right Content */}
             <div className="flex-1 flex items-center justify-center">
               <div
-                className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full md:w-[380px]"
+                className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full md:w-[400px]"
                 style={{ backgroundColor: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}
               >
                 <ul className="space-y-3 sm:space-y-4">
-                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                    Over two decades of instruction from highly skilled professionals
-                  </li>
-                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                    Syllabus crafted to meet current market demands
-                  </li>
-                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                    Advisory board featuring IIT and IIM luminaries
-                  </li>
-                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                    Integrated approach combining technical expertise, soft skills, and aptitude training
-                  </li>
-                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                    LinkedIn testimonials from our students across India
-                  </li>
+                  {[
+                    'Over two decades of instruction from highly skilled professionals',
+                    'Syllabus crafted to meet current market demands',
+                    'Advisory board featuring IIT and IIM luminaries',
+                    'Integrated approach combining technical expertise, soft skills, and aptitude training',
+                    'LinkedIn testimonials from our students across India',
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
+                      <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -69,40 +66,37 @@ function WhyTraining() {
             style={{ backgroundColor: lightBlue, padding: '1.5rem', borderRadius: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}
           >
             <p
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-6 text-center"
+              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-6 text-center"
               style={{ color: highlightYellow }}
             >
-              How do Our Trainings Differ?
+              HOW DO OUR TRAININGS DIFFER?
             </p>
             <div className="flex items-center mb-6 justify-center">
-              <img src="/whyGA.png" alt="Illustration" className="h-48 sm:h-56 lg:h-64 xl:h-72" />
+              <img
+                src="/Training - Thinking Man.png"
+                alt="Illustration"
+                className="h-64 sm:h-72 lg:h-80 xl:h-96"
+                style={{ transform: 'scaleX(-1)' }} // Flip image horizontally
+              />
             </div>
             <div className="flex items-center justify-center">
               <div
-                className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full md:w-[380px]"
+                className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full md:w-[400px]"
                 style={{ backgroundColor: 'white', padding: '1.5rem', borderRadius: '12px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}
               >
                 <ul className="space-y-3 sm:space-y-4">
-                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                    Over two decades of instruction from highly skilled professionals
-                  </li>
-                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                    Syllabus crafted to meet current market demands
-                  </li>
-                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                    Advisory board featuring IIT and IIM luminaries
-                  </li>
-                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                    Integrated approach combining technical expertise, soft skills, and aptitude training
-                  </li>
-                  <li className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                    <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                    LinkedIn testimonials from our students across India
-                  </li>
+                  {[
+                    'Over two decades of instruction from highly skilled professionals',
+                    'Syllabus crafted to meet current market demands',
+                    'Advisory board featuring IIT and IIM luminaries',
+                    'Integrated approach combining technical expertise, soft skills, and aptitude training',
+                    'LinkedIn testimonials from our students across India',
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
+                      <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

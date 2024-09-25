@@ -3,23 +3,17 @@ import WebFont from "webfontloader";
 import { FaCalendarCheck, FaCogs, FaBriefcase, FaThumbsUp } from 'react-icons/fa'; // Importing React Icons
 
 const CorporateAppoarch = () => {
-  useEffect(() => {
-    WebFont.load({
-      google: {
-        families: ["Varela"],
-      },
-    });
-  }, []);
+  
 
   return (
-    <div className="bg-[#091327] p-10">
+    <div className="bg-[#091327] p-10 roboto-regular">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between mb-12">
           <div className="md:w-1/2 mb-8 md:mb-0">
-            <p className="text-lg font-semibold text-[#ffffff] mb-2 underline">OUR APPROACH</p>
+            <p className="text-lg font-semibold text-[#ffffff] mb-2 ">OUR APPROACH</p>
             <h1
-              className="text-4xl font-bold text-[#ffc700]"
-              style={{ fontFamily: "Varela, sans-serif" }}
+              className="text-3xl md:text-4xl  font-bold text-[#ffc700]"
+             
             >
               Comprehensive Corporate Training Solutions
             </h1>

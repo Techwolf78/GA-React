@@ -113,85 +113,85 @@ const courses = {
   };
 
 
-const CourseSection = () => {
-  const [selectedCourse, setSelectedCourse] = useState('MECH');
-  const [showCards, setShowCards] = useState({ MECH: true });
-
-  const changeCourse = (courseKey) => {
-    if (courseKey !== selectedCourse) {
-      setShowCards({ [courseKey]: true });
-      setSelectedCourse(courseKey);
-    } else {
-      setShowCards((prev) => ({ ...prev, [courseKey]: !prev[courseKey] }));
-    }
-  };
-
-  return (
-    <section className="py-5 bg-[#091327] roboto-regular">
-      <div className="mb-8">
-        <p className="text-[#ffc700] text-4xl text-center font-bold mb-4">TECHNICAL TRAINING</p>
-      </div>
-      <div className="container mx-auto flex flex-wrap">
-        {/* Sidebar */}
-        <div className="course-sidebar w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
-          <div className="bg-[#091327] shadow-lg rounded-lg">
-            {Object.keys(courses).map((key) => (
-              <div key={key}>
-               <button
-  onClick={() => changeCourse(key)}
-  className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300 
-              ${selectedCourse === key ? 'bg-[#FFC80E] text-[#003073] shadow-2xl transform scale-105' : 'bg-[#003073] text-white'}
-              rounded-lg 
-              ${window.innerWidth >= 1024 ? 'hover:shadow-2xl hover:transform hover:scale-105' : ''}`}
-  style={{
-    border: selectedCourse === key ? '1px solid #003073' : 'none',
-    borderRadius: '0',
-    whiteSpace: 'normal',
-    overflow: 'hidden',
-  }}
->
-  <span className=" text-left break-words font-semibold">{buttonLabels[key]}</span>
-  <span>{window.innerWidth < 768 ? '▼' : '>'}</span>
-</button>
-
-                {showCards[key] && window.innerWidth < 768 && (
-                  <div className="course-card bg-[#003073] rounded-lg p-4 shadow-md mt-2">
-                    {courses[key].map((course, index) => (
-                      <div key={index} className="mb-4">
-                        <h3 className="text-[#ffc700] text-lg font-semibold mb-1">{course.title}</h3>
-                        <p className="text-white text-sm">{course.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+  const CourseSection = () => {
+    const [selectedCourse, setSelectedCourse] = useState('MECH');
+    const [showCards, setShowCards] = useState({ MECH: true });
+  
+    const changeCourse = (courseKey) => {
+      if (courseKey !== selectedCourse) {
+        setShowCards({ [courseKey]: true });
+        setSelectedCourse(courseKey);
+      } else {
+        setShowCards((prev) => ({ ...prev, [courseKey]: !prev[courseKey] }));
+      }
+    };
+  
+    return (
+      <section className="py-5 bg-[#091327] roboto-regular">
+        <div className="mb-8">
+          <p className="text-[#ffc700] text-4xl text-center font-bold mb-4">TECHNICAL TRAINING</p>
         </div>
-
-        {/* Content Area - Cards shown to the right of the sidebar on medium and larger screens */}
-        {window.innerWidth >= 768 && (
-          <div className="content w-full lg:w-3/4 px-4 flex-grow flex flex-col">
-            <div className="flex-grow">
+        <div className="container mx-auto flex flex-wrap">
+          {/* Sidebar */}
+          <div className="course-sidebar w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
+            <div className="bg-[#091327] shadow-lg rounded-lg">
               {Object.keys(courses).map((key) => (
-                showCards[key] && (
-                  <div key={key} className="course-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {courses[key].map((course, index) => (
-                      <div key={index} className="card bg-[#003073] rounded-lg p-4 shadow-md">
-                        <img src={course.image} alt={course.title} className="w-full h-40 object-cover rounded-t-lg mb-4" />
-                        <h3 className="text-[#ffc700] text-lg font-semibold mb-2">{course.title}</h3>
-                        <p className="text-white text-sm mb-4">{course.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                )
+                <div key={key}>
+                  <button
+                    onClick={() => changeCourse(key)}
+                    className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300 
+                    ${selectedCourse === key ? 'bg-[#FFC80E] text-[#003073] shadow-2xl transform scale-105' : 'bg-[#003073] text-white shadow-lg'}
+                    rounded-lg 
+                    ${window.innerWidth >= 1024 ? 'hover:shadow-2xl hover:transform hover:scale-105' : ''}`}
+                    style={{
+                      border: selectedCourse === key ? '1px solid #003073' : 'none',
+                      borderRadius: '0',
+                      whiteSpace: 'normal',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <span className="text-left break-words font-semibold">{buttonLabels[key]}</span>
+                    <span>{window.innerWidth < 768 ? '▼' : '>'}</span>
+                  </button>
+  
+                  {showCards[key] && window.innerWidth < 768 && (
+                    <div className="course-card bg-[#003073] rounded-lg p-4 shadow-md mt-2">
+                      {courses[key].map((course, index) => (
+                        <div key={index} className="mb-4">
+                          <h3 className="text-[#ffc700] text-lg font-semibold mb-1">{course.title}</h3>
+                          <p className="text-white text-sm">{course.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
-        )}
-      </div>
-    </section>
-  );
-};
-
-export default CourseSection;
+  
+          {/* Content Area - Cards shown to the right of the sidebar on medium and larger screens */}
+          {window.innerWidth >= 768 && (
+            <div className="content w-full lg:w-3/4 px-4 flex-grow flex flex-col">
+              <div className="flex-grow">
+                {Object.keys(courses).map((key) => (
+                  showCards[key] && (
+                    <div key={key} className="course-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {courses[key].map((course, index) => (
+                        <div key={index} className="card bg-[#003073] rounded-lg p-4 shadow-md">
+                          <img src={course.image} alt={course.title} className="w-full h-40 object-cover rounded-t-lg mb-4" />
+                          <h3 className="text-[#ffc700] text-lg font-semibold mb-2">{course.title}</h3>
+                          <p className="text-white text-sm mb-4">{course.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  };
+  
+  export default CourseSection;

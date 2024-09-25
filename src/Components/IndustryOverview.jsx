@@ -54,25 +54,18 @@ const MBA_TABLE_ROWS = [
   }
 ];
 
-const calculateMaxSubjectWidth = (rows) => {
-  const maxSubjectLength = Math.max(...rows.map(row => row.subject.length));
-  return maxSubjectLength * 10; // Adjust multiplier as needed for padding
-};
-
 const IndustryOverview = () => {
-  const maxWidthEng = calculateMaxSubjectWidth(ENGINEERING_TABLE_ROWS);
-  const maxWidthMBA = calculateMaxSubjectWidth(MBA_TABLE_ROWS);
-  const subjectColumnWidth = Math.max(maxWidthEng, maxWidthMBA);
+  const subjectColumnWidth = '250px'; // Fixed width for the subject column
 
   return (
-    <div className="p-6 bg-[#091327] text-white">
-      <Typography variant="paragraph" className="text-center mb-12 font-bold text-4xl text-[#FFC80E]">
+    <div className="p-6 bg-[#091327] text-white roboto-regular">
+      <Typography variant="h1" className="text-center mb-8 font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-[#FFC80E]">
         INDUSTRY ORIENTED TRAINING OVERVIEW
       </Typography>
 
       {/* Engineering Table */}
       <div className="mb-12">
-        <Typography variant="h4" className="text-center mb-4 font-bold text-3xl text-[#FFC80E]">
+        <Typography variant="h2" className="text-center mb-4 font-bold text-xl sm:text-2xl lg:text-3xl text-[#FFC80E]">
           ENGINEERING
         </Typography>
         <Card className="w-full overflow-x-auto shadow-lg rounded-lg bg-white">
@@ -95,13 +88,13 @@ const IndustryOverview = () => {
                 
                 return (
                   <tr key={subject}>
-                    <td className={`w-[${subjectColumnWidth}px] ${classes} bg-[#E9F6FD]`}>
+                    <td className={`w-[${subjectColumnWidth}] ${classes} bg-[#E9F6FD]`}>
                       <Typography variant="h6" className="font-bold text-[#000000]">
                         {subject}
                       </Typography>
                     </td>
                     <td className={`${classes} bg-[#DFF1FD]`}>
-                      <Typography variant="paragraph" className="font-normal text-[#091327]">
+                      <Typography variant="body1" className="font-normal text-[#091327]">
                         {topics}
                       </Typography>
                     </td>
@@ -115,7 +108,7 @@ const IndustryOverview = () => {
 
       {/* MBA Table */}
       <div>
-        <Typography variant="h4" className="text-center mb-4 font-bold text-3xl text-[#FFC80E]">
+        <Typography variant="h2" className="text-center mb-4 font-bold text-xl sm:text-2xl lg:text-3xl text-[#FFC80E]">
           MBA/PGDM
         </Typography>
         <Card className="w-full overflow-x-auto shadow-lg rounded-lg bg-white">
@@ -138,13 +131,13 @@ const IndustryOverview = () => {
                 
                 return (
                   <tr key={subject}>
-                    <td className={`w-[${subjectColumnWidth}px] ${classes} bg-[#E9F6FD]`}>
+                    <td className={`w-[${subjectColumnWidth}] ${classes} bg-[#E9F6FD]`}>
                       <Typography variant="h6" className="font-bold text-[#091327]">
                         {subject}
                       </Typography>
                     </td>
                     <td className={`${classes} bg-[#DFF1FD]`}>
-                      <Typography variant="paragraph" className="font-normal text-[#091327]">
+                      <Typography variant="body1" className="font-normal text-[#091327]">
                         {topics}
                       </Typography>
                     </td>
@@ -155,7 +148,6 @@ const IndustryOverview = () => {
           </table>
         </Card>
       </div>
-
     </div>
   );
 };

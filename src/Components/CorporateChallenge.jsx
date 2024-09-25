@@ -77,21 +77,19 @@ const ChallengesSolutionsComponent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a1d3d] p-10 flex items-center justify-center"> {/* Darker background */}
+    <div className="min-h-screen bg-[#0a1d3d] p-10 flex items-center justify-center roboto-regular">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-bold text-center text-[#ffc700] mb-12">CHALLENGES & SOLUTIONS</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-[#ffc700] mb-12">CHALLENGES & SOLUTIONS</h1>
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4">
           {challenges.map((challenge, index) => {
-            const cardColor = '#003073'; // Solid red color
+            const cardColor = '#003073';
             const isHovered = hoveredIndex === index;
 
-            // Set border color and glow intensity based on hover state
-            const borderColor = isHovered ? '#ffc700' : 'white'; // Yellow glow on hover, white otherwise
+            const borderColor = isHovered ? '#ffc700' : 'white';
             const glowIntensity = isHovered ? '10px' : '0px';
 
             return (
               <motion.div
-                id={`card-${index}`}
                 key={index}
                 style={{
                   backgroundColor: cardColor,
@@ -111,9 +109,9 @@ const ChallengesSolutionsComponent = () => {
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="p-6">
-                  <div className="flex items-start mb-4">
-                    <div className="text-4xl text-[#ffc700] mr-4 flex-shrink-0">{challenge.icon}</div>
+                <div className="p-4 mt-(-1)"> {/* Adjusted padding for top spacing */}
+                  <div className="flex items-center mb-2"> {/* Adjusted margin-bottom */}
+                    <div className="text-4xl text-[#ffc700] mr-3 flex-shrink-0">{challenge.icon}</div>
                     <div className="flex-1">
                       <h2 className="text-xl font-semibold text-[#ffffff]">{challenge.title}</h2>
                     </div>

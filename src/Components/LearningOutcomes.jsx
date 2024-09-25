@@ -5,7 +5,7 @@ import { FaGraduationCap, FaSchool, FaChalkboardTeacher, FaBuilding } from 'reac
 const departments = [
   {
     icon: <FaGraduationCap className="text-4xl text-[#091327]" />, // Dark blue color for icons
-    name: "Students",
+    name: "STUDENTS",
     outcomes: [
       "Students are groomed for industry according to its specifications.",
       "Holistic upskilling of students.",
@@ -15,7 +15,7 @@ const departments = [
   },
   {
     icon: <FaSchool className="text-4xl text-[#091327]" />, // Dark blue color for icons
-    name: "Colleges",
+    name: "COLLEGES",
     outcomes: [
       "Enhanced placement rates.",
       "Empowered students taking the college to new heights.",
@@ -35,7 +35,7 @@ const departments = [
   },
   {
     icon: <FaBuilding className="text-4xl text-[#091327]" />, // Dark blue color for icons
-    name: "Corporate",
+    name: "CORPORATE",
     outcomes: [
       "Customized skill development aligned with company goals.",
       "Increased employee productivity and efficiency.",
@@ -47,8 +47,8 @@ const departments = [
 
 const LearningOutcomes = () => {
   return (
-    <div className="p-4 bg-[#091327] flex flex-col items-center">
-      <h1 className="text-4xl font-bold mb-6  text-[#FFC80E]">
+    <div className="p-4 bg-[#091327] flex flex-col items-center roboto-regular">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 text-[#FFC80E]">
         LEARNING OUTCOMES OF OUR TRAININGS
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl">
@@ -58,11 +58,11 @@ const LearningOutcomes = () => {
               <span className="w-16 h-16 flex items-center justify-center rounded-full bg-[#FFC80E] mr-4">
                 {dept.icon}
               </span>
-              <p className="text-2xl font-semibold">{dept.name}</p>
+              <p className="text-lg sm:text-xl md:text-2xl font-semibold">{dept.name}</p>
             </div>
             <ul className="list-disc pl-5 space-y-2">
               {dept.outcomes.map((outcome, idx) => (
-                <li key={idx} className="text-gray-300">
+                <li key={idx} className="text-sm sm:text-base md:text-lg text-gray-300">
                   {outcome}
                 </li>
               ))}

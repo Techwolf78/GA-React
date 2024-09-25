@@ -13,7 +13,7 @@ import MajorRecruiter from "./MajorRecruiter";
 const Placement = () => {
   const hookLineText = (
     <span>
-      <strong className="font-semibold">ZERO COST INVOLVED</strong> During All Stages of Recruitment
+      <strong className="font-semibold roboto-regular">ZERO COST INVOLVED</strong> During All Stages of Recruitment
     </span>
   );
   const repeats = 10;
@@ -24,8 +24,8 @@ const Placement = () => {
       <PartneredUniversities />
       
       {/* Infinite Hook Line Section */}
-      <div className="hook-line-container py-6 bg-[#DFF1FD]">
-        <div className="hook-line text-[#000000] text-xl sm:text-2xl md:text-3xl flex items-center justify-center space-x-4">
+      <div className="hook-line-container py-2   bg-[#DFF1FD] roboto-regular">
+        <div className="hook-line text-[#000000] text-xl sm:text-2xl lg:text-3xl xl:text-4xl flex items-center justify-center space-x-4">
           {Array.from({ length: repeats }).map((_, index) => (
             <React.Fragment key={index}>
               {hookLineText}
@@ -45,16 +45,16 @@ const Placement = () => {
       <CollegeAccreditation />
 
       {/* New Section: Simple Placement Process */}
-      <div className="p-8 text-center bg-[#091327]">
-        <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-[#FFC80E]">
+      <div className="p-0 text-center roboto-regular"> {/* Changed padding to 0 */}
+        <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold  text-[#FFC80E] bg-[#003073] py-2">
           WE FOLLOW SIMPLE PLACEMENT PROCESS
         </p>
-        <div className="w-full max-w-5xl mx-auto">
+        <div className="w-full h-auto bg-[#003073]">
           {/* Placeholder for the infographic */}
           <img 
-            src="https://via.placeholder.com/1400x600" 
+            src="placement-bg/GA - placement Process.png" 
             alt="Infographic" 
-            className="w-full h-auto"
+            className="w-full h-auto block px-1 py-1" // Ensures full width with no spaces
           />
         </div>
       </div>

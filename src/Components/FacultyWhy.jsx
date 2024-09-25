@@ -27,9 +27,9 @@ function FacultyWhy() {
   }, []);
 
   return (
-    <div className="p-4 sm:p-6 md:p-8 max-w-7xl mx-auto bg-[#091327] rounded-xl shadow-2xl">
-      <h1 className="text-3xl sm:text-4xl font-extrabold text-[#ffc700] text-center mb-8 sm:mb-12 underline">
-        Why Choose Gryphon Academy’s FDP?
+    <div className="p-4 sm:p-6 md:p-8 max-w-7xl mx-auto bg-[#091327] rounded-xl shadow-2xl roboto-regular">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[#ffc700] text-center mb-8 sm:mb-12">
+        WHY CHOOSE GRYPHON ACADEMY'S FDP?
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {keyFeatures.map((feature, index) => (
@@ -54,7 +54,9 @@ function FacultyWhy() {
                 }}
               />
             </h2>
-            <p className="text-sm sm:text-base text-[#091327]">{feature.description}</p>
+            <p className="text-sm sm:text-base lg:text-lg text-[#091327] leading-relaxed">
+              {feature.description}
+            </p>
           </motion.div>
         ))}
       </div>
