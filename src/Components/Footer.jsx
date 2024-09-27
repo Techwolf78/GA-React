@@ -17,24 +17,30 @@ const Footer = () => {
           />
         </div>
 
-        {/* Useful Links Section */}
-        <div className="mb-8 md:mb-0 md:w-1/4">
-          <h2 className="text-xl font-bold mb-4 text-center md:text-left">Useful Links</h2>
-          <ul className="flex flex-col items-center md:items-start space-y-2">
-            <li>
-              <Link to="/contact" className="hover:text-gray-300 transition duration-300">Contact Us</Link>
-            </li>
-            <li>
-              <Link to="/training" className="hover:text-gray-300 transition duration-300">Training</Link>
-            </li>
-            <li>
-              <Link to="/placement" className="hover:text-gray-300 transition duration-300">Placement</Link>
-            </li>
-            <li>
-              <Link to="/blogs" className="hover:text-gray-300 transition duration-300">Blogs</Link>
-            </li>
-          </ul>
-        </div>
+{/* Useful Links Section */}
+<div className="mb-8 md:mb-0 md:w-1/4">
+  <h2 className="text-xl font-bold mb-4 text-center md:text-left">Useful Links</h2>
+  <ul className="flex flex-col items-center md:items-start space-y-2">
+    {[
+      { name: 'Contact Us', path: '/contact' },
+      { name: 'About Us', path: '/about' },
+      { name: 'Training', path: '/training' },
+      { name: 'Placement', path: '/placement' },
+      { name: 'Blogs', path: '/blogs' }
+    ].map((link, index) => (
+      <li key={index} className="relative group">
+        <Link
+          to={link.path}
+          className="relative z-10 text-white hover:text-[#FFC80E] transition duration-300"
+        >
+          {link.name}
+        </Link>
+        <span className="absolute left-0 bottom-0 w-6 h-0.5 bg-[#FFC80E] transform group-hover:w-full transition-all duration-300"></span>
+      </li>
+    ))}
+  </ul>
+</div>
+
 
         {/* Follow Us Section */}
         <div className="mb-8 md:mb-0 md:w-1/4">
@@ -67,26 +73,33 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Contact Us Section */}
-        <div className="md:w-1/4">
-          <h2 className="text-xl font-bold mb-4 text-center md:text-left">Contact Us</h2>
-          <ul className="space-y-2">
-            <li className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faMapMarkerAlt} className="text-xl text-custom-yellow" />
-              <p className="text-sm">
-                <a href="https://maps.app.goo.gl/LbkaqWULoGY2k7bq8" className="hover:underline">9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Bangalore Highway Baner, Pune Maharashtra - 411045</a>
-              </p>
-            </li>
-            <li className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faPhoneAlt} className="text-xl text-custom-yellow" />
-              <p className="text-sm"><a href="tel:+91 89836 14509" className="hover:underline">+91 89836 14509 / 8983339099</a></p>
-            </li>
-            <li className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faEnvelope} className="text-xl text-custom-yellow" />
-              <p className="text-sm"><a href="mailto:gryphonx@gryphonacademy.co.in" className="hover:underline">gryphonx@gryphonacademy.co.in</a></p>
-            </li>
-          </ul>
-        </div>
+  {/* Contact Us Section */}
+<div className="md:w-1/4">
+  <h2 className="text-xl font-bold mb-4 text-center md:text-left">Contact Us</h2>
+  <ul className="space-y-2">
+    <li className="flex items-center space-x-2">
+      <FontAwesomeIcon icon={faMapMarkerAlt} className="text-xl text-custom-yellow" />
+      <p className="text-sm">
+        <a href="https://maps.app.goo.gl/LbkaqWULoGY2k7bq8" className="hover:underline hover:text-[#FFC80E] transition duration-300 border-b-2 border-[#FFC80E]">
+          9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Bangalore Highway Baner, Pune Maharashtra - 411045
+        </a>
+      </p>
+    </li>
+    <li className="flex items-center space-x-2">
+      <FontAwesomeIcon icon={faPhoneAlt} className="text-xl text-custom-yellow" />
+      <p className="text-sm">
+        <a href="tel:+91 89836 14509" className="hover:underline hover:text-[#FFC80E] transition duration-300 border-b-2 border-[#FFC80E]">+91 89836 14509 / 8983339099</a>
+      </p>
+    </li>
+    <li className="flex items-center space-x-2">
+      <FontAwesomeIcon icon={faEnvelope} className="text-xl text-custom-yellow" />
+      <p className="text-sm">
+        <a href="mailto:gryphonx@gryphonacademy.co.in" className="hover:underline hover:text-[#FFC80E] transition duration-300 border-b-2 border-[#FFC80E]">gryphonx@gryphonacademy.co.in</a>
+      </p>
+    </li>
+  </ul>
+</div>
+
       </div>
 
       {/* Footer Bottom */}

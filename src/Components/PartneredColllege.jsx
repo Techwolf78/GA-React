@@ -19,12 +19,14 @@ const PartneredCollege = () => {
     { name: 'Indira Institute of Management, Pune', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/14-1.png' },
     { name: 'Indira School Of Communication', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/15-1.png' },
     { name: 'ISBR Bangalore', location: 'Bangalore, Karnataka', imageUrl: 'Clgimage/16-1.png' },
-];
+  ];
 
   return (
     <div className="bg-[#003073] py-16 min-h-screen roboto-regular">
-      <div className="container mx-auto px-4">
-        <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 text-center text-[#ffc700]">FEW PARTNERED COLLEGES</p>
+      <div className="container mx-auto px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16">
+        <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10 text-center text-[#ffc700]">
+          FEW PARTNERED COLLEGES
+        </p>
         <div className="relative overflow-hidden">
           <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-8 gap-x-4">
             {colleges.map((college, index) => (

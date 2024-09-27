@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const HeroPlacement = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -22,25 +22,27 @@ const HeroPlacement = () => {
           src="Clgimage/Heroplace.png"
           className={`w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           alt="A vibrant scene representing recruitment solutions"
-          style={{ display: imageLoaded ? 'block' : 'none' }} // Prevents the image from occupying space until loaded
         />
 
         {/* Overlay */}
         {imageLoaded && (
-          <div className="absolute inset-0 bg-black opacity-70" />
+          <div className="absolute inset-0 bg-[#003073] opacity-90" />
         )}
         
         {/* Text Section */}
         {imageLoaded && (
-          <div className="absolute inset-0 flex flex-col items-center" style={{ paddingTop: '120px' }}>
-            <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center px-6">
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h1
+              className="text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center px-6 uppercase"
+              style={{ wordSpacing: '0.5rem', lineHeight: '1.2' }}  // Add line height for more space
+            >
               One Stop Commercial Free Solution to Recruiter’s Complete Fresher’s Hiring Needs
             </h1>
           </div>
         )}
       </div>
       
-      {/* Animation Style (if needed, use regular CSS) */}
+      {/* Loader Style (CSS) */}
       <style>
         {`
           @keyframes slideIn {

@@ -1,20 +1,14 @@
-import React, { useEffect } from "react";
-import WebFont from "webfontloader";
-import { FaCalendarCheck, FaCogs, FaBriefcase, FaThumbsUp } from 'react-icons/fa'; // Importing React Icons
+import React from 'react';
+import { FaCalendarCheck, FaCogs, FaBriefcase } from 'react-icons/fa'; // Importing React Icons
 
 const CorporateAppoarch = () => {
-  
-
   return (
-    <div className="bg-[#091327] p-10 roboto-regular">
-      <div className="container mx-auto">
+    <div className="bg-[#091327] py-4 roboto-regular">
+      <div className="container mx-auto px-8 sm:px-8 md:px-16 lg:px-16">
         <div className="flex flex-col md:flex-row items-center justify-between mb-12">
           <div className="md:w-1/2 mb-8 md:mb-0">
-            <p className="text-lg font-semibold text-[#ffffff] mb-2 ">OUR APPROACH</p>
-            <h1
-              className="text-3xl md:text-4xl  font-bold text-[#ffc700]"
-             
-            >
+            <p className="text-lg font-semibold text-[#ffffff] mb-2">OUR APPROACH</p>
+            <h1 className="text-3xl md:text-4xl font-bold text-[#ffc700]">
               Comprehensive Corporate Training Solutions
             </h1>
           </div>

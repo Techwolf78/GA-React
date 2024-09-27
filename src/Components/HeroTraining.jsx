@@ -1,4 +1,3 @@
-
 import { FaChalkboardTeacher, FaTools } from "react-icons/fa";
 
 const HeroTraining = () => {
@@ -29,7 +28,7 @@ const HeroTraining = () => {
         {/* Paragraph and Button in the bottom-left corner */}
         <div className="absolute bottom-8 left-4 sm:left-6 md:left-8 lg:left-12 xl:left-16 text-left">
           <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-[#ffffff] mb-4 font-light">
-            It is a long established fact that reader will be distracted by readable content of a page when.
+            The Tri-Force of Excellence: Powering Education, Faculty, and Industry 
           </p>
 
           <button
@@ -54,23 +53,27 @@ const HeroTraining = () => {
           </button>
         </div>
 
-        {/* Stat boxes positioned in corners with padding and margin */}
+        {/* Stat boxes with animated glowing border */}
         <div className="absolute top-36 right-4 p-2 hidden md:flex">
-          <div className="bg-[#003073] p-3 rounded-2xl shadow-md flex items-center space-x-2">
-            <FaTools className="text-[#FFC80E] text-xl sm:text-2xl md:text-3xl" />
-            <div className="text-center">
-              <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#FFC80E]">Customized Trainings</h3>
-              <span className="text-[#ffffff] block text-xs sm:text-sm md:text-sm">Tailored to your needs</span>
+          <div className="stat-box">
+            <div className="border-animation p-3 rounded-2xl shadow-md flex items-center space-x-2">
+              <FaTools className="text-[#FFC80E] text-xl sm:text-2xl md:text-3xl" />
+              <div className="text-center">
+                <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#FFC80E]">Customized Trainings</h3>
+                <span className="text-[#ffffff] block text-xs sm:text-sm md:text-sm">Tailored to your needs</span>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="absolute bottom-12 right-4 p-2 hidden md:flex">
-          <div className="bg-[#003073] p-3 rounded-2xl shadow-md flex items-center space-x-2">
-            <FaChalkboardTeacher className="text-[#FFC80E] text-xl sm:text-2xl md:text-3xl" />
-            <div className="text-center">
-              <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#FFC80E]">Expert Trainers</h3>
-              <span className="text-[#ffffff] block text-xs sm:text-sm md:text-sm">Learn from industry experts</span>
+          <div className="stat-box">
+            <div className="border-animation p-3 rounded-2xl shadow-md flex items-center space-x-2">
+              <FaChalkboardTeacher className="text-[#FFC80E] text-xl sm:text-2xl md:text-3xl" />
+              <div className="text-center">
+                <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#FFC80E]">Expert Trainers</h3>
+                <span className="text-[#ffffff] block text-xs sm:text-sm md:text-sm">Learn from industry experts</span>
+              </div>
             </div>
           </div>
         </div>
@@ -78,35 +81,39 @@ const HeroTraining = () => {
 
       {/* Background for Medium and Small Screens */}
       <div className="lg:hidden flex flex-col justify-center items-center bg-cover bg-center p-4"
-        style={{ backgroundImage: "url('Training 1 1.png')" }} // Add a smaller image here if needed
+        style={{ backgroundImage: "url('Training 1 1.png')" }}
       >
         <div className="text-center">
           <h1 className="text-xl sm:text-2xl font-bold text-[#FFC80E] mb-4">
             The Learning Trinity: Where Academia Meets Industry Expertise
           </h1>
           <p className="text-base text-[#ffffff] mb-6">
-            It is a long established fact that reader will be distracted by readable content of a page when.
+            The Tri-Force of Excellence: Powering Education, Faculty, and Industry 
           </p>
         </div>
         
-  {/* Stat Boxes for Smaller Screens */}
-<div className="flex flex-row space-x-2 p-4 hidden md:flex">
-  <div className="bg-[#003073] p-2 rounded-2xl shadow-md flex items-center">
-    <FaTools className="text-[#FFC80E] text-xl sm:text-2xl" />
-    <div className="text-center ml-2">
-      <h3 className="text-xs sm:text-sm font-bold text-[#FFC80E]">Customized Trainings</h3>
-      <span className="text-[#ffffff] block text-xs sm:text-sm">Tailored to your needs</span>
-    </div>
-  </div>
+        {/* Stat Boxes for Smaller Screens */}
+        <div className="flex flex-row space-x-2 p-4 hidden md:flex">
+          <div className="stat-box">
+            <div className="border-animation p-2 rounded-2xl shadow-md flex items-center">
+              <FaTools className="text-[#FFC80E] text-xl sm:text-2xl" />
+              <div className="text-center ml-2">
+                <h3 className="text-xs sm:text-sm font-bold text-[#FFC80E]">Customized Trainings</h3>
+                <span className="text-[#ffffff] block text-xs sm:text-sm">Tailored to your needs</span>
+              </div>
+            </div>
+          </div>
 
-  <div className="bg-[#003073] p-2 rounded-2xl shadow-md flex items-center">
-    <FaChalkboardTeacher className="text-[#FFC80E] text-xl sm:text-2xl" />
-    <div className="text-center ml-2">
-      <h3 className="text-xs sm:text-sm font-bold text-[#FFC80E]">Expert Trainers</h3>
-      <span className="text-[#ffffff] block text-xs sm:text-sm">Learn from industry experts</span>
-    </div>
-  </div>
-</div>
+          <div className="stat-box">
+            <div className="border-animation p-2 rounded-2xl shadow-md flex items-center">
+              <FaChalkboardTeacher className="text-[#FFC80E] text-xl sm:text-2xl" />
+              <div className="text-center ml-2">
+                <h3 className="text-xs sm:text-sm font-bold text-[#FFC80E]">Expert Trainers</h3>
+                <span className="text-[#ffffff] block text-xs sm:text-sm">Learn from industry experts</span>
+              </div>
+            </div>
+          </div>
+        </div>
         
         <button
           onClick={handleScroll}
@@ -131,41 +138,30 @@ const HeroTraining = () => {
       </div>
 
       <style>{`
-        .btn-know-more {
-          position: relative;
-          display: inline-flex;
-          align-items: center;
-          font-weight: bold;
-          padding: 10px 20px;
-          font-size: 1rem;
-          background-color: transparent;
-          border: 0.5px solid #ffffff;
-          text-decoration: none;
-          overflow: hidden;
-          transition: color 0.3s ease;
-        }
-        .btn-know-more::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background-color: #FFC80E;
-          transition: left 0.3s ease;
-          z-index: 0;
-        }
-        .btn-know-more:hover::before {
-          left: 0;
-        }
-        .btn-know-more:hover {
-          color: #000000;
-          transform: translateY(-3px);
-        }
-        .btn-know-more span {
-          position: relative;
-          z-index: 1;
-        }
+      .stat-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-animation {
+  position: relative;
+  padding: 10px; /* Space for the animated border */
+  background-color: #003073; /* Blue background */
+  border-radius: 12px; /* Match the rounding of the box */
+}
+
+.border-animation::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 12px; /* Match the rounding of the box */
+  background: linear-gradient(90deg, #FFC80E, #003073); /* Gradient border */
+  z-index: -1; /* Position behind the box */
+}
+
       `}</style>
     </div>
   );

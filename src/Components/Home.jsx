@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import  { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../assets/CSS/home.css';
 import Testimonials from './Testimonials';

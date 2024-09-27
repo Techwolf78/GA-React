@@ -127,7 +127,7 @@ const courses = {
     };
   
     return (
-      <section className="py-5 bg-[#091327] roboto-regular">
+      <section className="py-16 px-8 lg:px-16 bg-[#091327] roboto-regular"> {/* Adjusted padding here */}
         <div className="mb-8">
           <p className="text-[#ffc700] text-4xl text-center font-bold mb-4">TECHNICAL TRAINING</p>
         </div>

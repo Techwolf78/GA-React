@@ -17,8 +17,12 @@ import CollegeTraining from './Components/CollegeTraining';
 import CorporateTraining from './Components/CorporateTraining';
 import FacultyTraining from './Components/FacultyTraining'; // Corrected path to Components
 import WhatsAppWidget from './Components/WhatsAppWidget'; // Import the WhatsAppWidget component
-
-
+import Post1 from './Components/BlogPages/Post1';
+import Post2 from './Components/BlogPages/Post2';
+import Post3 from './Components/BlogPages/Post3';
+import Post4 from './Components/BlogPages/Post4';
+import Post5 from './Components/BlogPages/Post5';
+import Post6 from './Components/BlogPages/Post6';
 function App() {
   return (
     <Router>
@@ -27,6 +31,12 @@ function App() {
         <Route path="/about" element={<><Navbar /><About /></>} />
         <Route path="/gax" element={<><Navbar /><GAX /></>} />
         <Route path="/blogs" element={<><Navbar /><Blogs /></>} />
+        <Route path="/post1" element={<><Navbar /><Post1 /></>} />
+        <Route path="/post2" element={<><Navbar /><Post2 /></>} />
+        <Route path="/post3" element={<><Navbar /><Post3 /></>} />
+        <Route path="/post4" element={<><Navbar /><Post4 /></>} />
+        <Route path="/post5" element={<><Navbar /><Post5 /></>} />
+        <Route path="/post6" element={<><Navbar /><Post6 /></>} />
         <Route path="/placement" element={<><Navbar /><Placement /></>} />
         <Route path="/contact" element={<><Navbar /><Contact /></>} />
         <Route path="/brandPositioning" element={<><Navbar /><BrandPositioning /></>} />

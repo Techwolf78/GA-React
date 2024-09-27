@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaUniversity, FaUserTie, FaUserGraduate, FaClock } from 'react-icons/fa';
+import { motion, useAnimation, useInView } from 'framer-motion';
 
 function CollegeBox() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -14,82 +15,122 @@ function CollegeBox() {
     '/CollegeSliding/Training Photo 3.png',
   ];
 
+  const textControls = useAnimation();
+  const imageControls = useAnimation();
+  const ref = React.useRef();
+  const isInView = useInView(ref, { threshold: 0.6, once: true }); // Trigger when 60% is in view
+
+  useEffect(() => {
+    if (isInView) {
+      textControls.start({ opacity: 1, x: 0, transition: { duration: 0.7 } });
+      imageControls.start({ opacity: 1, x: 0, transition: { duration: 0.7 } });
+    } else {
+      textControls.start({ opacity: 0, x: -50 });
+      imageControls.start({ opacity: 0, x: 50 });
+    }
+  }, [textControls, imageControls, isInView]);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, [images.length]);
 
   useEffect(() => {
     const countUp = (setter, target, duration) => {
       let start = 0;
-      const step = target / (duration / 50); // Calculate how much to increment
+      const step = target / (duration / 50);
       const interval = setInterval(() => {
         start += step;
         if (start >= target) {
           clearInterval(interval);
           setter(target);
         } else {
-          setter(Math.floor(start)); // Round down to avoid fractions
+          setter(Math.floor(start));
         }
       }, 50);
     };
 
-    countUp(setCollegesCount, 55, 2000); // Count from 0 to 55 in 2000 ms
-    countUp(setTrainersCount, 5, 2000); // Count from 0 to 5 in 2000 ms
-    countUp(setStudentsTrained, 60000, 2000); // Count from 0 to 60000 in 2000 ms
-    countUp(setTrainingHours, 65000, 2000); // Count from 0 to 65000 in 2000 ms
+    countUp(setCollegesCount, 55, 2000);
+    countUp(setTrainersCount, 5, 2000);
+    countUp(setStudentsTrained, 60000, 2000);
+    countUp(setTrainingHours, 65000, 2000);
   }, []);
 
+  const handleDotClick = (index) => {
+    setCurrentImageIndex(index);
+  };
+
   return (
-    <div className="flex flex-col items-center p-4 bg-gradient-to-b from-[#003073] to-[#091327] shadow-lg roboto-regular">
+    <motion.div
+      ref={ref}
+      className="flex flex-col items-center py-4 px-8 sm:px-16 bg-gradient-to-b from-[#003073] to-[#091327] shadow-lg roboto-regular"
+    >
       <div className="flex flex-col md:flex-row w-full max-w-full mx-0">
-        <div className="flex-1 p-4 flex flex-col justify-between">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={textControls}
+          className="flex-1 flex flex-col justify-between"
+        >
           <div className="flex-1">
-            <p className="text-[#ffffff] text-lg md:text-xl lg:text-2xl font-medium leading-relaxed">
+            <p className="text-[#ffffff] text-lg md:text-xl lg:text-2xl font-medium leading-relaxed lg:pr-1">
               Our customized Industry-specific trainings for colleges are carefully designed to meet both academic and industry needs. We incorporate the latest trends and student feedback to ensure relevant and effective programmes. By customizing our training for each institution and learner, we promote student success and build strong partnerships between academia and industry.
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex-1 p-4 flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={imageControls}
+          className="flex-1 flex flex-col items-center"
+        >
           <div className="relative w-full flex items-center justify-center">
-            <img 
-              src={images[currentImageIndex]} 
-              alt="Slider" 
+            <img
+              src={images[currentImageIndex]}
+              alt="Slider"
               className="w-full h-auto object-cover shadow-md"
             />
           </div>
           <div className="flex mt-4 space-x-2">
             {images.map((_, index) => (
-              <div 
-                key={index} 
-                className={`w-3 h-3 rounded-full ${index === currentImageIndex ? 'bg-[#FFC80E]' : 'bg-[#003073]'} transition-colors`}
+              <div
+                key={index}
+                className={`w-3 h-3 rounded-full cursor-pointer ${index === currentImageIndex ? 'bg-[#FFC80E]' : 'bg-[#003073]'} transition-colors`}
+                onClick={() => handleDotClick(index)}
               />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 p-4 w-full max-w-full mx-0">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 py-4 w-full max-w-full mx-0">
         {[
           { icon: <FaUniversity />, value: `${collegesCount}+`, label: 'Colleges' },
-          { icon: <FaUserTie />, value: `${trainersCount}/5`, label: 'Trainers Index' }, // Fraction remains the same
+          { icon: <FaUserTie />, value: `${trainersCount}/5`, label: 'Trainers Index' },
           { icon: <FaUserGraduate />, value: `${studentsTrained}+`, label: 'Students Trained' },
           { icon: <FaClock />, value: `${trainingHours}+`, label: 'Training Hours' },
         ].map(({ icon, value, label }, index) => (
-          <div key={index} className="flex flex-col items-center space-y-2 p-4 bg-[#003073] rounded-lg shadow-md">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{
+              duration: 0.5,
+              delay: isInView ? (index + 1) * 0.5 : 0 // Delaying the fade-in effect for each card
+            }}
+            className="flex flex-col items-center space-y-2 p-4 bg-[#003073] rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-yellow-500 hover:shadow-lg"
+          >
             <div className="flex items-center justify-center w-12 h-12 bg-[#FFC80E] rounded-full">
               {React.cloneElement(icon, { className: "text-[#091327] text-3xl" })}
             </div>
             <p className="text-2xl md:text-3xl font-semibold text-[#FFC80E]">{value}</p>
             <p className="text-white text-center text-base md:text-lg font-medium">{label}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

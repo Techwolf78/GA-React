@@ -1,11 +1,8 @@
-
-
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "../assets/CSS/TrainingAbout.css";
 
 const TrainingAbout = () => {
   
-
   return (
     <div className="about-us roboto-regular">
       <div className="about-content">

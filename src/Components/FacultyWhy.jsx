@@ -13,13 +13,14 @@ function FacultyWhy() {
       underline.style.transform = 'scaleX(0)';
     };
 
-    document.querySelectorAll('h2').forEach((title) => {
+    const titles = document.querySelectorAll('h2');
+    titles.forEach((title) => {
       title.addEventListener('mouseenter', handleMouseEnter);
       title.addEventListener('mouseleave', handleMouseLeave);
     });
 
     return () => {
-      document.querySelectorAll('h2').forEach((title) => {
+      titles.forEach((title) => {
         title.removeEventListener('mouseenter', handleMouseEnter);
         title.removeEventListener('mouseleave', handleMouseLeave);
       });
@@ -27,7 +28,7 @@ function FacultyWhy() {
   }, []);
 
   return (
-    <div className="p-4 sm:p-6 md:p-8 max-w-7xl mx-auto bg-[#091327] rounded-xl shadow-2xl roboto-regular">
+    <div className="px-8 md:px-16 max-w-7xl mx-auto bg-[#091327] py-4 shadow-2xl roboto-regular">
       <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[#ffc700] text-center mb-8 sm:mb-12">
         WHY CHOOSE GRYPHON ACADEMY'S FDP?
       </h1>
@@ -41,17 +42,11 @@ function FacultyWhy() {
             transition={{ delay: index * 0.2, duration: 0.5 }}
           >
             <div className="absolute top-0 left-0 w-1 bg-[#ffc700] h-16 rounded-r-xl"></div>
-            <h2
-              className="text-xl sm:text-2xl font-semibold text-[#091327] mb-4 relative"
-              style={{ position: 'relative' }}
-            >
+            <h2 className="text-xl sm:text-2xl font-semibold text-[#091327] mb-4 relative">
               {feature.title}
               <span
                 className="absolute bottom-0 left-0 w-full h-1 bg-[#ffc700] transform origin-left transition-transform duration-300 ease-in-out"
-                style={{
-                  transform: 'scaleX(0)',
-                  transformOrigin: 'bottom left',
-                }}
+                style={{ transform: 'scaleX(0)', transformOrigin: 'bottom left' }}
               />
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-[#091327] leading-relaxed">

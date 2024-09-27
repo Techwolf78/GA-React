@@ -11,7 +11,7 @@ const LearningAndDevelopment = () => {
     <div>
       <HeroTraining />
       <TrainingAbout />
-  <WhyTraining />
+      <WhyTraining />
       <LearningOutcomes />
       <AcrossIndia />
       <SlidingCollege />

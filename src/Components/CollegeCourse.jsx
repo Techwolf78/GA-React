@@ -13,7 +13,7 @@ const courses = {
     { src: 'Training Page/Aptitude 1.png', alt: 'Quantitative Ability', title: 'Quantitative Ability' },
     { src: 'Training Page/Aptitude 2.png', alt: 'Data Interpretation', title: 'Data Interpretation' },
     { src: 'Training Page/Aptitude 3.png', alt: 'Logical Reasoning', title: 'Logical Reasoning' },
-    { src: 'Training Page/Aptitude 4.png', alt: 'Critical Thinking', title: 'Critical Thinking' },  
+    { src: 'Training Page/Aptitude 4.png', alt: 'Critical Thinking', title: 'Critical Thinking' },
     { src: 'Training Page/Aptitude 5.png', alt: 'Verbal Ability', title: 'Verbal Ability' },
   ],
 };
@@ -30,8 +30,8 @@ const CourseCard = ({ src, alt, title }) => (
           />
         </div>
       </div>
-      <div className="p-2 flex-shrink-0 flex items-center justify-center h-12">
-        <p className="text-base font-medium text-white leading-tight text-center">{title}</p>
+      <div className="p-4 flex-shrink-0 flex items-center justify-center h-16"> {/* Increased height for the text container */}
+        <p className="text-lg font-extrabold text-white leading-tight text-center">{title}</p> {/* Set text to extra bold */}
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@ const CourseCard = ({ src, alt, title }) => (
 
 const CollegeCourse = () => (
   <section className="bg-[#091327] py-6 roboto-regular">
-    <div className="container mx-auto px-2">
+    <div className="container mx-auto px-8 sm:px-16"> {/* Updated padding for responsiveness */}
       {/* Main Heading */}
       <div className="mb-6 text-center">
         <p className='text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#ffc700] mb-4'>

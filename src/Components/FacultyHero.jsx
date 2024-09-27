@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../assets/CSS/FacultyHero.css';
 
 function FacultyHero() {
   const text = "Empower your educators and elevate your institution with our targeted academic training. We boost professors' and staff's teaching skills, integrating industry needed advanced digital & offline strategies tailored to your college's unique needs. By fostering professional growth and creating dynamic learning environments, we help transform your institution into a hub of educational excellence.";
@@ -16,7 +15,7 @@ function FacultyHero() {
     const interval = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
     }, 1000);
-
+    
     return () => clearInterval(interval);
   }, [words]);
 
@@ -24,53 +23,104 @@ function FacultyHero() {
     const timer = setTimeout(() => {
       setShowFullForms(true);
     }, 2000);
-
+    
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="relative bg-faculty-hero bg-cover bg-center overflow-hidden roboto-regular mb-12">
-      {/* Main Section */}
-      <div className="flex flex-col md:flex-row p-4 md:p-8 h-full">
-        {/* Left Side: F, D, P */}
-        <div className="flex-1 flex flex-col items-center justify-center gap-2">
-          <div className={`flex flex-col items-start ${showFullForms ? 'fade-in' : ''}`}>
-            {['F', 'D', 'P'].map((letter, index) => (
-              <div className="flex items-center" key={index}>
-                <div className="text-4xl mb-4 md:text-6xl font-bold" style={{ color: '#FFC80E', marginRight: '8px' }}>
-                  {letter}
-                </div>
-                {showFullForms && (
-                  <div className="text-lg md:text-2xl font-bold" style={{ color: '#FFC80E', animation: 'slide-in-left 1s ease-in-out forwards' }}>
-                    {index === 0 ? ' - Facilitating Growth' : index === 1 ? ' - Diverse Skillsets' : ' - Professional Advancement'}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right Side: Heading and Paragraph */}
-        <div className="flex-1 flex flex-col items-start justify-center px-4 ">
-          <p className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight uppercase text-left " style={{ color: '#FFC80E' }}>
-            Where great minds grow greater: FDP
-          </p>
-          <p className="text-white text-sm sm:text-base lg:text-lg leading-relaxed text-left ">
-            {words.map((word, index) => (
-              <span
-                key={index}
-                className={index === currentWordIndex ? 'word-animation' : ''}
-                style={{
-                  display: 'inline-block',
-                  marginRight: '4px',
-                }}
-              >
-                {word}
+    <div 
+      style={{
+        backgroundImage: "url('Clgimage/FDP.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '2rem',
+        minHeight: '100vh',
+      }}
+    >
+      {/* Definitions for Medium and Larger Screens */}
+      <div className="definitions" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+        {['F', 'D', 'P'].map((letter, index) => (
+          <div key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', fontSize: '3.5rem', fontWeight: 'bold', color: '#FFC80E' }}>
+            <span>{letter}</span>
+            {showFullForms && (
+              <span style={{ marginLeft: '0.5rem', fontSize: '1.3rem' }}>
+                {index === 0 ? ' - Facilitating Growth' : index === 1 ? ' - Diverse Skillsets' : ' - Professional Advancement'}
               </span>
-            ))}
-          </p>
-        </div>
+            )}
+          </div>
+        ))}
       </div>
+
+      <div style={{ textAlign: 'center', color: '#FFC80E', marginBottom: '2rem', marginTop: '1rem' }}>
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', marginTop: '0' }}>
+          Where Great Minds Grow Greater : FDP
+        </h1>
+
+        <p style={{ color: 'white', fontSize: '1rem', marginTop: '1rem' }}>
+          {words.map((word, index) => (
+            <span
+              key={index}
+              className={index === currentWordIndex ? 'word-animation' : ''}
+              style={{ display: 'inline-block', marginRight: '4px' }}
+            >
+              {word}
+            </span>
+          ))}
+        </p>
+      </div>
+
+      <style>{`
+        @keyframes slideInLeft {
+          from {
+            transform: translateX(-20px);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+
+        .word-animation {
+          animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .mobile-definitions {
+            display: none;
+          }
+          .definitions {
+            display: flex;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .definitions {
+            display: flex;
+            flex-direction: column; /* Stack F, D, P vertically */
+            align-items: flex-start; /* Align to the left */
+            gap: 0.5rem; /* Space between letters and definitions */
+            margin-left: 1rem; /* Add some left margin for spacing */
+          }
+          .mobile-definitions {
+            display: none;
+          }
+        }
+      `}</style>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 /* About Us Section Styles */
 .about-us {
   background: #091327;
-  padding: 4rem 2rem;
+  padding: 1rem 4rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -89,14 +89,12 @@
   justify-content: space-between;
   align-items: stretch;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
   max-width: 1200px;
-  margin: 2rem auto;
+
 }
 
 .feature-card {
-  background: #003073;
+  background: #003073; /* Main card color */
   border-radius: 50px;
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -108,12 +106,17 @@
   align-items: flex-start;
   max-width: 350px;
   min-height: 220px;
+  position: relative; /* Required for the glowing border effect */
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-15px); /* Increased lift on hover */
+  
+  /* Glowing border and shadow */
+  border: 2px solid rgba(255, 200, 0, 1); /* Solid glowing border */
+  box-shadow: 0 0 20px rgba(255, 200, 0, 0.8), 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced glowing shadow */
 }
+
 
 .feature-card-header {
   display: flex;

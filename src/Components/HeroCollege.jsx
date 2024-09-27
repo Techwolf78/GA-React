@@ -37,7 +37,8 @@ const HeroCollege = () => {
         }}
       >
         {/* Heading Container */}
-        <div className="heading-container absolute top-1/4 left-1/2 transform -translate-x-1/2 text-center z-10 roboto-regular">
+        <div className="heading-container absolute top-[10%] left-1/2 transform -translate-x-1/2 text-center z-10 roboto-regular px-8 sm:px-16">
+
           {imageLoaded && (
             <div className="font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl bg-clip-text text-transparent bg-gradient-to-r text-white">
               A JOURNEY FROM <span></span>
