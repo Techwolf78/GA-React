@@ -59,13 +59,13 @@ const HeroCollege = () => {
 
         {/* Text Information at the Bottom */}
         <div className="text-info absolute bottom-4 left-1/2 transform -translate-x-1/2 w-full p-4 text-gray-800 z-2 flex flex-col sm:flex-row items-center sm:justify-around">
-          <div className="flex items-center mb-2 font-bold text-[#ffffff] text-lg">
+          <div className="flex items-center mb-2 font-bold text-[#ffffff] text-xl">
             <span className="check-icon-wrapper">
               <FaCheck className="check-icon" />
             </span>
             Content approved by the Industry
           </div>
-          <div className="flex items-center sm:mb-0 font-bold text-[#ffffff] text-lg">
+          <div className="flex items-center sm:mb-0 font-bold text-[#ffffff] text-xl">
             <span className="check-icon-wrapper">
               <FaCheck className="check-icon" />
             </span>

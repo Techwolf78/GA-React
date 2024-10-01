@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const VideoSection = () => (
   <div>
@@ -14,7 +14,7 @@ const VideoSection = () => (
           .heading-section {
             text-align: center;
             padding: 2rem;
-            background-color: #d1c4e9; /* Solid light purple background */
+            background-color: ; /* Solid light purple background */
             border-radius: 8px; /* Optional: Rounded corners for the background */
             margin-bottom: 0; /* Ensure no margin below the heading section */
           }
@@ -25,20 +25,10 @@ const VideoSection = () => (
             position: relative;
             display: inline-block;
             padding-bottom: 10px; /* Space for the underline */
-            color: purple; /* Text color for contrast */
+            color: #FFC80E; /* Text color for contrast */
           }
 
-          .heading-section h1::after {
-            content: '';
-            display: block;
-            width: 50%; /* Adjust width of the underline */
-            height: 3px; /* Thickness of the underline */
-            background: #6c63ff; /* Color of the underline */
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-          }
+          
 
           .video-section {
             position: relative;

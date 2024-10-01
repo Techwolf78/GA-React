@@ -2,7 +2,8 @@ import React from 'react';
 import HeroCorporate from './HeroCorporate';
 import CorporateChallenge from './CorporateChallenge';
 import CorporateAppoarch from './CorporateAppoarch';
-import GetInTouch from './GetInTouch'; // Import the new component
+import ContactForm from './ContactForm';
+import ConnectWithUs from './ConnectWithUs';
 
 const CorporateTraining = () => {
   return (
@@ -10,7 +11,8 @@ const CorporateTraining = () => {
       <HeroCorporate />
       <CorporateChallenge />
       <CorporateAppoarch />
-      <GetInTouch /> {/* Call the GetInTouch component */}
+      <ContactForm />
+      <ConnectWithUs />
     </div>
   );
 };

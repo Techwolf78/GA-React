@@ -9,6 +9,8 @@ import Advisory from "./Advisory";
 import RecruiterTestimonial from "./RecruiterTestimonial";
 import SuccessfulDrives from "./SucessfulDrives";
 import MajorRecruiter from "./MajorRecruiter";
+import ConnectWithUs from "./ConnectWithUs";
+import ContactForm from "./ContactForm";
 
 const Placement = () => {
   const hookLineText = (
@@ -63,6 +65,9 @@ const Placement = () => {
       <SuccessfulDrives />
       <MajorRecruiter />
       <RecruiterTestimonial />
+      <ContactForm />
+      <div > <ConnectWithUs /></div>
+     
     </div>
   );
 };

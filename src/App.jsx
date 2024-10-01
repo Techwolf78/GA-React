@@ -1,4 +1,4 @@
-// import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import '../src/Components/App.css'; // Import the App.css file
 import "@fontsource/roboto";
@@ -23,7 +23,18 @@ import Post3 from './Components/BlogPages/Post3';
 import Post4 from './Components/BlogPages/Post4';
 import Post5 from './Components/BlogPages/Post5';
 import Post6 from './Components/BlogPages/Post6';
+
 function App() {
+  const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowWhatsAppWidget(true);
+    }, 3000); // 3 seconds delay
+
+    return () => clearTimeout(timer); // Cleanup the timer on unmount
+  }, []);
+
   return (
     <Router>
       <Routes>
@@ -44,9 +55,8 @@ function App() {
         <Route path="/collegeTraining" element={<><Navbar /><CollegeTraining /></>} />
         <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />
-       
       </Routes>
-      <WhatsAppWidget /> {/* Render WhatsAppWidget on all pages */}
+      {showWhatsAppWidget && <WhatsAppWidget />} {/* Render WhatsAppWidget after 3 seconds */}
       <Footer /> {/* Render Footer on all pages */}
     </Router>
   );

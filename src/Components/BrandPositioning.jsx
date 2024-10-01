@@ -1,16 +1,23 @@
 import React from 'react';
 import CollectionSection from './CollectionSection';
-import ExploreSection from './ExploreSection';
+
 import VideoSection from './VideoSection';
+import SvgHero from './SvgHero';
+import Events from './Events';
+import BrandPositioningWhyChoose from './BrandPositioningWhyChoose';
+import BusinessServices from './BusinessServices';
+import Guest from './Guest';
 
 
 const BrandPositioning = () => (
   <div>
-
+    <SvgHero />
     <CollectionSection />
-    <ExploreSection />
     <VideoSection />
-  
+    <Events />
+    <BusinessServices />
+    <BrandPositioningWhyChoose />
+    <Guest />
   </div>
 );
 

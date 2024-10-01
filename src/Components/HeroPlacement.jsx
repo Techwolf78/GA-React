@@ -12,15 +12,11 @@ const HeroPlacement = () => {
   return (
     <div className="relative bg-[#003073] z-10 w-full roboto-regular">
       {/* Image Section */}
-      <div className={`relative w-full transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}>
-        {!imageLoaded && (
-          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-            <span className="text-gray-500">Loading...</span>
-          </div>
-        )}
+      <div className="relative w-full">
+        {/* Original image with low-quality effect */}
         <img
           src="Clgimage/Heroplace.png"
-          className={`w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-50 blur-sm'}`} 
           alt="A vibrant scene representing recruitment solutions"
         />
 
@@ -28,20 +24,20 @@ const HeroPlacement = () => {
         {imageLoaded && (
           <div className="absolute inset-0 bg-[#003073] opacity-90" />
         )}
-        
+
         {/* Text Section */}
         {imageLoaded && (
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <h1
               className="text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center px-6 uppercase"
-              style={{ wordSpacing: '0.5rem', lineHeight: '1.2' }}  // Add line height for more space
+              style={{ wordSpacing: '0.5rem', lineHeight: '1.2' }}
             >
               One Stop Commercial Free Solution to Recruiter’s Complete Fresher’s Hiring Needs
             </h1>
           </div>
         )}
       </div>
-      
+
       {/* Loader Style (CSS) */}
       <style>
         {`

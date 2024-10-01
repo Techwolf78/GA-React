@@ -5,6 +5,9 @@ import WhyTraining from "./WhyTraining";
 import LearningOutcomes from "./LearningOutcomes";
 import AcrossIndia from "./AcrossIndia";
 import SlidingCollege from "./SlidingCollege";
+import ContactForm from "./ContactForm";
+import ConnectWithUs from "./ConnectWithUs";
+
 
 const LearningAndDevelopment = () => {
   return (
@@ -15,6 +18,8 @@ const LearningAndDevelopment = () => {
       <LearningOutcomes />
       <AcrossIndia />
       <SlidingCollege />
+      <ContactForm />
+      <ConnectWithUs />
 
       {/* You can add other content here if needed */}
     </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { FaGraduationCap, FaSchool, FaChalkboardTeacher, FaBuilding } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const departments = [
   {
@@ -44,6 +45,11 @@ const departments = [
   }
 ];
 
+const fadeInVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const LearningOutcomes = () => {
   const [cardHeight, setCardHeight] = useState(0);
   const backCardRefs = useRef([]);
@@ -71,16 +77,25 @@ const LearningOutcomes = () => {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl">
         {departments.map((dept, index) => (
-          <div key={index} className="flip-card" style={{ height: cardHeight || 'auto', width: '100%' }}>
+          <motion.div
+            key={index}
+            className="flip-card"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInVariants}
+            transition={{ duration: 0.5, delay: index * 0.5 }} // Add delay for stagger effect
+            viewport={{ once: true, amount: 0.7 }}
+            style={{ height: cardHeight || 'auto', width: '100%' }}
+          >
             <div className="flip-card-inner" style={{ height: cardHeight || 'auto' }}>
-              <div 
+              <motion.div 
                 className="flip-card-front bg-[#003073] text-white shadow-md rounded-3xl flex flex-col items-center justify-center p-6"
                 style={{ height: cardHeight || 'auto' }}
               >
                 <span className="mb-4">{dept.icon}</span>
                 <p className="text-xl sm:text-2xl md:text-3xl font-semibold">{dept.name}</p>
-              </div>
-              <div 
+              </motion.div>
+              <motion.div 
                 className="flip-card-back bg-[#FFC80E] text-black shadow-md rounded-3xl flex flex-col items-center justify-center p-6"
                 ref={el => backCardRefs.current[index] = el}
                 style={{ height: cardHeight || 'auto' }}
@@ -92,13 +107,14 @@ const LearningOutcomes = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
-      <style jsx>{`
+      <style jsx>{
+        `
         .flip-card {
           perspective: 1000px;
           width: 100%; /* Ensure full width */
@@ -132,7 +148,8 @@ const LearningOutcomes = () => {
         .flip-card-back {
           transform: rotateY(180deg);
         }
-      `}</style>
+        `
+      }</style>
     </div>
   );
 };

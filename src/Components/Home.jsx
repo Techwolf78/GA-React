@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../assets/CSS/home.css';
 import Testimonials from './Testimonials';
 import ConnectWithUs from './ConnectWithUs'; // Import the Connect component
+import ContactForm from './ContactForm'; // Import the ContactForm component
 
 const Home = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -17,6 +18,13 @@ const Home = () => {
   const placementRef = useRef(null);
   const brandingRef = useRef(null);
   const sidebarRef = useRef(null);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scroll effect
+    });
+  };
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -158,17 +166,17 @@ const Home = () => {
       {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`} id="sidebar" ref={sidebarRef}>
         <ul>
-        <li><Link to="/blogs"><span>Blogs</span></Link></li>
+        <li><Link to="/blogs" onClick={scrollToTop}><span>Blogs</span></Link></li>
           <li>
-            <Link to="/training"><span>Training</span></Link>
+            <Link to="/training" onClick={scrollToTop}><span>Training</span></Link>
             <ul>
-              <li><Link to="/collegeTraining"><span>College Training</span></Link></li>
-              <li><Link to="/corporateTraining"><span>Corporate Training</span></Link></li>
-              <li><Link to="/facultyTraining"><span>Faculty Training</span></Link></li>
+              <li><Link to="/collegeTraining" onClick={scrollToTop}><span>College Training</span></Link></li>
+              <li><Link to="/corporateTraining" onClick={scrollToTop}><span>Corporate Training</span></Link></li>
+              <li><Link to="/facultyTraining" onClick={scrollToTop}><span>Faculty Training</span></Link></li>
             </ul>
           </li>
 
-          <li><Link to="/contact"><span>Contact us</span></Link></li>
+          <li><Link to="/contact" onClick={scrollToTop}><span>Contact us</span></Link></li>
         </ul>
       </div>
 
@@ -187,21 +195,21 @@ const Home = () => {
       </Link>
 
       {/* Hero Section */}
-      <div id="hero_slider" className="section roboto-regular hero-slider-section left" ref={heroRef}>
-        <div className="section-content left">
-          <h2>
-            {displayText}
-            <span className={`cursor ${isBlinking ? 'blink' : ''}`}>|</span>
-          </h2>
-          <p>Making students Industry Ready with our Customized Industry Readiness Programme</p>
-          <Link to="/training" className="btn-know-more">
-            <span>Know More</span>
-          </Link>
-        </div>
-      </div>
+<div id="hero_slider" className="section roboto-regular hero-slider-section left" ref={heroRef}>
+  <div className="section-content left">
+    <h2>
+      {displayText}
+      <span className={`cursor ${isBlinking ? 'blink' : ''}`}>|</span>
+    </h2>
+    <p>Making students Industry Ready with our Customized Industry Readiness Programme</p>
+    <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
+      <span>Know More</span>
+    </Link>
+  </div>
+</div>
 
-      {/* Other sections */}
-      <div id="core_capabilities" className="section core-capabilities-section right" ref={aboutRef}>
+{/* Other sections */}
+<div id="core_capabilities" className="section core-capabilities-section right" ref={aboutRef}>
   <div className="section-content right">
     <h2>About Us</h2>
     <p>
@@ -211,78 +219,71 @@ const Home = () => {
       organization facilitate the transition into the industry with ease and
       enabling you to excel.
     </p>
-    <Link to="/about" className="btn-know-more">
+    <Link to="/about" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>
     </Link>
   </div>
   <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
-  
-  {/* New Vector Image for Mobile */}
   <img src="LandingImage/Mobile2.png" alt="Mobile Vector" className="mobile-vector-image" />
 </div>
 
-
-      <div id="operating_models" className="section operating-models-section left" ref={trainingRef}>
-        <div className="section-content left">
-          <h2>Training</h2>
-          <p>
-            Gryphon Academy empowers students, professionals, and educators
-            through customized training programs. Our trainings being traditional,
-            ensures that our participants are industry ready for dynamic roles and
-            responsibilities and are backed by substantive hands-on experience
-            that the current industry requires.
-          </p>
-          <Link to="/training" className="btn-know-more">
-            <span>Know More</span>
-          </Link>
-        </div>
-        <img src="LandingImage/pattern-new.png" alt="Left Side Design" className="left-side-image" />
-
-        {/* New Vector Image for Mobile */}
+<div id="operating_models" className="section operating-models-section left" ref={trainingRef}>
+  <div className="section-content left">
+    <h2>Training</h2>
+    <p>
+      Gryphon Academy empowers students, professionals, and educators
+      through customized training programs. Our trainings being traditional,
+      ensures that our participants are industry ready for dynamic roles and
+      responsibilities and are backed by substantive hands-on experience
+      that the current industry requires.
+    </p>
+    <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
+      <span>Know More</span>
+    </Link>
+  </div>
+  <img src="LandingImage/pattern-new.png" alt="Left Side Design" className="left-side-image" />
   <img src="LandingImage/Mobile3.png" alt="Mobile Vector" className="mobile-vector-image" />
-        
-      </div>
+</div>
 
-      <div id="talent_transformations" className="section talent-transformations-section right" ref={placementRef}>
-        <div className="section-content right">
-          <h2>Placement</h2>
-          <p>
-            Your dream job awaits! We go beyond training; we launch careers. Our
-            guaranteed placement assistance connects you with your ideal path, all
-            at zero cost to partnered colleges.
-          </p>
-          <Link to="/placement" className="btn-know-more">
-            <span>Know More</span>
-          </Link>
-        </div>
-        <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
-
-        {/* New Vector Image for Mobile */}
+<div id="talent_transformations" className="section talent-transformations-section right" ref={placementRef}>
+  <div className="section-content right">
+    <h2>Placement</h2>
+    <p>
+      Your dream job awaits! We go beyond training; we launch careers. Our
+      guaranteed placement assistance connects you with your ideal path, all
+      at zero cost to partnered colleges.
+    </p>
+    <Link to="/placement" className="btn-know-more" onClick={scrollToTop}>
+      <span>Know More</span>
+    </Link>
+  </div>
+  <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
   <img src="LandingImage/Mobile4.png" alt="Mobile Vector" className="mobile-vector-image" />
-      </div>
+</div>
 
-      <div id="do_more" className="section do-more-section left" ref={brandingRef}>
-        <div className="section-content left">
-          <h2>Cross Brand Positioning</h2>
-          <p>
-            Gryphon Academy empowers students, professionals, and educators
-            through customized training programs. Our trainings being traditional,
-            ensure that our participants are industry ready for dynamic roles and
-            responsibilities and are backed by substantive hands-on experience
-            that the current industry requires.
-          </p>
-          <Link to="/brandPositioning" className="btn-know-more">
-            <span>Know More</span>
-          </Link>
-        </div>
-        <img src="LandingImage/pattern-new.png" alt="Left Side Design" className="left-side-image" />
-        
-        {/* New Vector Image for Mobile */}
+<div id="do_more" className="section do-more-section left" ref={brandingRef}>
+  <div className="section-content left">
+    <h2>Cross Brand Positioning</h2>
+    <p>
+      Gryphon Academy empowers students, professionals, and educators
+      through customized training programs. Our trainings being traditional,
+      ensure that our participants are industry ready for dynamic roles and
+      responsibilities and are backed by substantive hands-on experience
+      that the current industry requires.
+    </p>
+    <Link to="/brandPositioning" className="btn-know-more" onClick={scrollToTop}>
+      <span>Know More</span>
+    </Link>
+  </div>
+  <img src="LandingImage/pattern-new.png" alt="Left Side Design" className="left-side-image" />
   <img src="LandingImage/Mobile5.png" alt="Mobile Vector" className="mobile-vector-image" />
-      </div>
+</div>
+
 
       <div>
+      
         <Testimonials />
+        <ContactForm /> 
       </div>
       {/* New Connect Component As the word */}
       <ConnectWithUs />

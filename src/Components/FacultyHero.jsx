@@ -42,14 +42,13 @@ function FacultyHero() {
         minHeight: '100vh',
       }}
     >
-      {/* Definitions for Medium and Larger Screens */}
-      <div className="definitions" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+      <div className="definitions" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
         {['F', 'D', 'P'].map((letter, index) => (
           <div key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', fontSize: '3.5rem', fontWeight: 'bold', color: '#FFC80E' }}>
             <span>{letter}</span>
             {showFullForms && (
               <span style={{ marginLeft: '0.5rem', fontSize: '1.3rem' }}>
-                {index === 0 ? ' - Facilitating Growth' : index === 1 ? ' - Diverse Skillsets' : ' - Professional Advancement'}
+                {index === 0 ? ' - FACILITATING GROWTH' : index === 1 ? ' - DIVERSE SKILLSETS' : ' - PROFESSIONAL ADVANCEMENT'}
               </span>
             )}
           </div>
@@ -100,24 +99,17 @@ function FacultyHero() {
         }
 
         @media (min-width: 768px) {
-          .mobile-definitions {
-            display: none;
-          }
           .definitions {
-            display: flex;
+            gap: 2rem; /* Apply gap for larger screens */
           }
         }
 
         @media (max-width: 768px) {
           .definitions {
-            display: flex;
-            flex-direction: column; /* Stack F, D, P vertically */
-            align-items: flex-start; /* Align to the left */
-            gap: 0.5rem; /* Space between letters and definitions */
-            margin-left: 1rem; /* Add some left margin for spacing */
-          }
-          .mobile-definitions {
-            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 1rem;
+            gap: 0; /* Remove gap for mobile layout */
           }
         }
       `}</style>

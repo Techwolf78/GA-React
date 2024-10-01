@@ -4,34 +4,34 @@ import 'tailwindcss/tailwind.css';
 // Course data and button labels
 const courses = {
   MECH: [
-  { title: 'AutoCAD', description: 'Learn the fundamentals of AutoCAD for 2D and 3D drafting and design in mechanical engineering.', image: '/MECH/1.jpg' },
-  { title: 'CATIA', description: 'Explore CATIA’s advanced 3D modeling capabilities for designing complex mechanical systems.', image: 'MECH/2.jpg' },
-  { title: 'CREO CAD', description: 'Master CREO CAD software for parametric and direct modeling, essential for mechanical design.', image: 'MECH/3.jpg' },
-  { title: 'SolidWorks', description: 'Gain skills in SolidWorks for 3D CAD design, including simulation and product data management.', image: 'MECH/4.jpg' }
+    { title: 'AUTOCAD', description: 'Learn the fundamentals of AutoCAD for 2D and 3D drafting and design in mechanical engineering.', image: '/MECH/M1.png' },
+    { title: 'CATIA', description: 'Explore CATIA’s advanced 3D modeling capabilities for designing complex mechanical systems.', image: 'MECH/M2.png' },
+    { title: 'CREO CAD', description: 'Master CREO CAD software for parametric and direct modeling, essential for mechanical design.', image: 'MECH/M3.png' },
+    { title: 'SOLIDWORKS', description: 'Gain skills in SolidWorks for 3D CAD design, including simulation and product data management.', image: 'MECH/M4.png' }
   ],
   CIVIL: [
-  { title: '3D Printing', description: 'Understand the principles and applications of 3D printing in civil engineering for creating prototypes and structures.', image: 'Civil Engineering/1.jpg' },
-  { title: 'RVT', description: 'Learn how to use Revit for Building Information Modeling (BIM) in civil engineering projects.', image: 'Civil Engineering/2.jpg' },
-  { title: 'Structural Analysis', description: 'Study the methods and techniques for analyzing the structural integrity of buildings and infrastructure.', image: 'Civil Engineering/3.jpg' },
-  { title: 'Foundation Engineering', description: 'Explore the design and analysis of foundations, including shallow and deep foundations, for various soil conditions.', image: 'Civil Engineering/4.jpg' },
-  { title: 'BIM', description: 'Delve into Building Information Modeling (BIM) for effective planning, design, and management of construction projects.', image: 'Civil Engineering/5.jpg' },
-  { title: 'Sustainable Design', description: 'Learn about sustainable design practices in civil engineering to minimize environmental impact and enhance resource efficiency.', image: 'https://via.placeholder.com/150' }
+    { title: '3D PRINTING', description: 'Understand the principles and applications of 3D printing in civil engineering for creating prototypes and structures.', image: 'Civil Engineering/C1.png' },
+    { title: 'RVT', description: 'Learn how to use Revit for Building Information Modeling (BIM) in civil engineering projects.', image: 'Civil Engineering/C2.png' },
+    { title: 'STRUCTURAL ANALYSIS', description: 'Study the methods and techniques for analyzing the structural integrity of buildings and infrastructure.', image: 'Civil Engineering/C3.png' },
+    { title: 'FOUNDATION ENGINEERING', description: 'Explore the design and analysis of foundations, including shallow and deep foundations, for various soil conditions.', image: 'Civil Engineering/C4.png' },
+    { title: 'BIM', description: 'Delve into Building Information Modeling (BIM) for effective planning, design, and management of construction projects.', image: 'Civil Engineering/C5.png' },
+    { title: 'SUSTAINABLE DESIGN', description: 'Learn about sustainable design practices in civil engineering to minimize environmental impact and enhance resource efficiency.', image: 'Civil Engineering/C6.png' }
   ],
   COMP: [
-  { title: 'Full Stack Development', description: 'Get comprehensive training in full stack development, including both front-end and back-end technologies.', image: 'computr-science/Full Stack Development.jpg' },
-  { title: 'IoT', description: 'Explore the Internet of Things (IoT) and how to develop smart devices and systems connected through the internet.', image: 'computr-science/IOT.jpg' },
-  { title: 'JAVA', description: 'Learn Java programming language for developing robust, scalable applications and software solutions.', image: 'computr-science/JAVA.jpg' },
-  { title: 'Linux', description: 'Gain proficiency in Linux operating system for system administration, scripting, and development.', image: 'computr-science/Linux.jpg' },
-  { title: 'MERN', description: 'Master the MERN stack (MongoDB, Express, React, Node.js) for full-stack JavaScript development.', image: 'computr-science/MERN.jpg' },
-  { title: 'Python', description: 'Learn Python programming for various applications, including web development, data analysis, and machine learning.', image: 'computr-science/Python.jpg' }
+    { title: 'FULL STACK DEVELOPMENT', description: 'Get comprehensive training in full stack development, including both front-end and back-end technologies.', image: 'computr-science/CC1.png' },
+    { title: 'IoT', description: 'Explore the Internet of Things (IoT) and how to develop smart devices and systems connected through the internet.', image: 'computr-science/CC2.png' },
+    { title: 'JAVA', description: 'Learn Java programming language for developing robust, scalable applications and software solutions.', image: 'computr-science/CC3.png' },
+    { title: 'LINUX', description: 'Gain proficiency in Linux operating system for system administration, scripting, and development.', image: 'computr-science/CC4.png' },
+    { title: 'MERN', description: 'Master the MERN stack (MongoDB, Express, React, Node.js) for full-stack JavaScript development.', image: 'computr-science/CC5.png' },
+    { title: 'PYTHON', description: 'Learn Python programming for various applications, including web development, data analysis, and machine learning.', image: 'computr-science/CC6.png' }
   ],
   ELECT: [
-  { title: 'Automation', description: 'Understand automation systems and techniques used in various industrial applications.', image: 'Electrical Eng/1.jpg' },
-  { title: 'Electric Vehicles', description: 'Explore the design and technology behind electric vehicles, including power systems and battery management.', image: 'Electrical Eng/2.jpg' },
-  { title: 'Wiring Harness', description: 'Learn about the design and manufacturing of wiring harnesses used in electrical systems.', image: 'Electrical Eng/3.jpg' },
-  { title: 'IoT', description: 'Study the Internet of Things (IoT) and its applications in electrical engineering, including smart grids and sensors.', image: 'Electrical Eng/4.jpg' },
+  { title: 'Automation', description: 'Understand automation systems and techniques used in various industrial applications.', image: 'Electrical Eng/E1.png' },
+  { title: 'Electric Vehicles', description: 'Explore the design and technology behind electric vehicles, including power systems and battery management.', image: 'Electrical Eng/E2.png' },
+  { title: 'Wiring Harness', description: 'Learn about the design and manufacturing of wiring harnesses used in electrical systems.', image: 'Electrical Eng/E3.png' },
+  { title: 'IoT', description: 'Study the Internet of Things (IoT) and its applications in electrical engineering, including smart grids and sensors.', image: 'computr-science/CC2.png' },
   { title: 'BMS', description: 'Explore Building Management Systems (BMS) for controlling and monitoring building systems like HVAC and lighting.', image: 'Electrical Eng/5.jpg' },
-  { title: 'PIC & SCADA', description: 'Learn about Programmable Interface Controllers (PIC) and Supervisory Control and Data Acquisition (SCADA) systems for automation and control.', image: 'Electrical Eng/6.jpg' }
+  { title: 'PIC & SCADA', description: 'Learn about Programmable Interface Controllers (PIC) and Supervisory Control and Data Acquisition (SCADA) systems for automation and control.', image: 'Electrical Eng/E6.png' }
   ],
   AIDS: [
   {
@@ -113,85 +113,88 @@ const courses = {
   };
 
 
-  const CourseSection = () => {
-    const [selectedCourse, setSelectedCourse] = useState('MECH');
-    const [showCards, setShowCards] = useState({ MECH: true });
-  
-    const changeCourse = (courseKey) => {
-      if (courseKey !== selectedCourse) {
-        setShowCards({ [courseKey]: true });
-        setSelectedCourse(courseKey);
-      } else {
-        setShowCards((prev) => ({ ...prev, [courseKey]: !prev[courseKey] }));
-      }
-    };
-  
-    return (
-      <section className="py-16 px-8 lg:px-16 bg-[#091327] roboto-regular"> {/* Adjusted padding here */}
-        <div className="mb-8">
-          <p className="text-[#ffc700] text-4xl text-center font-bold mb-4">TECHNICAL TRAINING</p>
+const CourseSection = () => {
+  const [selectedCourse, setSelectedCourse] = useState('MECH');
+  const [showCards, setShowCards] = useState({ MECH: true });
+  const [hoveredCourse, setHoveredCourse] = useState(null); // Track hovered course
+
+  const changeCourse = (courseKey) => {
+    if (courseKey !== selectedCourse) {
+      setShowCards({ [courseKey]: true });
+      setSelectedCourse(courseKey);
+      setHoveredCourse(null); // Clear hovered when selecting a new course
+    } else {
+      setShowCards((prev) => ({ ...prev, [courseKey]: !prev[courseKey] }));
+    }
+  };
+
+  return (
+    <section className="py-16 px-8 lg:px-16 bg-[#091327] roboto-regular">
+      <div className="mb-8">
+        <p className="text-[#ffc700] text-4xl text-center font-bold mb-4">TECHNICAL TRAINING</p>
+      </div>
+      <div className="container mx-auto flex flex-wrap">
+        {/* Sidebar */}
+        <div className="course-sidebar w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
+          <div className="bg-[#091327] shadow-lg rounded-lg">
+            {Object.keys(courses).map((key) => (
+              <div key={key}>
+                <button
+                  onClick={() => changeCourse(key)}
+                  onMouseEnter={() => setHoveredCourse(key)}
+                  onMouseLeave={() => setHoveredCourse(null)}
+                  className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300 
+                    ${selectedCourse === key || hoveredCourse === key ? 'bg-[#FFC80E] text-[#003073] shadow-2xl transform scale-105' : 'bg-[#003073] text-white shadow-lg'}
+                    rounded-lg`}
+                  style={{
+                    border: selectedCourse === key ? '1px solid #003073' : 'none',
+                    borderRadius: '0',
+                    whiteSpace: 'normal',
+                    overflow: 'hidden',
+                  }}
+                >
+                  <span className="text-left break-words font-semibold">{buttonLabels[key]}</span>
+                  <span>{window.innerWidth < 768 ? '▼' : '>'}</span>
+                </button>
+
+                {showCards[key] && window.innerWidth < 768 && (
+                  <div className="course-card bg-[#003073] rounded-lg p-4 shadow-md mt-2">
+                    {courses[key].map((course, index) => (
+                      <div key={index} className="mb-4">
+                        <h3 className="text-[#ffc700] text-lg font-semibold mb-1">{course.title}</h3>
+                        <p className="text-white text-sm">{course.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="container mx-auto flex flex-wrap">
-          {/* Sidebar */}
-          <div className="course-sidebar w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
-            <div className="bg-[#091327] shadow-lg rounded-lg">
+
+        {/* Content Area - Cards shown to the right of the sidebar on medium and larger screens */}
+        {window.innerWidth >= 768 && (
+          <div className="content w-full lg:w-3/4 px-4 flex-grow flex flex-col">
+            <div className="flex-grow">
               {Object.keys(courses).map((key) => (
-                <div key={key}>
-                  <button
-                    onClick={() => changeCourse(key)}
-                    className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300 
-                    ${selectedCourse === key ? 'bg-[#FFC80E] text-[#003073] shadow-2xl transform scale-105' : 'bg-[#003073] text-white shadow-lg'}
-                    rounded-lg 
-                    ${window.innerWidth >= 1024 ? 'hover:shadow-2xl hover:transform hover:scale-105' : ''}`}
-                    style={{
-                      border: selectedCourse === key ? '1px solid #003073' : 'none',
-                      borderRadius: '0',
-                      whiteSpace: 'normal',
-                      overflow: 'hidden',
-                    }}
-                  >
-                    <span className="text-left break-words font-semibold">{buttonLabels[key]}</span>
-                    <span>{window.innerWidth < 768 ? '▼' : '>'}</span>
-                  </button>
-  
-                  {showCards[key] && window.innerWidth < 768 && (
-                    <div className="course-card bg-[#003073] rounded-lg p-4 shadow-md mt-2">
-                      {courses[key].map((course, index) => (
-                        <div key={index} className="mb-4">
-                          <h3 className="text-[#ffc700] text-lg font-semibold mb-1">{course.title}</h3>
-                          <p className="text-white text-sm">{course.description}</p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                showCards[key] && (
+                  <div key={key} className="course-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {courses[key].map((course, index) => (
+                      <div key={index} className="card bg-[#003073] rounded-lg p-4 shadow-md">
+                        <img src={course.image} alt={course.title} className="w-full h-52 object-cover rounded-t-lg mb-4" />
+                        <h3 className="text-[#ffc700] text-lg font-semibold mb-2">{course.title}</h3>
+                        <p className="text-white text-sm mb-4">{course.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                )
               ))}
             </div>
           </div>
-  
-          {/* Content Area - Cards shown to the right of the sidebar on medium and larger screens */}
-          {window.innerWidth >= 768 && (
-            <div className="content w-full lg:w-3/4 px-4 flex-grow flex flex-col">
-              <div className="flex-grow">
-                {Object.keys(courses).map((key) => (
-                  showCards[key] && (
-                    <div key={key} className="course-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {courses[key].map((course, index) => (
-                        <div key={index} className="card bg-[#003073] rounded-lg p-4 shadow-md">
-                          <img src={course.image} alt={course.title} className="w-full h-40 object-cover rounded-t-lg mb-4" />
-                          <h3 className="text-[#ffc700] text-lg font-semibold mb-2">{course.title}</h3>
-                          <p className="text-white text-sm mb-4">{course.description}</p>
-                        </div>
-                      ))}
-                    </div>
-                  )
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-    );
-  };
-  
-  export default CourseSection;
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default CourseSection;
