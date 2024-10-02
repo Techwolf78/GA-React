@@ -110,7 +110,7 @@ const Navbar = () => {
           className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
           onClick={handleSidebarItemClick}
         >
-          DIGITAL MARKETING
+          CROSS BRAND POSITIONING
         </Link>
         <Link
           to="/blogs"
@@ -191,7 +191,7 @@ const Navbar = () => {
           className="block py-3 pl-8 text-[#ffffff] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
           onClick={handleSidebarItemClick}
         >
-          DIGITAL MARKETING
+          CROSS BRAND POSITIONING
         </Link>
         <Link
           to="/blogs"

@@ -67,7 +67,7 @@ const Testimonials = () => {
   return (
     <section style={{ background: '#091327', padding: '12px 0' }} className='roboto-regular'>
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-        <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#FFC80E] mb-4">
+        <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-4">
           RECRUITER TESTIMONIALS
         </h3>
         <h4 className="text-xl sm:text-2xl lg:text-3xl text-white mb-4">

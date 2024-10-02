@@ -60,7 +60,7 @@ const IndustryOverview = () => {
   return (
     <div className="py-2 bg-[#091327] text-white roboto-regular"> {/* Added py-2 here */}
       <div className="container mx-auto px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16">
-        <Typography variant="h1" className="text-center mb-8 font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-[#FFC80E]">
+        <Typography variant="h1" className="text-center mb-8 mt-4 font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-4xl text-[#FFC80E]">
           INDUSTRY ORIENTED TRAINING OVERVIEW
         </Typography>
 
@@ -95,7 +95,7 @@ const IndustryOverview = () => {
                         </Typography>
                       </td>
                       <td className={`${classes} bg-[#DFF1FD]`}>
-                        <Typography variant="body1" className="font-normal text-[#091327]">
+                        <Typography variant="paragraph" className="font-normal text-[#091327]">
                           {topics}
                         </Typography>
                       </td>
@@ -138,7 +138,7 @@ const IndustryOverview = () => {
                         </Typography>
                       </td>
                       <td className={`${classes} bg-[#DFF1FD]`}>
-                        <Typography variant="body1" className="font-normal text-[#091327]">
+                        <Typography variant="paragraph" className="font-normal text-[#091327]">
                           {topics}
                         </Typography>
                       </td>

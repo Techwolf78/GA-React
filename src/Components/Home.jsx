@@ -213,11 +213,7 @@ const Home = () => {
   <div className="section-content right">
     <h2>About Us</h2>
     <p>
-      As India&apos;s premier non-ed-tech organization, we are committed to
-      bridging the gap between industry and academia. We provide customized
-      and tailored industry-centric training programmes which help your
-      organization facilitate the transition into the industry with ease and
-      enabling you to excel.
+    Step into a world where your growth is our mission. At Gryphon Academy, we transform ambitions into achievements. Whether you’re a student, professional, or educator, our customized programs provide the tools you need to thrive in today’s fast-paced industries. Ready to embark on a transformative journey? Let’s take the first step together.
     </p>
     <Link to="/about" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>
@@ -231,11 +227,7 @@ const Home = () => {
   <div className="section-content left">
     <h2>Training</h2>
     <p>
-      Gryphon Academy empowers students, professionals, and educators
-      through customized training programs. Our trainings being traditional,
-      ensures that our participants are industry ready for dynamic roles and
-      responsibilities and are backed by substantive hands-on experience
-      that the current industry requires.
+    Your future is our priority. At Gryphon Academy, we offer training that bridges the gap between knowledge and real-world application. Our programs are designed to equip you with the skills that today’s industries demand, preparing you to not just participate but excel. Your path to success starts here.
     </p>
     <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>
@@ -249,9 +241,7 @@ const Home = () => {
   <div className="section-content right">
     <h2>Placement</h2>
     <p>
-      Your dream job awaits! We go beyond training; we launch careers. Our
-      guaranteed placement assistance connects you with your ideal path, all
-      at zero cost to partnered colleges.
+    Your dream job awaits. At Gryphon Academy, we take your career aspirations seriously. With unmatched placement assistance and deep industry ties, we open doors to opportunities that set you on the path to success. Take the leap and see where it leads.
     </p>
     <Link to="/placement" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>
@@ -265,11 +255,7 @@ const Home = () => {
   <div className="section-content left">
     <h2>Cross Brand Positioning</h2>
     <p>
-      Gryphon Academy empowers students, professionals, and educators
-      through customized training programs. Our trainings being traditional,
-      ensure that our participants are industry ready for dynamic roles and
-      responsibilities and are backed by substantive hands-on experience
-      that the current industry requires.
+    We understand how tricky it is to get branding right. Let Gryphon Academy take the stress out of it. We’ll manage everything—from strategy to execution—so you can focus on what you do best.
     </p>
     <Link to="/brandPositioning" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>

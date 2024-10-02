@@ -41,7 +41,7 @@ const Advisory = () => {
   return (
     <div className="p-8 bg-[#091327] roboto-regular">
       <div className="mb-12">
-        <h2 className="text-center mb-6 font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-[#ffc700]">
+        <h2 className="text-center mb-6 font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-4xl text-[#ffc700]">
           OUR ADVISORY BOARD
         </h2>
         <div className="overflow-hidden relative">

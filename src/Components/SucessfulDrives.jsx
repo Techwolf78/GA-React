@@ -1,58 +1,45 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css'; 
-import 'slick-carousel/slick/slick-theme.css'; 
+import React, { useRef, useState } from 'react';
+import * as THREE from 'three';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Image, ScrollControls, useScroll } from '@react-three/drei';
+import { easing } from 'maath';
+import '../Components/util.js'; // Ensure you have the bent plane geometry and sine material defined
+
 
 const SuccessfulDrives = () => {
-  // Slider settings
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 6,
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-        }
-      }
-    ]
+  const images = [
+    "journey/D1.jpg",
+    "journey/D2.jpg",
+    "journey/D3.jpg",
+    "journey/D4.jpg",
+    "journey/D5.jpg",
+    "journey/D6.jpg",
+    "journey/D1.jpg",
+    "journey/D2.jpg",
+    "journey/D3.jpg",
+    "journey/D4.jpg",
+  ];
+
+  const handleScrollDown = () => {
+    window.scrollBy({
+      top: window.innerHeight * 0.5,
+      behavior: 'smooth'
+    });
   };
 
-  // Placeholder images
-  const images = [
-    "https://via.placeholder.com/300x200.png?text=Image+1",
-    "https://via.placeholder.com/300x200.png?text=Image+2",
-    "https://via.placeholder.com/300x200.png?text=Image+3",
-    "https://via.placeholder.com/300x200.png?text=Image+4",
-    "https://via.placeholder.com/300x200.png?text=Image+5",
-    "https://via.placeholder.com/300x200.png?text=Image+6",
-    "https://via.placeholder.com/300x200.png?text=Image+7",
-    "https://via.placeholder.com/300x200.png?text=Image+8"
-  ];
+  const handleScrollUp = () => {
+    window.scrollBy({
+      top: -window.innerHeight * 0.5,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <div className="relative py-2 bg-[#003073] text-white roboto-regular">
       <div className="container mx-auto px-0 relative z-10">
         
         {/* Main Heading */}
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 text-center text-[#FFC80E]">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold mb-4 text-center text-[#FFC80E]">
           OUR SUCCESSFUL DRIVES
         </h1>
 
@@ -60,24 +47,90 @@ const SuccessfulDrives = () => {
         <img 
           src="Top Placements.png" 
           alt="Main Drive" 
-          className="w-full h-full  rounded-lg"
+          className="w-full h-full rounded-lg object-cover"
         />
 
-        {/* Slider Component */}
-        <Slider {...settings}>
-          {images.map((image, index) => (
-            <div key={index} className="px-2"> {/* Reduced padding */}
-              <img 
-                src={image} 
-                alt={`Drive ${index + 1}`} 
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-          ))}
-        </Slider>
+         {/* 3D Carousel using Three.js */}
+         <div className="mt-8 h-[50vh] relative mb-8">
+          <Canvas 
+            camera={{ position: [0, 0, 100], fov: 15 }} 
+            style={{ height: '100%', width: '100%', overflow: 'hidden' }} // Hide overflow
+          >
+            <ScrollControls pages={1} infinite>
+              <Rig>
+                <Carousel images={images} />
+              </Rig>
+            </ScrollControls>
+          </Canvas>
+
+          {/* Scroll Up Arrow */}
+          <div className="absolute left-5 top-5 flex items-center">
+            <button 
+              className="bg-yellow-500 rounded-full p-2"
+              onClick={handleScrollUp}
+            >
+              ↑
+            </button>
+            <span className="ml-2 text-sm">SCROLL UP</span>
+          </div>
+
+          {/* Scroll Down Arrow */}
+          <div className="absolute left-5 bottom-5 flex items-center">
+            <button 
+              className="bg-yellow-500 rounded-full p-2"
+              onClick={handleScrollDown}
+            >
+              ↓
+            </button>
+            <span className="ml-2 text-sm">SCROLL DOWN</span>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
+
+function Rig({ children }) {
+  const ref = useRef();
+  const scroll = useScroll();
+  useFrame((state, delta) => {
+    ref.current.rotation.y = -scroll.offset * (Math.PI * 2);
+    easing.damp3(state.camera.position, [-state.pointer.x * 2, state.pointer.y + 1.5, 10], 0.3, delta);
+    state.camera.lookAt(0, 0, 0);
+  });
+  return <group ref={ref}>{children}</group>;
+}
+
+function Carousel({ images, radius = 2.5 }) {
+  return (
+    <>
+      {images.slice(0, 8).map((url, i) => ( // Only render a limited number of front-facing images
+        <Card
+          key={i}
+          url={url}
+          position={[Math.sin((i / 8) * Math.PI * 2) * radius, 0, Math.cos((i / 8) * Math.PI * 2) * radius]}
+          rotation={[0, Math.PI + (i / 8 ) * Math.PI * 2, 0]}
+        />
+      ))}
+    </>
+  );
+}
+
+function Card({ url, ...props }) {
+  const ref = useRef();
+  const [hovered, hover] = useState(false);
+  const pointerOver = (e) => (e.stopPropagation(), hover(true));
+  const pointerOut = () => hover(false);
+  
+  useFrame((state, delta) => {
+    easing.damp3(ref.current.scale, hovered ? 1.15 : 1, 0.1, delta);
+  });
+
+  return (
+    <Image ref={ref} url={url} transparent side={THREE.DoubleSide} onPointerOver={pointerOver} onPointerOut={pointerOut} {...props}>
+      <bentPlaneGeometry args={[0.2, 2, 1, 20, 20]} />
+    </Image>
+  );
+}
 
 export default SuccessfulDrives;

@@ -48,7 +48,7 @@ const Placement = () => {
 
       {/* New Section: Simple Placement Process */}
       <div className="p-0 text-center roboto-regular"> {/* Changed padding to 0 */}
-        <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold  text-[#FFC80E] bg-[#003073] py-2">
+        <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold  text-[#FFC80E] bg-[#003073] py-4">
           WE FOLLOW SIMPLE PLACEMENT PROCESS
         </p>
         <div className="w-full h-auto bg-[#003073]">

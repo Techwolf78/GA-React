@@ -4,7 +4,7 @@ const MajorRecruiter = () => {
   return (
     <div className="logo-slider-section bg-[#091327] py-8 px-4 sm:px-6 lg:px-8 roboto-regular">
       <div className="container mx-auto">
-        <p className="section-heading text-[#FFC80E] text-center text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">
+        <p className="section-heading text-[#FFC80E] text-center text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold mb-4">
           OUR MAJOR RECRUITERS
         </p>
         <div className="logo-slider relative overflow-hidden w-full">
