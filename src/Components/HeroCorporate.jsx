@@ -10,7 +10,7 @@ function HeroCorporate() {
       <div className="relative w-full p-6 roboto-regular">
         {/* Mobile and smaller screens */}
         <div className="text-center lg:hidden">
-          <h1 className="text-2xl md:text-3xl font-bold mb-4 text-[#FFC80E] uppercase" style={{ wordSpacing: '0.1em' }}>
+          <h1 className="text-2xl  md:text-3xl font-bold mb-4 text-[#FFC80E] uppercase" style={{ wordSpacing: '0.05em' }}>
             Invest in Your Employees, Invest in Your Organization’s Future: Gryphon Academy Corporate Training
           </h1>
         </div>

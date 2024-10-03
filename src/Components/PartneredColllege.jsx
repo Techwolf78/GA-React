@@ -19,6 +19,8 @@ const PartneredCollege = () => {
     { name: 'Indira Institute of Management, Pune', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/14-1.png' },
     { name: 'Indira School Of Communication', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/15-1.png' },
     { name: 'ISBR Bangalore', location: 'Bangalore, Karnataka', imageUrl: 'Clgimage/16-1.png' },
+    { name: 'ISBR Bangalore', location: 'Bangalore, Karnataka', imageUrl: 'Clgimage/9-2.png' },
+    { name: 'ISBR Bangalore', location: 'Bangalore, Karnataka', imageUrl: 'Clgimage/8-2.png' },
   ];
 
   return (

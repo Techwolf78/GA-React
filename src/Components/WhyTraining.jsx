@@ -1,10 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faGraduationCap,
+  faClipboardList,
+  faUsers,
+  faLightbulb,
+  faComments,
+  faCogs,
+  faBriefcase,
+  faChalkboardTeacher,
+  faSync,
+} from '@fortawesome/free-solid-svg-icons';
 
 function WhyTraining() {
   // Define color variables
   const lightBlue = '#003073'; // Light blue background
-  const darkBlue = '#091327'; // Dark blue text
   const highlightYellow = '#FFC80E'; // Highlight yellow
   const darkGray = '#333333'; // Dark gray text
 
@@ -24,6 +35,18 @@ function WhyTraining() {
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
+  const items = [
+    { icon: faGraduationCap, text: 'Over two decades of instruction from highly skilled professionals' },
+    { icon: faClipboardList, text: 'Syllabus crafted to meet current market demands' },
+    { icon: faUsers, text: 'Advisory board featuring IIT and IIM luminaries' },
+    { icon: faLightbulb, text: 'Integrated approach combining technical expertise, soft skills, and aptitude training' },
+    { icon: faComments, text: 'LinkedIn testimonials from our students across India' },
+    { icon: faCogs, text: 'Customized learning paths for individual growth' },
+    { icon: faBriefcase, text: 'Industry-relevant projects and case studies' },
+    { icon: faChalkboardTeacher, text: 'Mentorship programs from leading experts' },
+    { icon: faSync, text: 'Continuous feedback and improvement loops' },
+  ];
+
   return (
     <div className="roboto-regular">
       <main className="flex-1 py-8">
@@ -34,12 +57,12 @@ function WhyTraining() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInFromLeft} // Apply left fade-in animation
+            variants={fadeInFromLeft}
           >
-            {/* Left Content */}
+            {/* Left Content - 30% width */}
             <motion.div
-              className="flex-1 mb-6 lg:mb-0 flex flex-col items-center lg:items-start"
-              variants={fadeInFromLeft} // Left to right for the left content
+              className="flex-1 mb-6 lg:mb-0 flex flex-col items-center lg:items-start w-3/12"
+              variants={fadeInFromLeft}
             >
               <p
                 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-4 text-center lg:text-left"
@@ -52,31 +75,23 @@ function WhyTraining() {
                   src="/Training - Thinking Man.png"
                   alt="Illustration"
                   className="h-64 sm:h-72 lg:h-80 xl:h-96"
-                  style={{ transform: 'scaleX(-1)' }} // Flip image horizontally
+                  style={{ transform: 'scaleX(-1)' }}
                 />
               </div>
             </motion.div>
-            
-            {/* Right Content */}
+
+            {/* Right Content - 70% width */}
             <motion.div
-              className="flex-1 flex items-center justify-center"
-              variants={fadeInFromRight} // Right to left for the right content
+              className="flex-1 flex items-center justify-center w-9/12"
+              variants={fadeInFromRight}
             >
-              <div className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full md:w-[400px]">
-                <ul className="space-y-3 sm:space-y-4">
-                  {[
-                    'Over two decades of instruction from highly skilled professionals',
-                    'Syllabus crafted to meet current market demands',
-                    'Advisory board featuring IIT and IIM luminaries',
-                    'Integrated approach combining technical expertise, soft skills, and aptitude training',
-                    'LinkedIn testimonials from our students across India',
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                      <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="grid grid-cols-3 gap-4 w-full">
+                {items.map((item, index) => (
+                  <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center">
+                    <FontAwesomeIcon icon={item.icon} style={{ color: highlightYellow, fontSize: '2rem', marginBottom: '0.5rem' }} />
+                    <p style={{ color: darkGray, fontWeight: '500' }}>{item.text}</p>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </motion.div>
@@ -87,7 +102,7 @@ function WhyTraining() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInFromBottom} // Bottom to top animation for smaller screens
+            variants={fadeInFromBottom}
           >
             <p
               className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-6 text-center"
@@ -100,26 +115,16 @@ function WhyTraining() {
                 src="/Training - Thinking Man.png"
                 alt="Illustration"
                 className="h-64 sm:h-72 lg:h-80 xl:h-96"
-                style={{ transform: 'scaleX(-1)' }} // Flip image horizontally
+                style={{ transform: 'scaleX(-1)' }}
               />
             </div>
-            <div className="flex items-center justify-center">
-              <div className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full md:w-[400px]">
-                <ul className="space-y-3 sm:space-y-4">
-                  {[
-                    'Over two decades of instruction from highly skilled professionals',
-                    'Syllabus crafted to meet current market demands',
-                    'Advisory board featuring IIT and IIM luminaries',
-                    'Integrated approach combining technical expertise, soft skills, and aptitude training',
-                    'LinkedIn testimonials from our students across India',
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center" style={{ color: darkGray, fontWeight: '500' }}>
-                      <span style={{ color: highlightYellow, fontSize: '1.25rem', marginRight: '0.75rem' }}>●</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="grid grid-cols-1 gap-4">
+              {items.map((item, index) => (
+                <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center">
+                  <FontAwesomeIcon icon={item.icon} style={{ color: highlightYellow, fontSize: '2rem', marginBottom: '0.5rem' }} />
+                  <p style={{ color: darkGray, fontWeight: '500' }}>{item.text}</p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>

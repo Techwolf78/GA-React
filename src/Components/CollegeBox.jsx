@@ -8,6 +8,8 @@ function CollegeBox() {
   const [trainersCount, setTrainersCount] = useState(0);
   const [studentsTrained, setStudentsTrained] = useState(0);
   const [trainingHours, setTrainingHours] = useState(0);
+  const [countingStarted, setCountingStarted] = useState(false);
+  const [fadeInCompleted, setFadeInCompleted] = useState(false);
 
   const images = [
     '/CollegeSliding/Training Photo 1.png',
@@ -17,18 +19,34 @@ function CollegeBox() {
 
   const textControls = useAnimation();
   const imageControls = useAnimation();
+  const cardsControls = useAnimation();
   const ref = React.useRef();
-  const isInView = useInView(ref, { threshold: 0.6, once: true }); // Trigger when 60% is in view
+  const isInView = useInView(ref, { threshold: 1, once: true }); // Trigger when 100% is in view
 
   useEffect(() => {
     if (isInView) {
-      textControls.start({ opacity: 1, x: 0, transition: { duration: 0.7 } });
-      imageControls.start({ opacity: 1, x: 0, transition: { duration: 0.7 } });
+      textControls.start({ opacity: 1, x: 0, transition: { duration: 3 } });
+      imageControls.start({ opacity: 1, x: 0, transition: { duration: 3 } });
+
+      // Start cards animation after the component is fully in view
+      cardsControls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, staggerChildren: 0.5 },
+      }).then(() => {
+        setFadeInCompleted(true); // Mark fade-in completion
+      });
+
+      return () => {
+        setFadeInCompleted(false);
+      };
     } else {
       textControls.start({ opacity: 0, x: -50 });
       imageControls.start({ opacity: 0, x: 50 });
+      setCountingStarted(false);
+      cardsControls.start({ opacity: 0, y: 20 });
     }
-  }, [textControls, imageControls, isInView]);
+  }, [textControls, imageControls, cardsControls, isInView]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -39,6 +57,18 @@ function CollegeBox() {
   }, [images.length]);
 
   useEffect(() => {
+    if (fadeInCompleted) {
+      const timer = setTimeout(() => {
+        setCountingStarted(true);
+      }, 1500); // Start counting 1.5 seconds after all boxes are visible
+
+      return () => clearTimeout(timer); // Cleanup timer
+    }
+  }, [fadeInCompleted]);
+
+  useEffect(() => {
+    if (!countingStarted) return;
+
     const countUp = (setter, target, duration) => {
       let start = 0;
       const step = target / (duration / 50);
@@ -55,9 +85,9 @@ function CollegeBox() {
 
     countUp(setCollegesCount, 55, 2000);
     countUp(setTrainersCount, 5, 2000);
-    countUp(setStudentsTrained, 60000, 2000);
-    countUp(setTrainingHours, 65000, 2000);
-  }, []);
+    countUp(setStudentsTrained, 60000, 6000);
+    countUp(setTrainingHours, 65000, 6000);
+  }, [countingStarted]);
 
   const handleDotClick = (index) => {
     setCurrentImageIndex(index);
@@ -105,7 +135,7 @@ function CollegeBox() {
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 py-4 w-full max-w-full mx-0">
+      <motion.div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 py-4 w-full max-w-full mx-0" animate={cardsControls}>
         {[
           { icon: <FaUniversity />, value: `${collegesCount}+`, label: 'Colleges' },
           { icon: <FaUserTie />, value: `${trainersCount}/5`, label: 'Trainers Index' },
@@ -115,10 +145,10 @@ function CollegeBox() {
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={fadeInCompleted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} // Fade in only after completion
             transition={{
               duration: 0.5,
-              delay: isInView ? (index + 1) * 0.5 : 0 // Delaying the fade-in effect for each card
+              delay: fadeInCompleted ? 1.5 + index * 0.5 : 0 // Delay for staggered effect after fade-in completion
             }}
             className="flex flex-col items-center space-y-2 p-4 bg-[#003073] rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-yellow-500 hover:shadow-lg"
           >
@@ -129,7 +159,7 @@ function CollegeBox() {
             <p className="text-white text-center text-base md:text-lg font-medium">{label}</p>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
