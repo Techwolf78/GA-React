@@ -15,7 +15,7 @@ const Blog = () => {
     },
     {
       id: 2,
-      title: "I would like to die on Mars. Just not on impact.",
+      title: "I would like to die on Mars. Just not on Impact.",
       description: "Join us on a journey to the red planet, where the possibilities are endless and the risks are high.",
       image: forest,
       path: '/post2',
