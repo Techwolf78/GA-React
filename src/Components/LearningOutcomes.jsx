@@ -7,27 +7,31 @@ const departments = [
     icon: <FaGraduationCap className="text-8xl text-[#FFC80E]" />,
     name: "STUDENTS",
     outcomes: [
-      "Students are groomed for industry according to its specifications.",
-      "Holistic upskilling of students.",
-      "Industry guest lectures offer valuable industry insights.",
-      "Access to placement opportunities with premier brands and companies."
+      "Practical Skill Application",
+      "Primed for employment",
+      "Effective Communication",
+      "Career Readiness",
+      "Top Placements",
+      "Global Perspective"
     ]
   },
   {
     icon: <FaSchool className="text-8xl text-[#FFC80E]" />,
     name: "COLLEGES",
     outcomes: [
-      "Enhanced placement rates.",
-      "Empowered students taking the college to new heights.",
-      "Elevated brand stature.",
-      "Establishment of corporate partnerships."
+      "Enhanced placement rates",
+      "Stronger Industry Connections",
+      "Boosted Admissions",
+      "Visibility of college across recruiters",
+      "Establishment of corporate partnerships",
+      "Industry centric curriculum inculcation"
     ]
   },
   {
     icon: <FaChalkboardTeacher className="text-8xl text-[#FFC80E]" />,
     name: "F D P",
     outcomes: [
-      "Industry-aligned curriculum enhancement.",
+      
       "Exposure to advanced industry-related teaching methodologies.",
       "Improved student engagement and learning outcomes.",
       "Networking opportunities with industry experts."
@@ -37,10 +41,14 @@ const departments = [
     icon: <FaBuilding className="text-8xl text-[#FFC80E]" />,
     name: "CORPORATE",
     outcomes: [
-      "Customized skill development aligned with company goals.",
-      "Increased employee productivity and efficiency.",
-      "Enhanced leadership and management capabilities.",
-      "Improved problem-solving and decision-making skills."
+      "Cost effectiveness",
+      "Boosted Productivity",
+      "Resolving Chronic Organizational Issues",
+      "Enhanced Leadership skills",
+      "Increased Adaptability",
+      "Enhanced Teamwork",
+      "Narrowed Skills Gaps",
+      "Higher Retention Rates"
     ]
   }
 ];

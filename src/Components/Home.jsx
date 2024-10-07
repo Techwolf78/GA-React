@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../assets/CSS/home.css';
 import Testimonials from './Testimonials';
 import ConnectWithUs from './ConnectWithUs'; // Import the Connect component
-import ContactForm from './ContactForm'; // Import the ContactForm component
 
 const Home = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -227,7 +226,7 @@ const Home = () => {
   <div className="section-content left">
     <h2>Training</h2>
     <p>
-    Your future is our priority. At Gryphon Academy, we offer training that bridges the gap between knowledge and real-world application. Our programs are designed to equip you with the skills that today’s industries demand, preparing you to not just participate but excel. Your path to success starts here.
+    At Gryphon Academy, our training programs are specifically designed with your career goals in mind. We focus on equipping you with the essential skills that today’s industry demand, ensuring you are excelling in your field. Our customized content addresses the unique challenges of your chosen industry, while personalized evaluations help identify your strengths and areas for improvement. By utilizing modern tools and methodologies, we enhance your learning experience and prepare you for real-world applications. 
     </p>
     <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>
@@ -269,7 +268,7 @@ const Home = () => {
       <div>
       
         <Testimonials />
-        <ContactForm /> 
+        
       </div>
       {/* New Connect Component As the word */}
       <ConnectWithUs />

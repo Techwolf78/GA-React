@@ -28,7 +28,7 @@ const TrainingAbout = () => {
         viewport={{ once: true, amount: 0.7 }}
       >
         <motion.div className="about-left" variants={fadeInFromLeft}>
-          <p className="about-head">BRIDGING ALL GAPS</p>
+        
           <h1 className="about-text roboto-regular">
             OUR 360<sup>°</sup> APPROACH TO SKILL DEVELOPMENT
           </h1>
@@ -36,9 +36,7 @@ const TrainingAbout = () => {
 
         <motion.div className="about-right" variants={fadeInFromRight}>
           <p>
-            Gryphon specializes in tailored training solutions across three key
-            sectors. Our aim is to bridge the skill gap and create a more
-            educated and employable workforce.
+          Gryphon Academy specializes in delivering customized training solutions across three key sectors. Our mission is to effectively bridge the skill gap within each sector, ensuring a focused approach that leaves no room for deficiencies.  
           </p>
           <motion.p
             className="underline-effect text-new"
@@ -62,7 +60,7 @@ const TrainingAbout = () => {
             </div>
             <h4 className="feature-header-link">COLLEGE TRAININGS</h4>
           </div>
-          <p>Bridging the campus-to-career gap.</p>
+          <p>Bridging the campus-to-career gap. Transforming students into industry-ready professionals.</p>
           <Link to="/collegeTraining" className="more-about-link mt-2">
             LEARN MORE
           </Link>
@@ -75,7 +73,7 @@ const TrainingAbout = () => {
             </div>
             <h4 className="feature-header-link">CORPORATE TRAININGS</h4>
           </div>
-          <p>Elevating workforce potential, one skill at a time.</p>
+          <p>Elevating workforce potential, one skill at a time. Custom solutions for tomorrow's business challenges. Empowering your team to lead industry evolution.</p>
           <Link to="/corporateTraining" className="more-about-link mt-2">
             LEARN MORE
           </Link>
@@ -90,7 +88,7 @@ const TrainingAbout = () => {
               FACULTY DEVELOPMENT PROGRAMME
             </h4>
           </div>
-          <p>Reshaping education for the digital age.</p>
+          <p>Reshaping education for the digital age. Equipping educators to inspire the next generation "Where teaching meets innovation."</p>
           <Link to="/facultyTraining" className="more-about-link mt-2">
             LEARN MORE
           </Link>

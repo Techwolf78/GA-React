@@ -1,200 +1,726 @@
-import React, { useState } from 'react';
+import  { useState,  useRef } from 'react';
+import { FiChevronDown, FiChevronRight } from 'react-icons/fi'; // Importing React Icons
 import 'tailwindcss/tailwind.css';
 
 // Course data and button labels
 const courses = {
   MECH: [
-    { title: 'AUTOCAD', description: 'Learn the fundamentals of AutoCAD for 2D and 3D drafting and design in mechanical engineering.', image: '/MECH/M1.png' },
-    { title: 'CATIA', description: 'Explore CATIA’s advanced 3D modeling capabilities for designing complex mechanical systems.', image: 'MECH/M2.png' },
-    { title: 'CREO CAD', description: 'Master CREO CAD software for parametric and direct modeling, essential for mechanical design.', image: 'MECH/M3.png' },
-    { title: 'SOLIDWORKS', description: 'Gain skills in SolidWorks for 3D CAD design, including simulation and product data management.', image: 'MECH/M4.png' }
+    { 
+      title: 'AUTOCAD', 
+      description: [
+        'Learn AutoCAD for both 2D drafting and 3D design.',
+        'Understand basic and advanced drawing techniques.',
+        'Master tools for dimensioning, annotations, and layout planning.',
+        'Use AutoCAD for mechanical design in various industries.'
+      ],
+      image: '/MECH/M1.png'
+    },
+    { 
+      title: 'CREO', 
+      description: [
+        'Master CREO CAD software for parametric modeling.',
+        'Learn both direct modeling and generative design techniques.',
+        'Understand the integration of CREO with other PLM tools.',
+        'Apply CREO to solve real-world mechanical design challenges.'
+      ],
+      image: 'MECH/M3.png'
+    },
+    { 
+      title: 'CATIA V5', 
+      description: [
+        'Explore CATIA’s advanced 3D modeling capabilities.',
+        'Design complex mechanical systems using parametric and direct modeling.',
+        'Gain proficiency in creating assembly and part design.',
+        'Understand how to leverage CATIA for engineering simulations.'
+      ],
+      image: 'MECH/M2.png'
+    },
+    { 
+      title: 'SOLIDWORKS', 
+      description: [
+        'Learn 3D CAD design using SolidWorks.',
+        'Understand product data management and version control.',
+        'Gain skills in simulation and structural analysis.',
+        'Master the tools for assembly design and optimization.'
+      ],
+      image: 'MECH/M4.png'
+    },
+    { 
+      title: 'CAD & CAM', 
+      description: [
+        'Learn the fundamentals of Computer-Aided Design (CAD) and Computer-Aided Manufacturing (CAM).',
+        'Understand the integration of design and manufacturing processes.',
+        'Study the role of CAD/CAM in optimizing mechanical engineering workflows.',
+        'Gain hands-on experience in designing and fabricating prototypes.'
+      ],
+      image: 'MECH/M5.png'
+    },
+    { 
+      title: 'Assembly', 
+      description: [
+        'Study the principles of mechanical assembly.',
+        'Learn how to design efficient and optimized mechanical systems.',
+        'Understand the impact of tolerances and fits in assembly design.',
+        'Analyze and troubleshoot assembly processes in real-world applications.'
+      ],
+      image: 'MECH/M6.png'
+    }
   ],
+
   CIVIL: [
-    { title: '3D PRINTING', description: 'Understand the principles and applications of 3D printing in civil engineering for creating prototypes and structures.', image: 'Civil Engineering/C1.png' },
-    { title: 'RVT', description: 'Learn how to use Revit for Building Information Modeling (BIM) in civil engineering projects.', image: 'Civil Engineering/C2.png' },
-    { title: 'STRUCTURAL ANALYSIS', description: 'Study the methods and techniques for analyzing the structural integrity of buildings and infrastructure.', image: 'Civil Engineering/C3.png' },
-    { title: 'FOUNDATION ENGINEERING', description: 'Explore the design and analysis of foundations, including shallow and deep foundations, for various soil conditions.', image: 'Civil Engineering/C4.png' },
-    { title: 'BIM', description: 'Delve into Building Information Modeling (BIM) for effective planning, design, and management of construction projects.', image: 'Civil Engineering/C5.png' },
-    { title: 'SUSTAINABLE DESIGN', description: 'Learn about sustainable design practices in civil engineering to minimize environmental impact and enhance resource efficiency.', image: 'Civil Engineering/C6.png' }
+    { 
+      title: '3D PRINTING', 
+      description: [
+        'Understand the role of 3D printing in civil engineering applications.',
+        'Explore how prototypes and small-scale structures are created.',
+        'Learn about different 3D printing technologies (e.g., FDM, SLA).',
+        'Study the challenges and future of 3D printing in construction.'
+      ],
+      image: 'Civil Engineering/C1.png'
+    },
+    { 
+      title: 'RVT', 
+      description: [
+        'Learn to use Revit for Building Information Modeling (BIM).',
+        'Explore design and documentation techniques for civil engineering projects.',
+        'Understand the integration of 3D models with structural and MEP systems.',
+        'Master workflow management in collaborative design environments.'
+      ],
+      image: 'Civil Engineering/C2.png'
+    },
+    { 
+      title: 'STRUCTURAL ANALYSIS', 
+      description: [
+        'Study methods for analyzing the structural integrity of buildings and infrastructure.',
+        'Learn the theory behind loads, stresses, and strains.',
+        'Explore the use of software tools for structural simulation.',
+        'Understand key concepts in material behavior and failure modes.'
+      ],
+      image: 'Civil Engineering/C3.png'
+    },
+    { 
+      title: 'FOUNDATION ENGINEERING', 
+      description: [
+        'Understand the design and analysis of shallow and deep foundations.',
+        'Learn the impact of soil conditions on foundation choices.',
+        'Study the challenges of foundation design in various geological settings.',
+        'Analyze foundation settlement, stability, and safety.'
+      ],
+      image: 'Civil Engineering/C4.png'
+    },
+    { 
+      title: 'BIM', 
+      description: [
+        'Dive into Building Information Modeling (BIM) for civil engineering projects.',
+        'Understand the role of BIM in improving project efficiency and collaboration.',
+        'Learn how to manage and share data in construction and design.',
+        'Explore the benefits of BIM for lifecycle management of buildings.'
+      ],
+      image: 'Civil Engineering/C5.png'
+    },
+    { 
+      title: 'SUSTAINABLE DESIGN', 
+      description: [
+        'Explore sustainable design practices in civil engineering.',
+        'Learn to minimize environmental impact through eco-friendly materials.',
+        'Understand the principles of energy efficiency in building and infrastructure design.',
+        'Study methods for reducing resource consumption and waste in construction.'
+      ],
+      image: 'Civil Engineering/C6.png'
+    }
   ],
+
   COMP: [
-    { title: 'FULL STACK DEVELOPMENT', description: 'Get comprehensive training in full stack development, including both front-end and back-end technologies.', image: 'computr-science/CC1.png' },
-    { title: 'IoT', description: 'Explore the Internet of Things (IoT) and how to develop smart devices and systems connected through the internet.', image: 'computr-science/CC2.png' },
-    { title: 'JAVA', description: 'Learn Java programming language for developing robust, scalable applications and software solutions.', image: 'computr-science/CC3.png' },
-    { title: 'LINUX', description: 'Gain proficiency in Linux operating system for system administration, scripting, and development.', image: 'computr-science/CC4.png' },
-    { title: 'MERN', description: 'Master the MERN stack (MongoDB, Express, React, Node.js) for full-stack JavaScript development.', image: 'computr-science/CC5.png' },
-    { title: 'PYTHON', description: 'Learn Python programming for various applications, including web development, data analysis, and machine learning.', image: 'computr-science/CC6.png' }
+    { 
+      title: 'FULL STACK DEVELOPMENT', 
+      description: [
+        'Get comprehensive training in both front-end and back-end development.',
+        'Learn HTML, CSS, JavaScript for building web interfaces.',
+        'Explore backend technologies like Node.js, Express, and databases.',
+        'Understand how to integrate web applications with APIs and cloud services.'
+      ],
+      image: 'computr-science/CC1.png'
+    },
+    { 
+      title: 'IoT', 
+      description: [
+        'Learn about the Internet of Things (IoT) and smart devices.',
+        'Understand the technologies behind connected systems and devices.',
+        'Study protocols for communication between IoT devices (MQTT, HTTP, etc.).',
+        'Gain hands-on experience in building IoT applications and solutions.'
+      ],
+      image: 'computr-science/CC2.png'
+    },
+    { 
+      title: 'JAVA', 
+      description: [
+        'Master the Java programming language for developing robust applications.',
+        'Understand object-oriented programming (OOP) principles.',
+        'Learn about Java libraries, frameworks, and tools for development.',
+        'Gain experience building enterprise-level applications and systems.'
+      ],
+      image: 'computr-science/CC3.png'
+    },
+    { 
+      title: 'LINUX', 
+      description: [
+        'Gain proficiency in Linux system administration and command line tools.',
+        'Understand file systems, user management, and process management.',
+        'Learn to script with Bash and automate tasks.',
+        'Understand the role of Linux in servers, networks, and development environments.'
+      ],
+      image: 'computr-science/CC4.png'
+    },
+    { 
+      title: 'MERN', 
+      description: [
+        'Master the MERN stack (MongoDB, Express, React, Node.js).',
+        'Learn JavaScript for full-stack web development.',
+        'Understand the integration of front-end and back-end technologies.',
+        'Build dynamic and scalable web applications using modern frameworks.'
+      ],
+      image: 'computr-science/CC5.png'
+    },
+    { 
+      title: 'PYTHON', 
+      description: [
+        'Learn Python programming for a wide range of applications.',
+        'Explore Python for web development, data analysis, and machine learning.',
+        'Understand how to build automation scripts and data pipelines.',
+        'Gain skills in Python’s extensive library ecosystem for data science and development.'
+      ],
+      image: 'computr-science/CC6.png'
+    }
   ],
+
   ELECT: [
-  { title: 'Automation', description: 'Understand automation systems and techniques used in various industrial applications.', image: 'Electrical Eng/E1.png' },
-  { title: 'Electric Vehicles', description: 'Explore the design and technology behind electric vehicles, including power systems and battery management.', image: 'Electrical Eng/E2.png' },
-  { title: 'Wiring Harness', description: 'Learn about the design and manufacturing of wiring harnesses used in electrical systems.', image: 'Electrical Eng/E3.png' },
-  { title: 'IoT', description: 'Study the Internet of Things (IoT) and its applications in electrical engineering, including smart grids and sensors.', image: 'computr-science/CC2.png' },
-  { title: 'BMS', description: 'Explore Building Management Systems (BMS) for controlling and monitoring building systems like HVAC and lighting.', image: 'Electrical Eng/5.jpg' },
-  { title: 'PIC & SCADA', description: 'Learn about Programmable Interface Controllers (PIC) and Supervisory Control and Data Acquisition (SCADA) systems for automation and control.', image: 'Electrical Eng/E6.png' }
+    { 
+      title: 'Automation', 
+      description: [
+        'Study automation systems used in industrial applications.',
+        'Learn the principles behind programmable logic controllers (PLCs).',
+        'Explore sensors, actuators, and control systems in automation.',
+        'Understand how automation improves efficiency and reduces errors.'
+      ],
+      image: 'Electrical Eng/E1.png'
+    },
+    { 
+      title: 'Electric Vehicles', 
+      description: [
+        'Explore the design of electric vehicles and their power systems.',
+        'Understand battery management systems and charging technologies.',
+        'Learn about electric drive systems and energy efficiency in EVs.',
+        'Study the future of electric mobility and the challenges ahead.'
+      ],
+      image: 'Electrical Eng/E2.png'
+    },
+    { 
+      title: 'Wiring Harness', 
+      description: [
+        'Learn the design and manufacturing process of wiring harnesses.',
+        'Understand the role of wiring harnesses in electrical systems.',
+        'Study materials, tools, and technologies used in wiring harnesses.',
+        'Explore the challenges in producing reliable and cost-effective harnesses.'
+      ],
+      image: 'Electrical Eng/E3.png'
+    },
+    { 
+      title: 'IoT', 
+      description: [
+        'Study the applications of IoT in electrical engineering.',
+        'Learn about sensors, networks, and cloud integration for IoT systems.',
+        'Explore smart grids, energy management, and automation in IoT.',
+        'Understand security and data management challenges in IoT systems.'
+      ],
+      image: 'computr-science/CC2.png'
+    },
+    { 
+      title: 'BMS', 
+      description: [
+        'Learn about Building Management Systems (BMS).',
+        'Understand the integration of HVAC, lighting, and other building systems.',
+        'Study energy management, security, and monitoring with BMS.',
+        'Gain skills in configuring and optimizing BMS for smart buildings.'
+      ],
+      image: 'Electrical Eng/5.jpg'
+    },
+    { 
+      title: 'PIC & SCADA', 
+      description: [
+        'Study Programmable Interface Controllers (PIC) and SCADA systems.',
+        'Understand the fundamentals of industrial automation and control.',
+        'Learn how SCADA systems are used for monitoring and control in real-time.',
+        'Explore the use of PICs in embedded systems and automation projects.'
+      ],
+      image: 'Electrical Eng/E6.png'
+    }
   ],
+
   AIDS: [
-  {
-  title: 'Introduction to Data Science',
-  description: 'Learn the basics of data science and how it applies to artificial intelligence.',
-  image: 'https://placeholder.com/200x200'
-  },
-  { title: 'Machine Learning with Python', description: 'Explore machine learning techniques using Python, including regression and classification.', image: 'AIDS/2.jpg' },
-  { title: 'Data Visualization', description: 'Understand how to visualize data effectively to gain insights and make decisions.', image: 'AIDS/3.jpg' },
-  { title: 'Big Data Analytics', description: 'Learn about big data technologies and how to process and analyze large datasets.', image: 'AIDS/4.jpg' },
-  { title: 'Deep Learning', description: 'Dive into deep learning techniques and their applications in various fields.', image: 'AIDS/5.jpg' },
-  { title: 'AI Ethics', description: 'Study the ethical implications of artificial intelligence and data science.', image: 'AIDS/6.jpg' }
+    { 
+      title: 'Introduction to Data Science', 
+      description: [
+        'Learn the basics of data science and how it applies to artificial intelligence.'
+      ],
+      image: 'https://placeholder.com/200x200'
+    },
+    { 
+      title: 'Machine Learning with Python', 
+      description: [
+        'Explore machine learning techniques using Python, including regression and classification.'
+      ],
+      image: 'AIDS/2.jpg' 
+    },
+    { 
+      title: 'Data Visualization', 
+      description: [
+        'Understand how to visualize data effectively to gain insights and make decisions.'
+      ],
+      image: 'AIDS/3.jpg' 
+    },
+    { 
+      title: 'Big Data Analytics', 
+      description: [
+        'Learn about big data technologies and how to process and analyze large datasets.'
+      ],
+      image: 'AIDS/4.jpg' 
+    },
+    { 
+      title: 'Deep Learning', 
+      description: [
+        'Dive into deep learning techniques and their applications in various fields.'
+      ],
+      image: 'AIDS/5.jpg' 
+    },
+    { 
+      title: 'AI Ethics', 
+      description: [
+        'Study the ethical implications of artificial intelligence and data science.'
+      ],
+      image: 'AIDS/6.jpg' 
+    }
   ],
+
   AIML: [
-  { title: 'Introduction to Artificial Intelligence', description: 'Get started with the basics of AI, including machine learning and neural networks.', image: 'AIML/1.jpg' },
-  { title: 'Deep Learning Specialization', description: 'Dive deep into deep learning techniques and their applications in various fields.', image: 'AIML/2.jpg' },
-  { title: 'Natural Language Processing', description: 'Learn how to build systems that understand and generate human language.', image: 'AIML/3.jpg' },
-  { title: 'AI for Business', description: 'Explore how AI can be leveraged to solve business problems and drive innovation.', image: 'AIML/4.jpg' },
-  { title: 'Computer Vision', description: 'Understand the principles of computer vision and how to build applications that see and interpret the world.', image: 'AIML/5.jpg' },
-  { title: 'Reinforcement Learning', description: 'Learn about reinforcement learning and how to train AI agents to make decisions.', image: 'AIML/6.jpg' }
+    { 
+      title: 'Introduction to Artificial Intelligence', 
+      description: [
+        'Get started with the basics of AI, including machine learning and neural networks.'
+      ],
+      image: 'AIML/1.jpg' 
+    },
+    { 
+      title: 'Deep Learning Specialization', 
+      description: [
+        'Dive deep into deep learning techniques and their applications in various fields.'
+      ],
+      image: 'AIML/2.jpg' 
+    },
+    { 
+      title: 'Natural Language Processing', 
+      description: [
+        'Learn how to build systems that understand and generate human language.'
+      ],
+      image: 'AIML/3.jpg' 
+    },
+    { 
+      title: 'AI for Business', 
+      description: [
+        'Explore how AI can be leveraged to solve business problems and drive innovation.'
+      ],
+      image: 'AIML/4.jpg' 
+    },
+    { 
+      title: 'Computer Vision', 
+      description: [
+        'Understand the principles of computer vision and how to build applications that see and interpret the world.'
+      ],
+      image: 'AIML/5.jpg' 
+    },
+    { 
+      title: 'Reinforcement Learning', 
+      description: [
+        'Learn about reinforcement learning and how to train AI agents to make decisions.'
+      ],
+      image: 'AIML/6.jpg' 
+    }
   ],
+
   PHARMA: [
-  { title: 'Pharmacology Basics', description: 'Learn the fundamentals of pharmacology, including drug interactions and side effects.', image: 'PHARMA/1.jpg' },
-  { title: 'Clinical Trials Management', description: 'Understand the process of managing clinical trials from start to finish.', image: 'PHARMA/2.jpg' },
-  { title: 'Pharmaceutical Regulatory Affairs', description: 'Explore the regulatory landscape and compliance requirements in the pharmaceutical industry.', image: 'PHARMA/3.jpg' },
-  { title: 'Drug Development and Approval', description: 'Learn about the drug development process and how new drugs are approved for market.', image: 'PHARMA/4.jpg' },
-  { title: 'Quality Control in Pharmaceuticals', description: 'Understand the principles of quality control and assurance in pharmaceutical manufacturing.', image: 'PHARMA/5.jpg' },
-  { title: 'Pharmaceutical Marketing', description: 'Explore strategies for marketing pharmaceutical products effectively in a competitive market.', image: 'PHARMA/6.jpg' }
+    { 
+      title: 'Pharmacology Basics', 
+      description: [
+        'Learn the fundamentals of pharmacology, including drug interactions and side effects.'
+      ],
+      image: 'PHARMA/1.jpg' 
+    },
+    { 
+      title: 'Clinical Trials Management', 
+      description: [
+        'Understand the process of managing clinical trials from start to finish.'
+      ],
+      image: 'PHARMA/2.jpg' 
+    },
+    { 
+      title: 'Pharmaceutical Regulatory Affairs', 
+      description: [
+        'Explore the regulatory landscape and compliance requirements in the pharmaceutical industry.'
+      ],
+      image: 'PHARMA/3.jpg' 
+    },
+    { 
+      title: 'Drug Development and Approval', 
+      description: [
+        'Learn about the drug development process and how new drugs are approved for market.'
+      ],
+      image: 'PHARMA/4.jpg' 
+    },
+    { 
+      title: 'Quality Control in Pharmaceuticals', 
+      description: [
+        'Understand the principles of quality control and assurance in pharmaceutical manufacturing.'
+      ],
+      image: 'PHARMA/5.jpg' 
+    },
+    { 
+      title: 'Pharmaceutical Marketing', 
+      description: [
+        'Explore strategies for marketing pharmaceutical products effectively in a competitive market.'
+      ],
+      image: 'PHARMA/6.jpg' 
+    }
   ],
+
   MBA: [
-  { title: 'Strategic Management', description: 'Learn how to develop business strategies that create competitive advantages.', image: 'MBA/1.jpg' },
-  { title: 'Financial Accounting', description: 'Understand financial statements and how to analyze them for better decision-making.', image: 'MBA/2.jpg' },
-  { title: 'Marketing Management', description: 'Explore key marketing concepts and strategies to drive customer engagement.', image: 'MBA/3.jpg' },
-  { title: 'Operations Management', description: 'Gain insights into optimizing operations to enhance productivity and efficiency.', image: 'MBA/4.jpg' },
-  { title: 'Business Ethics', description: 'Delve into ethical issues in business and learn how to navigate them responsibly.', image: 'MBA/5.jpg' },
-  { title: 'Leadership and Organizational Behavior', description: 'Develop leadership skills and understand the dynamics of organizational behavior.', image: 'MBA/6.jpg' }
+    { 
+      title: 'Strategic Management', 
+      description: [
+        'Learn how to develop business strategies that create competitive advantages.'
+      ],
+      image: 'MBA/1.jpg' 
+    },
+    { 
+      title: 'Financial Accounting', 
+      description: [
+        'Understand financial statements and how to analyze them for better decision-making.'
+      ],
+      image: 'MBA/2.jpg' 
+    },
+    { 
+      title: 'Marketing Management', 
+      description: [
+        'Explore key marketing concepts and strategies to drive customer engagement.'
+      ],
+      image: 'MBA/3.jpg' 
+    },
+    { 
+      title: 'Operations Management', 
+      description: [
+        'Gain insights into optimizing operations to enhance productivity and efficiency.'
+      ],
+      image: 'MBA/4.jpg' 
+    },
+    { 
+      title: 'Business Ethics', 
+      description: [
+        'Delve into ethical issues in business and learn how to navigate them responsibly.'
+      ],
+      image: 'MBA/5.jpg' 
+    },
+    { 
+      title: 'Leadership and Organizational Behavior', 
+      description: [
+        'Develop leadership skills and understand the dynamics of organizational behavior.'
+      ],
+      image: 'MBA/6.jpg' 
+    }
   ],
+
   MCA: [
-  { title: 'Java', description: 'Gain expertise in Java programming language, focusing on object-oriented programming and software development.', image: 'MCA/1.jpg' },
-  { title: 'OOPs', description: 'Study Object-Oriented Programming (OOP) principles and their application in software development.', image: 'MCA/2.jpg' },
-  { title: 'Python', description: 'Learn Python for data analysis, web development, and automation.', image: 'MCA/3.jpg' },
-  { title: 'Database Management', description: 'Understand database systems and management techniques for effective data handling.', image: 'MCA/4.jpg' },
-  { title: 'Software Engineering', description: 'Explore software development methodologies and project management practices.', image: 'MCA/5.jpg' },
-  { title: 'Web Technologies', description: 'Get hands-on experience with web technologies including HTML, CSS, and JavaScript.', image: 'MCA/6.jpg' }
+    { 
+      title: 'Java', 
+      description: [
+        'Gain expertise in Java programming language, focusing on object-oriented programming and software development.'
+      ],
+      image: 'MCA/1.jpg' 
+    },
+    { 
+      title: 'OOPs', 
+      description: [
+        'Study Object-Oriented Programming (OOP) principles and their application in software development.'
+      ],
+      image: 'MCA/2.jpg' 
+    },
+    { 
+      title: 'Python', 
+      description: [
+        'Learn Python for data analysis, web development, and automation.'
+      ],
+      image: 'MCA/3.jpg' 
+    },
+    { 
+      title: 'Database Management', 
+      description: [
+        'Understand database systems and management techniques for effective data handling.'
+      ],
+      image: 'MCA/4.jpg' 
+    },
+    { 
+      title: 'Software Engineering', 
+      description: [
+        'Explore software development methodologies and project management practices.'
+      ],
+      image: 'MCA/5.jpg' 
+    },
+    { 
+      title: 'Web Technologies', 
+      description: [
+        'Get hands-on experience with web technologies including HTML, CSS, and JavaScript.'
+      ],
+      image: 'MCA/6.jpg' 
+    }
   ],
+
   BBA: [
-  { title: 'Business Communication', description: 'Develop communication skills essential for business environments.', image: 'BBA/1.jpg' },
-  { title: 'Financial Management', description: 'Understand the principles of financial management and how to make sound financial decisions.', image: 'BBA/2.jpg' },
-  { title: 'Human Resource Management', description: 'Explore the fundamentals of managing human resources in an organization.', image: 'BBA/3.jpg' },
-  { title: 'Marketing Management', description: 'Study marketing strategies and practices used to engage customers and drive business growth.', image: 'BBA/4.jpg' },
-  { title: 'Organizational Behavior', description: 'Understand the dynamics of behavior within organizations and how to manage it effectively.', image: 'BBA/5.jpg' },
-  { title: 'Business Law', description: 'Learn the legal aspects of running a business, including contracts, liability, and compliance.', image: 'BBA/6.jpg' }
+    { 
+      title: 'Business Communication', 
+      description: [
+        'Develop communication skills essential for business environments.'
+      ],
+      image: 'BBA/1.jpg' 
+    },
+    { 
+      title: 'Financial Management', 
+      description: [
+        'Understand the principles of financial management and how to make sound financial decisions.'
+      ],
+      image: 'BBA/2.jpg' 
+    },
+    { 
+      title: 'Human Resource Management', 
+      description: [
+        'Explore the fundamentals of managing human resources in an organization.'
+      ],
+      image: 'BBA/3.jpg' 
+    },
+    { 
+      title: 'Marketing Management', 
+      description: [
+        'Study marketing strategies and practices used to engage customers and drive business growth.'
+      ],
+      image: 'BBA/4.jpg' 
+    },
+    { 
+      title: 'Organizational Behavior', 
+      description: [
+        'Understand the dynamics of behavior within organizations and how to manage it effectively.'
+      ],
+      image: 'BBA/5.jpg' 
+    },
+    { 
+      title: 'Business Law', 
+      description: [
+        'Learn the legal aspects of running a business, including contracts, liability, and compliance.'
+      ],
+      image: 'BBA/6.jpg' 
+    }
   ],
+
   DIPLOMA: [
-  { title: 'Diploma in Business Administration', description: 'Comprehensive program in business administration with practical and theoretical knowledge.', image: 'Diploma/1.jpg' },
-  { title: 'Diploma in Computer Science', description: 'In-depth study of computer science fundamentals and programming.', image: 'Diploma/2.jpg' },
-  { title: 'Diploma in Mechanical Engineering', description: 'Focus on mechanical engineering principles and applications.', image: 'Diploma/3.jpg' }
+    { 
+      title: 'Diploma in Business Administration', 
+      description: [
+        'Comprehensive program in business administration with practical and theoretical knowledge.'
+      ],
+      image: 'Diploma/1.jpg' 
+    },
+    { 
+      title: 'Diploma in Computer Science', 
+      description: [
+        'In-depth study of computer science fundamentals and programming.'
+      ],
+      image: 'Diploma/2.jpg' 
+    },
+    { 
+      title: 'Diploma in Mechanical Engineering', 
+      description: [
+        'Focus on mechanical engineering principles and applications.'
+      ],
+      image: 'Diploma/3.jpg' 
+    }
   ],
+
   FOREIGN: [
-  { title: 'German Language Basics', description: 'Introduction to the German language, including basic vocabulary and grammar.', image: 'Germany/1.jpg' },
-  { title: 'Japanese Language Basics', description: 'Learn basic Japanese language skills, including essential vocabulary and grammar.', image: 'Japanese/1.jpg' }
+    { 
+      title: 'German Language Basics', 
+      description: [
+        'Introduction to the German language, including basic vocabulary and grammar.'
+      ],
+      image: 'Germany/1.jpg' 
+    },
+    { 
+      title: 'Japanese Language Basics', 
+      description: [
+        'Learn basic Japanese language skills, including essential vocabulary and grammar.'
+      ],
+      image: 'Japanese/1.jpg' 
+    }
   ]
-  };
+};
+
   
   // Button labels
   const buttonLabels = {
-    MECH: 'MECHANICAL ENGINEERING',
-    CIVIL: 'CIVIL ENGINEERING',
-    COMP: 'COMPUTER SCIENCE ENGINEERING',
-    ELECT: 'ELECTRICAL ENGINEERING',
-    AIDS: 'ARTIFICIAL INTELLIGENCE AND DATA SCIENCE',
-    AIML: 'ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING',
-    PHARMA: 'PHARMACY',
-    MBA: 'MASTER OF BUSINESS ADMINISTRATION',
-    MCA: 'MASTER OF COMPUTER APPLICATIONS',
-    BBA: 'BACHELOR OF BUSINESS ADMINISTRATION',
-    FOREIGN: 'FOREIGN LANGUAGES',
-    DIPLOMA: 'DIPLOMA'
+  MECH: 'MECHANICAL ENGINEERING',
+  CIVIL: 'CIVIL ENGINEERING',
+  COMP: 'COMPUTER SCIENCE ENGINEERING',
+  ELECT: 'ELECTRICAL ENGINEERING',
+  AIDS: 'ARTIFICIAL INTELLIGENCE AND DATA SCIENCE',
+  AIML: 'ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING',
+  PHARMA: 'PHARMACY',
+  MBA: 'MASTER OF BUSINESS ADMINISTRATION',
+  MCA: 'MASTER OF COMPUTER APPLICATIONS',
+  BBA: 'BACHELOR OF BUSINESS ADMINISTRATION',
+  FOREIGN: 'FOREIGN LANGUAGES',
+  DIPLOMA: 'DIPLOMA'
   };
 
-
-const CourseSection = () => {
-  const [selectedCourse, setSelectedCourse] = useState('MECH');
-  const [showCards, setShowCards] = useState({ MECH: true });
-  const [hoveredCourse, setHoveredCourse] = useState(null); // Track hovered course
-
-  const changeCourse = (courseKey) => {
-    if (courseKey !== selectedCourse) {
-      setShowCards({ [courseKey]: true });
-      setSelectedCourse(courseKey);
-      setHoveredCourse(null); // Clear hovered when selecting a new course
-    } else {
-      setShowCards((prev) => ({ ...prev, [courseKey]: !prev[courseKey] }));
-    }
-  };
-
-  return (
-    <section className="py-16 px-8 lg:px-16 bg-[#091327] roboto-regular">
-      <div className="mb-8">
-        <p className="text-[#ffc700] text-4xl text-center font-bold mb-4">TECHNICAL TRAINING</p>
-      </div>
-      <div className="container mx-auto flex flex-wrap">
-        {/* Sidebar */}
-        <div className="course-sidebar w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
-          <div className="bg-[#091327] shadow-lg rounded-lg">
-            {Object.keys(courses).map((key) => (
-              <div key={key}>
-                <button
-                  onClick={() => changeCourse(key)}
-                  onMouseEnter={() => setHoveredCourse(key)}
-                  onMouseLeave={() => setHoveredCourse(null)}
-                  className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300 
-                    ${selectedCourse === key || hoveredCourse === key ? 'bg-[#FFC80E] text-[#003073] shadow-2xl transform scale-105' : 'bg-[#003073] text-white shadow-lg'}
-                    rounded-lg`}
-                  style={{
-                    border: selectedCourse === key ? '1px solid #003073' : 'none',
-                    borderRadius: '0',
-                    whiteSpace: 'normal',
-                    overflow: 'hidden',
-                  }}
-                >
-                  <span className="text-left break-words font-semibold">{buttonLabels[key]}</span>
-                  <span>{window.innerWidth < 768 ? '▼' : '>'}</span>
-                </button>
-
-                {showCards[key] && window.innerWidth < 768 && (
-                  <div className="course-card bg-[#003073] rounded-lg p-4 shadow-md mt-2">
-                    {courses[key].map((course, index) => (
-                      <div key={index} className="mb-4">
-                        <h3 className="text-[#ffc700] text-lg font-semibold mb-1">{course.title}</h3>
-                        <p className="text-white text-sm">{course.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+  const CourseSection = () => {
+    const [selectedCourse, setSelectedCourse] = useState('MECH');
+    const [showCards, setShowCards] = useState({ MECH: true });
+    const cardRefs = useRef([]);
+  
+    const changeCourse = (courseKey) => {
+      if (courseKey !== selectedCourse) {
+        setShowCards({ [courseKey]: true });
+        setSelectedCourse(courseKey);
+      } else {
+        setShowCards((prev) => ({ ...prev, [courseKey]: !prev[courseKey] }));
+      }
+    };
+  
+    const isMobile = window.innerWidth < 768; // Determine if the screen is mobile
+  
+    return (
+      <section className=" mx-auto px-8 sm:px-16 bg-[#091327] roboto-regular">
+        <div className="mb-8">
+          <p className="text-[#FFC80E] text-4xl text-center font-bold mb-4">TECHNICAL TRAINING</p>
         </div>
-
-        {/* Content Area - Cards shown to the right of the sidebar on medium and larger screens */}
-        {window.innerWidth >= 768 && (
-          <div className="content w-full lg:w-3/4 px-4 flex-grow flex flex-col">
-            <div className="flex-grow">
+        <div className="container mx-auto flex flex-wrap">
+          {/* Sidebar */}
+          <div className="course-sidebar w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
+            <div className="bg-[#091327] shadow-lg rounded-lg">
               {Object.keys(courses).map((key) => (
-                showCards[key] && (
-                  <div key={key} className="course-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {courses[key].map((course, index) => (
-                      <div key={index} className="card bg-[#003073] rounded-lg p-4 shadow-md">
-                        <img src={course.image} alt={course.title} className="w-full h-52 object-cover rounded-t-lg mb-4" />
-                        <h3 className="text-[#ffc700] text-lg font-semibold mb-2">{course.title}</h3>
-                        <p className="text-white text-sm mb-4">{course.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                )
+                <div key={key}>
+                  <button
+                    onClick={() => changeCourse(key)}
+                    className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300
+                      ${selectedCourse === key ? 'bg-[#FFC80E] text-[#003073] transform translate-x-2 shadow-2xl' : 'bg-[#003073] text-white'}
+                       transform-gpu hover:bg-[#FFC80E] hover:text-[#003073] hover:translate-x-2 hover:shadow-xl`}
+                  >
+                    <span className="text-left break-words font-semibold">{buttonLabels[key]}</span>
+                    <span className="flex items-center transition-all duration-300 transform hover:scale-105 hover:translate-x-1 hover:shadow-xl">
+                      {isMobile ? (showCards[key] ? <FiChevronDown /> : <FiChevronRight />) : (
+                        <FiChevronRight className="w-4 h-4 transition-transform transform hover:scale-125" />
+                      )}
+                    </span>
+                  </button>
+                </div>
               ))}
             </div>
           </div>
-        )}
-      </div>
-    </section>
-  );
-};
-
-export default CourseSection;
+  
+          {/* Content Area - Cards shown to the right of the sidebar */}
+          <div className="content w-full lg:w-3/4 px-4 flex-grow flex flex-col">
+            <div className="flex-grow grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4">
+              {Object.keys(courses).map(
+                (key) =>
+                  showCards[key] &&
+                  courses[key].map((course, index) => (
+                    <div key={`${key}-${index}`} className="flip-card" ref={(el) => (cardRefs.current[index] = el)}>
+                      <div className="flip-card-inner">
+                        <div className="flip-card-front">
+                          <img src={course.image} alt={course.title} className="object-cover rounded-lg" />
+                        </div>
+                        <div className="flip-card-back">
+                          
+                          <ul className="text-black text-sm text-center px-4 space-y-2">
+                            {course.description.map((item, idx) => (
+                              <li key={idx} className="list-disc list-inside">{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ))
+              )}
+            </div>
+          </div>
+        </div>
+  
+        <style>{`
+          /* Flip card styles */
+          .flip-card {
+            perspective: 1000px;
+            width: 100%;
+            height: 300px;
+          }
+  
+          .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+          }
+  
+          .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+          }
+  
+          .flip-card-front,
+          .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+  
+          .flip-card-front {
+            background-color: #f8f8f8;
+            overflow: hidden;
+          }
+  
+          .flip-card-back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #FFC80E;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+          }
+  
+          .flip-card-front img {
+            max-height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+          }
+  
+          .flip-card-back h3,
+          .flip-card-back p {
+            color: #003073;
+            text-align: center;
+            padding: 0 10px;
+          }
+        `}</style>
+      </section>
+    );
+  };
+  
+  export default CourseSection;

@@ -4,6 +4,7 @@ import FacultyWhy from "./FacultyWhy";
 import FacultyModule from "./FacultyModule";
 import ContactForm from "./ContactForm";
 import FDPContact from './FDPContact';
+import ConnectWithUs from "./ConnectWithUs";
 
 
 const FacultyTraining = () => {
@@ -12,8 +13,10 @@ const FacultyTraining = () => {
      <FacultyHero />
      <FacultyWhy />
      <FacultyModule />
-     <ContactForm />
      <FDPContact />
+     <ContactForm />
+     
+     <ConnectWithUs />
     </div>
   );
 };

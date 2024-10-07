@@ -3,10 +3,10 @@ import HeroTraining from "./HeroTraining"; // Adjust the path according to where
 import TrainingAbout from "./TrainingAbout"; // Adjust the path according to where your TrainingAbout component is located
 import WhyTraining from "./WhyTraining";
 import LearningOutcomes from "./LearningOutcomes";
-import AcrossIndia from "./AcrossIndia";
 import SlidingCollege from "./SlidingCollege";
 import ContactForm from "./ContactForm";
 import ConnectWithUs from "./ConnectWithUs";
+import BrochureSection from "./BrochureSection";
 
 
 const LearningAndDevelopment = () => {
@@ -16,8 +16,8 @@ const LearningAndDevelopment = () => {
       <TrainingAbout />
       <WhyTraining />
       <LearningOutcomes />
-    
       <SlidingCollege />
+      <BrochureSection />
       <ContactForm />
       <ConnectWithUs />
 

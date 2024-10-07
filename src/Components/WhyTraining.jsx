@@ -2,15 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faGraduationCap,
-  faClipboardList,
-  faUsers,
-  faLightbulb,
-  faComments,
-  faCogs,
-  faBriefcase,
-  faChalkboardTeacher,
-  faSync,
+  faUsersCog, // Industry – Ready Talent
+  faClipboardCheck, // Customized & curated content
+  faStar, // Tailored Skill sets
+  faDollarSign, // Reduced Training Costs
+  faClock, // Long Term Investment
+  faCheckCircle, // Evaluation Based Learning
+  faChalkboardTeacher, // Elite Guidance (Industry Experts)
+  faGraduationCap, // Comprehensive Development
+  faSyncAlt, // Real time based approach
 } from '@fortawesome/free-solid-svg-icons';
 
 function WhyTraining() {
@@ -35,16 +35,33 @@ function WhyTraining() {
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
+  // Stagger animation for items on the right side
+  const staggeredFadeIn = {
+    hidden: {},
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Delay between each item appearing
+        duration: 1,
+      },
+    },
+  };
+
+  const fadeInItem = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
+  };
+
   const items = [
-    { icon: faGraduationCap, text: 'Over two decades of instruction from highly skilled professionals' },
-    { icon: faClipboardList, text: 'Syllabus crafted to meet current market demands' },
-    { icon: faUsers, text: 'Advisory board featuring IIT and IIM luminaries' },
-    { icon: faLightbulb, text: 'Integrated approach combining technical expertise, soft skills, and aptitude training' },
-    { icon: faComments, text: 'LinkedIn testimonials from our students across India' },
-    { icon: faCogs, text: 'Customized learning paths for individual growth' },
-    { icon: faBriefcase, text: 'Industry-relevant projects and case studies' },
-    { icon: faChalkboardTeacher, text: 'Mentorship programs from leading experts' },
-    { icon: faSync, text: 'Continuous feedback and improvement loops' },
+    { icon: faUsersCog, text: 'Industry – Ready Talent' },
+    { icon: faClipboardCheck, text: 'Customized & Curated Content' },
+    { icon: faStar, text: 'Tailored Skill  Sets' },
+    { icon: faDollarSign, text: 'Reduced Training Costs' },
+    { icon: faClock, text: 'Long Term Investment' },
+    { icon: faCheckCircle, text: 'Evaluation Based Learning' },
+    { icon: faChalkboardTeacher, text: 'Elite Guidance (Industry Experts)' },
+    { icon: faGraduationCap, text: 'Comprehensive Development' },
+    { icon: faSyncAlt, text: 'Real Time Based Approach' },
   ];
 
   return (
@@ -56,7 +73,7 @@ function WhyTraining() {
             className="hidden lg:flex flex-col lg:flex-row bg-[#003073] rounded-2xl shadow-lg p-6"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.6 }}  
             variants={fadeInFromLeft}
           >
             {/* Left Content - 30% width */}
@@ -80,17 +97,53 @@ function WhyTraining() {
               </div>
             </motion.div>
 
-            {/* Right Content - 70% width */}
+            {/* Right Content - 70% width with staggered fade-in */}
             <motion.div
               className="flex-1 flex items-center justify-center w-9/12"
-              variants={fadeInFromRight}
+              variants={staggeredFadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.6 }}  
             >
-              <div className="grid grid-cols-3 gap-4 w-full">
+              <div className="grid grid-cols-3 gap-6 w-full">
                 {items.map((item, index) => (
-                  <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center">
-                    <FontAwesomeIcon icon={item.icon} style={{ color: highlightYellow, fontSize: '2rem', marginBottom: '0.5rem' }} />
+                  <motion.div
+                    key={index}
+                    className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400 hover:border-2 hover:border-yellow-400"
+                    variants={fadeInItem}
+                    whileHover={{
+                      scale: 1.05,  // Slightly scale the card
+                      transition: { duration: 0.3 },
+                    }}
+                  >
+                    {/* Icon (removed rotation effect) */}
+                    <motion.div
+                      whileHover={{
+                        scale: 1.2,  // Slightly scale up the icon
+                        y: -10,      // Bounce effect (move up)
+                        transition: {
+                          type: 'spring',
+                          stiffness: 100, // Bounciness
+                          damping: 10,    // Smoothness
+                        },
+                      }}
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        marginBottom: '0.5rem',
+                      }}
+                    >
+                      <FontAwesomeIcon
+                        icon={item.icon}
+                        style={{
+                          color: lightBlue,
+                          fontSize: '2rem',
+                        }}
+                      />
+                    </motion.div>
                     <p style={{ color: darkGray, fontWeight: '500' }}>{item.text}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -101,7 +154,7 @@ function WhyTraining() {
             className="flex lg:hidden flex-col bg-[#003073] rounded-2xl shadow-lg p-6"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.6 }}  
             variants={fadeInFromBottom}
           >
             <p
@@ -120,10 +173,34 @@ function WhyTraining() {
             </div>
             <div className="grid grid-cols-1 gap-4">
               {items.map((item, index) => (
-                <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center">
-                  <FontAwesomeIcon icon={item.icon} style={{ color: highlightYellow, fontSize: '2rem', marginBottom: '0.5rem' }} />
+                <motion.div
+                  key={index}
+                  className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400 hover:border-2 hover:border-yellow-400"
+                  variants={fadeInItem}
+                  whileHover={{
+                    scale: 1.05,  // Slightly scale the card
+                    transition: { duration: 0.3 },
+                  }}
+                >
+                  {/* Icon (removed rotation effect) */}
+                  <motion.div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      marginBottom: '0.5rem',
+                    }}
+                  >
+                    <FontAwesomeIcon
+                      icon={item.icon}
+                      style={{
+                        color: lightBlue,
+                        fontSize: '2rem',
+                      }}
+                    />
+                  </motion.div>
                   <p style={{ color: darkGray, fontWeight: '500' }}>{item.text}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>

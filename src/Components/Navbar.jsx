@@ -42,7 +42,7 @@ const Navbar = () => {
     <header className="bg-[#091327] text-[#ffffff] flex justify-between items-center p-4 roboto-regular">
       <a className="navbar-brand" href="/">
         <img
-          src="https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png"
+          src="LandingImage/GAlogo.png"
           alt="logo2"
           className="w-36 h-auto"
         />

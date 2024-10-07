@@ -4,8 +4,7 @@ import HeroCollege from "./HeroCollege";
 import CollegeBox from "./CollegeBox"; 
 import CollegeCourse from "./CollegeCourse"; 
 import SlidingCollege from "./SlidingCollege";
-import GetInTouch from "./GetInTouch"; // Import the new component
-import ContactForm from "./ContactForm";
+import ContactFormClg from "./ContactFormClg";
 import ConnectWithUs from "./ConnectWithUs";
 
 const CollegeTraining = () => {
@@ -16,7 +15,7 @@ const CollegeTraining = () => {
       <CollegeCourse />
       <CourseSection />
       <SlidingCollege />
-      <ContactForm />
+      <ContactFormClg />
       <ConnectWithUs />
       {/* Call the GetInTouch component */}
       {/* <GetInTouch /> */}

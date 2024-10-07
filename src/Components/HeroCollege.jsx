@@ -24,10 +24,8 @@ const HeroCollege = () => {
   }, []);
 
   return (
-    <main className={`relative roboto-regular flex flex-col justify-center bg-[#f0f4f8] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
-      {/* Blue Background Layer */}
-      <div className="absolute inset-0 bg-[#003073] z-0"></div>
-
+    <main className={`relative roboto-regular flex flex-col justify-center bg-[#003073] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
+      {/* Hero Section */}
       <div
         className="hero-section"
         style={{
@@ -38,7 +36,6 @@ const HeroCollege = () => {
       >
         {/* Heading Container */}
         <div className="heading-container absolute top-[10%] left-1/2 transform -translate-x-1/2 text-center z-10 roboto-regular px-8 sm:px-16">
-
           {imageLoaded && (
             <div className="font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl bg-clip-text text-transparent bg-gradient-to-r text-white">
               A JOURNEY FROM <span></span>
@@ -51,28 +48,38 @@ const HeroCollege = () => {
             </div>
           )}
           {imageLoaded && (
-            <p className="text-1xl sm:text-2xl lg:text-3xl xl:text-4xl text-white mt-2">Get Industry-Ready with Gryphon</p>
+            <p className="text-xl sm:text-xl lg:text-xl xl:text-2xl text-white mt-2 mx-8">
+              Preparing your students for the industry with our customized <br /> Industry Specific Training and Placement Solutions
+            </p>
           )}
         </div>
+      </div>
 
-        <div className="hero-overlay"></div>
-
-        {/* Text Information at the Bottom */}
-        <div className="text-info absolute bottom-4 left-1/2 transform -translate-x-1/2 w-full p-4 text-gray-800 z-2 flex flex-col sm:flex-row items-center sm:justify-around">
-          <div className="flex items-center mb-2 font-bold text-[#ffffff] text-xl">
+      {/* New Horizontal Section with Text Information */}
+      <section className="bg-[#122949] text-white py-4 px-8 sm:px-16">
+        <div className="flex justify-center items-center space-x-4">
+          <div className="flex items-center font-extrabold text-xl sm:text-2xl lg:text-3xl">
             <span className="check-icon-wrapper">
               <FaCheck className="check-icon" />
             </span>
-            Content approved by the Industry
+            Complete offline mode
           </div>
-          <div className="flex items-center sm:mb-0 font-bold text-[#ffffff] text-xl">
+          <div className="border-l-2 border-gray-400 h-16"></div> {/* Vertical divider */}
+          <div className="flex items-center font-extrabold text-xl sm:text-2xl lg:text-3xl">
             <span className="check-icon-wrapper">
               <FaCheck className="check-icon" />
             </span>
-            Then delivered by us to the students
+            Content approved by the Industry & then delivered
+          </div>
+          <div className="border-l-2 border-gray-400 h-16"></div> {/* Vertical divider */}
+          <div className="flex items-center font-extrabold text-xl sm:text-2xl lg:text-3xl">
+            <span className="check-icon-wrapper">
+              <FaCheck className="check-icon" />
+            </span>
+            Real – Scenario based learning
           </div>
         </div>
-      </div>
+      </section>
 
       <style>{`
         .hero-section {
@@ -91,37 +98,31 @@ const HeroCollege = () => {
           width: 100%;
         }
 
-        .hero-overlay {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.4);
-          z-index: 1;
-        }
-
-        .text-info {
-          padding: 0 1rem; /* Adjust padding if necessary */
-          z-index: 2;
-          margin-top: 20px; /* Spacing from the bottom */
-        }
-
         .check-icon-wrapper {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          width: 20px;
-          height: 20px;
-          background-color: #34D399;
+          width: 60px;
+          height: 40px;
+          background-color: #549C30;
           border-radius: 50%;
-          margin-right: 12px;
+         
         }
 
         .check-icon {
           color: white;
-          font-size: 16px;
+          font-size: 24px;
+        }
+
+        .border-l-2 {
+          border-left-width: 2px;
+          border-left-color: #ffffff;
+        }
+
+        section {
+          width: 100%;
+          max-width: 100%;
+          text-align: center;
         }
       `}</style>
     </main>
