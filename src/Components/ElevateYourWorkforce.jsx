@@ -8,7 +8,7 @@ function ElevateYourWorkforce() {
   };
 
   return (
-    <section className="bg-white py-8 px-4 sm:px-6 lg:px-8 roboto-regular">
+    <section className="bg-white py-8 px-4 sm:px-6 lg:px-8 roboto-regular relative">
       <div className="container mx-auto flex flex-col lg:flex-row lg:space-x-8">
         {/* Left column: Image */}
         <div className="lg:w-1/3 mb-8 lg:mb-0 flex justify-center">
@@ -21,8 +21,8 @@ function ElevateYourWorkforce() {
 
         {/* Right column: Content */}
         <div className="lg:w-2/3">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1D1D59] mb-4">ELEVATE YOUR WORKFORCE</h2>
-          <p className="text-base sm:text-lg text-gray-600 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1D1D59] mb-4 transition-transform transform">ELEVATE YOUR WORKFORCE</h2>
+          <p className="text-base sm:text-lg text-gray-600 mb-8 transition-opacity hover:opacity-80">
             Elevate your workforce to new heights with Gryphon Academy’s time-tested approach to corporate skill development.
           </p>
 
@@ -46,7 +46,7 @@ function ElevateYourWorkforce() {
                 description: "An effective way for companies to build a skilled and productive workforce while also reducing turnover and training costs."
               },
             ].map((feature, index) => (
-              <div key={index} className="flex items-start mb-4">
+              <div key={index} className="flex items-start mb-4 transition-transform transform hover:shadow-lg">
                 <div className="flex items-center justify-center w-5 h-5 border border-[#1D1D59] rounded-md mr-4 mt-1">
                   <MdCheck className="text-[#1D1D59] w-5 h-5" />
                 </div>
@@ -59,14 +59,23 @@ function ElevateYourWorkforce() {
           </div>
 
           {/* Button */}
-          <div className="mt-8">
+          <div className="mt-8 flex justify-center lg:justify-start"> {/* Center on small screens, left align on large screens */}
             <Link to="/contact" onClick={handleScrollToTop}>
-              <button className="bg-[#003073] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#002060] transition-colors focus:outline-none focus:ring-2 focus:ring-[#003073] focus:ring-opacity-50">
+              <button className="bg-[#003073] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#002060] transition-colors transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#003073] focus:ring-opacity-50">
                 See How It Works
               </button>
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* Dotted SVG */}
+      <div className="absolute bottom-10 right-10">
+        <img 
+          src="CorporatePage/training-dots.svg" 
+          alt="Dotted pattern" 
+          className="transition-transform transform hover:scale-105" 
+        />
       </div>
     </section>
   );
