@@ -122,7 +122,7 @@ const CollegeCourse = () => {
         {/* Soft Skills Section */}
         <div className="mb-4 text-center">
           <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#ffc700] mb-1">
-            SOFT SKILLS
+            INTER - PERSONAL SKILLS
           </p>
 
           <div className="flex flex-wrap justify-center lg:justify-start">

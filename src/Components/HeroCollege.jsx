@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { FaCheck } from 'react-icons/fa';
 
 const HeroCollege = () => {
   const [showClassroom, setShowClassroom] = useState(false);
@@ -56,27 +55,19 @@ const HeroCollege = () => {
       </div>
 
       {/* New Horizontal Section with Text Information */}
-      <section className="bg-[#122949] text-white py-4 px-8 sm:px-16">
-        <div className="flex justify-center items-center space-x-4">
-          <div className="flex items-center font-extrabold text-xl sm:text-2xl lg:text-3xl">
-            <span className="check-icon-wrapper">
-              <FaCheck className="check-icon" />
-            </span>
-            Complete offline mode
+      <section className="bg-[#122949] text-white py-8 px-4 sm:px-8 md:px-16">
+        <div className="flex flex-col md:flex-row justify-center items-center space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+          <div className="flex items-center font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl space-x-2">
+            <img src="Clgimage/tick2.png" alt="Tick" className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
+            <span>Complete offline mode</span>
           </div>
-          <div className="border-l-2 border-gray-400 h-16"></div> {/* Vertical divider */}
-          <div className="flex items-center font-extrabold text-xl sm:text-2xl lg:text-3xl">
-            <span className="check-icon-wrapper">
-              <FaCheck className="check-icon" />
-            </span>
-            Content approved by the Industry & then delivered
+          <div className="flex items-center font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl space-x-2">
+            <img src="Clgimage/tick2.png" alt="Tick" className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
+            <span>Content approved by the Industry <br /> & then delivered</span>
           </div>
-          <div className="border-l-2 border-gray-400 h-16"></div> {/* Vertical divider */}
-          <div className="flex items-center font-extrabold text-xl sm:text-2xl lg:text-3xl">
-            <span className="check-icon-wrapper">
-              <FaCheck className="check-icon" />
-            </span>
-            Real – Scenario based learning
+          <div className="flex items-center font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl space-x-2">
+            <img src="Clgimage/tick2.png" alt="Tick" className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
+            <span>Real – Scenario based learning</span>
           </div>
         </div>
       </section>
@@ -96,27 +87,6 @@ const HeroCollege = () => {
 
         .heading-container {
           width: 100%;
-        }
-
-        .check-icon-wrapper {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 60px;
-          height: 40px;
-          background-color: #549C30;
-          border-radius: 50%;
-         
-        }
-
-        .check-icon {
-          color: white;
-          font-size: 24px;
-        }
-
-        .border-l-2 {
-          border-left-width: 2px;
-          border-left-color: #ffffff;
         }
 
         section {

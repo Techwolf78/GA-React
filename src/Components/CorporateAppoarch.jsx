@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCalendarCheck, FaCogs, FaBriefcase } from 'react-icons/fa'; // Importing React Icons
+import { FaCalendarCheck, FaCogs, FaBriefcase } from 'react-icons/fa';
 
 const CorporateAppoarch = () => {
   return (
@@ -20,7 +20,7 @@ const CorporateAppoarch = () => {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
+          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:bg-[#00529b] hover:scale-105 hover:shadow-xl">
             <div className="flex items-center mb-4">
               <div className="text-4xl text-[#ffc700] mr-4">
                 <FaCalendarCheck />
@@ -35,7 +35,7 @@ const CorporateAppoarch = () => {
             </p>
           </div>
 
-          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
+          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:bg-[#00529b] hover:scale-105 hover:shadow-xl">
             <div className="flex items-center mb-4">
               <div className="text-4xl text-[#ffc700] mr-4">
                 <FaCogs />
@@ -53,7 +53,7 @@ const CorporateAppoarch = () => {
             </p>
           </div>
 
-          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
+          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:bg-[#00529b] hover:scale-105 hover:shadow-xl">
             <div className="flex items-center mb-4">
               <div className="text-4xl text-[#ffc700] mr-4">
                 <FaBriefcase />

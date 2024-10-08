@@ -1,4 +1,4 @@
-import  { useState,  } from "react";
+import { useState, } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useInView } from "react-intersection-observer";
@@ -187,6 +187,10 @@ const ContactForm = () => {
           .animate-slide {
             animation: slide 20s linear infinite;
           }
+
+            .animate-slide:hover {
+          animation-play-state: paused;
+        }
           .visually-hidden {
             position: absolute;
             width: 1px;
@@ -231,29 +235,26 @@ const ContactForm = () => {
 
           {/* Right Side - Contact Form */}
           <div ref={ref} className="w-full lg:w-1/2 flex flex-col items-center">
-            <div className="w-full ">
-              <h1 className="text-2xl font-bold text-center text-white mt-4">
-                Eager to tap into a network of over 450+ recruiters? Connect
-                with us today!
-              </h1>
-            </div>
-
-            <div className="w-full p-4 lg:p-6 bg-gradient-to-r from-blue-800 to-blue-600 rounded-lg shadow-lg text-white overflow-auto">
+            <div className="w-full p-4 lg:p-6 bg-gradient-to-r from-blue-800 to-blue-600 rounded-lg shadow-lg text-white overflow-auto mt-20">
               {/* Image Section */}
-              <div className="w-full h-72 flex justify-center items-center mb-4 relative">
+              <div className="w-full lg:h-auto flex flex-col lg:flex-row justify-center items-center mb-4 relative">
+                <h1 className="md:text-4xl text-2xl font-bold text-center text-white mb-4 lg:mb-0 lg:mr-4">
+                Eager to tap into a network of over 450+ <span className="text-[#FFC80E]">Recruiters? </span>
+                Connect with us <span className="text-[#FFC80E]">Today! </span>
+                </h1>
                 <img
                   src="LandingImage/contactform.png"
                   alt="Salesperson illustration"
-                  className="w-auto h-64 object-cover rounded-lg"
+                  className="w-96 max-w-md h-auto object-cover rounded-lg"
                 />
 
                 <img
                   src="LandingImage/union-design-img.svg"
                   alt="Rotating Triangle"
-                  className="absolute top-0 left-0 w-12 h-12"
+                  className="absolute top-0 w-12 h-12 left-0 md:left-18"
                   style={{
                     margin: "10px",
-                    animation: "spin 2s linear infinite", // Adjust the duration here
+                    animation: "spin 2s linear infinite",
                   }}
                 />
 
@@ -263,21 +264,22 @@ const ContactForm = () => {
                   className="absolute bottom-0 right-0 w-12 h-12"
                   style={{
                     margin: "10px",
-                    marginRight: "20px", // Adjust this value to shift it further right
-                    animation: "spin 2s linear infinite", // Adjust the duration here
+                    marginRight: "20px",
+                    animation: "spin 2s linear infinite",
                   }}
                 />
 
                 <img
                   src="LandingImage/curve-lines.svg"
                   alt="Waving Design"
-                  className="absolute bottom-0 left-0 w-24 h-24"
+                  className="absolute bottom-0 left-0 w-24 h-auto md:bottom-0 md:left-64"
                   style={{
                     marginBottom: "10px",
                     marginLeft: "10px",
                   }}
                 />
               </div>
+
               <form onSubmit={handleSubmit} className="flex flex-col gap-2">
                 <InputField
                   label="Name"

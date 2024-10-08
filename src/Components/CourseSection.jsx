@@ -2,6 +2,9 @@ import  { useState,  useRef } from 'react';
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi'; // Importing React Icons
 import 'tailwindcss/tailwind.css';
 
+// Add this image URL for the back side of all cards
+const backSideImageUrl = '/MECH/Yellow Bcakground.png'; // Update this with your actual image path
+
 // Course data and button labels
 const courses = {
   MECH: [
@@ -69,66 +72,68 @@ const courses = {
 
   CIVIL: [
     { 
-      title: '3D PRINTING', 
+      title: 'AUTO CAD', 
       description: [
-        'Understand the role of 3D printing in civil engineering applications.',
-        'Explore how prototypes and small-scale structures are created.',
-        'Learn about different 3D printing technologies (e.g., FDM, SLA).',
-        'Study the challenges and future of 3D printing in construction.'
+        'Learn the fundamentals of AutoCAD for civil engineering drafting.',
+        'Understand how to create and modify 2D and 3D designs.',
+        'Explore layer management, annotations, and plotting techniques.',
+        'Study best practices for accurate and efficient design representation.'
       ],
-      image: 'Civil Engineering/C1.png'
+      image: '/MECH/M1.png'
     },
+ 
     { 
-      title: 'RVT', 
+      title: 'STAAD PRO', 
       description: [
-        'Learn to use Revit for Building Information Modeling (BIM).',
-        'Explore design and documentation techniques for civil engineering projects.',
-        'Understand the integration of 3D models with structural and MEP systems.',
-        'Master workflow management in collaborative design environments.'
-      ],
-      image: 'Civil Engineering/C2.png'
-    },
-    { 
-      title: 'STRUCTURAL ANALYSIS', 
-      description: [
-        'Study methods for analyzing the structural integrity of buildings and infrastructure.',
-        'Learn the theory behind loads, stresses, and strains.',
-        'Explore the use of software tools for structural simulation.',
-        'Understand key concepts in material behavior and failure modes.'
+        'Master the use of STAAD Pro for structural analysis and design.',
+        'Learn to model, analyze, and design complex structures.',
+        'Explore various load cases and their impact on structural performance.',
+        'Understand the integration of design codes and standards in analysis.'
       ],
       image: 'Civil Engineering/C3.png'
     },
     { 
-      title: 'FOUNDATION ENGINEERING', 
+      title: 'REVIT', 
       description: [
-        'Understand the design and analysis of shallow and deep foundations.',
-        'Learn the impact of soil conditions on foundation choices.',
-        'Study the challenges of foundation design in various geological settings.',
-        'Analyze foundation settlement, stability, and safety.'
+        'Gain proficiency in Revit for advanced Building Information Modeling (BIM).',
+        'Explore the creation and management of 3D architectural models.',
+        'Learn how to collaborate effectively in multidisciplinary teams.',
+        'Understand the importance of documentation and visualization in projects.'
       ],
       image: 'Civil Engineering/C4.png'
     },
     { 
       title: 'BIM', 
       description: [
-        'Dive into Building Information Modeling (BIM) for civil engineering projects.',
-        'Understand the role of BIM in improving project efficiency and collaboration.',
-        'Learn how to manage and share data in construction and design.',
-        'Explore the benefits of BIM for lifecycle management of buildings.'
+        'Delve deeper into Building Information Modeling for project management.',
+        'Understand the workflow and benefits of BIM in civil engineering.',
+        'Learn to coordinate between different disciplines using BIM tools.',
+        'Explore the future of construction with integrated data and modeling.'
       ],
       image: 'Civil Engineering/C5.png'
     },
     { 
-      title: 'SUSTAINABLE DESIGN', 
+      title: 'MAX 3D', 
       description: [
-        'Explore sustainable design practices in civil engineering.',
-        'Learn to minimize environmental impact through eco-friendly materials.',
-        'Understand the principles of energy efficiency in building and infrastructure design.',
-        'Study methods for reducing resource consumption and waste in construction.'
+        'Discover the application of 3ds Max in visualizing civil engineering projects.',
+        'Learn to create realistic renderings and animations of designs.',
+        'Explore the use of lighting, materials, and textures for presentations.',
+        'Understand how to communicate design intent effectively through 3D visuals.'
       ],
       image: 'Civil Engineering/C6.png'
+    },
+    { 
+      title: 'ESTIMATION & COSTING', 
+      description: [
+        'Understand the principles of project estimation and budgeting.',
+        'Learn how to prepare detailed cost estimates for civil projects.',
+        'Explore methods for analyzing project expenses and resources.',
+        'Study the impact of accurate estimation on project success.'
+      ],
+      image: 'Civil Engineering/C2.png'
     }
-  ],
+],
+
 
   COMP: [
     { 
@@ -532,21 +537,21 @@ const courses = {
       description: [
         'Comprehensive program in business administration with practical and theoretical knowledge.'
       ],
-      image: 'Diploma/1.jpg' 
+      image: 'MECH/M2.png' 
     },
     { 
       title: 'Diploma in Computer Science', 
       description: [
         'In-depth study of computer science fundamentals and programming.'
       ],
-      image: 'Diploma/2.jpg' 
+      image: 'MECH/M2.png' 
     },
     { 
       title: 'Diploma in Mechanical Engineering', 
       description: [
         'Focus on mechanical engineering principles and applications.'
       ],
-      image: 'Diploma/3.jpg' 
+      image: 'MECH/M2.png' 
     }
   ],
 
@@ -599,24 +604,25 @@ const courses = {
       }
     };
   
-    const isMobile = window.innerWidth < 768; // Determine if the screen is mobile
+    const isMobile = window.innerWidth < 768;
   
     return (
-      <section className=" mx-auto px-8 sm:px-16 bg-[#091327] roboto-regular">
+      <section className="mx-auto px-8 sm:px-16 bg-[#091327] roboto-regular">
         <div className="mb-8">
           <p className="text-[#FFC80E] text-4xl text-center font-bold mb-4">TECHNICAL TRAINING</p>
         </div>
         <div className="container mx-auto flex flex-wrap">
           {/* Sidebar */}
           <div className="course-sidebar w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
-            <div className="bg-[#091327] shadow-lg rounded-lg">
+            <div className="bg-[#091327] shadow-lg">
               {Object.keys(courses).map((key) => (
                 <div key={key}>
                   <button
                     onClick={() => changeCourse(key)}
+                    aria-expanded={showCards[key]}
                     className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300
-                      ${selectedCourse === key ? 'bg-[#FFC80E] text-[#003073] transform translate-x-2 shadow-2xl' : 'bg-[#003073] text-white'}
-                       transform-gpu hover:bg-[#FFC80E] hover:text-[#003073] hover:translate-x-2 hover:shadow-xl`}
+                    ${selectedCourse === key ? 'bg-[#FFC80E] text-[#003073] transform translate-x-2 shadow-2xl' : 'bg-[#003073] text-white'}
+                    transform-gpu hover:bg-[#FFC80E] hover:text-[#003073] hover:translate-x-2 hover:shadow-xl`}
                   >
                     <span className="text-left break-words font-semibold">{buttonLabels[key]}</span>
                     <span className="flex items-center transition-all duration-300 transform hover:scale-105 hover:translate-x-1 hover:shadow-xl">
@@ -631,94 +637,103 @@ const courses = {
           </div>
   
           {/* Content Area - Cards shown to the right of the sidebar */}
-          <div className="content w-full lg:w-3/4 px-4 flex-grow flex flex-col">
-            <div className="flex-grow grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4">
-              {Object.keys(courses).map(
-                (key) =>
-                  showCards[key] &&
-                  courses[key].map((course, index) => (
-                    <div key={`${key}-${index}`} className="flip-card" ref={(el) => (cardRefs.current[index] = el)}>
-                      <div className="flip-card-inner">
-                        <div className="flip-card-front">
-                          <img src={course.image} alt={course.title} className="object-cover rounded-lg" />
-                        </div>
-                        <div className="flip-card-back">
-                          
-                          <ul className="text-black text-sm text-center px-4 space-y-2">
-                            {course.description.map((item, idx) => (
-                              <li key={idx} className="list-disc list-inside">{item}</li>
-                            ))}
-                          </ul>
-                        </div>
+          <div className="flex-grow grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Object.keys(courses).map(
+              (key) =>
+                showCards[key] &&
+                courses[key].map((course, index) => (
+                  <div key={`${key}-${index}`} className="flip-card" ref={(el) => (cardRefs.current[index] = el)}>
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front aspect-[3/2]">
+                        <img src={course.image} alt={course.title} className="object-cover w-full h-full" />
+                      </div>
+                      <div className="flip-card-back aspect-[3/2]">
+                        <ul className="text-black text-base text-left space-y-2">
+                          {course.description.map((item, idx) => (
+                            <li key={idx} className="list-disc list-inside pl-4">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
-                  ))
-              )}
-            </div>
+                  </div>
+                ))
+            )}
           </div>
         </div>
   
         <style>{`
-          /* Flip card styles */
-          .flip-card {
-            perspective: 1000px;
-            width: 100%;
-            height: 300px;
-          }
-  
-          .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-          }
-  
-          .flip-card:hover .flip-card-inner {
-            transform: rotateY(180deg);
-          }
-  
-          .flip-card-front,
-          .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-  
-          .flip-card-front {
-            background-color: #f8f8f8;
-            overflow: hidden;
-          }
-  
-          .flip-card-back {
-            transform: rotateY(180deg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-color: #FFC80E;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-          }
-  
-          .flip-card-front img {
-            max-height: 100%;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 1rem;
-          }
-  
-          .flip-card-back h3,
-          .flip-card-back p {
-            color: #003073;
-            text-align: center;
-            padding: 0 10px;
-          }
-        `}</style>
+/* Flip card styles */
+.flip-card {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 300px; /* Set a max width for better layout */
+    height: 330px; /* Set a fixed height for the card */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Ensure height is defined */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%; /* Ensure both sides take full height */
+    backface-visibility: hidden;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.flip-card-front {
+    background-color: #f8f8f8;
+}
+
+.flip-card-back {
+    background-image: url('${backSideImageUrl}'); /* Set the background image */
+    background-size: cover; /* Ensure the image covers the card without cropping */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center; /* Center the image */
+    transform: rotateY(180deg);
+    padding: 20px; /* Add padding for content */
+    color: #003073; /* Set text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Adjust styles for bullet points to overlay directly on the background image */
+.flip-card-back ul {
+    padding: 0; /* Remove padding to allow direct overlay */
+    margin: 0; /* Remove margin for better positioning */
+    text-align: left; /* Align text to the left */
+    list-style-position: inside; /* Position bullets inside */
+    color: #ffffff; /* Change text color for better visibility on the image */
+}
+
+/* Media Queries for better responsiveness */
+@media (max-width: 768px) {
+    .course-sidebar {
+        flex: 1 1 100%; /* Full width on mobile */
+    }
+
+    .flex-grow {
+        flex: 1 1 100%; /* Full width on mobile */
+    }
+}
+`}</style>
+
       </section>
     );
   };
