@@ -39,7 +39,7 @@ const Advisory = () => {
   const duplicatedData = [...ADVISORY_DATA, ...ADVISORY_DATA]; // Keep the structure
 
   return (
-    <div className="p-8 bg-[#091327] roboto-regular">
+    <div className="py-4 bg-[#091327] roboto-regular">
       <div className="mb-12">
         <h2 className="text-center mb-6 font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-4xl text-[#ffc700]">
           OUR ADVISORY BOARD

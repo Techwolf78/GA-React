@@ -17,7 +17,7 @@ const SlidingCollege = () => {
   ];
 
   return (
-    <div className="logo-slider-section bg-[#091327]  mx-auto px-8 sm:px-8 md:px-16 lg:px-16 py-4 roboto-regular">
+    <div className="logo-slider-section bg-[#091327]   py-4 roboto-regular">
       <div className="container mx-auto ">
         <p className="section-heading text-[#FFC80E] text-center text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold mb-4">
           OUR COLLEGE PARTNERS
