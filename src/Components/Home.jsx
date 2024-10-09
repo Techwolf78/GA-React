@@ -219,7 +219,7 @@ const Home = () => {
     </Link>
   </div>
   <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
-  <img src="LandingImage/Mobile2.png" alt="Mobile Vector" className="mobile-vector-image" />
+  <img src="LandingImage/Mobile 2.png" alt="Mobile Vector" className="mobile-vector-image" />
 </div>
 
 <div id="operating_models" className="section operating-models-section left" ref={trainingRef}>
@@ -233,7 +233,7 @@ const Home = () => {
     </Link>
   </div>
   <img src="LandingImage/pattern-new.png" alt="Left Side Design" className="left-side-image" />
-  <img src="LandingImage/Mobile3.png" alt="Mobile Vector" className="mobile-vector-image" />
+  <img src="LandingImage/Mobile 3.png" alt="Mobile Vector" className="mobile-vector-image" />
 </div>
 
 <div id="talent_transformations" className="section talent-transformations-section right" ref={placementRef}>
@@ -247,7 +247,7 @@ const Home = () => {
     </Link>
   </div>
   <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
-  <img src="LandingImage/Mobile4.png" alt="Mobile Vector" className="mobile-vector-image" />
+  <img src="LandingImage/Mobile 4.png" alt="Mobile Vector" className="mobile-vector-image" />
 </div>
 
 <div id="do_more" className="section do-more-section left" ref={brandingRef}>
