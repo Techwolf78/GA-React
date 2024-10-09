@@ -1,4 +1,4 @@
-import { useState, } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useInView } from "react-intersection-observer";
@@ -91,7 +91,7 @@ const TestimonialCard = ({ testimonial }) => (
 // Testimonials Component
 const Testimonials = () => {
   return (
-    <div className="w-full lg:w-1/2 p-4 hidden sm:block">
+    <div className="w-full lg:w-1/2  hidden sm:block">
       <h2 className="text-3xl font-bold text-center mb-6 text-white">
         COLLEGE TESTIMONIALS
       </h2>
@@ -228,7 +228,7 @@ const ContactForm = () => {
         `}
       </style>
 
-      <div className="container mx-auto px-6 sm:px-8 lg:px-10 roboto-regular">
+      <div className="container mx-auto px-8 sm:px-8 md:px-16 lg:px-16 py-4 roboto-regular">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Side - Testimonials */}
           <Testimonials />

@@ -11,12 +11,12 @@ const courses = {
     {
       src: "Training Page/SS 2.png",
       alt: "Effective Communication Skills",
-      title: "Effective Communication ",
+      title: "Effective Communication (Business Communication) ",
     },
     {
       src: "Training Page/SS 1.png",
       alt: "Productivity Tools",
-      title: "Productivity Tools (Presentation, Time Management)",
+      title: "Productivity Tools <br />(Presentation, Time Management)",
     },
     {
       src: "Training Page/SS 5.png",
@@ -79,13 +79,13 @@ const CourseCard = React.forwardRef(
           ref={ref}
           className="bg-[#003073] text-white text-center font-extrabold text-lg flex items-center justify-center"
           style={{ minHeight: "60px", overflow: "hidden" }}
-        >
-          {title}
-        </div>
+          dangerouslySetInnerHTML={{ __html: title }} // Use dangerouslySetInnerHTML
+        />
       </div>
     </div>
   )
 );
+
 
 const CollegeCourse = () => {
   const softSkillsRefs = useRef([]);

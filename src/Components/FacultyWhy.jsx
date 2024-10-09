@@ -28,11 +28,11 @@ function FacultyWhy() {
   }, []);
 
   return (
-    <div className="px-8 md:px-16 max-w-7xl mx-auto bg-[#091327] py-4 shadow-2xl roboto-regular">
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[#ffc700] text-center mb-8 sm:mb-12">
+    <div className="px-4 md:px-8 lg:px-16 mx-auto bg-[#091327] py-8 shadow-2xl roboto-regular">
+      <h1 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-extrabold text-[#ffc700] text-center mb-8">
         WHY CHOOSE GRYPHON ACADEMY'S FDP?
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {keyFeatures.map((feature, index) => (
           <motion.div
             key={index}
@@ -49,7 +49,7 @@ function FacultyWhy() {
                 style={{ transform: 'scaleX(0)', transformOrigin: 'bottom left' }}
               />
             </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-[#091327] leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-[#091327] leading-relaxed flex-grow">
               {feature.description}
             </p>
           </motion.div>

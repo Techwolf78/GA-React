@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaCalendarCheck, FaCogs, FaBriefcase } from 'react-icons/fa';
 
 const CorporateAppoarch = () => {
   return (
@@ -20,55 +19,76 @@ const CorporateAppoarch = () => {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:bg-[#00529b] hover:scale-105 hover:shadow-xl">
+        <div className="bg-[#ffffff] text-[#000000] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300  hover:shadow-xl">
             <div className="flex items-center mb-4">
-              <div className="text-4xl text-[#ffc700] mr-4">
-                <FaCalendarCheck />
-              </div>
-              <h4 className="text-xl font-semibold text-[#ffc700]">Easy to Implement</h4>
+              <h4 className="text-xl font-semibold text-[#003073] underline">Easy to Implement</h4>
             </div>
-            <p className="text-[#ffffff] mb-2">
+            <div className="flex items-start mb-2">
+              <img src="CorporatePage/1.png" alt="Needs Assessment Icon" className="w-10 h-10" />
+              <p className="ml-2">
               <strong>Streamlined Training Delivery:</strong> Our offline and blended learning formats seamlessly integrate into your existing curriculum, minimizing disruption.
-            </p>
-            <p className="text-[#ffffff]">
-              <strong>Flexible Scheduling:</strong> Modular courses and on-demand access allow for customization to fit your organization’s schedule.
-            </p>
+              </p>
+            </div>
+            <div className="flex items-start mb-2">
+              <img src="CorporatePage/2.png" alt="Industry Specific Modules Icon" className="w-10 h-10" />
+              <p className="ml-2">
+              <strong>Flexible Scheduling:</strong> Modular courses and on-demand access allow for customization to fit your organization’s schedule..
+              </p>
+            </div>
+            <div className="flex items-start">
+              <img src="CorporatePage/3.png" alt="Student Centric Learning Icon" className="w-10 h-10" />
+              <p className="ml-2">
+                <strong>Student Centric Learning:</strong> Interactive activities and case studies cater to diverse learning styles and real-world applications.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:bg-[#00529b] hover:scale-105 hover:shadow-xl">
+          <div className="bg-[#ffffff] text-[#000000] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300  hover:shadow-xl">
             <div className="flex items-center mb-4">
-              <div className="text-4xl text-[#ffc700] mr-4">
-                <FaCogs />
-              </div>
-              <h4 className="text-xl font-semibold text-[#ffc700]">Customized Content</h4>
+              <h4 className="text-xl font-semibold text-[#003073] underline">Customized Content</h4>
             </div>
-            <p className="text-[#ffffff] mb-2">
-              <strong>Needs Assessment:</strong> We work with you to identify specific skill gaps and tailor training to address your organization’s unique requirements.
-            </p>
-            <p className="text-[#ffffff] mb-2">
-              <strong>Industry Specific Modules:</strong> Choose from a diverse range of modules aligned with current industry trends and job demands.
-            </p>
-            <p className="text-[#ffffff]">
-              <strong>Student Centric Learning:</strong> Interactive activities and case studies cater to diverse learning styles and real-world applications.
-            </p>
+            <div className="flex items-start mb-2">
+              <img src="CorporatePage/1.png" alt="Needs Assessment Icon" className="w-10 h-10" />
+              <p className="ml-2">
+                <strong>Needs Assessment:</strong> We work with you to identify specific skill gaps and tailor training to address your organization’s unique requirements.
+              </p>
+            </div>
+            <div className="flex items-start mb-2">
+              <img src="CorporatePage/2.png" alt="Industry Specific Modules Icon" className="w-10 h-10" />
+              <p className="ml-2">
+                <strong>Industry Specific Modules:</strong> Choose from a diverse range of modules aligned with current industry trends and job demands.
+              </p>
+            </div>
+            <div className="flex items-start">
+              <img src="CorporatePage/3.png" alt="Student Centric Learning Icon" className="w-10 h-10" />
+              <p className="ml-2">
+                <strong>Student Centric Learning:</strong> Interactive activities and case studies cater to diverse learning styles and real-world applications.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:bg-[#00529b] hover:scale-105 hover:shadow-xl">
+          <div className="bg-[#ffffff] text-[#000000] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300  hover:shadow-xl">
             <div className="flex items-center mb-4">
-              <div className="text-4xl text-[#ffc700] mr-4">
-                <FaBriefcase />
-              </div>
-              <h4 className="text-xl font-semibold text-[#ffc700]">Industry Relevant</h4>
+              <h4 className="text-xl font-semibold text-[#003073] underline">Industry Relevant</h4>
             </div>
-            <p className="text-[#ffffff] mb-2">
-              <strong>Advisory Board:</strong> Our board comprises industry experts who ensure our training programs stay current and prepare participants for in-demand skills.
-            </p>
-            <p className="text-[#ffffff] mb-2">
-              <strong>Real World Case Studies:</strong> Participants tackle authentic industry challenges through project-based learning, gaining practical experience.
-            </p>
-            <p className="text-[#ffffff]">
-              <strong>Employer Connections:</strong> We facilitate partnerships with leading companies in various fields and domains.
-            </p>
+            <div className="flex items-start mb-2">
+              <img src="CorporatePage/1.png" alt="Advisory Board Icon" className="w-10 h-10" />
+              <p className="ml-2">
+                <strong>Advisory Board:</strong> Our board comprises industry experts who ensure our training programs stay current and prepare participants for in-demand skills.
+              </p>
+            </div>
+            <div className="flex items-start mb-2">
+              <img src="CorporatePage/2.png" alt="Real World Case Studies Icon" className="w-10 h-10" />
+              <p className="ml-2">
+                <strong>Real World Case Studies:</strong> Participants tackle authentic industry challenges through project-based learning, gaining practical experience.
+              </p>
+            </div>
+            <div className="flex items-start">
+              <img src="CorporatePage/3.png" alt="Employer Connections Icon" className="w-10 h-10" />
+              <p className="ml-2">
+                <strong>Employer Connections:</strong> We facilitate partnerships with leading companies in various fields and domains.
+              </p>
+            </div>
           </div>
         </div>
       </div>

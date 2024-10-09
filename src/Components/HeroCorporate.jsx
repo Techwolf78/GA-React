@@ -1,6 +1,4 @@
 import React from 'react';
-import ElevateYourWorkforce from './ElevateYourWorkforce'; // Adjust the path as needed
-
 const backgroundImage = "/Corporate Training Page Zip/Corporate Training.png"; // Static image
 const vectorImage = "/path/to/your/vector-image.png"; // Vector image for mobile
 
@@ -44,8 +42,7 @@ function HeroCorporate() {
         />
       </div>
 
-      {/* New Section */}
-      <ElevateYourWorkforce />
+
     </div>
   );
 }

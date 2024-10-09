@@ -23,7 +23,7 @@ const HeroCollege = () => {
   }, []);
 
   return (
-    <main className={`relative roboto-regular flex flex-col justify-center bg-[#003073] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
+    <main className={`relative  roboto-regular flex flex-col justify-center bg-[#003073] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
       {/* Hero Section */}
       <div
         className="hero-section"

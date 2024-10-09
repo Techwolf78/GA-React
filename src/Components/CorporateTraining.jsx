@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroCorporate from './HeroCorporate';
+import ElevateYourWorkforce from './ElevateYourWorkforce'; // Adjust the path as needed
 import CorporateChallenge from './CorporateChallenge';
 import CorporateAppoarch from './CorporateAppoarch';
 import ContactForm from './ContactForm';
@@ -9,6 +10,8 @@ const CorporateTraining = () => {
   return (
     <div>
       <HeroCorporate />
+      {/* New Section */}
+      <ElevateYourWorkforce />
       <CorporateChallenge />
       <CorporateAppoarch />
       <ContactForm />
