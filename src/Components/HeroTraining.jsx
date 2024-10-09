@@ -121,16 +121,7 @@ const HeroTraining = () => {
             <div className="border-2 border-[#FFC80E] absolute inset-0 pointer-events-none"></div>
           </div>
 
-          <div className="relative stat-box">
-            <div className="p-2 bg-[#003073] shadow-md flex items-center transition duration-300 hover:bg-[#002060]">
-              <FaChalkboardTeacher className="text-[#FFC80E] text-xl sm:text-2xl" />
-              <div className="text-center ml-2">
-                <h3 className="text-xs sm:text-sm font-bold text-[#FFC80E]">Expert Trainers</h3>
-                <span className="text-[#ffffff] block text-xs sm:text-sm">Learn from industry experts</span>
-              </div>
-            </div>
-            <div className="border-2 border-[#FFC80E] absolute inset-0 pointer-events-none"></div>
-          </div>
+   
         </div>
         
         <button

@@ -5,7 +5,7 @@ const brochurePDF = './Training Page/Gryphon-Academy-Brochure.pdf'; // Path for 
 
 const BrochureSection = () => {
   return (
-    <div className="flex flex-col items-center justify-center p-6">
+    <div className="flex flex-col items-center justify-center  mx-auto px-8 sm:px-8 md:px-16 lg:px-16 py-4 ">
       <style>
         {`
           .bg-brochure {

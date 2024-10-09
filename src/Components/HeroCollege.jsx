@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+
 const HeroCollege = () => {
   const [showClassroom, setShowClassroom] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -23,7 +24,7 @@ const HeroCollege = () => {
   }, []);
 
   return (
-    <main className={`relative  roboto-regular flex flex-col justify-center bg-[#003073] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
+    <main className={`relative roboto-regular flex flex-col justify-center bg-[#003073] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
       {/* Hero Section */}
       <div
         className="hero-section"
@@ -54,36 +55,22 @@ const HeroCollege = () => {
         </div>
       </div>
 
-      {/* New Horizontal Section with Text Information */}
-      <section className="bg-[#122949] text-white py-8 px-4 sm:px-8 md:px-16">
-        <div className="flex flex-col md:flex-row justify-center items-center space-x-0 md:space-x-4 space-y-4 md:space-y-0">
-          <div className="flex items-center font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl space-x-2">
-            <img src="Clgimage/tick2.png" alt="Tick" className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
-            <span>Complete offline mode</span>
-          </div>
-          <div className="flex items-center font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl space-x-2">
-            <img src="Clgimage/tick2.png" alt="Tick" className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
-            <span>Content approved by the Industry <br /> & then delivered</span>
-          </div>
-          <div className="flex items-center font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl space-x-2">
-            <img src="Clgimage/tick2.png" alt="Tick" className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
-            <span>Real – Scenario based learning</span>
-          </div>
-        </div>
-      </section>
+   
 
       <style>{`
-        .hero-section {
-          background-size: cover;
-          background-position: center;
-          height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          text-align: center;
-          color: white;
-        }
+     .hero-section {
+  background-size: contain; /* Change to contain if you want the whole image to be visible */
+ 
+  background-position: center;
+  min-height: 100vh; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
 
         .heading-container {
           width: 100%;

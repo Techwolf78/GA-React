@@ -1,6 +1,7 @@
 import React from "react";
 import CourseSection from "./CourseSection"; 
 import HeroCollege from "./HeroCollege"; 
+import CollegeInfoSection from './CollegeInfoSection'; // Adjust the import path as necessary
 import CollegeBox from "./CollegeBox"; 
 import CollegeCourse from "./CollegeCourse"; 
 import SlidingCollege from "./SlidingCollege";
@@ -11,6 +12,8 @@ const CollegeTraining = () => {
   return (
     <div>
       <HeroCollege />
+         {/* College Info Section */}
+         <CollegeInfoSection />
       <CollegeBox />
       <CollegeCourse />
       <CourseSection />

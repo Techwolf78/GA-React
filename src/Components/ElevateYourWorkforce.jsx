@@ -15,7 +15,7 @@ function ElevateYourWorkforce() {
           <img 
             src="CorporatePage/elevate.png" 
             alt="Illustration of corporate training" 
-            className="rounded-lg w-full h-auto object-cover max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full"
+            className="rounded-lg w-full h-auto object-contain max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full"
           />
         </div>
 
