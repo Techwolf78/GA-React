@@ -205,6 +205,7 @@ const Home = () => {
       <span>Know More</span>
     </Link>
   </div>
+  <img src="LandingImage/MobileHero.png" alt="Mobile Vector" className="mobile-vector-image" />
 </div>
 
 {/* Other sections */}
