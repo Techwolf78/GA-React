@@ -42,7 +42,7 @@ const Navbar = () => {
     <header className="bg-[#091327] text-[#ffffff] flex justify-between items-center p-4 roboto-regular">
       <a className="navbar-brand" href="/">
         <img
-          src="LandingImage/GAlogo.png"
+          src="/LandingImage/NewLogo.png"
           alt="logo2"
           className="w-36 h-auto"
         />

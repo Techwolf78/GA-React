@@ -200,7 +200,9 @@ const Home = () => {
       {displayText}
       <span className={`cursor ${isBlinking ? 'blink' : ''}`}>|</span>
     </h2>
-    <p>Making students Industry Ready with our Customized Industry Readiness Programme</p>
+    <p>Making students Industry Ready with our Customized Industry Readiness Programme
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laborum vel qui dolore, consequatur repellendus! Eligendi, aperiam quas numquam consequuntur iste obcaecati ullam repellendus libero est minus placeat nesciunt ratione.
+    </p>
     <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>
     </Link>
