@@ -31,7 +31,7 @@ const BrochureSection = () => {
         </div>
         <div className="flex-none w-full md:w-2/3 flex flex-col items-center md:items-end text-white">
           <div className="flex flex-col items-center justify-center h-full text-center md:text-right">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 break-words">
+            <h2 className="text-xl  md:text-2xl font-bold mb-2 break-words">
               Download Brochure for More Information
             </h2>
             <a

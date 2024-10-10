@@ -41,16 +41,19 @@ const HeroCollege = () => {
         {/* Heading Container */}
         <div className="text-center z-10 px-4">
           {imageLoaded && (
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold mb-4">
-              A JOURNEY FROM 
-              <span className="text-[#FFC80E] inline-flex flex-col h-auto">
-                <ul className={`block ${showClassroom ? 'animate-text-slide-stop' : 'animate-text-slide'} leading-tight`}>
-                  <li className="transition-opacity duration-1000">{!showClassroom && 'COLLEGE'}</li>
-                  <li className={`transition-opacity duration-1000 ${showClassroom ? 'opacity-100' : 'opacity-0'}`}>CLASSROOM</li>
-                </ul>
-              </span>
-              TO CORPORATE
-            </h1>
+       <h1 className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold mb-4">
+       A JOURNEY FROM  
+       <span className="text-[#FFC80E] inline-flex flex-col h-auto">
+         <ul className={`block ${showClassroom ? 'animate-text-slide-stop' : 'animate-text-slide'} leading-tight`}>
+           <li className="transition-opacity duration-1000">{!showClassroom && 'COLLEGE'}</li>
+           <li className={`transition-opacity duration-1000 ${showClassroom ? 'opacity-100' : 'opacity-0'}`}>
+             <span className="mx-2">CLASSROOM</span> {/* Adjusted this line */}
+           </li>
+         </ul>
+       </span>
+       TO CORPORATE
+     </h1>
+     
           )}
           {imageLoaded && (
             <p className="text-lg sm:text-xl text-white mt-2">

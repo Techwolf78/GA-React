@@ -48,7 +48,7 @@ const Navbar = () => {
         />
       </a>
 
-      <nav className="hidden md:flex space-x-4">
+      <nav className="hidden lg:flex space-x-4">
         <Link
           to="/"
           className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
@@ -121,7 +121,7 @@ const Navbar = () => {
         </Link>
       </nav>
 
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <button
           className="text-[#ffffff] text-3xl focus:outline-none"
           onClick={toggleSidebar}
@@ -131,9 +131,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`fixed top-0 left-0 h-full bg-[#091327] text-[#ffffff] z-40 overflow-x-hidden transition-width duration-500 ease-in-out ${
-          isSidebarOpen ? "w-64" : "w-0"
-        }`}
+        className={`fixed top-0 left-0 h-full bg-[#091327] text-[#ffffff] z-40 overflow-x-hidden transition-width duration-500 ease-in-out ${isSidebarOpen ? "w-64" : "w-0"}`}
       >
         <button
           className="absolute top-0 right-4 text-4xl focus:outline-none text-[#ffffff]"

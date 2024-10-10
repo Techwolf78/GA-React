@@ -17,25 +17,23 @@ const SlidingCollege = () => {
   ];
 
   return (
-    <div className="logo-slider-section bg-[#091327]   py-4 roboto-regular">
-      <div className="container mx-auto ">
-        <p className="section-heading text-[#FFC80E] text-center text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold mb-4">
-          OUR COLLEGE PARTNERS
-        </p>
-        <div className="logo-slider relative overflow-hidden w-full">
-          <div className="logo-slider-track flex animate-scroll">
-            {logos.map((logo, index) => (
-              <div key={index} className="logo-slider-item flex-none mx-3 sm:mx-4 md:mx-5">
-                <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[120px] object-contain" />
-              </div>
-            ))}
-            {/* Duplicate the logos for seamless scrolling */}
-            {logos.map((logo, index) => (
-              <div key={`duplicate-${index}`} className="logo-slider-item flex-none mx-3 sm:mx-4 md:mx-5">
-                <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[120px] object-contain" />
-              </div>
-            ))}
-          </div>
+    <div className="logo-slider-section bg-[#091327] py-4 roboto-regular">
+      <p className="section-heading text-[#FFC80E] text-center text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold mb-4">
+        OUR COLLEGE PARTNERS
+      </p>
+      <div className="logo-slider relative overflow-hidden w-full">
+        <div className="logo-slider-track flex animate-scroll">
+          {logos.map((logo, index) => (
+            <div key={index} className="logo-slider-item flex-none mx-3 sm:mx-4 md:mx-5">
+              <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[120px] object-contain" />
+            </div>
+          ))}
+          {/* Duplicate the logos for seamless scrolling */}
+          {logos.map((logo, index) => (
+            <div key={`duplicate-${index}`} className="logo-slider-item flex-none mx-3 sm:mx-4 md:mx-5">
+              <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[120px] object-contain" />
+            </div>
+          ))}
         </div>
       </div>
 
