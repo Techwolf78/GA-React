@@ -165,7 +165,9 @@ const Home = () => {
       {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`} id="sidebar" ref={sidebarRef}>
         <ul>
-        <li><Link to="/blogs" onClick={scrollToTop}><span>Blogs</span></Link></li>
+        <li className="hidden-on-large"><Link to="/placement" onClick={scrollToTop}><span>Placement</span></Link></li>
+       
+        
           <li>
             <Link to="/training" onClick={scrollToTop}><span>Training</span></Link>
             <ul>
@@ -174,7 +176,8 @@ const Home = () => {
               <li><Link to="/facultyTraining" onClick={scrollToTop}><span>Faculty Training</span></Link></li>
             </ul>
           </li>
-
+          <li className="hidden-on-large"><Link to="/training" onClick={scrollToTop}><span>Cross Brand Positioning</span></Link></li>
+          <li><Link to="/blogs" onClick={scrollToTop}><span>Blogs</span></Link></li>
           <li><Link to="/contact" onClick={scrollToTop}><span>Contact us</span></Link></li>
         </ul>
       </div>
@@ -193,20 +196,20 @@ const Home = () => {
         <div className="company-logo"></div>
       </Link>
 
-      {/* Hero Section */}
+{/* Hero Section */}
 <div id="hero_slider" className="section roboto-regular hero-slider-section left" ref={heroRef}>
   <div className="section-content left">
     <h2>
       {displayText}
       <span className={`cursor ${isBlinking ? 'blink' : ''}`}>|</span>
     </h2>
-    <p>Making students Industry Ready with our Customized Industry Readiness Programme
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laborum vel qui dolore, consequatur repellendus! Eligendi, aperiam quas numquam consequuntur iste obcaecati ullam repellendus libero est minus placeat nesciunt ratione.
-    </p>
+    <p>Making students Industry Ready with our Customized Industry Readiness Programmes</p>
     <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>
     </Link>
   </div>
+  
+  {/* Mobile Vector Image */}
   <img src="LandingImage/MobileHero.png" alt="Mobile Vector" className="mobile-vector-image" />
 </div>
 

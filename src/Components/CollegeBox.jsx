@@ -105,7 +105,7 @@ function CollegeBox() {
           className="flex-1 flex flex-col justify-between"
         >
           <div className="flex-1">
-            <p className="text-[#ffffff] text-lg md:text-xl lg:text-xl font-medium leading-relaxed lg:pr-1">
+            <p className="text-[#ffffff] text-sm md:text-sm lg:text-xl font-medium leading-relaxed lg:pr-1">
             Our specialized curated industry-specific training programmes for colleges are designed to align with both student needs and job market demands. We conduct thorough evaluations to identify essential skills and incorporate feedback to create relevant learning experiences. By collaborating with industry leaders, we ensure our curriculum reflects current trends, preparing students to be workforce-ready with the subjects and topics they need most. This approach not only enhances student success but also strengthens partnerships between academia and industry.
             </p>
           </div>

@@ -1,23 +1,23 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Image, ScrollControls, useScroll } from '@react-three/drei';
 import { easing } from 'maath';
 import '../Components/util.js'; // Ensure you have the bent plane geometry and sine material defined
 
-
 const SuccessfulDrives = () => {
   const images = [
-    "journey/D1.jpg",
-    "journey/D2.jpg",
-    "journey/D3.jpg",
-    "journey/D4.jpg",
-    "journey/D5.jpg",
-    "journey/D6.jpg",
-    "journey/D1.jpg",
-    "journey/D2.jpg",
-    "journey/D3.jpg",
-    "journey/D4.jpg",
+   
+    "journey/Campus 11.png",
+    "journey/Campus 7.png",
+    "journey/Campus 9.png",
+    "journey/Campus 3.png",
+    "journey/Campus 5.png",
+    "journey/Campus 8.png",
+    
+    "journey/Campus 10.png",
+     "journey/Campus 6.png"
+   
   ];
 
   const handleScrollDown = () => {
@@ -50,8 +50,8 @@ const SuccessfulDrives = () => {
           className="w-full h-full rounded-lg object-cover"
         />
 
-         {/* 3D Carousel using Three.js */}
-         <div className="mt-8 h-[50vh] relative mb-8">
+        {/* Conditional Rendering for Carousel and Slider */}
+        <div className="mt-8 h-[50vh] relative mb-8 hidden lg:block"> {/* 3D Carousel for large screens */}
           <Canvas 
             camera={{ position: [0, 0, 100], fov: 15 }} 
             style={{ height: '100%', width: '100%', overflow: 'hidden' }} // Hide overflow
@@ -85,7 +85,52 @@ const SuccessfulDrives = () => {
             <span className="ml-2 text-sm">SCROLL DOWN</span>
           </div>
         </div>
+
+        {/* Infinite Slider Section for smaller screens */}
+        <div className="relative mb-8 lg:hidden"> {/* Automatic Slider for small screens */}
+          <div className="flex overflow-hidden">
+            <AutoSlider images={images} />
+          </div>
+        </div>
       </div>
+    </div>
+  );
+};
+
+const AutoSlider = ({ images }) => {
+  const sliderRef = useRef();
+  const [offset, setOffset] = useState(0);
+  const visibleImagesCount = 3; // Number of images to show at once
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setOffset((prev) => (prev + 1) % images.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  // Create an array that duplicates the images to allow infinite scrolling
+  const extendedImages = [...images, ...images];
+
+  return (
+    <div
+      ref={sliderRef}
+      className="flex transition-transform duration-300"
+      style={{
+        transform: `translateX(-${(offset * (100 / visibleImagesCount))}%)`, // Adjust based on visible images
+        width: `${(extendedImages.length * 100) / visibleImagesCount}%`, // Total width of the extended images
+      }}
+    >
+      {extendedImages.map((url, index) => (
+        <img
+          key={index}
+          src={url}
+          alt={`Drive ${index + 1}`}
+          className="w-1/3 object-cover transition-transform duration-300"
+          style={{ flex: '0 0 33.33%' }}
+        />
+      ))}
     </div>
   );
 };
@@ -94,7 +139,8 @@ function Rig({ children }) {
   const ref = useRef();
   const scroll = useScroll();
   useFrame((state, delta) => {
-    ref.current.rotation.y = -scroll.offset * (Math.PI * 2);
+    ref.current.rotation.y = -scroll.offset * (Math.PI * 2) * 0.5; // Slower rotation
+
     easing.damp3(state.camera.position, [-state.pointer.x * 2, state.pointer.y + 1.5, 10], 0.3, delta);
     state.camera.lookAt(0, 0, 0);
   });
@@ -104,12 +150,12 @@ function Rig({ children }) {
 function Carousel({ images, radius = 2.5 }) {
   return (
     <>
-      {images.slice(0, 8).map((url, i) => ( // Only render a limited number of front-facing images
+      {images.slice(0, 8).map((url, i) => (
         <Card
           key={i}
           url={url}
           position={[Math.sin((i / 8) * Math.PI * 2) * radius, 0, Math.cos((i / 8) * Math.PI * 2) * radius]}
-          rotation={[0, Math.PI + (i / 8 ) * Math.PI * 2, 0]}
+          rotation={[0, Math.PI + (i / 8) * Math.PI * 2, 0]}
         />
       ))}
     </>

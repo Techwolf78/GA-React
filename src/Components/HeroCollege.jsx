@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-
 const HeroCollege = () => {
   const [showClassroom, setShowClassroom] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -24,64 +23,42 @@ const HeroCollege = () => {
   }, []);
 
   return (
-    <main className={`relative roboto-regular flex flex-col justify-center bg-[#003073] overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
+    <main className={`relative flex items-center justify-center bg-[#003073] h-screen overflow-hidden ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
       {/* Hero Section */}
       <div
-        className="hero-section"
+        className="hero-section absolute inset-0"
         style={{
           backgroundImage: imageLoaded ? `url('${backgroundImage}')` : 'none',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
           opacity: imageLoaded ? 1 : 0,
           transition: 'opacity 1s ease-in-out',
         }}
       >
+        {/* Empty space at the top */}
+        <div className="h-[10vh]"></div>
+
         {/* Heading Container */}
-        <div className="heading-container absolute top-[10%] left-1/2 transform -translate-x-1/2 text-center z-10 roboto-regular px-8 sm:px-16">
+        <div className="text-center z-10 px-4">
           {imageLoaded && (
-            <div className="font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl bg-clip-text text-transparent bg-gradient-to-r text-white">
-              A JOURNEY FROM <span></span>
-              <span className="text-[#FFC80E] inline-flex flex-col h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
-                <ul className={`block ${showClassroom ? 'animate-text-slide-stop' : 'animate-text-slide'} text-left leading-tight`}>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold mb-4">
+              A JOURNEY FROM 
+              <span className="text-[#FFC80E] inline-flex flex-col h-auto">
+                <ul className={`block ${showClassroom ? 'animate-text-slide-stop' : 'animate-text-slide'} leading-tight`}>
                   <li className="transition-opacity duration-1000">{!showClassroom && 'COLLEGE'}</li>
                   <li className={`transition-opacity duration-1000 ${showClassroom ? 'opacity-100' : 'opacity-0'}`}>CLASSROOM</li>
                 </ul>
-              </span> TO CORPORATE
-            </div>
+              </span>
+              TO CORPORATE
+            </h1>
           )}
           {imageLoaded && (
-            <p className="text-xl sm:text-xl lg:text-xl xl:text-2xl text-white mt-2 mx-8">
+            <p className="text-lg sm:text-xl text-white mt-2">
               Preparing your students for the industry with our customized <br /> Industry Specific Training and Placement Solutions
             </p>
           )}
         </div>
       </div>
-
-   
-
-      <style>{`
-     .hero-section {
-  background-size: contain; /* Change to contain if you want the whole image to be visible */
- 
-  background-position: center;
-  min-height: 100vh; /* Adjust as needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-
-        .heading-container {
-          width: 100%;
-        }
-
-        section {
-          width: 100%;
-          max-width: 100%;
-          text-align: center;
-        }
-      `}</style>
     </main>
   );
 };

@@ -1,9 +1,8 @@
-import  { useState,  useRef } from 'react';
-import { FiChevronDown, FiChevronRight } from 'react-icons/fi'; // Importing React Icons
+import { useState, useRef } from 'react';
+import { FiChevronDown, FiChevronRight } from 'react-icons/fi';
 import 'tailwindcss/tailwind.css';
 
-// Add this image URL for the back side of all cards
-const backSideImageUrl = '/MECH/Yellow Bcakground.png'; // Update this with your actual image path
+const backSideImageUrl = '/MECH/Yellow Bcakground.png';
 
 // Course data and button labels
 const courses = {
@@ -590,152 +589,184 @@ const courses = {
   DIPLOMA: 'DIPLOMA'
   };
 
-  const CourseSection = () => {
+const CourseSection = () => {
     const [selectedCourse, setSelectedCourse] = useState('MECH');
     const [showCards, setShowCards] = useState({ MECH: true });
+    const [accordionOpen, setAccordionOpen] = useState(null);
     const cardRefs = useRef([]);
-  
+
     const changeCourse = (courseKey) => {
-      if (courseKey !== selectedCourse) {
-        setShowCards({ [courseKey]: true });
-        setSelectedCourse(courseKey);
-      } else {
-        setShowCards((prev) => ({ ...prev, [courseKey]: !prev[courseKey] }));
-      }
+        if (courseKey !== selectedCourse) {
+            setShowCards({ [courseKey]: true });
+            setSelectedCourse(courseKey);
+        } else {
+            setShowCards((prev) => ({ ...prev, [courseKey]: !prev[courseKey] }));
+        }
     };
-  
+
+    const toggleAccordion = (index) => {
+        setAccordionOpen(accordionOpen === index ? null : index);
+    };
+
     const isMobile = window.innerWidth < 768;
-  
+
     return (
-      <section className="mx-auto px-8 sm:px-16 bg-[#091327] roboto-regular">
-        <div className="mb-8">
-          <p className="text-[#FFC80E] text-4xl text-center font-bold mb-4">TECHNICAL TRAINING</p>
-        </div>
-        <div className="container mx-auto flex flex-wrap">
-          {/* Sidebar */}
-          <div className="course-sidebar w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
-            <div className="bg-[#091327] shadow-lg">
-              {Object.keys(courses).map((key) => (
-                <div key={key}>
-                  <button
-                    onClick={() => changeCourse(key)}
-                    aria-expanded={showCards[key]}
-                    className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300
-                    ${selectedCourse === key ? 'bg-[#FFC80E] text-[#003073] transform translate-x-2 shadow-2xl' : 'bg-[#003073] text-white'}
-                    transform-gpu hover:bg-[#FFC80E] hover:text-[#003073] hover:translate-x-2 hover:shadow-xl`}
-                  >
-                    <span className="text-left break-words font-semibold">{buttonLabels[key]}</span>
-                    <span className="flex items-center transition-all duration-300 transform hover:scale-105 hover:translate-x-1 hover:shadow-xl">
-                      {isMobile ? (showCards[key] ? <FiChevronDown /> : <FiChevronRight />) : (
-                        <FiChevronRight className="w-4 h-4 transition-transform transform hover:scale-125" />
-                      )}
-                    </span>
-                  </button>
-                </div>
-              ))}
+        <section className="mx-auto px-8 sm:px-16 bg-[#091327] roboto-regular">
+            <div className="mb-8">
+                <p className="text-[#FFC80E] text-4xl text-center font-bold mb-4">TECHNICAL TRAINING</p>
             </div>
-          </div>
-  
-          {/* Content Area - Cards shown to the right of the sidebar */}
-          <div className="flex-grow grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {Object.keys(courses).map(
-              (key) =>
+            <div className="container mx-auto flex flex-wrap">
+                
+
+                {/* Accordion for smaller screens */}
+                <div className={`accordion-container w-full ${isMobile ? 'block' : 'hidden'}`}>
+                    {Object.keys(courses).map((key, index) => (
+                        <div key={key}>
+                            <button
+                                onClick={() => toggleAccordion(index)}
+                                className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300 
+                                ${accordionOpen === index ? 'bg-[#FFC80E] text-[#003073]' : 'bg-[#003073] text-white'} 
+                                transform-gpu hover:bg-[#FFC80E] hover:text-[#003073]`}
+                            >
+                                <span className="text-left break-words ">{buttonLabels[key]}</span>
+                                <span className="flex items-center transition-all duration-300 transform hover:scale-105">
+                                    {accordionOpen === index ? <FiChevronDown /> : <FiChevronRight />}
+                                </span>
+                            </button>
+                            {accordionOpen === index && (
+                                <div className="p-4 bg-[#003073] text-white">
+                                    {courses[key].map((course, courseIndex) => (
+                                        <div key={`${key}-${courseIndex}`} className="bg-white rounded-lg shadow-md p-1 mb-2">
+                                            <h3 className="text-base  text-[#003073]">{course.title}</h3>
+                                            <ul className="text-black text-sm text-left  ">
+                                                {course.description.map((item, idx) => (
+                                                    <li key={idx} className="list-disc list-inside pl-2">
+                                                        {item}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                          
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+
+                <div className={`container mx-auto flex flex-wrap ${isMobile ? 'block' : 'flex'} ${showCards[selectedCourse] ? 'flex-row' : 'flex-col'}`}>
+    {/* Sidebar for larger screens */}
+    <div className={`course-sidebar ${isMobile ? 'hidden' : 'w-1/4'} px-4 mb-8`}>
+        <div className="bg-[#091327] shadow-lg">
+            {Object.keys(courses).map((key) => (
+                <div key={key}>
+                    <button
+                        onClick={() => changeCourse(key)}
+                        aria-expanded={showCards[key]}
+                        className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300
+                        ${selectedCourse === key ? 'bg-[#FFC80E] text-[#003073] transform translate-x-2 shadow-2xl' : 'bg-[#003073] text-white'}
+                        transform-gpu hover:bg-[#FFC80E] hover:text-[#003073] hover:translate-x-2 hover:shadow-xl`}
+                    >
+                        <span className="text-left break-words text-sm lg:text-xl ">{buttonLabels[key]}</span>
+                        <span className="flex items-center transition-all duration-300 transform hover:scale-105 hover:translate-x-1 hover:shadow-xl">
+                            <FiChevronRight className="w-4 h-4" />
+                        </span>
+                    </button>
+                </div>
+            ))}
+        </div>
+    </div>
+
+    {/* Content Area - Cards shown to the right of the sidebar */}
+    <div className={`flex-grow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 ${isMobile ? 'hidden' : ''}`}>
+        {Object.keys(courses).map(
+            (key) =>
                 showCards[key] &&
                 courses[key].map((course, index) => (
-                  <div key={`${key}-${index}`} className="flip-card" ref={(el) => (cardRefs.current[index] = el)}>
-                    <div className="flip-card-inner">
-                      <div className="flip-card-front aspect-[3/2]">
-                        <img src={course.image} alt={course.title} className="object-cover w-full h-full" />
-                      </div>
-                      <div className="flip-card-back aspect-[3/2]">
-                        <ul className="text-black text-base text-left space-y-2">
-                          {course.description.map((item, idx) => (
-                            <li key={idx} className="list-disc list-inside pl-4">
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                    <div key={`${key}-${index}`} className="flip-card" ref={(el) => (cardRefs.current[index] = el)}>
+                        <div className="flip-card-inner">
+                            <div className="flip-card-front aspect-[3/2]">
+                                <img src={course.image} alt={course.title} className="object-cover w-full h-full" />
+                            </div>
+                            <div className="flip-card-back aspect-[3/2]">
+                                <ul className="text-black text-sm lg:text-base text-left space-y-2">
+                                    {course.description.map((item, idx) => (
+                                        <li key={idx} className="list-disc list-inside pl-4 ">
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 ))
-            )}
-          </div>
-        </div>
-  
-        <style>{`
-/* Flip card styles */
-.flip-card {
-    perspective: 1000px;
-    width: 100%;
-    max-width: 300px; /* Set a max width for better layout */
-    height: 330px; /* Set a fixed height for the card */
-}
+        )}
+    </div>
+</div>
 
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%; /* Ensure height is defined */
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
 
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
+            </div>
 
-.flip-card-front,
-.flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%; /* Ensure both sides take full height */
-    backface-visibility: hidden;
-    border-radius: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Prevent overflow */
-}
+            <style>{`
+                /* Flip card styles */
+                .flip-card {
+                    perspective: 1000px;
+                    width: 100%;
+                    max-width: 300px;
+                    height: 330px;
+                }
 
-.flip-card-front {
-    background-color: #f8f8f8;
-}
+                .flip-card-inner {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    transition: transform 0.6s;
+                    transform-style: preserve-3d;
+                }
 
-.flip-card-back {
-    background-image: url('${backSideImageUrl}'); /* Set the background image */
-    background-size: cover; /* Ensure the image covers the card without cropping */
-    background-repeat: no-repeat; /* Prevent image repetition */
-    background-position: center; /* Center the image */
-    transform: rotateY(180deg);
-    padding: 20px; /* Add padding for content */
-    color: #003073; /* Set text color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
+                .flip-card:hover .flip-card-inner {
+                    transform: rotateY(180deg);
+                }
 
-/* Adjust styles for bullet points to overlay directly on the background image */
-.flip-card-back ul {
-    padding: 0; /* Remove padding to allow direct overlay */
-    margin: 0; /* Remove margin for better positioning */
-    text-align: left; /* Align text to the left */
-    list-style-position: inside; /* Position bullets inside */
-    color: #ffffff; /* Change text color for better visibility on the image */
-}
+                .flip-card-front,
+                .flip-card-back {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    backface-visibility: hidden;
+                    border-radius: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                }
 
-/* Media Queries for better responsiveness */
-@media (max-width: 768px) {
-    .course-sidebar {
-        flex: 1 1 100%; /* Full width on mobile */
-    }
+                .flip-card-front {
+                    background-color: #f8f8f8;
+                }
 
-    .flex-grow {
-        flex: 1 1 100%; /* Full width on mobile */
-    }
-}
-`}</style>
+                .flip-card-back {
+                    background-image: url('${backSideImageUrl}');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    transform: rotateY(180deg);
+                    padding: 20px;
+                    color: #003073;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    z-index: 1;
+                }
 
-      </section>
+                .flip-card-back ul {
+                    padding: 0;
+                    margin: 0;
+                    text-align: left;
+                    list-style-position: inside;
+                    color: #ffffff;
+                }
+            `}</style>
+        </section>
     );
-  };
-  
-  export default CourseSection;
+};
+
+export default CourseSection;

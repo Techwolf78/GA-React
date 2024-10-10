@@ -1,6 +1,16 @@
 import React from 'react';
 
 const MajorRecruiter = () => {
+  const logos = [...Array(12)].map((_, index) => (
+    <div key={index} className="logo-slider-item flex-none mx-5">
+      <img
+        src={`Logos/${index + 1}.jpg`}
+        alt="College Logo"
+        className="h-20 sm:h-24 max-w-[150px] object-contain"
+      />
+    </div>
+  ));
+
   return (
     <div className="logo-slider-section bg-[#091327] py-8 px-4 sm:px-6 lg:px-8 roboto-regular">
       <div className="container mx-auto">
@@ -9,15 +19,8 @@ const MajorRecruiter = () => {
         </p>
         <div className="logo-slider relative overflow-hidden w-full">
           <div className="logo-slider-track flex animate-scroll">
-            {[...Array(12)].map((_, index) => (
-              <div key={index} className="logo-slider-item flex-none mx-5">
-                <img
-                  src={`Logos/${index + 1}.jpg`}
-                  alt="College Logo"
-                  className="h-20 sm:h-24 max-w-[150px] object-contain"
-                />
-              </div>
-            ))}
+            {/* Duplicate the logos for infinite scroll effect */}
+            {[...logos, ...logos]}
           </div>
         </div>
       </div>
@@ -36,7 +39,7 @@ const MajorRecruiter = () => {
 
           @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-150px * 6)); } /* Adjust based on the number of logos */
+            100% { transform: translateX(calc(-150px * 12)); } /* Adjust based on the total number of logos */
           }
         `}
       </style>

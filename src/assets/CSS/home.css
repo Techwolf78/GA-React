@@ -196,7 +196,7 @@ body, html {
 /* Section Styles */
 .section {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* Default for larger screens */
   color: #fff;
   display: flex;
   align-items: center;
@@ -241,7 +241,7 @@ body, html {
 
 .section-content.right {
   text-align: left;
-  margin-left: auto;
+ 
   padding-right: 5vw;
 }
 
@@ -375,15 +375,30 @@ body, html {
 }
 
 @media (max-width: 768px) {
-  .company-logo-link {
-    margin-top: -10px;
-    top: 1px; /* Position it down from the top */
-    left: 15px; /* Keep it on the left side */
-    width: 100px; /* Optionally adjust size */
-    height: 100px; /* Optionally adjust size */
+  .hidden-on-large {
+    display: block; /* Show on smaller screens */
+  }
+
+  .sidebar ul li {
+    display: block; /* Ensure all items are block elements */
+    margin: 10px 0; /* Adjust spacing if needed */
+  }
+
+  /* If you want the Training item to also show its sub-items */
+  .sidebar ul li:hover > ul {
+    display: flex; /* Ensure sub-items appear on hover */
+  }
+
+  /* Show the submenu by default */
+  .sidebar ul li ul {
+    display: flex; /* Show the sub-list by default */
+    flex-direction: column; /* Stack items vertically */
   }
 }
 
+.hidden-on-large {
+  display: none; /* Hide by default */
+}
 
 .company-logo {
   width: 100%;
@@ -423,15 +438,26 @@ body, html {
   z-index: 0;
 }
 
+/* Adjust mobile-vector-image styling */
 .mobile-vector-image {
-  display: none;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 30px;
-  width: auto;
-  height: auto;
-  z-index: 0;
+  display: none; /* Hide by default */
+}
+
+/* Show only on small screens */
+@media (max-width: 768px) {
+  .mobile-vector-image {
+    display: block; /* Show on small screens */
+    position: relative; /* Allow positioning */
+    margin-top: 20px; /* Space below the section content */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Center correction */
+  }
+
+  /* Align section content to left */
+  .section-content {
+    text-align: left; /* Align to left */
+    padding: 0 10px; /* Adjust padding as needed */
+  }
 }
 
 /* Media Queries */
@@ -440,12 +466,17 @@ body, html {
     display: none;
   }
 
+.hero-slider-section {
+  margin-top: 80px;
+}
+
   .section {
     background-color: #01224f;
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
-    margin-top: 60px;
+  
+    height: auto; /* Removed 100vh for small screens */
   }
 
   #hero_slider,
@@ -454,16 +485,6 @@ body, html {
   #talent_transformations,
   #do_more {
     background-image: none;
-  }
-
-  .right-side-image {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 25%;
-    height: auto;
-    max-height: 100%;
   }
 
   .section-content {
@@ -475,39 +496,11 @@ body, html {
     padding: 0 20px;
   }
 
-  .mobile-vector-image {
-    display: block;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    height: auto;
-    z-index: 0;
-  }
-}
-
-
-@media (max-width: 768px) {
-
   /* Position side images */
-  .right-side-image {
-    position: absolute;
-    top: 30%; /* Center vertically */
-    right: 0; /* Stick to the right edge */
-    transform: translateY(-50%); /* Center horizontally */
-    width: auto; /* Use original width */
-    height: auto; /* Use original height */
-    max-height: none; /* Remove max-height restriction */
-    opacity: 0.9; /* Make the image semi-transparent */
-    z-index: 0;
-  }
-
+  .right-side-image,
   .left-side-image {
     position: absolute;
     top: 30%; /* Center vertically */
-    left: 0; /* Stick to the left edge */
-    transform: translateY(-50%) scaleX(-1); /* Flip horizontally and center */
     width: auto; /* Use original width */
     height: auto; /* Use original height */
     max-height: none; /* Remove max-height restriction */
@@ -515,15 +508,13 @@ body, html {
     z-index: 0;
   }
 
-  .mobile-vector-image {
-    display: block;
-    position: absolute;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    height: auto;
-    z-index: 0;
+  .right-side-image {
+    right: 0; /* Stick to the right edge */
+    transform: translateY(-50%); /* Center horizontally */
+  }
+
+  .left-side-image {
+    left: 0; /* Stick to the left edge */
+    transform: translateY(-50%) scaleX(-1); /* Flip horizontally and center */
   }
 }
-
