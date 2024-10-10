@@ -2,16 +2,28 @@ import React from 'react';
 
 const PartneredUniversities = () => {
   return (
-    <div className="relative px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16 py-6 bg-[#091327] text-white roboto-regular">
+    <div className="relative px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16 pt-6 bg-[#091327] text-white roboto-regular">
       <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-4 text-[#FFC80E]">
         Partnered with 60+ Colleges/Universities
       </h1>
-    
-      <div className="w-full flex justify-center items-center overflow-hidden mb-6">
+      
+      {/* Background image for medium and large screens */}
+      <div className="w-full hidden md:block mb-6">
         <img 
-          src="placement-bg/PlacementBG.png" 
+          src="placement-bg/PlacementBG1.PNG" 
           alt="Background showing partnered colleges and universities" 
           className="w-full h-auto object-cover" 
+          style={{ margin: 0 }} 
+        />
+      </div>
+
+      {/* Background image for small screens only */}
+      <div className="w-full block md:hidden mb-6">
+        <img 
+          src="placement-bg/PlacementBG1.PNG" 
+          alt="Background for small screens showing partnered colleges and universities" 
+          className="w-full h-auto object-cover" 
+          style={{ margin: 0 }} 
         />
       </div>
 

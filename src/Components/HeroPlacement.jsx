@@ -2,9 +2,9 @@ import React from 'react';
 
 const HeroPlacement = () => {
   return (
-    <div className="relative bg-[#003073] z-10 w-full roboto-regular">
+    <div className="relative bg-[#003073] z-10 w-full roboto-regular lg:max-h-[80vh] lg:h-[80vh]">
       {/* Image Section */}
-      <div className="relative w-full">
+      <div className="relative w-full h-full">
         {/* Original image */}
         <img
           src="Clgimage/Heroplace.png"

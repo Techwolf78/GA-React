@@ -22,6 +22,7 @@ const Placement = () => {
   return (
     <div className="bg-[#091327]">
       <HeroPlacement />
+      <MajorRecruiter />
       <PartneredUniversities />
       <CollegeAccreditation />
       
@@ -63,7 +64,7 @@ const Placement = () => {
       <IndustryOverview />
       <Advisory />
       <SuccessfulDrives />
-      <MajorRecruiter />
+   
       <RecruiterTestimonial />
       <div > <ConnectWithUs /></div>
      

@@ -30,7 +30,7 @@ const PartneredCollege = () => {
           FEW PARTNERED COLLEGES
         </p>
         <div className="relative overflow-hidden">
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-8 gap-x-4">
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-3 gap-x-4">
             {colleges.map((college, index) => (
               <div key={index} className="flex flex-col overflow-hidden">
                 <img 
