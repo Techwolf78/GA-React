@@ -241,7 +241,7 @@ body, html {
 
 .section-content.right {
   text-align: left;
- 
+  margin-left: auto;
   padding-right: 5vw;
 }
 

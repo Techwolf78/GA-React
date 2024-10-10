@@ -23,6 +23,7 @@ const Placement = () => {
     <div className="bg-[#091327]">
       <HeroPlacement />
       <PartneredUniversities />
+      <CollegeAccreditation />
       
       {/* Infinite Hook Line Section */}
       <div className="hook-line-container py-2   bg-[#DFF1FD] roboto-regular">
@@ -43,7 +44,7 @@ const Placement = () => {
       </div>
 
       <PartneredCollege />
-      <CollegeAccreditation />
+      
 
       {/* New Section: Simple Placement Process */}
       <div className="p-0 text-center roboto-regular"> {/* Changed padding to 0 */}
