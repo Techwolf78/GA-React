@@ -9,6 +9,7 @@ import {
   faUserTie, // Leadership and Management Skills for Educators
   faGraduationCap, // Comprehensive Development
   faSyncAlt, // Real Time Based Approach
+  faChalkboardTeacher as EliteGuidanceIcon, // Elite Guidance (Industry Experts)
 } from '@fortawesome/free-solid-svg-icons';
 
 function WhyTraining() {
@@ -25,6 +26,7 @@ function WhyTraining() {
     { icon: faUserTie, text: 'Leadership and Management Skills for Educators' },
     { icon: faGraduationCap, text: 'Comprehensive Development' },
     { icon: faSyncAlt, text: 'Real Time Based Approach' },
+    { icon: EliteGuidanceIcon, text: 'Elite Guidance (Industry Experts)' },
   ];
 
   return (
@@ -99,7 +101,7 @@ function WhyTraining() {
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {items.map((item, index) => (
+              {items.slice(0, 8).map((item, index) => ( // Only take the first 8 items
                 <div
                   key={index}
                   className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400 hover:border-2 hover:border-yellow-400"
