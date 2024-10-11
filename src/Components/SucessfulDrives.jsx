@@ -14,7 +14,6 @@ const SuccessfulDrives = () => {
     "journey/Campus 3.png",
     "journey/Campus 5.png",
     "journey/Campus 8.png",
-    
     "journey/Campus 10.png",
      "journey/Campus 6.png"
    
@@ -45,7 +44,7 @@ const SuccessfulDrives = () => {
 
         {/* Full-width Image */}
         <img 
-          src="Top Placements.png" 
+          src="placement-bg/Top Placements 2.png" 
           alt="Main Drive" 
           className="w-full h-full rounded-lg object-cover"
         />

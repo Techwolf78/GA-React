@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 const testimonials = [
   {
@@ -66,6 +66,19 @@ const Testimonials = () => {
 
   return (
     <section style={{ background: '#091327', padding: '12px 0' }} className='roboto-regular'>
+      <style>
+        {`
+          @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-${testimonials.length * 320}px); }
+          }
+          .slide {
+            animation: slide 20s linear infinite;
+            display: flex;
+            gap: 16px;
+          }
+        `}
+      </style>
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
         <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-4">
           RECRUITER TESTIMONIALS
@@ -75,10 +88,10 @@ const Testimonials = () => {
         </h4>
       </div>
       <div style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '320px' }}>
-        <div style={{ display: 'flex', gap: '16px', animation: 'slide 20s linear infinite' }}>
+        <div className="slide">
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div key={index} style={cardStyle}>
-              <p style={{ fontSize: '16px', sm: '18px', color: '#ffffff', marginBottom: '16px' }}>
+              <p style={{ fontSize: '16px', color: '#ffffff', marginBottom: '16px' }}>
                 {`"${testimonial.review}"`}
               </p>
               <p style={{ color: '#FFC80E', fontSize: '18px', marginBottom: '16px' }}>

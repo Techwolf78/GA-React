@@ -6,19 +6,19 @@ const MajorRecruiter = () => {
       <img
         src={`Logos/${index + 1}.jpg`}
         alt="College Logo"
-        className="h-16 sm:h-20 md:h-24 max-w-full object-contain" // Responsive height
+        className="h-12 sm:h-16 md:h-20 max-w-full object-contain" // Reduced logo height
       />
     </div>
   ));
 
   return (
-    <div className="logo-slider-section bg-[#091327] py-0 px-0 roboto-regular">
+    <div className="logo-slider-section bg-[#003073] py-0 px-0 roboto-regular">
       <div className="container mx-auto">
-        <p className="section-heading text-[#FFC80E] text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 mt-2">
-          OUR MAJOR RECRUITERS
+        <p className="section-heading text-[#FFC80E] text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 pt-1 ">
+          OUR TOP RECRUITERS
         </p>
-        <div className="logo-slider relative overflow-hidden w-full">
-          <div className="logo-slider-track flex animate-scroll">
+        <div className="logo-slider relative overflow-hidden w-full ">
+          <div className="logo-slider-track flex animate-scroll mb-4">
             {/* Duplicate the logos for infinite scroll effect */}
             {[...logos, ...logos]}
           </div>
@@ -30,7 +30,7 @@ const MajorRecruiter = () => {
         {`
           .logo-slider-track {
             display: flex; /* Ensure the logos are in a row */
-            width: calc(150px * 12); /* Adjust based on the number of logos */
+            width: calc(120px * 12); /* Adjust based on the reduced logo size */
             animation: scroll 20s linear infinite;
           }
 
@@ -40,7 +40,7 @@ const MajorRecruiter = () => {
 
           @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-150px * 12)); } /* Adjust based on the total number of logos */
+            100% { transform: translateX(calc(-120px * 12)); } /* Adjust based on the total number of logos */
           }
 
           @media (max-width: 640px) {

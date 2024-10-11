@@ -189,7 +189,7 @@ const Home = () => {
       </button>
 
       {/* Company Logo */}
-      <Link to="/about" className="company-logo-link">
+      <Link to="#" className="company-logo-link">
         <div className="company-logo"></div>
       </Link>
 
@@ -201,13 +201,13 @@ const Home = () => {
       <span className={`cursor ${isBlinking ? 'blink' : ''}`}>|</span>
     </h2>
     <p>Making students Industry Ready with our Customized Industry Readiness Programme
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laborum vel qui dolore, consequatur repellendus! Eligendi, aperiam quas numquam consequuntur iste obcaecati ullam repellendus libero est minus placeat nesciunt ratione.
     </p>
     <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>
     </Link>
   </div>
-  <img src="LandingImage/MobileHero.png" alt="Mobile Vector" className="mobile-vector-image" />
+  <img src="LandingImage/vector 1.png" alt="Left Side Design" className="left-side-image hidden md:block" />
+  <img src="LandingImage/MobileHeroNew.PNG" alt="Mobile Vector" className="mobile-vector-image " />
 </div>
 
 {/* Other sections */}
@@ -221,7 +221,7 @@ const Home = () => {
       <span>Know More</span>
     </Link>
   </div>
-  <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
+  <img src="LandingImage/vector 1.png" alt="Right Side Design" className="right-side-image" />
   <img src="LandingImage/Mobile 2.png" alt="Mobile Vector" className="mobile-vector-image" />
 </div>
 
@@ -235,7 +235,7 @@ const Home = () => {
       <span>Know More</span>
     </Link>
   </div>
-  <img src="LandingImage/pattern-new.png" alt="Left Side Design" className="left-side-image" />
+  <img src="LandingImage/vector 1.png" alt="Left Side Design" className="left-side-image" />
   <img src="LandingImage/Mobile 3.png" alt="Mobile Vector" className="mobile-vector-image" />
 </div>
 
@@ -249,7 +249,7 @@ const Home = () => {
       <span>Know More</span>
     </Link>
   </div>
-  <img src="LandingImage/pattern-new.png" alt="Right Side Design" className="right-side-image" />
+  <img src="LandingImage/vector 1.png" alt="Right Side Design" className="right-side-image" />
   <img src="LandingImage/Mobile 4.png" alt="Mobile Vector" className="mobile-vector-image" />
 </div>
 
@@ -263,7 +263,7 @@ const Home = () => {
       <span>Know More</span>
     </Link>
   </div>
-  <img src="LandingImage/pattern-new.png" alt="Left Side Design" className="left-side-image" />
+  <img src="LandingImage/vector 1.png" alt="Left Side Design" className="left-side-image" />
   <img src="LandingImage/Mobile5.png" alt="Mobile Vector" className="mobile-vector-image" />
 </div>
 

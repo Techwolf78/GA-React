@@ -18,7 +18,7 @@ const Placement = () => {
     </span>
   );
   const repeats = 10;
-
+ 
   return (
     <div className="bg-[#091327]">
       <HeroPlacement />
@@ -64,7 +64,6 @@ const Placement = () => {
       <IndustryOverview />
       <Advisory />
       <SuccessfulDrives />
-   
       <RecruiterTestimonial />
       <div > <ConnectWithUs /></div>
      

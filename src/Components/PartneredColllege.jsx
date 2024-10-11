@@ -24,7 +24,7 @@ const PartneredCollege = () => {
   ];
 
   return (
-    <div className="bg-[#003073] py-16 min-h-screen roboto-regular">
+    <div className="bg-[#003073] py-8  roboto-regular">
       <div className="container mx-auto px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16">
         <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold mb-10 text-center text-[#ffc700]">
           FEW PARTNERED COLLEGES

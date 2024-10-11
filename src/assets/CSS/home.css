@@ -89,24 +89,24 @@ body, html {
 .sidebar {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0; /* Align to the left */
   width: 300px;
   height: 100%;
   background: rgba(255, 255, 255, 0.9);
-  border-left: 1px solid #ddd;
-  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  border-right: 1px solid #ddd; /* Adjust border for left opening */
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); /* Shadow from the right */
+  z-index: 20000;
   display: flex;
   flex-direction: column;
   padding-top: 60px;
   transition: transform 0.3s ease;
-  transform: translateX(100%);
+  transform: translateX(-100%); /* Start hidden off-screen */
   background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 75%, transparent 75%, transparent);
   background-size: 10px 10px;
 }
 
 .sidebar.open {
-  transform: translateX(0);
+  transform: translateX(0); /* Move into view */
 }
 
 .sidebar ul {
@@ -236,14 +236,27 @@ body, html {
 .section-content.left {
   text-align: left;
   margin-right: auto;
-  padding-left: 5vw;
+  padding-left: 5vw; /* Default for small screens */
 }
 
 .section-content.right {
   text-align: left;
   margin-left: auto;
-  padding-right: 5vw;
+  padding-right: 5vw; /* Default for small screens */
 }
+
+@media (min-width: 768px) {
+  .section-content.left {
+    padding-left: 7vw; /* Change to 7vw for larger screens */
+  }
+
+  .section-content.right {
+    padding-right: 7vw; /* Change to 7vw for larger screens */
+  }
+}
+
+
+
 
 .section-content h2 {
   font-size: 2rem;
