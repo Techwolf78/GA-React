@@ -165,7 +165,7 @@ const Home = () => {
       {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`} id="sidebar" ref={sidebarRef}>
         <ul>
-        <li><Link to="/blogs" onClick={scrollToTop}><span>Blogs</span></Link></li>
+      
           <li>
             <Link to="/training" onClick={scrollToTop}><span>Training</span></Link>
             <ul>
@@ -174,7 +174,8 @@ const Home = () => {
               <li><Link to="/facultyTraining" onClick={scrollToTop}><span>Faculty Training</span></Link></li>
             </ul>
           </li>
-
+          <li><Link to="/placement" onClick={scrollToTop}><span>Placement</span></Link></li>
+          <li><Link to="/blogs" onClick={scrollToTop}><span>Blogs</span></Link></li>
           <li><Link to="/contact" onClick={scrollToTop}><span>Contact us</span></Link></li>
         </ul>
       </div>

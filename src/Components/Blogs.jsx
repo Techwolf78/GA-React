@@ -1,54 +1,59 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import forest2 from '../assets/Images/forest-2.png';
-import forest from '../assets/Images/forest.png';
-
 
 const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "It takes a planet to explore the universe.",
-      description: "80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending.",
-      image: forest2,
+      title: "How to Avoid Student Fall-Out Ratio In Placements?",
+      description: "Looks like a frequent topic that is bit of a challenge right here? The placement season can be a stressful time for both students and colleges.",
+      image: 'Blogs/post1C.jfif',
       path: '/post1',
     },
     {
       id: 2,
-      title: "I would like to die on Mars. Just not on Impact.",
-      description: "Join us on a journey to the red planet, where the possibilities are endless and the risks are high.",
-      image: forest,
+      title: "   A Call to Integrity: Gryphon Academy's Pure Approach to Training and Placements",
+      description: " As the festival of Diwali approaches, our hearts are filled with excitement, and our homes are adorned with radiant lights, symbolizing the victory of light over darkness.",
+      image: 'Blogs/post2A.jfif',
       path: '/post2',
     },
     {
       id: 3,
-      title: "The universe is under no obligation to make sense to you.",
-      description: "Astronomy compels the soul to look upwards and leads us from this world to another.",
-      image: forest2,
+      title: "Technical Training: Navigating the Engineering Realm",
+      description: "Technical trainings play a pivotal role in the world of engineering, offering a multitude of benefits for students pursuing various engineering disciplines, such as mechanical, civil, and IT.",
+      image: 'Blogs/post3A.jfif',
       path: '/post3',
     },
     {
       id: 4,
-      title: "The universe is under no obligation to make sense to you.",
-      description: "Astronomy compels the soul to look upwards and leads us from this world to another.",
-      image: forest,
+      title: "The Future of Engineering: Trainings and Skills Shaping the Industry",
+      description: "Discussing the emerging trends and innovations in engineering, highlighting the need for specialized training and skills.",
+      image: 'Blogs/post4A.jfif',
       path: '/post4',
     },
     {
       id: 5,
-      title: "The universe is under no obligation to make sense to you.",
-      description: "Astronomy compels the soul to look upwards and leads us from this world to another.",
-      image: forest2,
+      title: "I would like to die on Mars. Just not on Impact.",
+      description: "Join us on a journey to the red planet, where the possibilities are endless and the risks are high.",
+      image: 'Blogs/nature-1.jpg',
       path: '/post5',
     },
     {
       id: 6,
       title: "The universe is under no obligation to make sense to you.",
       description: "Astronomy compels the soul to look upwards and leads us from this world to another.",
-      image: forest,
+      image: 'Blogs/nature-2.png',
       path: '/post6',
     },
   ];
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // For smooth scrolling
+    });
+  };
 
   return (
     <section className="py-10 px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16 text-center bg-[#091327] roboto-regular">
@@ -76,6 +81,7 @@ const Blog = () => {
                   <p className="text-white mb-4 flex-grow">{post.description}</p>
                   <Link
                     to={post.path}
+                    onClick={scrollToTop} // Add scroll to top function
                     className="bg-[#ffc700] text-[#091327] inline-block px-6 py-2 rounded-lg hover:bg-[#e6b800] transition-colors duration-300"
                   >
                     Continue Reading →
