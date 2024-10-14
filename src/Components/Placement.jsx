@@ -4,7 +4,7 @@ import HeroPlacement from "./HeroPlacement";
 import PartneredUniversities from "./PartneredUniversities";
 import PartneredCollege from "./PartneredCollege";
 import '../assets/CSS/Placement.css';
-import IndustryOverview from "./IndustryOverview";
+
 import CollegeAccreditation from "./CollegeAccreditation";
 import Advisory from "./Advisory";
 import RecruiterTestimonial from "./RecruiterTestimonial";
@@ -40,7 +40,7 @@ const Placement = () => {
         </div>
       </div>
       
-      <IndustryOverview />
+     
       <Advisory />
       <SuccessfulDrives />
       <RecruiterTestimonial />

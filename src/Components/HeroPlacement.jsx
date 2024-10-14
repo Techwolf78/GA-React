@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const headings = [
-  "Your Ultimate Hiring Hub for Fresh Talent",
-  "Access a Diverse Pool of Ready-to-Work Candidates",
-  "Discover Trained Talent with a Passion for Your Brand"
+  "YOUR ULTIMATE HIRING HUB FOR FRESH TALENT",
+  "ACCESS A DIVERSE POOL OF READY-TO-WORK CANDIDATES",
+  "DISCOVER TRAINED TALENT WITH A PASSION FOR YOUR BRAND"
 ];
+
 
 const HeroPlacement = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

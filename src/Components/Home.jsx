@@ -155,11 +155,11 @@ const Home = () => {
   <ul className="stick-top-nav-ul">
   <li className="nav-active">
     <div className="underline"></div>
-    <a onClick={() => handleNavClick(heroRef)}><span>Gryphon</span></a>
+    <a onClick={() => handleNavClick(heroRef)}><span>Home</span></a>
   </li>
   <li>
     <div className="underline"></div>
-    <a onClick={() => handleNavClick(aboutRef)}><span>Why Us</span></a>
+    <a onClick={() => handleNavClick(aboutRef)}><span>About Us</span></a>
   </li>
   <li>
     <div className="underline"></div>
