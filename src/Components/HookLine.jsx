@@ -3,8 +3,8 @@ import React from "react";
 const HookLine = () => {
   const hookLines = [
     <span><strong className="font-semibold roboto-regular">ZERO COST INVOLVED</strong> During All Stages of Recruitment</span>,
-    <span>Industry-aligned customized training programs</span>,
-    <span>Direct engagement without vendor registration or empanelment fees</span>,
+    <span> <strong>Industry-aligned customized</strong> training programmes</span>,
+    <span>Direct engagement <strong>without vendor registration</strong> or <strong>empanelment fees</strong></span>,
   ];
 
   // Duplicate the hookLines to create the infinite effect

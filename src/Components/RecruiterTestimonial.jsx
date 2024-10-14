@@ -2,40 +2,40 @@ import React from 'react';
 
 const testimonials = [
   {
-    review: "Gryphon Academy provided me with the skills and knowledge I needed to excel in my career.",
-    name: "Sarah Lewis",
+    review: "We recruited 145 fresh engineers batch 2022-23 with the support of Gryphon and got reliable source of talent for our company. Team Gryphon is doing a fabulous job.",
+    name: "Mr. Rahul Bagale",
     rating: "★★★★★",
     companyLogo: "Logos/1.jpg",
-    companyName: "Force Motors"
+    companyName: "Group HR Head Force Motors Ltd."
   },
   {
-    review: "The mentorship and resources at Gryphon Academy are top-notch. My time here was invaluable.",
-    name: "Suchitra Sharma",
+    review: "Their commitment to nurturing and grooming exceptional talent is truly commendable. The graduates we've recruited from Gryphon Academy have consistently proven to be skilled, adaptable, and well-prepared for the demands of the industry.",
+    name: "Cdr. Pratap Pawar",
     rating: "★★★★☆",
     companyLogo: "Logos/2.jpg",
-    companyName: "Reliance Industries"
+    companyName: "Director HR & IT Gs lab"
   },
   {
-    review: "Gryphon Academy offers a transformative learning experience.",
-    name: "Emily Davis",
+    review: "The talent pool Gryphon offers is a testament to their dedication in producing industry-ready graduates. We thank Gryphon Academy for consistently providing us with such outstanding talent.",
+    name: "Mr. Suvarnanidhi Rao",
     rating: "★★★★★",
     companyLogo: "Logos/3.jpg",
-    companyName: "Tata Group"
+    companyName: "Campus Lead - Indian Sub Continent Philips India"
   },
   {
-    review: "Attending Gryphon Academy was a pivotal moment in my academic career.",
-    name: "Prabhas Kumar",
-    rating: "★★★★☆",
-    companyLogo: "Logos/4.jpg",
-    companyName: "gslab"
+    review: "We recruited 145 fresh engineers batch 2022-23 with the support of Gryphon and got reliable source of talent for our company. Team Gryphon is doing a fabulous job.",
+    name: "Mr. Rahul Bagale",
+    rating: "★★★★★",
+    companyLogo: "Logos/1.jpg",
+    companyName: "Group HR Head Force Motors Ltd."
   },
   {
-    review: "The mentorship and resources at Gryphon Academy are top-notch. My time here was invaluable.",
-    name: "Shakti Desai",
+    review: "Their commitment to nurturing and grooming exceptional talent is truly commendable. The graduates we've recruited from Gryphon Academy have consistently proven to be skilled, adaptable, and well-prepared for the demands of the industry.",
+    name: "Cdr. Pratap Pawar",
     rating: "★★★★☆",
-    companyLogo: "Logos/5.jpg",
-    companyName: "Hettich"
-  }
+    companyLogo: "Logos/2.jpg",
+    companyName: "Director HR & IT Gs lab"
+  },
 ];
 
 const Testimonials = () => {
@@ -54,7 +54,7 @@ const Testimonials = () => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '16px'
+    marginTop: '8px'
   };
 
   const logoStyle = {
@@ -83,18 +83,16 @@ const Testimonials = () => {
         <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-4">
           RECRUITER TESTIMONIALS
         </h3>
-        <h4 className="text-xl sm:text-2xl lg:text-3xl text-white mb-4">
-          What Our Recruiters Say
-        </h4>
+      
       </div>
       <div style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '320px' }}>
         <div className="slide">
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div key={index} style={cardStyle}>
-              <p style={{ fontSize: '16px', color: '#ffffff', marginBottom: '16px' }}>
+              <p style={{ fontSize: '16px', color: '#ffffff', marginBottom: '8px' }}>
                 {`"${testimonial.review}"`}
               </p>
-              <p style={{ color: '#FFC80E', fontSize: '18px', marginBottom: '16px' }}>
+              <p style={{ color: '#FFC80E', fontSize: '18px', marginBottom: '8px' }}>
                 {testimonial.rating}
               </p>
               <p style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '16px', marginBottom: '16px' }}>

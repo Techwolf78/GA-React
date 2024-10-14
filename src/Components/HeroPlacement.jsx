@@ -124,7 +124,7 @@ const HeroPlacement = () => {
           {/* Banner Image Below the Heading */}
           <div className="w-full flex justify-center">
             <img
-              src="placement-bg/heroPlacement1.PNG" // Update with your banner image path
+              src="placement-bg/BannerNew1.PNG" // Update with your banner image path
               className="w-auto" // Adjust width or height as needed
               alt="Banner"
             />

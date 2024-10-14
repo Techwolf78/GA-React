@@ -4,12 +4,12 @@ import { MapPinIcon } from '@heroicons/react/24/solid';
 const PartneredCollege = () => {
   const colleges = [
    
-    { name: 'Indira College of Engineering and Management', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/1-1.png' },
-    { name: 'Indira School Of Communication', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/2-2.png' },
-    { name: 'Indira Institute of Management, Pune', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/3-2.png' },
-    { name: 'Indira College of Commerce and Science', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/4-2.png' },
-    { name: 'D Y Patil International University', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/6-2.png' },
-    { name: 'D Y Patil College', location: 'Navi Mumbai, Maharashtra', imageUrl: 'Clgimage/5-2.png' },
+    { name: 'Indira College of Engineering and Management', location: 'Pune, Maharashtra', imageUrl: 'placement-bg/Collegelogo1.png' },
+    { name: 'Indira School Of Communication', location: 'Pune, Maharashtra', imageUrl: 'placement-bg/College logo 2 1.png' },
+    { name: 'Indira Institute of Management, Pune', location: 'Pune, Maharashtra', imageUrl: 'placement-bg/College logo 3 1.png' },
+    { name: 'Indira College of Commerce and Science', location: 'Pune, Maharashtra', imageUrl: 'placement-bg/College logo 4 1.png' },
+    { name: 'D Y Patil International University', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/5-2.png' },
+    { name: 'D Y Patil College of Engineering & Technology', location: 'Kolhapur, Maharashtra', imageUrl: 'placement-bg/College logo 7.png' },
     { name: 'Institute of Industrial and Computer Management and Research', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/7-2.png' },
     { name: 'Dnyanshree Institute Of Engineering & Technology', location: 'Satara, Maharashtra', imageUrl: 'Clgimage/8-2.png' },
     { name: 'Sanjivani KBP Polytechnic', location: 'Ahmednagar, Maharashtra', imageUrl: 'Clgimage/9-2.png' },
@@ -20,8 +20,8 @@ const PartneredCollege = () => {
     { name: 'Savitribai Phule Pune University', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/14-1.png' },
     { name: 'S. B. Patil Institute of Management', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/15-1.png' },
     { name: 'Ajeenkya DY Patil University ', location: 'Pune, Maharashtra', imageUrl: 'Clgimage/16-1.png' },
-    { name: 'Ramachandran International Institute of Management', location: 'Bangalore, Karnataka', imageUrl: 'Clgimage/College logo 5.png' },
-    { name: 'Yashoda Technical Campus', location: 'Bangalore, Karnataka', imageUrl: 'Clgimage/College logo 6.png' },
+    { name: 'Ramachandran International Institute of Management', location: 'Bangalore, Karnataka', imageUrl: 'placement-bg/College logo 5 1.png' },
+    { name: 'Yashoda Technical Campus', location: 'Bangalore, Karnataka', imageUrl: 'placement-bg/College logo 6 1.png' },
   ];
 
   return (

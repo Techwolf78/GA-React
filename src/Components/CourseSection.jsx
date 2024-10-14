@@ -8,257 +8,280 @@ const backSideImageUrl = '/MECH/Yellow Bcakground.png';
 const courses = {
   MECH: [
     { 
-      title: 'AUTOCAD', 
+      title: 'AutoCAD', 
       description: [
-        'Learn AutoCAD for both 2D drafting and 3D design.',
-        'Understand basic and advanced drawing techniques.',
-        'Master tools for dimensioning, annotations, and layout planning.',
-        'Use AutoCAD for mechanical design in various industries.'
+        'Learn 2D and 3D mechanical drafting techniques for component design.',
+        'Master industry-standard layering and annotations.',
+        'Create precise mechanical drawings for manufacturing.',
+        'Understand parametric design and modifications.',
+        'Integrate AutoCAD designs with other engineering software.'
       ],
       image: '/MECH/M1.png'
     },
     { 
-      title: 'CREO', 
+      title: 'Creo', 
       description: [
-        'Master CREO CAD software for parametric modeling.',
-        'Learn both direct modeling and generative design techniques.',
-        'Understand the integration of CREO with other PLM tools.',
-        'Apply CREO to solve real-world mechanical design challenges.'
+        'Master parametric 3D modeling for mechanical components.',
+        'Learn advanced simulation for stress and motion analysis.',
+        'Design and develop sheet metal components.',
+        'Perform detailed assembly design and testing.',
+        'Automate repetitive tasks through Creo’s customization tools.'
       ],
       image: 'MECH/M3.png'
     },
     { 
       title: 'CATIA V5', 
       description: [
-        'Explore CATIA’s advanced 3D modeling capabilities.',
-        'Design complex mechanical systems using parametric and direct modeling.',
-        'Gain proficiency in creating assembly and part design.',
-        'Understand how to leverage CATIA for engineering simulations.'
+        'Learn surface modeling and solid design for advanced industries.',
+        'Handle large assemblies with real-time collaboration features.',
+        
+        'Integrate CAD with CAM for seamless manufacturing workflows.',
+        'Use CATIA’s tools for automotive and aerospace design.'
       ],
       image: 'MECH/M2.png'
     },
     { 
-      title: 'SOLIDWORKS', 
+      title: 'SolidWorks', 
       description: [
-        'Learn 3D CAD design using SolidWorks.',
-        'Understand product data management and version control.',
-        'Gain skills in simulation and structural analysis.',
-        'Master the tools for assembly design and optimization.'
+        'Develop expertise in 3D part and assembly modeling.',
+        'Integrate Finite Element Analysis (FEA) for stress testing.',
+        'Design sheet metal components and welded structures.',
+        'Create technical drawings with BOM (Bill of Materials) for manufacturing.',
+        
       ],
       image: 'MECH/M4.png'
     },
     { 
       title: 'CAD & CAM', 
       description: [
-        'Learn the fundamentals of Computer-Aided Design (CAD) and Computer-Aided Manufacturing (CAM).',
-        'Understand the integration of design and manufacturing processes.',
-        'Study the role of CAD/CAM in optimizing mechanical engineering workflows.',
-        'Gain hands-on experience in designing and fabricating prototypes.'
+        'Learn how to integrate CAD designs with CAM processes.',
+        'Master CNC programming and machining simulation.',
+        'Design tooling and fixtures for production.',
+        'Prepare models for 3D printing and rapid prototyping.',
+        'Simulate machining operations to minimize errors.'
       ],
       image: 'MECH/M5.png'
     },
     { 
       title: 'Assembly', 
       description: [
-        'Study the principles of mechanical assembly.',
-        'Learn how to design efficient and optimized mechanical systems.',
-        'Understand the impact of tolerances and fits in assembly design.',
-        'Analyze and troubleshoot assembly processes in real-world applications.'
+        'Master component mating and constraint techniques.',
+        'Perform tolerance stack-up analysis for precision assemblies.',
+        'Create exploded views for clear assembly instructions.',
+        'Simulate motion and mechanics of assembled parts.',
+        'Automate Bill of Materials (BOM) generation for complex assemblies.'
       ],
       image: 'MECH/M6.png'
     }
-  ],
-
-  CIVIL: [
-    { 
-      title: 'AUTO CAD', 
-      description: [
-        'Learn the fundamentals of AutoCAD for civil engineering drafting.',
-        'Understand how to create and modify 2D and 3D designs.',
-        'Explore layer management, annotations, and plotting techniques.',
-        'Study best practices for accurate and efficient design representation.'
-      ],
-      image: '/MECH/M1.png'
-    },
- 
-    { 
-      title: 'STAAD PRO', 
-      description: [
-        'Master the use of STAAD Pro for structural analysis and design.',
-        'Learn to model, analyze, and design complex structures.',
-        'Explore various load cases and their impact on structural performance.',
-        'Understand the integration of design codes and standards in analysis.'
-      ],
-      image: 'Civil Engineering/C3.png'
-    },
-    { 
-      title: 'REVIT', 
-      description: [
-        'Gain proficiency in Revit for advanced Building Information Modeling (BIM).',
-        'Explore the creation and management of 3D architectural models.',
-        'Learn how to collaborate effectively in multidisciplinary teams.',
-        'Understand the importance of documentation and visualization in projects.'
-      ],
-      image: 'Civil Engineering/C4.png'
-    },
-    { 
-      title: 'BIM', 
-      description: [
-        'Delve deeper into Building Information Modeling for project management.',
-        'Understand the workflow and benefits of BIM in civil engineering.',
-        'Learn to coordinate between different disciplines using BIM tools.',
-        'Explore the future of construction with integrated data and modeling.'
-      ],
-      image: 'Civil Engineering/C5.png'
-    },
-    { 
-      title: 'MAX 3D', 
-      description: [
-        'Discover the application of 3ds Max in visualizing civil engineering projects.',
-        'Learn to create realistic renderings and animations of designs.',
-        'Explore the use of lighting, materials, and textures for presentations.',
-        'Understand how to communicate design intent effectively through 3D visuals.'
-      ],
-      image: 'Civil Engineering/C6.png'
-    },
-    { 
-      title: 'ESTIMATION & COSTING', 
-      description: [
-        'Understand the principles of project estimation and budgeting.',
-        'Learn how to prepare detailed cost estimates for civil projects.',
-        'Explore methods for analyzing project expenses and resources.',
-        'Study the impact of accurate estimation on project success.'
-      ],
-      image: 'Civil Engineering/C2.png'
-    }
+]
+,
+CIVIL: [
+  { 
+    title: 'AutoCAD', 
+    description: [
+      'Learn 2D and 3D drafting for civil projects like site plans and layouts.',
+      'Integrate survey data for site development and planning.',
+      'Develop structural detailing for civil infrastructure.',
+      'Create cross-sectional drawings and elevation views.',
+      'Generate documentation and annotations per civil standards.'
+    ],
+    image: '/MECH/M1.png'
+  },
+  { 
+    title: 'STAAD Pro', 
+    description: [
+      'Perform structural analysis for buildings, bridges, and other structures.',
+      'Design earthquake-resistant structures with seismic codes.',
+      'Calculate loads for structural safety (wind, dead, and live loads).',
+      'Use Finite Element Method (FEM) for detailed structural analysis.',
+      
+    ],
+    image: 'Civil Engineering/C3.png'
+  },
+  { 
+    title: 'Revit', 
+    description: [
+      'Master Building Information Modeling (BIM) for civil projects.',
+      'Create and modify architectural, structural, and MEP models.',
+      'Coordinate real-time collaboration for multi-disciplinary teams.',
+      'Detect and resolve clashes between building systems.',
+      
+    ],
+    image: 'Civil Engineering/C4.png'
+  },
+  { 
+    title: 'BIM', 
+    description: [
+      'Implement collaborative workflows for integrated project delivery.',
+      'Manage project life cycles from concept to construction.',
+      'Use 4D scheduling and 5D cost estimation within BIM models.',
+      'Perform sustainability analysis to ensure energy efficiency.',
+      'Ensure compliance with BIM standards in large-scale projects.'
+    ],
+    image: 'Civil Engineering/C5.png'
+  },
+  { 
+    title: '3D Max', 
+    description: [
+      'Create realistic visualizations of architectural and civil designs.',
+      'Learn lighting, material, and texture settings for photorealistic renderings.',
+      'Develop walkthrough animations for client presentations.',
+      'Design outdoor environments and landscapes.',
+      'Integrate 3D models with BIM for detailed visualization.'
+    ],
+    image: 'Civil Engineering/C6.png'
+  },
+  { 
+    title: 'Estimation and Costing', 
+    description: [
+      'Learn techniques for accurate quantity takeoffs and cost estimation.',
+      'Develop budgets for civil engineering projects.',
+      'Understand material and labor costing for construction management.',
+      'Use estimation software for project tracking and reporting.',
+      'Prepare financial reports for bidding and tenders.'
+    ],
+    image: 'Civil Engineering/C2.png'
+  }
 ],
 
+COMP: [
+  { 
+    title: 'Full Stack Development', 
+    description: [
+      'Learn front-end technologies like HTML, CSS, and JavaScript.',
+      'Master back-end development with Node.js, Express.js, and databases.',
+      'Build dynamic, responsive web applications with real-world projects.',
+      'Integrate API development and management.',
+      'Deploy full-stack applications on cloud platforms.'
+    ],
+    image: 'computr-science/CC1.png'
+  },
+  { 
+    title: 'MERN', 
+    description: [
+      'Master MongoDB for database management.',
+      'Learn Express.js for server-side frameworks.',
+      'Develop with React.js for efficient front-end user interfaces.',
+      'Implement Node.js for scalable back-end applications.',
+      'Create and manage RESTful APIs for seamless data flow.'
+    ],
+    image: 'computr-science/CC5.png'
+  },
+  { 
+    title: 'Programming Languages', 
+    description: [
+      'Learn Python, Java, and C++ for various real-world applications.',
+      'Apply object-oriented programming for better software architecture.',
+      
+      'Master language-specific frameworks and libraries.',
+      'Implement projects in real-world software development environments.'
+    ],
+    image: 'computr-science/CC3.png'
+  },
+  { 
+    title: 'DSA (Data Structures & Algorithms)', 
+    description: [
+      'Learn data structures like arrays, linked lists, and hashmaps.',
+      'Master sorting, searching, and graph algorithms.',
+      'Optimize algorithms for time and space complexity.',
+      'Apply dynamic programming techniques for problem-solving.',
+      'Prepare for coding interviews with real-world examples.'
+    ],
+    image: 'computr-science/CC6.png'
+  },
+  { 
+    title: 'App Development', 
+    description: [
+      'Develop cross-platform mobile applications using React Native and Flutter.',
+      'Learn Android and iOS development with platform-specific tools.',
+      'Integrate databases and APIs into mobile applications.',
+      'Master UI/UX design principles for mobile applications.',
+      'Deploy apps on app stores with continuous integration.'
+    ],
+    image: 'computr-science/CC2.png'
+  },
+  { 
+    title: 'Linux', 
+    description: [
+      'Learn Linux system administration for server management.',
+      'Master shell scripting for automating tasks.',
+      'Configure Linux environments for software development.',
+      'Manage users, processes, and permissions in Linux.',
+      'Implement Linux-based solutions in cloud and networking environments.'
+    ],
+    image: 'computr-science/CC4.png'
+  }
+],
 
-  COMP: [
-    { 
-      title: 'FULL STACK DEVELOPMENT', 
-      description: [
-        'Get comprehensive training in both front-end and back-end development.',
-        'Learn HTML, CSS, JavaScript for building web interfaces.',
-        'Explore backend technologies like Node.js, Express, and databases.',
-        'Understand how to integrate web applications with APIs and cloud services.'
-      ],
-      image: 'computr-science/CC1.png'
-    },
-    { 
-      title: 'IoT', 
-      description: [
-        'Learn about the Internet of Things (IoT) and smart devices.',
-        'Understand the technologies behind connected systems and devices.',
-        'Study protocols for communication between IoT devices (MQTT, HTTP, etc.).',
-        'Gain hands-on experience in building IoT applications and solutions.'
-      ],
-      image: 'computr-science/CC2.png'
-    },
-    { 
-      title: 'JAVA', 
-      description: [
-        'Master the Java programming language for developing robust applications.',
-        'Understand object-oriented programming (OOP) principles.',
-        'Learn about Java libraries, frameworks, and tools for development.',
-        'Gain experience building enterprise-level applications and systems.'
-      ],
-      image: 'computr-science/CC3.png'
-    },
-    { 
-      title: 'LINUX', 
-      description: [
-        'Gain proficiency in Linux system administration and command line tools.',
-        'Understand file systems, user management, and process management.',
-        'Learn to script with Bash and automate tasks.',
-        'Understand the role of Linux in servers, networks, and development environments.'
-      ],
-      image: 'computr-science/CC4.png'
-    },
-    { 
-      title: 'MERN', 
-      description: [
-        'Master the MERN stack (MongoDB, Express, React, Node.js).',
-        'Learn JavaScript for full-stack web development.',
-        'Understand the integration of front-end and back-end technologies.',
-        'Build dynamic and scalable web applications using modern frameworks.'
-      ],
-      image: 'computr-science/CC5.png'
-    },
-    { 
-      title: 'PYTHON', 
-      description: [
-        'Learn Python programming for a wide range of applications.',
-        'Explore Python for web development, data analysis, and machine learning.',
-        'Understand how to build automation scripts and data pipelines.',
-        'Gain skills in Python’s extensive library ecosystem for data science and development.'
-      ],
-      image: 'computr-science/CC6.png'
-    }
-  ],
+ELECT: [
+  { 
+    title: 'PLC SCADA', 
+    description: [
+      'Learn to program and configure PLC systems for industrial automation.',
+      'Master SCADA systems for real-time process monitoring and control.',
+      'Understand protocols and communication for industrial networks.',
+      'Design and troubleshoot control systems in real-world applications.',
+      'Develop HMI (Human Machine Interface) systems for user interaction.'
+    ],
+    image: 'Electrical Eng/E1.png'
+  },
+  { 
+    title: 'GTNT', 
+    description: [
+      'Learn grounding and transient network testing for electrical safety.',
+      'Master techniques for analyzing grounding systems in electrical networks.',
+      'Troubleshoot transient faults and ensure equipment protection.',
+      'Perform power quality analysis for better system reliability.',
+      'Understand the use of protective devices in grounding networks.'
+    ],
+    image: 'Electrical Eng/E2.png'
+  },
+  { 
+    title: 'BMS (Building Management System)', 
+    description: [
+      'Learn how to manage and control building automation systems.',
+      'Integrate HVAC, lighting, and security systems for optimal performance.',
+      'Monitor energy usage and improve building efficiency.',
+      'Configure BMS software for real-time monitoring and control.',
+      'Implement smart building technologies using IoT.'
+    ],
+    image: 'Electrical Eng/E3.png'
+  },
+  { 
+    title: 'IoT', 
+    description: [
+      'Learn to design IoT solutions for home automation and industrial systems.',
+      'Understand sensor networks and data collection processes.',
+      'Master communication protocols like MQTT and CoAP for IoT devices.',
+      'Develop real-time monitoring solutions with cloud integration.',
+      'Implement security measures in IoT networks.'
+    ],
+    image: 'computr-science/CC2.png'
+  },
+  { 
+    title: 'Transformers & Circuits', 
+    description: [
+      'Learn the design and operation of transformers and electrical circuits.',
+      'Analyze transformer performance in various electrical systems.',
+      'Master circuit analysis techniques for AC and DC circuits.',
+      'Understand fault detection and maintenance of transformers.',
+      'Design circuits with proper load balancing and protection.'
+    ],
+    image: 'Electrical Eng/5.jpg'
+  },
+  { 
+    title: 'Wiring Harness', 
+    description: [
+      'Learn to design wiring harnesses for automotive and industrial systems.',
+      'Master the principles of wiring routing and connector selection.',
+      'Develop wiring schematics for various applications.',
+      'Understand signal integrity and voltage drop in wiring systems.',
+      'Implement testing and troubleshooting for wiring harnesses.'
+    ],
+    image: 'Electrical Eng/E6.png'
+  }
+],
 
-  ELECT: [
-    { 
-      title: 'Automation', 
-      description: [
-        'Study automation systems used in industrial applications.',
-        'Learn the principles behind programmable logic controllers (PLCs).',
-        'Explore sensors, actuators, and control systems in automation.',
-        'Understand how automation improves efficiency and reduces errors.'
-      ],
-      image: 'Electrical Eng/E1.png'
-    },
-    { 
-      title: 'Electric Vehicles', 
-      description: [
-        'Explore the design of electric vehicles and their power systems.',
-        'Understand battery management systems and charging technologies.',
-        'Learn about electric drive systems and energy efficiency in EVs.',
-        'Study the future of electric mobility and the challenges ahead.'
-      ],
-      image: 'Electrical Eng/E2.png'
-    },
-    { 
-      title: 'Wiring Harness', 
-      description: [
-        'Learn the design and manufacturing process of wiring harnesses.',
-        'Understand the role of wiring harnesses in electrical systems.',
-        'Study materials, tools, and technologies used in wiring harnesses.',
-        'Explore the challenges in producing reliable and cost-effective harnesses.'
-      ],
-      image: 'Electrical Eng/E3.png'
-    },
-    { 
-      title: 'IoT', 
-      description: [
-        'Study the applications of IoT in electrical engineering.',
-        'Learn about sensors, networks, and cloud integration for IoT systems.',
-        'Explore smart grids, energy management, and automation in IoT.',
-        'Understand security and data management challenges in IoT systems.'
-      ],
-      image: 'computr-science/CC2.png'
-    },
-    { 
-      title: 'BMS', 
-      description: [
-        'Learn about Building Management Systems (BMS).',
-        'Understand the integration of HVAC, lighting, and other building systems.',
-        'Study energy management, security, and monitoring with BMS.',
-        'Gain skills in configuring and optimizing BMS for smart buildings.'
-      ],
-      image: 'Electrical Eng/5.jpg'
-    },
-    { 
-      title: 'PIC & SCADA', 
-      description: [
-        'Study Programmable Interface Controllers (PIC) and SCADA systems.',
-        'Understand the fundamentals of industrial automation and control.',
-        'Learn how SCADA systems are used for monitoring and control in real-time.',
-        'Explore the use of PICs in embedded systems and automation projects.'
-      ],
-      image: 'Electrical Eng/E6.png'
-    }
-  ],
 
   AIDS: [
     { 
