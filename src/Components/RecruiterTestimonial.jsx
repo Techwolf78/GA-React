@@ -11,32 +11,41 @@ const testimonials = [
   {
     review: "Their commitment to nurturing and grooming exceptional talent is truly commendable. The graduates we've recruited from Gryphon Academy have consistently proven to be skilled, adaptable, and well-prepared for the demands of the industry.",
     name: "Cdr. Pratap Pawar",
-    rating: "★★★★☆",
-    companyLogo: "Logos/2.jpg",
+    rating: "★★★★★",
+    companyLogo: "Logos/4.jpg",
     companyName: "Director HR & IT Gs lab"
   },
   {
     review: "The talent pool Gryphon offers is a testament to their dedication in producing industry-ready graduates. We thank Gryphon Academy for consistently providing us with such outstanding talent.",
     name: "Mr. Suvarnanidhi Rao",
     rating: "★★★★★",
-    companyLogo: "Logos/3.jpg",
+    companyLogo: "Logos/23.jpg",
     companyName: "Campus Lead - Indian Sub Continent Philips India"
   },
   {
-    review: "We recruited 145 fresh engineers batch 2022-23 with the support of Gryphon and got reliable source of talent for our company. Team Gryphon is doing a fabulous job.",
-    name: "Mr. Rahul Bagale",
+    review: "Gryphon Academy trained students are well-prepared for the demands of the engineering industry, with a strong foundation in both technical and professional skills.",
+    name: "Mr. Sushant Kumar",
     rating: "★★★★★",
-    companyLogo: "Logos/1.jpg",
-    companyName: "Group HR Head Force Motors Ltd."
+    companyLogo: "Logos/40.jpg",
+    companyName: "Talent Acquisition Manager, Brillio"
   },
   {
-    review: "Their commitment to nurturing and grooming exceptional talent is truly commendable. The graduates we've recruited from Gryphon Academy have consistently proven to be skilled, adaptable, and well-prepared for the demands of the industry.",
-    name: "Cdr. Pratap Pawar",
-    rating: "★★★★☆",
-    companyLogo: "Logos/2.jpg",
-    companyName: "Director HR & IT Gs lab"
+    review: "Our experience with Gryphon Academy has been nothing short of exceptional. I appreciate the effort they put into producing graducates. They have made our recruitment process smoother and more effective.",
+    name: "Dr. Sunaina Dutta",
+    rating: "★★★★★",
+    companyLogo: "Logos/5.jpg",
+    companyName: "Head HR, Hettich India"
   },
+  {
+    review: "We've had the opputunity to undergo Gryphon Academy's training process, extending its reach to candidates from various regions. Gryphon's high-quality training program has undeniably enhanced student skills. ",
+    name: "Mr. Shipra Pandit",
+    rating: "★★★★★",
+    companyLogo: "Logos/12.jpg",
+    companyName: "Director - HR, Juspay"
+  },
+
 ];
+ 
 
 const Testimonials = () => {
   const cardStyle = {
@@ -89,7 +98,7 @@ const Testimonials = () => {
         <div className="slide">
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div key={index} style={cardStyle}>
-              <p style={{ fontSize: '16px', color: '#ffffff', marginBottom: '8px' }}>
+              <p style={{ fontSize: '16px', color: '#ffffff', marginBottom: '8px',fontStyle: 'italic' }}>
                 {`"${testimonial.review}"`}
               </p>
               <p style={{ color: '#FFC80E', fontSize: '18px', marginBottom: '8px' }}>
@@ -100,7 +109,7 @@ const Testimonials = () => {
               </p>
               <div style={flexContainerStyle}>
                 <img src={testimonial.companyLogo} alt={testimonial.companyName} style={logoStyle} />
-                <p style={{ color: '#ffffff', fontSize: '14px' }}>{testimonial.companyName}</p>
+                <p style={{ color: '#ffffff', fontSize: '14px' , }}>{testimonial.companyName}</p>
               </div>
             </div>
           ))}
