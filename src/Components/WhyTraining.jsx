@@ -1,18 +1,18 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faUsersCog, 
-  faClipboardCheck, 
-  faStar, 
-  faDollarSign, 
-  faClock, 
-  faCheckCircle, 
-  faChalkboardTeacher, 
-  faGraduationCap, 
-  faSyncAlt, 
-  faChartLine, 
-  faLaptopCode, 
-  faHandsHelping, 
+  faGraduationCap, // for Experiential Learning
+  faUsersCog, // for Competence Based Learning
+  faClock, // for Timely Evaluation
+  faClipboardCheck, // for Periodic Assessment
+  faProjectDiagram, // for Interdisciplinary Approach
+  faSyncAlt, // for Agile & Real Time Based Trainings
+  faChalkboardTeacher, // for Trainer Role Fit
+  faMapMarkedAlt, // for Skill Mapping as per Industry
+  faClipboardList, // for Continuous Assessment
+  faUserFriends, // for Role Play Based Training
+  faBookOpen, // for Case Method
+  faSchool, // for Teaching Bootcamps
 } from '@fortawesome/free-solid-svg-icons';
 
 function WhyTraining() {
@@ -21,18 +21,18 @@ function WhyTraining() {
   const darkGray = '#333333'; 
 
   const items = [
-    { icon: faUsersCog, text: 'Industry – Ready Talent' },
-    { icon: faClipboardCheck, text: 'Customized & Curated Content' },
-    { icon: faStar, text: 'Tailored Skill Sets' },
-    { icon: faDollarSign, text: 'Reduced Training Costs' },
-    { icon: faClock, text: 'Long Term Investment' },
-    { icon: faCheckCircle, text: 'Evaluation Based Learning' },
-    { icon: faChalkboardTeacher, text: 'Elite Guidance (Industry Experts)' },
-    { icon: faGraduationCap, text: 'Comprehensive Development' },
-    { icon: faSyncAlt, text: 'Real Time Based Approach' },
-    { icon: faChartLine, text: 'Performance Tracking' },
-    { icon: faLaptopCode, text: 'Hands-on Projects' },
-    { icon: faHandsHelping, text: 'Collaborative Learning' },
+    { icon: faGraduationCap, text: 'Experiential Learning' },
+    { icon: faUsersCog, text: 'Competence Based Learning' },
+    { icon: faClock, text: 'Timely Evaluation' },
+    { icon: faClipboardCheck, text: 'Periodic Assessment (Summative & Formative)' },
+    { icon: faProjectDiagram, text: 'Interdisciplinary Approach' },
+    { icon: faSyncAlt, text: 'Agile & Real Time Based Trainings' },
+    { icon: faChalkboardTeacher, text: 'Trainer Role Fit' },
+    { icon: faMapMarkedAlt, text: 'Skill Mapping as per Industry' },
+    { icon: faClipboardList, text: 'Continuous Assessment' },
+    { icon: faUserFriends, text: 'Role Play Based Training' },
+    { icon: faBookOpen, text: 'Case Method' },
+    { icon: faSchool, text: 'Teaching Bootcamps' },
   ];
 
   return (
