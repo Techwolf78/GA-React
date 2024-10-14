@@ -151,16 +151,33 @@ const Home = () => {
     <div className= "roboto-regular">
       {/* Navbar */}
       <div className={`top-navigation ${isNavbarVisible ? 'visible' : 'hidden'}`}>
-        <nav className="sticky-top-nav">
-          <ul className="stick-top-nav-ul">
-            <li className="nav-active"><a onClick={() => handleNavClick(heroRef)}><span>Home</span></a><div className="line"></div></li>
-            <li><a onClick={() => handleNavClick(aboutRef)}><span>About Us</span></a><div className="line"></div></li>
-            <li><a onClick={() => handleNavClick(trainingRef)}><span>Training</span></a><div className="line"></div></li>
-            <li><a onClick={() => handleNavClick(placementRef)}><span>Placement</span></a><div className="line"></div></li>
-            <li><a onClick={() => handleNavClick(brandingRef)}><span>Brand Positioning</span></a><div className="line"></div></li>
-          </ul>
-        </nav>
-      </div>
+  <nav className="sticky-top-nav">
+  <ul className="stick-top-nav-ul">
+  <li className="nav-active">
+    <div className="underline"></div>
+    <a onClick={() => handleNavClick(heroRef)}><span>Gryphon</span></a>
+  </li>
+  <li>
+    <div className="underline"></div>
+    <a onClick={() => handleNavClick(aboutRef)}><span>Why Us</span></a>
+  </li>
+  <li>
+    <div className="underline"></div>
+    <a onClick={() => handleNavClick(trainingRef)}><span>Training</span></a>
+  </li>
+  <li>
+    <div className="underline"></div>
+    <a onClick={() => handleNavClick(placementRef)}><span>Placement</span></a>
+  </li>
+  <li>
+    <div className="underline"></div>
+    <a onClick={() => handleNavClick(brandingRef)}><span>Brand Positioning</span></a>
+  </li>
+</ul>
+
+  </nav>
+</div>
+
 
       {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`} id="sidebar" ref={sidebarRef}>

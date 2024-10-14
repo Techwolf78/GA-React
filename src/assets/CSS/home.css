@@ -6,21 +6,20 @@ body, html {
   background-color: #01224f;
   overflow-x: hidden;
 }
-
 /* Navbar Styles */
 .top-navigation {
   position: fixed;
-  top: 50%; /* Center vertically */
-  left: 0; /* Align to the left */
-  width: 200px; /* Set a width for the vertical navbar */
-  height: auto; /* Height will adjust based on content */
-  transform: translateY(-50%); /* Center vertically using transform */
+  top: 50%;
+  left: 0;
+  width: 200px;
+  height: auto;
+  transform: translateY(-50%);
   z-index: 10;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  justify-content: flex-start; /* Align items at the top */
+  flex-direction: column;
+  justify-content: flex-start;
+  background: transparent;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  background: transparent; /* No background */
 }
 
 .top-navigation.hidden {
@@ -38,51 +37,56 @@ body, html {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  width: 100%; /* Full width of the navbar */
+  flex-direction: column;
+  width: 100%;
 }
 
 .stick-top-nav-ul li {
-  margin: 20px 0; /* Space between items */
-  position: relative; /* For the underline effect */
-  text-align: left; /* Align text to the left */
+  width: 150px; /* Fixed width for li */
+  margin: 0; /* Remove vertical margin */
+  position: relative; /* For positioning the underline */
+  text-align: left;
+  overflow-wrap: break-word; /* Ensure long words wrap */
+  transition: margin-bottom 0.3s ease; /* Smooth transition for bottom margin */
+}
+
+.underline {
+  width: 20%; /* Initial width of the underline */
+  height: 1.5px; /* Height of the underline */
+  background: #fff; /* Underline color */
+  position: absolute;
+  top: 0; /* Position it at the top of the text */
+  left: 10px; /* Space from the left */
+  opacity: 1; /* Always show underline */
+  transition: width 0.3s ease; /* Transition for width */
+}
+
+/* Grow underline on hover or active */
+.stick-top-nav-ul li:hover .underline,
+.stick-top-nav-ul li.nav-active .underline {
+  width: 40%; /* Width when hovered or active */
+  height: 4px; /* Increase height for better visibility */
 }
 
 .stick-top-nav-ul li a {
   text-decoration: none;
   color: #fff;
   display: inline-block; /* Change to inline-block */
-  padding: 10px 15px;
+  padding: 10px 15px; /* Use padding for spacing */
   font-size: 16px;
-  transition: color 0.3s ease;
-  opacity: 0.5;
-  position: relative; /* Make it relative for the underline */
+  position: relative; /* Make it relative for the text */
+  opacity: 0; /* Hide text initially */
+  transition: opacity 0.5s ease; /* Smooth transition for text visibility */
 }
 
-.stick-top-nav-ul li a:hover {
-  opacity: 1;
-}
-
+.stick-top-nav-ul li:hover a,
 .stick-top-nav-ul li.nav-active a {
-  font-weight: bold;
-  opacity: 1;
+  opacity: 1; /* Show text on hover or when active */
 }
 
-.stick-top-nav-ul li a::after {
-  content: '';
-  display: block;
-  width: 0; /* Initially hidden */
-  height: 2px; /* Height of the underline */
-  background: #fff; /* Underline color */
-  transition: width 0.3s ease; /* Transition for the underline effect */
-  position: absolute;
-  bottom: 0;
-  left: 0; /* Align to the left of the text */
-}
-
-.stick-top-nav-ul li a:hover::after,
-.stick-top-nav-ul li.nav-active a::after {
-  width: 100%; /* Show underline on hover or when active */
+/* Add bottom margin for the active list item */
+.stick-top-nav-ul li.nav-active {
+  margin-bottom: 30px; /* Space below the active item */
 }
 
 /* Sidebar Styles */
