@@ -4,13 +4,13 @@ const PartneredUniversities = () => {
   return (
     <div className="relative px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16 pt-6 bg-[#091327] text-white roboto-regular">
       <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-4 text-[#FFC80E]">
-        Partnered with 60+ Colleges/Universities
+        Partnered with 60+ College/Universities
       </h1>
       
       {/* Background image for medium and large screens */}
       <div className="w-full hidden md:block mb-6">
         <img 
-          src="placement-bg/PANIndia.png" 
+          src="placement-bg/PANIndiaNew.PNG" 
           alt="Background showing partnered colleges and universities" 
           className="w-full h-full object-fit" 
           style={{ margin: 0 }} 

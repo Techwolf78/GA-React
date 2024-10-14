@@ -64,8 +64,12 @@ const Advisory = () => {
                   {person.location && <Typography className="text-gray-600 font-bold break-words">{person.location}</Typography>}
                 </div>
                 <div className="flex flex-col items-center mb-4">
-                  <div className="w-20 h-10 flex items-center justify-center bg-white overflow-hidden">
-                    <img src={person.logo} alt="Logo" className="w-full h-full object-contain" />
+                  <div className={`w-20 flex items-center justify-center bg-white overflow-hidden ${person.name === "Dr. K. S. Sangwan" ? 'h-8' : 'h-20'}`}>
+                    <img 
+                      src={person.logo} 
+                      alt="Logo" 
+                      style={{ height: person.name === "Dr. K. S. Sangwan" ? '2rem' : '3rem', width: 'auto' }} 
+                    />
                   </div>
                 </div>
               </div>

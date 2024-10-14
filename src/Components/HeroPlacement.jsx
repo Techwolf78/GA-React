@@ -1,8 +1,103 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+const headings = [
+  "Your Ultimate Hiring Hub for Fresh Talent",
+  "Access a Diverse Pool of Ready-to-Work Candidates",
+  "Discover Trained Talent with a Passion for Your Brand"
+];
 
 const HeroPlacement = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
+
+  useEffect(() => {
+    // Determine interval duration based on current heading index
+    const intervalDuration = currentIndex === 0 ? 3000 : 4000;
+
+    const interval = setInterval(() => {
+      setIsExiting(true);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % headings.length);
+        setIsExiting(false);
+      }, 500); // Duration of the slide-out animation
+    }, intervalDuration);
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [currentIndex]); // Dependency on currentIndex
+
   return (
     <div className="relative bg-[#003073] z-10 w-full roboto-regular lg:max-h-[80vh] lg:h-[80vh]">
+      <style>
+        {`
+          @keyframes slide-in {
+            0% {
+              transform: translateX(100%);
+              opacity: 0;
+            }
+            100% {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+
+          @keyframes slide-out {
+            0% {
+              transform: translateX(0);
+              opacity: 1;
+            }
+            100% {
+              transform: translateX(-100%);
+              opacity: 0;
+            }
+          }
+
+          .slide-enter {
+            animation: slide-in 0.5s forwards;
+          }
+
+          .slide-exit {
+            animation: slide-out 0.5s forwards;
+          }
+
+          h1 {
+            word-spacing: 0.3rem;
+            line-height: 1.2;
+            padding: 0 1rem; /* Added padding for smaller screens */
+          }
+
+          /* Responsive Styles */
+          @media (max-width: 640px) { /* Small devices */
+            h1 {
+              font-size: 1.5rem; /* Adjust font size for small screens */
+            }
+          }
+
+          @media (min-width: 640px) and (max-width: 1024px) { /* Medium devices */
+            h1 {
+              font-size: 2rem; /* Adjust font size for medium screens */
+            }
+          }
+
+          @media (min-width: 1024px) { /* Large devices */
+            h1 {
+              font-size: 3rem; /* Adjust font size for large screens */
+            }
+          }
+
+          @media (min-width: 1280px) { /* Extra large devices */
+            h1 {
+              font-size: 3rem; /* Adjust font size for extra large screens */
+            }
+          }
+
+          /* Adjust banner image */
+          img {
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+          }
+        `}
+      </style>
+
       {/* Image Section */}
       <div className="relative w-full h-full flex flex-col items-center justify-center">
         {/* Original image */}
@@ -18,10 +113,11 @@ const HeroPlacement = () => {
         {/* Stacked Text and Banner */}
         <div className="absolute flex flex-col items-center justify-center h-full">
           <h1
-            className="text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center px-6 uppercase mb-2"
-            style={{ wordSpacing: '0.5rem', lineHeight: '1.2' }}
+            className={`text-white font-bold text-center mb-2 ${
+              isExiting ? 'slide-exit' : 'slide-enter'
+            }`}
           >
-            One Stop Commercial Free Solution to Recruiter’s Complete Fresher’s Hiring Needs
+            {headings[currentIndex]}
           </h1>
 
           {/* Banner Image Below the Heading */}
