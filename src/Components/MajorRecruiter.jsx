@@ -34,15 +34,23 @@ const MajorRecruiter = () => {
             position: relative; /* For absolute positioning of the info box */
           }
 
-          .info-box {
-            z-index: 10; /* Ensure it appears above the slider */
-            width: 130px; /* Set the width of the box */
-            height: 100%; /* Match height with the slider */
-            display: flex; /* Flexbox to arrange content */
-            align-items: center; /* Center content vertically */
-            padding: 16px; /* Adjust padding as needed */
-            background-color: #003073; /* White background */
-          }
+       .info-box {
+    z-index: 10; /* Ensure it appears above the slider */
+    width: 130px; /* Set the width of the box for large screens */
+    height: 100%; /* Match height with the slider */
+    display: flex; /* Flexbox to arrange content */
+    align-items: center; /* Center content vertically */
+    padding: 16px; /* Adjust padding as needed for large screens */
+    background-color: #003073; /* Background color */
+}
+
+@media (max-width: 768px) {
+    .info-box {
+        width: 110px; /* Set the width of the box for small screens */
+        padding: 8px; /* Adjust padding for small screens */
+    }
+}
+
 
           .logo-slider {
             width: 100%; /* Ensure full width */
