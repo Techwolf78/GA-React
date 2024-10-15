@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Typography } from "@material-tailwind/react";
 
 const ADVISORY_DATA = [
-  { name: "Dr. K. S. Sangwan", designation: "Chair Professor", location: "Mechanical Engineering Department, BITS Pilani", image: "Advisory/KS Sangwan.png", logo: "placement-bg/1 1.png" },
+  { name: "Dr. K. S. Sangwan", designation: "Cheif Professor", location: "Mechanical Engineering Department, BITS Pilani", image: "Advisory/KS Sangwan.png", logo: "placement-bg/BITS.PNG" },
   { name: "Mr. Mohan Patel", designation: "Project Management Consultant", location: "From IIT-Bombay", image: "Advisory/Mr. Mohan sir 1.png", logo: "placement-bg/2 2.png" },
   { name: "Dr. Sukanta Bhatt", designation: "Director of Tisory Consulting", location: "From IIT-Kharagpur", image: "Advisory/Sukanta Bhatt.png", logo: "placement-bg/3 1.png" },
   { name: "Mr. Rahul Bagale", designation: "Group HR Head", location: "Force Motors", image: "Advisory/Rahul Bagale.png", logo: "placement-bg/4.png" },
@@ -40,18 +40,18 @@ const Advisory = () => {
 
   return (
     <div className="py-4 bg-[#091327] roboto-regular">
-      <div className="mb-12">
-        <h2 className="text-center mb-6 font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-4xl text-[#ffc700]">
-        OUR INDUSTRY & ACADEMIA ADVISORY BOARD  
+      <div className="mb-8">
+        <h2 className="text-center mb-4 font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-4xl text-[#ffc700]">
+          OUR INDUSTRY & ACADEMIA ADVISORY BOARD  
         </h2>
         <div className="overflow-hidden relative">
           <div className="flex space-x-6 advisory-scroll" ref={advisoryRef}>
             {duplicatedData.map((person, index) => (
               <div 
                 key={index} 
-                className="bg-white shadow-lg rounded-lg w-64 flex flex-col flex-shrink-0 h-96"
+                className="bg-white shadow-lg rounded-lg w-64 flex flex-col flex-shrink-0 h-[420px]"
               >
-                <div className="w-full bg-[#003073] h-60 ">
+                <div className="w-full bg-[#003073] h-60">
                   <img 
                     src={person.image} 
                     alt={person.name} 
@@ -63,12 +63,12 @@ const Advisory = () => {
                   <Typography className="text-gray-600 break-words">{person.designation}</Typography>
                   {person.location && <Typography className="text-gray-600 font-bold break-words">{person.location}</Typography>}
                 </div>
-                <div className="flex flex-col items-center mb-4">
-                  <div className={`w-20 flex items-center justify-center bg-white overflow-hidden ${person.name === "Dr. K. S. Sangwan" ? 'h-8' : 'h-20'}`}>
+                <div className="flex flex-col items-center mb-0 mt-1">
+                  <div className={`w-full ${person.name === "Dr. K. S. Sangwan" ? 'h-16' : 'h-24'} flex items-center justify-center bg-white overflow-hidden box-border`}>
                     <img 
                       src={person.logo} 
                       alt="Logo" 
-                      style={{ height: person.name === "Dr. K. S. Sangwan" ? '2rem' : '3rem', width: 'auto' }} 
+                      className="w-full h-full object-contain" 
                     />
                   </div>
                 </div>

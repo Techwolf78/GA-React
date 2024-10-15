@@ -21,7 +21,7 @@ const CorporateAppoarch = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div className="bg-[#ffffff] text-[#000000] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300  hover:shadow-xl">
             <div className="flex items-center mb-4">
-              <h4 className="text-xl font-semibold text-[#003073] underline">Easy to Implement</h4>
+             
             </div>
             <div className="flex items-start mb-2">
               <img src="CorporatePage/1.png" alt="Needs Assessment Icon" className="w-10 h-10" />
@@ -45,7 +45,7 @@ const CorporateAppoarch = () => {
 
           <div className="bg-[#ffffff] text-[#000000] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300  hover:shadow-xl">
             <div className="flex items-center mb-4">
-              <h4 className="text-xl font-semibold text-[#003073] underline">Customized Content</h4>
+             
             </div>
             <div className="flex items-start mb-2">
               <img src="CorporatePage/1.png" alt="Needs Assessment Icon" className="w-10 h-10" />
@@ -69,7 +69,7 @@ const CorporateAppoarch = () => {
 
           <div className="bg-[#ffffff] text-[#000000] p-6 rounded-lg shadow-lg flex flex-col transition-all duration-300  hover:shadow-xl">
             <div className="flex items-center mb-4">
-              <h4 className="text-xl font-semibold text-[#003073] underline">Industry Relevant</h4>
+              
             </div>
             <div className="flex items-start mb-2">
               <img src="CorporatePage/1.png" alt="Advisory Board Icon" className="w-10 h-10" />

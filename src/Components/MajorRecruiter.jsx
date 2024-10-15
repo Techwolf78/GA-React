@@ -12,12 +12,14 @@ const MajorRecruiter = () => {
   ));
 
   return (
-    <div className="logo-slider-section bg-[#003073] roboto-regular">
-      <div className="logo-slider relative overflow-hidden w-full ">
-      <p className="section-heading text-[#FFC80E] text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 pt-1 ">
-          OUR TOP RECRUITERS
-        </p>
-        <div className="logo-slider-track flex animate-scroll ">
+    <div className="logo-slider-section bg-[#003073] roboto-regular relative">
+      {/* Big box on the top left side of the slider */}
+      <div className="info-box absolute top-0 left-0 bg-white p-4 shadow-lg flex items-center h-full">
+        <h2 className="text-[16px]  text-[#ffff]">OUR TOP RECRUITERS</h2>
+      </div>
+
+      <div className="logo-slider relative overflow-hidden w-full">
+        <div className="logo-slider-track flex animate-scroll">
           {/* Duplicate the logos for infinite scroll effect */}
           {[...logos, ...logos]}
         </div>
@@ -29,6 +31,17 @@ const MajorRecruiter = () => {
           .logo-slider-section {
             padding: 0; /* Remove padding */
             margin: 0; /* Remove margin */
+            position: relative; /* For absolute positioning of the info box */
+          }
+
+          .info-box {
+            z-index: 10; /* Ensure it appears above the slider */
+            width: 130px; /* Set the width of the box */
+            height: 100%; /* Match height with the slider */
+            display: flex; /* Flexbox to arrange content */
+            align-items: center; /* Center content vertically */
+            padding: 16px; /* Adjust padding as needed */
+            background-color: #003073; /* White background */
           }
 
           .logo-slider {
