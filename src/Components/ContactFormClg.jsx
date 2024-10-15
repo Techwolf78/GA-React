@@ -96,7 +96,7 @@ const Testimonials = () => {
       <h2 className="text-3xl font-bold text-center mb-6 text-white">
         COLLEGE TESTIMONIALS
       </h2>
-      <div className="relative overflow-hidden sm:h-[60vh] xs:h-[60vh] md:h-[60vh] lg:h-[100vh]">
+      <div className="relative overflow-hidden sm:h-[60vh] xs:h-[60vh] md:h-[60vh] lg:h-[90vh]">
         <div className="flex flex-col animate-slide">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
@@ -222,49 +222,56 @@ const ContactForm = () => {
           <Testimonials />
           <div ref={ref} className="w-full lg:w-1/2 flex flex-col items-center">
             <div className="w-full p-4 lg:p-6 bg-gradient-to-r from-blue-800 to-blue-600 rounded-lg shadow-lg text-white overflow-auto mt-20">
-              <div className="w-full lg:h-auto flex flex-col lg:flex-row justify-center items-center mb-4 relative">
-                <h1 className="md:text-5xl text-2xl font-bold text-center text-white mb-4 lg:mb-0 lg:mr-4">
-                  Ready to enhance your <span className="text-[#FFC80E]">curriculum? </span>
-                  <br />
-                  Contact us <span className="text-[#FFC80E]">Today! </span>
-                </h1>
-                <img
-                  src="LandingImage/contactform.png"
-                  alt="Salesperson illustration"
-                  className="w-96 max-w-md h-auto object-cover rounded-lg"
-                />
+         <div className="w-full lg:h-auto flex flex-col lg:flex-row justify-between items-center mb-4 relative p-4">
+  <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-center text-white mb-4 lg:mb-0 lg:mr-4 flex-1">
+    Ready to enhance your <span className="text-[#FFC80E]">curriculum?</span>
+    <br />
+    Contact us <span className="text-[#FFC80E]">Today!</span>
+  </h1>
 
-                <img
-                  src="LandingImage/union-design-img.svg"
-                  alt="Rotating Triangle"
-                  className="absolute top-0 w-12 h-12 left-0 md:left-18"
-                  style={{
-                    margin: "10px",
-                    animation: "spin 2s linear infinite",
-                  }}
-                />
+  <img
+    src="LandingImage/contactform.png"
+    alt="Salesperson illustration"
+    className="w-64 md:w-72 lg:w-80 xl:w-96 max-w-full h-auto object-cover rounded-lg flex-1"
+    style={{ minWidth: '150px' }} // Adjust as needed
+  />
 
-                <img
-                  src="LandingImage/union-design-img.svg"
-                  alt="Rotating Triangle Bottom Right"
-                  className="absolute bottom-0 right-0 w-12 h-12"
-                  style={{
-                    margin: "10px",
-                    marginRight: "20px",
-                    animation: "spin 2s linear infinite",
-                  }}
-                />
+  <img
+    src="LandingImage/union-design-img.svg"
+    alt="Rotating Triangle"
+    className="absolute top-0 w-10 h-10 md:w-12 md:h-12 left-0 md:left-18"
+    style={{
+      margin: "10px",
+      animation: "spin 2s linear infinite",
+    }}
+  />
 
-                <img
-                  src="LandingImage/curve-lines.svg"
-                  alt="Waving Design"
-                  className="absolute bottom-0 left-0 w-24 h-auto md:bottom-0 md:left-64"
-                  style={{
-                    marginBottom: "10px",
-                    marginLeft: "10px",
-                  }}
-                />
-              </div>
+  <img
+    src="LandingImage/union-design-img.svg"
+    alt="Rotating Triangle Bottom Right"
+    className="absolute bottom-0 right-0 w-10 h-10 md:w-12 md:h-12"
+    style={{
+      margin: "10px",
+      marginRight: "20px",
+      animation: "spin 2s linear infinite",
+    }}
+  />
+
+<img
+  src="LandingImage/curve-lines.svg"
+  alt="Waving Design"
+  className="absolute bottom-0 left-0 w-20 h-auto md:w-24 md:bottom-0 md:left-64"
+  style={{
+    marginBottom: "10px",
+    marginLeft: "10px",
+    // Add responsive width adjustments if necessary
+    maxWidth: '100%', // Ensure it scales down to fit smaller screens
+    height: 'auto', // Maintain aspect ratio
+  }}
+/>
+
+</div>
+
 
 
 

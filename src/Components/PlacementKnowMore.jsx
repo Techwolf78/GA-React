@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const vectorImage = './Training Page/BrochureBook.png'; // Path for vector image
 const trainingPageLink = '/training'; // Link to the training page
@@ -35,13 +36,13 @@ const BrochureSection = () => {
             <h2 className="text-xl md:text-2xl font-bold mb-0 text-center">
               Know what trained resources you are hiring
             </h2>
-            <a
-              href={trainingPageLink}
+            <Link // Use Link instead of a
+              to={trainingPageLink}
               className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow transition duration-300 transform hover:scale-105 hover:shadow-lg border-2 border-transparent hover:border-yellow-400 ml-4 whitespace-nowrap"
             >
               Know More 
               <img src={arrowImage} alt="Arrow" className="h-5 w-5 ml-2" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -57,13 +58,13 @@ const BrochureSection = () => {
           <h2 className="text-xl font-bold mb-4 text-center">
             Know what trained resources you are hiring
           </h2>
-          <a
-            href={trainingPageLink}
+          <Link // Use Link instead of a
+            to={trainingPageLink}
             className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow transition duration-300 transform hover:scale-105 hover:shadow-lg border-2 border-transparent hover:border-yellow-400 whitespace-nowrap"
           >
             Know More 
             <img src={arrowImage} alt="Arrow" className="h-5 w-5 ml-2" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

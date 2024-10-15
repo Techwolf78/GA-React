@@ -233,7 +233,7 @@ const Home = () => {
   <div className="section-content right">
     <h2>About Us</h2>
     <p>
-    Step into a world where your growth is our mission. At Gryphon Academy, we transform ambitions into achievements. Whether you’re a student, professional, or educator, our customized programs provide the tools you need to thrive in today’s fast-paced industries. Ready to embark on a transformative journey? Let’s take the first step together.
+    Gryphon Academy bridges the gap between academic learning and industry needs by developing programmes that prepares your students to be job-ready from day one. Our curriculum, crafted in collaboration with industry experts, focuses on practical skills and real-world applications, ensuring students acquire the competencies employers seek. Through hands-on projects and specialized workshops, we foster technical knowledge along with essential soft skills like communication and leadership, transforming students into well-rounded professionals ready to excel in their careers.
     </p>
     <Link to="/about" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>
@@ -247,7 +247,7 @@ const Home = () => {
   <div className="section-content left">
     <h2>Training</h2>
     <p>
-    At Gryphon Academy, our training programs are specifically designed with your career goals in mind. We focus on equipping you with the essential skills that today’s industry demand, ensuring you are excelling in your field. Our customized content addresses the unique challenges of your chosen industry, while personalized evaluations help identify your strengths and areas for improvement. By utilizing modern tools and methodologies, we enhance your learning experience and prepare you for real-world applications. 
+    At Gryphon Academy, our training programs are specifically designed with career goals of students in mind. We focus on equipping students with the essential skills that today’s industry demand, ensuring they excel in their fields. Our customized content addresses the unique challenges of the industry, while personalized evaluations help identify strengths and key areas of the students for improvement. By utilizing modern tools and methodologies, we enhance the students learning experience and prepare them for real-world applications. 
     </p>
     <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>
@@ -261,7 +261,7 @@ const Home = () => {
   <div className="section-content right">
     <h2>Placement</h2>
     <p>
-    Your dream job awaits. At Gryphon Academy, we take your career aspirations seriously. With unmatched placement assistance and deep industry ties, we open doors to opportunities that set you on the path to success. Take the leap and see where it leads.
+    A well-trained resource secures their place in the industry, and at Gryphon Academy, we connect your students with over 450 recruiters for impactful industry-academia interactions, leading to successful placements. Our initiatives include guest sessions, industry collaborations, and empanelment, opening doors for students to become industry-ready. We provide comprehensive placement services, from pre-placement training to seamless recruitment and post-placement support, ensuring students are well-prepared and connected with top employers for ongoing career opportunities. 
     </p>
     <Link to="/placement" className="btn-know-more" onClick={scrollToTop}>
       <span>Know More</span>

@@ -32,23 +32,24 @@ const PartneredUniversities = () => {
           Diversification of Students
         </h3>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8">
-          <div className="flex items-center">
-            <img 
-              src="placement-bg/man.png" 
-              alt="Male Icon"
-              className="w-12 h-12 sm:w-16 sm:h-16 mr-2 sm:mr-3" 
-            />
-            <span className="text-lg sm:text-xl md:text-2xl font-bold">55% MALE DIVERSIFICATION</span>
-          </div>
-          <div className="flex items-center">
-            <img 
-              src="placement-bg/woman.png" 
-              alt="Female Icon"
-              className="w-12 h-12 sm:w-16 sm:h-16 mr-2 sm:mr-3" 
-            />
-            <span className="text-lg sm:text-xl md:text-2xl font-bold">45% FEMALE DIVERSIFICATION</span>
-          </div>
-        </div>
+  <div className="flex items-center">
+    <img 
+      src="placement-bg/man.png" 
+      alt="Male Icon"
+      className="w-12 h-12 sm:w-16 sm:h-16 mr-2 sm:mr-3" 
+    />
+    <span className="text-sm sm:text-lg md:text-xl lg:text-2xl">55% MALE DIVERSIFICATION</span>
+  </div>
+  <div className="flex items-center">
+    <img 
+      src="placement-bg/woman.png" 
+      alt="Female Icon"
+      className="w-12 h-12 sm:w-16 sm:h-16 mr-2 sm:mr-3" 
+    />
+    <span className="text-sm sm:text-lg md:text-xl lg:text-2xl">45% FEMALE DIVERSIFICATION</span>
+  </div>
+</div>
+
       </div>
     </div>
   );
