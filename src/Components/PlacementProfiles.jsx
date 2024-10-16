@@ -78,11 +78,7 @@ const PlacementProfiles = () => {
         </div>
       </section>
 
-      <div className="mt-8 text-center">
-        <button className="bg-yellow-300 text-gray-800 py-2 px-4 rounded hover:bg-yellow-400 transition-all duration-300">
-          Know More
-        </button>
-      </div>
+
     </div>
   );
 };
