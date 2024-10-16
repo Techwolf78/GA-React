@@ -36,7 +36,7 @@ const HeroCollege = () => {
         }}
       >
         {/* Empty space at the top */}
-        <div className="h-[10vh]"></div>
+        <div className="h-[5vh] sm:h-[10vh]"></div>
 
         {/* Heading Container */}
         <div className="text-center z-10 px-4">

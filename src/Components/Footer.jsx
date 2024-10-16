@@ -2,10 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
-  // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -42,7 +40,7 @@ const Footer = () => {
                 <li key={index} className="relative group">
                   <Link
                     to={link.path}
-                    onClick={scrollToTop} // Call scrollToTop on click
+                    onClick={scrollToTop}
                     className="relative z-10 text-white hover:text-yellow-400 transition duration-300"
                   >
                     {link.name}
@@ -85,14 +83,17 @@ const Footer = () => {
         <div className="mb-8 md:mb-0 md:w-1/4">
           <h2 className="text-xl font-bold mb-4 text-center md:text-left">Follow Us</h2>
           <div className="flex justify-center md:justify-start space-x-4">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-3xl text-blue-600 hover:text-blue-700 transition duration-300">
-              <FontAwesomeIcon icon={faFacebook} />
+            <a href="https://www.facebook.com/gryphonnacademy" target="_blank" rel="noopener noreferrer">
+              <img src="./LandingImage/social-fb.svg" alt="Facebook" className="w-8 h-8 hover:opacity-80 transition duration-300" />
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-3xl text-pink-600 hover:text-pink-700 transition duration-300">
-              <FontAwesomeIcon icon={faInstagram} />
+            <a href="https://www.instagram.com/gryphon_academy/" target="_blank" rel="noopener noreferrer">
+              <img src="./LandingImage/social-ig.svg" alt="Instagram" className="w-8 h-8 hover:opacity-80 transition duration-300" />
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-3xl text-blue-800 hover:text-blue-900 transition duration-300">
-              <FontAwesomeIcon icon={faLinkedin} />
+            <a href="https://www.linkedin.com/company/gryphonacademy/" target="_blank" rel="noopener noreferrer">
+              <img src="./LandingImage/social-in.svg" alt="LinkedIn" className="w-8 h-8 hover:opacity-80 transition duration-300" />
+            </a>
+            <a href="https://www.youtube.com/channel/UCVn2uVWEHg8cMFd8ht3CQBw" target="_blank" rel="noopener noreferrer">
+              <img src="./LandingImage/youtube.png" alt="YouTube" className="w-8 h-8 hover:opacity-80 transition duration-300" />
             </a>
           </div>
         </div>

@@ -78,8 +78,8 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#01224f]">
-      <div className="container mx-auto text-center mb-8">
+    <section className="relative overflow-hidden bg-[#01224f] mt-10">
+      <div className="container mx-auto text-center mb-10">
         <h3 className="text-4xl font-bold text-[#FFC80E] mb-4">TESTIMONIALS</h3>
       </div>
       <div className="relative overflow-hidden w-full">

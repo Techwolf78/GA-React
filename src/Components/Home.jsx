@@ -2,7 +2,11 @@ import  { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../assets/CSS/home.css';
 import Testimonials from './Testimonials';
+import HomeSliderClg from './HomeSliderClg';
+
 import ConnectWithUs from './ConnectWithUs'; // Import the Connect component
+import HomeSliderComp from './HomeSliderComp';
+
 
 const Home = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -288,6 +292,8 @@ const Home = () => {
 
       <div>
       
+    <HomeSliderComp />
+    <HomeSliderClg />
         <Testimonials />
         
       </div>

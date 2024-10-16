@@ -163,8 +163,10 @@
   text-decoration: none;
   font-weight: bold;
   position: relative;
-  cursor: pointer;
+  cursor: default; /* Set the cursor to default */
 }
+
+
 
 .feature-header-link::after {
   content: '';
