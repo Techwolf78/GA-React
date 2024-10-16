@@ -13,6 +13,7 @@ import MajorRecruiter from "./MajorRecruiter";
 import ConnectWithUs from "./ConnectWithUs";
 import HookLine from "./HookLine"; // Import the new component
 import PlacementKnowMore from "./PlacementKnowMore";
+import PlacementProfiles from "./PlacementProfiles";
 
 const Placement = () => {
   return (
@@ -42,6 +43,7 @@ const Placement = () => {
       </div>
       
      <PlacementKnowMore />
+     <PlacementProfiles />
       <Advisory />
       <SuccessfulDrives />
       <RecruiterTestimonial />

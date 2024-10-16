@@ -1,9 +1,90 @@
-import React from 'react'
+import React from 'react';
 
-function PlacementProfiles() {
+const engineeringProfiles = [
+  "Associate Android Developer",
+  "Associate Software Developer",
+  "Associate Technical Consultant",
+  "BIM Engineer",
+  "Cyber Security Engineer",
+  "Electrical Design Engineer",
+  "Electronics Hardware Engineer",
+  "Embedded Firmware Developer",
+  "Graduate Engineer Trainee",
+  "GET - Product Design and Development",
+  "GET - Engine Dataset Management",
+  "Full Stack Developer",
+  "Jr. Robotics Engineer",
+  "MES Support Engineer",
+  "PHP Developer",
+  "Project Engineer",
+  "Purchase Associate",
+  "Quality Management Executive",
+  "Software Engineer",
+  "TPA (Technical Product Analyst)",
+  "Trainee - Quality Management"
+];
+
+
+const mbaProfiles = [
+  "Analyst",
+  "Area Operations Manager",
+  "Associate - HR operations",
+  "Associate Business Analyst",
+  "Corporate Relations",
+  "Operations Associate",
+  "Presales Executive",
+  "Brand Partnership & Alliances",
+  "Compliance Associate",
+  "Employer Branding & Recruitment Marketing Executive",
+  "Finance Executive",
+  "HR (Campus Hiring Team)",
+  "HR Operations Associate",
+  "Learning and Development Coordinator",
+  "Management Trainee - Research Associate",
+  "Management Trainee - Project Management",
+  "Management Trainee - Product Management",
+  "MT - Business Process Re-Engineering",
+  "Project Accounting Admin",
+  "Trainee - Logistics and Supply Chain Management",
+  "Wealth Manager - Client Handling"
+];
+
+const PlacementProfiles = () => {
   return (
-    <div>PlacementProfiles</div>
-  )
-}
+    <div className="container mx-auto px-4 md:px-8 lg:px-16 mx-auto py-8 bg-gradient-to-r from-blue-800 to-blue-500">
+      <h1 className="text-4xl font-bold mb-8 text-center text-yellow-300">PLACEMENT PROFILES </h1>
 
-export default PlacementProfiles
+      <section className="mb-12">
+        <h2 className="text-3xl text-center font-bold mb-4 text-white">Engineering</h2>
+       
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {engineeringProfiles.map((profile, index) => (
+            <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:bg-yellow-400 ">
+              <span className="font-semibold">{profile}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-3xl font-bold mb-4 text-white text-center">MBA</h2>
+      
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {mbaProfiles.map((profile, index) => (
+            <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:bg-yellow-400">
+              <span className="font-semibold">{profile}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="mt-8 text-center">
+        <button className="bg-yellow-300 text-gray-800 py-2 px-4 rounded hover:bg-yellow-400 transition-all duration-300">
+          Know More
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default PlacementProfiles;
