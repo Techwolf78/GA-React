@@ -97,7 +97,7 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
-      <style jsx>{`
+      <style>{`
         @keyframes slide {
           0% {
             transform: translateX(0);
