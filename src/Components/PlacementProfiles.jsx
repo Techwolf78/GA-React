@@ -52,7 +52,7 @@ const mbaProfiles = [
 const PlacementProfiles = () => {
   return (
     <div className="container mx-auto px-4 md:px-8 lg:px-16 mx-auto py-8 bg-gradient-to-r from-blue-800 to-blue-500">
-      <h1 className="text-4xl font-bold mb-8 text-center text-yellow-300">PLACEMENT PROFILES </h1>
+      <h1 className="text-4xl font-bold mb-8 text-center text-yellow-300">PROFILES WE OFFER </h1>
 
       <section className="mb-12">
         <h2 className="text-3xl text-center font-bold mb-4 text-white">Engineering</h2>
