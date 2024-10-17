@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; 
 
 const vectorImage = './Training Page/BrochureBook.png'; 
-const trainingPageLink = '/collegetraining'; 
+const trainingPageLink = '/collegetraining#course-section'; 
 const arrowImage = './placement-bg/arrow.png'; 
 
 const BrochureSection = () => {
@@ -41,7 +41,7 @@ const BrochureSection = () => {
               className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow transition duration-300 transform hover:scale-105 hover:shadow-lg border-2 border-transparent hover:border-yellow-400 ml-4 whitespace-nowrap"
             >
               Know More 
-              <img src={arrowImage} alt="Arrow" className="h-5 w-5 ml-2" />
+              <img src={arrowImage} alt="Arrow" className="h-5 w-5 ml-10" />
             </Link>
           </div>
         </div>

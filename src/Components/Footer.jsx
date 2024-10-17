@@ -33,8 +33,8 @@ const Footer = () => {
               {[
                 { name: 'Contact Us', path: '/contact' },
                 { name: 'About Us', path: '/about' },
-                { name: 'Training', path: '/training' },
-                { name: 'Placement', path: '/placement' },
+                { name: 'Learning & Development', path: '/training' },
+                { name: 'Campus Placement', path: '/placement' },
                 { name: 'Blogs', path: '/blogs' }
               ].map((link, index) => (
                 <li key={index} className="relative group">
