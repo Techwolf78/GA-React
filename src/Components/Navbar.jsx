@@ -68,7 +68,7 @@ const Navbar = () => {
             aria-expanded={isDropdownOpen}
             className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-2 rounded flex items-center justify-center transition-colors duration-300"
           >
-            TRAINING <i className="bx bx-chevron-down ml-1"></i>
+            LEARNING & DEVELOPMENT<i className="bx bx-chevron-down ml-1"></i>
           </button>
 
           {isDropdownOpen && (
@@ -103,7 +103,7 @@ const Navbar = () => {
           className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
           onClick={handleSidebarItemClick}
         >
-          PLACEMENT
+          CAMPUS PLACEMENT
         </Link>
         <Link
           to="/brandPositioning"
@@ -152,7 +152,7 @@ const Navbar = () => {
             className="block py-3 pl-8 text-[#ffffff] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
-            TRAINING
+            LEARNING & DEVELOPMENT
           </Link>
           {/* Sub-links for Training */}
           <Link
@@ -182,7 +182,7 @@ const Navbar = () => {
           className="block py-3 pl-8 text-[#ffffff] hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
           onClick={handleSidebarItemClick}
         >
-          PLACEMENT
+          CAMPUS PLACEMENT
         </Link>
         <Link
           to="/brandPositioning"

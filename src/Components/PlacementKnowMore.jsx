@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom'; 
 
-const vectorImage = './Training Page/BrochureBook.png'; // Path for vector image
-const trainingPageLink = '/training'; // Link to the training page
-const arrowImage = './placement-bg/arrow.png'; // Path for arrow image
+const vectorImage = './Training Page/BrochureBook.png'; 
+const trainingPageLink = '/collegetraining'; 
+const arrowImage = './placement-bg/arrow.png'; 
 
 const BrochureSection = () => {
   return (

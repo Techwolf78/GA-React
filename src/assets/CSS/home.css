@@ -246,17 +246,19 @@ body, html {
 
 .section-content.right {
   text-align: left;
-  margin-left: auto;
+  margin-left: 10px;
   padding-right: 5vw; /* Default for small screens */
 }
 
 @media (min-width: 768px) {
   .section-content.left {
-    padding-left: 8vw; /* Change to 8vw for larger screens */
+    padding-left: 13vw; /* Change to 8vw for larger screens */
+    
   }
 
   .section-content.right {
     padding-right: 8vw; /* Change to 8vw for larger screens */
+    margin-left: auto;
   }
 }
 
@@ -411,7 +413,7 @@ body, html {
   .company-logo-link {
     position: fixed;
     top: -25px;
-    left: 8vw;
+    left: 13vw;
     width: 150px;
     height: 150px;
     display: flex;

@@ -20,39 +20,28 @@ const testimonials = [
     rating: "★★★★★"
   },
   {
-    review: "Gryphon holds a special place for me. Over the years, Gryphon has experienced significant growth, and it's been a remarkable journey filled with valuable lessons. I wish them continued success in all their future endeavors.",
-    name: "Dr. Tarita Shankar",
-    designation: "Chairperson - Indira Group of Institutes, Pune",
+    review: "Gryphon Academy has changed me for the better. Their encompassing aptitude, soft skills and technical prowess, prepared me for industry challenges. ",
+    name: "Mr. Niket Gawali ",
+    designation: "Civil Engineering",
     rating: "★★★★★"
   },
   {
-    review: "Gryphon Academy has achieved remarkable success in securing placements for our students in prestigious companies such as Tata Technology, KPIT, and Tata Motors, along with Plank and Weave for our students in the real estate sector. Gryphon's tailored training and placement services have opened up diverse opportunities for our students. ",
-    name: "Ms. Dhanwantari Wangde",
-    designation: "CEO - Dnyanshree Institute of Engineering & Technology, Satara",
+    review: "The trainings on aptitude and soft skills proved to be highly beneficial, equipping us with valuabile bjects and preparing us knowledge across various subjects for the industry demands. ",
+    name: "Mr. Kishor Turkane ",
+    designation: "Civil Engineering",
     rating: "★★★★★"
   },
   {
-    review: "Gryphon Academy's personalized training and placements are exceptional. They prepare students for the industry while shaping their futures with a dedicated commitment to excellence. With more than 2000+ students trained, Gryphon Academy continues to make a significant impact in the realm of education.  ",
-    name: "Mr. Amit Kolhe",
-    designation: "Managing Trustee - Sanjivani College of Engineering, Kopargaon",
+    review: "It was a great experience with Gryphon Academy. The informative and simplifed teaching style of trainers made our placement Journey smooth. Grateful to Gryphon Academy for providing the opportunity to learn and aquire industry skillet.",
+    name: "Mr. Rahul Hiwale ",
+    designation: "Mechanical Engineering ",
     rating: "★★★★★"
   },
   {
-    review: "We recruited 145 fresh engineers batch 2022-23 with the support of Gryphon and got reliable source of talent for our company. Team Gryphon is doing a fabulous job. ",
-    name: "Mr. Rahul Bagale",
-    designation: "Group HR Head Force Motors Ltd.",
-    rating: "★★★★★"
-  },
-  {
-    review: "Their commitment to nurturing and grooming exceptional talent is truly commendable. The graduates we've recruited from Gryphon Academy have consistently proven to be skilled, adaptable, and well-prepared for the demands of the industry.",
-    name: "Cdr. Pratap Pawar",
-    designation: "Director HR & IT Gs lab",
-    rating: "★★★★★"
-  },
-  {
-    review: "The talent pool Gryphon offers is a testament to their dedication in producing industry-ready graduates. We thank Gryphon Academy for consistently providing us with such outstanding talent.",
-    name: "Mr. Suvarnanidhi Rao",
-    designation: "Campus Lead - Indian Sub Continent Philips India",
+    review: "Gryphon Academy doesn't just teach; they empower. I owe my career to their exceptional training and the fantastic placement options they offer.",
+    name: "Mr. Chinmay Gosavi", 
+    designation: "Finance & Minor-Marketing",
+ 
     rating: "★★★★★"
   },
 ];
@@ -80,7 +69,7 @@ const Testimonials = () => {
   return (
     <section className="relative overflow-hidden bg-[#01224f] mt-10">
       <div className="container mx-auto text-center mb-10">
-        <h3 className="text-4xl font-bold text-[#FFC80E] mb-4">TESTIMONIALS</h3>
+        <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#ffc700] mb-4">TESTIMONIALS</h3>
       </div>
       <div className="relative overflow-hidden w-full">
         <div className="flex gap-4 animate-slide" style={{ animationDuration }}>

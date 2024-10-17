@@ -162,11 +162,11 @@ const Home = () => {
             </li>
             <li>
               <div className="underline"></div>
-              <a onClick={() => handleNavClick(trainingRef)}><span>Training</span></a>
+              <a onClick={() => handleNavClick(trainingRef)}><span>Learning & Development</span></a>
             </li>
             <li>
               <div className="underline"></div>
-              <a onClick={() => handleNavClick(placementRef)}><span>Placement</span></a>
+              <a onClick={() => handleNavClick(placementRef)}><span>Campus Placement</span></a>
             </li>
             <li>
               <div className="underline"></div>
@@ -180,14 +180,14 @@ const Home = () => {
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`} id="sidebar" ref={sidebarRef}>
         <ul>
           <li>
-            <Link to="/training" onClick={scrollToTop}><span>Training</span></Link>
+            <Link to="/training" onClick={scrollToTop}><span>Learning & Development</span></Link>
             <ul>
               <li><Link to="/collegeTraining" onClick={scrollToTop}><span>College Training</span></Link></li>
               <li><Link to="/corporateTraining" onClick={scrollToTop}><span>Corporate Training</span></Link></li>
               <li><Link to="/facultyTraining" onClick={scrollToTop}><span>Faculty Training</span></Link></li>
             </ul>
           </li>
-          <li><Link to="/placement" onClick={scrollToTop}><span>Placement</span></Link></li>
+          <li><Link to="/placement" onClick={scrollToTop}><span>Campus Placement</span></Link></li>
           <li><Link to="/blogs" onClick={scrollToTop}><span>Blogs</span></Link></li>
           <li><Link to="/contact" onClick={scrollToTop}><span>Contact us</span></Link></li>
         </ul>
@@ -228,7 +228,7 @@ const Home = () => {
         <div className="section-content right">
           <h2>About Us</h2>
           <p>
-            Gryphon Academy bridges the gap between academic learning and industry needs by developing programmes that prepares your students to be job-ready from day one. Our curriculum, crafted in collaboration with industry experts, focuses on practical skills and real-world applications, ensuring students acquire the competencies employers seek. Through hands-on projects and specialized workshops, we foster technical knowledge along with essential soft skills like communication and leadership, transforming students into well-rounded professionals ready to excel in their careers.
+          We are an organization that bridges the gap between academic learning and industry needs by developing industry ready programmes that prepares your students to be job-ready from day one transforming them into well-rounded professionals ready to excel in their careers.
           </p>
           <Link to="/about" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -240,9 +240,9 @@ const Home = () => {
 
       <div id="operating_models" className="section operating-models-section left" ref={trainingRef}>
         <div className="section-content left">
-          <h2>Training</h2>
+          <h2>Learning & Development</h2>
           <p>
-            At Gryphon Academy, our training programs are specifically designed with career goals of students in mind. We focus on equipping students with the essential skills that today’s industry demand, ensuring they excel in their fields. Our customized content addresses the unique challenges of the industry, while personalized evaluations help identify strengths and key areas of the students for improvement. By utilizing modern tools and methodologies, we enhance the students learning experience and prepare them for real-world applications.
+          At Gryphon, we specifically curate our training programmes as per today’s industry demands. by using the latest modern tools and methodologies, we enhance the students learning experience and make sure they are the chosen ones in our 450+ recruiters.
           </p>
           <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -254,9 +254,9 @@ const Home = () => {
 
       <div id="talent_transformations" className="section talent-transformations-section right" ref={placementRef}>
         <div className="section-content right">
-          <h2>Placement</h2>
+          <h2>Campus Placement</h2>
           <p>
-            A well-trained resource secures their place in the industry, and at Gryphon Academy, we connect your students with over 450 recruiters for impactful industry-academia interactions, leading to successful placements. Our initiatives include guest sessions, industry collaborations, and empanelment, opening doors for students to become industry-ready. We provide comprehensive placement services, from pre-placement training to seamless recruitment and post-placement support, ensuring students are well-prepared and connected with top employers for ongoing career opportunities.
+          A well-trained resource easily secures their place in the industry and at Gryphon this is what we abide by. providing students top placement opportunities which also includes guest sessions, industry collaborations, and empanelment, helping them learn the industry applications & opening doors towards their dream companies. 
           </p>
           <Link to="/placement" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -270,7 +270,7 @@ const Home = () => {
         <div className="section-content left">
           <h2>Cross Brand Positioning</h2>
           <p>
-            We understand how tricky it is to get branding right. Let Gryphon Academy take the stress out of it. We’ll manage everything—from strategy to execution—so you can focus on what you do best.
+          Elevating your college's presence hinges on brand visibility, strategic positioning, and market insight. At Gryphon, we specialize in enhancing your brand through tailored solutions, including guest sessions, strategic events, and effective admissions strategies. Let us transform your college’s impact and redefine your market standing!
           </p>
           <Link to="/brandPositioning" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>

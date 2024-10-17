@@ -19,11 +19,8 @@ const HomeSliderComp = () => {
   return (
     <div className="home-slider-section bg-[#01224f] py-4 roboto-regular">
 <div className="text-center mb-4">
-    <h2 className="text-white text-[42px] font-bold">Over <span className='text-[#FFC80E]'>450+ Companies</span> Hire From Us</h2>
-    <p className="text-white text-[22px]">Check out our partnered colleges</p>
+    <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-white">Our <span className='text-[#FFC80E]'> Trusted </span> Partners</h2>
 </div>
-
-
       <div className="home-slider relative overflow-hidden w-full">
         <div className="home-slider-track flex animate-scroll-left">
           {logos.map((logo, index) => (
