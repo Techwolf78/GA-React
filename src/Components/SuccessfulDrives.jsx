@@ -38,8 +38,8 @@ const SuccessfulDrives = () => {
       <div className="container mx-auto px-0 relative z-10">
         
         {/* Main Heading */}
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold mb-4 text-center text-[#FFC80E]">
-          OUR SUCCESSFUL DRIVES
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold mb-4 mt-2 text-center text-[#FFC80E]">
+          RECENT CAMPUS PLACEMENT CONVERSIONS
         </h1>
 
         {/* Full-width Image */}

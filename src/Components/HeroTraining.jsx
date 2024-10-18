@@ -41,7 +41,7 @@ const HeroTraining = () => {
 
 
         {/* Paragraph and Button in the bottom-left corner */}
-        <div className="absolute bottom-8 left-4 sm:left-6 md:left-8 lg:left-12 xl:left-16 text-left" style={fadeInStyle}>
+        <div className="absolute bottom-16 left-4 sm:left-6 md:left-8 lg:left-12 xl:left-16 text-left" style={fadeInStyle}>
           <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-[#ffffff] mb-4 font-light lg:text-white">
             The Tri-Force of Excellence: Powering Education, Faculty, and Industry 
           </p>

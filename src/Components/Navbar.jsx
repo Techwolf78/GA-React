@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import "boxicons/css/boxicons.min.css";
 
 const Navbar = () => {
@@ -72,32 +73,39 @@ const Navbar = () => {
           </button>
 
           {isDropdownOpen && (
-            <div className="absolute top-full left-0 mt-0 bg-[#ffc700] text-[#1a1a1a] rounded-md shadow-lg transition-all duration-300 z-50 whitespace-nowrap">
-              <Link
-                to="/collegeTraining"
-                className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
-                onClick={() => { handleDropdownItemClick(); handleSidebarItemClick(); }}
-              >
-                College Training
-              </Link>
-              <Link
-                to="/corporateTraining"
-                className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
-                onClick={() => { handleDropdownItemClick(); handleSidebarItemClick(); }}
-              >
-                Corporate Training
-              </Link>
-              <Link
-                to="/facultyTraining"
-                className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
-                onClick={() => { handleDropdownItemClick(); handleSidebarItemClick(); }}
-              >
-                Faculty Training
-              </Link>
-            </div>
-          )}
+  <motion.div
+    className="absolute top-full left-0 mt-0 bg-[#ffc700] text-[#1a1a1a] rounded-md shadow-lg z-50 whitespace-nowrap"
+    initial={{ opacity: 0, x: 10 }} // Start from the right
+    animate={{ opacity: 1, x: 0 }}  // Move to its final position
+    exit={{ opacity: 0, x: 10 }}     // Exit to the right
+    transition={{ duration: 0.5 }}    // Slow down the animation for the container
+  >
+    {['College Training', 'Corporate Training', 'Faculty Training'].map((item, index) => (
+      <motion.div
+        key={item}
+        initial={{ opacity: 0, x: 10 }} // Start from the right
+        animate={{ opacity: 1, x: 0 }}  // Move to its final position
+        exit={{ opacity: 0, x: 10 }}     // Exit to the right
+        transition={{ duration: 0.5, delay: index * 0.3 }} // Increase the delay for staggered items
+      >
+        <Link
+          to={`/${item.replace(' ', '').toLowerCase()}`}
+          className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
+          onClick={() => {
+            handleDropdownItemClick();
+            handleSidebarItemClick();
+          }}
+        >
+          {item}
+        </Link>
+      </motion.div>
+    ))}
+  </motion.div>
+)}
+
         </div>
 
+        {/* Other Links */}
         <Link
           to="/placement"
           className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
@@ -121,6 +129,7 @@ const Navbar = () => {
         </Link>
       </nav>
 
+      {/* Sidebar Toggle */}
       <div className="lg:hidden">
         <button
           className="text-[#ffffff] text-3xl focus:outline-none"
@@ -130,6 +139,7 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Sidebar */}
       <div
         className={`fixed top-0 left-0 h-full bg-[#091327] text-[#ffffff] z-40 overflow-x-hidden transition-width duration-500 ease-in-out ${isSidebarOpen ? "w-64" : "w-0"}`}
       >

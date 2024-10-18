@@ -42,7 +42,7 @@ const Advisory = () => {
     <div className="py-4 bg-[#091327] roboto-regular">
       <div className="mb-8">
         <h2 className="text-center mb-4 font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-4xl text-[#ffc700]">
-          OUR INDUSTRY & ACADEMIA ADVISORY BOARD  
+          INDUSTRY - ACADEMIA ADVISORY BOARD  
         </h2>
         <div className="overflow-hidden relative">
           <div className="flex space-x-6 advisory-scroll" ref={advisoryRef}>

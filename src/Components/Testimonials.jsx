@@ -52,77 +52,77 @@ const testimonials = [
   },
   ];
  
-
-const Testimonials = () => {
-  const cardStyle = {
-    backgroundColor: '#003073',
-    borderRadius: '8px',
-    padding: '24px',
-    boxShadow: 'none',
-    width: '320px',
-    textAlign: 'center',
-    flexShrink: 0,
-    margin: '0 8px'
-  };
-
-  const flexContainerStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: '8px'
-  };
-
-  const logoStyle = {
-    width: '48px',
-    height: '48px',
-    objectFit: 'contain',
-    marginRight: '8px'
-  };
-
-  return (
-    <section style={{ background: '#01224f', padding: '12px 0' }} className='roboto-regular'>
-      <style>
-        {`
-          @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-${testimonials.length * 320}px); }
-          }
-          .slide {
-            animation: slide 20s linear infinite;
-            display: flex;
-            gap: 16px;
-          }
-        `}
-      </style>
-      <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-        <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-4">
-          TESTIMONIALS
-        </h3>
-      
-      </div>
-      <div style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '320px' }}>
-        <div className="slide">
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
-            <div key={index} style={cardStyle}>
-              <p style={{ fontSize: '16px', color: '#ffffff', marginBottom: '8px',fontStyle: 'italic' }}>
-                {`"${testimonial.review}"`}
-              </p>
-              <p style={{ color: '#FFC80E', fontSize: '18px', marginBottom: '8px' }}>
-                {testimonial.rating}
-              </p>
-              <p style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '16px', marginBottom: '16px' }}>
-                {testimonial.name}
-              </p>
-              <div style={flexContainerStyle}>
-                <img src={testimonial.companyLogo} alt={testimonial.companyName} style={logoStyle} />
-                <p style={{ color: '#ffffff', fontSize: '14px' , }}>{testimonial.companyName}</p>
-              </div>
-            </div>
-          ))}
+  const Testimonials = () => {
+    const cardStyle = {
+      backgroundColor: '#003073',
+      borderRadius: '8px',
+      padding: '24px',
+      boxShadow: 'none',
+      width: '320px',
+      textAlign: 'center',
+      flexShrink: 0,
+      margin: '0 8px',
+    };
+  
+    const flexContainerStyle = {
+      display: 'flex',
+      flexDirection: 'column', // Keep the column layout
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: '8px',
+    };
+  
+    const logoStyle = {
+      width: '48px',
+      height: '48px',
+      objectFit: 'contain',
+      marginTop: '4px', // Reduce the margin to decrease the gap
+    };
+  
+    return (
+      <section style={{ background: '#01224f', padding: '12px 0' }} className='roboto-regular'>
+        <style>
+          {`
+            @keyframes slide {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-${testimonials.length * 340}px); }
+            }
+            .slide {
+              animation: slide 20s linear infinite;
+              display: flex;
+              gap: 16px;
+            }
+          `}
+        </style>
+        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-4">
+            TESTIMONIALS
+          </h3>
         </div>
-      </div>
-    </section>
-  );
-};
-
-export default Testimonials;
+        <div style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '340px' }}>
+          <div className="slide">
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <div key={index} style={cardStyle}>
+                <p style={{ fontSize: '16px', color: '#ffffff', marginBottom: '8px', fontStyle: 'italic' }}>
+                  {`"${testimonial.review}"`}
+                </p>
+                <p style={{ color: '#FFC80E', fontSize: '18px', marginBottom: '8px' }}>
+                  {testimonial.rating}
+                </p>
+                <p style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '16px', marginBottom: '4px' }}>
+                  {testimonial.name}
+                </p>
+                <div style={flexContainerStyle}>
+                  <p style={{ color: '#ffffff', fontSize: '14px', marginBottom: '0' }}>{testimonial.companyName}</p> {/* Remove margin or set to 0 */}
+                  <img src={testimonial.companyLogo} alt={testimonial.companyName} style={logoStyle} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  };
+  
+  export default Testimonials;
+  

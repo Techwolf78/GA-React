@@ -6,13 +6,24 @@ import HomeSliderClg from './HomeSliderClg';
 import ConnectWithUs from './ConnectWithUs';
 import HomeSliderComp from './HomeSliderComp';
 
+// ProgressBar Component
+const ProgressBar = ({ scrollPercent }) => {
+  return (
+    <div className="progress-bar-container">
+      <div
+        className="progress-bar"
+        style={{ width: `${scrollPercent}%` }}
+      ></div>
+    </div>
+  );
+};
+
 const Home = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [isNavbarVisible, setNavbarVisible] = useState(true);
   const [displayText, setDisplayText] = useState("Bridging Dreams");
-  const fullText = "Dreams";
-  const newText = "Careers";
   const [isBlinking, setIsBlinking] = useState(true);
+  const [scrollPercent, setScrollPercent] = useState(0);
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
   const trainingRef = useRef(null);
@@ -20,12 +31,33 @@ const Home = () => {
   const brandingRef = useRef(null);
   const sidebarRef = useRef(null);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+  useEffect(() => {
+    const sections = document.querySelectorAll('.section-content');
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollFraction = (scrollTop / docHeight) * 100;
+
+      setScrollPercent(scrollFraction);
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          section.classList.add('visible');
+        } else {
+          section.classList.remove('visible'); // Optional: Remove when out of view
+        }
+      });
+
+      activateNavLink();
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check visibility on initial load
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const activateNavLink = () => {
     const sections = [heroRef.current, aboutRef.current, trainingRef.current, placementRef.current, brandingRef.current];
@@ -40,31 +72,10 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const brandPositioningSection = brandingRef.current;
-      const sectionHeight = brandPositioningSection.offsetHeight;
-      const scrollY = window.scrollY;
-
-      if (scrollY > (brandPositioningSection.offsetTop + (sectionHeight / 2))) {
-        setNavbarVisible(false);
-      } else {
-        setNavbarVisible(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    activateNavLink();
-    window.addEventListener('scroll', activateNavLink);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('scroll', activateNavLink);
-    };
-  }, []);
-
-  useEffect(() => {
     let index = 0;
     let isDeleting = false;
+    const newText = "Careers";
+    const fullText = "Dreams";
     let currentText = newText;
     let textType = 'new';
 
@@ -110,6 +121,13 @@ const Home = () => {
     };
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   const toggleSidebar = (event) => {
     event.preventDefault();
     setSidebarOpen(prev => {
@@ -148,7 +166,8 @@ const Home = () => {
 
   return (
     <div className="roboto-regular">
-      {/* Navbar */}
+      <ProgressBar scrollPercent={scrollPercent} />
+
       <div className={`top-navigation ${isNavbarVisible ? 'visible' : 'hidden'}`}>
         <nav className="sticky-top-nav">
           <ul className="stick-top-nav-ul">
@@ -176,7 +195,6 @@ const Home = () => {
         </nav>
       </div>
 
-      {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`} id="sidebar" ref={sidebarRef}>
         <ul>
           <li>
@@ -193,7 +211,6 @@ const Home = () => {
         </ul>
       </div>
 
-      {/* Sidebar Toggle Button */}
       <button 
         className={`sidebar-toggle ${isSidebarOpen ? 'cross' : ''}`} 
         id="sidebar-toggle" 
@@ -202,12 +219,10 @@ const Home = () => {
         <div></div>
       </button>
 
-      {/* Company Logo */}
       <Link to="#" className="company-logo-link">
         <div className="company-logo"></div>
       </Link>
 
-      {/* Hero Section */}
       <div id="hero_slider" className="section roboto-regular hero-slider-section left" ref={heroRef}>
         <div className="section-content left">
           <h2>
@@ -223,12 +238,11 @@ const Home = () => {
         <img src="LandingImage/MobileHeroNew.PNG" alt="Mobile Vector" className="mobile-vector-image " />
       </div>
 
-      {/* Other sections */}
       <div id="core_capabilities" className="section core-capabilities-section right" ref={aboutRef}>
         <div className="section-content right">
           <h2>About Us</h2>
           <p>
-          We are an organization that bridges the gap between academic learning and industry needs by developing industry ready programmes that prepares your students to be job-ready from day one transforming them into well-rounded professionals ready to excel in their careers.
+            We are an organization that bridges the gap between academic learning and industry needs by developing industry ready programmes that prepares your students to be job-ready from day one transforming them into well-rounded professionals ready to excel in their careers.
           </p>
           <Link to="/about" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -242,7 +256,7 @@ const Home = () => {
         <div className="section-content left">
           <h2>Learning & Development</h2>
           <p>
-          At Gryphon, we specifically curate our training programmes as per today’s industry demands. by using the latest modern tools and methodologies, we enhance the students learning experience and make sure they are the chosen ones in our 450+ recruiters.
+            At Gryphon, we specifically curate our training programmes as per today’s industry demands, by using the latest modern tools and methodologies, we enhance the students learning experience and make sure they are the chosen ones in our 450+ recruiters.
           </p>
           <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -256,7 +270,7 @@ const Home = () => {
         <div className="section-content right">
           <h2>Campus Placements</h2>
           <p>
-          A well-trained resource easily secures their place in the industry and at Gryphon this is what we abide by. providing students top placement opportunities which also includes guest sessions, industry collaborations, and empanelment, helping them learn the industry applications & opening doors towards their dream companies. 
+            A well-trained resource easily secures their place in the industry and at Gryphon this is what we abide by, providing students top placement opportunities which also includes guest sessions, industry collaborations, and empanelment, helping them learn the industry applications & opening doors towards their dream companies. 
           </p>
           <Link to="/placement" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -270,7 +284,7 @@ const Home = () => {
         <div className="section-content left">
           <h2>Cross Brand Positioning</h2>
           <p>
-          Elevating your college's presence hinges on brand visibility, strategic positioning, and market insight. At Gryphon, we specialize in enhancing your brand through tailored solutions, including guest sessions, strategic events, and effective admissions strategies. Let us transform your college’s impact and redefine your market standing!
+            Elevating your college's presence hinges on brand visibility, strategic positioning, and market insight. At Gryphon, we specialize in enhancing your brand through tailored solutions, including guest sessions, strategic events, and effective admissions strategies. Let us transform your college’s impact and redefine your market standing!
           </p>
           <Link to="/brandPositioning" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -285,7 +299,6 @@ const Home = () => {
         <HomeSliderClg />
         <Testimonials />
       </div>
-      {/* New Connect Component As the word */}
       <ConnectWithUs />
     </div>
   );

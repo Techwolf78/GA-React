@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const engineeringProfiles = [
   "Associate Android Developer",
@@ -21,9 +21,8 @@ const engineeringProfiles = [
   "Quality Management Executive",
   "Software Engineer",
   "TPA (Technical Product Analyst)",
-  "Trainee - Quality Management"
+  "Trainee - Quality Management",
 ];
-
 
 const mbaProfiles = [
   "Analyst",
@@ -46,20 +45,27 @@ const mbaProfiles = [
   "MT - Business Process Re-Engineering",
   "Project Accounting Admin",
   "Trainee - Logistics and Supply Chain Management",
-  "Wealth Manager - Client Handling"
+  "Wealth Manager - Client Handling",
 ];
 
 const PlacementProfiles = () => {
   return (
     <div className="container mx-auto px-4 md:px-8 lg:px-16 mx-auto py-8 bg-gradient-to-r from-blue-800 to-blue-500">
-      <h1 className="text-4xl font-bold mb-8 text-center text-[#FFC80E]">PROFILES WE OFFER </h1>
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold xl:mb-8 md:mb-6 sm:mb-4 xs:mb-2 text-center text-[#FFC80E]">
+        PROFILES WE TRAIN FOR{" "}
+      </h1>
 
       <section className="mb-12">
-        <h2 className="text-3xl text-center font-bold mb-4 text-white">Engineering</h2>
-       
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-3xl text-center font-bold mb-4 text-white">
+          Engineering:
+        </h2>
+
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {engineeringProfiles.map((profile, index) => (
-            <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:bg-yellow-400 ">
+            <div
+              key={index}
+              className="bg-gray-100 p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:bg-yellow-400 "
+            >
               <span className="font-semibold">{profile}</span>
             </div>
           ))}
@@ -67,18 +73,21 @@ const PlacementProfiles = () => {
       </section>
 
       <section>
-        <h2 className="text-3xl font-bold mb-4 text-white text-center">MBA</h2>
-      
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-3xl font-bold mb-4 text-white text-center">
+          MBA:
+        </h2>
+
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {mbaProfiles.map((profile, index) => (
-            <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:bg-yellow-400">
+            <div
+              key={index}
+              className="bg-gray-100 p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:bg-yellow-400"
+            >
               <span className="font-semibold">{profile}</span>
             </div>
           ))}
         </div>
       </section>
-
-
     </div>
   );
 };

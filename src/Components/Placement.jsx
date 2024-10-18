@@ -18,22 +18,20 @@ import PlacementProfiles from "./PlacementProfiles";
 const Placement = () => {
   return (
     <div className="bg-[#091327]">
-        <PartneredUniversities />
-        <CollegeAccreditation />
-     
-      <MajorRecruiter />
       <HeroPlacement />
-    
+      <MajorRecruiter />
+      <PartneredUniversities />
+      <CollegeAccreditation />
       
       {/* Use the new HookLine component */}
       <HookLine />
 
       <PartneredCollege />
 
-      {/* New Section: Simple Placement Process */}
+      {/* New Section: TRAINING EVALUATION JOURNEY */}
       <div className="p-0 text-center roboto-regular">
         <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] bg-[#003073] py-4">
-          WE FOLLOW A SIMPLE PLACEMENT PROCESS
+        TRAINING EVALUATION JOURNEY
         </p>
         <div className="w-full h-auto bg-[#003073]">
           <img 
