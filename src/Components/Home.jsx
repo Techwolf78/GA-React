@@ -166,7 +166,7 @@ const Home = () => {
             </li>
             <li>
               <div className="underline"></div>
-              <a onClick={() => handleNavClick(placementRef)}><span>Campus Placement</span></a>
+              <a onClick={() => handleNavClick(placementRef)}><span>Campus Placements</span></a>
             </li>
             <li>
               <div className="underline"></div>
@@ -187,7 +187,7 @@ const Home = () => {
               <li><Link to="/facultyTraining" onClick={scrollToTop}><span>Faculty Training</span></Link></li>
             </ul>
           </li>
-          <li><Link to="/placement" onClick={scrollToTop}><span>Campus Placement</span></Link></li>
+          <li><Link to="/placement" onClick={scrollToTop}><span>Campus Placements</span></Link></li>
           <li><Link to="/blogs" onClick={scrollToTop}><span>Blogs</span></Link></li>
           <li><Link to="/contact" onClick={scrollToTop}><span>Contact us</span></Link></li>
         </ul>
@@ -254,7 +254,7 @@ const Home = () => {
 
       <div id="talent_transformations" className="section talent-transformations-section right" ref={placementRef}>
         <div className="section-content right">
-          <h2>Campus Placement</h2>
+          <h2>Campus Placements</h2>
           <p>
           A well-trained resource easily secures their place in the industry and at Gryphon this is what we abide by. providing students top placement opportunities which also includes guest sessions, industry collaborations, and empanelment, helping them learn the industry applications & opening doors towards their dream companies. 
           </p>

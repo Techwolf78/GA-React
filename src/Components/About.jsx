@@ -6,7 +6,6 @@ import ImpactSection from "./ImpactSection";
 import HomeAbout from "./HomeAbout";
 import Testimonials from "./Testimonials"; // Import the Testimonials component
 import JourneySection from "./JourneySection";
-import Revolution from "./Revolution";
 import MissionVisionSection from "./MissionVisionSection";
 
 const About = () => {
@@ -18,11 +17,11 @@ const About = () => {
       <MissionVisionSection />
       {/* Our Impact Section */}
       <ImpactSection />
-      <Revolution />
       <JourneySection />
       <Testimonials />
     </div>
   );
 };
+
 
 export default About;

@@ -1,118 +1,86 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const storyItems = [
-  { id: 1, text: "When COVID-19 struck, education and industry expectations were turned upside down." },
-  { id: 2, text: "Core domain students found themselves facing a void of opportunities." },
-  { id: 3, text: "As industries rebuilt with resilience in mind, a gap widened." },
-  { id: 4, text: "The talented students left behind, their potential untapped." },
-  { id: 5, text: "From this crisis, our 'Core for Core' concept was born." },
-  { id: 6, text: "Our mission crystallized: bridge student potential with industry needs." },
-  { id: 7, text: "We set out to restore confidence in core domain students." },
-  { id: 8, text: "Our goal: match students with placements that truly fit their expertise." },
-  { id: 9, text: "'Core for Core' became more than a program—it was our answer to uncertainty." },
-  { id: 10, text: "Through this, we committed to nurturing the next generation of industry leaders." },
-  { id: 11, text: "In a world in flux, we created a pathway for students to thrive once again." }
-];
+const Revolution = () => {
+  const [currentYear, setCurrentYear] = useState(2004);
+  const [currentDescription, setCurrentDescription] = useState(
+    "Management consulting practice created within Infosys"
+  );
 
-const StorySection = () => {
-  const controls = useAnimation();
-  const [inView, setInView] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          controls.start('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    observer.observe(sectionRef.current);
-
-    return () => observer.disconnect();
-  }, [controls]);
-
-  const itemVariants = {
-    hidden: { opacity: 0 },
-    visible: (i) => ({
-      opacity: 1,
-      transition: {
-        delay: i * 0.5,
-        duration: 0.7,
-        ease: "easeOut"
-      }
-    })
+  const yearData = {
+    2004: "Management consulting practice created within Infosys",
+    2012: "Expansion into new markets and services.",
+    2014: "Acquisition of key firms to enhance capabilities.",
+    2015: "Launch of innovative digital solutions.",
+    2018: "Recognition as a leader in consulting services."
   };
 
-  const headingVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  const handleDotClick = (year) => {
+    setCurrentYear(year);
+    setCurrentDescription(yearData[year]);
   };
 
-  // Separate odd and even items
-  const oddItems = storyItems.filter(item => item.id % 2 !== 0);
-  const evenItems = storyItems.filter(item => item.id % 2 === 0);
+  const animationProps = {
+    initial: { x: -100, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+    exit: { x: 100, opacity: 0 },
+    transition: { duration: 0.5 }
+  };
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative flex flex-col items-center justify-center bg-[#091327] text-center px-4 overflow-hidden"
-    >
-      {/* Heading */}
-      <h1 className="text-4xl md:text-4xl font-bold mb-5 relative z-10 mt-4 text-[#ffc700]">BEGINNING OF REVOLUTION</h1>
+    <div className="relative w-full h-screen bg-cover bg-center" style={{ backgroundImage: "url('placement-bg/plac-new.jpg')" }}>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black opacity-30"></div>
 
-      {/* Storytelling Items */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto items-start">
-        {/* Odd ID Items */}
-        <div className="col-span-1 flex flex-col items-start">
-          {oddItems.map((item, index) => (
-            <motion.div
-              key={item.id}
-              custom={index}
-              initial="hidden"
-              animate={controls}
-              variants={itemVariants}
-              className="flex items-center mb-4 w-full px-2"
+      {/* Content */}
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="text-white text-center">
+          {/* Animated Year */}
+          <AnimatePresence mode="wait">
+            <motion.h1 
+              key={currentYear} 
+              className="text-6xl font-bold" 
+              {...animationProps}
             >
-              {/* Sleek Dash */}
-              <span className="text-lg font-bold text-white mr-4">-</span>
-              {/* Story text */}
-              <p className="text-base md:text-lg font-semibold text-white">
-                {item.text}
-              </p>
-            </motion.div>
-          ))}
+              {currentYear}
+            </motion.h1>
+          </AnimatePresence>
+
+          {/* Animated Description */}
+          <AnimatePresence mode="wait">
+            <motion.p 
+              key={currentDescription} 
+              className="text-xl mt-4" 
+              {...animationProps}
+            >
+              {currentDescription}
+            </motion.p>
+          </AnimatePresence>
         </div>
+      </div>
 
-        {/* Vertical Line */}
-        <div className="hidden md:block border-l-2 border-white h-full mx-auto"></div>
-
-        {/* Even ID Items */}
-        <div className="col-span-1 flex flex-col items-end">
-          {evenItems.map((item, index) => (
-            <motion.div
-              key={item.id}
-              custom={index}
-              initial="hidden"
-              animate={controls}
-              variants={itemVariants}
-              className="flex items-center mb-4 w-full px-2"
+      {/* Timeline */}
+      <div className="absolute bottom-0 left-0 right-0 mb-8">
+        <div className="flex justify-center items-center space-x-6">
+          {Object.keys(yearData).map((year) => (
+            <div 
+              key={year} 
+              className="flex flex-col items-center cursor-pointer group"
+              onClick={() => handleDotClick(year)}
+              role="button"
+              tabIndex={0}
+              onKeyPress={(e) => { if (e.key === 'Enter') handleDotClick(year); }}
             >
-              {/* Sleek Dash */}
-              <span className="text-lg font-bold text-white mr-4">-</span>
-              {/* Story text */}
-              <p className="text-base md:text-lg font-semibold text-white text-left">
-                {item.text}
-              </p>
-            </motion.div>
+              <span className="text-sm text-white">{year}</span>
+              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center cursor-pointer transition-transform duration-300 group-hover:scale-125">
+                <span className="text-xs text-black">{year}</span>
+              </div>
+            </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default StorySection;
+export default Revolution;

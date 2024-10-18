@@ -18,10 +18,12 @@ import PlacementProfiles from "./PlacementProfiles";
 const Placement = () => {
   return (
     <div className="bg-[#091327]">
-      <HeroPlacement />
+        <PartneredUniversities />
+        <CollegeAccreditation />
+     
       <MajorRecruiter />
-      <PartneredUniversities />
-      <CollegeAccreditation />
+      <HeroPlacement />
+    
       
       {/* Use the new HookLine component */}
       <HookLine />
