@@ -30,20 +30,15 @@ const PartneredCollege = () => {
         </p>
 
         <div className="relative overflow-hidden">
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-3 gap-x-4">
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-3 gap-y-5 lg:gap-y-6 gap-x-4">
             {colleges.map((college, index) => (
-              <div key={index} className="flex flex-col overflow-hidden">
-                <img 
-                  src={college.imageUrl} 
-                  alt={college.name} 
-                  className="w-full h-24 max-w-full object-contain"
-                />
-                <div className="flex flex-col flex-grow p-4 bg-transparent">
-                  <div className="flex-grow">
-                    <h3 className="text-xs sm:text-base md:text-base lg:text-lg mb-1 text-center text-white">
-                      {college.name}
-                    </h3>
-                  </div>
+              <div key={index} className="flex flex-col items-center overflow-hidden">
+                <div className="h-28 flex items-center">
+                  <img 
+                    src={college.imageUrl} 
+                    alt={college.name} 
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
               </div>
             ))}

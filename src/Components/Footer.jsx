@@ -72,7 +72,7 @@ const Footer = () => {
               <li className="flex items-center space-x-2">
                 <FontAwesomeIcon icon={faEnvelope} className="text-xl text-yellow-400" />
                 <p className="text-sm">
-                  <a href="mailto:gryphonx@gryphonacademy.co.in" className="hover:underline hover:text-yellow-400 transition duration-300">gryphonx@gryphonacademy.co.in</a>
+                  <a href="mailto:gryphonx@gryphonacademy.co.in" className="hover:underline hover:text-yellow-400 transition duration-300">connect@gryphonacademy.co.in</a>
                 </p>
               </li>
             </ul>

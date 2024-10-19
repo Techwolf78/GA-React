@@ -80,26 +80,27 @@ const Navbar = () => {
     exit={{ opacity: 0, x: 10 }}     // Exit to the right
     transition={{ duration: 0.5 }}    // Slow down the animation for the container
   >
-    {['College Training', 'Corporate Training', 'Faculty Training'].map((item, index) => (
-      <motion.div
-        key={item}
-        initial={{ opacity: 0, x: 10 }} // Start from the right
-        animate={{ opacity: 1, x: 0 }}  // Move to its final position
-        exit={{ opacity: 0, x: 10 }}     // Exit to the right
-        transition={{ duration: 0.5, delay: index * 0.3 }} // Increase the delay for staggered items
-      >
-        <Link
-          to={`/${item.replace(' ', '').toLowerCase()}`}
-          className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
-          onClick={() => {
-            handleDropdownItemClick();
-            handleSidebarItemClick();
-          }}
-        >
-          {item}
-        </Link>
-      </motion.div>
-    ))}
+{['Industry Readiness Program', 'Corporate Training', 'Faculty Training'].map((item, index) => (
+  <motion.div
+    key={item}
+    initial={{ opacity: 0, x: 10 }} // Start from the right
+    animate={{ opacity: 1, x: 0 }}  // Move to its final position
+    exit={{ opacity: 0, x: 10 }}     // Exit to the right
+    transition={{ duration: 0.5, delay: index * 0.3 }} // Increase the delay for staggered items
+  >
+    <Link
+      to={`/${item === 'Industry Readiness Program' ? 'collegeTraining' : item.replace(' ', '').toLowerCase()}`}
+      className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
+      onClick={() => {
+        handleDropdownItemClick();
+        handleSidebarItemClick();
+      }}
+    >
+      {item}
+    </Link>
+  </motion.div>
+))}
+
   </motion.div>
 )}
 
@@ -170,7 +171,7 @@ const Navbar = () => {
             className="block py-2 pl-12 text-[#ffffff] hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
-            College Training
+            Industry Readiness Program
           </Link>
           <Link
             to="/corporateTraining"

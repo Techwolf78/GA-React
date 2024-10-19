@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import '../src/Components/App.css'; // Import the App.css file
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import '../src/Components/App.css'; 
 import "@fontsource/roboto";
-import './App.css'; // Corrected path to App.css
-import Home from './Components/Home.jsx'; // Import the Home component
-import About from './Components/About'; // Import the About component
-import GAX from './Components/GAX'; // Import the GAX component
-import Blogs from './Components/Blogs'; // Import the Blogs component
-import Footer from './Components/Footer'; // Import the Footer component
-import Navbar from './Components/Navbar'; // Import the generic Navbar component
-import Placement from './Components/Placement'; // Corrected path to Components
-import Contact from './Components/Contact'; // Corrected path to Components
+import './App.css'; 
+import Home from './Components/Home.jsx'; 
+import About from './Components/About'; 
+import GAX from './Components/GAX'; 
+import Blogs from './Components/Blogs'; 
+import Footer from './Components/Footer'; 
+import Navbar from './Components/Navbar'; 
+import Placement from './Components/Placement'; 
+import Contact from './Components/Contact'; 
 import Training from './Components/Training';
 import BrandPositioning from './Components/BrandPositioning';
 import CollegeTraining from './Components/CollegeTraining';
 import CorporateTraining from './Components/CorporateTraining';
-import FacultyTraining from './Components/FacultyTraining'; // Corrected path to Components
-import WhatsAppWidget from './Components/WhatsAppWidget'; // Import the WhatsAppWidget component
+import FacultyTraining from './Components/FacultyTraining'; 
+import WhatsAppWidget from './Components/WhatsAppWidget'; 
+import LoadingSpinner from './Components/LoadingSpinner'; 
 import Post1 from './Components/BlogPages/Post1';
 import Post2 from './Components/BlogPages/Post2';
 import Post3 from './Components/BlogPages/Post3';
@@ -26,17 +27,31 @@ import Post6 from './Components/BlogPages/Post6';
 
 function App() {
   const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000); // Simulate loading time
+    };
+
+    handleRouteChange();
+  }, [location]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowWhatsAppWidget(true);
-    }, 3000); // 3 seconds delay
+    }, 3000); 
 
-    return () => clearTimeout(timer); // Cleanup the timer on unmount
+    return () => clearTimeout(timer); 
   }, []);
 
   return (
-    <Router>
+    <>
+      {loading && <LoadingSpinner />} {/* Show loading spinner while loading */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<><Navbar /><About /></>} />
@@ -56,10 +71,18 @@ function App() {
         <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />
       </Routes>
-      {showWhatsAppWidget && <WhatsAppWidget />} {/* Render WhatsAppWidget after 3 seconds */}
-      <Footer /> {/* Render Footer on all pages */}
+      {showWhatsAppWidget && <WhatsAppWidget />} 
+      <Footer /> 
+    </>
+  );
+}
+
+function AppWrapper() {
+  return (
+    <Router>
+      <App />
     </Router>
   );
 }
 
-export default App;
+export default AppWrapper;

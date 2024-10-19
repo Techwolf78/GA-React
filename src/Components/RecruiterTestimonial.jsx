@@ -5,7 +5,7 @@ const testimonials = [
     review: "We recruited 145 fresh engineers batch 2022-23 with the support of Gryphon and got reliable source of talent for our company. Team Gryphon is doing a fabulous job.",
     name: "Mr. Rahul Bagale",
     rating: "★★★★★",
-    companyLogo: "Logos/1.jpg",
+    companyLogo: "Logos/1.png",
     companyName: "Group HR Head Force Motors Ltd."
   },
   {
@@ -90,7 +90,7 @@ const Testimonials = () => {
       </style>
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
         <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-4">
-          RECRUITER TESTIMONIALS
+          RECRUITER'S TESTIMONIALS
         </h3>
       
       </div>

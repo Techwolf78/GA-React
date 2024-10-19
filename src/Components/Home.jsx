@@ -213,7 +213,7 @@ return (
 <li>
 <Link to="/training" onClick={scrollToTop}><span>Learning & Development</span></Link>
 <ul>
-<li><Link to="/collegeTraining" onClick={scrollToTop}><span>College Training</span></Link></li>
+<li><Link to="/collegeTraining" onClick={scrollToTop}><span>Industry Readiness Program</span></Link></li>
 <li><Link to="/corporateTraining" onClick={scrollToTop}><span>Corporate Training</span></Link></li>
 <li><Link to="/facultyTraining" onClick={scrollToTop}><span>Faculty Training</span></Link></li>
 </ul>

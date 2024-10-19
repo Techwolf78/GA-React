@@ -2,10 +2,34 @@ import React, { useEffect, useState } from 'react';
 
 const MajorRecruiter = () => {
   const [reverse, setReverse] = useState(false);
-  const logos = [...Array(25)].map((_, index) => (
+  
+  // Manually define the array of logo paths
+  const logos = [
+    'TopRecruiters/40.jpg',
+    'TopRecruiters/1.png',
+    'TopRecruiters/2.png',
+    'TopRecruiters/3.png',
+    'TopRecruiters/4.png',
+    'TopRecruiters/5.png',
+    'TopRecruiters/6.png',
+    'TopRecruiters/7.png',
+    'TopRecruiters/8.png',
+    'TopRecruiters/9.png',
+    'TopRecruiters/10.png',
+    'TopRecruiters/11.png',
+    'TopRecruiters/12.png',
+    'TopRecruiters/13.png',
+    'TopRecruiters/14.png',
+    'TopRecruiters/15.png',
+    'TopRecruiters/16.png',
+    'TopRecruiters/17.png',
+    'TopRecruiters/18.png',
+    'TopRecruiters/19.png',
+    'TopRecruiters/20.png',
+  ].map((src, index) => (
     <div key={index} className="logo-slider-item flex-none mx-4 my-2">
       <img
-        src={`Logos/${index + 1}.jpg`}
+        src={src}
         alt="College Logo"
         className="h-12 sm:h-16 md:h-20 max-w-full object-contain"
       />
@@ -75,11 +99,11 @@ const MajorRecruiter = () => {
 
           .logo-slider-track {
             display: flex; /* Ensure the logos are in a row */
-            width: calc(120px * 25); /* Adjust based on the number of logos */
+            width: calc(120px * 35); /* Adjust based on the number of logos */
           }
 
           .animate-scroll {
-            animation: scroll 10s linear forwards; /* Start animation */
+            animation: scroll 15s linear forwards; /* Start animation */
           }
 
           .reverse {
@@ -88,11 +112,11 @@ const MajorRecruiter = () => {
 
           @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-120px * 25)); } /* Scroll all logos */
+            100% { transform: translateX(calc(-120px * 35)); } /* Scroll all logos */
           }
 
           @keyframes reverseScroll {
-            0% { transform: translateX(calc(-120px * 25)); }
+            0% { transform: translateX(calc(-120px * 20)); }
             100% { transform: translateX(0); } /* Scroll back to start */
           }
 

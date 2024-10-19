@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function FacultyHero() {
   const text = "Empower your educators and elevate your institution with our targeted academic training. We boost professors' and staff's teaching skills, integrating industry needed advanced digital & offline strategies tailored to your college's unique needs. By fostering professional growth and creating dynamic learning environments, we help transform your institution into a hub of educational excellence.";
@@ -28,51 +28,51 @@ function FacultyHero() {
   }, []);
 
   return (
-    <div 
-      style={{
-        backgroundImage: "url('Clgimage/FDP.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '2rem',
-        minHeight: '100vh',
-      }}
-    >
-      <div className="definitions" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
-        {['F', 'D', 'P'].map((letter, index) => (
-          <div key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', fontSize: '3.5rem', fontWeight: 'bold', color: '#FFC80E' }}>
-            <span>{letter}</span>
-            {showFullForms && (
-              <span style={{ marginLeft: '0.5rem', fontSize: '1.3rem' }}>
-                {index === 0 ? ' - FACILITATING GROWTH' : index === 1 ? ' - DIVERSE SKILLSETS' : ' - PROFESSIONAL ADVANCEMENT'}
-              </span>
-            )}
-          </div>
-        ))}
-      </div>
-
-      <div style={{ textAlign: 'center', color: '#FFC80E', marginBottom: '2rem', marginTop: '1rem' }}>
-        <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', marginTop: '0' }}>
-          Where Great Minds Grow Greater : FDP
-        </h1>
-
-        <p style={{ color: 'white', fontSize: '1rem', marginTop: '1rem' }}>
-          {words.map((word, index) => (
-            <span
-              key={index}
-              className={index === currentWordIndex ? 'word-animation' : ''}
-              style={{ display: 'inline-block', marginRight: '4px' }}
-            >
-              {word}
-            </span>
+    <>
+      <div 
+        style={{
+          backgroundImage: "url('Clgimage/FDP.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '2rem',
+          minHeight: '100vh',
+        }}
+      >
+        <div className="definitions" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
+          {['F', 'D', 'P'].map((letter, index) => (
+            <div key={index} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', fontSize: '3.5rem', fontWeight: 'bold', color: '#FFC80E' }}>
+              <span>{letter}</span>
+              {showFullForms && (
+                <span style={{ marginLeft: '0.5rem', fontSize: '1.3rem' }}>
+                  {index === 0 ? ' - FACILITATING GROWTH' : index === 1 ? ' - DIVERSE SKILLSETS' : ' - PROFESSIONAL ADVANCEMENT'}
+                </span>
+              )}
+            </div>
           ))}
-        </p>
+        </div>
+
+        <div style={{ textAlign: 'center', color: '#FFC80E', marginBottom: '2rem', marginTop: '1rem' }}>
+          <p style={{ color: 'white', fontSize: '1rem', marginTop: '1rem' }}>
+            {words.map((word, index) => (
+              <span
+                key={index}
+                className={index === currentWordIndex ? 'word-animation' : ''}
+                style={{ display: 'inline-block', marginRight: '4px' }}
+              >
+                {word}
+              </span>
+            ))}
+          </p>
+        </div>
       </div>
 
+      <NewSection />
+      
       <style>{`
         @keyframes slideInLeft {
           from {
@@ -113,7 +113,20 @@ function FacultyHero() {
           }
         }
       `}</style>
-    </div>
+    </>
+  );
+}
+
+function NewSection() {
+  return (
+    <section style={{ padding: '2rem', textAlign: 'center', backgroundColor: '#f4f4f4', color: '#333' }}>
+      <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
+        Where Great Minds Grow Greater : FDP
+      </h1>
+      <p style={{ fontSize: '1.2rem' }}>
+        Empower your educators and elevate your institution with our targeted academic training. We boost professors' and staff's teaching skills, integrating industry needed advanced digital & offline strategies tailored to your college's unique needs. By fostering professional growth and creating dynamic learning environments, we help transform your institution into a hub of educational excellence.
+      </p>
+    </section>
   );
 }
 
