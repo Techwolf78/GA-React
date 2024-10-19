@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 function FacultyWhy() {
+  const [visibleFeatures, setVisibleFeatures] = useState([]);
+
   useEffect(() => {
     const handleMouseEnter = (e) => {
       const underline = e.currentTarget.querySelector('span');
@@ -27,13 +29,33 @@ function FacultyWhy() {
     };
   }, []);
 
+  useEffect(() => {
+    const updateVisibleFeatures = () => {
+      const width = window.innerWidth;
+      if (width >= 1024) { // Large screens
+        setVisibleFeatures(keyFeatures.slice(0, 9));
+      } else if (width >= 768) { // Medium screens
+        setVisibleFeatures(keyFeatures.slice(0, 10));
+      } else { // Small screens
+        setVisibleFeatures(keyFeatures.slice(0, 6));
+      }
+    };
+
+    updateVisibleFeatures(); // Set initial visible features
+    window.addEventListener('resize', updateVisibleFeatures);
+
+    return () => {
+      window.removeEventListener('resize', updateVisibleFeatures);
+    };
+  }, []);
+
   return (
     <div className="px-4 md:px-8 lg:px-16 mx-auto bg-[#091327] py-8 shadow-2xl roboto-regular">
       <h1 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-extrabold text-[#ffc700] text-center mb-8">
-        WHY CHOOSE GRYPHON ACADEMY'S FDP?
+        WHY CHOOSE GRYPHON ACADEMY&apos;S FDP?
       </h1>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {keyFeatures.map((feature, index) => (
+        {visibleFeatures.map((feature, index) => (
           <motion.div
             key={index}
             className="relative bg-white rounded-xl shadow-xl p-4 sm:p-6 flex flex-col items-start transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
@@ -59,31 +81,47 @@ function FacultyWhy() {
   );
 }
 
-// Data for the key features
+// Updated data for the key features
 const keyFeatures = [
   {
-    title: 'Industry-Aligned Curriculum',
-    description: 'Equip faculty with the latest industry trends and practices, ensuring students receive up-to-date knowledge.',
+    title: 'New Learning Methods',
+    description: 'Incorporate blended learning techniques that combine online and in-person instruction for enhanced engagement.',
   },
   {
-    title: 'Expert Instructors',
-    description: 'Learn from industry leaders with 10+ years of experience, bringing real-world insights and strategies.',
+    title: 'Industry Insights',
+    description: 'Facilitate workshops with industry leaders to provide faculty with current trends and practices relevant to their fields.',
   },
   {
-    title: 'Continuous Support',
-    description: 'Ongoing resources and support to apply and sustain the skills and knowledge gained during the program.',
+    title: 'Innovative Teaching Techniques',
+    description: 'Train educators in active learning strategies, such as flipped classrooms and project-based learning, to enhance student participation.',
   },
   {
-    title: 'Enhanced Teaching Methods',
-    description: 'Innovative techniques to boost student engagement and improve learning outcomes.',
+    title: 'Industry-Aligned Curriculum Development',
+    description: 'Collaborate with industry experts to design curricula that reflect the latest skills and competencies required in the job market.',
   },
   {
-    title: 'Networking Opportunities',
-    description: 'Connect with industry experts for potential collaborations and guest lectures.',
+    title: 'Teaching-Learning Methodologies',
+    description: 'Introduce evidence-based teaching methods that improve student retention and understanding of complex concepts.',
   },
   {
     title: 'Interdisciplinary Approach',
-    description: 'Encourage cross-departmental collaboration for holistic learning experiences.',
+    description: 'Promote collaboration between departments to create interdisciplinary programs that prepare students for diverse career paths.',
+  },
+  {
+    title: 'Pedagogy Inculcation',
+    description: 'Implement best practices from leading institutions like IIMs and IITs to enrich teaching methodologies and enhance educational outcomes.',
+  },
+  {
+    title: 'Continuous Professional Development',
+    description: 'Offer ongoing training sessions to keep faculty updated on emerging educational technologies and pedagogical strategies.',
+  },
+  {
+    title: 'Peer Learning Opportunities',
+    description: 'Establish mentorship programs where experienced faculty can guide newer educators in effective teaching practices.',
+  },
+  {
+    title: 'Feedback Mechanisms',
+    description: 'Create structured feedback systems that allow faculty to assess their teaching effectiveness and make necessary adjustments based on student performance.',
   },
 ];
 
