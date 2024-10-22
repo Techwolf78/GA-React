@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const [showFullForms, setShowFullForms] = useState(false);
@@ -17,7 +17,26 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="bg-blue-900 text-white py-12 px-4 md:py-20 md:px-8 lg:px-24">
+    <div className="bg-[#003073] text-white py-12 px-4 md:py-20 md:px-8 lg:px-24">
+      <style>
+        {`
+          @keyframes float {
+            0% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-10px);
+            }
+            100% {
+              transform: translateY(0);
+            }
+          }
+
+          .float {
+            animation: float 5s ease-in-out infinite; /* Changed to 5s */
+          }
+        `}
+      </style>
       <div className="container mx-auto flex flex-col md:flex-row items-start justify-between space-y-10 md:space-y-0">
         {/* Left Content - F D P */}
         <div className="w-full md:w-1/2 flex flex-col items-start md:pl-8 lg:pl-16 xl:pl-32">
@@ -33,15 +52,11 @@ const HeroSection = () => {
               </div>
             ))}
           </div>
-          <p className="text-lg sm:text-xl lg:text-2xl  mb-2 max-w-lg">
-          Teaching reimagined. Learning redefined 
-         
-          </p>
+      
           <p className="text-lg sm:text-xl lg:text-2xl mb-6 lg:mb-8 max-w-lg">
-        
-          Navigate the new normal: Agile teaching for a changing world
+          Our comprehensive programs focus on enhancing teaching skills, integrating modern pedagogical strategies, and fostering a culture of continuous professional growth. By addressing these critical challenges, we help transform your college into a vibrant hub of educational excellence.
           </p>
-          <Link to="/contact"> {/* Wrap the button with Link */}
+          <Link to="/contact">
             <button
               onClick={handleScroll}
               className="btn-know-more relative inline-flex px-5 py-3 text-sm sm:text-base font-semibold text-[#ffffff] group whitespace-nowrap hidden lg:inline-flex"
@@ -71,7 +86,7 @@ const HeroSection = () => {
             <img
               src="Training Page/fdp.svg" // Replace this with your actual image path
               alt="Train Hire Deploy"
-              className="w-full h-auto object-contain"
+              className="w-full h-auto object-contain float" // Added float class
             />
           </div>
         </div>

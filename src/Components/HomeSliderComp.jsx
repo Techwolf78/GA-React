@@ -2,25 +2,35 @@ import React from 'react';
 
 const HomeSliderComp = () => {
   const logos = [
-    "Logos/1.jpg",
-    "Logos/2.jpg",
-    "Logos/3.jpg",
-    "Logos/4.jpg",
-    "Logos/5.jpg",
-    "Logos/6.jpg",
-    "Logos/7.jpg",
-    "Logos/8.jpg",
-    "Logos/9.jpg",
-    "Logos/10.jpg",
-    "Logos/11.jpg",
-    "Logos/12.jpg",
+    "TopRecruiters/1.png",
+    "TopRecruiters/2.png",
+    "TopRecruiters/3.png",
+    "TopRecruiters/4.png",
+    "TopRecruiters/5.png",
+    "TopRecruiters/6.png",
+    "TopRecruiters/7.png",
+    "TopRecruiters/8.png",
+    "TopRecruiters/9.png",
+    "TopRecruiters/10.png",
+    "TopRecruiters/11.png",
+    "TopRecruiters/12.png",
+    "TopRecruiters/13.png",
+    "TopRecruiters/14.png",
+    "TopRecruiters/15.png",
+    "TopRecruiters/16.png",
+    "TopRecruiters/17.png",
+    "TopRecruiters/18.png",
+    "TopRecruiters/19.png",
+    "TopRecruiters/20.png",
   ];
 
   return (
     <div className="home-slider-section bg-[#01224f] py-4 roboto-regular">
-<div className="text-center mb-4">
-    <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-white"> <span className='text-[#FFC80E]'> TRUSTED </span> PARTNERS</h2>
-</div>
+      <div className="text-center mb-4">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-white">
+          <span className='text-[#FFC80E]'> TRUSTED </span> PARTNERS
+        </h2>
+      </div>
       <div className="home-slider relative overflow-hidden w-full">
         <div className="home-slider-track flex animate-scroll-left">
           {logos.map((logo, index) => (
@@ -41,8 +51,6 @@ const HomeSliderComp = () => {
           width: calc(120px * ${logos.length * 2});
           animation: scroll-left 20s linear infinite;
         }
-
-      
 
         @keyframes scroll-left {
           0% { transform: translateX(0); }

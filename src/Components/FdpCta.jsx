@@ -6,70 +6,80 @@ import { useInView } from "react-intersection-observer";
 // Testimonials Data
 const testimonials = [
   {
-    message: "Gryphon holds a special place for me. Over the years, Gryphon has experienced significant growth, and it's been a journey filled with valuable lessons. I wish them continued success in all their future endeavors.",
+    message:
+      "Gryphon holds a special place for me. Over the years, Gryphon has experienced significant growth, and it's been a journey filled with valuable lessons. I wish them continued success in all their future endeavors.",
     name: "Dr. Tarita Shankar",
-    title: "Founder, Secretary & Chief Managing Trustee Shree Chanakya Education Society. Chairperson",
+    title:
+      "Founder, Secretary & Chief Managing Trustee Shree Chanakya Education Society. Chairperson",
     institution: "Indira Group of Institutes, Pune",
     profilePic: "Testimonials/Tarita_shankar.jpg",
   },
   {
-    message: "Gryphon Academy has achieved remarkable success in securing placements for our students in prestigious companies such as Tata Technology, KPIT, and Tata Motors, along with Plank and Weave for our students in the real estate sector. Gryphon's tailored training and placement services have opened up diverse opportunities for our students.",
+    message:
+      "Gryphon Academy has achieved remarkable success in securing placements for our students in prestigious companies such as Tata Technology, KPIT, and Tata Motors, along with Plank and Weave for our students in the real estate sector. Gryphon's tailored training and placement services have opened up diverse opportunities for our students.",
     name: "Ms. Dhanwantari Wangde",
     title: "CEO",
     institution: "Dnyanshree Institute of Engineering & Technology, Satara",
     profilePic: "Testimonials/Dhanwantari Wangde.jpg",
   },
   {
-    message: "Gryphon Academy's personalized training and placements are exceptional. They prepare students for the industry while shaping their futures with a dedicated commitment to excellence. With more than 2000+ students trained, Gryphon Academy continues to make a significant impact in the realm of education. ",
+    message:
+      "Gryphon Academy's personalized training and placements are exceptional. They prepare students for the industry while shaping their futures with a dedicated commitment to excellence. With more than 2000+ students trained, Gryphon Academy continues to make a significant impact in the realm of education. ",
     name: "Mr. Amit Kolhe",
     title: "Managing Trustee",
     institution: "Sanjivani College of Engineering, Kopargaon",
     profilePic: "Testimonials/Amit Kolhe.jpg",
   },
   {
-    message: "Dr. J. J. Magdum College Of Engineering Jaysingpur, Kolhapur, has partnered with Gryphon Academy for over three years now. Together, we are dedicated to providing comprehensive services to students across all domains. Gryphon's proven track record in delivering outstanding results for various institutions has impressed us.",
+    message:
+      "Dr. J. J. Magdum College Of Engineering Jaysingpur, Kolhapur, has partnered with Gryphon Academy for over three years now. Together, we are dedicated to providing comprehensive services to students across all domains. Gryphon's proven track record in delivering outstanding results for various institutions has impressed us.",
     name: "Dr. S. S. Admuthe",
     title: "Campus Director",
     institution: "Dr. J. J. Magdum College of Engineering Jaysingpur, Kolhapur",
     profilePic: "Testimonials/Dr. S S Admute JJ Magdum.jpeg",
   },
   {
-    message: "ICEM is associated with Gryphon Academy for the past three years, benefiting from over 3000 hours of training annually for students. Gryphon Academy has extended invaluable industry support, particularly for our students seeking core engineering job placements.",
+    message:
+      "ICEM is associated with Gryphon Academy for the past three years, benefiting from over 3000 hours of training annually for students. Gryphon Academy has extended invaluable industry support, particularly for our students seeking core engineering job placements.",
     name: "Ms. Meenakshi Madgunaki",
     title: "Head L&D",
     institution: "Indira College of Engineering & Management (ICEM), Pune",
     profilePic: "Testimonials/user.png",
   },
   {
-    message: "In academia and the corporate world, Gryphon Academy stands as a leader driven by vision and dedication. Gryphon Academy's training and placements are outstanding, lighting the path towards a brighter future for students.",
+    message:
+      "In academia and the corporate world, Gryphon Academy stands as a leader driven by vision and dedication. Gryphon Academy's training and placements are outstanding, lighting the path towards a brighter future for students.",
     name: "Dr. Thomas George",
     title: "Director",
     institution: "Lead College of Management, Palakkad, Kerala",
     profilePic: "Testimonials/Dr Thomas Ceorge - LEAD.png",
   },
   {
-    message: "Gryphon Academy's training kindles potential. Our students' achievements in the competitive world validate Gryphon's commitment to excellence. The expertise of their experienced trainers from various fields is second to none.",
+    message:
+      "Gryphon Academy's training kindles potential. Our students' achievements in the competitive world validate Gryphon's commitment to excellence. The expertise of their experienced trainers from various fields is second to none.",
     name: "Dr. Kuldip S Charak",
     title: "Director",
-    institution: "Dr. D. Y. Patil Institute of Management Studies (DYPIMS), Pune",
+    institution:
+      "Dr. D. Y. Patil Institute of Management Studies (DYPIMS), Pune",
     profilePic: "Testimonials/Dr Kuldip Charak .png",
   },
   {
-    message: "Thanks to Gryphon's industry-focused training and the expertise of their trainers, our students have embarked on an incredible journey from classrooms to successful careers.",
+    message:
+      "Thanks to Gryphon's industry-focused training and the expertise of their trainers, our students have embarked on an incredible journey from classrooms to successful careers.",
     name: "Dr. S. P. Borde",
     title: "Dean",
     institution: "JSPM's Rajarshi Shahu College of Engineering, Pune",
     profilePic: "Testimonials/Dr. S P Borde JSPMS.png",
   },
   {
-    message: "Gryphon's training isn't just a curriculum; it's a compass guiding students toward a prosperous future. their commitment to excellence aligns with our vision of nurturing future leaders. a huge Thanks to Gryphon Academy for their exclusive trainings and placements.",
+    message:
+      "Gryphon's training isn't just a curriculum; it's a compass guiding students toward a prosperous future. their commitment to excellence aligns with our vision of nurturing future leaders. a huge Thanks to Gryphon Academy for their exclusive trainings and placements.",
     name: "Dr. A. Padmaja",
     title: "Dean",
     institution: "Vidya Jyothi Institute of Technology, (VJIT) Hyderabad",
     profilePic: "Testimonials/Dr A Padmaja Dean VJIT.jpeg",
   },
 ];
-
 
 const TestimonialCard = ({ testimonial }) => (
   <div className="testimonial-card bg-white text-black p-4 rounded-lg shadow-lg mb-4 lg:mb-6 w-full">
@@ -96,7 +106,7 @@ const Testimonials = () => {
       <h2 className="text-3xl font-bold text-center mb-6 text-white">
         COLLEGE TESTIMONIALS
       </h2>
-      <div className="relative overflow-hidden sm:h-[60vh] xs:h-[60vh] md:h-[60vh] lg:h-[90vh]">
+      <div className="relative overflow-hidden sm:h-[60vh] xs:h-[60vh] md:h-[60vh] lg:h-[100vh]">
         <div className="flex flex-col animate-slide">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
@@ -222,58 +232,56 @@ const ContactForm = () => {
           <Testimonials />
           <div ref={ref} className="w-full lg:w-1/2 flex flex-col items-center">
             <div className="w-full p-4 lg:p-6 bg-gradient-to-r from-blue-800 to-blue-600 rounded-lg shadow-lg text-white overflow-auto mt-20">
-         <div className="w-full lg:h-auto flex flex-col lg:flex-row justify-between items-center mb-4 relative p-4">
-  <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-center text-white mb-4 lg:mb-0 lg:mr-4 flex-1">
-  Eager to tap into a network of over 450+ <span className="text-[#FFC80E]">Recruiters?</span>
-    <br />
-    Contact us <span className="text-[#FFC80E]">Today!</span>
-  </h1>
+              <div className="w-full lg:h-auto flex flex-col lg:flex-row justify-between items-center mb-4 relative p-4">
+                <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-center text-white mb-4 lg:mb-0 lg:mr-4 flex-1">
+                  Join Gryphon Academy's FDP today and embark on a{" "}
+                  <span className="text-[#FFC80E]">transformative </span>
+                  <br />
+                  journey towards academic{" "}
+                  <span className="text-[#FFC80E]">excellence.</span>
+                </h1>
 
-  <img
-    src="LandingImage/contactform.png"
-    alt="Salesperson illustration"
-    className="w-64 md:w-72 lg:w-80 xl:w-96 max-w-full h-auto object-cover rounded-lg flex-1"
-    style={{ minWidth: '150px' }} // Adjust as needed
-  />
+                <img
+                  src="LandingImage/contactform.png"
+                  alt="Salesperson illustration"
+                  className="w-64 md:w-72 lg:w-80 xl:w-96 max-w-full h-auto object-cover rounded-lg flex-1"
+                  style={{ minWidth: "150px" }} // Adjust as needed
+                />
 
-  <img
-    src="LandingImage/union-design-img.svg"
-    alt="Rotating Triangle"
-    className="absolute top-0 w-10 h-10 md:w-12 md:h-12 left-0 md:left-18"
-    style={{
-      margin: "10px",
-      animation: "spin 2s linear infinite",
-    }}
-  />
+                <img
+                  src="LandingImage/union-design-img.svg"
+                  alt="Rotating Triangle"
+                  className="absolute top-0 w-10 h-10 md:w-12 md:h-12 left-0 md:left-18"
+                  style={{
+                    margin: "10px",
+                    animation: "spin 2s linear infinite",
+                  }}
+                />
 
-  <img
-    src="LandingImage/union-design-img.svg"
-    alt="Rotating Triangle Bottom Right"
-    className="absolute bottom-0 right-0 w-10 h-10 md:w-12 md:h-12"
-    style={{
-      margin: "10px",
-      marginRight: "20px",
-      animation: "spin 2s linear infinite",
-    }}
-  />
+                <img
+                  src="LandingImage/union-design-img.svg"
+                  alt="Rotating Triangle Bottom Right"
+                  className="absolute bottom-0 right-0 w-10 h-10 md:w-12 md:h-12"
+                  style={{
+                    margin: "10px",
+                    marginRight: "20px",
+                    animation: "spin 2s linear infinite",
+                  }}
+                />
 
-<img
-  src="LandingImage/curve-lines.svg"
-  alt="Waving Design"
-  className="absolute bottom-0 left-0 w-20 h-auto md:w-24 md:bottom-0 md:left-64"
-  style={{
-    marginBottom: "10px",
-    marginLeft: "10px",
-    // Add responsive width adjustments if necessary
-    maxWidth: '100%', // Ensure it scales down to fit smaller screens
-    height: 'auto', // Maintain aspect ratio
-  }}
-/>
-
-</div>
-
-
-
+                <img
+                  src="LandingImage/curve-lines.svg"
+                  alt="Waving Design"
+                  className="absolute bottom-0 left-0 w-20 h-auto md:w-24 md:bottom-0 md:left-64"
+                  style={{
+                    marginBottom: "10px",
+                    marginLeft: "10px",
+                    // Add responsive width adjustments if necessary
+                    maxWidth: "100%", // Ensure it scales down to fit smaller screens
+                    height: "auto", // Maintain aspect ratio
+                  }}
+                />
+              </div>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-2">
                 <InputField

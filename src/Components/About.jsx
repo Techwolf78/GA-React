@@ -1,22 +1,24 @@
 // About.jsx
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import AboutHero from "./AboutHero";
-import AboutStats from "./AboutStats";
+
 import ImpactSection from "./ImpactSection";
-import HomeAbout from "./HomeAbout";
+import HomeAbout from "./AboutIntro";
 import Testimonials from "./Testimonials"; // Import the Testimonials component
 import JourneySection from "./JourneySection";
 import MissionVisionSection from "./MissionVisionSection";
+import AboutIntro from "./AboutIntro";
+import AboutHero from "./AboutHero";
+import AboutOffer from "./AboutOffer";
 
 const About = () => {
   return (
     <div>
       <AboutHero />
-      <AboutStats />
-      <HomeAbout />
+      <AboutIntro />
       <MissionVisionSection />
       {/* Our Impact Section */}
       <ImpactSection />
+      <AboutOffer />
       <JourneySection />
       <Testimonials />
     </div>

@@ -27,19 +27,7 @@ import Post6 from './Components/BlogPages/Post6';
 
 function App() {
   const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
-  const [loading, setLoading] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleRouteChange = () => {
-      setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-      }, 1000); // Simulate loading time
-    };
-
-    handleRouteChange();
-  }, [location]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -51,7 +39,6 @@ function App() {
 
   return (
     <>
-      {loading && <LoadingSpinner />} {/* Show loading spinner while loading */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<><Navbar /><About /></>} />

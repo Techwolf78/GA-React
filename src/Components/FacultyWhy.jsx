@@ -1,51 +1,42 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
+// FeatureCard component for better reusability
+const FeatureCard = ({ feature, index }) => (
+  <motion.div
+    className="relative bg-white rounded-xl shadow-xl p-4 sm:p-6 flex flex-col items-start transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ delay: index * 0.2, duration: 0.5 }}
+  >
+    <div className="absolute top-0 left-0 w-1 bg-[#ffc700] h-16 rounded-r-xl"></div>
+    <h2 className="text-xl sm:text-2xl font-semibold text-[#091327] mb-4 relative group">
+      {feature.title}
+      <span className="absolute bottom-0 left-0 w-full h-1 bg-[#ffc700] transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100" />
+    </h2>
+    <p className="text-sm sm:text-base lg:text-lg text-[#091327] leading-relaxed flex-grow">
+      {feature.description}
+    </p>
+  </motion.div>
+);
+
 function FacultyWhy() {
   const [visibleFeatures, setVisibleFeatures] = useState([]);
 
   useEffect(() => {
-    const handleMouseEnter = (e) => {
-      const underline = e.currentTarget.querySelector('span');
-      underline.style.transform = 'scaleX(1)';
-    };
-
-    const handleMouseLeave = (e) => {
-      const underline = e.currentTarget.querySelector('span');
-      underline.style.transform = 'scaleX(0)';
-    };
-
-    const titles = document.querySelectorAll('h2');
-    titles.forEach((title) => {
-      title.addEventListener('mouseenter', handleMouseEnter);
-      title.addEventListener('mouseleave', handleMouseLeave);
-    });
-
-    return () => {
-      titles.forEach((title) => {
-        title.removeEventListener('mouseenter', handleMouseEnter);
-        title.removeEventListener('mouseleave', handleMouseLeave);
-      });
-    };
-  }, []);
-
-  useEffect(() => {
     const updateVisibleFeatures = () => {
       const width = window.innerWidth;
-      if (width >= 1024) { // Large screens
-        setVisibleFeatures(keyFeatures.slice(0, 9));
-      } else if (width >= 768) { // Medium screens
-        setVisibleFeatures(keyFeatures.slice(0, 10));
-      } else { // Small screens
-        setVisibleFeatures(keyFeatures.slice(0, 6));
-      }
+      const featureCount = width >= 1024 ? 9 : width >= 768 ? 10 : 6;
+      setVisibleFeatures(keyFeatures.slice(0, featureCount));
     };
 
-    updateVisibleFeatures(); // Set initial visible features
-    window.addEventListener('resize', updateVisibleFeatures);
+    updateVisibleFeatures();
+    
+    const handleResize = debounce(updateVisibleFeatures, 200);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', updateVisibleFeatures);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -56,30 +47,21 @@ function FacultyWhy() {
       </h1>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {visibleFeatures.map((feature, index) => (
-          <motion.div
-            key={index}
-            className="relative bg-white rounded-xl shadow-xl p-4 sm:p-6 flex flex-col items-start transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.2, duration: 0.5 }}
-          >
-            <div className="absolute top-0 left-0 w-1 bg-[#ffc700] h-16 rounded-r-xl"></div>
-            <h2 className="text-xl sm:text-2xl font-semibold text-[#091327] mb-4 relative">
-              {feature.title}
-              <span
-                className="absolute bottom-0 left-0 w-full h-1 bg-[#ffc700] transform origin-left transition-transform duration-300 ease-in-out"
-                style={{ transform: 'scaleX(0)', transformOrigin: 'bottom left' }}
-              />
-            </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-[#091327] leading-relaxed flex-grow">
-              {feature.description}
-            </p>
-          </motion.div>
+          <FeatureCard key={index} feature={feature} index={index} />
         ))}
       </div>
     </div>
   );
 }
+
+// Debounce function to limit the rate of execution
+const debounce = (func, delay) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), delay);
+  };
+};
 
 // Updated data for the key features
 const keyFeatures = [

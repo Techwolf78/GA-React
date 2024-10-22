@@ -113,16 +113,22 @@ const TrainingAbout = () => {
         }
 
         .training-feature-title {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
           color: #FFC80E;
           margin-bottom: 0;
+          font-weight: bold;
         }
 
         .training-feature-description {
-          font-size: 0.9rem; /* Adjusted for better readability */
+          font-size: 1rem; /* Adjusted for better readability */
           color: #ffffff;
           flex: 1; /* Allow description to grow and take available space */
         }
+
+ .training-feature-icon i {
+  font-size: 2rem; /* Increase the font size of the icon */
+}
+
 
         .training-learn-more-link {
           display: inline-block;
@@ -195,7 +201,7 @@ const TrainingAbout = () => {
           .training-feature-card {
             width: 100%; /* Full width on small screens */
             max-width: none; /* Remove max width to use full width */
-            min-height: 150px; /* Further reduced height for small screens */
+            min-height: 250px; /* Further reduced height for small screens */
             padding: 1rem; /* Adjusted padding */
             margin: 1rem 0; /* Vertical margin for spacing */
           }

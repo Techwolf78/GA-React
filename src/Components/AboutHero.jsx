@@ -1,15 +1,29 @@
-// AboutHero.jsx
 const AboutHero = () => {
   return (
-    <section className="bg-[#003073] text-white flex flex-col items-center text-center py-16">
-      <div className="w-full max-w-screen-lg px-6">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6" style={{ color: '#ffc700' }}>
-          ABOUT GRYPHON ACADEMY
+    <section 
+      className="bg-[#003073] text-white flex flex-col md:flex-row items-center justify-between py-4"
+    >
+      <div className="w-full max-w-screen-lg px-8 md:px-16 flex-1">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 text-[#FFC80E]">
+          ABOUT US
         </h1>
-        <p className="text-base sm:text-lg md:text-xl font-medium mb-12" style={{ color: '#ffffff' }}>
-          As India&apos;s premier non-ed-tech organization, we are committed to bridging the gap between industry and academia. 
-          We provide customized training solutions as per the Industry-centric needs which helps your academic institution facilitate a smooth transition into the industry with ease.
-        </p>
+        <h2 className="text-xl md:text-2xl font-semibold mb-4">
+          Bridging Industry and Academia
+        </h2>
+        <p className="text-base md:text-lg font-medium mb-12" style={{ color: '#F0F0F0' }}>
+    As India&apos;s premier non-ed-tech organization, we are committed to bridging the gap between industry and academia. 
+    We provide customized training solutions as per the industry-centric needs, helping academic institutions facilitate a smooth transition into the industry with ease.
+</p>
+
+
+
+      </div>
+      <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
+        <img 
+          src="About/heroNew.PNG" // Replace with your vector graphic path
+          alt="Vector Graphic"
+          className="max-w-full h-auto"
+        />
       </div>
     </section>
   );

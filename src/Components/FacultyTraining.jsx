@@ -2,10 +2,10 @@ import React from "react";
 import FacultyHero from "./FacultyHero";
 import FacultyWhy from "./FacultyWhy";
 import FacultyModule from "./FacultyModule";
-import ContactForm from "./ContactForm";
 import FDPContact from './FDPContact';
 import ConnectWithUs from "./ConnectWithUs";
 import FacultyHeroPara from "./FacultyHeroPara";
+import FdpCta from "./FdpCta";
 
 
 const FacultyTraining = () => {
@@ -16,8 +16,7 @@ const FacultyTraining = () => {
      <FacultyWhy />
      <FacultyModule />
      <FDPContact />
-     <ContactForm />
-     
+     <FdpCta />
      <ConnectWithUs />
     </div>
   );

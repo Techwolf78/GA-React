@@ -3,7 +3,7 @@ import React from 'react';
 
 const ImpactSection = () => {
   return (
-    <div id="stats" className="py-16 bg-[#091327]">
+    <div id="stats" className="py-16 bg-[#ffffff]">
       <h3 className="text-3xl sm:text-4xl font-bold text-center mb-12" style={{ color: '#ffc700' }}>
         OUR IMPACT
       </h3>

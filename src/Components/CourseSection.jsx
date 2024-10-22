@@ -161,7 +161,7 @@ const courses = {
         "Implement Node.js for scalable back-end applications.",
         "Create and manage RESTful APIs for seamless data flow.",
       ],
-      image: "computr-science/CC5.png",
+      image: "computr-science/CS 2.png",
     },
     {
       title: "Programming Languages",
@@ -172,7 +172,7 @@ const courses = {
         "Master language-specific frameworks and libraries.",
         "Implement projects in real-world software development environments.",
       ],
-      image: "computr-science/CC3.png",
+      image: "computr-science/CS 3.png",
     },
     {
       title: "DSA (Data Structures & Algorithms)",
@@ -183,7 +183,7 @@ const courses = {
         "Apply dynamic programming techniques for problem-solving.",
         "Prepare for coding interviews with real-world examples.",
       ],
-      image: "computr-science/CC6.png",
+      image: "computr-science/CS 5.png",
     },
     {
       title: "App Development",
@@ -194,7 +194,7 @@ const courses = {
         "Master UI/UX design principles for mobile applications.",
         "Deploy apps on app stores with continuous integration.",
       ],
-      image: "computr-science/CC2.png",
+      image: "computr-science/CS 4.png",
     },
     {
       title: "Linux",
@@ -205,7 +205,7 @@ const courses = {
         "Manage users, processes, and permissions in Linux.",
         "Implement Linux-based solutions in cloud and networking environments.",
       ],
-      image: "computr-science/CC4.png",
+      image: "computr-science/CS 5.png",
     },
   ],
 
@@ -252,7 +252,7 @@ const courses = {
         "Develop real-time monitoring solutions with cloud integration.",
         "Implement security measures in IoT networks.",
       ],
-      image: "computr-science/CC2.png",
+      image: "Electrical Eng/E4.png",
     },
     {
       title: "Transformers & Circuits",
@@ -263,7 +263,7 @@ const courses = {
         "Understand fault detection and maintenance of transformers.",
         "Design circuits with proper load balancing and protection.",
       ],
-      image: "Electrical Eng/5.jpg",
+      image: "Electrical Eng/E5.png",
     },
     {
       title: "Wiring Harness",
@@ -288,7 +288,7 @@ const courses = {
         "Understand model evaluation and optimization techniques.",
         "Apply machine learning to predictive analytics.",
       ],
-      image: "AIDS/ML.jpg",
+      image: "computr-science/A1.png",
     },
     {
       title: "Mathematics & Linear Algebra",
@@ -299,7 +299,7 @@ const courses = {
         "Understand vector spaces and transformations for machine learning.",
         "Use mathematics for solving regression and classification tasks.",
       ],
-      image: "AIDS/Math.jpg",
+      image: "computr-science/A1.png",
     },
     {
       title: "Statistics",
@@ -310,7 +310,7 @@ const courses = {
         "Understand descriptive and inferential statistics for data science.",
         "Perform regression analysis and ANOVA in real-world data.",
       ],
-      image: "AIDS/Stats.jpg",
+      image: "computr-science/A2.png",
     },
     {
       title: "Big Data Analytics",
@@ -321,7 +321,7 @@ const courses = {
         "Apply big data analytics in business intelligence.",
         "Implement data lakes and warehouses for efficient storage.",
       ],
-      image: "AIDS/BigData.jpg",
+      image: "computr-science/A3.png",
     },
     {
       title: "Data Visualization",
@@ -332,7 +332,7 @@ const courses = {
         "Visualize complex data using advanced visualization techniques.",
         "Develop dashboards for real-time data monitoring.",
       ],
-      image: "AIDS/Visualization.jpg",
+      image: "computr-science/A4.png",
     },
     {
       title: "RDBMS",
@@ -343,7 +343,7 @@ const courses = {
         "Understand transaction management and concurrency control.",
         "Develop applications with database integration.",
       ],
-      image: "AIDS/RDBMS.jpg",
+      image: "computr-science/A5.png",
     },
   ],
   PHARMA: [
