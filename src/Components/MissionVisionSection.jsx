@@ -5,7 +5,7 @@ import missionDotImage from '/About/Mission.png'; // Update with your actual mis
 import arrowImage from '/About/arrow.svg'; // Update with your actual arrow image path
 
 const MissionVisionSection = () => {
-  const fixedHeight = '400px'; // Set a fixed height for both cards
+  const fixedHeight = '450px'; // Set a fixed height for both cards
 
   // Animation variants
   const cardVariants = {
@@ -23,7 +23,7 @@ const MissionVisionSection = () => {
   };
 
   return (
-    <section className="flex flex-col w-full min-h-[80vh] bg-gray-100 px-4 sm:px-8 md:px-16 lg:px-24 py-4 roboto-regular">
+    <section className="flex flex-col w-full lg:min-h-[80vh] md:min-h-[50vh]  bg-gray-100 px-4 sm:px-8 md:px-16 lg:px-24 py-4 roboto-regular">
       <div className="flex flex-col md:flex-row w-full max-w-7xl">
 
         {/* Vision Card */}

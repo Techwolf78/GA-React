@@ -66,7 +66,7 @@ const ImageGallery = () => {
           <h1 className="text-5xl font-extrabold text-[#091327] leading-tight">
             Team
           </h1>
-          <h2 className="text-5xl font-semibold text-[#003073]">
+          <h2 className="text-5xl font-semibold text-[#003073] lg:ml-80">
             Galleries
           </h2>
         </div>
