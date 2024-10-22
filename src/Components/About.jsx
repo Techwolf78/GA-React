@@ -9,6 +9,7 @@ import MissionVisionSection from "./MissionVisionSection";
 import AboutIntro from "./AboutIntro";
 import AboutHero from "./AboutHero";
 import AboutOffer from "./AboutOffer";
+import AboutGallery from "./AboutGallery";
 
 const About = () => {
   return (
@@ -19,6 +20,7 @@ const About = () => {
       {/* Our Impact Section */}
       <ImpactSection />
       <AboutOffer />
+      <AboutGallery />
       <JourneySection />
       <Testimonials />
     </div>

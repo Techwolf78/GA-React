@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 const AboutIntro = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      easing: 'ease-in-out', // Easing for animations
+      once: true, // Animation only happens once
+    });
+  }, []);
+
   const handleNavigate = () => {
     window.location.href = "/contact";
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 20 },
-    visible: { opacity: 1, scale: 1, y: 0 },
   };
 
   const buttonHover = {
@@ -28,19 +33,16 @@ const AboutIntro = () => {
     },
   };
 
-  const cardBounce = {
-    initial: { y: -50, opacity: 0 },
-    animate: (i) => ({
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
-        delay: i * 0.2, // Stagger the animations
-      },
-    }),
+  const cardHover = {
+    hover: {
+      scale: 1.05,
+      rotateX: 5,
+      rotateY: 5,
+      boxShadow: "0 10px 20px rgba(0, 0, 0, 0.3)",
+      transition: { duration: 0.1 }, // Reduced duration for a quicker lift
+    },
   };
+  
 
   return (
     <div className="relative overflow-hidden px-4 md:px-8 lg:px-16 py-12 bg-[#e1eaf7]">
@@ -49,7 +51,8 @@ const AboutIntro = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
+            data-aos="fade-up"
             className="text-xl md:text-2xl text-[#003073] font-bold mb-2"
           >
             WHAT WE DO
@@ -57,7 +60,8 @@ const AboutIntro = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            data-aos="fade-up"
             className="text-3xl md:text-5xl text-[#000000] font-bold"
           >
             WE PROVIDE <span className="text-[#003073]">360</span>
@@ -69,7 +73,8 @@ const AboutIntro = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            data-aos="fade-up"
             className="text-base text-black mb-0"
           >
             As India’s premier non-ed-tech organization, we are committed to bridging the gap between industry and academia. We provide customized training solutions as per the Industry-centric needs which helps your students to be industry-ready and help your academic institution facilitate smooth transition into the industry with ease.
@@ -104,14 +109,14 @@ const AboutIntro = () => {
           },
         ].map((item, index) => (
           <motion.div
-            key={index}
-            variants={cardBounce}
-            initial="hidden"
-            animate="animate"
-            custom={index}
-            className="bg-[#003073] p-6 border-2 border-dashed border-[#FFC80E] shadow-lg flex flex-col items-center rounded-[20px] flex-1 mb-4 md:mb-0"
-            style={{ margin: "0 10px", position: "relative", zIndex: 1 }}
-          >
+          key={index}
+          data-aos="zoom-in-up"
+          data-aos-delay={index * 100}
+          className="bg-[#003073] p-6 border-2 border-dashed border-[#FFC80E] shadow-lg flex flex-col items-center rounded-[20px] flex-1 mb-4 md:mb-0"
+          style={{ margin: "0 10px", position: "relative", zIndex: 1 }}
+          whileHover="hover"
+          variants={cardHover} // Apply the 3D hover effect here
+        >
             <motion.div
               variants={iconHover}
               whileHover="hover"
@@ -121,7 +126,7 @@ const AboutIntro = () => {
             </motion.div>
             <motion.h4
               className="text-lg md:text-xl text-[#ffffff] font-bold mb-2"
-              whileHover={{ scale: 1.1, transition: { duration: 0.2 } }} // Title hover effect
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
             >
               {item.title}
             </motion.h4>

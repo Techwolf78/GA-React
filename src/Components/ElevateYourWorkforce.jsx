@@ -21,7 +21,7 @@ function ElevateYourWorkforce() {
 
         {/* Right column: Content */}
         <div className="lg:w-2/3">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#FFC80E] mb-4">ELEVATE YOUR WORKFORCE</h2>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#003073] mb-4">ELEVATE YOUR WORKFORCE</h2>
           <p className="text-base sm:text-lg text-gray-600 mb-8">
             Our tailored approach bridges the skills gap and fosters a culture of continuous learning. With our expertise, organizations can transform their workforce into a dynamic and resilient team, ready to tackle modern business challenges and drive sustainable success.
           </p>

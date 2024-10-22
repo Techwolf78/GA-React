@@ -8,11 +8,10 @@ const AboutHero = () => {
           ABOUT US
         </h1>
         <h2 className="text-xl md:text-2xl font-semibold mb-4">
-          Bridging Industry and Academia
+          Bridging the Gap Between Industry and Academia
         </h2>
         <p className="text-base md:text-lg font-medium mb-12" style={{ color: '#F0F0F0' }}>
-    As India&apos;s premier non-ed-tech organization, we are committed to bridging the gap between industry and academia. 
-    We provide customized training solutions as per the industry-centric needs, helping academic institutions facilitate a smooth transition into the industry with ease.
+        As India's premier non-ed-tech organization, we are committed to bridging the gap between industry and academia. Providing customized training solutions as per the Industry-centric needs, we help your students to be industry ready.
 </p>
 
 

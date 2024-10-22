@@ -87,8 +87,6 @@ const challenges = [
 
 const ChallengesSolutionsComponent = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 1024);
 
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
@@ -97,24 +95,6 @@ const ChallengesSolutionsComponent = () => {
   const handleMouseLeave = () => {
     setHoveredIndex(null);
   };
-
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setCursorPosition({ x: event.clientX, y: event.clientY });
-    };
-
-    const handleResize = () => {
-      setIsWideScreen(window.innerWidth > 1024);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('resize', handleResize);
-    
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <div className="bg-[#0a1d3d] py-4 flex items-center justify-center roboto-regular">
@@ -166,42 +146,10 @@ const ChallengesSolutionsComponent = () => {
         </div>
       </div>
 
-      {/* Custom magnifying glass cursor */}
-      {isWideScreen && (
-        <div
-          className="custom-cursor"
-          style={{
-            left: cursorPosition.x - 20, // Center the cursor
-            top: cursorPosition.y - 20, // Center the cursor
-          }}
-        />
-      )}
       <style>
       {`
         body {
-          cursor: ${isWideScreen ? 'none' : 'auto'}; /* Hide the default cursor on wide screens */
-        }
-
-        .custom-cursor {
-          position: fixed;
-          width: 40px; /* Width of the cursor */
-          height: 40px; /* Height of the cursor */
-          background-color: transparent; /* Fully transparent center */
-          border: 3px solid rgba(255, 199, 0, 1); /* Solid yellow border */
-          border-radius: 50%; /* Circular shape */
-          pointer-events: none; /* Ensure it doesn't interfere with mouse events */
-          box-shadow: 0 0 10px rgba(255, 199, 0, 2.6); /* Optional glow effect */
-          z-index: 9999; /* Ensure it stays above other elements */
-        }
-
-        /* Apply zoom effect on text when hovered */
-        .text-zoom {
-          transition: transform 0.2s ease;
-        }
-
-        .text-zoom:hover {
-          transform: scale(1.5); /* Adjust scale for zoom effect */
-          z-index: 10000; /* Bring to front on zoom */
+          cursor: auto; /* Ensure the default cursor is visible */
         }
       `}
       </style>

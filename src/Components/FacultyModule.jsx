@@ -122,7 +122,7 @@ function WhyTraining() {
                       }}
                     />
                   </div>
-                  <p style={{ color: darkGray, fontWeight: '500' }}>{item.text}</p>
+                  <p >{item.text}</p>
                 </div>
               ))}
             </div>

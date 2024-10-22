@@ -58,7 +58,7 @@ const testimonials = [
       borderRadius: '8px',
       padding: '24px',
       boxShadow: 'none',
-      width: '320px',
+      width: '420px',
       textAlign: 'center',
       flexShrink: 0,
       margin: '0 8px',
@@ -73,8 +73,8 @@ const testimonials = [
     };
   
     const logoStyle = {
-      width: '48px',
-      height: '48px',
+      width: 'auto',
+      height: '52px',
       objectFit: 'contain',
       marginTop: '4px', // Reduce the margin to decrease the gap
     };
@@ -113,7 +113,7 @@ const testimonials = [
                   {testimonial.name}
                 </p>
                 <div style={flexContainerStyle}>
-                  <p style={{ color: '#ffffff', fontSize: '14px', marginBottom: '0' }}>{testimonial.companyName}</p> {/* Remove margin or set to 0 */}
+                  <p style={{ color: '#ffffff', fontSize: '14px', marginBottom: '8px' }}>{testimonial.companyName}</p> {/* Remove margin or set to 0 */}
                   <img src={testimonial.companyLogo} alt={testimonial.companyName} style={logoStyle} />
                 </div>
               </div>

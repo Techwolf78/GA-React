@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 const backgroundImage = "/Corporate Training Page Zip/Corporate Training.png"; // Static image
 
 const content = [
-  "Delivering tailored solutions that drive measurable success and enhance organizational readiness within the learning technology ecosystem",
-  "Seamless execution, digital transformation, talent retention strength, Drive Sales ROI"
+  "DELIVERING TAILORED SOLUTIONS THAT DRIVE MEASURABLE SUCCESS AND ENHANCE ORGANIZATIONAL READINESS WITHIN THE LEARNING TECHNOLOGY ECOSYSTEM",
+  "SEAMLESS EXECUTION, DIGITAL TRANSFORMATION, TALENT RETENTION STRENGTH, DRIVE SALES ROI"
 ];
+
 
 const corporateTrainingParagraph = "Our customized corporate training programmes are specifically designed to meet your organization’s unique needs. In a rapidly evolving corporate landscape, we address critical challenges that hinder growth and productivity. By focusing on essential skills such as communication, negotiation, critical thinking, Operational Resilience and Adaptability, Workforce Management and Engagement & leadership, we empower teams to overcome obstacles and enhance collaboration.";
 
@@ -42,7 +43,7 @@ function HeroCorporate() {
       {/* Heading Section */}
       <div className="absolute top-2 left-0 right-0 text-center z-10 px-4 md:px-8 lg:px-16 xl:px-32 py-2 md:top-1/4">
         <h1
-          className={`text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 sm:mb-1 leading-tight md:leading-normal text-yellow-400 ${
+          className={`text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 sm:mb-1 leading-tight md:leading-normal text-white ${
             isExiting ? 'slide-exit' : 'slide-enter'
           }`}
         >

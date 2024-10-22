@@ -8,7 +8,7 @@ const ADVISORY_DATA = [
   { name: "Mr. Rahul Bagale", designation: "Group HR Head", location: "Force Motors", image: "Advisory/Rahul Bagale.png", logo: "placement-bg/4.png" },
   { name: "Mr. Siddharth Moorthy", designation: "Managing Director", location: "Vascon Engineers Ltd.", image: "Advisory/Siddharth.png", logo: "placement-bg/6.png" },
   { name: "Mr. Ramchandra Honap", designation: "SHRBP-Supply Chain", location: "Hindustan Coca-Cola Beverages", image: "Advisory/Ram Honap.png", logo: "placement-bg/5.png" },
-  { name: "Cdr. Pratap Pawar", image: "Advisory/Pratap SirTry.png" }, // No designation or location
+  { name: "Cdr. Pratap Pawar", designation: "Ex-Director gslab", location: "HR & IT gslab", image: "Advisory/Pratap SirTry.png", logo: "Logos/4.jpg" },
   { name: "Dr. Anil Kumar", designation: "J C Bose National Fellow & Honorary Professor AcSIR", location: "", image: "Advisory/Anil kumar.png", logo: "placement-bg/8.png" },
 ];
 
@@ -60,15 +60,8 @@ const Advisory = () => {
                 </div>
                 <div className="flex flex-col text-center flex-grow">
                   <Typography className="text-lg font-bold break-words">{person.name}</Typography>
-                  {person.name === "Cdr. Pratap Pawar" ? (
-                    // Only name for Cdr. Pratap Pawar
-                    null
-                  ) : (
-                    <>
-                      <Typography className="text-gray-600 break-words">{person.designation}</Typography>
-                      {person.location && <Typography className="text-gray-600 font-bold break-words">{person.location}</Typography>}
-                    </>
-                  )}
+                  <Typography className="text-gray-600 break-words">{person.designation}</Typography>
+                  {person.location && <Typography className="text-gray-600 font-bold break-words">{person.location}</Typography>}
                 </div>
                 <div className="flex flex-col items-center mb-0 mt-1">
                   {person.logo && (

@@ -183,7 +183,7 @@ const courses = {
         "Apply dynamic programming techniques for problem-solving.",
         "Prepare for coding interviews with real-world examples.",
       ],
-      image: "computr-science/CS 5.png",
+      image: "computr-science/CS 6.png",
     },
     {
       title: "App Development",
@@ -299,7 +299,7 @@ const courses = {
         "Understand vector spaces and transformations for machine learning.",
         "Use mathematics for solving regression and classification tasks.",
       ],
-      image: "computr-science/A1.png",
+      image: "computr-science/A6.png",
     },
     {
       title: "Statistics",
