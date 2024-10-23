@@ -1,8 +1,16 @@
-import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 // TrainingAbout Component
 const TrainingAbout = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+    });
+  }, []);
+
   return (
     <div className="training-overview-container roboto-regular">
       <style>{`
@@ -125,10 +133,9 @@ const TrainingAbout = () => {
           flex: 1; /* Allow description to grow and take available space */
         }
 
- .training-feature-icon i {
-  font-size: 2rem; /* Increase the font size of the icon */
-}
-
+        .training-feature-icon i {
+          font-size: 2rem; /* Increase the font size of the icon */
+        }
 
         .training-learn-more-link {
           display: inline-block;
@@ -217,7 +224,7 @@ const TrainingAbout = () => {
         }
       `}</style>
 
-      <div className="training-content-wrapper">
+      <div className="training-content-wrapper" data-aos="fade-up">
         <div className="training-left-section">
           <h1 className="training-title-heading roboto-regular">
             OUR 360<sup>°</sup> APPROACH TO SKILL DEVELOPMENT
@@ -226,47 +233,66 @@ const TrainingAbout = () => {
 
         <div className="training-right-section">
           <p className="training-description-paragraph">
-            Gryphon Academy specializes in delivering customized training solutions across three key sectors. Our mission is to effectively bridge the skill gap within each sector, ensuring a focused approach that leaves no room for deficiencies.
+            Gryphon Academy specializes in delivering customized training
+            solutions across three key sectors. Our mission is to effectively
+            bridge the skill gap within each sector, ensuring a focused approach
+            that leaves no room for deficiencies.
           </p>
-          <p className="training-highlighted-text">OUR TRI-SECTOR TRAINING APPROACH</p>
+          <p className="training-highlighted-text" data-aos="fade-left">
+            OUR TRI-SECTOR TRAINING APPROACH
+          </p>
         </div>
       </div>
 
       <div className="training-features-list">
-        <div className="training-feature-card">
+        <div className="training-feature-card" data-aos="zoom-in">
           <div className="training-feature-card-header">
             <div className="training-feature-icon flex items-center justify-center w-16 h-16 bg-yellow-500 rounded-full">
               <i className="fas fa-graduation-cap text-gray-800 text-2xl"></i>
             </div>
             <h4 className="training-feature-title">COLLEGE TRAININGS</h4>
           </div>
-          <p className="training-feature-description">Bridging the campus-to-career gap. Transforming students into industry-ready professionals.</p>
+          <p className="training-feature-description">
+            Bridging the campus-to-career gap. Transforming students into
+            industry-ready professionals.
+          </p>
           <Link to="/collegeTraining" className="training-learn-more-link mt-2">
             LEARN MORE
           </Link>
         </div>
 
-        <div className="training-feature-card">
+        <div className="training-feature-card" data-aos="zoom-in" data-aos-delay="100">
           <div className="training-feature-card-header">
             <div className="training-feature-icon flex items-center justify-center w-16 h-16 bg-yellow-500 rounded-full">
               <i className="fas fa-briefcase text-gray-800 text-2xl"></i>
             </div>
             <h4 className="training-feature-title">CORPORATE TRAININGS</h4>
           </div>
-          <p className="training-feature-description">Elevating workforce potential, one skill at a time. Custom solutions for tomorrow's business challenges.</p>
-          <Link to="/corporateTraining" className="training-learn-more-link mt-2">
+          <p className="training-feature-description">
+            Elevating workforce potential, one skill at a time. Custom solutions
+            for tomorrow&apos;s business challenges.
+          </p>
+          <Link
+            to="/corporateTraining"
+            className="training-learn-more-link mt-2"
+          >
             LEARN MORE
           </Link>
         </div>
 
-        <div className="training-feature-card">
+        <div className="training-feature-card" data-aos="zoom-in" data-aos-delay="200">
           <div className="training-feature-card-header">
             <div className="training-feature-icon flex items-center justify-center w-16 h-16 bg-yellow-500 rounded-full">
               <i className="fas fa-chalkboard-teacher text-gray-800 text-2xl"></i>
             </div>
-            <h4 className="training-feature-title">FACULTY <br /> DEVELOPMENT PROGRAMME</h4>
+            <h4 className="training-feature-title">
+              FACULTY <br /> DEVELOPMENT PROGRAMME
+            </h4>
           </div>
-          <p className="training-feature-description">Reshaping education for the digital age. Equipping educators to inspire the next generation.</p>
+          <p className="training-feature-description">
+            Reshaping education for the digital age. Equipping educators to
+            inspire the next generation.
+          </p>
           <Link to="/facultyTraining" className="training-learn-more-link mt-2">
             LEARN MORE
           </Link>

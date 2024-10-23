@@ -1,42 +1,32 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 import visionDotImage from '/About/Vision.png'; // Update with your actual vision dot image path
 import missionDotImage from '/About/Mission.png'; // Update with your actual mission dot image path
 import arrowImage from '/About/arrow.svg'; // Update with your actual arrow image path
 
 const MissionVisionSection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      easing: 'ease-in-out', // Easing for animations
+      once: true, // Animation only happens once
+    });
+  }, []);
+
   const fixedHeight = '450px'; // Set a fixed height for both cards
 
-  // Animation variants
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-    hover: {
-      scale: 1.05,
-      rotate: 2,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-      },
-    },
-  };
-
   return (
-    <section className="flex flex-col w-full lg:min-h-[80vh] md:min-h-[50vh]  bg-gray-100 px-4 sm:px-8 md:px-16 lg:px-24 py-4 roboto-regular">
+    <section className="flex flex-col w-full lg:min-h-[80vh] md:min-h-[50vh] bg-gray-100 px-4 sm:px-8 md:px-16 lg:px-24 py-4 roboto-regular">
       <div className="flex flex-col md:flex-row w-full max-w-7xl">
 
         {/* Vision Card */}
-        <motion.div
+        <div
           className="flex-1 mx-4 md:mx-6 lg:mx-8 mt-2"
           style={{ height: fixedHeight, boxSizing: 'border-box' }}
-          initial="hidden"
-          animate="visible"
-          variants={cardVariants}
-          transition={{ duration: 0.5 }}
-          whileHover="hover"
+          data-aos="fade-right" // Animation effect for vision card
         >
-          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-black mb-4 md:mb-4 lg:mb-8">
+          <h3 className="text-lg sm:text-xl md:text-4xl font-semibold text-black mb-4 md:mb-4 lg:mb-8">
             OUR <span className='text-[#003073]'>VISION</span>
           </h3>
           <div className="shadow-lg rounded-3xl p-4 md:p-6" style={{ backgroundColor: '#d5e2f5', height: '100%', boxSizing: 'border-box' }}>
@@ -44,37 +34,35 @@ const MissionVisionSection = () => {
               <img src={visionDotImage} alt="Vision Dot" className="w-32 h-32 mb-1" />
               <img src={arrowImage} alt="Arrow" className="w-auto h-auto mb-2" />
               <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-black">
-                To bridge the gap between industry and academia, ensuring a comprehensive understanding of requirements on both sides, and empowering students to be industry-ready from multiple perspectives.
+                To create an industry-ready workforce within the walls of the institutions, through the customized learning & development programmes for professional courses.
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Mission Card */}
-        <motion.div
+        <div
           className="flex-1 mx-4 md:mx-6 lg:mx-8 mt-2"
           style={{ height: fixedHeight, boxSizing: 'border-box' }}
-          initial="hidden"
-          animate="visible"
-          variants={cardVariants}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          whileHover="hover"
+          data-aos="fade-left" // Animation effect for mission card
+          data-aos-delay="200" // Staggered delay for the mission card
         >
-          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-black mb-4 md:mb-4 lg:mb-8">
-           OUR  <span className='text-[#003073]'>MISSION</span>
+          <h3 className="text-lg sm:text-xl md:text-4xl font-semibold text-black mb-4 md:mb-4 lg:mb-8">
+            OUR <span className='text-[#003073]'>MISSION</span>
           </h3>
           <div className="shadow-lg rounded-3xl p-4 md:p-6" style={{ backgroundColor: '#d5e2f5', height: '100%', boxSizing: 'border-box' }}>
             <div className="flex flex-col items-start mb-4">
               <img src={missionDotImage} alt="Mission Dot" className="w-32 h-32 mb-1" />
               <img src={arrowImage} alt="Arrow" className="w-auto h-auto mb-2" />
               <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-black">
-                To ensure that every student has an offer letter in their hands and are prepared to succeed in their chosen fields.
+                To offer equal job opportunities to every student across all tiers, through a vast industry network.
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
       </div>
+     
     </section>
   );
 };

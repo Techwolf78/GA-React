@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { FaGraduationCap, FaSchool, FaChalkboardTeacher, FaBuilding } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -121,7 +121,7 @@ const LearningOutcomes = () => {
         ))}
       </div>
 
-      <style jsx>{
+      <style>{
         `
         .flip-card {
           perspective: 1000px;

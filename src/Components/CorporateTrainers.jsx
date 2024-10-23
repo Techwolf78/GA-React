@@ -11,12 +11,12 @@ const TRAINER_DATA = [
     logo: "placement-bg/7.png",
   },
   {
-    name: "Dr. K. S. Sangwan",
-    designation: "Chief Trainer",
-    location: "Corporate Training Institute",
+    name: "Ms. Ummeaiman Ansari",
+    designation: "Co-founder",
+    location: "Gryphon Academy Pvt. Ltd.",
     experience: "10+ years",
     specialties: "Leadership, Management",
-    image: "Testimonials/user.png",
+    image: "About/cf.PNG",
     logo: "placement-bg/BITS.PNG",
   },
   {
@@ -95,7 +95,7 @@ const Trainers = () => {
   style={{
     width: "100%",
     height: "100%",
-    objectFit: "cover",
+    objectFit: "contain", 
     transition: "transform 0.3s",
     position: "absolute",
     bottom: 0, // Anchored to the bottom

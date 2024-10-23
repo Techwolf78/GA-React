@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
 const awardsData = [
   {
@@ -13,6 +15,10 @@ const awardsData = [
 
 function AboutAwards() {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    AOS.init(); // Initialize AOS
+  }, []);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % awardsData.length);
@@ -49,6 +55,7 @@ function AboutAwards() {
           e.currentTarget.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.5)'; // reset shadow on leave
         }}
         onClick={handlePrev}
+        data-aos="fade-right"
       >
         <span className="text-3xl text-gray-700">←</span>
       </button>
@@ -56,13 +63,15 @@ function AboutAwards() {
       <div 
         className="flex flex-col md:flex-row items-center justify-center flex-1 mx-6 my-4 md:my-0 md:gap-12 gap-2" 
         style={{ height: '400px' }}
+        data-aos="fade-up"
       >
         <img 
           src={awardsData[currentIndex].image} 
           alt={`Award ${currentIndex + 1}`} 
-          className="max-w-full h-full object-contain rounded-lg shadow-md transition-transform transform hover:scale-105 md:w-1/2 lg:w-1/3"
+          className="max-w-full h-full object-contain rounded-lg shadow-md transition-transform transform hover:scale-105 md:w-1/2 lg:w-1/3 bg-blue-200"
+          data-aos="zoom-in"
         />
-        <div className="flex-1 max-w-lg">
+        <div className="flex-1 max-w-lg" data-aos="fade-left">
           <p className="text-2xl font-semibold text-gray-800 mb-4">{awardsData[currentIndex].description}</p>
         </div>
       </div>
@@ -75,6 +84,7 @@ function AboutAwards() {
           e.currentTarget.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.5)'; // reset shadow on leave
         }}
         onClick={handleNext}
+        data-aos="fade-left"
       >
         <span className="text-3xl text-gray-700">→</span>
       </button>
