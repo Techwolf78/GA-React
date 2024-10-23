@@ -4,11 +4,11 @@ import 'aos/dist/aos.css'; // Import AOS styles
 
 const awardsData = [
   {
-    image: 'About/award1.svg',
+    image: 'About/award1.jfif',
     description: 'Awarded by Ministry of Skills Development (Govt. of India) For Bridging the Gap Between Industry & Academia.',
   },
   {
-    image: 'About/award2.webp',
+    image: 'About/award2.jfif',
     description: 'Awarded as The Start Up of the Year at World HRD Congress, 2023',
   },
 ];
@@ -68,7 +68,7 @@ function AboutAwards() {
         <img 
           src={awardsData[currentIndex].image} 
           alt={`Award ${currentIndex + 1}`} 
-          className="max-w-full h-full object-contain rounded-lg shadow-md transition-transform transform hover:scale-105 md:w-1/2 lg:w-1/3 bg-blue-200"
+          className="max-w-full h-full object-contain rounded-lg shadow-md transition-transform transform hover:scale-105 md:w-1/2 lg:w-1/3 bg-blue-100"
           data-aos="zoom-in"
         />
         <div className="flex-1 max-w-lg" data-aos="fade-left">

@@ -187,44 +187,43 @@ const Home = () => {
     <div className="roboto-regular">
       <ProgressBar scrollPercent={scrollPercent} />
 
-      <div
-        className={`top-navigation ${isNavbarVisible ? "visible" : "hidden"}`}
-      >
-        <nav className="sticky-top-nav">
-          <ul className="stick-top-nav-ul">
-            <li className="nav-active">
-              <div className="underline"></div>
-              <a onClick={() => handleNavClick(heroRef)}>
-                <span>Home</span>
-              </a>
-            </li>
-            <li>
-              <div className="underline"></div>
-              <a onClick={() => handleNavClick(aboutRef)}>
-                <span>About Us</span>
-              </a>
-            </li>
-            <li>
-              <div className="underline"></div>
-              <a onClick={() => handleNavClick(trainingRef)}>
-                <span>Learning & Development</span>
-              </a>
-            </li>
-            <li>
-              <div className="underline"></div>
-              <a onClick={() => handleNavClick(placementRef)}>
-                <span>Campus Placements</span>
-              </a>
-            </li>
-            <li>
-              <div className="underline"></div>
-              <a onClick={() => handleNavClick(brandingRef)}>
-                <span>Brand Positioning</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <div className={`top-navigation ${isNavbarVisible ? "visible" : "hidden"}`}>
+  <nav className="sticky-top-nav">
+    <ul className="stick-top-nav-ul">
+      <li className="nav-active">
+        <div className="underline"></div>
+        <a onClick={() => handleNavClick(heroRef)}>
+          <span>Discover Our Vision</span>
+        </a>
+      </li>
+      <li>
+        <div className="underline"></div>
+        <a onClick={() => handleNavClick(aboutRef)}>
+          <span>Learn About Us</span>
+        </a>
+      </li>
+      <li>
+        <div className="underline"></div>
+        <a onClick={() => handleNavClick(trainingRef)}>
+          <span>Empower Your Learning</span>
+        </a>
+      </li>
+      <li>
+        <div className="underline"></div>
+        <a onClick={() => handleNavClick(placementRef)}>
+          <span>Launch Your Career</span>
+        </a>
+      </li>
+      <li>
+        <div className="underline"></div>
+        <a onClick={() => handleNavClick(brandingRef)}>
+          <span>Elevate Your Brand</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
 
       <div
         className={`sidebar ${isSidebarOpen ? "open" : ""}`}
@@ -411,7 +410,7 @@ const Home = () => {
         <div className="section-content left">
           <h2>Cross Brand Positioning</h2>
           <p>
-            Elevating your college's presence hinges on brand visibility,
+            Elevating your college&apos;s presence hinges on brand visibility,
             strategic positioning, and market insight. At Gryphon, we specialize
             in enhancing your brand through tailored solutions, including guest
             sessions, strategic events, and effective admissions strategies. Let

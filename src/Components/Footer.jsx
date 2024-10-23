@@ -12,7 +12,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white py-8 px-4">
+    <footer className="bg-black text-white py-8 px-8 md:px-16">
       <div className="container mx-auto flex flex-col md:flex-row md:justify-between">
 
         {/* Logo Section */}

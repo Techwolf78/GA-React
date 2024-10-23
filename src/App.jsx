@@ -17,7 +17,7 @@ import CollegeTraining from './Components/CollegeTraining';
 import CorporateTraining from './Components/CorporateTraining';
 import FacultyTraining from './Components/FacultyTraining'; 
 import WhatsAppWidget from './Components/WhatsAppWidget'; 
-import LoadingSpinner from './Components/LoadingSpinner'; 
+import ScrollToTopButton from './Components/ScrollToTopButton'; 
 import Post1 from './Components/BlogPages/Post1';
 import Post2 from './Components/BlogPages/Post2';
 import Post3 from './Components/BlogPages/Post3';
@@ -27,7 +27,20 @@ import Post6 from './Components/BlogPages/Post6';
 
 function App() {
   const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
+  const [scrollVisible, setScrollVisible] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollVisible(window.scrollY > window.innerHeight * 1.2); // 1vh
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -59,6 +72,7 @@ function App() {
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />
       </Routes>
       {showWhatsAppWidget && <WhatsAppWidget />} 
+      <ScrollToTopButton visible={scrollVisible} />
       <Footer /> 
     </>
   );

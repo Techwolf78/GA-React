@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 const TRAINER_DATA = [
   {
@@ -43,6 +45,7 @@ const Trainers = () => {
   const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
+    AOS.init(); // Initialize AOS
     const timer = setTimeout(() => {
       setFadeIn(true);
     }, 100);
@@ -87,45 +90,46 @@ const Trainers = () => {
                 e.currentTarget.style.transform = "translateY(0) scale(1)";
                 e.currentTarget.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
               }}
+              data-aos="fade-up" // AOS animation for the card
+              data-aos-duration="800" // Duration for the card animation
+              data-aos-delay={index * 100} // Staggered delay
             >
               <div style={{ backgroundColor: "#003073", height: "240px", overflow: "hidden", position: "relative" }}>
-              <img
-  src={trainer.image}
-  alt={trainer.name}
-  style={{
-    width: "100%",
-    height: "100%",
-    objectFit: "contain", 
-    transition: "transform 0.3s",
-    position: "absolute",
-    bottom: 0, // Anchored to the bottom
-    left: "50%",
-    transform: "translate(-50%, 0) scale(0.9)", // Center horizontally and scale down
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.transform = "translate(-50%, 0) scale(1)"; // Scale to original size on hover
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = "translate(-50%, 0) scale(0.9)"; // Back to scaled down
-  }}
-/>
-
-
+                <img
+                  src={trainer.image}
+                  alt={trainer.name}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    transition: "transform 0.3s",
+                    position: "absolute",
+                    bottom: 0,
+                    left: "50%",
+                    transform: "translate(-50%, 0) scale(0.9)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translate(-50%, 0) scale(1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translate(-50%, 0) scale(0.9)";
+                  }}
+                />
               </div>
               <div className="flex flex-col text-left flex-grow p-4">
-                <p className="text-black mb-2">
+                <p className="text-black mb-2" data-aos="fade-up" data-aos-duration="400" data-aos-delay={index * 100 + 200}>
                   <strong>Name:</strong> {trainer.name}
                 </p>
-                <p className="text-black mb-2">
+                <p className="text-black mb-2" data-aos="fade-up" data-aos-duration="400" data-aos-delay={index * 100 + 300}>
                   <strong>Designation:</strong> {trainer.designation}
                 </p>
-                <p className="text-black mb-2">
+                <p className="text-black mb-2" data-aos="fade-up" data-aos-duration="400" data-aos-delay={index * 100 + 400}>
                   <strong>Company:</strong> {trainer.location}
                 </p>
-                <p className="text-black mb-2">
+                <p className="text-black mb-2" data-aos="fade-up" data-aos-duration="400" data-aos-delay={index * 100 + 500}>
                   <strong>Experience:</strong> {trainer.experience}
                 </p>
-                <p className="text-black mb-2">
+                <p className="text-black mb-2" data-aos="fade-up" data-aos-duration="400" data-aos-delay={index * 100 + 600}>
                   <strong>Specialties:</strong> {trainer.specialties}
                 </p>
               </div>
@@ -135,6 +139,9 @@ const Trainers = () => {
                     src={trainer.logo}
                     alt="Logo"
                     style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                    data-aos="fade-up" // AOS animation for the logo
+                    data-aos-duration="400" 
+                    data-aos-delay={index * 100 + 700} // Staggered delay
                   />
                 </div>
               </div>
