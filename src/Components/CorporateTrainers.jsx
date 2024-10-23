@@ -22,10 +22,10 @@ const TRAINER_DATA = [
     logo: "placement-bg/BITS.PNG",
   },
   {
-    name: "Mr. Mohan Patel",
-    designation: "Corporate Skills Trainer",
-    location: "From IIT-Bombay",
-    experience: "8 years",
+    name: "Mr. Brigadier Sushil Bhasin",
+    designation: "Retd. Brigadier",
+    location: "Army",
+    experience: "18 years",
     specialties: "Communication, Teamwork",
     image: "Testimonials/user.png",
     logo: "placement-bg/2 2.png",
@@ -33,7 +33,7 @@ const TRAINER_DATA = [
   {
     name: "Dr. Sukanta Bhatt",
     designation: "Leadership Development Coach",
-    location: "From IIT-Kharagpur",
+    location: "",
     experience: "15 years",
     specialties: "Strategic Planning, Team Leadership",
     image: "Testimonials/user.png",
