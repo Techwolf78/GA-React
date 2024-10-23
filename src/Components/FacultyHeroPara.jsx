@@ -9,7 +9,7 @@ function FacultyHeroPara() {
           .faculty-hero-text {
             font-size: 1.2rem; /* Base font size */
             text-align: left; /* Default to left alignment */
-            padding: 2rem; /* Padding inside the text */
+            padding: 1rem; /* Padding inside the text */
             border: 1px solid #ccc; /* Border between text and section */
             margin: 0; /* Remove default margin */
             background-color: #fff; /* White background for text */
@@ -27,7 +27,7 @@ function FacultyHeroPara() {
           @media (min-width: 1024px) {
             .faculty-hero-text {
               text-align: center; /* Center align for larger screens */
-              font-size: 1.8rem; /* Increase font size for larger screens */
+              font-size: 1.5rem; /* Increase font size for larger screens */
             }
           }
         `}

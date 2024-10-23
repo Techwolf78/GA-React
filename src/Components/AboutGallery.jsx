@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const images = [
@@ -35,7 +35,7 @@ const ImageGallery = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % imageGroups.length);
         setFade(false);
-      }, 1000);
+      }, 400);
     }, 3000);
 
     return () => clearInterval(interval);

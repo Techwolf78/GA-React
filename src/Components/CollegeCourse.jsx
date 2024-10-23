@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
 // Define the courses object directly in this file
 const courses = {
@@ -11,7 +13,7 @@ const courses = {
     {
       src: "Training Page/SS 2.png",
       alt: "Effective Communication Skills",
-      title: "Effective Communication (Business Communication) ",
+      title: "Effective Communication (Business Communication)",
     },
     {
       src: "Training Page/SS 1.png",
@@ -20,18 +22,18 @@ const courses = {
     },
     {
       src: "Training Page/SS 5.png",
-      alt: "Verbal & Non Verbal Communication   ",
-      title: "Verbal & Non Verbal Communication   ",
+      alt: "Verbal & Non Verbal Communication",
+      title: "Verbal & Non Verbal Communication",
     },
     {
       src: "Training Page/SS 6.png",
-      alt: "Confidence Building and Public speaking   ",
-      title: "Confidence Building and Public speaking   ",
+      alt: "Confidence Building and Public speaking",
+      title: "Confidence Building and Public speaking",
     },
     {
       src: "Training Page/SS 4.png",
       alt: "Presentation Skills",
-      title: "Personality Development and Presentation Skills ",
+      title: "Personality Development and Presentation Skills",
     },
   ],
   aptitude: [
@@ -47,18 +49,18 @@ const courses = {
     },
     {
       src: "Training Page/Aptitude 1.png",
-      alt: "Blood Relations ",
-      title: "Blood Relations ",
+      alt: "Blood Relations",
+      title: "Blood Relations",
     },
     {
       src: "Training Page/Aptitude 3.png",
-      alt: "Syllogism ",
-      title: "Syllogism ",
+      alt: "Syllogism",
+      title: "Syllogism",
     },
     {
       src: "Training Page/Aptitude 5.png",
-      alt: "Coding Decoding ",
-      title: "Coding Decoding ",
+      alt: "Coding Decoding",
+      title: "Coding Decoding",
     },
     {
       src: "Training Page/Aptitude 2.png",
@@ -69,8 +71,12 @@ const courses = {
 };
 
 const CourseCard = React.forwardRef(
-  ({ src, alt, title, widthClass, heightClass }, ref) => (
-    <div className={`p-1 ${widthClass} ${heightClass}`}>
+  ({ src, alt, title, widthClass, heightClass, aos, aosDelay }, ref) => (
+    <div
+      className={`p-1 ${widthClass} ${heightClass}`}
+      data-aos={aos} // AOS effect for cards
+      data-aos-delay={aosDelay} // Staggered delay
+    >
       <div className="bg-[#003073] overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
         <div className="flex-grow flex items-center justify-center">
           <img src={src} alt={alt} className="max-h-40 w-auto object-contain" />
@@ -85,7 +91,6 @@ const CourseCard = React.forwardRef(
     </div>
   )
 );
-
 
 const CollegeCourse = () => {
   const softSkillsRefs = useRef([]);
@@ -103,6 +108,7 @@ const CollegeCourse = () => {
   };
 
   useEffect(() => {
+    AOS.init({ duration: 1000, once: false }); // Initialize AOS
     setMaxHeight(softSkillsRefs.current);
     setMaxHeight(aptitudeRefs.current);
   }, []);
@@ -113,7 +119,7 @@ const CollegeCourse = () => {
         <div className="mb-4 text-center">
           <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#ffc700] mb-1">
             <span className="relative inline-block">
-              OUR INDUSTRY READINESS PROGRAM INCLUDES :
+              OUR INDUSTRY READINESS PROGRAM INCLUDES:
               <span className="absolute left-0 right-0 h-[1px] bg-[#ffffff] bottom-0 mx-auto"></span>
             </span>
           </p>
@@ -131,21 +137,23 @@ const CollegeCourse = () => {
                 key={index}
                 ref={(el) => (softSkillsRefs.current[index] = el)}
                 {...course}
-                widthClass="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/6" // Regular width for larger screens
+                widthClass="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/6"
                 heightClass="h-auto"
+                aos="fade-up" // AOS effect for cards
+                aosDelay={`${index * 100}`} // Staggered delay
               />
             ))}
             {/* Extra Course Button on the Right Side */}
             <div
               className="p-1 w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/12 flex justify-start lg:ml-auto items-center"
               style={{
-                whiteSpace: "nowrap", // Prevent text from breaking into a new line
-                flexShrink: 0, // Prevent the button from shrinking on smaller screens
-                transition: "all 0.3s ease", // Smooth transition for transform and box-shadow
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+                transition: "all 0.3s ease",
               }}
             >
               <div className="bg-[#003073] text-white text-center font-extrabold text-xs sm:text-sm flex items-center justify-center rounded-lg py-2 px-3 hover:shadow-xl hover:scale-105 hover:translate-y-[-2px] active:scale-95 active:translate-y-[2px]">
-                <span className="mr-1">+ Many More…. </span>
+                <span className="mr-1">+ Many More….</span>
               </div>
             </div>
           </div>
@@ -163,21 +171,23 @@ const CollegeCourse = () => {
                 key={index}
                 ref={(el) => (aptitudeRefs.current[index] = el)}
                 {...course}
-                widthClass="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/6" // Regular width for larger screens
+                widthClass="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/6"
                 heightClass="h-auto"
+                aos="fade-up" // AOS effect for cards
+                aosDelay={`${index * 100}`} // Staggered delay
               />
             ))}
             {/* Extra Course Button on the Right Side */}
             <div
               className="p-1 w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/12 flex justify-start lg:ml-auto items-center"
               style={{
-                whiteSpace: "nowrap", // Prevent text from breaking into a new line
-                flexShrink: 0, // Prevent the button from shrinking on smaller screens
-                transition: "all 0.3s ease", // Smooth transition for transform and box-shadow
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+                transition: "all 0.3s ease",
               }}
             >
               <div className="bg-[#003073] text-white text-center font-extrabold text-xs sm:text-sm flex items-center justify-center rounded-lg py-2 px-3 hover:shadow-xl hover:scale-105 hover:translate-y-[-2px] active:scale-95 active:translate-y-[2px]">
-                <span className="mr-1">+ Many More…. </span>
+                <span className="mr-1">+ Many More….</span>
               </div>
             </div>
           </div>

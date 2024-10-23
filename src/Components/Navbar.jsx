@@ -40,7 +40,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="bg-[#091327] text-[#ffffff] flex justify-between items-center px-8 sm:px-16 py-[1rem] roboto-regular">
+    <header className="bg-[#091327] text-[#ffffff] flex justify-between items-center px-8 md:px-16 py-[1rem] roboto-regular">
       <a className="navbar-brand" href="/">
         <img
           src="/LandingImage/NewLogo.png"

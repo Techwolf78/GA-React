@@ -356,7 +356,7 @@ const courses = {
         "Develop skills in pharmacy financial management and budgeting.",
         "Implement quality control and risk management in pharmaceutical environments.",
       ],
-      image: "PHARMA/Management.jpg",
+      image: "Course/PH1.png",
     },
     {
       title: "Regulatory Affairs",
@@ -366,7 +366,7 @@ const courses = {
         "Understand Good Manufacturing Practice (GMP) and compliance standards.",
         "Prepare regulatory documents and submissions for health authorities.",
       ],
-      image: "PHARMA/Regulatory.jpg",
+      image: "Course/P2.png",
     },
     {
       title: "Pharmaceutical Marketing",
@@ -377,7 +377,7 @@ const courses = {
         "Understand regulatory restrictions on pharmaceutical advertising.",
         "Implement salesforce and healthcare professional engagement strategies.",
       ],
-      image: "PHARMA/Marketing.jpg",
+      image: "Course/P3.png",
     },
     {
       title: "Clinical Research",

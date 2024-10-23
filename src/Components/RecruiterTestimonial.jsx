@@ -5,7 +5,7 @@ const testimonials = [
     review: "We recruited 145 fresh engineers batch 2022-23 with the support of Gryphon and got reliable source of talent for our company. Team Gryphon is doing a fabulous job.",
     name: "Mr. Rahul Bagale",
     rating: "★★★★★",
-    companyLogo: "Logos/1.png",
+    companyLogo: "Logos/1.jpg",
     companyName: "Group HR Head Force Motors Ltd."
   },
   {
@@ -30,51 +30,35 @@ const testimonials = [
     companyName: "Talent Acquisition Manager, Brillio"
   },
   {
-    review: "Our experience with Gryphon Academy has been nothing short of exceptional. I appreciate the effort they put into producing graducates. They have made our recruitment process smoother and more effective.",
+    review: "Our experience with Gryphon Academy has been nothing short of exceptional. I appreciate the effort they put into producing graduates. They have made our recruitment process smoother and more effective.",
     name: "Dr. Sunaina Dutta",
     rating: "★★★★★",
     companyLogo: "Logos/5.jpg",
     companyName: "Head HR, Hettich India"
   },
   {
-    review: "We've had the opputunity to undergo Gryphon Academy's training process, extending its reach to candidates from various regions. Gryphon's high-quality training program has undeniably enhanced student skills. ",
+    review: "We've had the opportunity to undergo Gryphon Academy's training process, extending its reach to candidates from various regions. Gryphon's high-quality training program has undeniably enhanced student skills.",
     name: "Mr. Shipra Pandit",
     rating: "★★★★★",
     companyLogo: "Logos/12.jpg",
     companyName: "Director - HR, Juspay"
   },
-
 ];
- 
 
 const Testimonials = () => {
   const cardStyle = {
     backgroundColor: '#003073',
     borderRadius: '8px',
     padding: '24px',
-    boxShadow: 'none',
+    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
     width: '320px',
     textAlign: 'center',
     flexShrink: 0,
-    margin: '0 8px'
-  };
-
-  const flexContainerStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: '8px'
-  };
-
-  const logoStyle = {
-    width: '48px',
-    height: '48px',
-    objectFit: 'contain',
-    marginRight: '8px'
+    margin: '0 16px'
   };
 
   return (
-    <section style={{ background: '#091327', padding: '12px 0' }} className='roboto-regular'>
+    <section style={{ background: '#091327', padding: '40px 0' }} className='roboto-regular'>
       <style>
         {`
           @keyframes slide {
@@ -84,7 +68,7 @@ const Testimonials = () => {
           .slide {
             animation: slide 20s linear infinite;
             display: flex;
-            gap: 16px;
+            gap: 24px;
           }
         `}
       </style>
@@ -92,24 +76,25 @@ const Testimonials = () => {
         <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-4">
           RECRUITER'S TESTIMONIALS
         </h3>
-      
       </div>
-      <div style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '320px' }}>
+      <div style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '360px' }}>
         <div className="slide">
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div key={index} style={cardStyle}>
-              <p style={{ fontSize: '16px', color: '#ffffff', marginBottom: '8px',fontStyle: 'italic' }}>
+              <p style={{ fontSize: '16px', color: '#ffffff', marginBottom: '12px', fontStyle: 'italic' }}>
                 {`"${testimonial.review}"`}
               </p>
-              <p style={{ color: '#FFC80E', fontSize: '18px', marginBottom: '8px' }}>
+              <p style={{ color: '#FFC80E', fontSize: '20px', marginBottom: '8px' }}>
                 {testimonial.rating}
               </p>
-              <p style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '16px', marginBottom: '16px' }}>
+              <p style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '16px', marginBottom: '4px' }}>
                 {testimonial.name}
               </p>
-              <div style={flexContainerStyle}>
-                <img src={testimonial.companyLogo} alt={testimonial.companyName} style={logoStyle} />
-                <p style={{ color: '#ffffff', fontSize: '14px' , }}>{testimonial.companyName}</p>
+              <p style={{ color: '#ffffff', fontSize: '14px', marginBottom: '12px' }}>
+                {testimonial.companyName}
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '8px' }}>
+                <img src={testimonial.companyLogo} alt={testimonial.companyName} style={{ width: 'auto', height: '52px', objectFit: 'contain' }} />
               </div>
             </div>
           ))}

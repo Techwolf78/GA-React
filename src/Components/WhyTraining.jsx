@@ -59,39 +59,39 @@ function WhyTraining() {
               </div>
             </div>
 
-           {/* Right Content - 60% width */}
-<div className="flex-1 flex items-center justify-start w-full lg:w-7/12">
+{/* Right Content - 60% width */}
+<div className="flex-1 flex items-center justify-center w-full lg:w-7/12">
   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full -ml-4"> {/* Added negative margin */}
-  {items.map((item, index) => (
-  <div
-    key={index}
-    className="flex flex-col items-center p-2 bg-white rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400 hover:border-2 hover:border-yellow-400"
-  >
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: '0.5rem',
-      }}
-    >
-      <FontAwesomeIcon
-        icon={item.icon}
-        style={{
-          color: lightBlue,
-          fontSize: '2rem',
-        }}
-      />
-    </div>
-    <p 
-      style={{ color: darkGray, fontSize: '1.2rem', fontWeight: 'bold', lineHeight: '1.5rem' }}
-      dangerouslySetInnerHTML={{ __html: item.text }} // Use dangerouslySetInnerHTML
-    />
-  </div>
-))}
-
+    {items.map((item, index) => (
+      <div
+        key={index}
+        className="flex flex-col items-center p-2 bg-white rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400 hover:border-2 hover:border-yellow-400"
+      >
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginBottom: '0.5rem',
+          }}
+        >
+          <FontAwesomeIcon
+            icon={item.icon}
+            style={{
+              color: lightBlue,
+              fontSize: '2rem',
+            }}
+          />
+        </div>
+        <p 
+          style={{ color: darkGray, fontSize: '1.2rem', fontWeight: 'bold', lineHeight: '1.5rem' }}
+          dangerouslySetInnerHTML={{ __html: item.text }} // Use dangerouslySetInnerHTML
+        />
+      </div>
+    ))}
   </div>
 </div>
+
 
           </div>
         </div>
