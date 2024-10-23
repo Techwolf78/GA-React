@@ -103,7 +103,7 @@ const HeroPlacement = () => {
       <div className="relative w-full h-full flex flex-col items-center justify-center">
         {/* Original image */}
         <img
-          src="Clgimage/Heroplace.png"
+          src="Clgimage/Heroplace.webp"
           className="w-full h-full object-cover opacity-100" 
           alt="A vibrant scene representing recruitment solutions"
         />

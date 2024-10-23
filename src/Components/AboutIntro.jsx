@@ -33,13 +33,14 @@ const AboutIntro = () => {
             As India’s premier non-ed-tech organization, we are committed to bridging the gap between industry and academia. We provide customized training solutions as per the Industry-centric needs which helps your students to be industry-ready and help your academic institution facilitate smooth transition into the industry with ease.
           </p>
           <button
-            onClick={handleNavigate}
-            className="inline-block text-base font-bold mt-4 mb-4 border-2 border-[#003073] rounded-lg py-2 px-4"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            GET IN TOUCH WITH US
-          </button>
+  onClick={handleNavigate}
+  className="inline-block text-base font-bold mt-4 mb-4 border-2 border-[#003073] rounded-lg py-2 px-4 transition duration-300 ease-in-out transform hover:bg-[#FFC80E] hover:text-[#003073] hover:scale-105"
+  data-aos="fade-up"
+  data-aos-delay="300"
+>
+  GET IN TOUCH WITH US
+</button>
+
         </div>
       </div>
 
