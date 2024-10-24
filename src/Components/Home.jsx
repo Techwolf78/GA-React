@@ -170,31 +170,31 @@ const Home = () => {
             <li className="nav-active">
               <div className="underline"></div>
               <a onClick={() => handleNavClick(heroRef)}>
-                <span>Discover Our Vision</span>
+                <span>The one stop hub</span>
               </a>
             </li>
             <li>
               <div className="underline"></div>
               <a onClick={() => handleNavClick(aboutRef)}>
-                <span>Learn About Us</span>
+                <span>Gryphon Academy </span>
               </a>
             </li>
             <li>
               <div className="underline"></div>
               <a onClick={() => handleNavClick(trainingRef)}>
-                <span>Empower Your Learning</span>
+                <span>Train as per the Industry</span>
               </a>
             </li>
             <li>
               <div className="underline"></div>
               <a onClick={() => handleNavClick(placementRef)}>
-                <span>Launch Your Career</span>
+                <span>Get top brands</span>
               </a>
             </li>
             <li>
               <div className="underline"></div>
               <a onClick={() => handleNavClick(brandingRef)}>
-                <span>Elevate Your Brand</span>
+                <span>Elevate your brand presence</span>
               </a>
             </li>
           </ul>
@@ -289,7 +289,7 @@ className="mobile-vector-image "
         <div className="section-content right" data-aos="fade-left">
           <h2>About Us</h2>
           <p>
-            We are an organization that bridges the gap between academic learning and industry needs by developing industry ready programmes that prepares your students to be job-ready from day one transforming them into well-rounded professionals ready to excel in their careers.
+          Gryphon Academy is a Non-ed-tech organization, that bridges the gap between academia and industry needs, by developing Customized Industry readiness programmes, which prepares your students within the walls of campus. These trainings help students in transforming themselves into well-rounded professionals, ready to excel in their careers.
           </p>
           <Link to="/about" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -311,7 +311,7 @@ className="mobile-vector-image "
         <div className="section-content left" data-aos="fade-right">
           <h2>Learning & Development</h2>
           <p>
-            At Gryphon, we specifically curate our training programmes as per today’s industry demands, by using the latest modern tools and methodologies, we enhance the students learning experience and make sure they are the chosen ones in our 450+ recruiters.
+          Our Industry Readiness Programme specializes in delivering focused & curated trainings that bridge the gap between academia and workplace demands! Students gain practical experience through hands-on projects, technical skill development, and immersive industry simulations. With interactive case studies and collaborative projects that reflect current market scenarios, we ensure our students are fully prepared to meet the employer expectations.
           </p>
           <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -333,7 +333,7 @@ className="mobile-vector-image "
         <div className="section-content right" data-aos="fade-left">
           <h2>Campus Placements</h2>
           <p>
-            A well-trained resource easily secures their place in the industry and at Gryphon this is what we abide by, providing students top placement opportunities which also includes guest sessions, industry collaborations, and empanelment, helping them learn the industry applications & opening doors towards their dream companies.
+          In campus placements, we connect top industry brands with campus talent, bringing premium opportunities from top 500 companies across multiple sectors. We manage the entire placement cycle, ensuring each opportunity aligns perfectly with student capabilities and campus goals, making the journey from campus to corporate seamless.
           </p>
           <Link to="/placement" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -355,7 +355,7 @@ className="mobile-vector-image "
         <div className="section-content left" data-aos="fade-right">
           <h2>Cross Brand Positioning</h2>
           <p>
-            Elevating your college&apos;s presence hinges on brand visibility, strategic positioning, and market insight. At Gryphon, we specialize in enhancing your brand through tailored solutions, including guest sessions, strategic events, and effective admissions strategies. Let us transform your college’s impact and redefine your market standing!
+          We provide targeted digital marketing services for colleges, focusing on enhancing your visibility and attracting prospective students. Our offerings include organizing events, HR summits, and admission campaigns that helps the institutions enhance their position in the academia. Our strategic approach empowers colleges to adeptly navigate the digital landscape and achieve their visibility objectives.
           </p>
           <Link to="/brandPositioning" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>

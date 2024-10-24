@@ -29,7 +29,6 @@ body, html {
   }
 }
 
-
 .progress-bar-container {
   position: fixed;
   top: 0;
@@ -45,7 +44,6 @@ body, html {
   background-color: #ffcc00; /* Yellow color */
   transition: width 0.2s; /* Smooth transition for width change */
 }
-
 
 /* Navbar Styles */
 .top-navigation {
@@ -253,11 +251,21 @@ body, html {
   color: #FFC80E;
 }
 
-#hero_slider { background-image: url('/CollegeSliding/homeland1.webp'); }
-#core_capabilities { background-image: url('/CollegeSliding/homeland2.webp'); }
-#operating_models { background-image: url('/CollegeSliding/homeland3.webp'); }
-#talent_transformations { background-image: url('/CollegeSliding/homeland4.webp'); }
-#do_more { background-image: url('/CollegeSliding/homeland5.webp'); }
+#hero_slider { 
+  background-image: url('/CollegeSliding/homeland1.webp'); 
+}
+#core_capabilities { 
+  background-image: url('/CollegeSliding/homeland2.webp'); 
+}
+#operating_models { 
+  background-image: url('/CollegeSliding/homeland3.webp'); 
+}
+#talent_transformations { 
+  background-image: url('/CollegeSliding/homeland4.webp'); 
+}
+#do_more { 
+  background-image: url('/CollegeSliding/homeland5.webp'); 
+}
 
 #hero_slider,
 #core_capabilities,
@@ -270,23 +278,12 @@ body, html {
 }
 
 .section-content {
-  max-width: 600px;
+  max-width: 700px;
   padding: 20px;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
-  /* Remove opacity and transform for static display */
-  /* opacity: 0;  */
-  /* transform: translateY(100px); */
-  /* transition: opacity 2s ease, transform 2s ease; */
 }
-
-.section-content.visible {
-  /* Remove visibility change */
-  /* opacity: 1; */
-  /* transform: translateY(0); */
-}
-
 
 .section-content.left {
   text-align: left;
@@ -303,7 +300,6 @@ body, html {
 @media (min-width: 768px) {
   .section-content.left {
     padding-left: 13vw; /* Change to 8vw for larger screens */
-    
   }
 
   .section-content.right {
@@ -311,9 +307,6 @@ body, html {
     margin-left: auto;
   }
 }
-
-
-
 
 .section-content h2 {
   font-size: 2rem;
@@ -367,7 +360,6 @@ body, html {
 }
 
 /* Sidebar Toggle Button */
-/* Sidebar Toggle Button */
 .sidebar-toggle {
   position: fixed;
   top: 35px;
@@ -399,7 +391,6 @@ body, html {
     right: 15px; /* Further adjustment for small screens */
   }
 }
-
 
 .sidebar-toggle::before, 
 .sidebar-toggle::after, 
@@ -461,18 +452,10 @@ body, html {
 
 @media (min-width: 768px) {
   .company-logo-link {
-    position: fixed;
-    top: -25px;
     left: 13vw;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 11;
-    text-decoration: none;
+  }
 }
-}
+
 @media (max-width: 768px) {
   .hidden-on-large {
     display: block; /* Show on smaller screens */
@@ -505,14 +488,6 @@ body, html {
   background: url("/LandingImage/NewLogo.png") no-repeat center center;
   background-size: contain;
 }
-
-/* Utility Classes */
-/* .no-scroll {
-  overflow: hidden;
-  height: 100%;
-  position: fixed;
-  width: 100%;
-} */
 
 /* Image Styles */
 .right-side-image {
@@ -565,16 +540,15 @@ body, html {
     display: none;
   }
 
-.hero-slider-section {
-  margin-top: 80px;
-}
+  .hero-slider-section {
+    margin-top: 80px;
+  }
 
   .section {
     background-color: #01224f;
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
-  
     height: auto; /* Removed 100vh for small screens */
   }
 

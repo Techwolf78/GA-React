@@ -387,7 +387,7 @@ const courses = {
         "Master data management and statistical analysis in clinical research.",
         "Develop skills for patient recruitment and management during trials.",
       ],
-      image: "PHARMA/ClinicalResearch.jpg",
+      image: "Course/P4.png",
     },
     {
       title: "Pharmacovigilance",
@@ -398,7 +398,7 @@ const courses = {
         "Develop skills in data collection, assessment, and reporting.",
         "Implement systems for post-market surveillance and safety assessments.",
       ],
-      image: "PHARMA/Pharmacovigilance.jpg",
+      image: "Course/P5.png",
     },
   ],
 
@@ -412,7 +412,7 @@ const courses = {
         "Implement training and development programs.",
         "Understand compensation and benefits management.",
       ],
-      image: "MBA/HR.jpg",
+      image: "Course/MBA 1 1.png",
     },
     {
       title: "Finance",
@@ -423,7 +423,7 @@ const courses = {
         "Understand financial markets and investment strategies.",
         "Develop skills in financial reporting and accounting.",
       ],
-      image: "MBA/Finance.jpg",
+      image: "Course/MBA 2.png",
     },
     {
       title: "Marketing",
@@ -434,7 +434,7 @@ const courses = {
         "Implement salesforce management and customer relationship management (CRM).",
         "Use analytics for marketing performance evaluation.",
       ],
-      image: "MBA/Marketing.jpg",
+      image: "Course/MBA 3.png",
     },
     {
       title: "Operations Management",
@@ -445,7 +445,7 @@ const courses = {
         "Develop process optimization strategies for manufacturing and service industries.",
         "Implement quality control measures using Six Sigma.",
       ],
-      image: "MBA/Operations.jpg",
+      image: "Course/MBA 4.png",
     },
     {
       title: "International Business",
@@ -456,7 +456,7 @@ const courses = {
         "Understand foreign exchange risk and management.",
         "Implement strategies for global expansion and partnerships.",
       ],
-      image: "MBA/InternationalBusiness.jpg",
+      image: "Course/MBA 5.png",
     },
     {
       title: "Analytical Decision Making",
@@ -467,7 +467,7 @@ const courses = {
         "Develop strategies based on data-driven insights.",
         "Implement analytics for business performance optimization.",
       ],
-      image: "MBA/Analytics.jpg",
+      image: "Course/MBA 6.png",
     },
   ],
 
