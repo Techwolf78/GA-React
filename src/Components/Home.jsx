@@ -1,19 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import "../assets/CSS/home.css";
 import Testimonials from "./Testimonials";
 import HomeSliderClg from "./HomeSliderClg";
 import ConnectWithUs from "./ConnectWithUs";
 import HomeSliderComp from "./HomeSliderComp";
 
-// ProgressBar Component
 const ProgressBar = ({ scrollPercent }) => {
   return (
     <div className="progress-bar-container">
-      <div
-        className="progress-bar"
-        style={{ width: `${scrollPercent}%` }}
-      ></div>
+      <div className="progress-bar" style={{ width: `${scrollPercent}%` }}></div>
     </div>
   );
 };
@@ -21,9 +19,32 @@ const ProgressBar = ({ scrollPercent }) => {
 const Home = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [isNavbarVisible, setNavbarVisible] = useState(true);
-  const [displayText, setDisplayText] = useState("Bridging Dreams");
-  const [isBlinking, setIsBlinking] = useState(true);
-  const [scrollPercent, setScrollPercent] = useState(0);
+  const [firstWordIndex, setFirstWordIndex] = useState(0);
+  const [lastWordIndex, setLastWordIndex] = useState(0);
+  const [fadeFirst, setFadeFirst] = useState(false);
+  const [fadeLast, setFadeLast] = useState(false);
+  
+  const firstWords = [
+    "Theory",
+    "Campus",
+    "Students",
+    "Academia",
+    "Knowledge",
+    "Skills",
+    "Education & Learning"
+  ];
+  
+  const lastWords = [
+    "Practice",
+    "Workplace",
+    "Professionals",
+    "Industry",
+    "Opportunities",
+    "Employment",
+    "Outcome"
+  ];
+  
+  const scrollPercent = useRef(0);
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
   const trainingRef = useRef(null);
@@ -32,42 +53,25 @@ const Home = () => {
   const sidebarRef = useRef(null);
 
   useEffect(() => {
-    const sections = document.querySelectorAll(".section-content");
+    AOS.init({ duration: 600, easing: 'ease-in-out' });
 
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollFraction = (scrollTop / docHeight) * 100;
+      scrollPercent.current = scrollFraction;
 
-      setScrollPercent(scrollFraction);
-
-      // Navbar visibility logic
       const brandPositioningSection = brandingRef.current;
       if (brandPositioningSection) {
         const sectionHeight = brandPositioningSection.offsetHeight;
-        if (scrollTop > brandPositioningSection.offsetTop + sectionHeight / 2) {
-          setNavbarVisible(false);
-        } else {
-          setNavbarVisible(true);
-        }
+        setNavbarVisible(scrollTop <= brandPositioningSection.offsetTop + sectionHeight / 2);
       }
-
-      // Section visibility logic
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          section.classList.add("visible");
-        } else {
-          section.classList.remove("visible"); // Optional: Remove when out of view
-        }
-      });
 
       activateNavLink();
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check visibility on initial load
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -91,54 +95,27 @@ const Home = () => {
   };
 
   useEffect(() => {
-    let index = 0;
-    let isDeleting = false;
-    const newText = "Careers";
-    const fullText = "Dreams";
-    let currentText = newText;
-    let textType = "new";
-
-    const typeEffect = () => {
-      currentText = textType === "new" ? newText : fullText;
-      setDisplayText(`Bridging ${currentText.slice(0, index)}`);
-
-      const typingSpeed = isDeleting ? 100 : 100;
-
-      if (isDeleting) {
-        index--;
-        if (index < 0) {
-          isDeleting = false;
-          textType = textType === "new" ? "full" : "new";
-          setTimeout(() => {
-            index = 0;
-            typeEffect();
-          }, 500);
-          return;
-        }
-      } else {
-        index++;
-        if (index > currentText.length) {
-          isDeleting = true;
-          setTimeout(() => {
-            typeEffect();
-          }, 2000);
-          return;
-        }
-      }
-
-      setTimeout(typeEffect, typingSpeed);
+    const cycleWords = () => {
+      setFadeFirst(true);
+      setFadeLast(true);
+      
+      // After the fade-out animation, change the words immediately
+      setTimeout(() => {
+        setFirstWordIndex((prevIndex) => (prevIndex + 1) % firstWords.length);
+        setLastWordIndex((prevIndex) => (prevIndex + 1) % lastWords.length);
+        
+        setFadeFirst(false);
+        setFadeLast(false);
+      }, 300); // Set this to a shorter duration, like 1000ms for fade-out
+      
     };
-
-    typeEffect();
-
-    const cursorInterval = setInterval(() => {
-      setIsBlinking((prev) => !prev);
-    }, 500);
-
-    return () => {
-      clearInterval(cursorInterval);
-    };
+    
+    // Set the interval for word switching to be less than the total duration (like 3000ms)
+    const interval = setInterval(cycleWords, 2000); // Change to 4000ms to allow for immediate switch after fade
+    
+    return () => clearInterval(interval);
   }, []);
+  
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -185,51 +162,46 @@ const Home = () => {
 
   return (
     <div className="roboto-regular">
-      <ProgressBar scrollPercent={scrollPercent} />
+      <ProgressBar scrollPercent={scrollPercent.current} />
 
       <div className={`top-navigation ${isNavbarVisible ? "visible" : "hidden"}`}>
-  <nav className="sticky-top-nav">
-    <ul className="stick-top-nav-ul">
-      <li className="nav-active">
-        <div className="underline"></div>
-        <a onClick={() => handleNavClick(heroRef)}>
-          <span>Discover Our Vision</span>
-        </a>
-      </li>
-      <li>
-        <div className="underline"></div>
-        <a onClick={() => handleNavClick(aboutRef)}>
-          <span>Learn About Us</span>
-        </a>
-      </li>
-      <li>
-        <div className="underline"></div>
-        <a onClick={() => handleNavClick(trainingRef)}>
-          <span>Empower Your Learning</span>
-        </a>
-      </li>
-      <li>
-        <div className="underline"></div>
-        <a onClick={() => handleNavClick(placementRef)}>
-          <span>Launch Your Career</span>
-        </a>
-      </li>
-      <li>
-        <div className="underline"></div>
-        <a onClick={() => handleNavClick(brandingRef)}>
-          <span>Elevate Your Brand</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+        <nav className="sticky-top-nav">
+          <ul className="stick-top-nav-ul">
+            <li className="nav-active">
+              <div className="underline"></div>
+              <a onClick={() => handleNavClick(heroRef)}>
+                <span>Discover Our Vision</span>
+              </a>
+            </li>
+            <li>
+              <div className="underline"></div>
+              <a onClick={() => handleNavClick(aboutRef)}>
+                <span>Learn About Us</span>
+              </a>
+            </li>
+            <li>
+              <div className="underline"></div>
+              <a onClick={() => handleNavClick(trainingRef)}>
+                <span>Empower Your Learning</span>
+              </a>
+            </li>
+            <li>
+              <div className="underline"></div>
+              <a onClick={() => handleNavClick(placementRef)}>
+                <span>Launch Your Career</span>
+              </a>
+            </li>
+            <li>
+              <div className="underline"></div>
+              <a onClick={() => handleNavClick(brandingRef)}>
+                <span>Elevate Your Brand</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-
-      <div
-        className={`sidebar ${isSidebarOpen ? "open" : ""}`}
-        id="sidebar"
-        ref={sidebarRef}
-      >
+      <div className={`sidebar ${isSidebarOpen ? "open" : ""}`} id="sidebar" ref={sidebarRef}>
         <ul>
           <li>
             <Link to="/training" onClick={scrollToTop}>
@@ -283,49 +255,41 @@ const Home = () => {
         <div className="company-logo"></div>
       </Link>
 
-      <div
-        id="hero_slider"
-        className="section roboto-regular hero-slider-section left"
-        ref={heroRef}
-      >
-        <div className="section-content left">
-          <h2>
-            {displayText}
-            <span className={`cursor ${isBlinking ? "blink" : ""}`}>|</span>
-          </h2>
-          <p>
-            Making students Industry Ready with our Customized Industry
-            Readiness Programme
-          </p>
-          <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
-            <span>Know More</span>
-          </Link>
-        </div>
-        <img
-          src="LandingImage/vector 1.png"
-          alt="Left Side Design"
-          className="left-side-image hidden md:block"
-        />
-        <img
-          src="LandingImage/MobileHeroNew.PNG"
-          alt="Mobile Vector"
-          className="mobile-vector-image "
-        />
-      </div>
+      <div id="hero_slider" className="section roboto-regular hero-slider-section left" ref={heroRef}>
+        <div className="section-content left" data-aos="fade-up">
+        <h2 className="hero-text">
+  <span className={`fade ${fadeFirst ? "fade-out" : "fade-in"}`}>
+    {firstWords[firstWordIndex]}
+  </span>
+  <span className="permanent-text text-white"> Bridging the Gap Between  </span>
+  <span className={`fade ${fadeLast ? "fade-out" : "fade-in"}`}>
+    {lastWords[lastWordIndex]}
+  </span>
+</h2>
+<p>
+Making students Industry Ready with our Customized Industry Readiness Programme
+</p>
+<Link to="/training" className="btn-know-more" onClick={scrollToTop}>
+<span>Know More</span>
+</Link>
+</div>
+<img
+src="LandingImage/vector 1.png"
+alt="Left Side Design"
+className="left-side-image hidden md:block"
+/>
+<img
+src="LandingImage/MobileHeroNew.PNG"
+alt="Mobile Vector"
+className="mobile-vector-image "
+/>
+</div>
 
-      <div
-        id="core_capabilities"
-        className="section core-capabilities-section right"
-        ref={aboutRef}
-      >
-        <div className="section-content right">
+      <div id="core_capabilities" className="section core-capabilities-section right" ref={aboutRef}>
+        <div className="section-content right" data-aos="fade-left">
           <h2>About Us</h2>
           <p>
-            We are an organization that bridges the gap between academic
-            learning and industry needs by developing industry ready programmes
-            that prepares your students to be job-ready from day one
-            transforming them into well-rounded professionals ready to excel in
-            their careers.
+            We are an organization that bridges the gap between academic learning and industry needs by developing industry ready programmes that prepares your students to be job-ready from day one transforming them into well-rounded professionals ready to excel in their careers.
           </p>
           <Link to="/about" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -343,18 +307,11 @@ const Home = () => {
         />
       </div>
 
-      <div
-        id="operating_models"
-        className="section operating-models-section left"
-        ref={trainingRef}
-      >
-        <div className="section-content left">
+      <div id="operating_models" className="section operating-models-section left" ref={trainingRef}>
+        <div className="section-content left" data-aos="fade-right">
           <h2>Learning & Development</h2>
           <p>
-            At Gryphon, we specifically curate our training programmes as per
-            today’s industry demands, by using the latest modern tools and
-            methodologies, we enhance the students learning experience and make
-            sure they are the chosen ones in our 450+ recruiters.
+            At Gryphon, we specifically curate our training programmes as per today’s industry demands, by using the latest modern tools and methodologies, we enhance the students learning experience and make sure they are the chosen ones in our 450+ recruiters.
           </p>
           <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -372,19 +329,11 @@ const Home = () => {
         />
       </div>
 
-      <div
-        id="talent_transformations"
-        className="section talent-transformations-section right"
-        ref={placementRef}
-      >
-        <div className="section-content right">
+      <div id="talent_transformations" className="section talent-transformations-section right" ref={placementRef}>
+        <div className="section-content right" data-aos="fade-left">
           <h2>Campus Placements</h2>
           <p>
-            A well-trained resource easily secures their place in the industry
-            and at Gryphon this is what we abide by, providing students top
-            placement opportunities which also includes guest sessions, industry
-            collaborations, and empanelment, helping them learn the industry
-            applications & opening doors towards their dream companies.
+            A well-trained resource easily secures their place in the industry and at Gryphon this is what we abide by, providing students top placement opportunities which also includes guest sessions, industry collaborations, and empanelment, helping them learn the industry applications & opening doors towards their dream companies.
           </p>
           <Link to="/placement" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
@@ -402,26 +351,13 @@ const Home = () => {
         />
       </div>
 
-      <div
-        id="do_more"
-        className="section do-more-section left"
-        ref={brandingRef}
-      >
-        <div className="section-content left">
+      <div id="do_more" className="section do-more-section left" ref={brandingRef}>
+        <div className="section-content left" data-aos="fade-right">
           <h2>Cross Brand Positioning</h2>
           <p>
-            Elevating your college&apos;s presence hinges on brand visibility,
-            strategic positioning, and market insight. At Gryphon, we specialize
-            in enhancing your brand through tailored solutions, including guest
-            sessions, strategic events, and effective admissions strategies. Let
-            us transform your college’s impact and redefine your market
-            standing!
+            Elevating your college&apos;s presence hinges on brand visibility, strategic positioning, and market insight. At Gryphon, we specialize in enhancing your brand through tailored solutions, including guest sessions, strategic events, and effective admissions strategies. Let us transform your college’s impact and redefine your market standing!
           </p>
-          <Link
-            to="/brandPositioning"
-            className="btn-know-more"
-            onClick={scrollToTop}
-          >
+          <Link to="/brandPositioning" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
           </Link>
         </div>

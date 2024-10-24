@@ -46,7 +46,7 @@ function HeroCorporate() {
       {/* Heading Section */}
       <div className="absolute left-0 right-0 text-center z-10 px-4 md:px-8 lg:px-16 xl:px-32 py-2 top-[10vh] md:top-1/4">
         <h1
-          className={`text-sm sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 sm:mb-1 leading-tight md:leading-normal text-white ${
+          className={`text-sm sm:text-xl tracking-wide md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 sm:mb-1   text-white ${
             isExiting ? 'slide-exit' : 'slide-enter'
           }`}
           data-aos="fade-up"

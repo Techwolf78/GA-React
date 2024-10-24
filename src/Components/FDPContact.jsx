@@ -1,9 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; 
-import vectorImage from '/Training Page/BrochureBook.png'; 
+import { Link } from 'react-router-dom';
+import { FaLightbulb } from 'react-icons/fa'; // Unique icon representing ideas
 import arrowImage from '/placement-bg/arrow.png'; 
 
-const BrochureSection = () => {
+const FDPContact = () => {
   const headingText = "Invest in Faculty Development Programs to enhance teaching quality, boost faculty morale, and equip educators with the skills needed for modern challenges.";
   const trainingPageLink = '/contact'; 
 
@@ -20,9 +19,11 @@ const BrochureSection = () => {
       </style>
 
       <div className="bg-brochure flex flex-col md:flex-row items-center justify-between h-full w-full rounded-3xl shadow-3xl p-6">
-        {/* Brochure Image */}
+        {/* Icon Section */}
         <div className="flex-none w-full md:w-[20%] flex justify-center mb-4">
-          <img src={vectorImage} alt="Vector" className="h-20" />
+          <div className="flex items-center justify-center h-20 w-20 rounded-full bg-white shadow-lg">
+            <FaLightbulb className="h-12 w-12 text-[#003073]" /> {/* Unique icon */}
+          </div>
         </div>
         
         {/* Paragraph Section */}
@@ -46,4 +47,4 @@ const BrochureSection = () => {
   );
 };
 
-export default BrochureSection;
+export default FDPContact;
