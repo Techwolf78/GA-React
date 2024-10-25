@@ -35,9 +35,9 @@ const Placement = () => {
         </p>
         <div className="w-full h-auto bg-[#003073]">
           <img 
-            src="placement-bg/GA - placement ProcessNew.PNG" 
+            src="placement-bg/traineva6.png" 
             alt="Infographic" 
-            className="w-full h-auto block px-1 py-1"
+            className="w-full h-auto block px-1 py-1 "
           />
         </div>
       </div>

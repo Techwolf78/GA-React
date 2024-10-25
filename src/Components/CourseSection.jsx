@@ -481,7 +481,7 @@ const courses = {
         "Develop skills in mobile, web, and system software development.",
         "Apply algorithms and data structures to optimize software solutions.",
       ],
-      image: "MCA/Programming.jpg",
+      image: "Course/MCA/Programming Languages.png",
     },
     {
       title: "Data Structures & Algorithms (DSA)",
@@ -492,7 +492,7 @@ const courses = {
         "Prepare for technical interviews with coding challenges.",
         "Implement algorithmic solutions in real-world applications.",
       ],
-      image: "MCA/DSA.jpg",
+      image: "Course/MCA/DSA.png",
     },
     {
       title: "Data Science",
@@ -503,7 +503,7 @@ const courses = {
         "Develop skills in deep learning and AI applications.",
         "Use data visualization tools to interpret results.",
       ],
-      image: "MCA/DataScience.jpg",
+      image: "Course/MCA/Data Science.png",
     },
     {
       title: "Software Development",
@@ -514,7 +514,7 @@ const courses = {
         "Implement version control and continuous integration.",
         "Perform software testing and debugging for reliable solutions.",
       ],
-      image: "MCA/SoftwareDevelopment.jpg",
+      image: "Course/MCA/App Development.png",
     },
     {
       title: "Networking Administration",
@@ -525,7 +525,7 @@ const courses = {
         "Understand cloud computing architectures and services.",
         "Monitor and troubleshoot networks for efficient performance.",
       ],
-      image: "MCA/Networking.jpg",
+      image: "Course/MCA/Networking Administration.png",
     },
     {
       title: "Linux",
@@ -536,7 +536,7 @@ const courses = {
         "Implement network services like DNS, FTP, and web servers on Linux.",
         "Perform system security and updates for Linux environments.",
       ],
-      image: "MCA/Linux.jpg",
+      image: "Course/MCA/Linux.png",
     },
   ],
   BBA: [
