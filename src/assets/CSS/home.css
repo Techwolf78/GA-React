@@ -6,9 +6,26 @@ body, html {
   background-color: #01224f;
   overflow-x: hidden;
 }
+.hero-text {
+  text-align: center; /* Center the text */
+}
+
+.hero-words {
+  display: flex;
+  justify-content: space-between; /* Distribute space evenly between children */
+  align-items: center; /* Center vertically */
+  margin-top: 1rem; /* Add spacing as needed */
+}
+
+.first-word, .last-word {
+  flex: 0 1 auto; /* Allow the first and last word to take only the necessary space */
+}
+
 .dotted-line {
   display: flex;
+  justify-content: center; /* Center the dots */
   gap: 5px; /* Space between dots */
+  flex: 0; /* Prevent it from stretching */
 }
 
 .dotted-line span {
@@ -20,21 +37,20 @@ body, html {
   opacity: 1; /* Show when applicable */
 }
 
-/* Existing styles... */
-
-.hero-text {
-  text-align: center; /* Center the text */
+.dotted-line span.fade-in {
+  opacity: 1; 
 }
+
+.dotted-line span.fade-out {
+  opacity: 0; 
+}
+
+
+/* Existing styles... */
 
 .large-font {
   font-size: 2.5rem; /* Adjust this value as needed */
   font-weight: bold; /* Optional: make it bold */
-}
-
-.flex {
-  display: flex;
-  justify-content: center; /* Center the contents horizontally */
-  align-items: center; /* Center vertically */
 }
 
 .small-font {
@@ -42,7 +58,7 @@ body, html {
 }
 
 .fade {
-  transition: opacity 0.5s ease; /* Longer duration for smoother fade */
+  transition: opacity 0.5s ease; /* Adjust for smoother transitions */
 }
 
 .fade-out {
@@ -516,7 +532,7 @@ body, html {
 .company-logo {
   width: 100%;
   height: 100%;
-  background: url("/LandingImage/NewLogo.png") no-repeat center center;
+  background: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1729940570/NewLogoR_f6kttv.png") no-repeat center center;
   background-size: contain;
 }
 

@@ -1,4 +1,3 @@
-import React from 'react';
 
 const HomeSliderComp = () => {
   const logos = [
@@ -35,15 +34,17 @@ const HomeSliderComp = () => {
         <div className="home-slider-track flex animate-scroll-left">
           {logos.map((logo, index) => (
             <div key={index} className="home-slider-item flex-none mx-3 sm:mx-4 md:mx-5">
-              <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[120px] object-contain" />
+              <img src={logo} alt={`Logo ${index + 1}`} className="h-16 sm:h-20 object-contain" />
             </div>
           ))}
           {logos.map((logo, index) => (
             <div key={`duplicate-${index}`} className="home-slider-item flex-none mx-3 sm:mx-4 md:mx-5">
-              <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[120px] object-contain" />
+              <img src={logo} alt={`Logo ${index + 1}`} className="h-16 sm:h-20 object-contain" />
             </div>
           ))}
         </div>
+        <div className="blur-border left-blur"></div>
+        <div className="blur-border right-blur"></div>
       </div>
 
       <style>{`
@@ -56,6 +57,42 @@ const HomeSliderComp = () => {
           0% { transform: translateX(0); }
           100% { transform: translateX(calc(-120px * ${logos.length})); }
         }
+          
+          
+.blur-border {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    width: 100px; /* Default width for larger screens */
+}
+
+.left-blur {
+    left: 0;
+    background: linear-gradient(to right, rgba(1, 34, 79, 1), rgba(1, 34, 79, 0) 100%);
+}
+
+.right-blur {
+    right: 0;
+    background: linear-gradient(to left, rgba(1, 34, 79, 1), rgba(1, 34, 79, 0) 100%);
+}
+
+/* Media query for screens between 768px and 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .blur-border {
+        width: 70px; /* Width for medium screens */
+    }
+}
+
+/* Media query for screens below 768px */
+@media (max-width: 768px) {
+    .blur-border {
+        width: 50px; /* Width for smaller screens */
+    }
+}
+
+
       `}</style>
     </div>
   );

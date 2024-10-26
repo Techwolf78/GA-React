@@ -86,85 +86,77 @@ const challenges = [
   }
   ];
   
-
-const ChallengesSolutionsComponent = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
-  useEffect(() => {
-    AOS.init(); // Initialize AOS
-  }, []);
-
-  const handleMouseEnter = (index) => {
-    setHoveredIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredIndex(null);
-  };
-
-  return (
-    <div className="bg-[#0a1d3d] py-4 flex items-center justify-center roboto-regular">
-      <div className="container mx-auto px-8 sm:px-8 md:px-16 lg:px-16">
-        <h1 className="text-3xl md:text-4xl font-bold text-center text-[#ffc700] mb-8">CHALLENGES & SOLUTIONS</h1>
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4">
-          {challenges.map((challenge, index) => {
-            const cardColor = '#003073';
-            const isHovered = hoveredIndex === index;
-
-            const borderColor = isHovered ? '#ffc700' : 'white';
-            const glowIntensity = isHovered ? '10px' : '0px';
-
-            return (
-              <div
-                key={index}
-                style={{
-                  backgroundColor: cardColor,
-                  border: `2px solid ${borderColor}`,
-                  position: 'relative',
-                  width: '100%',
-                  maxWidth: '400px',
-                  margin: '0 auto',
-                  borderRadius: '0.5rem',
-                  boxShadow: isHovered ? `0 0 ${glowIntensity} ${borderColor}, 0 0 30px ${borderColor}` : 'none',
-                  transition: 'border-color 0.1s ease-in-out, box-shadow 0.3s ease-in-out',
-                  overflow: 'hidden'
-                }}
-                data-aos="slide-left"
-                data-aos-duration="800"
-                data-aos-delay={index * 100}
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <div className="p-4 mt-(-1)">
-                  <div className="flex items-center mb-2" data-aos="fade-right" data-aos-duration="600" data-aos-delay={index * 100 + 200}>
-                    <div className="text-4xl text-[#ffc700] mr-3 flex-shrink-0" aria-label={challenge.title}>
-                      {challenge.icon}
+  const ChallengesSolutionsComponent = () => {
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+  
+    useEffect(() => {
+      AOS.init(); // Initialize AOS
+    }, []);
+  
+    const handleMouseEnter = (index) => {
+      setHoveredIndex(index);
+    };
+  
+    const handleMouseLeave = () => {
+      setHoveredIndex(null);
+    };
+  
+    return (
+      <div className="bg-[#0a1d3d] py-4 flex items-center justify-center roboto-regular">
+        <div className="container mx-auto px-8 sm:px-8 md:px-16 lg:px-16">
+          <h1 className="text-3xl md:text-4xl font-bold text-center text-[#ffc700] mb-8">CHALLENGES & SOLUTIONS</h1>
+          <div className="grid gap-8 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4">
+            {challenges.map((challenge, index) => {
+              const cardColor = '#003073';
+              const isHovered = hoveredIndex === index;
+  
+              const borderColor = isHovered ? '#ffc700' : 'white';
+              const glowIntensity = isHovered ? '10px' : '0px';
+  
+              return (
+                <div
+                  key={index}
+                  style={{
+                    backgroundColor: cardColor,
+                    border: `2px solid ${borderColor}`,
+                    position: 'relative',
+                    width: '100%',
+                    maxWidth: '400px',
+                    margin: '0 auto',
+                    borderRadius: '0.5rem',
+                    boxShadow: isHovered ? `0 0 ${glowIntensity} ${borderColor}, 0 0 30px ${borderColor}` : 'none',
+                    transition: 'border-color 0.1s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out',
+                    overflow: 'hidden',
+                    transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+                  }}
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                  data-aos-delay={index * 100}
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div className="p-4 mt-(-1)">
+                    <div className="flex items-center mb-2" data-aos="fade-right" data-aos-duration="600" data-aos-delay={index * 100 + 200}>
+                      <div className="text-4xl text-[#ffc700] mr-3 flex-shrink-0" aria-label={challenge.title}>
+                        {challenge.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h2 className="text-xl font-semibold text-[#ffffff]" data-aos="fade-right" data-aos-duration="600" data-aos-delay={index * 100 + 400}>
+                          {challenge.title}
+                        </h2>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h2 className="text-xl font-semibold text-[#ffffff]" data-aos="fade-right" data-aos-duration="600" data-aos-delay={index * 100 + 400}>
-                        {challenge.title}
-                      </h2>
-                    </div>
+                    <p className="text-[#ffffff] text-base" data-aos="fade-up" data-aos-duration="600" data-aos-delay={index * 100 + 600}>
+                      <span className="font-semibold text-[#ffc700]">Solution:</span> {challenge.solution}
+                    </p>
                   </div>
-                  <p className="text-[#ffffff] text-base" data-aos="fade-up" data-aos-duration="600" data-aos-delay={index * 100 + 600}>
-                    <span className="font-semibold text-[#ffc700]">Solution:</span> {challenge.solution}
-                  </p>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
-
-      <style>
-      {`
-        body {
-          cursor: auto; /* Ensure the default cursor is visible */
-        }
-      `}
-      </style>
-    </div>
-  );
-};
-
-export default ChallengesSolutionsComponent;
+    );
+  };
+  
+  export default ChallengesSolutionsComponent;

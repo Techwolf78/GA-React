@@ -84,7 +84,7 @@ const HeroSection = () => {
         <div className="w-full md:w-1/2 flex justify-center md:justify-center">
           <div className="relative max-w-xs sm:max-w-md lg:max-w-lg">
             <img
-              src="Training Page/fdp.svg" // Replace this with your actual image path
+              src="Training Page/FDP new.png" // Replace this with your actual image path
               alt="Train Hire Deploy"
               className="w-full h-auto object-contain float" // Added float class
             />

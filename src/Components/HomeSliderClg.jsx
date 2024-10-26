@@ -1,4 +1,3 @@
-import React from 'react';
 
 const HomeSliderClg = () => {
   const logos = [
@@ -31,6 +30,8 @@ const HomeSliderClg = () => {
             </div>
           ))}
         </div>
+        <div className="blur-border left-blur"></div>
+        <div className="blur-border right-blur"></div>
       </div>
       
       <p className="text-[#3398f2] text-center mt-4 text-[20px]">and many more...</p>
@@ -45,6 +46,41 @@ const HomeSliderClg = () => {
           0% { transform: translateX(calc(-120px * ${logos.length})); }
           100% { transform: translateX(0); }
         }
+
+          
+.blur-border {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    width: 100px; /* Default width for larger screens */
+}
+
+.left-blur {
+    left: 0;
+    background: linear-gradient(to right, rgba(1, 34, 79, 1), rgba(1, 34, 79, 0) 100%);
+}
+
+.right-blur {
+    right: 0;
+    background: linear-gradient(to left, rgba(1, 34, 79, 1), rgba(1, 34, 79, 0) 100%);
+}
+
+/* Media query for screens between 768px and 1024px */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .blur-border {
+        width: 70px; /* Width for medium screens */
+    }
+}
+
+/* Media query for screens below 768px */
+@media (max-width: 768px) {
+    .blur-border {
+        width: 50px; /* Width for smaller screens */
+    }
+}
+
       `}</style>
     </div>
   );

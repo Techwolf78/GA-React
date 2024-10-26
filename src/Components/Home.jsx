@@ -23,8 +23,7 @@ const Home = () => {
   const [lastWordIndex, setLastWordIndex] = useState(0);
   const [fadeFirst, setFadeFirst] = useState(false);
   const [fadeLast, setFadeLast] = useState(false);
-  const [dotCount, setDotCount] = useState(0);
-
+  
   const firstWords = [
     "Theory",
     "Campus",
@@ -44,7 +43,7 @@ const Home = () => {
     "Employment",
     "Outcome"
   ];
-
+  
   const scrollPercent = useRef(0);
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
@@ -52,6 +51,9 @@ const Home = () => {
   const placementRef = useRef(null);
   const brandingRef = useRef(null);
   const sidebarRef = useRef(null);
+  const [lineVisible, setLineVisible] = useState(false);
+  
+
 
   useEffect(() => {
     AOS.init({ duration: 600, easing: 'ease-in-out' });
@@ -95,37 +97,26 @@ const Home = () => {
     }
   };
 
-  const cycleWords = () => {
-    // Start fading out the current first and last words
-    setFadeFirst(true);
-    setFadeLast(true);
-  
-    setTimeout(() => {
-      // Change the first word index and reset fade states
-      setFirstWordIndex((prevIndex) => (prevIndex + 1) % firstWords.length);
-      setLastWordIndex((prevIndex) => (prevIndex + 1) % lastWords.length);
-      setFadeFirst(false);
-      setFadeLast(false);
-      setDotCount(0);
-  
-      // Start showing dots after the first word changes
-      const dotInterval = setInterval(() => {
-        setDotCount((prevCount) => {
-          if (prevCount < 3) {
-            return prevCount + 1;
-          } else {
-            clearInterval(dotInterval);
-            return prevCount;
-          }
-        });
-      }, 300);
-  
-    }, 1000); // Duration for fading out before changing words
-  };
-  
-  // Update the interval in useEffect
   useEffect(() => {
-    const interval = setInterval(cycleWords, 4000);
+    const cycleWords = () => {
+      setFadeFirst(true);
+      setFadeLast(true);
+      setLineVisible(false); // Hide the line before fade-out
+    
+      setTimeout(() => {
+        setFirstWordIndex((prevIndex) => (prevIndex + 1) % firstWords.length);
+        setLastWordIndex((prevIndex) => (prevIndex + 1) % lastWords.length);
+    
+        setFadeFirst(false);
+        setFadeLast(false);
+        setLineVisible(true); // Show the line after fade-in
+      }, 300); // Adjust timing as necessary
+    };
+    
+    
+    // Set the interval for word switching to be less than the total duration (like 3000ms)
+    const interval = setInterval(cycleWords, 3000); // Change to 4000ms to allow for immediate switch after fade
+    
     return () => clearInterval(interval);
   }, []);
   
@@ -270,26 +261,21 @@ const Home = () => {
 
       <div id="hero_slider" className="section roboto-regular hero-slider-section left" ref={heroRef}>
         <div className="section-content left" data-aos="fade-up">
-          <h2 className="hero-text">
-            <div className="permanent-text text-white large-font">
-              <span className="text-[#FFC80E]">Bridging</span> the <span className="text-[#FFC80E]">Gap</span> Between
-            </div>
-            <div className="flex">
-              <div className={`fade ${fadeFirst ? "fade-out" : "fade-in"} small-font`}>
-                {firstWords[firstWordIndex]}
-              </div>
+        <h2 className="hero-text">
+  <div className="permanent-text text-white large-font">
+    <span className="text-[#FFC80E]">Bridging</span> the <span className="text-[#FFC80E]">Gap</span> Between
+  </div>
+  <div className="hero-words">
+    <div className={`fade ${fadeFirst ? "fade-out" : "fade-in"} small-font first-word`}>
+      {firstWords[firstWordIndex]}
+    </div>
+    <div className={`dotted-line ${lineVisible ? "show" : ""}`}></div>
+    <div className={`fade ${fadeLast ? "fade-out" : "fade-in"} small-font last-word`}>
+      {lastWords[lastWordIndex]}
+    </div>
+  </div>
+</h2>
 
-              <div className="dotted-line">
-                {Array.from({ length: 3 }, (_, i) => (
-                  <span key={i} className={i < dotCount ? "show" : ""}>.</span>
-                ))}
-              </div>
-
-              <div className={`fade ${fadeLast ? "fade-out" : "fade-in"} small-font`}>
-                {lastWords[lastWordIndex]}
-              </div>
-            </div>
-          </h2>
 
 <p>
 Making students Industry Ready with our Customized Industry Readiness Programme

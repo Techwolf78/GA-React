@@ -80,10 +80,11 @@ function App() {
 
 function AppWrapper() {
   return (
-    <Router>
+    <Router basename="/">
       <App />
     </Router>
   );
 }
+
 
 export default AppWrapper;

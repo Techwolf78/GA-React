@@ -12,9 +12,9 @@ function CollegeBox() {
   const [countingStarted, setCountingStarted] = useState(false);
 
   const images = [
-    '/CollegeSliding/Training Photo 1.png',
-    '/CollegeSliding/Training Photo 2.png',
-    '/CollegeSliding/Training Photo 3.png',
+    'https://res.cloudinary.com/dcjmaapvi/image/upload/v1729942558/Training_Photo_1_w6huq7.webp',
+    'https://res.cloudinary.com/dcjmaapvi/image/upload/v1729942557/Training_Photo_2_nyvrd2.webp',
+    'https://res.cloudinary.com/dcjmaapvi/image/upload/v1729942556/Training_Photo_3_rictud.webp',
   ];
 
   useEffect(() => {

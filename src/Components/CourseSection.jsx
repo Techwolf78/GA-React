@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import "tailwindcss/tailwind.css";
 
-const backSideImageUrl = "/MECH/Yellow Bcakground.png";
+const backSideImageUrl = "https://res.cloudinary.com/dcjmaapvi/image/upload/v1729943834/Yellow_Bcakground_jd3l6n.avif";
 
 // Course data and button labels
 const courses = {
@@ -16,7 +16,7 @@ const courses = {
         "Understand parametric design and modifications.",
         "Integrate AutoCAD designs with other engineering software.",
       ],
-      image: "/MECH/M1.png",
+      image: "https://res.cloudinary.com/dcjmaapvi/image/upload/v1729942854/M1_kndj7a.webp",
     },
     {
       title: "Creo",
@@ -83,7 +83,7 @@ const courses = {
         "Create cross-sectional drawings and elevation views.",
         "Generate documentation and annotations per civil standards.",
       ],
-      image: "/MECH/M1.png",
+      image: "https://res.cloudinary.com/dcjmaapvi/image/upload/v1729942854/M1_kndj7a.webp",
     },
     {
       title: "STAAD Pro",

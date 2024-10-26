@@ -46,7 +46,7 @@ function WhyTraining() {
 
               <div className="flex items-center justify-center">
                 <img
-                  src="/Training - Thinking Man.png"
+                  src="placement-bg/Training - Thinking Man.avif"
                   alt="Illustration"
                   className="h-64 sm:h-72 lg:h-80 xl:h-96"
                   style={{ transform: "scaleX(-1)" }}
@@ -97,7 +97,7 @@ function WhyTraining() {
             </p>
             <div className="flex items-center mb-6 justify-center">
               <img
-                src="/Training - Thinking Man.png"
+                src="placement-bg/Training - Thinking Man.avif"
                 alt="Illustration"
                 className="h-64 sm:h-72 lg:h-80 xl:h-96"
                 style={{ transform: "scaleX(-1)" }}

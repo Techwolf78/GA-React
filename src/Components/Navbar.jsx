@@ -42,11 +42,12 @@ const Navbar = () => {
   return (
     <header className="bg-[#091327] text-[#ffffff] flex justify-between items-center px-8 md:px-16 py-[1rem] roboto-regular">
       <a className="navbar-brand" href="/">
-        <img
-          src="/LandingImage/NewLogo.png"
-          alt="logo2"
-          className="w-36 h-auto"
-        />
+      <img
+  src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1729940570/NewLogoR_f6kttv.png"
+  alt="Company logo"
+  className="w-36 h-auto"
+/>
+
       </a>
 
       <nav className="hidden lg:flex space-x-4">

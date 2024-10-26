@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const MajorRecruiter = () => {
   const [reverse, setReverse] = useState(false);
-  
+
   // Manually define the array of logo paths
   const logos = [
     'TopRecruiters/40.jpg',
@@ -27,7 +27,7 @@ const MajorRecruiter = () => {
     'TopRecruiters/19.png',
     'TopRecruiters/20.png',
   ].map((src, index) => (
-    <div key={index} className="logo-slider-item flex-none mx-4 my-2">
+    <div key={`first-${index}`} className="logo-slider-item flex-none mx-4 my-2">
       <img
         src={src}
         alt="College Logo"
@@ -35,6 +35,11 @@ const MajorRecruiter = () => {
       />
     </div>
   ));
+
+  // Duplicate the logos with unique keys
+  const duplicatedLogos = logos.map((logo, index) => 
+    React.cloneElement(logo, { key: `second-${index}` })
+  );
 
   useEffect(() => {
     const handleAnimationEnd = (e) => {
@@ -62,8 +67,8 @@ const MajorRecruiter = () => {
 
       <div className="logo-slider relative overflow-hidden w-full">
         <div className={`logo-slider-track flex ${reverse ? 'reverse' : 'animate-scroll'}`}>
-          {/* Duplicate the logos for smooth scroll effect */}
-          {[...logos, ...logos]}
+          {/* Render both sets of logos */}
+          {[...logos, ...duplicatedLogos]}
         </div>
       </div>
 

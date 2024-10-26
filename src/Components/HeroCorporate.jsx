@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 
-const backgroundImage = "/Corporate Training Page Zip/Corporate Training.png"; // Static image
+const backgroundImage = "https://res.cloudinary.com/dcjmaapvi/image/upload/v1729943835/Corporate_Training_1_eaeb56.avif"; // Static image
 
 const content = [
   "DELIVERING TAILORED SOLUTIONS THAT DRIVE MEASURABLE SUCCESS AND ENHANCE ORGANIZATIONAL READINESS WITHIN THE LEARNING TECHNOLOGY ECOSYSTEM",
@@ -91,11 +91,12 @@ function HeroCorporate() {
       </style>
 
       {/* New Corporate Training Section */}
-      <div className="bg-gray-100 py-8 shadow-md relative z-10" data-aos="fade-up" data-aos-duration="800">
-        <p className="mx-auto lg:text-2xl md:text-xl sm:text-lg text-center px-8 sm:px-16 text-gray-500">
-          {corporateTrainingParagraph}
-        </p>
-      </div>
+      <div className="bg-gray-100 py-4 shadow-md relative z-10" data-aos="fade-up" data-aos-duration="800">
+  <p className="mx-auto lg:text-2xl md:text-xl sm:text-lg text-left sm:text-center px-8 sm:px-16 text-gray-500">
+    {corporateTrainingParagraph}
+  </p>
+</div>
+
     </div>
   );
 }

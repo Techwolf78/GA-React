@@ -4,7 +4,7 @@ import Icon from "/Testimonials/arrow.svg";
 const testimonials = [
   {
     review:
-      "My experience with Gryphon Academy was incredible. I got placed in Force Motors and I would love to thank Gryphon Academy for being such an amazing partner for my placement opportunity.",
+      "My experience at Gryphon Academy was fantastic! I got placed at Force Motors, and I'm truly grateful to Gryphon Academy for their incredible support during my placement. Thank you!",
     name: "Mr. Rahul Agal",
     companyLogo: "Logos/1.jpg",
     companyName: "Mechanical Engineering",
@@ -44,7 +44,7 @@ const testimonials = [
   },
   {
     review:
-      "It was a great experience with Gryphon Academy. The informative and simplified teaching style of trainers made our placement journey smooth. Grateful to Gryphon Academy for providing the opportunity to learn and acquire industry skillset.",
+      "Gryphon Academy made my placement journey smooth with their informative and simplified teaching style. I'm grateful for the opportunity to learn and gain essential industry skills.",
     name: "Mr. Rahul Hiwale ",
     companyLogo: "Logos/7.jpg",
     companyName: "Mechanical Engineering",
@@ -107,7 +107,7 @@ const Testimonials = () => {
     <section style={{ background: "#01224f", padding: "12px 0" }} className="roboto-regular">
       <div style={{ textAlign: "center", marginBottom: "32px", display: "flex", alignItems: "center", justifyContent: "center" }}>
         <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-4"> 
-          <span className="text-white">Student</span> Spotlight
+          <span className="text-white">Students</span> Spotlight
         </h3>
       </div>
 
