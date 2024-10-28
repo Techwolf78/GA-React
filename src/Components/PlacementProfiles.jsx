@@ -50,7 +50,7 @@ const mbaProfiles = [
 
 const PlacementProfiles = () => {
   return (
-    <div className="container mx-auto px-4 md:px-8 lg:px-16 mx-auto py-8 bg-gradient-to-r from-blue-800 to-blue-500">
+    <div className="container mx-auto px-4 md:px-8 lg:px-16  py-8 bg-gradient-to-r from-blue-800 to-blue-500">
       <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold xl:mb-8 md:mb-6 sm:mb-4 xs:mb-2 text-center text-[#FFC80E]">
         PROFILES WE TRAIN FOR{" "}
       </h1>

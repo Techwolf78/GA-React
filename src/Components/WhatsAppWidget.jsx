@@ -24,7 +24,7 @@ const WhatsAppWidget = () => {
       ref={widgetRef} // Apply ref to the widget
     >
       <img
-        src="LandingImage/whatsapp.png" // Add your icon image
+        src="/LandingImage/whatsapp.avif" // Add your icon image
         alt="WhatsApp"
         style={styles.icon}
       />

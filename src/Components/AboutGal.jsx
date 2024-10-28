@@ -3,16 +3,16 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 
 const images = [
-  "About/gallery1.jpg",
-  "About/gallery3.jfif",
-  "About/gallery2.jpg",
-  "About/gallery4.jpg",
-  "About/gallery5.jpg",
-  "About/gallery6.jpg",
-  "About/gallery7.jpg", // New image 1 (left side)
-  "About/gallery8.jpg", // New image 2 (left side)
-  "About/gallery9.jpg", // New image 3 (right side)
-  "About/gallery10.jpg", // New image 4 (right side)
+  "/About/gallery1.jpg",
+  "/About/gallery3.jfif",
+  "/About/gallery2.jpg",
+  "/About/gallery4.jpg",
+  "/About/gallery5.jpg",
+  "/About/gallery6.jpg",
+  "/About/gallery7.jpg", // New image 1 (left side)
+  "/About/gallery8.jpg", // New image 2 (left side)
+  "/About/gallery9.jpg", // New image 3 (right side)
+  "/About/gallery10.jpg", // New image 4 (right side)
 ];
 
 const ImageGallery = () => {

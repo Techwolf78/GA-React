@@ -275,8 +275,6 @@ const Home = () => {
     </div>
   </div>
 </h2>
-
-
 <p>
 Making students Industry Ready with our Customized Industry Readiness Programme
 </p>
@@ -285,7 +283,7 @@ Making students Industry Ready with our Customized Industry Readiness Programme
 </Link>
 </div>
 <img
-src="LandingImage/vector 1.png"
+src="LandingImage/vector 1.webp"
 alt="Left Side Design"
 className="left-side-image hidden md:block"
 />
@@ -307,7 +305,7 @@ className="mobile-vector-image "
           </Link>
         </div>
         <img
-          src="LandingImage/vector 1.png"
+          src="LandingImage/vector 1.webp"
           alt="Right Side Design"
           className="right-side-image"
         />
@@ -329,7 +327,7 @@ className="mobile-vector-image "
           </Link>
         </div>
         <img
-          src="LandingImage/vector 1.png"
+          src="LandingImage/vector 1.webp"
           alt="Left Side Design"
           className="left-side-image"
         />
@@ -351,7 +349,7 @@ className="mobile-vector-image "
           </Link>
         </div>
         <img
-          src="LandingImage/vector 1.png"
+          src="LandingImage/vector 1.webp"
           alt="Right Side Design"
           className="right-side-image"
         />
@@ -373,7 +371,7 @@ className="mobile-vector-image "
           </Link>
         </div>
         <img
-          src="LandingImage/vector 1.png"
+          src="LandingImage/vector 1.webp"
           alt="Left Side Design"
           className="left-side-image"
         />

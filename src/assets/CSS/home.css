@@ -21,32 +21,7 @@ body, html {
   flex: 0 1 auto; /* Allow the first and last word to take only the necessary space */
 }
 
-.dotted-line {
-  display: flex;
-  justify-content: center; /* Center the dots */
-  gap: 5px; /* Space between dots */
-  flex: 0; /* Prevent it from stretching */
-}
 
-.dotted-line span {
-  opacity: 0; /* Start hidden */
-  transition: opacity 0.3s; /* Smooth transition */
-}
-
-.dotted-line span.show {
-  opacity: 1; /* Show when applicable */
-}
-
-.dotted-line span.fade-in {
-  opacity: 1; 
-}
-
-.dotted-line span.fade-out {
-  opacity: 0; 
-}
-
-
-/* Existing styles... */
 
 .large-font {
   font-size: 2.5rem; /* Adjust this value as needed */
@@ -613,7 +588,7 @@ body, html {
     width: 100%;
     z-index: 1;
     text-align: left;
-    padding: 0 20px;
+
   }
 
   /* Position side images */

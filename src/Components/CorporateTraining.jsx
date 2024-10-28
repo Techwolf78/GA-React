@@ -5,7 +5,7 @@ import CorporateChallenge from './CorporateChallenge';
 import CorporateAppoarch from './CorporateAppoarch';
 import ContactCorporate from './ContactCorporate';
 import ConnectWithUs from './ConnectWithUs';
-import CorporateTrainers from './CorporateTrainers';
+// import CorporateTrainers from './CorporateTrainers';
 
 const CorporateTraining = () => {
   useEffect(() => {
@@ -22,7 +22,7 @@ const CorporateTraining = () => {
       <ElevateYourWorkforce />
       <CorporateChallenge />
       <CorporateAppoarch />
-      <CorporateTrainers />
+      {/* <CorporateTrainers /> */}
       <ContactCorporate />
       <div style={{ margin: '20px 0' }}> {/* Add margin above and below */}
         <ConnectWithUs />

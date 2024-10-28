@@ -16,7 +16,7 @@ import BrandPositioning from './Components/BrandPositioning';
 import CollegeTraining from './Components/CollegeTraining';
 import CorporateTraining from './Components/CorporateTraining';
 import FacultyTraining from './Components/FacultyTraining'; 
-import WhatsAppWidget from './Components/WhatsAppWidget'; 
+// import WhatsAppWidget from './Components/WhatsAppWidget'; 
 import ScrollToTopButton from './Components/ScrollToTopButton'; 
 import Post1 from './Components/BlogPages/Post1';
 import Post2 from './Components/BlogPages/Post2';
@@ -24,15 +24,16 @@ import Post3 from './Components/BlogPages/Post3';
 import Post4 from './Components/BlogPages/Post4';
 import Post5 from './Components/BlogPages/Post5';
 import Post6 from './Components/BlogPages/Post6';
+import NotFound from './Components/NotFound'; // Import the NotFound component
 
 function App() {
-  const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
+  // const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
   const [scrollVisible, setScrollVisible] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollVisible(window.scrollY > window.innerHeight * 1.2); // 1vh
+      setScrollVisible(window.scrollY > window.innerHeight * 1.2);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -54,7 +55,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<><Navbar /><About /></>} />
+        <Route path="/about-us" element={<><Navbar /><About /></>} />
+        <Route path="/about-us/" element={<><Navbar /><About /></>} />
         <Route path="/gax" element={<><Navbar /><GAX /></>} />
         <Route path="/blogs" element={<><Navbar /><Blogs /></>} />
         <Route path="/post1" element={<><Navbar /><Post1 /></>} />
@@ -70,8 +72,12 @@ function App() {
         <Route path="/collegeTraining" element={<><Navbar /><CollegeTraining /></>} />
         <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />
+
+        {/* Catch-all route for 404 */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
-      {showWhatsAppWidget && <WhatsAppWidget />} 
+
+      {/* {showWhatsAppWidget && <WhatsAppWidget />}  */}
       <ScrollToTopButton visible={scrollVisible} />
       <Footer /> 
     </>
@@ -85,6 +91,5 @@ function AppWrapper() {
     </Router>
   );
 }
-
 
 export default AppWrapper;

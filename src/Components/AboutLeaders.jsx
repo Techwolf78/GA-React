@@ -12,14 +12,14 @@ const MeetTheLeaders = () => {
     designation: 'Founder',
     name: 'Mr. Shashi Bhat',
     message: '"When I look back and see how Gryphon collaboration with academia is creating a huge pool of talent for the industry, I feel we have set the right mission and vision. Still a long road ahead, but gratified with the progress WE HAVE made."',
-    profilePic: 'About/foun.PNG', // Replace with actual image path
+    profilePic: '/About/foun.PNG', // Replace with actual image path
   };
 
   const coFounder = {
     designation: 'Co-Founder',
     name: 'Ms. Ummeaiman Ansari',
     message: '"Holding ranks but a trainer beneath, it thrills me to witness an amazing pool of talent being created with our best of trainers and equally supported by amazing career opportunities from our corporate partners. Gryphon is 3 years today, floating but on the course to sail through."',
-    profilePic: 'About/cf.PNG', // Replace with actual image path
+    profilePic: '/About/cf.PNG', // Replace with actual image path
   };
 
   const renderMessage = (name, message) => (

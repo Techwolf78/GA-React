@@ -25,7 +25,7 @@ function WhyTraining() {
     { icon: faUsersCog, text: 'Competence Based Learning' },
     { icon: faClock, text: 'Timely Evaluation' },
     { icon: faClipboardCheck, text: 'Periodic Assessment (Summative & Formative)' },
-    { icon: faProjectDiagram, text: 'Interdisciplinary Approach' },
+    { icon: faProjectDiagram, text: 'Interdisciplinary Approach' }, // Apply break to this
     { icon: faSyncAlt, text: 'Agile & Real Time Based Trainings' },
     { icon: faChalkboardTeacher, text: 'Trainer<br /> Role Fit' },
     { icon: faMapMarkedAlt, text: 'Skill Mapping as per Industry' },
@@ -43,10 +43,10 @@ function WhyTraining() {
             {/* Left Content - 30% width */}
             <div className="flex-1 mb-6 lg:mb-0 flex flex-col items-center lg:items-start w-full lg:w-3/12">
               <p
-                className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-4 text-center lg:text-left"
+                className="text-1xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold mb-4 text-center lg:text-left text-transform: uppercase tracking-wider"
                 style={{ color: highlightYellow }}
               >
-                HOW DO OUR TRAININGS DIFFER?
+                Why This Training Creates Industry Fit?
               </p>
               <div className="flex items-center justify-center">
                 <img
@@ -83,7 +83,17 @@ function WhyTraining() {
                       />
                     </div>
                     <p 
-                      style={{ color: darkGray, fontSize: '1rem', fontWeight: 'bold', lineHeight: '1.5rem' }}
+                      style={{
+                        color: darkGray,
+                        fontSize: '1rem',
+                        fontWeight: 'bold',
+                        lineHeight: '1.5rem',
+                        ...(item.text === 'Interdisciplinary Approach' ? {
+                          overflowWrap: 'break-word',
+                          wordBreak: 'break-word',
+                          maxWidth: '150px', // Limit max width for better control
+                        } : {}),
+                      }}
                       dangerouslySetInnerHTML={{ __html: item.text }} // Use dangerouslySetInnerHTML
                     />
                   </div>

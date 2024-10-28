@@ -233,13 +233,12 @@ const TrainingAbout = () => {
 
         <div className="training-right-section">
           <p className="training-description-paragraph">
-            Gryphon Academy specializes in delivering customized training
-            solutions across three key sectors. Our mission is to effectively
-            bridge the skill gap within each sector, ensuring a focused approach
-            that leaves no room for deficiencies.
+          Gryphon Academy delivers customized training solutions to three specialized streams: Student Trainings, Corporate Trainings, and Faculty Development Programmes (FDP). 
+          
+          Each program combines practical learning, real projects, and hands-on tool experience, ensuring participants gain the required skills in their respective fields.
           </p>
           <p className="training-highlighted-text" data-aos="fade-left">
-            OUR TRI-SECTOR TRAINING APPROACH
+          OUR TRI-DIMENSIONAL APPROACH
           </p>
         </div>
       </div>
@@ -253,8 +252,7 @@ const TrainingAbout = () => {
             <h4 className="training-feature-title">COLLEGE TRAININGS</h4>
           </div>
           <p className="training-feature-description">
-            Bridging the campus-to-career gap. Transforming students into
-            industry-ready professionals.
+          Student trainings focuses on building industry-ready skills and job-specific competencies
           </p>
           <Link to="/collegeTraining" className="training-learn-more-link mt-2">
             LEARN MORE
@@ -269,8 +267,7 @@ const TrainingAbout = () => {
             <h4 className="training-feature-title">CORPORATE TRAININGS</h4>
           </div>
           <p className="training-feature-description">
-            Elevating workforce potential, one skill at a time. Custom solutions
-            for tomorrow&apos;s business challenges.
+          Corporate programs enhance workforce capabilities through technical and operational training modules.
           </p>
           <Link
             to="/corporateTraining"
@@ -286,12 +283,11 @@ const TrainingAbout = () => {
               <i className="fas fa-chalkboard-teacher text-gray-800 text-2xl"></i>
             </div>
             <h4 className="training-feature-title">
-              FACULTY <br /> DEVELOPMENT PROGRAMME
+              FACULTY <br /> DEVELOPMENT PROGRAMMES
             </h4>
           </div>
           <p className="training-feature-description">
-            Reshaping education for the digital age. Equipping educators to
-            inspire the next generation.
+          Faculty Development Program equips educators with current industry practices and teaching techniques.
           </p>
           <Link to="/facultyTraining" className="training-learn-more-link mt-2">
             LEARN MORE

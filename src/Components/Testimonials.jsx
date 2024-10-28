@@ -6,7 +6,7 @@ const testimonials = [
     review:
       "My experience at Gryphon Academy was fantastic! I got placed at Force Motors, and I'm truly grateful to Gryphon Academy for their incredible support during my placement. Thank you!",
     name: "Mr. Rahul Agal",
-    companyLogo: "Logos/1.jpg",
+    companyLogo: "/Logos/1.jpg",
     companyName: "Mechanical Engineering",
     rating: "★★★★★",
   },
@@ -14,7 +14,7 @@ const testimonials = [
     review:
       "Gryphon has provided with best training. The teachers were super helping and punctual. They have given us lessons for life. I would extend a special thanks to the trainers who motivated us at every step.",
     name: "Mr. Sonu Kambhire",
-    companyLogo: "Logos/41.jpg",
+    companyLogo: "/Logos/41.jpg",
     companyName: "Mechanical Engineering",
     rating: "★★★★★",
   },
@@ -22,7 +22,7 @@ const testimonials = [
     review:
       "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
     name: "Mr. Shubham Borse",
-    companyLogo: "Logos/1.jpg",
+    companyLogo: "/Logos/1.jpg",
     companyName: "Electrical Engineering",
     rating: "★★★★★",
   },
@@ -30,7 +30,7 @@ const testimonials = [
     review:
       "Gryphon Academy has changed me for the better. Their encompassing aptitude, soft skills and technical prowess prepared me for industry challenges.",
     name: "Mr. Niket Gawali ",
-    companyLogo: "Logos/42new.jpg",
+    companyLogo: "/Logos/42new.jpg",
     companyName: "Civil Engineering",
     rating: "★★★★★",
   },
@@ -38,7 +38,7 @@ const testimonials = [
     review:
       "The trainings on aptitude and soft skills proved to be highly beneficial, equipping us with valuable objects and preparing us knowledge across various subjects for the industry demands.",
     name: "Mr. Kishor Turkane ",
-    companyLogo: "Logos/5.jpg",
+    companyLogo: "/Logos/5.jpg",
     companyName: "Civil Engineering",
     rating: "★★★★★",
   },
@@ -46,7 +46,7 @@ const testimonials = [
     review:
       "Gryphon Academy made my placement journey smooth with their informative and simplified teaching style. I'm grateful for the opportunity to learn and gain essential industry skills.",
     name: "Mr. Rahul Hiwale ",
-    companyLogo: "Logos/7.jpg",
+    companyLogo: "/Logos/7.jpg",
     companyName: "Mechanical Engineering",
     rating: "★★★★★",
   },
@@ -54,7 +54,7 @@ const testimonials = [
     review:
       "Gryphon Academy doesn't just teach; they empower. I owe my career to their exceptional training and the fantastic placement options they offer.",
     name: "Mr. Chinmay Gosavi",
-    companyLogo: "Logos/43.png",
+    companyLogo: "/Logos/43.png",
     companyName: "Finance & Minor - Marketing",
     rating: "★★★★★",
   },

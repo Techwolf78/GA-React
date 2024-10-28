@@ -4,11 +4,11 @@ import 'aos/dist/aos.css'; // Import AOS styles
 
 const awardsData = [
   {
-    image: 'About/award1.jfif',
+    image: '/About/award1.jfif',
     description: 'Awarded by Ministry of Skills Development (Govt. of India) For Bridging the Gap Between Industry & Academia.',
   },
   {
-    image: 'About/award2.jfif',
+    image: '/About/award2.jfif',
     description: 'Awarded as The Start Up of the Year at World HRD Congress, 2023',
   },
 ];

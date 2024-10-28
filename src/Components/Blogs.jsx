@@ -31,20 +31,20 @@ const Blog = () => {
       image: 'Blogs/post4A.jfif',
       path: '/post4',
     },
-    {
-      id: 5,
-      title: "I would like to die on Mars. Just not on Impact.",
-      description: "Join us on a journey to the red planet, where the possibilities are endless and the risks are high.",
-      image: 'Blogs/nature-1.jpg',
-      path: '/post5',
-    },
-    {
-      id: 6,
-      title: "The universe is under no obligation to make sense to you.",
-      description: "Astronomy compels the soul to look upwards and leads us from this world to another.",
-      image: 'Blogs/nature-2.png',
-      path: '/post6',
-    },
+    // {
+    //   id: 5,
+    //   title: "I would like to die on Mars. Just not on Impact.",
+    //   description: "Join us on a journey to the red planet, where the possibilities are endless and the risks are high.",
+    //   image: 'Blogs/nature-1.jpg',
+    //   path: '/post5',
+    // },
+    // {
+    //   id: 6,
+    //   title: "The universe is under no obligation to make sense to you.",
+    //   description: "Astronomy compels the soul to look upwards and leads us from this world to another.",
+    //   image: 'Blogs/nature-2.png',
+    //   path: '/post6',
+    // },
   ];
 
   // Scroll to top function

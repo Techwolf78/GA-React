@@ -22,12 +22,12 @@ const HeroCollege = () => {
           backgroundPosition: 'center',
         }}
       >
-        {/* Empty space at the top */}
-        <div className="h-[5vh] sm:h-[10vh]"></div>
+        {/* Responsive spacing for small screens only */}
+        <div className="h-[2vh] sm:h-[5vh] lg:h-[10vh]"></div>
 
         {/* Heading Container */}
         <div className="text-center z-10 px-4">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold mb-2">
             A JOURNEY FROM  
             <span className="text-[#FFC80E] inline-flex flex-col h-auto">
               <ul className={`block ${showClassroom ? 'animate-text-slide-stop' : 'animate-text-slide'} leading-tight`}>
@@ -39,7 +39,7 @@ const HeroCollege = () => {
             </span>
             TO CORPORATE
           </h1>
-          <p className="text-lg sm:text-xl text-white mt-2">
+          <p className="text-lg sm:text-xl text-white mt-1">
             Preparing your students for the industry with our customized <br /> Industry Specific Training and Placement Solutions
           </p>
         </div>

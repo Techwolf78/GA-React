@@ -4,7 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import ImpactSection from "./ImpactSection";
 import AboutGal from "./AboutGal";
 import Testimonials from "./Testimonials"; // Import the Testimonials component
-import JourneySection from "./JourneySection";
+// import JourneySection from "./JourneySection";
 import MissionVisionSection from "./MissionVisionSection";
 import AboutIntro from "./AboutIntro";
 import AboutHero from "./AboutHero";
@@ -27,7 +27,7 @@ const About = () => {
       <AboutOffer />
 
       <AboutGal />
-      <JourneySection />
+      {/* <JourneySection /> */}
       <Testimonials />
       <ConnectWithUs />
     </div>
