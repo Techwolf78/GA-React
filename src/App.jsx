@@ -16,7 +16,7 @@ import BrandPositioning from './Components/BrandPositioning';
 import CollegeTraining from './Components/CollegeTraining';
 import CorporateTraining from './Components/CorporateTraining';
 import FacultyTraining from './Components/FacultyTraining'; 
-// import WhatsAppWidget from './Components/WhatsAppWidget'; 
+import WhatsAppWidget from './Components/WhatsAppWidget'; 
 import ScrollToTopButton from './Components/ScrollToTopButton'; 
 import Post1 from './Components/BlogPages/Post1';
 import Post2 from './Components/BlogPages/Post2';
@@ -27,7 +27,7 @@ import Post6 from './Components/BlogPages/Post6';
 import NotFound from './Components/NotFound'; // Import the NotFound component
 
 function App() {
-  // const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
+  const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
   const [scrollVisible, setScrollVisible] = useState(false);
   const location = useLocation();
 
@@ -77,7 +77,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {/* {showWhatsAppWidget && <WhatsAppWidget />}  */}
+      {showWhatsAppWidget && <WhatsAppWidget />} 
       <ScrollToTopButton visible={scrollVisible} />
       <Footer /> 
     </>

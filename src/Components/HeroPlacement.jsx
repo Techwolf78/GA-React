@@ -68,28 +68,29 @@ const HeroPlacement = () => {
 
           /* Responsive Styles */
           @media (max-width: 640px) { /* Small devices */
-            h1 {
-              font-size: 1.5rem; /* Adjust font size for small screens */
-            }
-          }
+  h1 {
+    font-size: 1rem; /* Adjust font size for small screens */
+  }
+}
 
-          @media (min-width: 640px) and (max-width: 1024px) { /* Medium devices */
-            h1 {
-              font-size: 2rem; /* Adjust font size for medium screens */
-            }
-          }
+@media (min-width: 640px) and (max-width: 1024px) { /* Medium devices */
+  h1 {
+    font-size: 2rem; /* Adjust font size for medium screens */
+  }
+}
 
-          @media (min-width: 1024px) { /* Large devices */
-            h1 {
-              font-size: 3rem; /* Adjust font size for large screens */
-            }
-          }
+@media (min-width: 1024px) { /* Large devices */
+  h1 {
+    font-size: 3rem; /* Adjust font size for large screens */
+  }
+}
 
-          @media (min-width: 1280px) { /* Extra large devices */
-            h1 {
-              font-size: 3rem; /* Adjust font size for extra large screens */
-            }
-          }
+@media (min-width: 1280px) { /* Extra large devices */
+  h1 {
+    font-size: 3rem; /* Adjust font size for extra large screens */
+  }
+}
+
 
           /* Adjust banner image */
           img {

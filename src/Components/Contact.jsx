@@ -1,42 +1,60 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
-  const [notification, setNotification] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const formData = new FormData(e.target);
+    
+    // Add the source as a hidden field
+    formData.append('source', 'Contact Form');
 
-    fetch('https://script.google.com/macros/s/AKfycbyuXURJAJrCfyYBIhYtOpcOrPy4zjmLmTLVHofgR6_zV6isMzP5BW0h_7V8uipANhLT/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbzD2p4mf2qIUGsFQn0kyIfd9RelTaFbzJXaWAzp7TQ03Bd9IELeBA4y4Nl-dv_KbSznlg/exec', {
       method: 'POST',
       body: formData,
     })
-      .then((response) => {
-        setNotification('Form successfully submitted!');
-        setTimeout(() => {
-          setNotification('');
-          e.target.reset();
-        }, 2000);
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === 'success') {
+          toast.success('Form successfully submitted!');
+          setTimeout(() => {
+            e.target.reset();
+            setIsSubmitting(false);
+          }, 2000);
+        } else {
+          toast.error(`Error: ${data.message}`);
+          setIsSubmitting(false);
+        }
       })
       .catch(() => {
-        setNotification('Error submitting form. Please try again.');
+        toast.error('Error submitting form. Please try again.');
+        setIsSubmitting(false);
       });
   };
 
   return (
     <>
+      <ToastContainer position="top-center" autoClose={3000} hideProgressBar={true} />
+
       {/* Contact Us Section */}
-      <section className="py-16 bg-[ #003073] mx-auto mt-6 mb-6 px-4 md:max-w-6xl">
+      <section className="py-16 bg-[#003073] mx-auto mt-6 mb-6 px-8 md:px-16">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-7xl font-bold  text-[#ffffff] text-center">
-              Let's <span className="text-[#ffffff]">Bridge</span> <br />
+            <h1 className="text-7xl font-bold text-[#ffffff] text-center">
+              Let&apos;s <span className="text-[#ffffff]">Bridge</span> <br />
               <span className="text-[#FFC80E] text-center">the Gap</span>
             </h1>
           </div>
 
           <div>
             <form id="contactForm" onSubmit={handleSubmit} className="space-y-3">
+              {/* Hidden Source Field */}
+              <input type="hidden" name="source" value="Contact Form" />
+
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block mb-1 font-medium text-[#ffffff]">
@@ -118,22 +136,18 @@ const Contact = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#FFC80E] text-[#091327] py-3 rounded-lg font-bold hover:bg-[#e0a800] transition-colors"
+                disabled={isSubmitting}
+                className={`w-full text-[#091327] py-3 rounded-lg font-bold transition-colors ${isSubmitting ? 'bg-[#FFC80E]' : 'bg-[#FFC80E] hover:bg-[#e0a800]'}`}
               >
-                Send Message
+                {isSubmitting ? 'Submitting...' : 'Send Message'}
               </button>
             </form>
-
-            {/* Notification */}
-            {notification && (
-              <div className="mt-3 text-center text-lg text-[#FFC80E]">{notification}</div>
-            )}
           </div>
         </div>
       </section>
 
       {/* Information Section */}
-      <div className="py-12 bg-[#091327]">
+      <div className="py-12 bg-[#091327] px-8 md:px-16">
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
           {/* Address */}
           <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
@@ -153,13 +167,13 @@ const Contact = () => {
           <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
             <i className="bx bx-envelope text-4xl text-[#FFC80E] mb-4"></i>
             <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Email</h4>
-            <p className="text-[#ffffff]">gryphonx@gryphonacademy.co.in</p>
+            <p className="text-[#ffffff] break-all overflow-wrap-break-word">connect@gryphonacademy.co.in</p>
           </div>
         </div>
       </div>
 
       {/* Get in Touch Section */}
-      <section className="py-24 bg-[#091327]"> {/* Dark blue background */}
+      <section className="py-24 bg-[#091327] px-8 md:px-16">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
             <iframe

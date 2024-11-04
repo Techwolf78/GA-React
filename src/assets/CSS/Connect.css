@@ -1,6 +1,6 @@
 :root {
-  --color-text: #ffeeff;
-  --color-neon: #1331db;
+  --color-text: #ffffff;
+  --color-neon: #FFC80E;
 }
 
 *,
@@ -13,19 +13,12 @@
 
 .app-container {
   font-family: "Roboto", sans-serif;
-
   font-weight: 600;
   display: grid;
   place-items: center;
-  padding: 20px;
-  padding-bottom: 50px;
+  padding: 40px 20px 50px; /* Increased top padding */
   opacity: 0; /* Initially hidden */
   transition: opacity 0.5s ease-in-out; /* Smooth transition */
-}
-
-.fade-in {
-  opacity: 1;
-  transition: opacity 0.8s ease-in-out;
 }
 
 .neon-link-button {
@@ -44,8 +37,14 @@
   background: transparent;
   padding: 0.25em 1em; /* Reduce padding */
   position: relative;
+  margin-top: 20px; /* Added margin for space above */
 }
 
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
 
 .neon-link-button::before,
 .neon-link-button::after {

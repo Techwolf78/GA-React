@@ -12,8 +12,12 @@ const HeroSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleScroll = () => {
-    // Your scroll logic here (if needed)
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Optional: Adds a smooth scroll effect
+    });
   };
 
   return (
@@ -54,11 +58,11 @@ const HeroSection = () => {
           </div>
       
           <p className="text-lg sm:text-xl lg:text-2xl mb-6 lg:mb-8 max-w-lg">
-          Our comprehensive programs focus on enhancing teaching skills, integrating modern pedagogical strategies, and fostering a culture of continuous professional growth. By addressing these critical challenges, we help transform your college into a vibrant hub of educational excellence.
+            Our comprehensive programs focus on enhancing teaching skills, integrating modern pedagogical strategies, and fostering a culture of continuous professional growth. By addressing these critical challenges, we help transform your college into a vibrant hub of educational excellence.
           </p>
           <Link to="/contact">
             <button
-              onClick={handleScroll}
+              onClick={scrollToTop} // Add scrollToTop function here
               className="btn-know-more relative inline-flex px-5 py-3 text-sm sm:text-base font-semibold text-[#ffffff] group whitespace-nowrap hidden lg:inline-flex"
             >
               <span className="relative z-10">Get in touch today</span>

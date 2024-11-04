@@ -133,21 +133,31 @@ const ContactForm = () => {
     phone: "",
     category: "",
     message: "",
+    source: "Faculty Form", // Permanent value for the source
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
 
+    // Append the source value to formData
+    formData.append("source", formState.source);
+
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+
     fetch(
-      "https://script.google.com/macros/s/AKfycbyuXURJAJrCfyYBIhYtOpcOrPy4zjmLmTLVHofgR6_zV6isMzP5BW0h_7V8uipANhLT/exec",
+      "https://script.google.com/macros/s/AKfycbzD2p4mf2qIUGsFQn0kyIfd9RelTaFbzJXaWAzp7TQ03Bd9IELeBA4y4Nl-dv_KbSznlg/exec",
       {
         method: "POST",
         body: formData,
       }
     )
-      .then((response) => {
-        if (response.ok) {
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === 'success') {
           toast.success("Form successfully submitted!", {
             position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
             autoClose: 2000,
@@ -160,11 +170,15 @@ const ContactForm = () => {
             phone: "",
             category: "",
             message: "",
+            source: "Faculty Form", // Reset source to default
           });
-
           e.target.reset();
         } else {
-          throw new Error("Error submitting form.");
+          toast.error(`Error: ${data.message}`, {
+            position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
+            autoClose: 2000,
+            className: window.innerWidth <= 768 ? "text-sm" : "",
+          });
         }
       })
       .catch(() => {
@@ -173,8 +187,13 @@ const ContactForm = () => {
           autoClose: 2000,
           className: window.innerWidth <= 768 ? "text-sm" : "",
         });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
   };
+
+
 
   const fadeInStyle = {
     opacity: inView ? 1 : 0,
@@ -293,7 +312,6 @@ const ContactForm = () => {
                   onChange={(e) =>
                     setFormState({ ...formState, name: e.target.value })
                   }
-                  fadeInStyle={fadeInStyle}
                 />
                 <InputField
                   label="Email"
@@ -304,7 +322,6 @@ const ContactForm = () => {
                   onChange={(e) =>
                     setFormState({ ...formState, email: e.target.value })
                   }
-                  fadeInStyle={fadeInStyle}
                 />
                 <InputField
                   label="Phone Number"
@@ -315,7 +332,6 @@ const ContactForm = () => {
                   onChange={(e) =>
                     setFormState({ ...formState, phone: e.target.value })
                   }
-                  fadeInStyle={fadeInStyle}
                 />
                 <SelectField
                   label="Category"
@@ -324,7 +340,6 @@ const ContactForm = () => {
                   onChange={(e) =>
                     setFormState({ ...formState, category: e.target.value })
                   }
-                  fadeInStyle={fadeInStyle}
                 />
                 <TextareaField
                   label="Message"
@@ -334,13 +349,13 @@ const ContactForm = () => {
                   onChange={(e) =>
                     setFormState({ ...formState, message: e.target.value })
                   }
-                  fadeInStyle={fadeInStyle}
                 />
                 <button
                   type="submit"
-                  className="bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors w-full"
+                  className={`bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors w-full ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? 'Submitting...' : 'Send Message'}
                 </button>
               </form>
             </div>
@@ -350,7 +365,6 @@ const ContactForm = () => {
     </>
   );
 };
-
 // Input, Select, and Textarea Fields
 
 const InputField = ({

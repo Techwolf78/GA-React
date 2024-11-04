@@ -3,7 +3,7 @@ import React from 'react';
 const PartneredUniversities = () => {
   return (
     <div className="relative px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16 pt-6 bg-[#091327] text-white roboto-regular">
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-4 text-[#FFC80E]">
+      <h1 className=" sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-4 text-[#FFC80E]">
         Partnered with 60+ College/Universities
       </h1>
       
@@ -28,7 +28,7 @@ const PartneredUniversities = () => {
       </div>
 
       <div className="text-center mb-6">
-        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#FFC80E] mb-4">
+        <h3 className=" sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#FFC80E] mb-4">
           Diversification of Students
         </h3>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8">
@@ -38,7 +38,7 @@ const PartneredUniversities = () => {
       alt="Male Icon"
       className="w-12 h-12 sm:w-16 sm:h-16 mr-2 sm:mr-3" 
     />
-    <span className="text-sm sm:text-lg md:text-xl lg:text-2xl">55% MALE DIVERSIFICATION</span>
+    <span className="text-sm sm:text-lg md:text-xl lg:text-2xl">55% MALE</span>
   </div>
   <div className="flex items-center">
     <img 
@@ -46,7 +46,7 @@ const PartneredUniversities = () => {
       alt="Female Icon"
       className="w-12 h-12 sm:w-16 sm:h-16 mr-2 sm:mr-3" 
     />
-    <span className="text-sm sm:text-lg md:text-xl lg:text-2xl">45% FEMALE DIVERSIFICATION</span>
+    <span className="text-sm sm:text-lg md:text-xl lg:text-2xl">45% FEMALE </span>
   </div>
 </div>
 

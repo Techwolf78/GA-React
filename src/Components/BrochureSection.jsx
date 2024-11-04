@@ -13,6 +13,7 @@ const BrochureSection = () => {
     phone: "",
     category: "",
     message: "",
+    hiddenField: "" // Hidden field for spam detection
   });
 
   const downloadPDF = () => {
@@ -30,18 +31,22 @@ const BrochureSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const formData = new FormData();
     Object.entries(formState).forEach(([key, value]) => {
       formData.append(key, value);
     });
-
+  
+    // Add the hidden fields for source and brochure
+    formData.append("source", "Brochure");
+    formData.append("brochure", "Brochure");
+  
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbyuXURJAJrCfyYBIhYtOpcOrPy4zjmLmTLVHofgR6_zV6isMzP5BW0h_7V8uipANhLT/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbzD2p4mf2qIUGsFQn0kyIfd9RelTaFbzJXaWAzp7TQ03Bd9IELeBA4y4Nl-dv_KbSznlg/exec", {
         method: "POST",
         body: formData,
       });
-
+  
       if (response.ok) {
         toast.dismiss();
         toast.success("Form successfully submitted! Downloading brochure...", {
@@ -52,7 +57,7 @@ const BrochureSection = () => {
             setFormVisible(false);
           }
         });
-
+  
         setTimeout(downloadPDF, 1000);
       } else {
         const errorData = await response.json();
@@ -67,6 +72,7 @@ const BrochureSection = () => {
       console.error("Submission error:", error);
     }
   };
+
   return (
     <div className="relative flex flex-col items-center justify-center mx-auto px-8 sm:px-8 md:px-16 lg:px-16 py-4">
       <style>
@@ -142,54 +148,57 @@ const BrochureSection = () => {
         </div>
       </div>
 
-      {/* Form Modal */}
-      {formVisible && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg relative w-full md:w-1/3">
-            <button onClick={() => setFormVisible(false)} className="absolute top-2 right-2 text-gray-500 hover:text-gray-800">&times;</button>
-            <h3 className="text-lg font-bold mb-4">Please provide your details:</h3>
-            <form onSubmit={handleSubmit}>
-              <InputField
-                label="Name"
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formState.name}
-                onChange={(e) => setFormState(prev => ({ ...prev, name: e.target.value }))} />
-              <InputField
-                label="Email"
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formState.email}
-                onChange={(e) => setFormState(prev => ({ ...prev, email: e.target.value }))} />
-              <InputField
-                label="Phone Number"
-                type="tel"
-                name="phone"
-                placeholder="Your Phone Number"
-                value={formState.phone}
-                onChange={(e) => setFormState(prev => ({ ...prev, phone: e.target.value }))} />
-              <SelectField
-                label="Category"
-                name="category"
-                value={formState.category}
-                onChange={(e) => setFormState(prev => ({ ...prev, category: e.target.value }))} />
-              <TextareaField
-                label="Inquiry"
-                name="message"
-                placeholder="Your Inquiry"
-                value={formState.message}
-                onChange={(e) => setFormState(prev => ({ ...prev, message: e.target.value }))} />
-              <button
-                type="submit"
-                className="bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors w-full">
-                Send Details
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
+{formVisible && (
+  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="bg-white p-6 rounded-lg shadow-lg relative w-full md:w-1/3">
+      <button onClick={() => setFormVisible(false)} className="absolute top-2 right-2 text-gray-500 hover:text-gray-800">&times;</button>
+      <h3 className="text-lg font-bold mb-4">Please provide your details:</h3>
+      <form id="contactForm" onSubmit={handleSubmit}>
+        {/* Hidden Source Field */}
+        <input type="hidden" name="source" value="Brochure" />
+        
+        {/* Other form fields... */}
+        <InputField
+          label="Name"
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value={formState.name}
+          onChange={(e) => setFormState(prev => ({ ...prev, name: e.target.value }))} />
+        <InputField
+          label="Email"
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          value={formState.email}
+          onChange={(e) => setFormState(prev => ({ ...prev, email: e.target.value }))} />
+        <InputField
+          label="Phone Number"
+          type="tel"
+          name="phone"
+          placeholder="Your Phone Number"
+          value={formState.phone}
+          onChange={(e) => setFormState(prev => ({ ...prev, phone: e.target.value }))} />
+        <SelectField
+          label="Category"
+          name="category"
+          value={formState.category}
+          onChange={(e) => setFormState(prev => ({ ...prev, category: e.target.value }))} />
+        <TextareaField
+          label="Inquiry"
+          name="message"
+          placeholder="Your Inquiry"
+          value={formState.message}
+          onChange={(e) => setFormState(prev => ({ ...prev, message: e.target.value }))} />
+        <button
+          type="submit"
+          className="bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors w-full">
+          Send Details
+        </button>
+      </form>
+    </div>
+  </div>
+)}
 
       <ToastContainer
         position="top-right"

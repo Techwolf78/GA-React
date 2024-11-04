@@ -8,6 +8,7 @@ import HomeSliderClg from "./HomeSliderClg";
 import ConnectWithUs from "./ConnectWithUs";
 import HomeSliderComp from "./HomeSliderComp";
 
+// ProgressBar Component
 const ProgressBar = ({ scrollPercent }) => {
   return (
     <div className="progress-bar-container">
@@ -23,6 +24,7 @@ const Home = () => {
   const [lastWordIndex, setLastWordIndex] = useState(0);
   const [fadeFirst, setFadeFirst] = useState(false);
   const [fadeLast, setFadeLast] = useState(false);
+  const [lineVisible, setLineVisible] = useState(false);
   
   const firstWords = [
     "Theory",
@@ -36,7 +38,7 @@ const Home = () => {
   
   const lastWords = [
     "Practice",
-    "Workplace",
+    "Corporate",
     "Professionals",
     "Industry",
     "Opportunities",
@@ -51,9 +53,6 @@ const Home = () => {
   const placementRef = useRef(null);
   const brandingRef = useRef(null);
   const sidebarRef = useRef(null);
-  const [lineVisible, setLineVisible] = useState(false);
-  
-
 
   useEffect(() => {
     AOS.init({ duration: 600, easing: 'ease-in-out' });
@@ -101,25 +100,22 @@ const Home = () => {
     const cycleWords = () => {
       setFadeFirst(true);
       setFadeLast(true);
-      setLineVisible(false); // Hide the line before fade-out
-    
+      setLineVisible(false);
+
       setTimeout(() => {
         setFirstWordIndex((prevIndex) => (prevIndex + 1) % firstWords.length);
         setLastWordIndex((prevIndex) => (prevIndex + 1) % lastWords.length);
-    
+        
         setFadeFirst(false);
         setFadeLast(false);
-        setLineVisible(true); // Show the line after fade-in
-      }, 300); // Adjust timing as necessary
+        setLineVisible(true);
+      }, 300);
     };
-    
-    
-    // Set the interval for word switching to be less than the total duration (like 3000ms)
-    const interval = setInterval(cycleWords, 3000); // Change to 4000ms to allow for immediate switch after fade
-    
+
+    const interval = setInterval(cycleWords, 2000);
+
     return () => clearInterval(interval);
   }, []);
-  
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -147,22 +143,6 @@ const Home = () => {
       setTimeout(activateNavLink, 500);
     }
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      const navbar = document.querySelector(".top-navigation");
-      if (window.innerWidth <= 768) {
-        navbar.style.display = "none";
-      } else {
-        navbar.style.display = "flex";
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <div className="roboto-regular">
@@ -261,26 +241,26 @@ const Home = () => {
 
       <div id="hero_slider" className="section roboto-regular hero-slider-section left" ref={heroRef}>
         <div className="section-content left" data-aos="fade-up">
-        <h2 className="hero-text">
-  <div className="permanent-text text-white large-font">
-    <span className="text-[#FFC80E]">Bridging</span> the <span className="text-[#FFC80E]">Gap</span> Between
-  </div>
-  <div className="hero-words">
-    <div className={`fade ${fadeFirst ? "fade-out" : "fade-in"} small-font first-word`}>
-      {firstWords[firstWordIndex]}
-    </div>
-    <div className={`dotted-line ${lineVisible ? "show" : ""}`}></div>
-    <div className={`fade ${fadeLast ? "fade-out" : "fade-in"} small-font last-word`}>
-      {lastWords[lastWordIndex]}
-    </div>
-  </div>
-</h2>
-<p>
-Making students Industry Ready with our Customized Industry Readiness Programme
-</p>
-<Link to="/training" className="btn-know-more" onClick={scrollToTop}>
-<span>Know More</span>
-</Link>
+          <h2 className="hero-text">
+            <div className="permanent-text text-white large-font">
+              <span className="text-[#FFC80E]">Bridging</span> the <span className="text-[#FFC80E]">Gap</span> Between
+            </div>
+            <div className="hero-words">
+              <div className={`fade ${fadeFirst ? "fade-out" : "fade-in"} small-font first-word`}>
+                {firstWords[firstWordIndex]}
+              </div>
+              <div className={`dotted-line ${lineVisible ? "show" : ""}`}></div>
+              <div className={`fade ${fadeLast ? "fade-out" : "fade-in"} small-font last-word`}>
+                {lastWords[lastWordIndex]}
+              </div>
+            </div>
+          </h2>
+          <p>
+            Making students Industry Ready with our Customized Industry Readiness Programme
+          </p>
+          <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
+            <span>Know More</span>
+          </Link>
 </div>
 <img
 src="LandingImage/vector 1.webp"
@@ -288,7 +268,7 @@ alt="Left Side Design"
 className="left-side-image hidden md:block"
 />
 <img
-src="LandingImage/MobileHeroNew.PNG"
+src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730698772/MobileHeroNew_ia78v1.webp"
 alt="Mobile Vector"
 className="mobile-vector-image "
 />
@@ -300,7 +280,7 @@ className="mobile-vector-image "
           <p>
           Gryphon Academy is a Non-ed-tech organization, that bridges the gap between academia and industry needs, by developing Customized Industry readiness programmes, which prepares your students within the walls of campus. These trainings help students in transforming themselves into well-rounded professionals, ready to excel in their careers.
           </p>
-          <Link to="/about" className="btn-know-more" onClick={scrollToTop}>
+          <Link to="/about-us" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
           </Link>
         </div>
@@ -310,7 +290,7 @@ className="mobile-vector-image "
           className="right-side-image"
         />
         <img
-          src="LandingImage/Mobile 2.png"
+          src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730699772/Mobile_2_bf16b7.webp"
           alt="Mobile Vector"
           className="mobile-vector-image"
         />
@@ -332,7 +312,7 @@ className="mobile-vector-image "
           className="left-side-image"
         />
         <img
-          src="LandingImage/Mobile 3.png"
+          src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730699951/Mobile_3_iqwjro.webp"
           alt="Mobile Vector"
           className="mobile-vector-image"
         />
@@ -354,7 +334,7 @@ className="mobile-vector-image "
           className="right-side-image"
         />
         <img
-          src="LandingImage/Mobile 4.png"
+          src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730710833/Mobile_4_rsdx1y.avif"
           alt="Mobile Vector"
           className="mobile-vector-image"
         />
@@ -376,7 +356,7 @@ className="mobile-vector-image "
           className="left-side-image"
         />
         <img
-          src="LandingImage/Mobile5.png"
+          src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730710834/Mobile5_ct75om.avif"
           alt="Mobile Vector"
           className="mobile-vector-image"
         />

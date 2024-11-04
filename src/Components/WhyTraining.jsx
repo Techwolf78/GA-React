@@ -1,52 +1,59 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faGraduationCap,
   faUsersCog,
   faClock,
   faClipboardCheck,
-  faProjectDiagram,
   faSyncAlt,
   faChalkboardTeacher,
-  faMapMarkedAlt,
   faClipboardList,
   faUserFriends,
   faBookOpen,
-  faSchool,
+  faCertificate,
+  faLaptopCode,
 } from '@fortawesome/free-solid-svg-icons';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function WhyTraining() {
   const lightBlue = '#003073'; 
-  const highlightYellow = '#FFC80E'; 
   const darkGray = '#333333'; 
 
   const items = [
-    { icon: faGraduationCap, text: 'Experiential Learning' },
-    { icon: faUsersCog, text: 'Competence Based Learning' },
-    { icon: faClock, text: 'Timely Evaluation' },
-    { icon: faClipboardCheck, text: 'Periodic Assessment (Summative & Formative)' },
-    { icon: faProjectDiagram, text: 'Interdisciplinary Approach' }, // Apply break to this
-    { icon: faSyncAlt, text: 'Agile & Real Time Based Trainings' },
-    { icon: faChalkboardTeacher, text: 'Trainer<br /> Role Fit' },
-    { icon: faMapMarkedAlt, text: 'Skill Mapping as per Industry' },
-    { icon: faClipboardList, text: 'Continuous Assessment' },
-    { icon: faUserFriends, text: 'Role Play Based Training' },
-    { icon: faBookOpen, text: 'Case<br />Method' },
-    { icon: faSchool, text: 'Teaching Bootcamps' },
+    { icon: faGraduationCap, text: 'Customized & Curated Content', aos: 'fade-up' },
+    { icon: faClipboardCheck, text: 'Periodic Assessment Models', aos: 'fade-right' },
+    { icon: faSyncAlt, text: 'Measurable Performance Outcomes', aos: 'zoom-in' },
+    { icon: faUserFriends, text: 'Direct Industry Application Modules', aos: 'fade-left' },
+    { icon: faChalkboardTeacher, text: 'Long-Term Investment', aos: 'fade-up' },
+    { icon: faCertificate, text: 'Certifications Post Training', aos: 'fade-right' },
+    { icon: faLaptopCode, text: 'Technical Skill Mastery', aos: 'zoom-in' },
+    { icon: faUsersCog, text: 'Communication Enhancement', aos: 'fade-left' },
+    { icon: faClock, text: 'Reduced Training Costs', aos: 'fade-up' },
+    { icon: faClipboardList, text: 'Evaluation Based Learning', aos: 'fade-right' },
+    { icon: faBookOpen, text: 'Scenario Based Learning', aos: 'zoom-in' },
+    { icon: faBookOpen, text: 'Case Study Based Learning', aos: 'fade-left' },
   ];
-  
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+    });
+  }, []);
+
   return (
     <div className="roboto-regular">
       <main className="flex-1 py-8">
-        <div className="container mx-auto px-8 md:px-16">
+        <div className="container mx-auto px-8 md:px-12">
           <div className="flex flex-col lg:flex-row bg-[#003073] rounded-2xl shadow-lg p-6">
-            {/* Left Content - 30% width */}
+            {/* Left Content */}
             <div className="flex-1 mb-6 lg:mb-0 flex flex-col items-center lg:items-start w-full lg:w-3/12">
               <p
                 className="text-1xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold mb-4 text-center lg:text-left text-transform: uppercase tracking-wider"
-                style={{ color: highlightYellow }}
+                style={{ color: '#FFC80E' }}
               >
-                Why This Training Creates Industry Fit?
+                How This Training Creates Industry Fit?
               </p>
               <div className="flex items-center justify-center">
                 <img
@@ -58,13 +65,15 @@ function WhyTraining() {
               </div>
             </div>
 
-            {/* Right Content - Allow to grow */}
+            {/* Right Content */}
             <div className="flex-1 flex items-center justify-center w-full">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
                 {items.map((item, index) => (
                   <div
                     key={index}
-                    className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400 hover:border-2 hover:border-yellow-400"
+                    data-aos={item.aos}
+                    data-aos-delay={index * 0.1} // Staggered effect
+                    className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg hover:bg-gray-100 hover:scale-105"
                   >
                     <div
                       style={{
@@ -88,19 +97,13 @@ function WhyTraining() {
                         fontSize: '1rem',
                         fontWeight: 'bold',
                         lineHeight: '1.5rem',
-                        ...(item.text === 'Interdisciplinary Approach' ? {
-                          overflowWrap: 'break-word',
-                          wordBreak: 'break-word',
-                          maxWidth: '150px', // Limit max width for better control
-                        } : {}),
                       }}
-                      dangerouslySetInnerHTML={{ __html: item.text }} // Use dangerouslySetInnerHTML
+                      dangerouslySetInnerHTML={{ __html: item.text }} 
                     />
                   </div>
                 ))}
               </div>
             </div>
-
           </div>
         </div>
       </main>

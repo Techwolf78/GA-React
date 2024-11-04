@@ -117,9 +117,9 @@ const CollegeCourse = () => {
     <section className="bg-[#091327] py-6 roboto-regular">
       <div className="container mx-auto px-8 sm:px-16">
         <div className="mb-4 text-center">
-          <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#ffc700] mb-1">
+          <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#ffc700] mb-1 uppercase">
             <span className="relative inline-block">
-              OUR INDUSTRY READINESS PROGRAM INCLUDES:
+            Industry Readiness Programme Includes
               <span className="absolute left-0 right-0 h-[1px] bg-[#ffffff] bottom-0 mx-auto"></span>
             </span>
           </p>

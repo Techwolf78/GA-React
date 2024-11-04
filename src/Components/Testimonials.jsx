@@ -1,58 +1,50 @@
-import React from "react";
-import Icon from "/Testimonials/arrow.svg";
+import { useEffect, useState } from "react";
 
 const testimonials = [
   {
-    review:
-      "My experience at Gryphon Academy was fantastic! I got placed at Force Motors, and I'm truly grateful to Gryphon Academy for their incredible support during my placement. Thank you!",
+    review: "My experience at Gryphon Academy was fantastic! I got placed at Force Motors, and I'm truly grateful to Gryphon Academy for their incredible support during my placement. Thank you!",
     name: "Mr. Rahul Agal",
     companyLogo: "/Logos/1.jpg",
     companyName: "Mechanical Engineering",
     rating: "★★★★★",
   },
   {
-    review:
-      "Gryphon has provided with best training. The teachers were super helping and punctual. They have given us lessons for life. I would extend a special thanks to the trainers who motivated us at every step.",
+    review: "Gryphon has provided with best training. The teachers were super helping and punctual. They have given us lessons for life. I would extend a special thanks to the trainers who motivated us at every step.",
     name: "Mr. Sonu Kambhire",
     companyLogo: "/Logos/41.jpg",
     companyName: "Mechanical Engineering",
     rating: "★★★★★",
   },
   {
-    review:
-      "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
     name: "Mr. Shubham Borse",
     companyLogo: "/Logos/1.jpg",
     companyName: "Electrical Engineering",
     rating: "★★★★★",
   },
   {
-    review:
-      "Gryphon Academy has changed me for the better. Their encompassing aptitude, soft skills and technical prowess prepared me for industry challenges.",
+    review: "Gryphon Academy has changed me for the better. Their encompassing aptitude, soft skills and technical prowess prepared me for industry challenges.",
     name: "Mr. Niket Gawali ",
     companyLogo: "/Logos/42new.jpg",
     companyName: "Civil Engineering",
     rating: "★★★★★",
   },
   {
-    review:
-      "The trainings on aptitude and soft skills proved to be highly beneficial, equipping us with valuable objects and preparing us knowledge across various subjects for the industry demands.",
+    review: "The trainings on aptitude and soft skills proved to be highly beneficial, equipping us with valuable objects and preparing us knowledge across various subjects for the industry demands.",
     name: "Mr. Kishor Turkane ",
     companyLogo: "/Logos/5.jpg",
     companyName: "Civil Engineering",
     rating: "★★★★★",
   },
   {
-    review:
-      "Gryphon Academy made my placement journey smooth with their informative and simplified teaching style. I'm grateful for the opportunity to learn and gain essential industry skills.",
+    review: "Gryphon Academy made my placement journey smooth with their informative and simplified teaching style. I'm grateful for the opportunity to learn and gain essential industry skills.",
     name: "Mr. Rahul Hiwale ",
     companyLogo: "/Logos/7.jpg",
     companyName: "Mechanical Engineering",
     rating: "★★★★★",
   },
   {
-    review:
-      "Gryphon Academy doesn't just teach; they empower. I owe my career to their exceptional training and the fantastic placement options they offer.",
+    review: "Gryphon Academy doesn't just teach; they empower. I owe my career to their exceptional training and the fantastic placement options they offer.",
     name: "Mr. Chinmay Gosavi",
     companyLogo: "/Logos/43.png",
     companyName: "Finance & Minor - Marketing",
@@ -70,9 +62,20 @@ const cardColors = [
   "#FDEDF2", // very light pink
 ];
 
-
-
 const Testimonials = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      setIsVisible(!document.hidden);
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, []);
+
   const cardStyle = {
     borderRadius: "8px",
     padding: "24px",
@@ -87,7 +90,6 @@ const Testimonials = () => {
     justifyContent: "space-between",
     height: "350px",
     transition: "transform 0.3s",
-   
   };
 
   const logoStyle = {
@@ -111,19 +113,43 @@ const Testimonials = () => {
         </h3>
       </div>
 
-      <div style={{ position: "relative", overflow: "hidden", width: "100%", height: "400px", paddingTop: "20px" }}>
-        <div className="slide" style={{ display: "flex", gap: "1px", animation: "slide 30s linear infinite" }}>
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
+      <div className="testimonials_outer_container" style={{ position: "relative", overflow: "hidden", width: "100%", height: "400px", paddingTop: "20px" }}>
+        <div className={`testimonials_track ${isVisible ? 'testimonials_animate' : ''}`}>
+          {/* First set of testimonials */}
+          {testimonials.map((testimonial, index) => (
             <div
               key={index}
               style={{
                 ...cardStyle,
                 background: `linear-gradient(to bottom, ${cardColors[index % cardColors.length]} 0%, white 100%)`,
-                // Add hover style here
-                '&:hover': {
-                  transform: 'rotate(0deg)', // Reset tilt on hover
-                },
               }}
+              className="testimonial_card"
+            >
+              <div style={logoContainerStyle}>
+                <img src={testimonial.companyLogo} alt={testimonial.companyName} style={logoStyle} />
+              </div>
+              <p style={{ fontSize: "16px", color: "#000000", marginBottom: "8px", fontStyle: "italic", flexGrow: 1 }}>
+                {`"${testimonial.review}"`}
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                <p style={{ color: "#000000", fontWeight: "bold", fontSize: "16px", marginBottom: "0" }}>
+                  {testimonial.name}
+                </p>
+                <p style={{ color: "#000000", fontSize: "14px", marginBottom: "0" }}>
+                  {testimonial.companyName}
+                </p>
+              </div>
+            </div>
+          ))}
+          {/* Duplicate set for seamless loop */}
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={`duplicate-${index}`}
+              style={{
+                ...cardStyle,
+                background: `linear-gradient(to bottom, ${cardColors[index % cardColors.length]} 0%, white 100%)`,
+              }}
+              className="testimonial_card"
             >
               <div style={logoContainerStyle}>
                 <img src={testimonial.companyLogo} alt={testimonial.companyName} style={logoStyle} />
@@ -144,15 +170,40 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <style>
-        {`
-          @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-${testimonials.length * 300}px); }
+      <style>{`
+        .testimonials_track {
+          display: flex;
+          gap: 1px;
+          transform: translateX(calc(-300px * ${testimonials.length}));
+        }
+
+        .testimonials_track.testimonials_animate {
+          animation: testimonials_scroll 30s linear infinite;
+        }
+
+        .testimonial_card:hover {
+          transform: translateY(-5px);
+        }
+
+        @keyframes testimonials_scroll {
+          0% {
+            transform: translateX(calc(-300px * ${testimonials.length}));
           }
-       
-        `}
-      </style>
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .testimonials_outer_container:hover .testimonials_track {
+          animation-play-state: paused;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .testimonials_track {
+            animation: none;
+          }
+        }
+      `}</style>
     </section>
   );
 };

@@ -90,7 +90,7 @@ const challenges = [
     const [hoveredIndex, setHoveredIndex] = useState(null);
   
     useEffect(() => {
-      AOS.init(); // Initialize AOS
+      AOS.init();
     }, []);
   
     const handleMouseEnter = (index) => {
@@ -130,23 +130,23 @@ const challenges = [
                     transform: isHovered ? 'scale(1.05)' : 'scale(1)',
                   }}
                   data-aos="fade-up"
-                  data-aos-duration="800"
-                  data-aos-delay={index * 100}
+                  data-aos-duration="300" // Reduced duration
+                  data-aos-delay={index * 20} // Reduced delay
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className="p-4 mt-(-1)">
-                    <div className="flex items-center mb-2" data-aos="fade-right" data-aos-duration="600" data-aos-delay={index * 100 + 200}>
+                    <div className="flex items-center mb-2" data-aos="fade-right" data-aos-duration="300" data-aos-delay={index * 20 + 100}>
                       <div className="text-4xl text-[#ffc700] mr-3 flex-shrink-0" aria-label={challenge.title}>
                         {challenge.icon}
                       </div>
                       <div className="flex-1">
-                        <h2 className="text-xl font-semibold text-[#ffffff]" data-aos="fade-right" data-aos-duration="600" data-aos-delay={index * 100 + 400}>
+                        <h2 className="text-xl font-semibold text-[#ffffff]" data-aos="fade-right" data-aos-duration="300" data-aos-delay={index * 20 + 200}>
                           {challenge.title}
                         </h2>
                       </div>
                     </div>
-                    <p className="text-[#ffffff] text-base" data-aos="fade-up" data-aos-duration="600" data-aos-delay={index * 100 + 600}>
+                    <p className="text-[#ffffff] text-base" data-aos="fade-up" data-aos-duration="300" data-aos-delay={index * 20 + 300}>
                       <span className="font-semibold text-[#ffc700]">Solution:</span> {challenge.solution}
                     </p>
                   </div>

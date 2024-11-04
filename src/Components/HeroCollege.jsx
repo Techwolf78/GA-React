@@ -23,7 +23,7 @@ const HeroCollege = () => {
         }}
       >
         {/* Responsive spacing for small screens only */}
-        <div className="h-[2vh] sm:h-[5vh] lg:h-[10vh]"></div>
+        <div className="h-[3vh] sm:h-[5vh] lg:h-[10vh]"></div>
 
         {/* Heading Container */}
         <div className="text-center z-10 px-4">

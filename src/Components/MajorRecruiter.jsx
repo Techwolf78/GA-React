@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 const MajorRecruiter = () => {
   const [reverse, setReverse] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  // Manually define the array of logo paths
   const logos = [
     'TopRecruiters/40.jpg',
     'TopRecruiters/1.png',
@@ -36,14 +36,13 @@ const MajorRecruiter = () => {
     </div>
   ));
 
-  // Duplicate the logos with unique keys
   const duplicatedLogos = logos.map((logo, index) => 
     React.cloneElement(logo, { key: `second-${index}` })
   );
 
   useEffect(() => {
     const handleAnimationEnd = (e) => {
-      if (e.animationName === 'scroll') {
+      if (e.animationName === (isMobile ? 'scroll-mobile' : 'scroll')) {
         setReverse(true);
       } else if (e.animationName === 'reverseScroll') {
         setReverse(false);
@@ -53,20 +52,29 @@ const MajorRecruiter = () => {
     const logoSlider = document.querySelector('.logo-slider-track');
     logoSlider.addEventListener('animationend', handleAnimationEnd);
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
     return () => {
       logoSlider.removeEventListener('animationend', handleAnimationEnd);
+      window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="logo-slider-section bg-[#003073] roboto-regular relative">
       {/* Big box on the top left side of the slider */}
-      <div className="info-box absolute top-0 left-0 bg-white p-4 shadow-lg flex items-center h-full">
-        <h2 className="text-[16px] text-[#ffff]">OUR TOP RECRUITERS</h2>
-      </div>
+      {!isMobile && (
+        <div className="info-box absolute top-0 left-0 bg-white p-4 shadow-lg flex items-center h-full">
+          <h2 className="text-[16px] text-[#ffff]">OUR TOP RECRUITERS</h2>
+        </div>
+      )}
 
       <div className="logo-slider relative overflow-hidden w-full">
-        <div className={`logo-slider-track flex ${reverse ? 'reverse' : 'animate-scroll'}`}>
+        <div className={`logo-slider-track flex ${reverse ? 'reverse' : (isMobile ? 'animate-scroll-mobile' : 'animate-scroll')}`}>
           {/* Render both sets of logos */}
           {[...logos, ...duplicatedLogos]}
         </div>
@@ -76,43 +84,46 @@ const MajorRecruiter = () => {
       <style>
         {`
           .logo-slider-section {
-            padding: 0; /* Remove padding */
-            margin: 0; /* Remove margin */
-            position: relative; /* For absolute positioning of the info box */
+            padding: 0;
+            margin: 0;
+            position: relative;
           }
 
           .info-box {
-            z-index: 10; /* Ensure it appears above the slider */
-            width: 130px; /* Set the width of the box for large screens */
-            height: 100%; /* Match height with the slider */
-            display: flex; /* Flexbox to arrange content */
-            align-items: center; /* Center content vertically */
-            padding: 16px; /* Adjust padding as needed for large screens */
-            background-color: #003073; /* Background color */
+            z-index: 10;
+            width: 130px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            background-color: #003073;
           }
 
           @media (max-width: 768px) {
             .info-box {
-              width: 110px; /* Set the width of the box for small screens */
-              padding: 8px; /* Adjust padding for small screens */
+              display: none; /* Hide info box on mobile */
             }
           }
 
           .logo-slider {
-            width: 100%; /* Ensure full width */
+            width: 100%;
           }
 
           .logo-slider-track {
-            display: flex; /* Ensure the logos are in a row */
+            display: flex;
             width: calc(120px * 35); /* Adjust based on the number of logos */
           }
 
           .animate-scroll {
-            animation: scroll 15s linear forwards; /* Start animation */
+            animation: scroll 15s linear forwards; /* Original animation */
+          }
+
+          .animate-scroll-mobile {
+            animation: scroll-mobile 15s linear forwards; /* Fast animation for mobile */
           }
 
           .reverse {
-            animation: reverseScroll 5s linear forwards; /* Reverse animation */
+            animation: reverseScroll 5s linear forwards; /* Reverse animation for mobile */
           }
 
           @keyframes scroll {
@@ -120,9 +131,14 @@ const MajorRecruiter = () => {
             100% { transform: translateX(calc(-120px * 35)); } /* Scroll all logos */
           }
 
+          @keyframes scroll-mobile {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-120px * 20)); } /* Adjust for total logos */
+          }
+
           @keyframes reverseScroll {
             0% { transform: translateX(calc(-120px * 20)); }
-            100% { transform: translateX(0); } /* Scroll back to start */
+            100% { transform: translateX(0); } /* Go back to start */
           }
 
           .logo-slider-track:hover {

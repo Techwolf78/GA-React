@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 
+// Scroll to top function
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Optional: Adds a smooth scroll effect
+  });
+};
+
 // TrainingAbout Component
 const TrainingAbout = () => {
   useEffect(() => {
@@ -137,30 +145,27 @@ const TrainingAbout = () => {
           font-size: 2rem; /* Increase the font size of the icon */
         }
 
-        .training-learn-more-link {
-          display: inline-block;
-          font-size: 0.9rem; /* Adjusted for small screens */
-          color: #FFC80E;
-          text-decoration: none;
-          font-weight: bold;
-          position: relative;
-        }
+       .training-learn-more-link {
+  display: inline-block;
+  font-size: 0.9rem; /* Adjusted for small screens */
+  color: #FFC80E;
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  position: relative;
+  padding: 0.5rem 0.8rem; /* Padding for the button */
+  border: 2px solid #FFC80E; /* Border for the button */
+  border-radius: 20px; /* Rounded corners */
+  background: transparent; /* Transparent background */
+  transition: background 0.3s, color 0.3s;
+}
 
-        .training-learn-more-link::after {
-          content: '';
-          position: absolute;
-          width: 0;
-          height: 2px;
-          background: #FFC80E;
-          left: 0;
-          bottom: -2px;
-          transition: width 1s ease;
-        }
+.training-learn-more-link:hover {
+  background: #FFC80E; /* Light background on hover */
+  color: #000; /* Change text color on hover */
+}
 
-        .training-learn-more-link:hover::after {
-          width: 100%;
-          background: #FFC80E;
-        }
+
+
 
         /* Responsive Styles */
         @media (max-width: 1024px) {
@@ -208,7 +213,7 @@ const TrainingAbout = () => {
           .training-feature-card {
             width: 100%; /* Full width on small screens */
             max-width: none; /* Remove max width to use full width */
-            min-height: 250px; /* Further reduced height for small screens */
+            min-height: 280px; /* Further reduced height for small screens */
             padding: 1rem; /* Adjusted padding */
             margin: 1rem 0; /* Vertical margin for spacing */
           }
@@ -224,7 +229,7 @@ const TrainingAbout = () => {
         }
       `}</style>
 
-      <div className="training-content-wrapper" data-aos="fade-up">
+<div className="training-content-wrapper" data-aos="fade-up">
         <div className="training-left-section">
           <h1 className="training-title-heading roboto-regular">
             OUR 360<sup>°</sup> APPROACH TO SKILL DEVELOPMENT
@@ -233,12 +238,11 @@ const TrainingAbout = () => {
 
         <div className="training-right-section">
           <p className="training-description-paragraph">
-          Gryphon Academy delivers customized training solutions to three specialized streams: Student Trainings, Corporate Trainings, and Faculty Development Programmes (FDP). 
-          
-          Each program combines practical learning, real projects, and hands-on tool experience, ensuring participants gain the required skills in their respective fields.
+            Gryphon Academy delivers customized training solutions to three specialized streams: Student Trainings, Corporate Trainings, and Faculty Development Programmes (FDP). 
+            Each program combines practical learning, real projects, and hands-on tool experience, ensuring participants gain the required skills in their respective fields.
           </p>
           <p className="training-highlighted-text" data-aos="fade-left">
-          OUR TRI-DIMENSIONAL APPROACH
+            OUR TRI-DIMENSIONAL APPROACH
           </p>
         </div>
       </div>
@@ -252,9 +256,9 @@ const TrainingAbout = () => {
             <h4 className="training-feature-title">COLLEGE TRAININGS</h4>
           </div>
           <p className="training-feature-description">
-          Student trainings focuses on building industry-ready skills and job-specific competencies
+            Student trainings focuses on building industry-ready skills and job-specific competencies.
           </p>
-          <Link to="/collegeTraining" className="training-learn-more-link mt-2">
+          <Link to="/collegeTraining" className="training-learn-more-link mt-2" onClick={scrollToTop}>
             LEARN MORE
           </Link>
         </div>
@@ -267,12 +271,9 @@ const TrainingAbout = () => {
             <h4 className="training-feature-title">CORPORATE TRAININGS</h4>
           </div>
           <p className="training-feature-description">
-          Corporate programs enhance workforce capabilities through technical and operational training modules.
+            Corporate programs enhance workforce capabilities through technical and operational training modules.
           </p>
-          <Link
-            to="/corporateTraining"
-            className="training-learn-more-link mt-2"
-          >
+          <Link to="/corporateTraining" className="training-learn-more-link mt-2" onClick={scrollToTop}>
             LEARN MORE
           </Link>
         </div>
@@ -287,9 +288,9 @@ const TrainingAbout = () => {
             </h4>
           </div>
           <p className="training-feature-description">
-          Faculty Development Program equips educators with current industry practices and teaching techniques.
+            Faculty Development Program equips educators with current industry practices and teaching techniques.
           </p>
-          <Link to="/facultyTraining" className="training-learn-more-link mt-2">
+          <Link to="/facultyTraining" className="training-learn-more-link mt-2" onClick={scrollToTop}>
             LEARN MORE
           </Link>
         </div>

@@ -36,13 +36,34 @@ body, html {
   transition: opacity 0.5s ease; /* Adjust for smoother transitions */
 }
 
-.fade-out {
-  opacity: 0; /* Hide the element */
+.first-word, .last-word {
+  transition: text-shadow 0.5s ease; /* Add transition for shadow */
 }
 
 .fade-in {
-  opacity: 1; /* Show the element */
+  opacity: 1;
+  text-shadow: 2px 2px 5px rgba(255, 200, 14, 0.7); /* Shadow effect */
 }
+
+.fade-out {
+  opacity: 0;
+  text-shadow: none; /* Remove shadow during fade-out */
+}
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.fade-in {
+  animation: bounce 0.5s ease forwards; /* Apply bounce animation */
+}
+
 
 @media (max-width: 768px) {
   .hero-text {
@@ -52,20 +73,22 @@ body, html {
 
 
 .progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 8px; /* Adjusted height for thickness */
-  background-color: transparent; /* No background for the container */
-  z-index: 1000; /* Ensure it's above other elements */
+  z-index: 1000;
 }
 
 .progress-bar {
   height: 100%;
-  background-color: #ffcc00; /* Yellow color */
-  transition: width 0.2s; /* Smooth transition for width change */
+  background: #FFC80E;
+  width: 0;
+  transition: width 0.2s ease;
 }
+
 
 /* Navbar Styles */
 .top-navigation {
@@ -131,7 +154,7 @@ body, html {
 
 .stick-top-nav-ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #FFC80E;
   display: inline-block; /* Change to inline-block */
   padding: 10px 15px; /* Use padding for spacing */
   font-size: 16px;
@@ -386,7 +409,7 @@ body, html {
   position: fixed;
   top: 35px;
   right: 60px; /* Default distance from the right side */
-  background: #007bff;
+  background: #FFC80E;
   color: white;
   border: none;
   border-radius: 50%;

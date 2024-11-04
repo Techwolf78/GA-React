@@ -25,12 +25,12 @@ const PartneredCollege = () => {
   return (
     <div className="bg-[#003073] py-8 roboto-regular">
       <div className="container mx-auto px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16">
-        <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold sm:mb-2 md:mb-4 lg:mb-6 xl:mb-8 text-center text-[#ffc700]">
+        <p className="sm:text-3xl lg:text-4xl xl:text-4xl font-bold sm:mb-2 md:mb-4 lg:mb-6 xl:mb-8 text-center text-[#ffc700]">
           PARTNERED COLLEGES
         </p>
 
         <div className="relative overflow-hidden">
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-3 gap-y-5 lg:gap-y-6 gap-x-4">
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-3  lg:gap-y-6 gap-x-4">
             {colleges.map((college, index) => (
               <div key={index} className="flex flex-col items-center overflow-hidden">
                 <div className="h-28 flex items-center">
@@ -42,6 +42,13 @@ const PartneredCollege = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Capsule for "See More" below the logos */}
+          <div className="sm-mt-0 md:mt-4 text-end pr-2">
+            <div className="bg-[#003073] text-white font-semibold text-sm py-1 px-2 rounded-full shadow inline-block hover:scale-105">
+            and many more...
+            </div>
           </div>
         </div>
       </div>

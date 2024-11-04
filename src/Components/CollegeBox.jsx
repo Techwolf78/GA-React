@@ -54,6 +54,12 @@ function CollegeBox() {
       }, 50);
     };
 
+    // Reset counts to 0 before counting up
+    setCollegesCount(0);
+    setTrainersCount(0);
+    setStudentsTrained(0);
+    setTrainingHours(0);
+
     countUp(setCollegesCount, 55, 2000);
     countUp(setTrainersCount, 5, 2000);
     countUp(setStudentsTrained, 60000, 6000);
@@ -74,7 +80,7 @@ function CollegeBox() {
         >
           <div className="flex-1">
             <p className="text-[#ffffff] text-sm md:text-sm lg:text-xl font-medium leading-relaxed lg:pr-1">
-              Our specialized curated industry-specific training programmes for colleges are designed to align with both student needs and job market demands. We conduct thorough evaluations to identify essential skills and incorporate feedback to create relevant learning experiences. By collaborating with industry leaders, we ensure our curriculum reflects current trends, preparing students to be workforce-ready with the subjects and topics they need most. This approach not only enhances student success but also strengthens partnerships between academia and industry.
+              Our specialized curated industry-specific training programmes for students are designed to align with the needs of academic curriculum and job market demands. We conduct thorough & periodic evaluations to identify essential skills and incorporate feedback to create relevant learning experiences. By collaborating with industry leaders, we ensure our curriculum reflects current trends, preparing students to be workforce-ready with the subjects and topics they need most. This approach not only enhances student success but also strengthens partnerships between academia and industry.
             </p>
           </div>
         </div>
