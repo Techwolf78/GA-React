@@ -7,7 +7,7 @@ function CollegeAccreditation() {
         <p 
           className=" sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-2 text-center"
         >
-          PARTNERED COLLEGES ACCREDITATION
+          Partnered Colleges Accreditation
         </p>
 
         {/* Background image for medium and large screens */}

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Blog = () => {
@@ -56,10 +55,10 @@ const Blog = () => {
   };
 
   return (
-    <section className="py-10 px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16 text-center bg-[#091327] roboto-regular">
+    <section className="py-10 px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16 text-center bg-[#01224F] roboto-regular">
       <div className="container mx-auto">
         <p className="text-[#ffc700] mb-12 text-4xl md:text-4xl font-bold">
-          LATEST BLOG POSTS
+          Latest Blog Posts
         </p>
         <div className="flex flex-wrap -mx-4">
           {blogPosts.map((post) => (
@@ -68,7 +67,7 @@ const Blog = () => {
               className="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-4 mb-8"
             >
               <div
-                className="bg-[#003073] border border-gray-300 rounded-2xl overflow-hidden transition-transform transition-shadow hover:scale-105 hover:shadow-xl"
+                className="bg-[#1e3a8a] border border-gray-300 rounded-2xl overflow-hidden transition-transform hover:scale-105 hover:shadow-xl"
                 style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
               >
                 <img

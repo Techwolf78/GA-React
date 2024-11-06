@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Select from 'react-select';  // Import React Select
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [category, setCategory] = useState(null); // State to track selected category
+
+  // Category options for the React Select dropdown
+  const categoryOptions = [
+    { value: 'student', label: 'Student' },
+    { value: 'company', label: 'Company' },
+    { value: 'college', label: 'College' },
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     const formData = new FormData(e.target);
-    
+
     // Add the source as a hidden field
     formData.append('source', 'Contact Form');
+    formData.append('category', category?.value); // Append selected category
 
     fetch('https://script.google.com/macros/s/AKfycbzD2p4mf2qIUGsFQn0kyIfd9RelTaFbzJXaWAzp7TQ03Bd9IELeBA4y4Nl-dv_KbSznlg/exec', {
       method: 'POST',
@@ -22,7 +32,8 @@ const Contact = () => {
         if (data.status === 'success') {
           toast.success('Form successfully submitted!');
           setTimeout(() => {
-            e.target.reset();
+            e.target.reset(); // Reset all form fields except category
+            setCategory(null); // Reset category to placeholder
             setIsSubmitting(false);
           }, 2000);
         } else {
@@ -41,7 +52,7 @@ const Contact = () => {
       <ToastContainer position="top-center" autoClose={3000} hideProgressBar={true} />
 
       {/* Contact Us Section */}
-      <section className="py-16 bg-[#003073] mx-auto mt-6 mb-6 px-8 md:px-16">
+      <section className="py-16 bg-[#01224F] mx-auto mt-6 mb-6 px-8 md:px-16">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-7xl font-bold text-[#ffffff] text-center">
@@ -100,22 +111,43 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Category */}
+              {/* Category (Custom React Select Dropdown) */}
               <div>
                 <label htmlFor="category" className="block mb-1 font-medium text-[#ffffff]">
                   Category
                 </label>
-                <select
+                <Select
                   id="category"
                   name="category"
-                  required
-                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#FFC80E] focus:border-[#FFC80E]"
-                >
-                  <option value="">Select Category</option>
-                  <option value="student">Student</option>
-                  <option value="company">Company</option>
-                  <option value="college">College</option>
-                </select>
+                  value={category}
+                  onChange={setCategory} // Update state on change
+                  options={categoryOptions}
+                  placeholder="Select Category"
+                  className="react-select-container"
+                  classNamePrefix="react-select"
+                  isSearchable={false} // Optional: Disable search functionality
+                  styles={{
+                    control: (styles) => ({
+                      ...styles,
+                      borderColor: '#2e4d80',
+                      borderRadius: '8px',
+                      padding: '2px',
+                      minHeight: '40px',
+                    }),
+                    placeholder: (styles) => ({
+                      ...styles,
+                      color: '#a3a0a0', // Grey color for placeholder
+                    }),
+                    singleValue: (styles) => ({
+                      ...styles,
+                      color: '#091327', // Black color for selected option
+                    }),
+                    option: (styles) => ({
+                      ...styles,
+                      color: '#091327', // Black color for options
+                    }),
+                  }}
+                />
               </div>
 
               {/* Message */}
@@ -146,25 +178,25 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Information Section */}
-      <div className="py-12 bg-[#091327] px-8 md:px-16">
+       {/* Information Section */}
+       <div className="py-12 bg-[#01224F] px-8 md:px-16">
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
           {/* Address */}
-          <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
+          <div className="p-6 text-center bg-[#1e3a8a] rounded-lg shadow-lg transition-transform hover:scale-105">
             <i className="bx bx-location-plus text-4xl text-[#FFC80E] mb-4"></i>
             <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Address</h4>
             <p className="text-[#ffffff]">9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Banglore, Highway Baner, Pune Maharashtra - 411045</p>
           </div>
 
           {/* Phone */}
-          <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
+          <div className="p-6 text-center bg-[#1e3a8a] rounded-lg shadow-lg transition-transform hover:scale-105">
             <i className="bx bx-phone text-4xl text-[#FFC80E] mb-4"></i>
             <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Phone</h4>
             <p className="text-[#ffffff]">+91 89836 14509 / 8983339099</p>
           </div>
 
           {/* Email */}
-          <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
+          <div className="p-6 text-center bg-[#1e3a8a] rounded-lg shadow-lg transition-transform hover:scale-105">
             <i className="bx bx-envelope text-4xl text-[#FFC80E] mb-4"></i>
             <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Email</h4>
             <p className="text-[#ffffff] break-all overflow-wrap-break-word">connect@gryphonacademy.co.in</p>
@@ -173,7 +205,7 @@ const Contact = () => {
       </div>
 
       {/* Get in Touch Section */}
-      <section className="py-24 bg-[#091327] px-8 md:px-16">
+      <section className="py-24 bg-[#01224F] px-8 md:px-16">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
             <iframe

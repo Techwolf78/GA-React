@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Typography } from "@material-tailwind/react";
 
 const ADVISORY_DATA = [
@@ -39,10 +39,10 @@ const Advisory = () => {
   const duplicatedData = [...ADVISORY_DATA, ...ADVISORY_DATA]; // Keep the structure
 
   return (
-    <div className="py-4 bg-[#091327] roboto-regular">
+    <div className="py-4 bg-[#01224F] roboto-regular">
       <div className="mb-8">
         <h2 className="text-center mb-4 font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-4xl text-[#ffc700]">
-          INDUSTRY - ACADEMIA ADVISORY BOARD  
+          Industry - Academia Advisory Board  
         </h2>
         <div className="overflow-hidden relative">
           <div className="flex space-x-6 advisory-scroll" ref={advisoryRef}>
@@ -51,7 +51,7 @@ const Advisory = () => {
                 key={index} 
                 className="bg-white shadow-lg rounded-lg w-64 flex flex-col flex-shrink-0 h-[420px]"
               >
-                <div className="w-full bg-[#003073] h-60">
+                <div className="w-full bg-[#1e3a8a] h-60">
                   <img 
                     src={person.image} 
                     alt={person.name} 

@@ -19,13 +19,13 @@ const AboutIntro = () => {
     <div className="relative overflow-hidden px-4 md:px-8 lg:px-16 py-12 bg-[#e1eaf7]">
       <div className="relative z-10 flex flex-col md:flex-row justify-between mx-auto">
         <div className="flex-1 text-left mb-4 md:mb-0" data-aos="fade-up">
-          <p className="text-xl md:text-2xl text-[#003073] font-bold mb-2">
-            WHAT WE DO
+          <p className="text-xl md:text-2xl text-[#1e3a8a] font-bold mb-2">
+            What We Do
           </p>
           <h1 className="text-3xl md:text-5xl text-[#000000] font-bold" data-aos="fade-up" data-aos-delay="100">
-            WE PROVIDE <span className="text-[#003073]">360</span>
-            <sup className="text-[#003073]">°</sup>
-            <br className="hidden md:block" /> APPROACH.
+            We Provide <span className="text-[#1e3a8a]">360</span>
+            <sup className="text-[#1e3a8a]">°</sup>
+            <br className="hidden md:block" /> Approach.
           </h1>
         </div>
         <div className="flex-1 text-left" data-aos="fade-up" data-aos-delay="200">
@@ -34,7 +34,7 @@ const AboutIntro = () => {
           </p>
           <button
   onClick={handleNavigate}
-  className="inline-block text-base font-bold mt-4 mb-4 border-2 border-[#003073] rounded-lg py-2 px-4 transition duration-300 ease-in-out transform hover:bg-[#FFC80E] hover:text-[#003073] hover:scale-105"
+  className="inline-block text-base font-bold mt-4 mb-4 border-2 border-[#1e3a8a] rounded-lg py-2 px-4 transition duration-300 ease-in-out transform hover:bg-[#FFC80E] hover:text-[#1e3a8a] hover:scale-105"
   data-aos="fade-up"
   data-aos-delay="300"
 >
@@ -66,11 +66,11 @@ const AboutIntro = () => {
             key={index}
             data-aos="zoom-in-up"
             data-aos-delay={index * 200} // Stagger the delays
-            className="bg-[#003073] p-6 border-2 border-dashed border-[#FFC80E] shadow-lg flex flex-col items-center rounded-[20px] flex-1 mb-4 md:mb-0"
+            className="bg-[#1e3a8a] p-6 border-2 border-dashed border-[#FFC80E] shadow-lg flex flex-col items-center rounded-[20px] flex-1 mb-4 md:mb-0"
             style={{ margin: "0 10px", position: "relative", zIndex: 1 }}
           >
             <div className="flex justify-center items-center w-16 h-16 bg-[#FFC80E] rounded-full mb-2 shadow-lg">
-              <i className={`fas fa-${item.icon} text-[#003073] text-3xl`}></i>
+              <i className={`fas fa-${item.icon} text-[#1e3a8a] text-3xl`}></i>
             </div>
             <h4 className="text-lg md:text-xl text-[#ffffff] font-bold mb-2" data-aos="fade-up">
               {item.title}

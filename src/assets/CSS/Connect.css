@@ -1,6 +1,7 @@
 :root {
   --color-text: #ffffff;
   --color-neon: #FFC80E;
+  --color-black: #01224F; /* Define black color */
 }
 
 *,
@@ -24,7 +25,7 @@
 .neon-link-button {
   font-size: 1.5rem; /* Decrease font size */
   border: 0.05em solid var(--color-text); /* Thinner border */
-  color: var(--color-text);
+  color: var(--color-black); /* Set text color to black */
   display: inline-block;
   cursor: pointer;
   border-radius: 0.25em;
@@ -34,12 +35,11 @@
     0 0 0.1em 0.05em var(--color-text),
     inset 0 0 0.1em 0.05em var(--color-text);
   text-shadow: 0 0 0.5em var(--color-neon), 0 0 0.1em var(--color-text);
-  background: transparent;
-  padding: 0.25em 1em; /* Reduce padding */
+  background: var(--color-neon); /* Solid yellow background */
+  padding: 0.25em 1em; /* Reduced padding */
   position: relative;
   margin-top: 20px; /* Added margin for space above */
 }
-
 
 .fade-in {
   opacity: 1;

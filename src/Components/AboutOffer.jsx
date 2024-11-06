@@ -41,9 +41,9 @@ function AboutOffer() {
   ];
 
   return (
-    <div className="bg-[#091327] mx-auto px-4 md:px-8 lg:px-16 py-8">
+    <div className="bg-[#01224F] mx-auto px-4 md:px-8 lg:px-16 py-8">
       <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] text-center mb-4">
-        WHAT WE OFFER
+        What We Offer
       </p>
       <div className="flex flex-col items-start">
         {offers.map((offer, index) => (

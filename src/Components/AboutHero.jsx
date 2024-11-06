@@ -9,7 +9,7 @@ const AboutHero = () => {
 
   return (
     <section 
-      className="bg-[#003073] text-white flex flex-col md:flex-row items-center justify-between py-4"
+      className="bg-[#01224F] text-white flex flex-col md:flex-row items-center justify-between py-4"
     >
       <div className="w-full max-w-screen-lg px-8 md:px-16 flex-1" data-aos="fade-right">
         <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 text-[#FFC80E]">
@@ -24,7 +24,7 @@ const AboutHero = () => {
       </div>
       <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0" data-aos="zoom-in">
         <img 
-          src="/About/heroNew.PNG" // Replace with your vector graphic path
+          src="/About/heroNew1.png" // Replace with your vector graphic path
           alt="Vector Graphic"
           className="max-w-full h-auto"
         />

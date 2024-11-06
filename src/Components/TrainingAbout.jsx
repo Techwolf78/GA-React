@@ -24,7 +24,7 @@ const TrainingAbout = () => {
       <style>{`
         /* Training Overview Section Styles */
         .training-overview-container {
-          background: #091327;
+          background: #01224F;
           padding: 1rem 2rem;
           text-align: center;
           position: relative;
@@ -99,7 +99,7 @@ const TrainingAbout = () => {
         }
 
         .training-feature-card {
-          background: #003073;
+          background: #1e3a8a;
           border-radius: 40px; /* Reduced border radius */
           padding: 2rem; /* Reduced padding */
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -232,7 +232,7 @@ const TrainingAbout = () => {
 <div className="training-content-wrapper" data-aos="fade-up">
         <div className="training-left-section">
           <h1 className="training-title-heading roboto-regular">
-            OUR 360<sup>°</sup> APPROACH TO SKILL DEVELOPMENT
+            Our 360<sup>°</sup> Approach to Skill Development
           </h1>
         </div>
 
@@ -242,7 +242,7 @@ const TrainingAbout = () => {
             Each program combines practical learning, real projects, and hands-on tool experience, ensuring participants gain the required skills in their respective fields.
           </p>
           <p className="training-highlighted-text" data-aos="fade-left">
-            OUR TRI-DIMENSIONAL APPROACH
+          Our Tri-Dimensional Approach
           </p>
         </div>
       </div>
@@ -253,7 +253,7 @@ const TrainingAbout = () => {
             <div className="training-feature-icon flex items-center justify-center w-16 h-16 bg-yellow-500 rounded-full">
               <i className="fas fa-graduation-cap text-gray-800 text-2xl"></i>
             </div>
-            <h4 className="training-feature-title">COLLEGE TRAININGS</h4>
+            <h4 className="training-feature-title">College Trainings</h4>
           </div>
           <p className="training-feature-description">
             Student trainings focuses on building industry-ready skills and job-specific competencies.
@@ -268,7 +268,7 @@ const TrainingAbout = () => {
             <div className="training-feature-icon flex items-center justify-center w-16 h-16 bg-yellow-500 rounded-full">
               <i className="fas fa-briefcase text-gray-800 text-2xl"></i>
             </div>
-            <h4 className="training-feature-title">CORPORATE TRAININGS</h4>
+            <h4 className="training-feature-title">Corporate Trainings</h4>
           </div>
           <p className="training-feature-description">
             Corporate programs enhance workforce capabilities through technical and operational training modules.
@@ -284,7 +284,7 @@ const TrainingAbout = () => {
               <i className="fas fa-chalkboard-teacher text-gray-800 text-2xl"></i>
             </div>
             <h4 className="training-feature-title">
-              FACULTY <br /> DEVELOPMENT PROGRAMMES
+              Faculty <br /> Development Programmes
             </h4>
           </div>
           <p className="training-feature-description">

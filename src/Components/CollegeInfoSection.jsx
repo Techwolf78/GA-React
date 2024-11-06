@@ -14,7 +14,7 @@ const CollegeInfoSection = () => {
   ];
 
   return (
-    <section className="bg-[#122949] text-white mx-auto px-8 sm:px-8 md:px-16 lg:px-16 py-4">
+    <section className="bg-[#01224F] text-white mx-auto px-8 sm:px-8 md:px-16 lg:px-16 py-4">
       <div className="flex flex-col md:flex-row justify-start items-start space-x-0 md:space-x-4 space-y-4 md:space-y-0">
         {points.map((text, index) => (
           <div

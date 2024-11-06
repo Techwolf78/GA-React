@@ -8,7 +8,7 @@ const trainingPageLink = '/collegetraining#course-section';
 
 const BrochureSection = () => {
   return (
-    <div className="flex flex-col items-center justify-center mx-auto px-8 sm:px-8 md:px-16 lg:px-16 py-4 bg-[#003073]">
+    <div className="flex flex-col items-center justify-center mx-auto px-8 sm:px-8 md:px-16 lg:px-16 py-4 bg-[#01224F]">
       <style>
         {`
           .bg-brochure {
@@ -29,7 +29,7 @@ const BrochureSection = () => {
         {/* Circle for Hiring Icon */}
         <div className="flex-none w-full md:w-1/3 flex justify-center md:justify-start mb-4 md:mb-0">
           <div className="flex items-center justify-center h-20 w-20 rounded-full bg-white">
-            <FontAwesomeIcon icon={faUserGraduate} className="h-12 w-12 text-[#003073]" />
+            <FontAwesomeIcon icon={faUserGraduate} className="h-12 w-12 text-[#01224F]" />
           </div>
         </div>
         <div className="flex-none w-full md:w-2/3 flex flex-col items-center md:items-end text-white">
@@ -53,7 +53,7 @@ const BrochureSection = () => {
         {/* Circle for Hiring Icon */}
         <div className="flex-none w-full flex justify-center mb-4">
           <div className="flex items-center justify-center h-20 w-20 rounded-full bg-white">
-            <FontAwesomeIcon icon={faUserGraduate} className="h-12 w-12 text-[#003073]" />
+            <FontAwesomeIcon icon={faUserGraduate} className="h-12 w-12 text-[#01224F]" />
           </div>
         </div>
         <div className="flex-none w-full flex flex-col items-center text-white">

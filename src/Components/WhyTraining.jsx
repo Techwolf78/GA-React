@@ -17,7 +17,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function WhyTraining() {
-  const lightBlue = '#003073'; 
+  const lightBlue = '#2563eb'; 
   const darkGray = '#333333'; 
 
   const items = [
@@ -46,11 +46,11 @@ function WhyTraining() {
     <div className="roboto-regular">
       <main className="flex-1 py-8">
         <div className="container mx-auto px-8 md:px-12">
-          <div className="flex flex-col lg:flex-row bg-[#003073] rounded-2xl shadow-lg p-6">
+          <div className="flex flex-col lg:flex-row bg-[#1e3a8a] rounded-2xl shadow-lg p-6">
             {/* Left Content */}
             <div className="flex-1 mb-6 lg:mb-0 flex flex-col items-center lg:items-start w-full lg:w-3/12">
               <p
-                className="text-1xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold mb-4 text-center lg:text-left text-transform: uppercase tracking-wider"
+                className="text-1xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold mb-4 text-center lg:text-left "
                 style={{ color: '#FFC80E' }}
               >
                 How This Training Creates Industry Fit?

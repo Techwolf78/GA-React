@@ -83,7 +83,7 @@ const CorporateApproach = () => {
   ];
 
   return (
-    <div ref={ref} className="corporate-approach-container bg-[#091327] py-4 roboto-regular">
+    <div ref={ref} className="corporate-approach-container bg-[#01224F] py-4 roboto-regular">
       <div className="corporate-approach-content container mx-auto px-8 sm:px-8 md:px-16 lg:px-16">
         <div className="corporate-approach-header flex flex-col items-center mb-12">
           <h1
@@ -91,7 +91,7 @@ const CorporateApproach = () => {
             data-aos="fade-up" // AOS effect for the header
             data-aos-duration="600" // Animation duration
           >
-            THE APPROACH
+            The Approach
           </h1>
         </div>
 

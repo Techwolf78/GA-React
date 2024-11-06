@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useInView } from "react-intersection-observer";
+import PropTypes from 'prop-types';
 
 // Testimonials Data
 const testimonials = [
@@ -99,12 +100,24 @@ const TestimonialCard = ({ testimonial }) => (
   </div>
 );
 
+// Prop Types validation for TestimonialCard
+TestimonialCard.propTypes = {
+  testimonial: PropTypes.shape({
+    message: PropTypes.string.isRequired,
+    profilePic: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    institution: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+
 // Testimonials Component
 const Testimonials = () => {
   return (
     <div className="w-full lg:w-1/2 p-4 hidden sm:block">
       <h2 className="text-3xl font-bold text-center mb-6 text-white">
-        COLLEGE TESTIMONIALS
+        College Testimonials
       </h2>
       <div className="relative overflow-hidden sm:h-[60vh] xs:h-[60vh] md:h-[60vh] lg:h-[100vh]">
         <div className="flex flex-col animate-slide">
@@ -253,7 +266,7 @@ const ContactForm = () => {
             <div className="w-full p-4 lg:p-6 bg-gradient-to-r from-blue-800 to-blue-600 rounded-lg shadow-lg text-white overflow-auto mt-20">
               <div className="w-full lg:h-auto flex flex-col lg:flex-row justify-between items-center mb-4 relative p-4">
                 <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-center text-white mb-4 lg:mb-0 lg:mr-4 flex-1">
-                  Join Gryphon Academy's FDP today and embark on a{" "}
+                  Join Gryphon Academy&apos;s FDP today and embark on a{" "}
                   <span className="text-[#FFC80E]">transformative </span>
                   <br />
                   journey towards academic{" "}
@@ -365,6 +378,7 @@ const ContactForm = () => {
     </>
   );
 };
+
 // Input, Select, and Textarea Fields
 
 const InputField = ({
@@ -393,6 +407,18 @@ const InputField = ({
   </div>
 );
 
+// Prop Types validation
+InputField.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  fadeInStyle: PropTypes.object,
+};
+
+
 const SelectField = ({ label, name, value, onChange, fadeInStyle }) => (
   <div style={fadeInStyle}>
     <label className="visually-hidden" htmlFor={name}>
@@ -404,15 +430,41 @@ const SelectField = ({ label, name, value, onChange, fadeInStyle }) => (
       value={value}
       onChange={onChange}
       required
-      className="w-full border border-gray-300 rounded-lg p-1 lg:p-2 text-black focus:ring-2 focus:ring-yellow-400 transition-all"
+      className="w-full border border-gray-300 rounded-lg p-1 lg:p-2 text-black focus:ring-2 focus:ring-yellow-400 transition-all bg-white"
+      style={{
+        backgroundColor: 'white', // Keeps the background white
+        color: value === '' ? '#9da0a6' : '#1F2937', // Gray color for placeholder text, black for other options
+        padding: '0.5rem', // Optional padding to space the text
+        fontSize: '1rem', // Optional font size adjustment
+        borderRadius: '0.375rem', // Tailwind's rounded-lg equivalent
+      }}
     >
-      <option value="">Select Category</option>
-      <option value="college">College</option>
-      <option value="corporate">Corporate</option>
-      <option value="university">University</option>
+      <option value="" disabled className="text-gray-500">
+        Select Category
+      </option>
+      <option value="college" className="text-black">
+        College
+      </option>
+      <option value="corporate" className="text-black">
+        Corporate
+      </option>
+      <option value="university" className="text-black">
+        University
+      </option>
     </select>
   </div>
 );
+
+// Prop Types validation
+SelectField.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  fadeInStyle: PropTypes.object,
+};
+
+
 
 const TextareaField = ({
   label,
@@ -438,5 +490,16 @@ const TextareaField = ({
     ></textarea>
   </div>
 );
+
+// Prop Types validation
+TextareaField.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  fadeInStyle: PropTypes.object,
+};
+
 
 export default ContactForm;

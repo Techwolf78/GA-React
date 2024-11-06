@@ -79,9 +79,9 @@ const LearningOutcomes = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-[#091327] flex flex-col items-center roboto-regular px-8 md:px-16">
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 text-[#FFC80E]">
-        LEARNING OUTCOMES OF OUR TRAININGS
+    <div className="p-4 bg-[#01224F] flex flex-col items-center roboto-regular px-8 md:px-16">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold mb-6 text-[#FFC80E]">
+      Learning Outcomes of Our Trainings
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl">
         {departments.map((dept, index) => (
@@ -97,7 +97,7 @@ const LearningOutcomes = () => {
           >
             <div className="flip-card-inner" style={{ height: cardHeight || 'auto' }}>
               <motion.div 
-                className="flip-card-front bg-[#003073] text-white shadow-md rounded-3xl flex flex-col items-center justify-center p-6"
+                className="flip-card-front bg-[#1e3a8a] text-white shadow-md rounded-3xl flex flex-col items-center justify-center p-6"
                 style={{ height: cardHeight || 'auto' }}
               >
                 <span className="mb-4">{dept.icon}</span>

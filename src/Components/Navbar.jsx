@@ -55,7 +55,10 @@ const Navbar = () => {
     <>
       <header
         className={`fixed top-0 left-0 w-full flex justify-between items-center px-8 md:px-16 py-2 z-50`}
-        style={{ backgroundColor: `rgba(9, 19, 39, ${navbarOpacity})`, color: navbarOpacity < 1 ? '#ffffff' : '#ffffff' }}
+        style={{
+          backgroundColor: `rgba(1, 34, 79, ${navbarOpacity})`, // Start with #01224F background color
+          color: navbarOpacity < 1 ? '#ffffff' : '#ffffff', // Ensures text is white
+        }}
       >
         <a className="navbar-brand" href="/">
           <img
@@ -89,7 +92,7 @@ const Navbar = () => {
             </button>
 
             {isDropdownOpen && (
-              <div className="absolute top-full left-0 mt-0 bg-[#ffc700] text-[#1a1a1a] rounded-md shadow-lg z-50 whitespace-nowrap">
+              <div className="absolute top-full left-0 mt-0 bg-[#ffffff] text-[#1a1a1a] rounded-md shadow-lg z-50 whitespace-nowrap">
                 {['Industry Readiness Program', 'Corporate Training', 'Faculty Training'].map((item) => (
                   <a
                     key={item}
@@ -126,7 +129,7 @@ const Navbar = () => {
             className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
-            BLOG
+            BLOGS
           </a>
         </nav>
 
@@ -140,76 +143,76 @@ const Navbar = () => {
           </button>
         </div>
 
-   {/* Sidebar */}
-<div
-  className={`fixed top-0 left-0 h-full bg-white bg-opacity-90 text-black z-40 overflow-x-hidden transition-all duration-300 transform ${isSidebarOpen ? "translate-x-0 w-full" : "-translate-x-full w-0"}`}
->
-  <button
-    className="absolute top-2 right-2 w-12 h-12 rounded-full bg-[#ffc700] flex items-center justify-center text-black text-4xl focus:outline-none"
-    onClick={toggleSidebar}
-  >
-    &times;
-  </button>
-  <a
-    href="/"
-    className="block py-3 pl-8 hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
-    onClick={handleSidebarItemClick}
-  >
-    Home
-  </a>
-  <div>
-    <a
-      href="/training"
-      className="block py-3 pl-8 hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
-      onClick={handleSidebarItemClick}
-    >
-      Learning & Development
-    </a>
-    {/* Sub-links for Training */}
-    <a
-      href="/collegeTraining"
-      className="block py-2 pl-12 hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
-      onClick={handleSidebarItemClick}
-    >
-      Industry Readiness Program
-    </a>
-    <a
-      href="/corporateTraining"
-      className="block py-2 pl-12 hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
-      onClick={handleSidebarItemClick}
-    >
-      Corporate Training
-    </a>
-    <a
-      href="/facultyTraining"
-      className="block py-2 pl-12 hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
-      onClick={handleSidebarItemClick}
-    >
-      Faculty Training
-    </a>
-  </div>
-  <a
-    href="/placement"
-    className="block py-3 pl-8 hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
-    onClick={handleSidebarItemClick}
-  >
-    Campus Placement
-  </a>
-  <a
-    href="/brandPositioning"
-    className="block py-3 pl-8 hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
-    onClick={handleSidebarItemClick}
-  >
-    Cross Brand Positioning
-  </a>
-  <a
-    href="/blogs"
-    className="block py-3 pl-8 hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
-    onClick={handleSidebarItemClick}
-  >
-    Blogs
-  </a>
-</div>
+        {/* Sidebar */}
+        <div
+          className={`fixed top-0 left-0 h-full bg-white bg-opacity-90 text-black z-40 overflow-x-hidden transition-all duration-300 transform ${isSidebarOpen ? "translate-x-0 w-full" : "-translate-x-full w-0"}`}
+        >
+          <button
+            className="absolute top-2 right-2 w-12 h-12 rounded-full bg-[#ffc700] flex items-center justify-center text-black text-4xl focus:outline-none"
+            onClick={toggleSidebar}
+          >
+            &times;
+          </button>
+          <a
+            href="/"
+            className="block py-3 pl-8 hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+            onClick={handleSidebarItemClick}
+          >
+            Home
+          </a>
+          <div>
+            <a
+              href="/training"
+              className="block py-3 pl-8 hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+              onClick={handleSidebarItemClick}
+            >
+              Learning & Development
+            </a>
+            {/* Sub-links for Training */}
+            <a
+              href="/collegeTraining"
+              className="block py-2 pl-12 hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
+              onClick={handleSidebarItemClick}
+            >
+              Industry Readiness Program
+            </a>
+            <a
+              href="/corporateTraining"
+              className="block py-2 pl-12 hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
+              onClick={handleSidebarItemClick}
+            >
+              Corporate Training
+            </a>
+            <a
+              href="/facultyTraining"
+              className="block py-2 pl-12 hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
+              onClick={handleSidebarItemClick}
+            >
+              Faculty Training
+            </a>
+          </div>
+          <a
+            href="/placement"
+            className="block py-3 pl-8 hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+            onClick={handleSidebarItemClick}
+          >
+            Campus Placement
+          </a>
+          <a
+            href="/brandPositioning"
+            className="block py-3 pl-8 hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+            onClick={handleSidebarItemClick}
+          >
+            Cross Brand Positioning
+          </a>
+          <a
+            href="/blogs"
+            className="block py-3 pl-8 hover:bg-[#ffc700] hover:text-[#1a1a1a] transition-colors duration-300"
+            onClick={handleSidebarItemClick}
+          >
+            Blogs
+          </a>
+        </div>
 
       </header>
 

@@ -41,7 +41,7 @@ function WhyTraining() {
                 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-extrabold mb-4 text-center lg:text-left tracking-widest" // Use tracking-widest for more letter spacing
                 style={{ color: highlightYellow }}
               >
-                WHAT DO OUR FDP MODULES INCLUDE?
+                What Do Our FDP Modules Include?
               </p>
 
               <div className="flex items-center justify-center">

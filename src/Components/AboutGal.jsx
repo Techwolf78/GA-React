@@ -55,8 +55,8 @@ const ImageGallery = () => {
   return (
     <div className="flex flex-col items-center justify-center py-10 bg-white roboto-regular">
       <div className="flex w-full mb-8 items-center justify-center text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#091327]">
-          Team <span className="text-4xl md:text-5xl font-semibold text-[#003073]">Galleries</span>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#01224F]">
+          Team <span className="text-4xl md:text-5xl font-semibold text-[#1e3a8a]">Galleries</span>
         </h1>
       </div>
 

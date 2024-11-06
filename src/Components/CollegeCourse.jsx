@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
+import PropTypes from "prop-types";
 
 // Define the courses object directly in this file
 const courses = {
@@ -70,32 +71,50 @@ const courses = {
   ],
 };
 
+// CourseCard Component
 const CourseCard = React.forwardRef(
-  ({ src, alt, title, widthClass, heightClass, aos, aosDelay }, ref) => (
-    <div
-      className={`p-1 ${widthClass} ${heightClass}`}
-      data-aos={aos} // AOS effect for cards
-      data-aos-delay={aosDelay} // Staggered delay
-    >
-      <div className="bg-[#003073] overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
-        <div className="flex-grow flex items-center justify-center">
-          <img src={src} alt={alt} className="max-h-40 w-auto object-contain" />
+  ({ src, alt, title, widthClass, heightClass, aos, aosDelay }, ref) => {
+    return (
+      <div
+        className={`p-1 ${widthClass} ${heightClass}`}
+        data-aos={aos} // AOS effect for cards
+        data-aos-delay={aosDelay} // Staggered delay
+      >
+        <div className="bg-[#1e3a8a] overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
+          <div className="flex-grow flex items-center justify-center">
+            <img src={src} alt={alt} className="max-h-40 w-auto object-contain" />
+          </div>
+          <div
+            ref={ref}
+            className="bg-[#1e3a8a] text-white text-center font-extrabold text-lg flex items-center justify-center"
+            style={{ minHeight: "60px", overflow: "hidden" }}
+            dangerouslySetInnerHTML={{ __html: title }} // Use dangerouslySetInnerHTML
+          />
         </div>
-        <div
-          ref={ref}
-          className="bg-[#003073] text-white text-center font-extrabold text-lg flex items-center justify-center"
-          style={{ minHeight: "60px", overflow: "hidden" }}
-          dangerouslySetInnerHTML={{ __html: title }} // Use dangerouslySetInnerHTML
-        />
       </div>
-    </div>
-  )
+    );
+  }
 );
+
+// Set displayName for debugging
+CourseCard.displayName = "CourseCard";
+
+// Prop types for the CourseCard component
+CourseCard.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  widthClass: PropTypes.string.isRequired,
+  heightClass: PropTypes.string.isRequired,
+  aos: PropTypes.string.isRequired,
+  aosDelay: PropTypes.string.isRequired,
+};
 
 const CollegeCourse = () => {
   const softSkillsRefs = useRef([]);
   const aptitudeRefs = useRef([]);
 
+  // Set maximum height for cards to align their heights
   const setMaxHeight = (refs) => {
     const heights = refs.map((ref) => (ref ? ref.offsetHeight : 0));
     const maxHeight = Math.max(...heights);
@@ -111,15 +130,15 @@ const CollegeCourse = () => {
     AOS.init({ duration: 1000, once: false }); // Initialize AOS
     setMaxHeight(softSkillsRefs.current);
     setMaxHeight(aptitudeRefs.current);
-  }, []);
+  }, []); // Run only once after initial render
 
   return (
-    <section className="bg-[#091327] py-6 roboto-regular">
+    <section className="bg-[#01224F] py-6 roboto-regular">
       <div className="container mx-auto px-8 sm:px-16">
         <div className="mb-4 text-center">
-          <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#ffc700] mb-1 uppercase">
+          <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#ffc700] mb-1 ">
             <span className="relative inline-block">
-            Industry Readiness Programme Includes
+              Industry Readiness Programme Includes
               <span className="absolute left-0 right-0 h-[1px] bg-[#ffffff] bottom-0 mx-auto"></span>
             </span>
           </p>
@@ -128,14 +147,14 @@ const CollegeCourse = () => {
         {/* Soft Skills Section */}
         <div className="mb-4 text-center">
           <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#ffc700] mb-1">
-            INTER - PERSONAL SKILLS
+            Inter - Personal Skills
           </p>
 
-          <div className="flex flex-wrap justify-center lg:justify-start">
+          <div className="flex flex-wrap justify-center lg:justify-start items-start">
             {courses.softSkills.map((course, index) => (
               <CourseCard
                 key={index}
-                ref={(el) => (softSkillsRefs.current[index] = el)}
+                ref={(el) => (softSkillsRefs.current[index] = el)} // Assign ref to each element
                 {...course}
                 widthClass="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/6"
                 heightClass="h-auto"
@@ -143,33 +162,30 @@ const CollegeCourse = () => {
                 aosDelay={`${index * 100}`} // Staggered delay
               />
             ))}
-            {/* Extra Course Button on the Right Side */}
-            <div
-              className="p-1 w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/12 flex justify-start lg:ml-auto items-center"
+            {/* Extra Course Text on the Right Side */}
+            <p
+              className="p-1 w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/12 text-right text-[#ffc700] font-extrabold text-xs sm:text-sm cursor-pointer hover:underline hover:scale-105 transition-all duration-300 ml-auto"
               style={{
                 whiteSpace: "nowrap",
                 flexShrink: 0,
-                transition: "all 0.3s ease",
               }}
             >
-              <div className="bg-[#003073] text-white text-center font-extrabold text-xs sm:text-sm flex items-center justify-center rounded-lg py-2 px-3 hover:shadow-xl hover:scale-105 hover:translate-y-[-2px] active:scale-95 active:translate-y-[2px]">
-                <span className="mr-1">+ Many More….</span>
-              </div>
-            </div>
+              + Many More….
+            </p>
           </div>
         </div>
 
         {/* Aptitude Section */}
         <div className="mb-4 text-center">
           <p className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#ffc700] mb-1">
-            APTITUDE
+            Aptitude
           </p>
 
-          <div className="flex flex-wrap justify-center lg:justify-start">
+          <div className="flex flex-wrap justify-center lg:justify-start items-start">
             {courses.aptitude.map((course, index) => (
               <CourseCard
                 key={index}
-                ref={(el) => (aptitudeRefs.current[index] = el)}
+                ref={(el) => (aptitudeRefs.current[index] = el)} // Assign ref to each element
                 {...course}
                 widthClass="w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/6"
                 heightClass="h-auto"
@@ -177,19 +193,16 @@ const CollegeCourse = () => {
                 aosDelay={`${index * 100}`} // Staggered delay
               />
             ))}
-            {/* Extra Course Button on the Right Side */}
-            <div
-              className="p-1 w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/12 flex justify-start lg:ml-auto items-center"
+            {/* Extra Course Text on the Right Side */}
+            <p
+              className="p-1 w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/12 text-right text-[#ffc700] font-extrabold text-xs sm:text-sm cursor-pointer hover:underline hover:scale-105 transition-all duration-300 ml-auto"
               style={{
                 whiteSpace: "nowrap",
                 flexShrink: 0,
-                transition: "all 0.3s ease",
               }}
             >
-              <div className="bg-[#003073] text-white text-center font-extrabold text-xs sm:text-sm flex items-center justify-center rounded-lg py-2 px-3 hover:shadow-xl hover:scale-105 hover:translate-y-[-2px] active:scale-95 active:translate-y-[2px]">
-                <span className="mr-1">+ Many More….</span>
-              </div>
-            </div>
+              + Many More….
+            </p>
           </div>
         </div>
       </div>

@@ -2,11 +2,11 @@ import React from "react";
 
 const HookLine = () => {
   const hookLines = [
-    <span><strong className="font-semibold roboto-regular">ZERO COST INVOLVED</strong> During All Stages of Recruitment</span>,
-    <span> <strong>Industry-aligned customized</strong> training programmes</span>,
-    <span>Direct engagement <strong>without vendor registration</strong> or <strong>empanelment fees</strong></span>,
+    <span key="0"><strong className="font-semibold roboto-regular">Zero Cost Involved</strong> During All Stages of Recruitment</span>,
+    <span key="1"><strong>Industry-Aligned Customized</strong> Training Programmes</span>,
+    <span key="2">Direct Engagement <strong>Without Vendor Registration</strong> or <strong>Empanelment Fees</strong></span>,
   ];
-
+  
   // Duplicate the hookLines to create the infinite effect
   const combinedHookLines = [...hookLines, ...hookLines];
 

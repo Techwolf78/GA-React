@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const headings = [
-  "ACCESS A DIVERSE POOL OF READY-TO-WORK CANDIDATES",
-  "YOUR PREMIER PARTNER FOR RECRUITING FRESH TALENT",
-  "FIND PASSIONATE READY TALENT TO ELEVATE YOUR BRAND"
+  "Access A Diverse Pool Of Ready-To-Work Candidates",
+  "Your Premier Partner For Recruiting Fresh Talent",
+  "Find Passionate Ready Talent To Elevate Your Brand"
 ];
+
 
 
 const HeroPlacement = () => {
@@ -27,7 +28,7 @@ const HeroPlacement = () => {
   }, [currentIndex]); // Dependency on currentIndex
 
   return (
-    <div className="relative bg-[#003073] z-10 w-full roboto-regular lg:max-h-[80vh] lg:h-[80vh]">
+    <div className="relative bg-[#01224F] z-10 w-full roboto-regular lg:max-h-[80vh] lg:h-[80vh]">
       <style>
         {`
           @keyframes slide-in {
@@ -110,7 +111,7 @@ const HeroPlacement = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-[#003073] opacity-85" />
+        <div className="absolute inset-0 bg-[#01224F] opacity-85" />
 
         {/* Stacked Text and Banner */}
         <div className="absolute flex flex-col items-center justify-center h-full">

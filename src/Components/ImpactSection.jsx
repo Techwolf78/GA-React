@@ -13,7 +13,7 @@ const ImpactSection = () => {
   }, []);
 
   const statCardStyle = {
-    backgroundColor: '#003073',
+    backgroundColor: '#1e3a8a',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     borderRadius: '8px',
     padding: '1.5rem',
@@ -29,8 +29,8 @@ const ImpactSection = () => {
 
   return (
     <div id="stats" className="py-8 bg-[#e1eaf7]">
-      <h3 className="text-3xl sm:text-4xl font-bold text-center mb-4 md:mb-8" style={{ color: '#003073' }}>
-        OUR IMPACT
+      <h3 className="text-3xl sm:text-4xl font-bold text-center mb-4 md:mb-8" style={{ color: '#1e3a8a' }}>
+        Our Impact
       </h3>
       <div className="stats-wrapper flex flex-wrap justify-center gap-8">
         {[

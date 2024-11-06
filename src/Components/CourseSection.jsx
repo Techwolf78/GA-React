@@ -436,7 +436,7 @@ const courses = {
         "Develop skills in mobile, web, and system software development.",
         "Apply algorithms and data structures to optimize software solutions.",
       ],
-      image: "Course/MCA/Programming Languages.png",
+      image: "Course/MCA/PL.png",
     },
     {
       title: "Data Structures & Algorithms (DSA)",
@@ -447,7 +447,7 @@ const courses = {
         "Prepare for technical interviews with coding challenges.",
         "Implement algorithmic solutions in real-world applications.",
       ],
-      image: "Course/MCA/DSA.png",
+      image: "Course/MCA/DSAA.png",
     },
     {
       title: "Data Science",
@@ -458,7 +458,7 @@ const courses = {
         "Develop skills in deep learning and AI applications.",
         "Use data visualization tools to interpret results.",
       ],
-      image: "Course/MCA/Data Science.png",
+      image: "Course/MCA/DS.png",
     },
     {
       title: "Software Development",
@@ -469,7 +469,7 @@ const courses = {
         "Implement version control and continuous integration.",
         "Perform software testing and debugging for reliable solutions.",
       ],
-      image: "Course/MCA/App Development.png",
+      image: "Course/MCA/SD.png",
     },
     {
       title: "Networking Administration",
@@ -480,7 +480,7 @@ const courses = {
         "Understand cloud computing architectures and services.",
         "Monitor and troubleshoot networks for efficient performance.",
       ],
-      image: "Course/MCA/Networking Administration.png",
+      image: "Course/MCA/NA.png",
     },
     {
       title: "Linux",
@@ -491,7 +491,7 @@ const courses = {
         "Implement network services like DNS, FTP, and web servers on Linux.",
         "Perform system security and updates for Linux environments.",
       ],
-      image: "Course/MCA/Linux.png",
+      image: "Course/MCA/LI.png",
     },
   ],
   BBA: [
@@ -515,7 +515,7 @@ const courses = {
         "Develop skills in procurement and supplier management.",
         "Implement technology in logistics for better efficiency.",
       ],
-      image: "Course/logi1.PNG",
+      image: "Course/logiTRY.png",
     },
     {
       title: "Finance",
@@ -526,7 +526,7 @@ const courses = {
         "Understand risk management and financial planning.",
         "Develop skills in accounting and financial reporting.",
       ],
-      image: "Course/FIN.png",
+      image: "Course/FINtry.png",
     },
     {
       title: "Digital Marketing",
@@ -537,7 +537,7 @@ const courses = {
         "Implement tools like Google Analytics and AdWords.",
         "Understand e-commerce and digital branding.",
       ],
-      image: "Course/DM.png",
+      image: "Course/dmtry.png",
     },
     {
       title: "Mass Media Communication",
@@ -548,7 +548,7 @@ const courses = {
         "Develop skills in journalism and news reporting.",
         "Implement audience research for targeted communication.",
       ],
-      image: "Course/MMC.png",
+      image: "Course/mmctry.png",
     },
     {
       title: "Organizational Behavior",
@@ -559,7 +559,7 @@ const courses = {
         "Develop strategies for conflict resolution and communication.",
         "Implement management practices for employee engagement.",
       ],
-      image: "Course/OB.png",
+      image: "Course/obtry.png",
     },
   ],
   DIPLOMA: [
@@ -572,7 +572,7 @@ const courses = {
         "Develop skills in maintenance and troubleshooting of mechanical systems.",
         "Apply theoretical knowledge to practical projects and industry scenarios.",
       ],
-      image: "Course/MECHD.png",
+      image: "Course/mdtry.png",
     },
     {
       title: "Civil Diploma",
@@ -583,7 +583,7 @@ const courses = {
         "Develop skills in structural analysis and design for small projects.",
         "Implement project management techniques for civil construction projects.",
       ],
-      image: "Course/CIVD.png",
+      image: "Course/civtry.png",
     },
     {
       title: "Electrical Diploma",
@@ -594,7 +594,7 @@ const courses = {
         "Develop skills in troubleshooting and repairing electrical equipment.",
         "Gain knowledge of industrial automation, PLC, and SCADA systems.",
       ],
-      image: "Course/ELECD.png",
+      image: "Course/electry.png",
     },
     {
       title: "IT Diploma",
@@ -605,7 +605,7 @@ const courses = {
         "Develop skills in networking and system administration.",
         "Apply IT concepts to practical software development and troubleshooting projects.",
       ],
-      image: "Course/ITD.png",
+      image: "Course/ittry.png",
     },
     {
       title: "Automobile Diploma",
@@ -616,7 +616,7 @@ const courses = {
         "Develop skills in the use of diagnostic tools and technology.",
         "Implement knowledge of automotive electronics and hybrid vehicles.",
       ],
-      image: "Course/AUTOD.png",
+      image: "Course/autotry.png",
     },
   ],
 
@@ -686,7 +686,7 @@ const courses = {
         "Understand German culture and customs.",
         "Develop skills for reading, writing, and listening in German.",
       ],
-      image: "Course/GER1.png",
+      image: "Course/gertry.png",
     },
     {
       title: "Japanese Language Basics",
@@ -697,7 +697,7 @@ const courses = {
         "Understand Japanese culture and etiquette.",
         "Develop reading and writing skills for simple texts.",
       ],
-      image: "Course/JAP1.png",
+      image: "Course/japtry.png",
     },
   ],
   
@@ -724,7 +724,8 @@ const CourseSection = () => {
   const [accordionOpen, setAccordionOpen] = useState(null);
   const [formVisible, setFormVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false); // State for submission
-
+  const [isImageLoaded, setIsImageLoaded] = useState(false); // Track image load state
+  
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -736,6 +737,10 @@ const CourseSection = () => {
   
   const [downloadButtonVisible, setDownloadButtonVisible] = useState(true);
   const cardRefs = useRef([]);
+
+  const handleImageLoad = () => {
+    setIsImageLoaded(true); // Image has loaded
+  };
 
   const changeCourse = (courseKey) => {
     if (courseKey !== selectedCourse) {
@@ -818,63 +823,61 @@ const CourseSection = () => {
   const isMobile = window.innerWidth < 1024;
 
   return (
-    <section className="mx-auto px-8 sm:px-16 bg-[#091327] roboto-regular">
+    <section className="mx-auto px-8 sm:px-16 bg-[#01224F] roboto-regular">
       <ToastContainer position="top-right" autoClose={3000} limit={1} />
-      <div className="mb-8">
-        <p className="text-[#FFC80E] text-4xl text-center font-bold mb-4">
-          TECHNICAL TRAINING
-        </p>
-      </div>
+      <div className="mb-4 md:mb-8 pt-4"> {/* pt-8 adds padding-top */}
+  <p className="text-[#FFC80E] text-2xl sm:text-3xl lg:text-4xl xl:text-4xl text-center font-bold md:mb-4">
+    Technical Training
+  </p>
+</div>
+
       <div className="container mx-auto flex flex-wrap">
         {/* Accordion for smaller screens */}
-        <div className={`accordion-container w-full ${isMobile ? "block" : "hidden"}`}>
-          {Object.keys(courses).map((key, index) => (
-            <div key={key}>
-              <button
-                onClick={() => toggleAccordion(index)}
-                className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300
-                ${accordionOpen === index ? "bg-[#FFC80E] text-[#003073]" : "bg-[#003073] text-white"}
-                transform-gpu hover:bg-[#FFC80E] hover:text-[#003073]`}
-              >
-                <span className="text-left break-words ">{buttonLabels[key]}</span>
-                <span className="flex items-center transition-all duration-300 transform hover:scale-105">
-                  {accordionOpen === index ? <FiChevronDown /> : <FiChevronRight />}
-                </span>
-              </button>
-              {accordionOpen === index && (
-                <div className="p-4 bg-[#003073] text-white">
-                  {courses[key].map((course, courseIndex) => (
-                    <div key={`${key}-${courseIndex}`} className="bg-white rounded-lg shadow-md p-2 mb-2">
-                      <h3 className="text-base text-[#003073] text-center">{course.title}</h3>
-                      <ul className="text-black text-sm text-left ml-4">
-                        {course.description.map((item, idx) => (
-                          <li key={idx} className="list-disc list-outside">{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              )}
+        <div className={`accordion-container w-full ${isMobile ? "block pb-8" : "hidden"}`}> {/* Add pb-8 for padding-bottom */}
+  {Object.keys(courses).map((key, index) => (
+    <div key={key}>
+      <button
+        onClick={() => toggleAccordion(index)}
+        className={`flex justify-between items-center w-full py-3 px-4 transition-all duration-300
+        ${accordionOpen === index ? "bg-[#FFC80E] text-[#003073]" : "bg-[#003073] text-white"}
+        transform-gpu hover:bg-[#FFC80E] hover:text-[#003073]`}
+      >
+        <span className="text-left break-words ">{buttonLabels[key]}</span>
+        <span className="flex items-center transition-all duration-300 transform hover:scale-105">
+          {accordionOpen === index ? <FiChevronDown /> : <FiChevronRight />}
+        </span>
+      </button>
+      {accordionOpen === index && (
+        <div className="p-4 bg-[#003073] text-white">
+          {courses[key].map((course, courseIndex) => (
+            <div key={`${key}-${courseIndex}`} className="bg-white rounded-lg shadow-md p-2 mb-2">
+              <h3 className="text-base text-[#003073] text-center">{course.title}</h3>
+              <ul className="text-black text-sm text-left ml-4">
+                {course.description.map((item, idx) => (
+                  <li key={idx} className="list-disc list-outside">{item}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
+      )}
+    </div>
+  ))}
+</div>
+
 
         {/* Sidebar for larger screens */}
         <div className={`course-sidebar ${isMobile ? "hidden" : "w-1/4"} px-4 mb-8`}>
-          <div className="bg-[#091327] shadow-lg">
+          <div className="bg-[#01224F] shadow-lg">
             {Object.keys(courses).map((key) => (
               <div key={key}>
                 <button
                   onClick={() => changeCourse(key)}
-                  aria-expanded={showCards[key]}
                   className={`flex justify-between items-center w-full py-2 px-2 transition-all duration-300
                   ${selectedCourse === key ? "bg-[#FFC80E] text-[#003073] transform translate-x-2 shadow-2xl" : "bg-[#003073] text-white"}
                   transform-gpu hover:bg-[#FFC80E] hover:text-[#003073] hover:translate-x-2 hover:shadow-xl`}
                 >
                   <span className="text-left break-words text-sm lg:text-xl">{buttonLabels[key]}</span>
-                  <span className="flex items-center transition-all duration-300 transform hover:scale-105 hover:translate-x-1 hover:shadow-xl">
-                    <FiChevronRight className="w-4 h-4" />
-                  </span>
                 </button>
               </div>
             ))}
@@ -883,45 +886,39 @@ const CourseSection = () => {
 
         {/* Content Area - Cards shown to the right of the sidebar */}
         <div
-          className={`flex-grow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 ${isMobile ? "hidden" : ""}`}
+          className={`flex-grow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4 ${isMobile ? "hidden" : ""}`}
         >
           {Object.keys(courses).map(
             (key) =>
               showCards[key] &&
               courses[key].map((course, index) => (
-                <div
-                  key={`${key}-${index}`}
-                  className="flip-card"
-                  ref={(el) => (cardRefs.current[index] = el)}
-                >
+                <div key={`${key}-${index}`} className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front aspect-[3/2]">
+                      {/* Image Placeholder for Large Screens */}
+                      <div
+                        className={`w-full h-48 bg-gray-300 rounded dark:bg-gray-700 lg:hidden ${isImageLoaded ? "hidden" : "block"}`}
+                      ></div>
                       <img
                         src={course.image}
                         alt={course.title}
-                        className="object-cover w-full h-full"
+                        className={`object-cover w-full h-full ${isImageLoaded ? "block" : "hidden"}`}
+                        onLoad={handleImageLoad} // Set image loaded state
                       />
                     </div>
+                    {/* Back of the card */}
                     <div
                       className="flip-card-back aspect-[3/2]"
                       style={{
-                        backgroundImage: `url('${
-                          key === "MBA" && !isMobile
-                            ? course.backImage
-                            : backSideImageUrl
-                        }')`,
+                        backgroundImage: `url('${backSideImageUrl}')`,
                       }}
                     >
                       <ul className="list-disc list-outside text-black text-sm lg:text-base">
-                        {key === "MBA" && !isMobile ? (
-                          <></>
-                        ) : (
-                          course.description.map((item, idx) => (
-                            <li key={idx} className="pl-0">
-                              {item}
-                            </li>
-                          ))
-                        )}
+                        {course.description.map((item, idx) => (
+                          <li key={idx} className="pl-0">
+                            {item}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </div>

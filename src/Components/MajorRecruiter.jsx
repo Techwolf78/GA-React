@@ -65,11 +65,11 @@ const MajorRecruiter = () => {
   }, [isMobile]);
 
   return (
-    <div className="logo-slider-section bg-[#003073] roboto-regular relative">
+    <div className="logo-slider-section bg-[#01224F] roboto-regular relative">
       {/* Big box on the top left side of the slider */}
       {!isMobile && (
         <div className="info-box absolute top-0 left-0 bg-white p-4 shadow-lg flex items-center h-full">
-          <h2 className="text-[16px] text-[#ffff]">OUR TOP RECRUITERS</h2>
+          <h2 className="text-[16px] text-[#ffff]">Our Top Recruiters</h2>
         </div>
       )}
 
@@ -96,7 +96,7 @@ const MajorRecruiter = () => {
             display: flex;
             align-items: center;
             padding: 16px;
-            background-color: #003073;
+            background-color: #01224F;
           }
 
           @media (max-width: 768px) {

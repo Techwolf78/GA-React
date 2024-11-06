@@ -11,14 +11,14 @@ const MeetTheLeaders = () => {
   const founder = {
     designation: 'Founder',
     name: 'Mr. Shashi Bhat',
-    message: '"When I look back and see how Gryphon collaboration with academia is creating a huge pool of talent for the industry, I feel we have set the right mission and vision. Still a long road ahead, but gratified with the progress WE HAVE made."',
+    message: 'When I look back and see how Gryphon collaboration with academia is creating a huge pool of talent for the industry, I feel we have set the right mission and vision. Still a long road ahead, but gratified with the progress WE HAVE made.',
     profilePic: '/About/foun.PNG', // Replace with actual image path
   };
 
   const coFounder = {
     designation: 'Co-Founder',
     name: 'Ms. Ummeaiman Ansari',
-    message: '"Holding ranks but a trainer beneath, it thrills me to witness an amazing pool of talent being created with our best of trainers and equally supported by amazing career opportunities from our corporate partners. Gryphon is 3 years today, floating but on the course to sail through."',
+    message: 'Holding ranks but a trainer beneath, it thrills me to witness an amazing pool of talent being created with our best of trainers and equally supported by amazing career opportunities from our corporate partners. Gryphon is 3 years today, floating but on the course to sail through.',
     profilePic: '/About/cf.PNG', // Replace with actual image path
   };
 
@@ -36,7 +36,7 @@ const MeetTheLeaders = () => {
   return (
     <div className="flex flex-col items-center mx-auto p-6 bg-gradient-to-r from-blue-100 to-blue-200 px-4 md:px-8 lg:px-12 py-8">
       <h2 className="text-center text-2xl md:text-3xl lg:text-4xl text-blue-700 font-bold mb-12" data-aos="fade-down">
-        MEET THE LEADERS
+        Meet the Leaders
       </h2>
 
       <div className="flex flex-col md:flex-row mb-12 items-center justify-around" data-aos="fade-up">

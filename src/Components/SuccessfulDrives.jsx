@@ -34,12 +34,12 @@ const SuccessfulDrives = () => {
   };
 
   return (
-    <div className="relative py-2 bg-[#003073] text-white roboto-regular">
+    <div className="relative py-2 bg-[#01224F] text-white roboto-regular">
       <div className="container mx-auto px-0 relative z-10">
         
         {/* Main Heading */}
         <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold mb-4 mt-2 text-center text-[#FFC80E]">
-          RECENT CAMPUS PLACEMENT CONVERSIONS
+          Recent Campus Placement Conversions
         </h1>
 
         {/* Full-width Image */}
@@ -70,7 +70,7 @@ const SuccessfulDrives = () => {
             >
               ↑
             </button>
-            <span className="ml-2 text-sm">SCROLL UP</span>
+            <span className="ml-2 text-sm">Scroll Up</span>
           </div>
 
           {/* Scroll Down Arrow */}
@@ -81,7 +81,7 @@ const SuccessfulDrives = () => {
             >
               ↓
             </button>
-            <span className="ml-2 text-sm">SCROLL DOWN</span>
+            <span className="ml-2 text-sm">Scroll Down</span>
           </div>
         </div>
 

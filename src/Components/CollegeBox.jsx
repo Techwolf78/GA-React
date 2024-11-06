@@ -71,7 +71,7 @@ function CollegeBox() {
   };
 
   return (
-    <div className="flex flex-col items-center py-4 px-8 sm:px-16 bg-gradient-to-b from-[#003073] to-[#091327] shadow-lg roboto-regular">
+    <div className="flex flex-col items-center py-4 px-8 sm:px-16 bg-[#01224F] shadow-lg roboto-regular">
       <div className="flex flex-col md:flex-row w-full max-w-full mx-0">
         <div
           data-aos="fade-right"
@@ -101,7 +101,7 @@ function CollegeBox() {
             {images.map((_, index) => (
               <div
                 key={index}
-                className={`w-3 h-3 rounded-full cursor-pointer ${index === currentImageIndex ? 'bg-[#FFC80E]' : 'bg-[#003073]'} transition-colors`}
+                className={`w-3 h-3 rounded-full cursor-pointer ${index === currentImageIndex ? 'bg-[#FFC80E]' : 'bg-[#1e3a8a]'} transition-colors`}
                 onClick={() => handleDotClick(index)}
               />
             ))}
@@ -121,7 +121,7 @@ function CollegeBox() {
             data-aos="fade-up"
             data-aos-delay={`${index * 200}`} // Staggering effect
             data-aos-easing="ease-in-out" // Slower ease effect
-            className="flex flex-col items-center space-y-2 p-4 bg-[#003073] rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-yellow-500 hover:shadow-lg"
+            className="flex flex-col items-center space-y-2 p-4 bg-[#1e3a8a] rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-yellow-500 hover:shadow-lg"
           >
             <div className="flex items-center justify-center w-12 h-12 bg-[#FFC80E] rounded-full">
               {React.cloneElement(icon, { className: "text-[#091327] text-3xl" })}

@@ -5,9 +5,10 @@ import 'aos/dist/aos.css'; // Import AOS styles
 const backgroundImage = "https://res.cloudinary.com/dcjmaapvi/image/upload/v1729943835/Corporate_Training_1_eaeb56.avif"; // Static image
 
 const content = [
-  "DELIVERING TAILORED SOLUTIONS THAT DRIVE MEASURABLE SUCCESS AND ENHANCE ORGANIZATIONAL READINESS WITHIN THE LEARNING TECHNOLOGY ECOSYSTEM",
-  "SEAMLESS EXECUTION, DIGITAL TRANSFORMATION, TALENT RETENTION STRENGTH, DRIVE SALES ROI"
-];
+  "Delivering Tailored Solutions That Drive Measurable Success and Enhance Organizational Readiness Within the Learning Technology Ecosystem",
+  "Seamless Execution, Digital Transformation, Talent Retention Strength, Drive Sales ROI"
+]
+;
 
 const corporateTrainingParagraph = "Our customized corporate training programmes are specifically designed to meet your organization’s unique needs. In a rapidly evolving corporate landscape, we address critical challenges that hinder growth and productivity. By focusing on essential skills such as communication, negotiation, critical thinking, Operational Resilience and Adaptability, Workforce Management and Engagement & leadership, we empower teams to overcome obstacles and enhance collaboration.";
 

@@ -47,7 +47,7 @@ const testimonials = [
 
 const Testimonials = () => {
   const cardStyle = {
-    backgroundColor: '#003073',
+    backgroundColor: '#1e3a8a',
     borderRadius: '8px',
     padding: '24px',
     boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
@@ -58,7 +58,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section style={{ background: '#091327', padding: '40px 0' }} className='roboto-regular'>
+    <section style={{ background: '#01224F', padding: '40px 0' }} className='roboto-regular'>
       <style>
         {`
           @keyframes slide {
@@ -74,7 +74,7 @@ const Testimonials = () => {
       </style>
       <div style={{ textAlign: 'center', marginBottom: '32px' }}>
         <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-4">
-          RECRUITER'S TESTIMONIALS
+          Recruiter&apos;s Testimonials
         </h3>
       </div>
       <div style={{ position: 'relative', overflow: 'hidden', width: '100%', height: '360px' }}>

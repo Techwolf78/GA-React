@@ -211,7 +211,7 @@ body, html {
 
 .sidebar ul li a {
   text-decoration: none;
-  color: #000;
+  color: #01224F;
   display: block;
   padding: 10px;
   border-radius: 5px;
@@ -224,7 +224,7 @@ body, html {
   display: block;
   width: 0;
   height: 2px;
-  background: #000000;
+  background: #01224F;
   transition: width 0.3s ease;
   position: absolute;
   bottom: 0;
@@ -236,7 +236,7 @@ body, html {
 }
 
 .sidebar ul li a:hover {
-  color: #000000;
+  color: #01224F;
   padding-bottom: 7px;
 }
 
@@ -267,7 +267,7 @@ body, html {
   display: block;
   width: 0;
   height: 2px;
-  background: #000000;
+  background: #01224F;
   transition: width 0.3s ease;
 }
 
@@ -276,7 +276,7 @@ body, html {
 }
 
 .sidebar ul li ul li a:hover {
-  color: #000000;
+  color: #01224F;
 }
 
 /* Section Styles */
@@ -297,27 +297,30 @@ body, html {
 }
 
 #hero_slider { 
-  background-image: url('/CollegeSliding/homeland1.webp'); 
+  background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730803138/Rectangle_48try_vdlvku.avif');
+  background-position: right ;  /* Align the background image to the right side */
+  background-size: contain;             /* Ensure the background image covers the section */
+  background-repeat: no-repeat;       /* Prevent image repetition */
 }
 #core_capabilities { 
-  background-image: url('/CollegeSliding/homeland2.webp'); 
+  background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland2_iiwltn.avif'); 
 }
 #operating_models { 
-  background-image: url('/CollegeSliding/homeland3.webp'); 
+  background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland3_konwok.avif'); 
 }
 #talent_transformations { 
-  background-image: url('/CollegeSliding/homeland4.webp'); 
+  background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland4_cel82n.avif'); 
 }
 #do_more { 
-  background-image: url('/CollegeSliding/homeland5.webp'); 
+  background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland5_fjba9x.avif'); 
 }
 
-#hero_slider,
+
 #core_capabilities,
 #operating_models,
 #talent_transformations,
 #do_more {
-  background-size: cover; /* Ensure the image is contained within the section */
+  background-size: contain; /* Ensure the image is contained within the section */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent image repetition */
 }
@@ -397,6 +400,7 @@ body, html {
 .btn-know-more:hover {
   color: #01224f;
   transform: translateY(-3px);
+  transform: scale(1.05); /* Add slight scaling on hover */
 }
 
 .btn-know-more span {
@@ -410,7 +414,7 @@ body, html {
   top: 35px;
   right: 60px; /* Default distance from the right side */
   background: #FFC80E;
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -445,7 +449,7 @@ body, html {
   position: absolute;
   width: 24px;
   height: 2px;
-  background-color: #fff;
+  background-color: #01224F;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 

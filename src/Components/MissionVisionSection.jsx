@@ -27,7 +27,7 @@ const MissionVisionSection = () => {
           data-aos="fade-right" // Animation effect for vision card
         >
           <h3 className="text-lg sm:text-xl md:text-4xl font-semibold text-black mb-4 md:mb-4 lg:mb-8">
-            OUR <span className='text-[#003073]'>VISION</span>
+            Our <span className='text-[#01224F]'>Vision</span>
           </h3>
           <div className="shadow-lg rounded-3xl p-4 md:p-6" style={{ backgroundColor: '#d5e2f5', height: '100%', boxSizing: 'border-box' }}>
             <div className="flex flex-col items-start mb-4">
@@ -48,7 +48,7 @@ const MissionVisionSection = () => {
           data-aos-delay="200" // Staggered delay for the mission card
         >
           <h3 className="text-lg sm:text-xl md:text-4xl font-semibold text-black mb-4 md:mb-4 lg:mb-8">
-            OUR <span className='text-[#003073]'>MISSION</span>
+            Our <span className='text-[#01224F]'>Mission</span>
           </h3>
           <div className="shadow-lg rounded-3xl p-4 md:p-6" style={{ backgroundColor: '#d5e2f5', height: '100%', boxSizing: 'border-box' }}>
             <div className="flex flex-col items-start mb-4">
