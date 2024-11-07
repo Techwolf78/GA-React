@@ -46,7 +46,7 @@ const HeroTraining = () => {
           isMobile ? "bg-[#01224F] h-auto" : "bg-cover lg:bg-cover h-[50vh] lg:h-screen"
         } mx-auto px-8 sm:px-8 md:px-16 lg:px-16`}
         style={{
-          backgroundImage: isMobile ? "none" : "url('TrainHero.png')",
+          backgroundImage: isMobile ? "none" : "url('trainherofinals.png')",
           backgroundPosition: "center center",  // Ensure the image is centered properly
           backgroundSize: isMobile ? "auto" : "cover", // 'cover' for large screens, 'auto' for mobile
         }}

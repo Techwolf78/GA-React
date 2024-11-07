@@ -886,46 +886,56 @@ const CourseSection = () => {
 
         {/* Content Area - Cards shown to the right of the sidebar */}
         <div
-          className={`flex-grow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4 ${isMobile ? "hidden" : ""}`}
-        >
-          {Object.keys(courses).map(
-            (key) =>
-              showCards[key] &&
-              courses[key].map((course, index) => (
-                <div key={`${key}-${index}`} className="flip-card">
-                  <div className="flip-card-inner">
-                    <div className="flip-card-front aspect-[3/2]">
-                      {/* Image Placeholder for Large Screens */}
-                      <div
-                        className={`w-full h-48 bg-gray-300 rounded dark:bg-gray-700 lg:hidden ${isImageLoaded ? "hidden" : "block"}`}
-                      ></div>
-                      <img
-                        src={course.image}
-                        alt={course.title}
-                        className={`object-cover w-full h-full ${isImageLoaded ? "block" : "hidden"}`}
-                        onLoad={handleImageLoad} // Set image loaded state
-                      />
-                    </div>
-                    {/* Back of the card */}
-                    <div
-                      className="flip-card-back aspect-[3/2]"
-                      style={{
-                        backgroundImage: `url('${backSideImageUrl}')`,
-                      }}
-                    >
-                      <ul className="list-disc list-outside text-black text-sm lg:text-base">
-                        {course.description.map((item, idx) => (
-                          <li key={idx} className="pl-0">
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              ))
-          )}
+  className={`flex-grow grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4 ${isMobile ? "hidden" : ""}`}
+>
+  {Object.keys(courses).map(
+    (key) =>
+      showCards[key] &&
+      courses[key].map((course, index) => (
+        <div key={`${key}-${index}`} className="flip-card">
+          <div className="flip-card-inner">
+            {/* Front of the Card */}
+            <div className="flip-card-front aspect-[3/2]">
+              <div
+                className={`w-full h-48 bg-gray-300 rounded dark:bg-gray-700 lg:hidden ${isImageLoaded ? "hidden" : "block"}`}
+              ></div>
+              <img
+                src={course.image}
+                alt={course.title}
+                className={`object-cover w-full h-full ${isImageLoaded ? "block" : "hidden"}`}
+                onLoad={handleImageLoad}
+              />
+            </div>
+
+            {/* Back of the Card */}
+            <div
+              className="flip-card-back aspect-[3/2]"
+              style={{
+                backgroundImage: isMobile || selectedCourse !== "MBA"
+                  ? `url('${backSideImageUrl}')`  // Default back image for mobile and non-MBA tabs
+                  : `url('${course.backImage || backSideImageUrl}')`, // Custom back image for MBA tab on larger screens
+              }}
+            >
+              {/* Only show description for MBA on smaller screens or larger screens with MBA tab selected */}
+              {(isMobile || selectedCourse !== "MBA") && (
+                <ul
+                  className={`list-disc list-outside text-black text-sm lg:text-base`}
+                >
+                  {course.description.map((item, idx) => (
+                    <li key={idx} className="pl-0">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
         </div>
+      ))
+  )}
+</div>
+
+
       </div>
 
       {/* Floating Brochure Button */}
