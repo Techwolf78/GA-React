@@ -18,3 +18,4 @@ body {
 .heading {
   @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#FFC80E] text-center mb-4;
 }
+

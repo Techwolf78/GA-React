@@ -6,43 +6,94 @@ body, html {
   background-color: #01224f;
   overflow-x: hidden;
 }
+
+/* Hero Text Styling */
 .hero-text {
   text-align: center; /* Center the text */
 }
 
 .hero-words {
   display: flex;
-  justify-content: space-between; /* Distribute space evenly between children */
+  justify-content: space-between; /* Space out elements */
   align-items: center; /* Center vertically */
-  margin-top: 1rem; /* Add spacing as needed */
+  width: 100%; /* Full width of container */
+  margin-top: 1rem; /* Adjust spacing as needed */
+  flex-wrap: nowrap; /* Prevent wrapping of child elements */
+}
+
+.word-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.first-word-container {
+  flex: 0 0 25%; /* Takes up 25% of the width */
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /* Align the first word to the right */
+  align-items: center; /* Center vertically */
+  height: 100%;
+}
+
+.last-word-container {
+  flex: 0 0 25%; /* Takes up 25% of the width */
+  position: relative;
+  display: flex;
+  justify-content: flex-start; /* Align the last word to the left */
+  align-items: center; /* Center vertically */
+  height: 100%;
 }
 
 .first-word, .last-word {
-  flex: 0 1 auto; /* Allow the first and last word to take only the necessary space */
+  position: absolute; /* Position the words absolutely inside their containers */
+  font-size: 1.5rem;
+  width: auto; /* Allow the width of the word to be as wide as the word itself */
+  transition: opacity 0.5s ease;
 }
 
-
-
-.large-font {
-  font-size: 2.5rem; /* Adjust this value as needed */
-  font-weight: bold; /* Optional: make it bold */
+/* Fade Transition for Vertical Bounce Removed */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Smooth fade-in without bounce */
 }
 
+.fade-out {
+  opacity: 0;
+  text-shadow: none;
+}
+
+/* Bridge Image Container */
+.image-container {
+  flex: 0 0 50%; /* Bridge image takes 50% of the width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Bridge Image Styling */
+.hero-bridge {
+  width: 100%; /* Ensure image takes up 100% of the container width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Keep the image's aspect ratio intact */
+  opacity: 1; /* Fully visible */
+  transition: width 0.5s ease; /* Optional smooth transition for resizing */
+}
+
+/* Small Font Styling */
 .small-font {
   font-size: 1.5rem; /* Adjust this value for the smaller font */
 }
 
+/* Fade Transition */
 .fade {
-  transition: opacity 0.5s ease; /* Adjust for smoother transitions */
-}
-
-.first-word, .last-word {
-  transition: text-shadow 0.5s ease; /* Add transition for shadow */
+  transition: opacity 0.5s ease; /* Smooth fade transition */
 }
 
 .fade-in {
   opacity: 1;
-  text-shadow: 2px 2px 5px rgba(255, 200, 14, 0.7); /* Shadow effect */
+  text-shadow: 2px 2px 5px rgba(255, 200, 14, 0.7); /* Add text-shadow for fade-in */
 }
 
 .fade-out {
@@ -50,25 +101,29 @@ body, html {
   text-shadow: none; /* Remove shadow during fade-out */
 }
 
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.fade-in {
-  animation: bounce 0.5s ease forwards; /* Apply bounce animation */
-}
-
-
+/* Adjust font size for first and last words on smaller screens */
 @media (max-width: 768px) {
-  .hero-text {
-    white-space: normal; /* Allow line breaks on small screens */
+  .first-word, .last-word {
+    font-size: 1rem; /* Smaller font size for small screens */
   }
+  
+  /* Ensure hero words remain horizontal but scale nicely */
+  .hero-words {
+    justify-content: space-evenly; /* Evenly space out the elements */
+    align-items: center; /* Center vertically */
+  }
+
+  /* Adjust container widths */
+  .first-word-container,
+  .image-container,
+  .last-word-container {
+    flex: 1 1 30%; /* Allow each container to take 30% of the screen width */
+    max-width: 33%; /* Ensure they don't stretch too much */
+  }
+
+  .hero-bridge {
+    max-width: auto; /* Ensure image fits well on mobile */
+  } 
 }
 
 
@@ -132,7 +187,13 @@ body, html {
   text-align: left;
   overflow-wrap: break-word; /* Ensure long words wrap */
   transition: margin-bottom 0.3s ease; /* Smooth transition for bottom margin */
+  
+  /* Add a fixed height and center text vertically */
+  height: 60px; /* Adjust this value as per your design */
+  display: flex;
+  align-items: top; /* Vertically center the content */
 }
+
 
 .underline {
   width: 20%; /* Initial width of the underline */
@@ -145,7 +206,7 @@ body, html {
   transition: width 0.3s ease; /* Transition for width */
 }
 
-/* Grow underline on hover or active */
+/* Underline adjustment */
 .stick-top-nav-ul li:hover .underline,
 .stick-top-nav-ul li.nav-active .underline {
   width: 40%; /* Width when hovered or active */
@@ -156,21 +217,24 @@ body, html {
   text-decoration: none;
   color: #FFC80E;
   display: inline-block; /* Change to inline-block */
-  padding: 10px 15px; /* Use padding for spacing */
+  padding: 10px 10px; /* Use padding for spacing */
   font-size: 16px;
   position: relative; /* Make it relative for the text */
   opacity: 0; /* Hide text initially */
   transition: opacity 0.5s ease; /* Smooth transition for text visibility */
+  width: 100%; /* Make anchor tag take full width of li */
+  text-align: left; /* Center the text horizontally */
+ 
 }
 
+/* Ensure hover state works smoothly */
 .stick-top-nav-ul li:hover a,
 .stick-top-nav-ul li.nav-active a {
   opacity: 1; /* Show text on hover or when active */
 }
-
 /* Add bottom margin for the active list item */
 .stick-top-nav-ul li.nav-active {
-  margin-bottom: 30px; /* Space below the active item */
+  margin-bottom: 40px; /* Space below the active item */
 }
 
 /* Sidebar Styles */

@@ -13,7 +13,7 @@ function CollegeAccreditation() {
         {/* Background image for medium and large screens */}
         <div className="w-full hidden md:block overflow-hidden ">
           <img 
-            src="LandingImage/CollegeAccriditationFinal.png" // Replace with your image path
+            src="LandingImage/CollegeAccriditationFinal.avif" // Replace with your image path
             alt="Accreditation Overview"
             className="w-full h-auto object-cover" 
             style={{ margin: 0 }} 
@@ -23,7 +23,7 @@ function CollegeAccreditation() {
         {/* Background image for small screens only */}
         <div className="w-full block md:hidden overflow-hidden mb-6">
           <img 
-            src="LandingImage/CollegeAccriditationFinalM.PNG" // Replace with your small screen image path
+            src="LandingImage/CollegeAccriditationFinalM.avif" // Replace with your small screen image path
             alt="Accreditation Overview for Small Screens"
             className="w-full h-auto object-cover" 
             style={{ margin: 0 }} 

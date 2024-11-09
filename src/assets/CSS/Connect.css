@@ -23,7 +23,7 @@
 }
 
 .neon-link-button {
-  font-size: 1.5rem; /* Decrease font size */
+  font-size: 1.5rem; /* Default larger font size */
   border: 0.05em solid var(--color-text); /* Thinner border */
   color: var(--color-black); /* Set text color to black */
   display: inline-block;
@@ -36,11 +36,12 @@
     inset 0 0 0.1em 0.05em var(--color-text);
   text-shadow: 0 0 0.5em var(--color-neon), 0 0 0.1em var(--color-text);
   background: var(--color-neon); /* Solid yellow background */
-  padding: 0.25em 1em; /* Reduced padding */
+  padding: 0.25em 1em; /* Default padding */
   position: relative;
   margin-top: 20px; /* Added margin for space above */
 }
 
+/* Add Fade-In effect */
 .fade-in {
   opacity: 1;
   transition: opacity 0.8s ease-in-out;
@@ -85,4 +86,21 @@
 .neon-link-button:hover::after,
 .neon-link-button:focus::after {
   opacity: 1;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .neon-link-button {
+    font-size: 1.3rem; /* Slightly larger font size */
+    padding: 0.2em 0.9em; /* Slightly larger padding */
+    margin-top: 18px; /* Adjusted margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-link-button {
+    font-size: 1.3rem; /* Slightly larger font size */
+    padding: 0.15em 0.75em; /* Slightly larger padding */
+    margin-top: 12px; /* Slightly reduced margin */
+  }
 }

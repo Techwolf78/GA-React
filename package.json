@@ -28,6 +28,7 @@
     "@mui/styles": "^6.1.0",
     "@react-three/drei": "^9.115.0",
     "@react-three/fiber": "^8.17.10",
+    "@splinetool/react-spline": "^4.0.0",
     "@svgr/webpack": "^8.1.0",
     "animate.css": "^4.1.1",
     "animejs": "^3.2.2",

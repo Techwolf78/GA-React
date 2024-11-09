@@ -8,14 +8,14 @@ import '../Components/util.js'; // Ensure you have the bent plane geometry and s
 const SuccessfulDrives = () => {
   const images = [
    
-    "journey/Campus 11.png",
-    "journey/Campus 7.png",
-    "journey/Campus 9.png",
-    "journey/Campus 3.png",
-    "journey/Campus 5.png",
-    "journey/Campus 8.png",
-    "journey/Campus 10.png",
-     "journey/Campus 6.png"
+    "journey/Campus 11.avif",
+    "journey/Campus 7.avif",
+    "journey/Campus 9.avif",
+    "journey/Campus 3.avif",
+    "journey/Campus 5.avif",
+    "journey/Campus 8.avif",
+    "journey/Campus 10.avif",
+     "journey/Campus 6.avif"
    
   ];
 

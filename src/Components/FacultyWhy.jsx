@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types'; // Import PropTypes for validation
 
 // FeatureCard component for better reusability
 const FeatureCard = ({ feature, index }) => (
@@ -19,6 +20,15 @@ const FeatureCard = ({ feature, index }) => (
     </p>
   </motion.div>
 );
+
+// Add PropTypes for validation
+FeatureCard.propTypes = {
+  feature: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
 
 function FacultyWhy() {
   const [visibleFeatures, setVisibleFeatures] = useState([]);

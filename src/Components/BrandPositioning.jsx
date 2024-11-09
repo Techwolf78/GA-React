@@ -1,50 +1,25 @@
+
 import React from 'react';
+import CollectionSection from './CollectionSection';
 
-const ComingSoon = () => {
-  return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-blue-900 text-white p-4">
-      <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-4 animate-bounce z-10">Coming Soon!</h1>
-      <p className="text-lg sm:text-xl md:text-2xl mb-4 z-10">Exciting things are on the way. Stay tuned!</p>
-      
-      {/* Fun message */}
-      <p className="text-lg sm:text-xl md:text-2xl mb-4 z-10 italic text-center">
-        Our developers are still in the kitchen, adding a pinch of code and a dash of creativity!
-      </p>
+import VideoSection from './VideoSection';
+import SvgHero from './SvgHero';
+import Events from './Events';
+import BrandPositioningWhyChoose from './BrandPositioningWhyChoose';
+import BusinessServices from './BusinessServices';
+import Guest from './Guest';
 
-      {/* Background Dots */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float bg-blue-300 rounded-full w-24 h-24 md:w-32 md:h-32 absolute" style={{ top: '20%', left: '10%' }} />
-        <div className="animate-float bg-purple-300 rounded-full w-20 h-20 md:w-24 md:h-24 absolute" style={{ top: '50%', left: '70%' }} />
-        <div className="animate-float bg-yellow-300 rounded-full w-16 h-16 md:w-20 md:h-20 absolute" style={{ top: '70%', left: '30%' }} />
-      </div>
 
-      {/* Inline styles */}
-      <style>{`
-        body {
-          font-family: 'Montserrat', sans-serif;
-        }
+const BrandPositioning = () => (
+  <div>
+    <SvgHero />
+    <CollectionSection />
+    <VideoSection />
+    <Events />
+    <BusinessServices />
+    <BrandPositioningWhyChoose />
+    <Guest />
+  </div>
+);
 
-        @keyframes float {
-          0% { transform: translateY(0); }
-          50% { transform: translateY(-20px); }
-          100% { transform: translateY(0); }
-        }
-
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-          opacity: 0.8;
-        }
-
-        .animate-float:nth-child(odd) {
-          animation-delay: 1s;
-        }
-
-        .animate-float:nth-child(even) {
-          animation-delay: 2s;
-        }
-      `}</style>
-    </div>
-  );
-};
-
-export default ComingSoon;
+export default BrandPositioning;

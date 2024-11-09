@@ -705,17 +705,17 @@ const courses = {
 
 // Button labels
 const buttonLabels = {
-  MECH: "MECHANICAL ENGINEERING",
-  CIVIL: "CIVIL ENGINEERING",
-  COMP: "COMPUTER SCIENCE ENGINEERING",
-  ELECT: "ELECTRICAL ENGINEERING",
-  AIDS: "ARTIFICIAL INTELLIGENCE AND DATA SCIENCE/MACHINE LEARNING",
-  PHARMA: "PHARMACY",
-  MBA: "MASTER OF BUSINESS ADMINISTRATION",
-  MCA: "MASTER OF COMPUTER APPLICATIONS",
-  BBA: "BACHELOR OF BUSINESS ADMINISTRATION",
-  FOREIGN: "FOREIGN LANGUAGES",
-  DIPLOMA: "DIPLOMA",
+  MECH: "Mechanical Engineering",
+  CIVIL: "Civil Engineering",
+  COMP: "Computer Science Engineering",
+  ELECT: "Electrical Engineering",
+  AIDS: "Artificial Intelligence and Data Science/Machine Learning",
+  PHARMA: "Pharmacy",
+  MBA: "Master of Business Administration",
+  MCA: "Master of Computer Applications",
+  BBA: "Bachelor of Business Administration",
+  FOREIGN: "Foreign Languages",
+  DIPLOMA: "Diploma",
 };
 
 const CourseSection = () => {
@@ -724,8 +724,9 @@ const CourseSection = () => {
   const [accordionOpen, setAccordionOpen] = useState(null);
   const [formVisible, setFormVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false); // State for submission
+  const [isSubmitted, setIsSubmitted] = useState(false); // Track if the form is submitted
   const [isImageLoaded, setIsImageLoaded] = useState(false); // Track image load state
-  
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -734,14 +735,15 @@ const CourseSection = () => {
     message: "",
     source: "MBA Brochure", // Add this line
   });
-  
-  const [downloadButtonVisible, setDownloadButtonVisible] = useState(true);
-  const cardRefs = useRef([]);
 
+  const [downloadButtonVisible,] = useState(true);
+
+  // Handle image load event
   const handleImageLoad = () => {
     setIsImageLoaded(true); // Image has loaded
   };
 
+  // Toggle course selection
   const changeCourse = (courseKey) => {
     if (courseKey !== selectedCourse) {
       setShowCards({ [courseKey]: true });
@@ -751,29 +753,42 @@ const CourseSection = () => {
     }
   };
 
+  // Toggle accordion open/close
   const toggleAccordion = (index) => {
     setAccordionOpen(accordionOpen === index ? null : index);
   };
 
+  // Download the PDF brochure
   const downloadPDF = () => {
-    const url = 'Course/MBA - Training Module New 2.pdf';
-    const link = document.createElement('a');
+    const url = "Course/MBA - Training Module New 2.pdf";
+    const link = document.createElement("a");
     link.href = url;
-    link.download = 'mba-brochure.pdf';
+    link.download = "mba-brochure.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
+  // Show the form modal for downloading the brochure
   const handleDownloadBrochure = () => {
     setFormVisible(true);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true); // Disable button when form is submitted
   
+    // Immediately change the button text to "Submitting..."
+    setIsSubmitting(true);
+  
+    // Close the modal immediately after the user clicks submit (before the toast)
+    setTimeout(() => {
+      setFormVisible(false); // Close the form modal immediately
+    }, 0); // Use 0 delay to close it instantly
+    
+    // Proceed with form submission
     const formData = new FormData();
+    
+    // Append form data to FormData object
     Object.entries(formState).forEach(([key, value]) => {
       formData.append(key, value);
     });
@@ -782,44 +797,49 @@ const CourseSection = () => {
     formData.append("source", formState.source);
   
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbzD2p4mf2qIUGsFQn0kyIfd9RelTaFbzJXaWAzp7TQ03Bd9IELeBA4y4Nl-dv_KbSznlg/exec", {
-        method: "POST",
-        body: formData,
-      });
+      // Send the form data to the server (or your chosen endpoint)
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzD2p4mf2qIUGsFQn0kyIfd9RelTaFbzJXaWAzp7TQ03Bd9IELeBA4y4Nl-dv_KbSznlg/exec",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
   
       if (response.ok) {
+        // Show success message via toast notification
         toast.success("Form successfully submitted! Downloading brochure...", {
           position: "top-right",
           autoClose: 3000,
           onClose: () => {
-            setFormState({
-              name: "",
-              email: "",
-              phone: "",
-              category: "",
-              message: "",
-              source: "MBA Brochure", // Reset to default
-            });
-            setFormVisible(false);
-            setDownloadButtonVisible(false);
+            // Disable the submit button after submission
+            setIsSubmitted(true); // Mark as submitted
           },
         });
-        setTimeout(downloadPDF, 1000);
+        
+        // Simulate download after submission
+        setTimeout(downloadPDF, 0); // Delay download by 1 second
       } else {
         throw new Error("Submission failed.");
       }
     } catch (error) {
+      // Show error toast if the submission failed
       toast.error("Error submitting form. Please try again.", {
         position: "top-right",
         autoClose: 3000,
       });
       console.error("Submission error:", error);
     } finally {
-      setIsSubmitting(false); // Re-enable the button after submission
+      // Ensure the button is re-enabled or stays disabled after the form submission
+      if (!isSubmitted) {
+        setIsSubmitting(false); // Re-enable the button only if not already submitted
+      }
     }
   };
   
+  
 
+  // Responsive check for mobile
   const isMobile = window.innerWidth < 1024;
 
   return (
@@ -868,21 +888,29 @@ const CourseSection = () => {
 
         {/* Sidebar for larger screens */}
         <div className={`course-sidebar ${isMobile ? "hidden" : "w-1/4"} px-4 mb-8`}>
-          <div className="bg-[#01224F] shadow-lg">
-            {Object.keys(courses).map((key) => (
-              <div key={key}>
-                <button
-                  onClick={() => changeCourse(key)}
-                  className={`flex justify-between items-center w-full py-2 px-2 transition-all duration-300
-                  ${selectedCourse === key ? "bg-[#FFC80E] text-[#003073] transform translate-x-2 shadow-2xl" : "bg-[#003073] text-white"}
-                  transform-gpu hover:bg-[#FFC80E] hover:text-[#003073] hover:translate-x-2 hover:shadow-xl`}
-                >
-                  <span className="text-left break-words text-sm lg:text-xl">{buttonLabels[key]}</span>
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
+  <div className="bg-[#01224F] shadow-lg">
+    {Object.keys(courses).map((key) => (
+      <div key={key}>
+        <button
+          onClick={() => changeCourse(key)}
+          className={`flex justify-between items-center w-full py-2 px-2 transition-all duration-300
+          ${selectedCourse === key ? "bg-[#FFC80E] text-[#003073] transform translate-x-2 shadow-2xl" : "bg-[#003073] text-white"}
+          transform-gpu hover:bg-[#FFC80E] hover:text-[#003073] hover:translate-x-2 hover:shadow-xl`}
+        >
+          <span className="text-left break-words text-sm lg:text-xl">{buttonLabels[key]}</span>
+          
+          {/* Always display the '>' symbol, change color for active button */}
+          <span
+            className={`ml-2 text-lg ${selectedCourse === key ? "text-[#003073]" : "text-[#FFC80E]"}`}
+          >
+            &gt;
+          </span>
+        </button>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* Content Area - Cards shown to the right of the sidebar */}
         <div
@@ -939,23 +967,26 @@ const CourseSection = () => {
       </div>
 
       {/* Floating Brochure Button */}
-      {!isMobile && selectedCourse === "MBA" && downloadButtonVisible && (
-        <button
-          onClick={handleDownloadBrochure}
-          className="fixed bottom-20 right-6 z-50 inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl border-2 border-transparent hover:border-yellow-400"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 16v2a2 2 0 002 2h14a2 2 0 002-2v-2M12 12V4m0 8l-4-4m4 4l4-4" />
-          </svg>
-          MBA Training Content
-        </button>
-      )}
+{!isMobile && selectedCourse === "MBA" && downloadButtonVisible && !isSubmitted && (
+  <button
+    onClick={handleDownloadBrochure}
+    className="fixed bottom-20 right-6 z-50 inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl border-2 border-transparent hover:border-yellow-400"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 16v2a2 2 0 002 2h14a2 2 0 002-2v-2M12 12V4m0 8l-4-4m4 4l4-4" />
+    </svg>
+    MBA Training Content
+  </button>
+)}
+
 
       {/* Inquiry Form Modal */}
       {formVisible && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-            <h2 className="text-lg font-semibold mb-6 text-center">Please provide your details:</h2>
+            <h2 className="text-lg font-semibold mb-6 text-center">
+              Please provide your details:
+            </h2>
             <form onSubmit={handleSubmit}>
               <InputField
                 label="Name"
@@ -995,13 +1026,23 @@ const CourseSection = () => {
                 onChange={(e) => setFormState({ ...formState, message: e.target.value })}
               />
               <div className="flex justify-end mt-4">
-                <button
-                  type="submit"
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                  disabled={isSubmitting} // Disable button while submitting
-                >
-                  {isSubmitting ? "Submitting..." : "Submit"} {/* Button text based on submission state */}
-                </button>
+              <button
+  type="submit"
+  className={`bg-blue-600 text-white px-6 py-2 rounded-lg transition-colors ${
+    isSubmitting || isSubmitted
+      ? "bg-gray-400 cursor-not-allowed"
+      : "hover:bg-blue-700"
+  }`}
+  disabled={isSubmitting || isSubmitted}
+>
+  {isSubmitting
+    ? "Submitting..."
+    : isSubmitted
+    ? "Already Submitted"  // Updated text after submission
+    : "Submit"}
+</button>
+
+
                 <button
                   type="button"
                   className="ml-2 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors"

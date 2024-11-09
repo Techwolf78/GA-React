@@ -146,9 +146,10 @@ const ContactForm = () => {
     phone: "",
     category: "",
     message: "",
-    source: "Faculty Form", // Permanent value for the source
+    source: "College Form", // Permanent value for the source
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false); // New state to track form submission
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -157,7 +158,7 @@ const ContactForm = () => {
     // Append the source value to formData
     formData.append("source", formState.source);
 
-    if (isSubmitting) return;
+    if (isSubmitting || isFormSubmitted) return; // Prevent submission if already submitted
 
     setIsSubmitting(true);
 
@@ -183,9 +184,11 @@ const ContactForm = () => {
             phone: "",
             category: "",
             message: "",
-            source: "Faculty Form", // Reset source to default
+            source: "College Form", // Reset source to default
           });
           e.target.reset();
+
+          setIsFormSubmitted(true); // Mark the form as submitted
         } else {
           toast.error(`Error: ${data.message}`, {
             position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
@@ -205,8 +208,6 @@ const ContactForm = () => {
         setIsSubmitting(false);
       });
   };
-
-
 
   const fadeInStyle = {
     opacity: inView ? 1 : 0,
@@ -315,7 +316,8 @@ const ContactForm = () => {
                 />
               </div>
 
-              <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+             
+<form onSubmit={handleSubmit} className="flex flex-col gap-2">
                 <InputField
                   label="Name"
                   type="text"
@@ -365,10 +367,10 @@ const ContactForm = () => {
                 />
                 <button
                   type="submit"
-                  className={`bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors w-full ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  disabled={isSubmitting}
+                  className={`bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors w-full ${isSubmitting || isFormSubmitted ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  disabled={isSubmitting || isFormSubmitted} // Disable if submitting or form is already submitted
                 >
-                  {isSubmitting ? 'Submitting...' : 'Send Message'}
+                  {isSubmitting ? 'Submitting...' : isFormSubmitted ? 'Already Submitted' : 'Send Message'}
                 </button>
               </form>
             </div>

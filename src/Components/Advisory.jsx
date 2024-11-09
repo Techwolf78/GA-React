@@ -2,14 +2,14 @@ import { useEffect, useRef } from 'react';
 import { Typography } from "@material-tailwind/react";
 
 const ADVISORY_DATA = [
-  { name: "Dr. K. S. Sangwan", designation: "Chief Professor", location: "Mechanical Engineering Department, BITS Pilani", image: "Advisory/KS Sangwan.png", logo: "placement-bg/BITS.PNG" },
-  { name: "Mr. Mohan Patel", designation: "Project Management Consultant", location: "From IIT-Bombay", image: "Advisory/Mr. Mohan sir 1.png", logo: "placement-bg/2 2.png" },
-  { name: "Dr. Sukanta Bhatt", designation: "Director of Tisory Consulting", location: "From IIT-Kharagpur", image: "Advisory/Sukanta Bhatt.png", logo: "placement-bg/3 1.png" },
-  { name: "Mr. Rahul Bagale", designation: "Group HR Head", location: "Force Motors", image: "Advisory/Rahul Bagale.png", logo: "placement-bg/4.png" },
-  { name: "Mr. Siddharth Moorthy", designation: "Managing Director", location: "Vascon Engineers Ltd.", image: "Advisory/Siddharth.png", logo: "placement-bg/6.png" },
-  { name: "Mr. Ramchandra Honap", designation: "SHRBP-Supply Chain", location: "Hindustan Coca-Cola Beverages", image: "Advisory/Ram Honap.png", logo: "placement-bg/5.png" },
-  { name: "Cdr. Pratap Pawar", designation: "Ex-Director gslab", location: "HR & IT gslab", image: "Advisory/Pratap SirTry.png", logo: "Logos/4.jpg" },
-  { name: "Dr. Anil Kumar", designation: "J C Bose National Fellow & Honorary Professor AcSIR", location: "", image: "Advisory/Anil kumar.png", logo: "placement-bg/8.png" },
+  { name: "Dr. K. S. Sangwan", designation: "Chief Professor", location: "Mechanical Engineering Department, BITS Pilani", image: "Advisory/KS Sangwan.avif", logo: "placement-bg/BITS.PNG" },
+  { name: "Mr. Mohan Patel", designation: "Project Management Consultant", location: "From IIT-Bombay", image: "Advisory/Mr. Mohan sir 1.avif", logo: "placement-bg/2 2.png" },
+  { name: "Dr. Sukanta Bhatt", designation: "Director of Tisory Consulting", location: "From IIT-Kharagpur", image: "Advisory/Sukanta Bhatt.avif", logo: "placement-bg/3 1.png" },
+  { name: "Mr. Rahul Bagale", designation: "Group HR Head", location: "Force Motors", image: "Advisory/Rahul Bagale.avif", logo: "placement-bg/4.png" },
+  { name: "Mr. Siddharth Moorthy", designation: "Managing Director", location: "Vascon Engineers Ltd.", image: "Advisory/Siddharth.avif", logo: "placement-bg/6.png" },
+  { name: "Mr. Ramchandra Honap", designation: "SHRBP-Supply Chain", location: "Hindustan Coca-Cola Beverages", image: "Advisory/Ram Honap.avif", logo: "placement-bg/5.png" },
+  { name: "Cdr. Pratap Pawar", designation: "Ex-Director gslab", location: "HR & IT gslab", image: "Advisory/Pratap SirTry.avif", logo: "Logos/4.jpg" },
+  { name: "Dr. Anil Kumar", designation: "J C Bose National Fellow & Honorary Professor AcSIR", location: "", image: "Advisory/Anil kumar.avif", logo: "placement-bg/8.png" },
 ];
 
 const Advisory = () => {

@@ -6,6 +6,7 @@ import Select from 'react-select';  // Import React Select
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [category, setCategory] = useState(null); // State to track selected category
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false); // New state to track if form is submitted
 
   // Category options for the React Select dropdown
   const categoryOptions = [
@@ -31,6 +32,7 @@ const Contact = () => {
       .then((data) => {
         if (data.status === 'success') {
           toast.success('Form successfully submitted!');
+          setIsFormSubmitted(true); // Mark form as submitted
           setTimeout(() => {
             e.target.reset(); // Reset all form fields except category
             setCategory(null); // Reset category to placeholder
@@ -168,18 +170,18 @@ const Contact = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className={`w-full text-[#091327] py-3 rounded-lg font-bold transition-colors ${isSubmitting ? 'bg-[#FFC80E]' : 'bg-[#FFC80E] hover:bg-[#e0a800]'}`}
+                disabled={isSubmitting || isFormSubmitted}  // Disable if submitting or already submitted
+                className={`w-full text-[#091327] py-3 rounded-lg font-bold transition-all duration-300 ${isSubmitting || isFormSubmitted ? 'bg-gradient-to-r from-[#FFC80E] to-[#e0a800] opacity-50 cursor-not-allowed' : 'bg-gradient-to-r from-[#FFC80E] to-[#ffab00] hover:scale-105 hover:from-[#ff9a00] hover:to-[#f4a261]'} `}
               >
-                {isSubmitting ? 'Submitting...' : 'Send Message'}
+                {isSubmitting ? 'Submitting...' : isFormSubmitted ? 'Submitted' : 'Send Message'}
               </button>
             </form>
           </div>
         </div>
       </section>
 
-       {/* Information Section */}
-       <div className="py-12 bg-[#01224F] px-8 md:px-16">
+      {/* Information Section */}
+      <div className="py-12 bg-[#01224F] px-8 md:px-16">
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
           {/* Address */}
           <div className="p-6 text-center bg-[#1e3a8a] rounded-lg shadow-lg transition-transform hover:scale-105">

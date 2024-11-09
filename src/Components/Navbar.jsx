@@ -74,7 +74,7 @@ const Navbar = () => {
             className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
-            HOME
+            Home
           </a>
           <div
             className="relative inline-block"
@@ -88,7 +88,7 @@ const Navbar = () => {
               aria-expanded={isDropdownOpen}
               className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-2 rounded flex items-center justify-center transition-colors duration-300"
             >
-              LEARNING & DEVELOPMENT<i className="bx bx-chevron-down ml-1"></i>
+              Learning & Development<i className="bx bx-chevron-down ml-1"></i>
             </button>
 
             {isDropdownOpen && (
@@ -115,21 +115,21 @@ const Navbar = () => {
             className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
-            CAMPUS PLACEMENT
+            Campus Placement
           </a>
           <a
             href="/brandPositioning"
             className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
-            CROSS BRAND POSITIONING
+            Cross Brand Positioning
           </a>
           <a
             href="/blogs"
             className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
-            BLOGS
+            Blogs
           </a>
         </nav>
 

@@ -22,26 +22,18 @@ const Home = () => {
   const [lastWordIndex, setLastWordIndex] = useState(0);
   const [fadeFirst, setFadeFirst] = useState(false);
   const [fadeLast, setFadeLast] = useState(false);
-  const [lineVisible, setLineVisible] = useState(false);
+
 
   const firstWords = [
-    "Theory",
     "Campus",
     "Students",
     "Academia",
-    "Knowledge",
-    "Skills",
-    "Education"
   ];
 
   const lastWords = [
-    "Practice",
     "Corporate",
     "Professionals",
     "Industry",
-    "Opportunities",
-    "Employment",
-    "Outcome"
   ];
 
   const scrollPercent = useRef(0);
@@ -96,7 +88,6 @@ const Home = () => {
     const cycleWords = () => {
       setFadeFirst(true);
       setFadeLast(true);
-      setLineVisible(false);
 
       setTimeout(() => {
         setFirstWordIndex((prevIndex) => (prevIndex + 1) % firstWords.length);
@@ -104,8 +95,7 @@ const Home = () => {
 
         setFadeFirst(false);
         setFadeLast(false);
-        setLineVisible(true);
-      }, 300);
+      }, 400);
     };
 
     const interval = setInterval(cycleWords, 2000);
@@ -156,13 +146,13 @@ const Home = () => {
             <li>
               <div className="underline"></div>
               <a onClick={() => handleNavClick(aboutRef)}>
-                <span>Gryphon Academy</span>
+                <span>Who are we</span>
               </a>
             </li>
             <li>
               <div className="underline"></div>
               <a onClick={() => handleNavClick(trainingRef)}>
-                <span>Industry Readiness Program</span>
+                <span>Learning & Development</span>
               </a>
             </li>
             <li>
@@ -236,39 +226,57 @@ const Home = () => {
       </Link>
 
       <div id="hero_slider" className="section roboto-regular hero-slider-section left" ref={heroRef}>
-        <div className="section-content left">
-          <h2 className="hero-text">
-            <div className="permanent-text text-white large-font">
-              <span className="text-[#FFC80E]">Bridging</span> the <span className="text-[#FFC80E]">Gap</span> Between
-            </div>
-            <div className="hero-words">
-              <div className={`fade ${fadeFirst ? "fade-out" : "fade-in"} small-font first-word`}>
-                {firstWords[firstWordIndex]}
-              </div>
-              <div className={`dotted-line ${lineVisible ? "show" : ""}`}></div>
-              <div className={`fade ${fadeLast ? "fade-out" : "fade-in"} small-font last-word`}>
-                {lastWords[lastWordIndex]}
-              </div>
-            </div>
-          </h2>
-          <p>
-            Making students Industry Ready with our Customized Industry Readiness Programme
-          </p>
-          <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
-            <span>Know More</span>
-          </Link>
-        </div>
-        <img
-          src="LandingImage/vector 1.webp"
-          alt="Left Side Design"
-          className="left-side-image hidden md:block"
-        />
-        <img
-          src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730698772/MobileHeroNew_ia78v1.webp"
-          alt="Mobile Vector"
-          className="mobile-vector-image"
-        />
+  <div className="section-content left">
+    <h2 className="hero-text">
+      <div className="permanent-text text-white large-font">
+        <span className="text-[#FFC80E]">Bridging</span> the <span className="text-[#FFC80E]">Gap</span> Between
       </div>
+      <div className="hero-words">
+        {/* First Word Container */}
+        <div className="word-container first-word-container">
+          <div className={`fade ${fadeFirst ? "fade-out" : "fade-in"} small-font first-word`}>
+            {firstWords[firstWordIndex]}
+          </div>
+        </div>
+
+        {/* Bridge Image Container */}
+        <div className="image-container">
+          <img
+            src="bridge.avif"  // Replace with actual image URL
+            alt="Bridge"
+            className="hero-bridge"
+          />
+        </div>
+
+        {/* Last Word Container */}
+        <div className="word-container last-word-container">
+          <div className={`fade ${fadeLast ? "fade-out" : "fade-in"} small-font last-word`}>
+            {lastWords[lastWordIndex]}
+          </div>
+        </div>
+      </div>
+    </h2>
+    <p>
+      Making students Industry Ready with our Customized Industry Readiness Programme
+    </p>
+    <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
+      <span>Know More</span>
+    </Link>
+  </div>
+  <img
+    src="LandingImage/vector 1.webp"
+    alt="Left Side Design"
+    className="left-side-image hidden md:block"
+  />
+  <img
+    src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730698772/MobileHeroNew_ia78v1.webp"
+    alt="Mobile Vector"
+    className="mobile-vector-image"
+  />
+</div>
+
+
+
 
       <div id="core_capabilities" className="section core-capabilities-section right" ref={aboutRef}>
         <div className="section-content right">

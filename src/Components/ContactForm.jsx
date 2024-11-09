@@ -149,6 +149,7 @@ const ContactForm = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false); // New state for form submission
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -157,7 +158,7 @@ const ContactForm = () => {
     // Append the source value to formData
     formData.append("source", formState.source);
 
-    if (isSubmitting) return;
+    if (isSubmitting || isFormSubmitted) return; // Prevent submission if already submitted
 
     setIsSubmitting(true);
 
@@ -186,6 +187,7 @@ const ContactForm = () => {
             source: "L&D Contact Form", // Reset source to default
           });
           e.target.reset();
+          setIsFormSubmitted(true); // Mark form as submitted
         } else {
           toast.error(`Error: ${data.message}`, {
             position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
@@ -367,11 +369,15 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   className={`bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors w-full ${
-                    isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                    isSubmitting || isFormSubmitted ? "opacity-50 cursor-not-allowed" : ""
                   }`}
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || isFormSubmitted} // Disable if submitting or already submitted
                 >
-                  {isSubmitting ? "Submitting..." : "Send Message"}
+                  {isSubmitting
+                    ? "Submitting..."
+                    : isFormSubmitted
+                    ? "Already Submitted"
+                    : "Send Message"}
                 </button>
               </form>
             </div>

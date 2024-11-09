@@ -4,18 +4,18 @@ const HomeSliderClg = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   const logos = [
-    "Clgimage/1-1.png",
-    "Clgimage/13-1.png",
-    "Clgimage/14-1.png",
-    "Clgimage/15-1.png",
-    "Clgimage/16-1.png",
-    "Clgimage/6-2.png",
-    "Clgimage/7-2.png",
-    "Clgimage/8-2.png",
-    "Clgimage/9-2.png",
-    "Clgimage/10-2.png",
-    "Clgimage/11-2.png",
-    "Clgimage/12-2.png",
+    "Clgimage/1-1.avif",
+    "Clgimage/13-1.avif",
+    "Clgimage/14-1.avif",
+    "Clgimage/15-1.avif",
+    "Clgimage/16-1.avif",
+    "Clgimage/6-2.avif",
+    "Clgimage/7-2.avif",
+    "Clgimage/8-2.avif",
+    "Clgimage/9-2.avif",
+    "Clgimage/10-2.avif",
+    "Clgimage/11-2.avif",
+    "Clgimage/12-2.avif",
   ];
 
   useEffect(() => {
