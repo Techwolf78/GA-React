@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 
@@ -8,9 +8,9 @@ const CollegeInfoSection = () => {
   }, []);
 
   const points = [
-    "Complete offline mode",
-    "Content approved by the Industry & then delivered",
-    "Real – Scenario based learning"
+    "Trainings Within the Walls of Campus",
+    "Industry-Validated Training Content",
+    "Practical Application Modules"
   ];
 
   return (

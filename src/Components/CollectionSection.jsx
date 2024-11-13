@@ -1,6 +1,7 @@
 import React from 'react';
 
 const CollectionSection = () => (
+  <div className="px-8 md:px-16">  {/* Add padding here */}
   <div className="collection-section">
     <style>
       {`
@@ -17,13 +18,13 @@ const CollectionSection = () => (
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
           gap: 1rem;
-          padding: 1rem;
+   
         }
 
         .cutout-card {
           width: 100%;
           height: 350px;
-          background-color: #dcd4e0; /* Light grey for card */
+          background-color: #01224F; /* Light grey for card */
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
           position: relative;
           overflow: hidden;
@@ -163,6 +164,7 @@ const CollectionSection = () => (
         </div>
       </div>
     </div>
+  </div>
   </div>
 );
 

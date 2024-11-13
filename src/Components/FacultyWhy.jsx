@@ -10,12 +10,12 @@ const FeatureCard = ({ feature, index }) => (
     animate={{ opacity: 1, scale: 1 }}
     transition={{ delay: index * 0.2, duration: 0.5 }}
   >
-    <div className="absolute top-0 left-0 w-1 bg-[#ffc700] h-16 rounded-r-xl"></div>
-    <h2 className="text-xl sm:text-2xl font-semibold text-[#091327] mb-4 relative group">
+    <div className="absolute top-0 left-0 w-1 bg-[#FFC80E] h-16 rounded-r-xl"></div>
+    <h2 className="text-xl sm:text-2xl font-semibold text-[#01224F] mb-4 relative group">
       {feature.title}
-      <span className="absolute bottom-0 left-0 w-full h-1 bg-[#ffc700] transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100" />
+      <span className="absolute bottom-0 left-0 w-full h-1 bg-[#FFC80E] transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100" />
     </h2>
-    <p className="text-sm sm:text-base lg:text-lg text-[#091327] leading-relaxed flex-grow">
+    <p className="text-sm sm:text-base lg:text-lg text-[#01224F] leading-relaxed flex-grow">
       {feature.description}
     </p>
   </motion.div>
@@ -51,8 +51,8 @@ function FacultyWhy() {
   }, []);
 
   return (
-    <div className="px-4 md:px-8 lg:px-16 mx-auto bg-[#091327] py-8 shadow-2xl roboto-regular">
-      <h1 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-extrabold text-[#ffc700] text-center mb-8">
+    <div className="px-4 md:px-8 lg:px-16 mx-auto bg-[#01224F] py-8 shadow-2xl roboto-regular">
+      <h1 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-extrabold text-[#FFC80E] text-center mb-8">
         Why Choose Gryphon Academy&apos;s FDP?
       </h1>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

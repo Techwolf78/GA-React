@@ -1,4 +1,3 @@
-import React from "react";
 import FacultyHero from "./FacultyHero";
 import FacultyWhy from "./FacultyWhy";
 import FacultyModule from "./FacultyModule";

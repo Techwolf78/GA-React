@@ -81,7 +81,7 @@ const Testimonials = () => {
     padding: "24px",
     boxShadow: "none",
     width: "300px",
-    textAlign: "left",
+    textAlign: "center",
     flexShrink: 0,
     margin: "0 8px",
     border: "2px dashed #003073",
@@ -101,7 +101,7 @@ const Testimonials = () => {
 
   const logoContainerStyle = {
     display: "flex",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     marginBottom: "12px",
   };
 
@@ -131,7 +131,7 @@ const Testimonials = () => {
               <p style={{ fontSize: "16px", color: "#000000", marginBottom: "8px", fontStyle: "italic", flexGrow: 1 }}>
                 {`"${testimonial.review}"`}
               </p>
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <p style={{ color: "#000000", fontWeight: "bold", fontSize: "16px", marginBottom: "0" }}>
                   {testimonial.name}
                 </p>
@@ -157,7 +157,7 @@ const Testimonials = () => {
               <p style={{ fontSize: "16px", color: "#000000", marginBottom: "8px", fontStyle: "italic", flexGrow: 1 }}>
                 {`"${testimonial.review}"`}
               </p>
-              <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <p style={{ color: "#000000", fontWeight: "bold", fontSize: "16px", marginBottom: "0" }}>
                   {testimonial.name}
                 </p>

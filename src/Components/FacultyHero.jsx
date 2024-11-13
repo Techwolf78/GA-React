@@ -21,7 +21,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="bg-[#003073] text-white py-12 px-4 md:py-20 md:px-8 lg:px-24">
+    <div className="bg-[#01224F] text-white py-12 px-4 md:py-20 md:px-8 lg:px-24">
       <style>
         {`
           @keyframes float {
@@ -63,11 +63,11 @@ const HeroSection = () => {
           <Link to="/contact">
             <button
               onClick={scrollToTop} // Add scrollToTop function here
-              className="btn-know-more relative inline-flex px-5 py-3 text-sm sm:text-base font-semibold text-[#ffffff] group whitespace-nowrap hidden lg:inline-flex"
+              className="btn-know-more relative inline-flex px-5 py-3 text-sm sm:text-base font-semibold text-[#ffffff] group whitespace-nowrap lg:inline-flex"
             >
               <span className="relative z-10">Get in touch today</span>
               <svg
-                className="ml-2 w-4 h-4 text-[#ffffff] relative z-10 transition-colors duration-300 ease-in-out group-hover:text-[#000000]"
+                className="ml-2 w-4 h-4 text-[#ffffff] relative z-10 transition-colors duration-300 ease-in-out group-hover:text-[#01224F]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

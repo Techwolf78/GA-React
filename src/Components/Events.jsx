@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const eventData = {
   1: {
@@ -80,12 +80,12 @@ const Events = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100 p-4 sm:p-6 md:p-8 lg:p-10">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-blue-800 uppercase mb-6">
-        ELEVATING EVENTS TO NEW HEIGHTS
+    <div className=" flex flex-col bg-gray-100 py-6">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-blue-800  mb-6">
+        Elevating Events To New Heights
       </h1>
 
-      <div className="flex overflow-x-auto justify-between items-stretch bg-white shadow-md p-0 md:p-4 rounded mb-6">
+      <div className="flex overflow-x-auto justify-between items-stretch bg-white shadow-md  md:mx-16 rounded mb-6">
         {Object.keys(eventData).map((key, index) => (
           <div
             key={index}
@@ -101,16 +101,16 @@ const Events = () => {
               alt="Logo"
               className="w-10 h-10 sm:w-20 sm:h-20 rounded-full mb-2"
             />
-            <span className="text-sm sm:text-lg md:text-xl text-center">
+            <span className="text-sm sm:text-lg md:text-xl text-center md:px-1">
               {eventData[index + 1].heading}
             </span>
           </div>
         ))}
       </div>
 
-      <div className="flex flex-col md:flex-row gap-4">
+      <div className="flex flex-col md:flex-row gap-4 px-6 md:px-14">
         <div
-          className={`flex-1 bg-white rounded p-4 shadow-md transition-opacity duration-300 ${
+          className={`flex-1 bg-white rounded px-2 md:px-2 shadow-md transition-opacity duration-300 ${
             fadeIn ? "opacity-100" : "opacity-0"
           }`}
         >

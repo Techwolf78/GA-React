@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const ComingSoon = () => {
@@ -48,5 +49,4 @@ const ComingSoon = () => {
 };
 
 export default ComingSoon;
-
 

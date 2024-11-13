@@ -69,7 +69,7 @@ const MajorRecruiter = () => {
       {/* Big box on the top left side of the slider */}
       {!isMobile && (
         <div className="info-box absolute top-0 left-0 bg-white p-4 shadow-lg flex items-center h-full">
-          <h2 className="text-[16px] text-[#ffff]">Our Top Recruiters</h2>
+          <h2 className="text-[16px] text-[#FFC80E]  font-extrabold">Our Top Recruiters</h2>
         </div>
       )}
 

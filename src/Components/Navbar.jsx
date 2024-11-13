@@ -71,7 +71,7 @@ const Navbar = () => {
         <nav className="hidden lg:flex space-x-4">
           <a
             href="/"
-            className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+            className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4  transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
             Home
@@ -86,13 +86,13 @@ const Navbar = () => {
               onClick={handleTrainingClick}
               aria-haspopup="true"
               aria-expanded={isDropdownOpen}
-              className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-2 rounded flex items-center justify-center transition-colors duration-300"
+              className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-2  flex items-center justify-center transition-colors duration-300"
             >
               Learning & Development<i className="bx bx-chevron-down ml-1"></i>
             </button>
 
             {isDropdownOpen && (
-              <div className="absolute top-full left-0 mt-0 bg-[#ffffff] text-[#1a1a1a] rounded-md shadow-lg z-50 whitespace-nowrap">
+              <div className="absolute top-full left-0 mt-0 bg-[#ffffff] text-[#1a1a1a]  shadow-lg z-50 whitespace-nowrap">
                 {['Industry Readiness Program', 'Corporate Training', 'Faculty Training'].map((item) => (
                   <a
                     key={item}
@@ -112,21 +112,21 @@ const Navbar = () => {
 
           <a
             href="/placement"
-            className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+            className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4  transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
             Campus Placement
           </a>
           <a
             href="/brandPositioning"
-            className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+            className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4  transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
             Cross Brand Positioning
           </a>
           <a
             href="/blogs"
-            className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 rounded transition-colors duration-300"
+            className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4  transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
             Blogs

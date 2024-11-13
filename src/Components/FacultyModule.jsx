@@ -18,16 +18,17 @@ function WhyTraining() {
   const darkGray = "#333333";
 
   const items = [
-    { icon: faChalkboardTeacher, text: "Pedagogy Enhancement" },
-    { icon: faBookOpen, text: "Curriculum Development" },
-    { icon: faLaptopCode, text: "Technology Integration in Teaching" },
-    { icon: faClipboardCheck, text: "Assessment and Evaluation Strategies" },
+    { icon: faChalkboardTeacher, text: <>Pedagogy<br />Enhancement</> },
+    { icon: faBookOpen, text: <>Curriculum<br />Development</> },
+    { icon: faGraduationCap, text: <>Comprehensive<br /> Development</> },
     { icon: faBook, text: "Research and Publication Guidance" },
-    { icon: faUserTie, text: "Leadership and Management Skills for Educators" },
-    { icon: faGraduationCap, text: "Comprehensive Development" },
+    { icon: faLaptopCode, text: "Technology Integration in Teaching" },
     { icon: faSyncAlt, text: "Real Time Based Approach" },
+    { icon: faClipboardCheck, text: "Assessment and Evaluation Strategies" },
     { icon: EliteGuidanceIcon, text: "Elite Guidance (Industry Experts)" },
+    { icon: faUserTie, text: "Leadership and Management Skills for Educators" },
   ];
+  
 
   return (
     <div className="roboto-regular">
@@ -43,7 +44,6 @@ function WhyTraining() {
               >
                 What Do Our FDP Modules Include?
               </p>
-
               <div className="flex items-center justify-center">
                 <img
                   src="placement-bg/Training - Thinking Man.avif"
@@ -56,35 +56,36 @@ function WhyTraining() {
 
             {/* Right Content - 70% width */}
             <div className="flex-1 flex items-center justify-center w-9/12">
-              <div className="grid grid-cols-3 gap-6 w-full">
-                {items.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400 hover:border-2 hover:border-yellow-400"
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        marginBottom: "0.5rem",
-                      }}
-                    >
-                      <FontAwesomeIcon
-                        icon={item.icon}
-                        style={{
-                          color: lightBlue,
-                          fontSize: "2rem",
-                        }}
-                      />
-                    </div>
-                    <p style={{ color: darkGray, fontWeight: "500" }}>
-                      {item.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+  <div className="grid grid-cols-3 gap-6 w-full">
+    {items.map((item, index) => (
+      <div
+        key={index}
+        className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400 hover:border-2 hover:border-yellow-400"
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: "0.5rem",
+          }}
+        >
+          <FontAwesomeIcon
+            icon={item.icon}
+            style={{
+              color: lightBlue,
+              fontSize: "2rem",
+            }}
+          />
+        </div>
+        <p style={{ color: darkGray, fontWeight: "500" }}>
+          {item.text}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
           </div>
 
           {/* Layout for medium and small screens */}

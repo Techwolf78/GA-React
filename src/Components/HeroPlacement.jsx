@@ -116,7 +116,7 @@ const HeroPlacement = () => {
         {/* Stacked Text and Banner */}
         <div className="absolute flex flex-col items-center justify-center h-full">
           <h1
-            className={`text-white font-bold text-center mb-2 ${
+            className={`text-[#FFC80E] font-bold text-center mb-2 ${
               isExiting ? 'slide-exit' : 'slide-enter'
             }`}
           >
