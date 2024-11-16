@@ -31,7 +31,7 @@ const Placement = () => {
 <div className="p-0 text-center roboto-regular relative">
   <div className="w-full h-auto bg-[#ffffff] relative">
     <img 
-      src="placement-bg/evatrain.png" 
+      src="placement-bg/evatrain.avif" 
       alt="Infographic" 
       className="w-full h-auto block mx-auto"
     />

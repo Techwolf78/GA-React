@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Confetti from 'react-confetti';
 
 const EventPopUp = () => {
   // State to store the countdown time
@@ -8,6 +9,9 @@ const EventPopUp = () => {
     minutes: 0,
     seconds: 0,
   });
+
+  // State to control the confetti
+  const [showConfetti, setShowConfetti] = useState(false);
 
   // Event date (14th December)
   const eventDate = new Date('2024-12-14T00:00:00Z');
@@ -47,17 +51,47 @@ const EventPopUp = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  // Trigger confetti after 2 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowConfetti(true);
+    }, 100); // Trigger after 1 miliseconds
+
+    return () => clearTimeout(timer); // Cleanup on unmount
+  }, []);
+
   // Format the time to always show two digits
   const formatTime = (time) => (time < 10 ? `0${time}` : time);
 
   return (
     <div>
+      {/* Confetti animation */}
+      {showConfetti && (
+  <Confetti
+    width={window.innerWidth}
+    height={window.innerHeight}
+    numberOfPieces={200}
+    gravity={0.3}
+    initialVelocityX={15}
+    initialVelocityY={10}
+    recycle={false}
+    colors={['#FFC80E', '#FF6347', '#4CAF50', '#2196F3', '#8E24AA']}
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      zIndex: 9999,  // Ensure it's on top of everything
+    }}
+  />
+)}
+
+
       {/* Section 1: Background image with full black overlay */}
       <div
         className="bg-cover bg-center flex items-center justify-center relative"
         style={{
           backgroundImage: 'url("journey/evbg.jpg")', // Replace with your background image URL
-          height: '100vh', // Ensure the container takes full height
+          
         }}
       >
         {/* Full black overlay above the background image */}
@@ -76,11 +110,11 @@ const EventPopUp = () => {
 
           {/* Right side: Text (70% width), vertically centered */}
           <div className="w-full sm:w-2/3 flex flex-col justify-center text-white text-left pl-5 md:pl-10">
-            <h2 className="text-4xl text-center font-bold mb-4 text-[#FFC80E]">GRANDEUR OF GROWTH 24</h2>
-            <p className="text-xl text-center mb-4">NOW OPEN FOR ENTRIES</p>
-            <p className="text-lg text-center">
-              Join us for an exciting event that brings together innovators and leaders from across industries. <br />
-              Experience new ideas, exciting presentations, and unique opportunities for <br />
+            <h2 className="text-4xl text-center font-bold mb-4 text-[#FFC80E] uppercase">Synergy Sphere 2024</h2>
+            <p className="text-xl text-center mb-4">Lorem ipsum dolor sit amet </p>
+            <p className="text-lg text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis officia 
+            Lorem ipsum dolor sit  <br />
+            voluptatibus eligendi esse voluptates facere praesentium quis dolore necessitatibus  <br />
               networking, collaboration, and learning. Don’t miss out on this chance to <br />
               be a part of something truly memorable and impactful.
             </p>
@@ -91,77 +125,55 @@ const EventPopUp = () => {
       {/* Bottom Section: Timer */}
       {timeLeft && (
         <div className="w-full p-3 flex justify-center items-center absolute bottom-0 sm:bottom-[-10px] left-0 z-30">
-        <div className="bg-white p-6 rounded-3xl shadow-xl flex flex-col items-center max-w-md mx-auto border-2 border-yellow-400">
-          <p className="text-xl sm:text-3xl mb-3 font-bold text-center text-[#01224F]">
-            Event{" "}
-            <span className="relative inline-block">
-              <span className="text-red-600">Starts</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 500 150"
-                preserveAspectRatio="none"
-                className="absolute bottom-0 left-0 w-full h-10 opacity-0 animate-fade-line"
-              >
-                <path
-                  d="M9.3,127.3c49.3-3,150.7-7.6,199.7-7.4c121.9,0.4,189.9,0.4,282.3,7.2C380.1,129.6,181.2,130.6,70,139 c82.6-2.9,254.2-1,335.9,1.3c-56,1.4-137.2-0.3-197.1,9"
-                  stroke="#e74c3c"
-                  strokeWidth="2"
-                  fill="transparent"
-                />
-              </svg>
-            </span>{" "}
-            in
-          </p>
-          <div className="flex justify-center text-lg sm:text-2xl font-bold text-[#01224F] tracking-wide">
-            <div className="mx-3 flex flex-col items-center">
-              <span className="text-3xl sm:text-4xl font-bold text-[#01224F]">
-                {formatTime(timeLeft.days)}
-              </span>
-              <span className="text-sm sm:text-base text-[#01224F] uppercase">Days</span>
-            </div>
-            <div className="mx-3 flex flex-col items-center">
-              <span className="text-3xl sm:text-4xl font-bold text-[#01224F]">
-                {formatTime(timeLeft.hours)}
-              </span>
-              <span className="text-sm sm:text-base text-[#01224F] uppercase">Hours</span>
-            </div>
-            <div className="mx-3 flex flex-col items-center">
-              <span className="text-3xl sm:text-4xl font-bold text-[#01224F]">
-                {formatTime(timeLeft.minutes)}
-              </span>
-              <span className="text-sm sm:text-base text-[#01224F] uppercase">Minutes</span>
-            </div>
-            <div className="mx-3 flex flex-col items-center">
-              <span className="text-3xl sm:text-4xl font-bold text-[#01224F]">
-                {formatTime(timeLeft.seconds)}
-              </span>
-              <span className="text-sm sm:text-base text-[#01224F] uppercase">Seconds</span>
+          <div className="bg-white p-6 rounded-3xl shadow-xl flex flex-col items-center max-w-md mx-auto border-2 border-yellow-400">
+            <p className="text-xl sm:text-3xl mb-3 font-bold text-center text-[#01224F]">
+              Event{" "}
+              <span className="relative inline-block">
+                <span className="text-red-600">Starts</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 500 150"
+                  preserveAspectRatio="none"
+                  className="absolute bottom-0 left-0 w-full h-10 opacity-0 animate-fade-line"
+                >
+                  <path
+                    d="M9.3,127.3c49.3-3,150.7-7.6,199.7-7.4c121.9,0.4,189.9,0.4,282.3,7.2C380.1,129.6,181.2,130.6,70,139 c82.6-2.9,254.2-1,335.9,1.3c-56,1.4-137.2-0.3-197.1,9"
+                    stroke="#e74c3c"
+                    strokeWidth="2"
+                    fill="transparent"
+                  />
+                </svg>
+              </span>{" "}
+              in
+            </p>
+            <div className="flex justify-center text-lg sm:text-2xl font-bold text-[#01224F] tracking-wide">
+              <div className="mx-3 flex flex-col items-center">
+                <span className="text-3xl sm:text-4xl font-bold text-[#01224F]">
+                  {formatTime(timeLeft.days)}
+                </span>
+                <span className="text-sm sm:text-base text-[#01224F] uppercase">Days</span>
+              </div>
+              <div className="mx-3 flex flex-col items-center">
+                <span className="text-3xl sm:text-4xl font-bold text-[#01224F]">
+                  {formatTime(timeLeft.hours)}
+                </span>
+                <span className="text-sm sm:text-base text-[#01224F] uppercase">Hours</span>
+              </div>
+              <div className="mx-3 flex flex-col items-center">
+                <span className="text-3xl sm:text-4xl font-bold text-[#01224F]">
+                  {formatTime(timeLeft.minutes)}
+                </span>
+                <span className="text-sm sm:text-base text-[#01224F] uppercase">Minutes</span>
+              </div>
+              <div className="mx-3 flex flex-col items-center">
+                <span className="text-3xl sm:text-4xl font-bold text-[#01224F]">
+                  {formatTime(timeLeft.seconds)}
+                </span>
+                <span className="text-sm sm:text-base text-[#01224F] uppercase">Seconds</span>
+              </div>
             </div>
           </div>
         </div>
-      
-        {/* Animation style */}
-        <style>
-          {`
-            .animate-fade-line {
-              animation: fadeLine 2s ease-in-out infinite;
-            }
-      
-            @keyframes fadeLine {
-              0% {
-                opacity: 0;
-              }
-              50% {
-                opacity: 1;
-              }
-              100% {
-                opacity: 0;
-              }
-            }
-          `}
-        </style>
-      </div>
-      
       )}
     </div>
   );

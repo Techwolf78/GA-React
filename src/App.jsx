@@ -88,7 +88,7 @@ function App() {
             ) : (
               <DecEvent /> // Show DecEvent once loader is finished
             )}
-            <Footer /> {/* Footer always visible */}
+            
           </>
         } />
 
@@ -103,6 +103,7 @@ function App() {
       )}
       {showWhatsAppWidget && <WhatsAppWidget />} 
       <ScrollToTopButton visible={scrollVisible} />
+      <Footer /> 
     </>
   );
 }

@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Typography } from "@material-tailwind/react";
 
 const ADVISORY_DATA = [
-  { name: "Dr. K. S. Sangwan", designation: "Chief Professor", location: "Mechanical Engineering Department, BITS Pilani", image: "Advisory/KS Sangwan.avif", logo: "placement-bg/BITS.PNG" },
+  { name: "Dr. K. S. Sangwan", designation: "Chief Professor", location: "Mechanical Engineering Department, BITS Pilani", image: "Advisory/KS Sangwan.avif", logo: "placement-bg/BITS.avif" },
   { name: "Mr. Mohan Patel", designation: "Project Management Consultant", location: "From IIT-Bombay", image: "Advisory/Mr. Mohan sir 1.avif", logo: "placement-bg/2 2.png" },
   { name: "Dr. Sukanta Bhatt", designation: "Director of Tisory Consulting", location: "From IIT-Kharagpur", image: "Advisory/Sukanta Bhatt.avif", logo: "placement-bg/3 1.png" },
   { name: "Mr. Rahul Bagale", designation: "Group HR Head", location: "Force Motors", image: "Advisory/Rahul Bagale.avif", logo: "placement-bg/4.png" },

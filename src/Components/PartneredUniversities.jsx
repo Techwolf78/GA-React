@@ -10,7 +10,7 @@ const PartneredUniversities = () => {
       {/* Background image for medium and large screens */}
       <div className="w-full hidden md:block mb-6">
         <img 
-          src="placement-bg/PANIndiaNew.PNG" 
+          src="placement-bg/PANIndiaNew.avif" 
           alt="Background showing partnered colleges and universities" 
           className="w-full h-full object-fit" 
           style={{ margin: 0 }} 
@@ -20,7 +20,7 @@ const PartneredUniversities = () => {
       {/* Background image for small screens only */}
       <div className="w-full block md:hidden mb-6">
         <img 
-          src="placement-bg/PlacementBG1.PNG" 
+          src="placement-bg/PlacementBG1.avif" 
           alt="Background for small screens showing partnered colleges and universities" 
           className="w-full h-auto object-cover" 
           style={{ margin: 0 }} 
