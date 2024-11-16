@@ -23,7 +23,7 @@ const Loader = ({ onFinish }) => {
   return (
     <div className="absolute top-0 left-0 w-full h-full bg-black text-white flex justify-center items-center z-50">
       <div className="text-6xl font-bold" style={{
-        background: 'linear-gradient(to right, #FFC80E, #ed9c61)',
+        background: 'linear-gradient(to bottom, #c8a85b 25%, #f1d35f 50%, #755107 80%)',
         WebkitBackgroundClip: 'text',
         color: 'transparent'
       }}>

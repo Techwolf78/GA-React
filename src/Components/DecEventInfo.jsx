@@ -9,7 +9,7 @@ function DecEventInfo() {
         {/* Capsules Section */}
         <div className="flex gap-36 justify-center items-center my-4">
           {/* Capsule 1: WHERE IS THE EVENT */}
-          <div className="flex items-center gap-4 p-6 rounded-xl shadow-xl w-auto  hover:shadow-2xl hover:scale-105 transition-all transform duration-500 ease-out bg-slate-700">
+          <div className="flex items-center gap-4 p-6 rounded-xl shadow-xl w-auto  hover:shadow-2xl hover:scale-105 transition-all transform duration-500 ease-out bg-black">
             {/* Yellow box for the icon with glowing effect */}
             <div className="bg-[#223645] p-4 rounded-2xl flex items-center justify-center glow-effect">
               <FaMapMarkerAlt size={28} className="text-[#ffffff] glow-icon" />
@@ -20,7 +20,7 @@ function DecEventInfo() {
               <div
                 className="font-bold text-5xl whitespace-nowrap overflow-hidden text-ellipsis"
                 style={{
-                  background: 'linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%)',
+                  background: 'linear-gradient(to bottom, #c8a85b 25%, #f1d35f 50%, #755107 80%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                 }}
@@ -31,7 +31,7 @@ function DecEventInfo() {
           </div>
 
           {/* Capsule 2: WHEN IS THE EVENT */}
-          <div className="flex items-center gap-4 p-6 rounded-xl shadow-xl w-auto  hover:shadow-2xl hover:scale-105 transition-all transform duration-500 ease-out bg-slate-700">
+          <div className="flex items-center gap-4 p-6 rounded-xl shadow-xl w-auto  hover:shadow-2xl hover:scale-105 transition-all transform duration-500 ease-out bg-black">
             {/* Yellow box for the icon with glowing effect */}
             <div className="bg-[#223645] p-4 rounded-2xl flex items-center justify-center glow-effect">
               <FaCalendarAlt size={28} className="text-white glow-icon" />
@@ -42,7 +42,7 @@ function DecEventInfo() {
               <div
                 className="font-bold text-5xl whitespace-nowrap overflow-hidden text-ellipsis"
                 style={{
-                  background: 'linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%)',
+                  background: 'linear-gradient(to bottom, #c8a85b 25%, #f1d35f 50%, #755107 80%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                 }}
@@ -57,16 +57,16 @@ function DecEventInfo() {
         <div className="text-center py-4">
   <p className="text-[#ffffff] font-bold text-3xl mb-4">KEY FACTS</p>
   <div className="flex justify-center items-center space-x-[-30px]">
-    <div className="w-60 h-60 bg-[#ebae2c] flex justify-center items-center rounded-full text-2xl font-semibold border-4 border-white p-4 hover:scale-105 hover:shadow-2xl transition-transform duration-500 ease-in-out">
+    <div className="w-60 h-60 bg-[#FFC80E] flex justify-center items-center rounded-full text-2xl font-semibold border-4 border-white p-4 hover:scale-105 hover:shadow-2xl transition-transform duration-500 ease-in-out">
       <div className="text-center text-black glow-text">Lorem ipsum dolor sit</div>
     </div>
-    <div className="w-60 h-60 bg-[#ebae2c] flex justify-center items-center rounded-full text-2xl font-semibold border-4 border-white p-4 hover:scale-105 hover:shadow-2xl transition-transform duration-500 ease-in-out">
+    <div className="w-60 h-60 bg-[#FFC80E] flex justify-center items-center rounded-full text-2xl font-semibold border-4 border-white p-4 hover:scale-105 hover:shadow-2xl transition-transform duration-500 ease-in-out">
       <div className="text-center text-black glow-text">Lorem vitae leo</div>
     </div>
-    <div className="w-60 h-60 bg-[#ebae2c] flex justify-center items-center rounded-full text-2xl font-semibold border-4 border-white p-4 hover:scale-105 hover:shadow-2xl transition-transform duration-500 ease-in-out">
+    <div className="w-60 h-60 bg-[#FFC80E] flex justify-center items-center rounded-full text-2xl font-semibold border-4 border-white p-4 hover:scale-105 hover:shadow-2xl transition-transform duration-500 ease-in-out">
       <div className="text-center text-black glow-text">Lorem plagd cera elit leo</div>
     </div>
-    <div className="w-60 h-60 bg-[#ebae2c] flex justify-center items-center rounded-full text-2xl font-semibold border-4 border-white p-4 hover:scale-105 hover:shadow-2xl transition-transform duration-500 ease-in-out">
+    <div className="w-60 h-60 bg-[#FFC80E] flex justify-center items-center rounded-full text-2xl font-semibold border-4 border-white p-4 hover:scale-105 hover:shadow-2xl transition-transform duration-500 ease-in-out">
       <div className="text-center text-black glow-text">Lorem  eget dui tincidunt</div>
     </div>
   </div>

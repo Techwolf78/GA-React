@@ -51,11 +51,11 @@ const EventPopUp = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  // Trigger confetti after 2 seconds
+  // Trigger confetti after 1 second
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowConfetti(true);
-    }, 100); // Trigger after 1 miliseconds
+    }, 100); // Trigger after 100 milliseconds
 
     return () => clearTimeout(timer); // Cleanup on unmount
   }, []);
@@ -67,40 +67,39 @@ const EventPopUp = () => {
     <div>
       {/* Confetti animation */}
       {showConfetti && (
-  <Confetti
-    width={window.innerWidth}
-    height={window.innerHeight}
-    numberOfPieces={200}
-    gravity={0.3}
-    initialVelocityX={15}
-    initialVelocityY={10}
-    recycle={false}
-    colors={['#FFC80E', '#FF6347', '#4CAF50', '#2196F3', '#8E24AA']}
-    style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      zIndex: 9999,  // Ensure it's on top of everything
-    }}
-  />
-)}
-
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          numberOfPieces={200}
+          gravity={0.3}
+          initialVelocityX={15}
+          initialVelocityY={10}
+          recycle={false}
+          colors={['#FFC80E', '#FF6347', '#4CAF50', '#2196F3', '#8E24AA']}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            zIndex: 9999,  // Ensure it's on top of everything
+          }}
+        />
+      )}
 
       {/* Section 1: Background image with full black overlay */}
       <div
-        className="bg-cover bg-center flex items-center justify-center relative"
+        className="bg-cover bg-center flex items-center justify-center relative w-full"
         style={{
           backgroundImage: 'url("journey/evbg.jpg")', // Replace with your background image URL
-          
+          minHeight: '100vh', // Ensure full screen height
         }}
       >
         {/* Full black overlay above the background image */}
         <div className="absolute inset-0 bg-black opacity-70 z-20"></div>
 
         {/* Content (Image, Text, and Countdown) on top of the overlay */}
-        <div className="flex w-full px-5 relative z-30">
-          {/* Left side: Image (30% width) */}
-          <div className="w-full sm:w-1/3 flex justify-center items-center">
+        <div className="flex flex-col sm:flex-row w-full px-5 relative z-30">
+          {/* Left side: Image (100% width on small screens, 30% width on large screens) */}
+          <div className="w-full sm:w-1/3 flex justify-center items-center mb-5 sm:mb-0">
             <img
               src="journey/evtry.png" // Replace with your image URL
               alt="Event Image"
@@ -108,13 +107,27 @@ const EventPopUp = () => {
             />
           </div>
 
-          {/* Right side: Text (70% width), vertically centered */}
+          {/* Right side: Text (100% width on small screens, 70% width on large screens) */}
           <div className="w-full sm:w-2/3 flex flex-col justify-center text-white text-left pl-5 md:pl-10">
-            <h2 className="text-4xl text-center font-bold mb-4 text-[#FFC80E] uppercase">Synergy Sphere 2024</h2>
-            <p className="text-xl text-center mb-4">Lorem ipsum dolor sit amet </p>
-            <p className="text-lg text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis officia 
-            Lorem ipsum dolor sit  <br />
-            voluptatibus eligendi esse voluptates facere praesentium quis dolore necessitatibus  <br />
+            <h2
+              className="text-4xl sm:text-5xl text-center font-bold mb-4 uppercase"
+              style={{
+                background: 'linear-gradient(to bottom, #c8a85b 25%, #f1d35f 50%, #755107 80%)',
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+              }}
+            >
+              Synergy Sphere 2024
+            </h2>
+
+            <p className="text-xl sm:text-2xl text-center mb-4">
+              Lorem ipsum dolor sit amet
+            </p>
+            <p className="text-lg sm:text-xl text-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis officia
+              Lorem ipsum dolor sit amet <br />
+              voluptatibus eligendi esse voluptates facere praesentium quis dolore necessitatibus
+              <br />
               networking, collaboration, and learning. Don’t miss out on this chance to <br />
               be a part of something truly memorable and impactful.
             </p>
@@ -125,7 +138,7 @@ const EventPopUp = () => {
       {/* Bottom Section: Timer */}
       {timeLeft && (
         <div className="w-full p-3 flex justify-center items-center absolute bottom-0 sm:bottom-[-10px] left-0 z-30">
-          <div className="bg-white p-6 rounded-3xl shadow-xl flex flex-col items-center max-w-md mx-auto border-2 border-yellow-400">
+          <div className="bg-white p-6 rounded-3xl shadow-xl flex flex-col items-center max-w-md mx-auto border-2 border-[#FFD700]">
             <p className="text-xl sm:text-3xl mb-3 font-bold text-center text-[#01224F]">
               Event{" "}
               <span className="relative inline-block">
