@@ -14,7 +14,7 @@ const EventPopUp = () => {
   const [showConfetti, setShowConfetti] = useState(false);
 
   // Event date (14th December)
-  const eventDate = new Date('2024-12-14T00:00:00Z');
+  const eventDate = new Date('2024-12-16T00:00:00Z');
 
   // Function to calculate the time remaining
   const calculateTimeLeft = () => {

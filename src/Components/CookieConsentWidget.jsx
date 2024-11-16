@@ -10,7 +10,7 @@ const EventPopUp = () => {
   const [timeLeft, setTimeLeft] = useState(null);
 
   // Set the event date (14th December 2024)
-  const eventDate = new Date("2024-12-14T00:00:00");
+  const eventDate = new Date("2024-12-16T00:00:00");
 
   // Update the timer every second
   useEffect(() => {
@@ -85,11 +85,11 @@ const EventPopUp = () => {
             {/* Right Section: Heading and Paragraph */}
             <div className="w-full sm:w-1/2 p-5 sm:p-10 flex flex-col justify-center items-center text-white text-shadow-xl">
               <div className="flex-1 flex flex-col justify-center items-center">
-                <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4 leading-tight text-center uppercase text-[#FFC80E] tracking-wide">
-                  Welcome to the Event !
+                <h3 className="text-2xl sm:text-3xl font-bold mb-2 leading-tight text-center uppercase text-[#FFC80E] tracking-wide">
+                Synergy Sphere 2024
                 </h3>
-                <p className="text-xs sm:text-sm mt-2 leading-relaxed text-center">
-                  NOW OPEN FOR ENTRIES
+                <p className="text-xs sm:text-sm mt-1 leading-relaxed text-center">
+                 Something Extrardinary Is Coming...
                 </p>
                 <p className="text-sm sm:text-base text-center mt-2 leading-relaxed">
                   Join the excitement and prestige of the Creative Retail
