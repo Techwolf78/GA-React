@@ -11,7 +11,7 @@ function DecEventInfo() {
           {/* Capsule 1: WHERE IS THE EVENT */}
           <div className="flex items-center gap-4 p-6 rounded-xl shadow-xl w-auto  hover:shadow-2xl hover:scale-105 transition-all transform duration-500 ease-out bg-slate-700">
             {/* Yellow box for the icon with glowing effect */}
-            <div className="bg-[#59c3dd] p-4 rounded-2xl flex items-center justify-center glow-effect">
+            <div className="bg-[#223645] p-4 rounded-2xl flex items-center justify-center glow-effect">
               <FaMapMarkerAlt size={28} className="text-[#ffffff] glow-icon" />
             </div>
             
