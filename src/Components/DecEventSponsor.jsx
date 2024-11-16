@@ -103,7 +103,7 @@ const SponsorsAndPartners = () => {
   {/* Logo 7 */}
   <div className="h-auto w-auto flex justify-center items-center">
     <img 
-      src="Event/replica.png" 
+      src="Event/PM.png" 
       alt="Logo 7" 
       className="rounded-md" 
     />
@@ -143,7 +143,7 @@ const SponsorsAndPartners = () => {
   {/* Logo 12 */}
   <div className="h-auto w-auto flex justify-center items-center">
     <img 
-      src="Event/replica.png" 
+      src="Event/CN.png" 
       alt="Logo 12" 
       className="rounded-md" 
     />

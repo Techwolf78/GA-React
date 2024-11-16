@@ -8,20 +8,19 @@ function DecEventGallery() {
         {/* Left Side (Small Heading + Main Heading) */}
         <div className="w-3/6">
           <h3 className="text-xl font-semibold text-gray-700">EVENT GALLERY</h3>
-          <h1 className="text-4xl font-bold text-gray-900 mt-2">VIEW IMAGES FROM THE 2024 AWARDS</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mt-2">Lorem ipsum, dolor sit amet consectetur </h1>
         </div>
 
         {/* Right Side (Text Paragraph + Link) */}
         <div className="w-3/6 ">
           <p className="text-lg text-gray-600 ">
-            Take a look at the captivating images from the 2024 Creative Retail Awards, held at Eight Embankment on September 18th.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quia autem nemo. Beatae, fuga obcaecati laboriosam aspernatur omnis nobis tenetur commodi. 
           </p>
-          <a 
-            href="/full-gallery" 
+          <p 
             className="mt-4 inline-block text-blue-600 font-semibold hover:underline text-center"
           >
-            VIEW THE FULL GALLERY HERE
-          </a>
+            Lorem ipsum dolor sit amet
+          </p>
         </div>
       </div>
 
