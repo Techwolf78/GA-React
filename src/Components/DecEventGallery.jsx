@@ -22,11 +22,11 @@ function DecEventGallery() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
         {/* Image 1 */}
         <div className="relative group transform hover:scale-110 transition-transform duration-500">
           <img
-            src="Event/1.jpeg"
+            src="Event/g1.jfif"
             alt="Event 1"
             className="w-full h-auto rounded-3xl shadow-2xl transition duration-300"
             style={{ transform: 'rotate(2deg)' }}
@@ -37,7 +37,7 @@ function DecEventGallery() {
         {/* Image 2 */}
         <div className="relative group transform hover:scale-110 transition-transform duration-500">
           <img
-            src="Event/2.jpeg"
+            src="Event/g2.jfif"
             alt="Event 2"
             className="w-full h-auto rounded-3xl shadow-2xl transition duration-300"
             style={{ transform: 'rotate(-5deg)' }}
@@ -48,7 +48,7 @@ function DecEventGallery() {
         {/* Image 3 */}
         <div className="relative group transform hover:scale-110 transition-transform duration-500">
           <img
-            src="Event/3.jpeg"
+            src="Event/g3.jfif"
             alt="Event 3"
             className="w-full h-auto rounded-3xl shadow-2xl transition duration-300"
             style={{ transform: 'rotate(3deg)' }}
@@ -59,7 +59,7 @@ function DecEventGallery() {
         {/* Image 4 */}
         <div className="relative group transform hover:scale-110 transition-transform duration-500">
           <img
-            src="Event/4.jpeg"
+            src="Event/g4.jfif"
             alt="Event 4"
             className="w-full h-auto rounded-3xl shadow-2xl transition duration-300"
             style={{ transform: 'rotate(1deg)' }}
@@ -70,7 +70,7 @@ function DecEventGallery() {
         {/* Image 5 */}
         <div className="relative group transform hover:scale-110 transition-transform duration-500">
           <img
-            src="Event/5.jpeg"
+            src="Event/g5.jfif"
             alt="Event 5"
             className="w-full h-auto rounded-3xl shadow-2xl transition duration-300"
             style={{ transform: 'rotate(-2deg)' }}
@@ -81,7 +81,7 @@ function DecEventGallery() {
         {/* Image 6 */}
         <div className="relative group transform hover:scale-110 transition-transform duration-500">
           <img
-            src="Event/6.jpeg"
+            src="Event/g6.jfif"
             alt="Event 6"
             className="w-full h-auto rounded-3xl shadow-2xl transition duration-300"
             style={{ transform: 'rotate(4deg)' }}
@@ -92,7 +92,7 @@ function DecEventGallery() {
         {/* Image 7 */}
         <div className="relative group transform hover:scale-110 transition-transform duration-500">
           <img
-            src="Event/7.jpeg"
+            src="Event/g7.jfif"
             alt="Event 7"
             className="w-full h-auto rounded-3xl shadow-2xl transition duration-300"
             style={{ transform: 'rotate(0deg)' }}
@@ -103,7 +103,7 @@ function DecEventGallery() {
         {/* Image 8 */}
         <div className="relative group transform hover:scale-110 transition-transform duration-500">
           <img
-            src="Event/8.jpeg"
+            src="Event/g8.jfif"
             alt="Event 8"
             className="w-full h-auto rounded-3xl shadow-2xl transition duration-300"
             style={{ transform: 'rotate(-3deg)' }}

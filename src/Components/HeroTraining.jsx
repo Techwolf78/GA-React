@@ -42,38 +42,32 @@ const HeroTraining = () => {
     <div className="bg-[#091327] relative roboto-regular">
       <div
         ref={ref}
-        className={`flex flex-col justify-between p-2 sm:p-4 md:p-6 lg:p-8 xl:p-10 ${
+        className={`flex flex-col justify-between  ${
           isMobile ? "bg-[#01224F] h-auto" : "bg-cover lg:bg-cover h-[50vh] lg:h-screen"
-        } mx-auto px-8 sm:px-8 md:px-16 lg:px-16`}
+        } mx-auto md:px-16 `}
         style={{
           backgroundImage: isMobile ? "none" : "url('trainherofinals.png')",
-          backgroundPosition: "center center",  // Ensure the image is centered properly
+          backgroundPosition: isMobile
+            ? "center center"
+            : "center left", // Make the image crop from the right side
           backgroundSize: isMobile ? "auto" : "cover", // 'cover' for large screens, 'auto' for mobile
         }}
       >
         <div
-          className={`flex ${
-            isMobile ? "flex-col items-center justify-center h-full" : ""
-          } text-center ${isMobile ? "mt-10" : "md:text-left mt-20 lg:mt-32 lg:ml-14"}`}
+          className={`flex ${isMobile ? "flex-col items-center justify-center h-full" : ""} text-center ${isMobile ? "mt-10" : "md:text-left mt-20 "}`}
           style={headingStyle}
         >
           <h1
-            className={`text-[1.5rem] sm:text-[2rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] font-bold mb-2 ${
-              isMobile ? "text-white" : "text-[#000000]"
-            } ${fadeInStyle} ${!isMobile ? "hidden" : ""}`}
+            className={`text-[1.5rem] sm:text-[2rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] font-bold mb-2 ${isMobile ? "text-white" : "text-[#000000]"} ${fadeInStyle} ${!isMobile ? "hidden" : ""}`}
           >
             <span
-              className={`${
-                isMobile ? "text-[#FFC80E] text-[1.5rem]" : "text-[#003073] text-[1.5rem] md:text-[3rem]"
-              } font-bold`}
+              className={`${isMobile ? "text-[#FFC80E] text-[1.5rem]" : "text-[#003073] text-[1.5rem] md:text-[3rem]"}`}
             >
               THE LEARNING TRINITY:
             </span>
             <br />
             <span
-              className={`text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] xl:text-[2.5rem] font-bold mb-2 ${
-                isMobile ? "text-white" : "text-[#000000]"
-              }`}
+              className={`text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] xl:text-[2.5rem] font-bold mb-2 ${isMobile ? "text-white" : "text-[#000000]"}`}
             >
               Where <span className={`${isMobile ? "text-[#FFC80E]" : ""}`}>Academia</span> Meets{" "}
               <span className={`${isMobile ? "text-[#FFC80E]" : ""}`}>Industry</span>

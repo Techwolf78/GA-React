@@ -94,7 +94,7 @@ function WhyTraining() {
                     <p 
                       style={{
                         color: darkGray,
-                        fontSize: '1rem',
+                        fontSize: '0.875rem',
                         fontWeight: 'bold',
                         lineHeight: '1.5rem',
                       }}

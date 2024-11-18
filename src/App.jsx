@@ -39,6 +39,73 @@ function App() {
     setLoaderFinished(true); // Set the loader as finished
   };
 
+  // Dynamically set the page title based on the route
+  useEffect(() => {
+    const baseTitle = "Gryphon Academy | Bridging the Gap Between Industry and Academia";
+    let pageTitle = "";
+
+    switch (location.pathname) {
+      case "/":
+        pageTitle = "Home";
+        break;
+      case "/about-us":
+        pageTitle = "About Us";
+        break;
+      case "/gax":
+        pageTitle = "GAX";
+        break;
+      case "/blogs":
+        pageTitle = "Blogs";
+        break;
+      case "/placement":
+        pageTitle = "Placement";
+        break;
+      case "/contact":
+        pageTitle = "Contact Us";
+        break;
+      case "/brandPositioning":
+        pageTitle = "Brand Positioning";
+        break;
+      case "/training":
+        pageTitle = "Training";
+        break;
+      case "/collegeTraining":
+        pageTitle = "College Training";
+        break;
+      case "/corporatetraining":
+        pageTitle = "Corporate Training";
+        break;
+      case "/facultytraining":
+        pageTitle = "Faculty Training";
+        break;
+      case "/events":
+        pageTitle = "Events";
+        break;
+      case "/post1":
+        pageTitle = "Blog Post 1";
+        break;
+      case "/post2":
+        pageTitle = "Blog Post 2";
+        break;
+      case "/post3":
+        pageTitle = "Blog Post 3";
+        break;
+      case "/post4":
+        pageTitle = "Blog Post 4";
+        break;
+      case "/post5":
+        pageTitle = "Blog Post 5";
+        break;
+      case "/post6":
+        pageTitle = "Blog Post 6";
+        break;
+      default:
+        pageTitle = "Page Not Found";
+    }
+
+    document.title = `${pageTitle} | ${baseTitle}`;
+  }, [location]); // Re-run whenever location changes
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollVisible(window.scrollY > window.innerHeight * 1.2);
@@ -88,7 +155,6 @@ function App() {
             ) : (
               <DecEvent /> // Show DecEvent once loader is finished
             )}
-            
           </>
         } />
 

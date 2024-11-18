@@ -18,37 +18,31 @@ const SponsorsAndPartners = () => {
           <div className="flex justify-center space-x-8">
             <div className="flex justify-center items-center  w-32 h-32">
               <img 
-                src="Event/morplan.png" 
+                src="Event/image 32.png" 
                 alt="Placeholder 1" 
                 className=" w-auto h-auto" 
               /> {/* Placeholder Circle 1 */}
             </div>
             <div className="flex justify-center items-center  w-32 h-32">
               <img 
-                src="Event/replica.png" 
+                src="Event/image 33.png" 
                 alt="Placeholder 2" 
                 className=" w-auto h-auto" 
               /> {/* Placeholder Circle 2 */}
             </div>
             <div className="flex justify-center items-center  w-32 h-32">
               <img 
-                src="Event/SDD.png" 
+                src="Event/image 34.png" 
                 alt="Placeholder 3" 
                 className=" w-auto h-auto" 
               /> {/* Placeholder Circle 3 */}
             </div>
-            <div className="flex justify-center items-center  w-32 h-32">
-              <img 
-                src="Event/graphica.png" 
-                alt="Placeholder 4" 
-                className=" w-auto h-auto" 
-              /> {/* Placeholder Circle 4 */}
-            </div>
+        
           </div>
         </div>
 
         {/* Subheading */}
-        <h3 className="text-3xl font-semibold text-yellow-400 mb-4">Guest by Gryphon Academy</h3>
+        <h3 className="text-3xl font-semibold text-yellow-400 mb-4">Brands</h3>
 
 {/* Brand Logos (Grid of 5 per row) */}
 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
