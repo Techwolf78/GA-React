@@ -2,13 +2,13 @@ import React from 'react';
 
 function DecEventGallery() {
   return (
-    <div className="px-8 md:px-16 py-12 mx-auto bg-gray-900">
+    <div className="px-8 md:px-16 py-12 mx-auto bg-cover bg-center bg-[url('Event/sparklebg.jpg')]">
       {/* Top 20% Section */}
       <div className="flex justify-between items-center mb-12 h-1/5 gap-4">
         {/* Left Side (Small Heading + Main Heading) */}
         <div className="w-3/6">
           <h3 className="text-xl font-semibold text-gray-300">EVENT GALLERY</h3>
-          <h1 className="text-4xl font-bold text-white mt-2">Lorem ipsum, dolor sit amet consectetur</h1>
+          <h1 className="text-4xl font-bold text-[#FFC80E] mt-2">Lorem ipsum, dolor sit amet consectetur</h1>
         </div>
 
         {/* Right Side (Text Paragraph + Link) */}
@@ -16,9 +16,7 @@ function DecEventGallery() {
           <p className="text-lg text-gray-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quia autem nemo. Beatae, fuga obcaecati laboriosam aspernatur omnis nobis tenetur commodi.
           </p>
-          <p className="mt-4 inline-block text-blue-400 font-semibold hover:underline text-center">
-            Lorem ipsum dolor sit amet
-          </p>
+         
         </div>
       </div>
 

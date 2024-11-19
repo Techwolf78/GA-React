@@ -362,32 +362,50 @@ body, html {
 
 #hero_slider { 
   background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730803138/Rectangle_48try_vdlvku.avif');
-  background-position: right ;  /* Align the background image to the right side */
+  background-position: right;  /* Align the background image to the right side */
   background-size: contain;             /* Ensure the background image covers the section */
   background-repeat: no-repeat;       /* Prevent image repetition */
 }
+
 #core_capabilities { 
   background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland2_iiwltn.avif'); 
 }
+
 #operating_models { 
   background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland3_konwok.avif'); 
 }
+
 #talent_transformations { 
   background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland4_cel82n.avif'); 
 }
+
 #do_more { 
   background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland5_fjba9x.avif'); 
 }
 
-
+/* Default styling for large screens (background-size: contain) */
 #core_capabilities,
 #operating_models,
 #talent_transformations,
 #do_more {
-  background-size: contain; /* Ensure the image is contained within the section */
+  background-size: contain; /* Default to contain for large screens */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent image repetition */
 }
+
+/* Media query for screens between 768px and 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #hero_slider,
+  #core_capabilities,
+  #operating_models,
+  #talent_transformations,
+  #do_more {
+    background-size: cover; /* Use cover for medium-large screens (between 768px and 1024px) */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+  }
+}
+
 
 .section-content {
   max-width: 700px;

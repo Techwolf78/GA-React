@@ -2,14 +2,17 @@ import { FaMapMarkerAlt, FaCalendarAlt } from 'react-icons/fa';
 
 function DecEventInfo() {
   return (
-    <div className="bg-gray-900 p-8">
+    <div className="relative bg-cover bg-center bg-[url('Event/spark.jpg')] p-8">
+      {/* Overlay over the background image */}
+      <div className="absolute inset-0 bg-black opacity-70 z-20"></div>
+
       {/* Main Container with Golden Background */}
-      <div className="flex flex-col items-center space-y-10">
+      <div className="relative flex flex-col items-center space-y-10 z-30"> {/* Ensure the content appears on top */}
         
         {/* Capsules Section */}
         <div className="flex gap-10 justify-center items-center my-6">
           {/* Capsule 1: WHERE IS THE EVENT */}
-          <div className="flex items-center gap-4 p-6 rounded-2xl shadow-xl transition-transform duration-500 ease-out bg-black hover:scale-105 hover:shadow-2xl">
+          <div className="flex items-center gap-4 p-6 rounded-2xl shadow-xl transition-transform duration-500 ease-out bg-gray-800 hover:scale-105 hover:shadow-2xl">
             {/* Yellow box for the icon with glowing effect */}
             <div className="bg-[#223645] p-4 rounded-xl flex items-center justify-center glow-effect">
               <FaMapMarkerAlt size={30} className="text-white glow-icon" />
@@ -31,7 +34,7 @@ function DecEventInfo() {
           </div>
 
           {/* Capsule 2: WHEN IS THE EVENT */}
-          <div className="flex items-center gap-4 p-6 rounded-2xl shadow-xl transition-transform duration-500 ease-out bg-black hover:scale-105 hover:shadow-2xl">
+          <div className="flex items-center gap-4 p-6 rounded-2xl shadow-xl transition-transform duration-500 ease-out bg-gray-800 hover:scale-105 hover:shadow-2xl">
             {/* Yellow box for the icon with glowing effect */}
             <div className="bg-[#223645] p-4 rounded-xl flex items-center justify-center glow-effect">
               <FaCalendarAlt size={30} className="text-white glow-icon" />
@@ -55,38 +58,67 @@ function DecEventInfo() {
 
         {/* Key Facts Section */}
         <div className="text-center py-6">
-          <p className="text-white font-bold text-4xl mb-8">KEY FACTS</p>
+          <p className="text-[#FFC80E] font-bold text-4xl mb-8">KEY FACTS</p>
           
           {/* Modern Circular Layout for Key Facts */}
           <div className="flex justify-center items-center space-x-8">
             {/* Circle 1 */}
-            <div className="w-60 h-60 bg-[#FFC80E] flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out">
-              <div className="text-center text-black font-semibold text-xl p-4">
+            <div
+              className="w-60 h-60 bg-cover bg-center flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out relative border-4 border-[#FFC80E]"
+              style={{ backgroundImage: 'url(Event/s2.jpg)' }}
+            >
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black opacity-40 rounded-full"></div>
+
+              {/* Text Content */}
+              <div className="text-center text-white font-semibold text-xl p-4 relative z-10">
                 Lorem ipsum dolor sit
               </div>
             </div>
 
             {/* Circle 2 */}
-            <div className="w-60 h-60 bg-[#FFC80E] flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out">
-              <div className="text-center text-black font-semibold text-xl p-4">
+            <div
+              className="w-60 h-60 bg-cover bg-center flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out relative border-4 border-[#FFC80E]"
+              style={{ backgroundImage: 'url(Event/s2.jpg)' }}
+            >
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black opacity-40 rounded-full"></div>
+
+              {/* Text Content */}
+              <div className="text-center text-white font-semibold text-xl p-4 relative z-10">
                 Lorem vitae leo
               </div>
             </div>
 
             {/* Circle 3 */}
-            <div className="w-60 h-60 bg-[#FFC80E] flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out">
-              <div className="text-center text-black font-semibold text-xl p-4">
+            <div
+              className="w-60 h-60 bg-cover bg-center flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out relative border-4 border-[#FFC80E]"
+              style={{ backgroundImage: 'url(Event/s2.jpg)' }}
+            >
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black opacity-40 rounded-full"></div>
+
+              {/* Text Content */}
+              <div className="text-center text-white font-semibold text-xl p-4 relative z-10">
                 Lorem plagd cera elit leo
               </div>
             </div>
 
             {/* Circle 4 */}
-            <div className="w-60 h-60 bg-[#FFC80E] flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out">
-              <div className="text-center text-black font-semibold text-xl p-4">
+            <div
+              className="w-60 h-60 bg-cover bg-center flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out relative border-4 border-[#FFC80E]"
+              style={{ backgroundImage: 'url(Event/s2.jpg)' }}
+            >
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black opacity-40 rounded-full"></div>
+
+              {/* Text Content */}
+              <div className="text-center text-white font-semibold text-xl p-4 relative z-10">
                 Lorem eget dui tincidunt
               </div>
             </div>
           </div>
+
         </div>
 
       </div>

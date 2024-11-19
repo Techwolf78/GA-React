@@ -4,14 +4,14 @@ const SponsorsAndPartners = () => {
   return (
     <section 
       className="relative py-4 px-8 md:px-16 bg-cover bg-center" 
-      style={{ backgroundImage: 'url("journey/evbg.jpg")' }}
+      style={{ backgroundImage: 'url("Event/spark.jpg")' }}
     >
       {/* Full black overlay above the background image */}
       <div className="absolute inset-0 bg-black opacity-70 z-20"></div>
 
       <div className="container mx-auto text-center relative z-30">
         {/* Section Heading */}
-        <h2 className="text-4xl font-semibold text-yellow-400 mb-4">Academic Sponsors</h2>
+        <h2 className="text-5xl font-semibold text-[#FFC80E] mb-4">Academic Sponsors</h2>
         
         {/* 4 Circular Logos (Big Placeholders) */}
         <div className="mb-12">
@@ -25,14 +25,14 @@ const SponsorsAndPartners = () => {
             </div>
             <div className="flex justify-center items-center  w-32 h-32">
               <img 
-                src="Event/image 33.png" 
+                src="Event/image 34.png" 
                 alt="Placeholder 2" 
                 className=" w-auto h-auto" 
               /> {/* Placeholder Circle 2 */}
             </div>
             <div className="flex justify-center items-center  w-32 h-32">
               <img 
-                src="Event/image 34.png" 
+                src="Event/image 33.png" 
                 alt="Placeholder 3" 
                 className=" w-auto h-auto" 
               /> {/* Placeholder Circle 3 */}
@@ -42,7 +42,7 @@ const SponsorsAndPartners = () => {
         </div>
 
         {/* Subheading */}
-        <h3 className="text-3xl font-semibold text-yellow-400 mb-4">Brands</h3>
+        <h3 className="text-4xl font-semibold text-[#FFC80E] mb-4">Brands</h3>
 
 {/* Brand Logos (Grid of 5 per row) */}
 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">

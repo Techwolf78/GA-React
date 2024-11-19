@@ -12,13 +12,25 @@ function CollegeBox() {
   const [countingStarted, setCountingStarted] = useState(false);
 
   const images = [
-    'https://res.cloudinary.com/dcjmaapvi/image/upload/v1729942558/Training_Photo_1_w6huq7.webp',
-    'https://res.cloudinary.com/dcjmaapvi/image/upload/v1729942557/Training_Photo_2_nyvrd2.webp',
-    'https://res.cloudinary.com/dcjmaapvi/image/upload/v1729942556/Training_Photo_3_rictud.webp',
+    'https://res.cloudinary.com/dcjmaapvi/image/upload/v1731928406/image_xzisjw.avif',
+    'https://res.cloudinary.com/dcjmaapvi/image/upload/v1731928406/image_1_yihq3w.avif',
+    'https://res.cloudinary.com/dcjmaapvi/image/upload/v1731928406/image_2_dll7ul.avif',
   ];
 
+  // Preload images to prevent new requests
   useEffect(() => {
-    AOS.init({ duration: 1000, once: false }); // Set once to false for repeat triggering
+    const preloadImages = () => {
+      images.forEach((imageUrl) => {
+        const img = new Image();
+        img.src = imageUrl;
+        img.onload = () => console.log(`${imageUrl} loaded successfully`); // Debugging purpose
+      });
+    };
+    preloadImages();
+  }, []);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: false });
   }, []);
 
   useEffect(() => {
@@ -32,9 +44,9 @@ function CollegeBox() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setCountingStarted(true);
-    }, 1500); // Start counting after fade-in
+    }, 1500);
 
-    return () => clearTimeout(timer); // Cleanup timer
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -75,11 +87,11 @@ function CollegeBox() {
       <div className="flex flex-col md:flex-row w-full max-w-full mx-0">
         <div
           data-aos="fade-right"
-          data-aos-easing="ease-in-out" // Slower ease effect
+          data-aos-easing="ease-in-out"
           className="flex-1 flex flex-col justify-between"
         >
           <div className="flex-1">
-            <p className="text-[#ffffff] text-sm md:text-sm lg:text-xl font-medium leading-relaxed lg:pr-1">
+          <p className="text-[#ffffff] text-sm md:text-sm lg:text-xl font-medium leading-relaxed lg:pr-1">
               Our specialized curated industry-specific training programmes for students are designed to align with the needs of academic curriculum and job market demands. We conduct thorough & periodic evaluations to identify essential skills and incorporate feedback to create relevant learning experiences. By collaborating with industry leaders, we ensure our curriculum reflects current trends, preparing students to be workforce-ready with the subjects and topics they need most. This approach not only enhances student success but also strengthens partnerships between academia and industry.
             </p>
           </div>
@@ -87,14 +99,16 @@ function CollegeBox() {
 
         <div
           data-aos="fade-left"
-          data-aos-easing="ease-in-out" // Slower ease effect
+          data-aos-easing="ease-in-out"
           className="flex-1 flex flex-col items-center"
         >
           <div className="relative w-full flex items-center justify-center">
+            {/* Add the lazy loading attribute to ensure it loads after being near the viewport */}
             <img
               src={images[currentImageIndex]}
-              alt="Slider"
+              alt={`Slider ${currentImageIndex + 1}`}
               className="w-full h-auto object-cover shadow-md"
+              loading="lazy"
             />
           </div>
           <div className="flex mt-4 space-x-2">
@@ -119,12 +133,12 @@ function CollegeBox() {
           <div
             key={index}
             data-aos="fade-up"
-            data-aos-delay={`${index * 200}`} // Staggering effect
-            data-aos-easing="ease-in-out" // Slower ease effect
+            data-aos-delay={`${index * 200}`}
+            data-aos-easing="ease-in-out"
             className="flex flex-col items-center space-y-2 p-4 bg-[#1e3a8a] rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-yellow-500 hover:shadow-lg"
           >
             <div className="flex items-center justify-center w-12 h-12 bg-[#FFC80E] rounded-full">
-              {React.cloneElement(icon, { className: "text-[#091327] text-3xl" })}
+              {React.cloneElement(icon, { className: 'text-[#091327] text-3xl' })}
             </div>
             <p className="text-2xl md:text-3xl font-semibold text-[#FFC80E]">{value}</p>
             <p className="text-white text-center text-base md:text-lg font-medium">{label}</p>

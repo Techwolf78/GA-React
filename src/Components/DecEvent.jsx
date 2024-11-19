@@ -1,4 +1,3 @@
-import React from 'react';
 import DecEventHero from "./DecEventHero";
 import DecEventInfo from "./DecEventInfo";
 import DecEventGallery from './DecEventGallery';
@@ -9,9 +8,10 @@ const DecEvent = () => {
   return (
     <div>
       <DecEventHero />
-      <DecEventVideo />
       <DecEventInfo />
-      <DecEventGallery />
+      <DecEventVideo />
+
+      {/* <DecEventGallery /> */}
       <DecEventSponsor/>
     </div>
   );

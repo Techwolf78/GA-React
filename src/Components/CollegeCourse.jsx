@@ -7,64 +7,64 @@ import PropTypes from "prop-types";
 const courses = {
   softSkills: [
     {
-      src: "Training Page/SS 3.png",
+      src: "Training Page/irpi/SS 3.avif",
       alt: "Interview Skills",
       title: "Group Discussion and Personal Interview",
     },
     {
-      src: "Training Page/SS 2.png",
+      src: "Training Page/irpi/SS 2.avif",
       alt: "Effective Communication Skills",
       title: "Effective Communication (Business Communication)",
     },
     {
-      src: "Training Page/SS 1.png",
+      src: "Training Page/irpi/SS 1.avif",
       alt: "Productivity Tools",
       title: "Productivity Tools <br />(Presentation, Time Management)",
     },
     {
-      src: "Training Page/SS 5.png",
+      src: "Training Page/irpi/SS 5.avif",
       alt: "Verbal & Non Verbal Communication",
       title: "Verbal & Non Verbal Communication",
     },
     {
-      src: "Training Page/SS 6.png",
+      src: "Training Page/irpi/SS 6.avif",
       alt: "Confidence Building and Public speaking",
       title: "Confidence Building and Public speaking",
     },
     {
-      src: "Training Page/SS 4.png",
+      src: "Training Page/irpi/SS 4.avif",
       alt: "Presentation Skills",
       title: "Personality Development and Presentation Skills",
     },
   ],
   aptitude: [
     {
-      src: "Training Page/SS 4.png",
+      src: "Training Page/irpi/SS 4.avif",
       alt: "Problem Solving",
       title: "Problem Solving",
     },
     {
-      src: "Training Page/Aptitude 4.png",
+      src: "Training Page/irpi/Aptitude 4.avif",
       alt: "Critical Design Thinking",
       title: "Critical Design Thinking",
     },
     {
-      src: "Training Page/Aptitude 1.png",
+      src: "Training Page/irpi/Aptitude 1.avif",
       alt: "Blood Relations",
       title: "Blood Relations",
     },
     {
-      src: "Training Page/Aptitude 3.png",
+      src: "Training Page/irpi/Aptitude 3.avif",
       alt: "Syllogism",
       title: "Syllogism",
     },
     {
-      src: "Training Page/Aptitude 5.png",
+      src: "Training Page/irpi/Aptitude 5.avif",
       alt: "Coding Decoding",
       title: "Coding Decoding",
     },
     {
-      src: "Training Page/Aptitude 2.png",
+      src: "Training Page/irpi/Aptitude 2.avif",
       alt: "Data Interpretation",
       title: "Data Interpretation",
     },

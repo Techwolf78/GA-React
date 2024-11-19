@@ -10,7 +10,7 @@ const EventPopUp = () => {
   const [timeLeft, setTimeLeft] = useState(null);
 
   // Set the event date (14th December 2024)
-  const eventDate = new Date("2024-12-16T00:00:00");
+  const eventDate = new Date("2024-12-16T10:00:00");
 
   // Update the timer every second
   useEffect(() => {
@@ -68,7 +68,7 @@ const EventPopUp = () => {
           {/* Solid Background Image */}
           <div
             className="absolute bottom-0 left-0 w-full h-full bg-cover bg-center z-1"
-            style={{ backgroundImage: 'url("journey/evbg.jpg")' }}
+            style={{ backgroundImage: 'url("Event/bannerhome.jfif")' }}
           ></div>
 
           {/* Black Overlay Section */}
@@ -86,17 +86,13 @@ const EventPopUp = () => {
             <div className="w-full sm:w-1/2 p-5 sm:p-10 flex flex-col justify-center items-center text-white text-shadow-xl">
               <div className="flex-1 flex flex-col justify-center items-center">
                 <h3 className="text-2xl sm:text-3xl font-bold mb-2 leading-tight text-center uppercase text-[#FFC80E] tracking-wide">
-                Synergy Sphere 2024
+                SYNERGY SPHERE 2024
                 </h3>
                 <p className="text-xs sm:text-sm mt-1 leading-relaxed text-center">
-                 Something Extrardinary Is Coming...
+                Experience the perfect fusion of recognition and networking! 
                 </p>
                 <p className="text-sm sm:text-base text-center mt-2 leading-relaxed">
-                  Join the excitement and prestige of the Creative Retail
-                  Awards, the ultimate celebration of innovation and excellence
-                  in retail, leisure and hospitality design, offering
-                  unparalleled opportunities for recognition, networking, and
-                  celebration.
+                Join us at of Synergy Sphere 2024, the premier celebration of innovation and excellence in bridging industry and academia.  
                 </p>
 
                 <button

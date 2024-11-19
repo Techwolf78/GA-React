@@ -152,7 +152,7 @@ const courses = {
         "Integrate API development and management.",
         "Deploy full-stack applications on cloud platforms.",
       ],
-      image: "computr-science/CC1NEW.PNG",
+      image: "computr-science/csfinal/CC1NEW.avif",
     },
     {
       title: "MERN",
@@ -163,7 +163,7 @@ const courses = {
         "Implement Node.js for scalable back-end applications.",
         "Create and manage RESTful APIs for seamless data flow.",
       ],
-      image: "computr-science/CS 2.png",
+      image: "computr-science/csfinal/CS 2.avif",
     },
     {
       title: "Programming Languages",
@@ -174,7 +174,7 @@ const courses = {
         "Master language-specific frameworks and libraries.",
         "Implement projects in real-world software development environments.",
       ],
-      image: "Course/prog.png",
+      image: "computr-science/csfinal/prog.avif",
     },
     {
       title: "DSA (Data Structures & Algorithms)",
@@ -185,7 +185,7 @@ const courses = {
         "Apply dynamic programming techniques for problem-solving.",
         "Prepare for coding interviews with real-world examples.",
       ],
-      image: "computr-science/CS 6.png",
+      image: "computr-science/csfinal/CS 6.avif",
     },
     {
       title: "App Development",
@@ -196,7 +196,7 @@ const courses = {
         "Master UI/UX design principles for mobile applications.",
         "Deploy apps on app stores with continuous integration.",
       ],
-      image: "Course/appweb.png",
+      image: "computr-science/csfinal/appweb.avif",
     },
     {
       title: "Linux",
@@ -207,7 +207,7 @@ const courses = {
         "Manage users, processes, and permissions in Linux.",
         "Implement Linux-based solutions in cloud and networking environments.",
       ],
-      image: "computr-science/CS 5.png",
+      image: "computr-science/csfinal/CS 5.avif",
     },
   ],
 
@@ -221,18 +221,18 @@ const courses = {
         "Design and troubleshoot control systems in real-world applications.",
         "Develop HMI (Human Machine Interface) systems for user interaction.",
       ],
-      image: "Electrical Eng/E1.png",
+      image: "Electrical Eng/E1.avif",
     },
     {
-      title: "GTNT",
-      description: [
-        "Learn grounding and transient network testing for electrical safety.",
-        "Master techniques for analyzing grounding systems in electrical networks.",
-        "Troubleshoot transient faults and ensure equipment protection.",
-        "Perform power quality analysis for better system reliability.",
-        "Understand the use of protective devices in grounding networks.",
+      "title": "Electrical Vehicle",
+      "description": [
+        "Learn the fundamentals of electric vehicle (EV) systems and components.",
+        "Understand battery management systems (BMS) and charging technologies.",
+        "Explore the design and operation of electric motors in EVs.",
+        "Master energy conversion and storage techniques in electric vehicles.",
+        
       ],
-      image: "Course/ev.png",
+      "image": "Electrical Eng/ev.avif"
     },
     {
       title: "BMS (Building Management System)",
@@ -243,7 +243,7 @@ const courses = {
         "Configure BMS software for real-time monitoring and control.",
         "Implement smart building technologies using IoT.",
       ],
-      image: "Electrical Eng/E3.png",
+      image: "Electrical Eng/E3.avif",
     },
     {
       title: "IoT",
@@ -254,7 +254,7 @@ const courses = {
         "Develop real-time monitoring solutions with cloud integration.",
         "Implement security measures in IoT networks.",
       ],
-      image: "Course/iotauto.png",
+      image: "Electrical Eng/iotauto.avif",
     },
     {
       title: "Transformers & Circuits",
@@ -265,7 +265,7 @@ const courses = {
         "Understand fault detection and maintenance of transformers.",
         "Design circuits with proper load balancing and protection.",
       ],
-      image: "Electrical Eng/E5.png",
+      image: "Electrical Eng/E5.avif",
     },
     {
       title: "Wiring Harness",
@@ -276,7 +276,7 @@ const courses = {
         "Understand signal integrity and voltage drop in wiring systems.",
         "Implement testing and troubleshooting for wiring harnesses.",
       ],
-      image: "Electrical Eng/E6.png",
+      image: "Electrical Eng/E6.avif",
     },
   ],
 
@@ -436,7 +436,7 @@ const courses = {
         "Develop skills in mobile, web, and system software development.",
         "Apply algorithms and data structures to optimize software solutions.",
       ],
-      image: "Course/MCA/PL.png",
+      image: "Course/MCA/final/PL.avif",
     },
     {
       title: "Data Structures & Algorithms (DSA)",
@@ -447,7 +447,7 @@ const courses = {
         "Prepare for technical interviews with coding challenges.",
         "Implement algorithmic solutions in real-world applications.",
       ],
-      image: "Course/MCA/DSAA.png",
+      image: "Course/MCA/final/DSAA.avif",
     },
     {
       title: "Data Science",
@@ -458,7 +458,7 @@ const courses = {
         "Develop skills in deep learning and AI applications.",
         "Use data visualization tools to interpret results.",
       ],
-      image: "Course/MCA/DS.png",
+      image: "Course/MCA/final/DS.avif",
     },
     {
       title: "Software Development",
@@ -469,7 +469,7 @@ const courses = {
         "Implement version control and continuous integration.",
         "Perform software testing and debugging for reliable solutions.",
       ],
-      image: "Course/MCA/SD.png",
+      image: "Course/MCA/final/SD.avif",
     },
     {
       title: "Networking Administration",
@@ -480,7 +480,7 @@ const courses = {
         "Understand cloud computing architectures and services.",
         "Monitor and troubleshoot networks for efficient performance.",
       ],
-      image: "Course/MCA/NA.png",
+      image: "Course/MCA/final/NA.avif",
     },
     {
       title: "Linux",
@@ -491,7 +491,7 @@ const courses = {
         "Implement network services like DNS, FTP, and web servers on Linux.",
         "Perform system security and updates for Linux environments.",
       ],
-      image: "Course/MCA/LI.png",
+      image: "Course/MCA/final/LI.avif",
     },
   ],
   BBA: [
@@ -630,7 +630,7 @@ const courses = {
         "Develop skills in pharmacy financial management and budgeting.",
         "Implement quality control and risk management in pharmaceutical environments.",
       ],
-      image: "Course/PH1.png",
+      image: "Course/ph/PH1.avif",
     },
     {
       title: "Regulatory Affairs",
@@ -640,7 +640,7 @@ const courses = {
         "Understand Good Manufacturing Practice (GMP) and compliance standards.",
         "Prepare regulatory documents and submissions for health authorities.",
       ],
-      image: "Course/P2.png",
+      image: "Course/ph/P2.avif",
     },
     {
       title: "Pharmaceutical Marketing",
@@ -651,7 +651,7 @@ const courses = {
         "Understand regulatory restrictions on pharmaceutical advertising.",
         "Implement salesforce and healthcare professional engagement strategies.",
       ],
-      image: "Course/P3.png",
+      image: "Course/ph/P3.avif",
     },
     {
       title: "Clinical Research",
@@ -661,7 +661,7 @@ const courses = {
         "Master data management and statistical analysis in clinical research.",
         "Develop skills for patient recruitment and management during trials.",
       ],
-      image: "Course/P4.png",
+      image: "Course/ph/P4.avif",
     },
     {
       title: "Pharmacovigilance",
@@ -672,7 +672,7 @@ const courses = {
         "Develop skills in data collection, assessment, and reporting.",
         "Implement systems for post-market surveillance and safety assessments.",
       ],
-      image: "Course/P5.png",
+      image: "Course/ph/P5.avif",
     },
   ],
 
@@ -686,7 +686,7 @@ const courses = {
         "Understand German culture and customs.",
         "Develop skills for reading, writing, and listening in German.",
       ],
-      image: "Course/gertry.png",
+      image: "Course/gertry.avif",
     },
     {
       title: "Japanese Language Basics",
@@ -697,7 +697,7 @@ const courses = {
         "Understand Japanese culture and etiquette.",
         "Develop reading and writing skills for simple texts.",
       ],
-      image: "Course/japtry.png",
+      image: "Course/japtry.avif",
     },
   ],
   

@@ -18,14 +18,14 @@ const testimonials = [
     name: "Ms. Dhanwantari Wangde",
     title: "CEO",
     institution: "Dnyanshree Institute of Engineering & Technology, Satara",
-    profilePic: "Testimonials/Dhanwantari Wangde.jpg",
+    profilePic: "Testimonials/Dhanwantari Wangde.avif",
   },
   {
     message: "Gryphon Academy's personalized training and placements are exceptional. They prepare students for the industry while shaping their futures with a dedicated commitment to excellence. With more than 2000+ students trained, Gryphon Academy continues to make a significant impact in the realm of education. ",
     name: "Mr. Amit Kolhe",
     title: "Managing Trustee",
     institution: "Sanjivani College of Engineering, Kopargaon",
-    profilePic: "Testimonials/Amit Kolhe.jpg",
+    profilePic: "Testimonials/Amit Kolhe.avif",
   },
   {
     message: "Dr. J. J. Magdum College Of Engineering Jaysingpur, Kolhapur, has partnered with Gryphon Academy for over three years now. Together, we are dedicated to providing comprehensive services to students across all domains. Gryphon's proven track record in delivering outstanding results for various institutions has impressed us.",
@@ -46,7 +46,7 @@ const testimonials = [
     name: "Dr. Thomas George",
     title: "Director",
     institution: "Lead College of Management, Palakkad, Kerala",
-    profilePic: "Testimonials/Dr Thomas Ceorge - LEAD.png",
+    profilePic: "Testimonials/Dr Thomas Ceorge - LEAD.avif",
   },
   {
     message: "Gryphon Academy's training kindles potential. Our students' achievements in the competitive world validate Gryphon's commitment to excellence. The expertise of their experienced trainers from various fields is second to none.",
@@ -263,7 +263,7 @@ const ContactForm = () => {
   </h1>
 
   <img
-    src="LandingImage/contactform.png"
+    src="LandingImage/https://res.cloudinary.com/dcjmaapvi/image/upload/v1731928912/image_3_i71y2t.avif"
     alt="Salesperson illustration"
     className="w-64 md:w-72 lg:w-80 xl:w-96 max-w-full h-auto object-cover rounded-lg flex-1"
     style={{ minWidth: '150px' }} // Adjust as needed

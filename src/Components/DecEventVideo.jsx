@@ -1,26 +1,16 @@
-import React from 'react';
+const VideoSection = () => (
+  <div className="relative w-full h-screen overflow-hidden">
+    {/* Video section with infinite loop */}
+    <video
+      className="absolute top-0 left-0 w-full h-full object-cover will-change-transform"
+      src="/IMG_5815.mp4"
+      autoPlay
+      loop
+      muted    // Make sure the video plays without sound
+      preload="auto"
+      onCanPlayThrough={(e) => e.target.play()} // Ensures the video plays immediately once it's ready
+    />
+  </div>
+);
 
-const DecEventVideo = () => {
-  return (
-    <div style={{ width: '100%', position: 'relative', paddingBottom: '56.25%' }}>
-      <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/we09uOy5bXU?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&showinfo=0"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        title="DecEvent Video"
-        style={{
-          position: 'absolute',
-          top: '0',
-          left: '0',
-          width: '100%',
-          height: '100%',
-        }}
-      ></iframe>
-    </div>
-  );
-};
-
-export default DecEventVideo;
+export default VideoSection;
