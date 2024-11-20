@@ -268,109 +268,103 @@ const Home = () => {
     alt="Left Side Design"
     className="left-side-image hidden md:block"
   />
-   <img
+  <img
     src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730698772/MobileHeroNew_ia78v1.webp"
     alt="Mobile Vector"
     className="mobile-vector-image"
-    loading="lazy"  // Add lazy loading
   />
 </div>
 
-<div id="core_capabilities" className="section core-capabilities-section right" ref={aboutRef}>
-  <div className="section-content right">
-    <h2>About Us</h2>
-    <p>
-      Gryphon Academy is a Non-ed-tech organization, that bridges the gap between academia and industry needs, by developing Customized Industry readiness programmes, which prepares your students within the walls of campus. These trainings help students in transforming themselves into well-rounded professionals, ready to excel in their careers.
-    </p>
-    <Link to="/about-us" className="btn-know-more" onClick={scrollToTop}>
-      <span>Know More</span>
-    </Link>
-  </div>
-  <img
-    src="LandingImage/vector 1.webp"
-    alt="Right Side Design"
-    className="right-side-image"
-    loading="lazy"  // Add lazy loading
-  />
-  <img
-    src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730699772/Mobile_2_bf16b7.webp"
-    alt="Mobile Vector"
-    className="mobile-vector-image"
-    loading="lazy"  // Add lazy loading
-  />
-</div>
 
-<div id="operating_models" className="section operating-models-section left" ref={trainingRef}>
-  <div className="section-content left">
-    <h2>Learning & Development</h2>
-    <p>
-      Our Industry Readiness Programme specializes in delivering focused & curated trainings that bridge the gap between academia and workplace demands! Students gain practical experience through hands-on projects, technical skill development, and immersive industry simulations. With interactive case studies and collaborative projects that reflect current market scenarios, we ensure our students are fully prepared to meet the employer expectations.
-    </p>
-    <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
-      <span>Know More</span>
-    </Link>
-  </div>
-  <img
-    src="LandingImage/vector 1.webp"
-    alt="Left Side Design"
-    className="left-side-image"
-    loading="lazy"  // Add lazy loading
-  />
-  <img
-    src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730699951/Mobile_3_iqwjro.webp"
-    alt="Mobile Vector"
-    className="mobile-vector-image"
-    loading="lazy"  // Add lazy loading
-  />
-</div>
 
-<div id="talent_transformations" className="section talent-transformations-section right" ref={placementRef}>
-  <div className="section-content right">
-    <h2>Campus Placements</h2>
-    <p>
-      In campus placements, we connect top industry brands with campus talent, bringing premium opportunities from top 500 companies across multiple sectors. We manage the entire placement cycle, ensuring each opportunity aligns perfectly with student capabilities and campus goals, making the journey from campus to corporate seamless.
-    </p>
-    <Link to="/placement" className="btn-know-more" onClick={scrollToTop}>
-      <span>Know More</span>
-    </Link>
-  </div>
-  <img
-    src="LandingImage/vector 1.webp"
-    alt="Right Side Design"
-    className="right-side-image"
-    loading="lazy"  // Add lazy loading
-  />
-  <img
-    src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730710833/Mobile_4_rsdx1y.avif"
-    alt="Mobile Vector"
-    className="mobile-vector-image"
-    loading="lazy"  // Add lazy loading
-  />
-</div>
 
-<div id="do_more" className="section do-more-section left" ref={brandingRef}>
-  <div className="section-content left">
-    <h2>Cross Brand Positioning</h2>
-    <p>
-      We provide targeted digital marketing services for colleges, focusing on enhancing your visibility and attracting prospective students. Our offerings include organizing events, HR summits, and admission campaigns that help the institutions enhance their position in academia. Our strategic approach empowers colleges to adeptly navigate the digital landscape and achieve their visibility objectives.
-    </p>
-    <Link to="/brandPositioning" className="btn-know-more" onClick={scrollToTop}>
-      <span>Know More</span>
-    </Link>
-  </div>
-  <img
-    src="LandingImage/vector 1.webp"
-    alt="Left Side Design"
-    className="left-side-image"
-    loading="lazy"  // Add lazy loading
-  />
-  <img
-    src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730710834/Mobile5_ct75om.avif"
-    alt="Mobile Vector"
-    className="mobile-vector-image"
-    loading="lazy"  // Add lazy loading
-  />
-</div>
+      <div id="core_capabilities" className="section core-capabilities-section right" ref={aboutRef}>
+        <div className="section-content right">
+          <h2>About Us</h2>
+          <p>
+            Gryphon Academy is a Non-ed-tech organization, that bridges the gap between academia and industry needs, by developing Customized Industry readiness programmes, which prepares your students within the walls of campus. These trainings help students in transforming themselves into well-rounded professionals, ready to excel in their careers.
+          </p>
+          <Link to="/about-us" className="btn-know-more" onClick={scrollToTop}>
+            <span>Know More</span>
+          </Link>
+        </div>
+        <img
+          src="LandingImage/vector 1.webp"
+          alt="Right Side Design"
+          className="right-side-image"
+        />
+        <img
+          src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730699772/Mobile_2_bf16b7.webp"
+          alt="Mobile Vector"
+          className="mobile-vector-image"
+        />
+      </div>
+
+      <div id="operating_models" className="section operating-models-section left" ref={trainingRef}>
+        <div className="section-content left">
+          <h2>Learning & Development</h2>
+          <p>
+            Our Industry Readiness Programme specializes in delivering focused & curated trainings that bridge the gap between academia and workplace demands! Students gain practical experience through hands-on projects, technical skill development, and immersive industry simulations. With interactive case studies and collaborative projects that reflect current market scenarios, we ensure our students are fully prepared to meet the employer expectations.
+          </p>
+          <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
+            <span>Know More</span>
+          </Link>
+        </div>
+        <img
+          src="LandingImage/vector 1.webp"
+          alt="Left Side Design"
+          className="left-side-image"
+        />
+        <img
+          src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730699951/Mobile_3_iqwjro.webp"
+          alt="Mobile Vector"
+          className="mobile-vector-image"
+        />
+      </div>
+
+      <div id="talent_transformations" className="section talent-transformations-section right" ref={placementRef}>
+        <div className="section-content right">
+          <h2>Campus Placements</h2>
+          <p>
+            In campus placements, we connect top industry brands with campus talent, bringing premium opportunities from top 500 companies across multiple sectors. We manage the entire placement cycle, ensuring each opportunity aligns perfectly with student capabilities and campus goals, making the journey from campus to corporate seamless.
+          </p>
+          <Link to="/placement" className="btn-know-more" onClick={scrollToTop}>
+            <span>Know More</span>
+          </Link>
+        </div>
+        <img
+          src="LandingImage/vector 1.webp"
+          alt="Right Side Design"
+          className="right-side-image"
+        />
+        <img
+          src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730710833/Mobile_4_rsdx1y.avif"
+          alt="Mobile Vector"
+          className="mobile-vector-image"
+        />
+      </div>
+
+      <div id="do_more" className="section do-more-section left" ref={brandingRef}>
+        <div className="section-content left">
+          <h2>Cross Brand Positioning</h2>
+          <p>
+            We provide targeted digital marketing services for colleges, focusing on enhancing your visibility and attracting prospective students. Our offerings include organizing events, HR summits, and admission campaigns that help the institutions enhance their position in academia. Our strategic approach empowers colleges to adeptly navigate the digital landscape and achieve their visibility objectives.
+          </p>
+          <Link to="/brandPositioning" className="btn-know-more" onClick={scrollToTop}>
+            <span>Know More</span>
+          </Link>
+        </div>
+        <img
+          src="LandingImage/vector 1.webp"
+          alt="Left Side Design"
+          className="left-side-image"
+        />
+        <img
+          src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1730710834/Mobile5_ct75om.avif"
+          alt="Mobile Vector"
+          className="mobile-vector-image"
+        />
+      </div>
 
       <div>
         <HomeSliderComp />

@@ -12,7 +12,7 @@ function DecEventInfo() {
         {/* Capsules Section */}
         <div className="flex gap-10 justify-center items-center my-6">
           {/* Capsule 1: WHERE IS THE EVENT */}
-          <div className="flex items-center gap-4 p-6 rounded-2xl shadow-xl transition-transform duration-500 ease-out bg-gray-800 hover:scale-105 hover:shadow-2xl">
+          <div className="flex items-center gap-4 p-6 rounded-2xl shadow-xl transition-transform duration-500 ease-out bg-black hover:scale-105 hover:shadow-2xl">
             {/* Yellow box for the icon with glowing effect */}
             <div className="bg-[#223645] p-4 rounded-xl flex items-center justify-center glow-effect">
               <FaMapMarkerAlt size={30} className="text-white glow-icon" />
@@ -34,7 +34,7 @@ function DecEventInfo() {
           </div>
 
           {/* Capsule 2: WHEN IS THE EVENT */}
-          <div className="flex items-center gap-4 p-6 rounded-2xl shadow-xl transition-transform duration-500 ease-out bg-gray-800 hover:scale-105 hover:shadow-2xl">
+          <div className="flex items-center gap-4 p-6 rounded-2xl shadow-xl transition-transform duration-500 ease-out bg-black hover:scale-105 hover:shadow-2xl" >
             {/* Yellow box for the icon with glowing effect */}
             <div className="bg-[#223645] p-4 rounded-xl flex items-center justify-center glow-effect">
               <FaCalendarAlt size={30} className="text-white glow-icon" />
@@ -65,56 +65,56 @@ function DecEventInfo() {
             {/* Circle 1 */}
             <div
               className="w-60 h-60 bg-cover bg-center flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out relative border-4 border-[#FFC80E]"
-              style={{ backgroundImage: 'url(Event/s2.jpg)' }}
+              style={{ backgroundImage: 'url(Event/s1.jpg)' }}
             >
               {/* Overlay */}
               <div className="absolute inset-0 bg-black opacity-40 rounded-full"></div>
 
               {/* Text Content */}
               <div className="text-center text-white font-semibold text-xl p-4 relative z-10">
-                Lorem ipsum dolor sit
+              The Grandest HR Summit 
               </div>
             </div>
 
             {/* Circle 2 */}
             <div
               className="w-60 h-60 bg-cover bg-center flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out relative border-4 border-[#FFC80E]"
-              style={{ backgroundImage: 'url(Event/s2.jpg)' }}
+              style={{ backgroundImage: 'url(Event/s1.jpg)' }}
             >
               {/* Overlay */}
               <div className="absolute inset-0 bg-black opacity-40 rounded-full"></div>
 
               {/* Text Content */}
               <div className="text-center text-white font-semibold text-xl p-4 relative z-10">
-                Lorem vitae leo
+              3 prestigious academic giants Spanning India's educational landscape
               </div>
             </div>
 
             {/* Circle 3 */}
             <div
               className="w-60 h-60 bg-cover bg-center flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out relative border-4 border-[#FFC80E]"
-              style={{ backgroundImage: 'url(Event/s2.jpg)' }}
+              style={{ backgroundImage: 'url(Event/s1.jpg)' }}
             >
               {/* Overlay */}
               <div className="absolute inset-0 bg-black opacity-40 rounded-full"></div>
 
               {/* Text Content */}
               <div className="text-center text-white font-semibold text-xl p-4 relative z-10">
-                Lorem plagd cera elit leo
+              100+ Corporate Brands  
               </div>
             </div>
 
             {/* Circle 4 */}
             <div
               className="w-60 h-60 bg-cover bg-center flex justify-center items-center rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300 ease-in-out relative border-4 border-[#FFC80E]"
-              style={{ backgroundImage: 'url(Event/s2.jpg)' }}
+              style={{ backgroundImage: 'url(Event/s1.jpg)' }}
             >
               {/* Overlay */}
               <div className="absolute inset-0 bg-black opacity-40 rounded-full"></div>
 
               {/* Text Content */}
               <div className="text-center text-white font-semibold text-xl p-4 relative z-10">
-                Lorem eget dui tincidunt
+              50+ HR Awards  
               </div>
             </div>
           </div>

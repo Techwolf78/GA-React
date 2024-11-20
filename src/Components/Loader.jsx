@@ -5,7 +5,7 @@ const Loader = ({ onFinish }) => {
 
   useEffect(() => {
     const wordSequence = ["First", "Second", "Third"];
-    
+
     // Track the index where each word should be shown
     wordSequence.forEach((word, index) => {
       setTimeout(() => {
@@ -22,14 +22,17 @@ const Loader = ({ onFinish }) => {
 
   return (
     <div className="absolute top-0 left-0 w-full h-full bg-black text-white flex justify-center items-center z-50">
-      <div className="text-6xl font-bold" style={{
-        background: 'linear-gradient(to bottom, #c8a85b 25%, #f1d35f 50%, #755107 80%)',
-        WebkitBackgroundClip: 'text',
-        color: 'transparent'
-      }}>
-        {step === 1 && "CREATIVITY"}
-        {step === 2 && "MARKETING"}
-        {step === 3 && "NETWORKING"}
+      <div 
+        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-center" 
+        style={{
+          background: 'linear-gradient(to bottom, #c8a85b 25%, #f1d35f 50%, #755107 80%)',
+          WebkitBackgroundClip: 'text',
+          color: 'transparent'
+        }}
+      >
+        {step === 1 && "NETWORKING"}
+        {step === 2 && "TRANSFORMATIVE"}
+        {step === 3 && "RECOGNITION"}
       </div>
     </div>
   );
