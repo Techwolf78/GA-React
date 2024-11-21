@@ -37,7 +37,7 @@ const VideoSection = () => {
         {isVisible ? (
           <video
             className="absolute top-0 left-0 w-full h-full object-fill will-change-transform"
-            src="/IMG_5815.mp4"
+            src="Event/trynew.mov"
             autoPlay
             loop
             muted

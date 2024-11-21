@@ -85,7 +85,7 @@ const EventPopUp = () => {
               color: 'transparent',
             }}
           >
-            SYNERGY SPHERE 2024: UNITED VISION: UNLIMITED IMPACT
+            SYNERGY SPHERE 2024: UNITED VISION, UNLIMITED IMPACT
           </h2>
 
           <p className="text-xl sm:text-2xl mb-4 text-white">
