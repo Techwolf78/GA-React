@@ -36,7 +36,7 @@ const SponsorsAndPartners = () => {
       <div className="absolute inset-0 bg-black opacity-70 z-20"></div>
 
       <div className="container mx-auto text-center relative z-30">
-        <h2 className="text-5xl font-semibold text-[#FFC80E] mb-4 roboto-regular">Academic Sponsors</h2>
+        <h2 className="text-5xl font-semibold text-[#FFC80E] mb-12 mt-4 roboto-regular uppercase">Academic Sponsors</h2>
         
         <div className="mb-12">
           <div className="flex justify-center space-x-8">
@@ -56,7 +56,7 @@ const SponsorsAndPartners = () => {
           </div>
         </div>
 
-        <h3 className="text-4xl font-bold text-[#FFC80E] mb-4 roboto-regular">BRANDS</h3>
+        <h3 className="text-4xl font-bold text-[#FFC80E] mb-4 roboto-regular uppercase">Brands</h3>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 ">
           {isVisible ? (
