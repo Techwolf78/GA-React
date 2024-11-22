@@ -71,7 +71,7 @@ const EventPopUp = () => {
             transition: 'opacity 1s ease-in-out', // Smooth fade transition when looping
           }}
         >
-          <source src="Event/231596.mp4" type="video/mp4" /> {/* Replace with your video URL */}
+          <source src="Event/23159.mp4" type="video/mp4" /> {/* Replace with your video URL */}
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black opacity-40 z-20"></div>
