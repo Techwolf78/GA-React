@@ -1,52 +1,61 @@
-import { useState, useEffect } from 'react';
-
-// Skeleton Loader for Video
-const VideoSkeleton = () => (
-  <div className="w-full h-screen bg-gray-300 animate-pulse"></div>
-);
+import React, { useEffect, useState } from "react";
 
 const VideoSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
+  const [isLoading, setIsLoading] = useState(true); // Track loading state
+
+  const updateVideoSource = () => {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 1024) {
+      setVideoUrl("Event/Trynew.mp4");
+    } else if (screenWidth >= 600 && screenWidth < 1024) {
+      setVideoUrl("Event/evenvid.mov");
+    } else {
+      setVideoUrl("Event/evenmob.mp4");
+    }
+  };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
-    );
-    
-    const videoElement = document.getElementById('video-section');
-    observer.observe(videoElement);
-    
-    return () => {
-      observer.disconnect();
-    };
+    updateVideoSource();
+    window.addEventListener("resize", updateVideoSource);
+    return () => window.removeEventListener("resize", updateVideoSource);
   }, []);
 
+  const handleVideoLoaded = () => {
+    setIsLoading(false); // Video has loaded
+  };
+
+  const handleVideoError = () => {
+    setIsLoading(false); // Handle video load failure
+    console.error("Video failed to load");
+  };
+
   return (
-    <div id="video-section" className="w-full overflow-hidden">
-      <div className="bg-gray-900 px-8 md:px-16 text-center py-4">
-        <h1 className="text-4xl font-bold text-[#FFC80E]">EVENT GALLERY</h1>
+    <div className="w-full overflow-hidden">
+      <div className="bg-gray-900 px-4 sm:px-8 md:px-16 text-center py-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFC80E]">
+          Event Gallery
+        </h1>
       </div>
 
-      <div className="relative w-full h-screen">
-        {isVisible ? (
-          <video
-            className="absolute top-0 left-0 w-full h-full object-fill will-change-transform"
-            src="Event/trynew.mov"
-            autoPlay
-            loop
-            muted
-            preload="auto"
-            onCanPlayThrough={(e) => e.target.play()}
-          />
-        ) : (
-          <VideoSkeleton />
-        )}
+      {/* Loading State */}
+      {isLoading && (
+        <div className="absolute top-0 left-0 w-full h-full bg-blue-800 opacity-50 flex items-center justify-center">
+          <div className="text-white">Loading Video...</div>
+        </div>
+      )}
+
+      <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen">
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover md:object-fill"
+          src={videoUrl}
+          autoPlay
+          loop
+          muted
+          preload="auto"
+          onLoadedData={handleVideoLoaded}
+          onError={handleVideoError}
+        />
       </div>
     </div>
   );

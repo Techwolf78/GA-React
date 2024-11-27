@@ -15,7 +15,7 @@ const Footer = () => {
         {/* Logo Section */}
         <div className="flex flex-col items-center mb-8 md:mb-0">
           <img
-            src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1729940570/NewLogoR_f6kttv.png"
+            src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1732608342/NewLogo_glaelo.webp"
             alt="Gryphon Academy Logo"
             className="w-48 md:w-64"
           />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import  { useState, useEffect, useRef } from "react";
 import "boxicons/css/boxicons.min.css";
 
 const Navbar = () => {
@@ -62,7 +62,7 @@ const Navbar = () => {
       >
         <a className="navbar-brand" href="/">
           <img
-            src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1729940570/NewLogoR_f6kttv.png"
+            src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1732608342/NewLogo_glaelo.webp"
             alt="Company logo"
             className="w-36 h-auto"
           />
