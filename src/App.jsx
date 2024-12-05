@@ -104,6 +104,11 @@ function App() {
     }
 
     document.title = `${pageTitle} | ${baseTitle}`;
+    
+    // Track the page view with Google Analytics
+    window.gtag('event', 'page_view', {
+      page_path: location.pathname + location.search,
+    });
   }, [location]); // Re-run whenever location changes
 
   useEffect(() => {
@@ -157,7 +162,6 @@ function App() {
             )}
           </>
         } />
-
         <Route path="/collegeTraining" element={<><Navbar /><CollegeTraining /></>} />
         <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 // Keyframes for Sparkling Effect
@@ -59,14 +58,14 @@ const SponsorsAndPartners = () => {
   return (
     <section 
       id="sponsors-section"
-      className="relative py-2 md:py-8 mx-auto px-8 md:px-16 bg-cover bg-center roboto-regular"
+      className="relative py-2 md:py-8 mx-auto px-8 md:px-16 bg-cover bg-center font-poppins"
       style={{ backgroundImage: 'url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1732619381/spark_fhrbre.avif")' }}
     >
       <div className="absolute inset-0 bg-black opacity-70 z-20"></div>
 
       <div className="container mx-auto text-center relative z-30">
         {/* Header */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#FFC80E] mb-6 md:mb-12 roboto-regular">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#FFC80E] mb-6 md:mb-12 font-poppins">
           Our Academic Partners
         </h2>
 
@@ -74,19 +73,19 @@ const SponsorsAndPartners = () => {
         <div className="mb-6 md:mb-12">
           <div className="flex justify-center gap-4 sm:gap-6 md:gap-8 flex-wrap">
             <GlossyEffect>
-              <SparklingImage src="Event/indira.avif" alt="Placeholder 1" />
+              <SparklingImage src="Event/academic1.png" alt="Placeholder 1" />
             </GlossyEffect>
             <GlossyEffect>
-              <SparklingImage src="Event/sanjivani.avif" alt="Placeholder 2" />
+              <SparklingImage src="Event/academic2.png" alt="Placeholder 2" />
             </GlossyEffect>
             <GlossyEffect>
-              <SparklingImage src="Event/isbr.avif" alt="Placeholder 3" />
+              <SparklingImage src="Event/academic3.png" alt="Placeholder 3" />
             </GlossyEffect>
           </div>
         </div>
 
         {/* Industry Alliance Header */}
-        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FFC80E] mb-8 roboto-regular">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#FFC80E] mb-8 font-poppins">
           Our Participating Delegates
         </h3>
 

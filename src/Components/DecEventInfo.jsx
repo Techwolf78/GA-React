@@ -2,7 +2,7 @@
 
 function DecEventInfo() {
   return (
-    <div className="relative bg-cover bg-center bg-[url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1732619381/spark_fhrbre.avif')] py-4 md:py-6 px-8 md:px-16" type="image/avif">
+    <div className=" font-poppins relative bg-cover bg-center bg-[url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1732619381/spark_fhrbre.avif')] py-4 md:py-6 px-8 md:px-16" type="image/avif">
       {/* Overlay over the background image */}
       <div className="absolute inset-0 bg-black opacity-70 z-20"></div>
 

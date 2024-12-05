@@ -54,7 +54,7 @@ const EventPopUp = () => {
   const formatTime = (time) => (time < 10 ? `0${time}` : time);
 
   return (
-    <div className="relative w-full" style={{ minHeight: "108vh" }}>
+    <div className="font-poppins relative w-full" style={{ minHeight: "108vh" }}>
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-10"
@@ -71,7 +71,7 @@ const EventPopUp = () => {
       </video>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-70 z-20"></div>
+      <div className=" absolute inset-0 bg-black opacity-70 z-20"></div>
 
       {/* Content (Text and Countdown) on top of the overlay */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-30 h-auto">
@@ -108,6 +108,7 @@ const EventPopUp = () => {
                 display: "inline-block",
                 marginRight: "0.4em", // Controls the gap between words
                 fontSize: "1.8rem", // Smaller font size for this group
+               
               }}
             >
               {word.split("").map((letter, letterIndex) => (
