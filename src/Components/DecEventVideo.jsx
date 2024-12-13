@@ -1,56 +1,64 @@
 import React, { useEffect, useState, useRef } from "react";
 
 const VideoSection = () => {
-  const [videoUrl, setVideoUrl] = useState("");
-  const [isSpinnerVisible, setIsSpinnerVisible] = useState(true); // Track spinner visibility
-  const [isVideoReady, setIsVideoReady] = useState(false); // Track video readiness
-  const videoRef = useRef(null); // Reference to the video element
+  const [videoUrl, setVideoUrl] = useState(""); // Video source state
+  const [isSpinnerVisible, setIsSpinnerVisible] = useState(true); // Spinner visibility state
+  const [isVideoReady, setIsVideoReady] = useState(false); // Video readiness state
+  const videoRef = useRef(null); // Video element reference
 
-  // Update video source based on screen width
+  // Update the video source based on screen width
   const updateVideoSource = () => {
     const screenWidth = window.innerWidth;
-
     if (screenWidth >= 1024) {
-      setVideoUrl("Event/Trynew.mp4");
+      return "Event/trynew.mov";
     } else if (screenWidth >= 600 && screenWidth < 1024) {
-      setVideoUrl("Event/evenvid.mov");
+      return "Event/evenvid.mov";
     } else {
-      setVideoUrl("Event/evenmob.mp4");
+      return "Event/evenmob.mp4";
     }
   };
 
   useEffect(() => {
-    updateVideoSource();
-    window.addEventListener("resize", updateVideoSource);
+    // Set the video source on initial render
+    setVideoUrl(updateVideoSource());
 
-    // Cleanup event listener on component unmount
-    return () => window.removeEventListener("resize", updateVideoSource);
+    // Update video source on window resize
+    const handleResize = () => setVideoUrl(updateVideoSource());
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
-  // Handle video loading progress
+  // Handle the video buffering progress
   const handleProgress = () => {
     if (videoRef.current) {
       const buffered = videoRef.current.buffered;
       if (buffered.length > 0) {
-        const totalBuffered = buffered.end(buffered.length - 1); // Get the last buffered byte position
+        const totalBuffered = buffered.end(buffered.length - 1);
         const duration = videoRef.current.duration;
 
         if (totalBuffered >= duration) {
-          // Video is fully buffered
-          setIsVideoReady(true); // Mark video as ready
-          setTimeout(() => {
-            setIsSpinnerVisible(false); // Hide spinner after buffering is complete
-          }, 1000); // Short delay before hiding spinner
+          setIsVideoReady(true);
+          setTimeout(() => setIsSpinnerVisible(false), 1000); // Delay hiding spinner
         }
       }
     }
   };
 
-  // Handle video load error
+  // Handle video loading error
   const handleVideoError = () => {
-    setIsVideoReady(false); // Video failed to load
-    setIsSpinnerVisible(false); // Hide spinner on error
+    setIsVideoReady(false);
+    setIsSpinnerVisible(false);
     console.error("Video failed to load");
+  };
+
+  // Handle video ready state (alternative to progress)
+  const handleCanPlay = () => {
+    setIsVideoReady(true);
+    setIsSpinnerVisible(false);
   };
 
   return (
@@ -72,7 +80,7 @@ const VideoSection = () => {
       <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen">
         <video
           ref={videoRef} // Ref to track the video element
-          className={`absolute top-0 left-0 w-full h-full object-cover md:object-fill transition-opacity duration-1000 ${isSpinnerVisible ? "opacity-0" : "opacity-100"}`}
+          className={`absolute top-0 left-0 w-full h-full object-cover md:object-cover transition-opacity duration-1000 ${isSpinnerVisible ? "opacity-0" : "opacity-100"}`}
           src={videoUrl}
           autoPlay
           loop
@@ -80,6 +88,7 @@ const VideoSection = () => {
           preload="auto"
           onProgress={handleProgress} // Monitor progress of video loading
           onError={handleVideoError} // Handle error in loading video
+          onCanPlay={handleCanPlay} // Mark video as ready when it can start playing
         />
       </div>
     </div>

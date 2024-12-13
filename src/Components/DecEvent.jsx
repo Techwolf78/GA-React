@@ -8,6 +8,7 @@ import DecEventSponsor from "./DecEventSponsor";
 import DecEventBaner from "./DecEventBaner";
 import DecEventSpeaker from "./DecEventSpeaker";
 import DecEventAgenda from "./DecEventAgenda";
+import DecEventGuest from "./DecEventGuest";
 
 const DecEvent = () => {
   return (
@@ -16,8 +17,9 @@ const DecEvent = () => {
       <DecEventHero />
       <DecEventInfo />
       <DecEventBaner />
-      <DecEventSpeaker />
-      <DecEventAgenda />
+      <DecEventGuest />
+      {/*  <DecEventSpeaker />*/}
+      <DecEventAgenda /> 
       <DecEventVideo />
       <DecEventSponsor />
     </div>
