@@ -25,9 +25,10 @@ import Post4 from './Components/BlogPages/Post4';
 import Post5 from './Components/BlogPages/Post5';
 import Post6 from './Components/BlogPages/Post6';
 import NotFound from './Components/NotFound'; // Import the NotFound component
-import CookieConsentWidget from './Components/CookieConsentWidget'; // Import the CookieConsentWidget
 import DecEvent from './Components/DecEvent'; // Import the DecEvent component
+import DecEventGroundZero from './Components/DecEventGroundZero'; // Import the Ground Zero page component
 import Loader from './Components/Loader'; // Import the loader component
+import DecEventAgenda from './Components/DecEventAgenda'; // Import the DecEventAgenda component
 
 function App() {
   const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
@@ -80,6 +81,9 @@ function App() {
         break;
       case "/events":
         pageTitle = "Events";
+        break;
+      case "/agenda":
+        pageTitle = "Agenda";
         break;
       case "/post1":
         pageTitle = "Blog Post 1";
@@ -136,6 +140,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/agenda" element={<><Navbar /><DecEventAgenda /></>} />
+        <Route path="/ground-zero" element={<DecEventGroundZero />} />
         <Route path="/about-us" element={<><Navbar /><About /></>} />
         <Route path="/about-us/" element={<><Navbar /><About /></>} />
         <Route path="/gax" element={<><Navbar /><GAX /></>} />
@@ -168,9 +174,6 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {location.pathname === "/" && (
-        <CookieConsentWidget /> // Only show CookieConsentWidget on the Home page
-      )}
       {showWhatsAppWidget && <WhatsAppWidget />} 
       <ScrollToTopButton visible={scrollVisible} />
       <Footer /> 

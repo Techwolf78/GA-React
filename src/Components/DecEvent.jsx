@@ -9,19 +9,28 @@ import DecEventBaner from "./DecEventBaner";
 import DecEventSpeaker from "./DecEventSpeaker";
 import DecEventAgenda from "./DecEventAgenda";
 import DecEventGuest from "./DecEventGuest";
+import DecEventHighLights from "./DecEventHighLights";
+import DecEventSlider from "./DecEventSlider";
+import DecEventBoundary from "./DecEventBoundary";
+import DecEventArrivedGuest from "./DecEventArrivedGuest";
 
 const DecEvent = () => {
   return (
     <div>
       {/* Display components directly */}
-      <DecEventHero />
-      <DecEventInfo />
-      <DecEventBaner />
-      <DecEventGuest />
+      <DecEventBoundary />
+      {/* <DecEventHero />  */}
+      <DecEventHighLights /> 
+      <DecEventArrivedGuest />
+      {/* <DecEventInfo /> */}
+      {/* <DecEventBaner /> */}
+      {/* <DecEventGuest /> */}
       {/*  <DecEventSpeaker />*/}
       <DecEventAgenda /> 
-      <DecEventVideo />
-      <DecEventSponsor />
+      <DecEventSlider />
+
+      {/* <DecEventVideo /> */}
+      {/* <DecEventSponsor />  */}
     </div>
   );
 };

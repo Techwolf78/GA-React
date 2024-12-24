@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -14,112 +14,225 @@ const ScheduleDetails = () => {
   const schedule = [
     {
       time: "03:00 PM - 04:00 PM",
-      event: "High Tea, Networking & Registration",
-      icon: "fas fa-users",  // Networking Icon
+      event: "Networking & Registration",
+      icon: "Event/connection.png", // Use your custom image here
     },
     {
-      time: "04:06 PM - 04:21 PM",
-      event: "Know Your Hosts",
-      icon: "fas fa-user-tie",  // User tie icon for introduction
+      time: "04:06 PM - 04:10 PM",
+      event: "Welcome Note & Introduction",
+      host: {
+        name: "Mr. Ummeaiman Ansari",
+        title: "Co-Founder - Gryphon Academy",
+        image: "About/cf.PNG" // Replace with actual image path
+      }
     },
     {
-      time: "04:21 PM - 04:25 PM",
-      event: "Welcome Note",
-      icon: "fas fa-graduation-cap",  // Graduation cap for Academia
+      time: "05:15 PM - 05:35 PM",
+      event: "Key Addressal – Industry",
+      hosts: [
+        {
+          name: "Mr. Tushar Desai",
+          title: "Senior Director - Talent Acquisition India & Philippines - FIS",
+          image: "Event/tushardesai.png"
+        },
+        {
+          name: "Mr. S.N Rao",
+          title: "Lead Early Careers Talent India - Philips",
+          image: "Event/snrao.png"
+        }
+      ]
     },
     {
-      time: "04:25 PM - 04:45 PM",
-      event: "Key Addressal - Industry",
-      icon: "fas fa-university",  // University Icon for Academy
+      time: "05:35 PM - 06:30 PM",
+      event: "The Skill Gap Dilemma: Between Industry & Academia",
+      hosts: [
+
+        {
+          name: "Prof. Chetan Wakalkar",
+          title: "Academic Advisor - IGI",
+          image: "Event/chetan-sir.jpg"
+        },
+        {
+          name: "Mr. Andrews Simon",
+          title: "Head - Talent Acquisition - eClerx",
+          image: "Event/andrew.png"
+        },
+        {
+          name: "Mr. Ramchandra Honap",
+          title: " Head HR - Coca Cola",
+          image: "Advisory/Ram Honap.png"
+        },
+        {
+          name: "Ms. Aanchal Tandon",
+          title: "India Lead HR - HCLTech",
+          image: "Event/aanchal.jpeg"
+        },
+        {
+          name: "Mr. Urvish Pandey",
+          title: "Director - Talent Acquisition - Mastercard",
+          image: "Event/urvish.png"
+        },
+        {
+          name: "Mr. Hemant Sethia",
+          title: "TA India Lead - M & G Global Services",
+          image: "Event/hemant.png"
+        },
+        {
+          name: "Dr. Manish Kothari",
+          title: "Managing Director - ISBR Business School",
+          image: "Event/manish.jpeg"
+        }
+      ]
     },
     {
-      time: "04:45 PM - 04:55 PM",
-      event: "Key Addressal - Academia I",
-      icon: "fas fa-industry",  // Factory Icon for Industry
+      time: "04:10 PM - 05:00 PM",
+      event: "Key Addressal – Academia",
+      hosts: [
+        {
+          name: "Dr. Pandit Mali",
+          title: "Chief Executive Officer - Indira Group of Institutes",
+          image: "Event/panditmali.jpeg"
+        },
+        {
+          name: "Dr. Manish Kothari",
+          title: "Managing Director - ISBR Business School",
+          image: "Event/manish.jpeg"
+        },
+        {
+          name: "Mr. Amit Kolhe",
+          title: "Managing Trustee - Sanjivani University",
+          image: "Event/amitkolhe.jpeg"
+        }
+      ]
     },
     {
-      time: "04:55 PM - 05:25 PM",
-      event: "Panel Discussion - Industry",
-      icon: "fas fa-users",  // Users Icon for Panel Discussion
+      time: "06:45 PM - 07:15 PM",
+      event: "Celebrating HR Excellence",
+      icon: "Event/trophy.png", // Trophy icon for ceremony
     },
     {
-      time: "05:25 PM - 05:45 PM",
-      event: "Key Addressal - Academia II",
-      icon: "fas fa-users",  // Users Icon for Panel Discussion
-    },
-    {
-      time: "05:45 PM - 07:00 PM",
-      event: "Ceremony",
-      icon: "fas fa-trophy",  // Trophy Icon for Awards
-    },
-    {
-      time: "07:00 PM - 07:10 PM",
+      time: "07:15 PM - 07:30 PM",
       event: "Closing Note",
-      icon: "fas fa-glass-cheers",  // Cocktail Icon for Party
+      host: {
+        name: "Mr. Shashi Bhat",
+        title: "Founder - Gryphon Academy",
+        image: "About/foun.PNG"
+      }
     },
     {
-      time: "07:10 PM ONWARDS",
-      event: "Ghazal Night & Cocktail Party",
-      icon: "fas fa-glass-cheers",  // Cocktail Icon for Party
+      time: "07:30 PM Onwards",
+      event: "Ghazal Night",
+      host: {
+        name: "Jazim Sharma",
+        title: "Artist/Singer",
+        image: "Event/jazam.jpg"
+      }
     }
   ];
 
   return (
-    <div className="mx-auto bg-[url('/Event/cool-background.png')] bg-cover bg-center bg-no-repeat px-8 md:px-16 py-6 md:py-12 font-poppins">
-      <p className="text-sm text-gray-600 text-center mb-4 md:mb-6">
-        SCHEDULE DETAILS
-      </p>
-      <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-6 md:mb-8">
-        Event Schedule
-      </h2>
-      <div className="overflow-x-auto border border-gray-300">
-      <table className="table-auto w-full text-left border-collapse">
-  <tbody>
-    {schedule.map((item, index) => (
-      <tr
-        key={index}
-        className="border-t border-b border-dashed border-gray-300"
+    <div className="mx-auto bg-gradient-to-b from-[#371D0A] to-[#84451E] px-4 sm:px-8 md:px-16 py-4 sm:py-6 md:py-12 font-poppins">
+      <p className="text-xs sm:text-sm text-gray-300 text-center mb-4 sm:mb-6 break-words">EVENT SUMMARY</p>
+      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-6 sm:mb-8 text-gold sparkle-text text-white break-words">Event Agenda</h2>
+
+      <div
+        className="overflow-x-auto border-8 shadow-[8px_8px_10px_rgba(255,255,255,0.6),-8px_-8px_10px_rgba(255,255,255,0.6),8px_-8px_10px_rgba(255,255,255,0.4),-8px_8px_10px_rgba(255,255,255,0.4)]"
+        style={{
+          borderImage: "linear-gradient(to bottom, #D49B5A, #D49B5A) 1",
+          position: 'relative',
+        }}
       >
-        {/* Time column */}
-        <td
-          className={`px-4 py-4 text-sm md:text-lg ${
-            index % 2 === 0 ? "bg-[#D9B99B] text-black" : "bg-[#C59D6D] text-black"
-          } border-r border-gray-300 w-[120px] md:w-[220px] lg:w-[250px] transition-all duration-300 ease-in-out hover:shadow-lg`}
-        >
-          <p
-            className="text-sm md:text-lg"
-            data-aos="zoom-in"
-            data-aos-delay="100"
-          >
-            {item.time}
-          </p>
-        </td>
+        <div
+          className="absolute inset-y-0 right-0 w-[80px] sm:w-[120px] md:w-[200px] lg:w-[250px] bg-wave-pattern bg-contain bg-no-repeat"
+          style={{
+            backgroundImage: 'url("LandingImage/vector 1.webp")',
+            zIndex: -1,
+          }}
+        ></div>
 
-        {/* Event column */}
-        <td className="px-4 py-4 text-sm md:text-lg text-gray-800">
-          <div className="flex flex-col items-start space-y-3">
-            {/* Event name */}
-            <h4
-              className="font-semibold text-lg md:text-2xl text-gray-800 transition-all duration-300 ease-in-out hover:text-[#9C7C4E]"
-              data-aos="fade-right"
-            >
-              {item.event}
-            </h4>
+        <table className="table-auto w-full text-left border-collapse">
+          <tbody>
+            {schedule.map((item, index) => (
+              <tr
+                key={index}
+                className="border-t border-b border-dashed border-gray-300"
+              >
+                {/* Time column */}
+                <td
+                  className={`px-4 sm:px-6 md:px-8 py-4 text-xs sm:text-sm md:text-lg ${
+                    index % 2 === 0
+                      ? "bg-gray-50 text-[#371D0A]"
+                      : "bg-gray-50 text-[#371D0A]"
+                  } border-r border-gray-300 w-[120px] sm:w-[180px] md:w-[220px] lg:w-[250px] transition-all duration-300 ease-in-out hover:shadow-2xl break-words`}
+                >
+                  <p
+                    className="font-bold"
+                    data-aos="zoom-in"
+                    data-aos-delay="100"
+                  >
+                    {item.time}
+                  </p>
+                </td>
 
-            {/* Icon */}
-            <div
-              className="w-12 h-12 md:w-16 md:h-16 bg-[#D9B99B] text-white rounded-full flex items-center justify-center shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl"
-              data-aos="flip-left"
-            >
-              <i className={`text-xl md:text-3xl ${item.icon}`}></i>
-            </div>
-          </div>
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+                {/* Event column */}
+                <td
+                  className={`px-4 sm:px-6 md:px-8 py-4 text-xs sm:text-sm md:text-lg text-black ${
+                    index % 2 === 0
+                      ? "bg-gray-50 text-[#371D0A]"
+                      : "bg-gray-50 text-[#371D0A]"
+                  } transition-all duration-300 ease-in-out hover:shadow-2xl break-words`}
+                >
+                  <div className="flex flex-col items-start space-y-3">
+                    {/* Event name */}
+                    <h4
+                      className="font-semibold text-sm sm:text-lg md:text-2xl text-[#371D0A] transition-all duration-300 ease-in-out break-words"
+                      data-aos="fade-right"
+                    >
+                      {item.event}
+                    </h4>
 
+                    {/* If hosts are defined, display them */}
+                    {item.hosts || item.host ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        {(item.hosts || [item.host]).map((host, index) => (
+                          <div key={index} className="flex items-center space-x-2 break-words">
+                            <img
+                              src={host.image}
+                              alt={host.name}
+                              className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full border-2 border-gold"
+                            />
+                            <div>
+                              <p className="text-sm sm:text-base font-semibold">{host.name}</p>
+                              <p className="text-xs sm:text-sm">{host.title}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : item.icon ? (
+                      <div
+                        className="w-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#fefefe] to-[#ffffff] text-white rounded-full flex items-center justify-center shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl"
+                        data-aos="flip-left"
+                      >
+                        <img
+                          src={item.icon}
+                          alt={item.event}
+                          className="w-auto h-auto object-contain p-1"
+                        />
+                      </div>
+                    ) : (
+                      <div
+                        className="w-12 sm:w-16 sm:h-16 bg-gradient-to-r from-[#D49B5A] to-[#371D0A] text-white rounded-full flex items-center justify-center shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-2xl"
+                        data-aos="flip-left"
+                      >
+                        <i className={`text-xl sm:text-2xl md:text-3xl ${item.icon}`}></i>
+                      </div>
+                    )}
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
