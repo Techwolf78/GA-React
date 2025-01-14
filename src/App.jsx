@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import '../src/Components/App.css';
 import "@fontsource/roboto";
 import './App.css'; 
@@ -12,7 +12,7 @@ import Navbar from './Components/Navbar';
 import Placement from './Components/Placement'; 
 import Contact from './Components/Contact'; 
 import Training from './Components/Training';
-import BrandPositioning from './Components/BrandPositioning';
+import BrandPositioning from './Components/BrandPositioning'; // Import the page
 import CollegeTraining from './Components/CollegeTraining';
 import CorporateTraining from './Components/CorporateTraining';
 import FacultyTraining from './Components/FacultyTraining'; 
@@ -35,7 +35,15 @@ function App() {
   const [scrollVisible, setScrollVisible] = useState(false);
   const [loaderFinished, setLoaderFinished] = useState(false); // State to track loader finish
   const location = useLocation(); // Get the current route location
+  const navigate = useNavigate(); // Hook to navigate to different paths
 
+  useEffect(() => {
+    if (location.pathname.endsWith('/') && location.pathname !== '/') {
+      // Only navigate if there's a trailing slash and the pathname isn't already the root
+      navigate(location.pathname.slice(0, -1), { replace: true });
+    }
+  }, [location, navigate]); // Run this only when `location` changes
+  
   const handleLoaderFinish = () => {
     setLoaderFinished(true); // Set the loader as finished
   };
@@ -47,6 +55,9 @@ function App() {
 
     switch (location.pathname) {
       case "/":
+        pageTitle = "Home";
+        break;
+      case "/test":
         pageTitle = "Home";
         break;
       case "/about-us":
@@ -103,6 +114,12 @@ function App() {
       case "/post6":
         pageTitle = "Blog Post 6";
         break;
+      case "/login":
+        pageTitle = "Login";
+        break;
+      case "/forget-password":
+        pageTitle = "Forget Password";
+        break;
       default:
         pageTitle = "Page Not Found";
     }
@@ -127,14 +144,24 @@ function App() {
     };
   }, []);
 
-  // Display the WhatsApp Widget after 3 seconds
+  // Display the WhatsApp Widget only after scrolling on /brandPositioning page
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowWhatsAppWidget(true);
-    }, 3000);
+    if (location.pathname === '/brandPositioning') {
+      const handleScroll = () => {
+        if (window.scrollY > 100) {
+          setShowWhatsAppWidget(true); // Show widget after scrolling
+        } else {
+          setShowWhatsAppWidget(false); // Hide widget if not scrolled
+        }
+      };
 
-    return () => clearTimeout(timer); // Clear timeout if the component unmounts
-  }, []);
+      // Listen to scroll event when on /brandPositioning page
+      window.addEventListener('scroll', handleScroll);
+
+      // Cleanup event listener on component unmount or route change
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [location.pathname]);
 
   return (
     <>
@@ -154,8 +181,9 @@ function App() {
         <Route path="/post6" element={<><Navbar /><Post6 /></>} />
         <Route path="/placement" element={<><Navbar /><Placement /></>} />
         <Route path="/contact" element={<><Navbar /><Contact /></>} />
-        <Route path="/brandPositioning" element={<><Navbar /><BrandPositioning /></>} />
+        <Route path="/brandPositioning" element={<><BrandPositioning /></>} />  {/* Brand Positioning Route */}
         <Route path="/training" element={<><Navbar /><Training /></>} />
+        <Route path="/test" element={<><Navbar /><Home /></>} />
         
         {/* /events route showing loader and then event content */}
         <Route path="/events" element={
@@ -174,9 +202,11 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {showWhatsAppWidget && <WhatsAppWidget />} 
+      {/* Conditionally render the WhatsApp Widget only on the /brandPositioning page after scrolling down */}
+      {location.pathname === '/brandPositioning' && showWhatsAppWidget && <WhatsAppWidget />}
+      
       <ScrollToTopButton visible={scrollVisible} />
-      <Footer /> 
+      <Footer />
     </>
   );
 }

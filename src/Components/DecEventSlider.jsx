@@ -6,51 +6,51 @@ const sponsorsData = [
   {
     title: 'ACADEMIC SPONSORS',
     logos: [
-      'Event/academic1.png',
-      'Event/academic2.png',
-      'Event/academic3.png',
+      'Event/academic1.avif',
+      'Event/academic2.avif',
+      'Event/academic3.avif',
     ],
   },
   {
-    title: 'PARTICIPATING DELIGATES',
+    title: 'PARTICIPATING DELEGATES',
     logos: [
-      'Event/came/2.png',
-      'Event/came/3.png',
-      'Event/came/7.png',
-      'Event/came/8.png',
-      'Event/came/9.png',
-      'Event/came/10.png',
-      'Event/came/11.png',
-      'Event/came/12.png',
-      'Event/came/13.png',
-      'Event/came/15.png',
-      'Event/came/19.png',
-      'Event/came/20.png',
-      'Event/came/41.png',
-      'Event/came/42.png',
-      'Event/came/43.png',
-      'Event/came/44.png',
+      'Event/came/2.avif',
+      'Event/came/3.avif',
+      'Event/came/7.avif',
+      'Event/came/8.avif',
+      'Event/came/9.avif',
+      'Event/came/10.avif',
+      'Event/came/11.avif',
+      'Event/came/12.avif',
+      'Event/came/13.avif',
+      'Event/came/15.avif',
+      'Event/came/19.avif',
+      'Event/came/20.avif',
+      'Event/came/41.avif',
+      'Event/came/42.avif',
+      'Event/came/43.avif',
+      'Event/came/44.avif',
     ],
   },
   {
-    title: 'PARTICIPATING DELIGATES',
+    title: 'PARTICIPATING DELEGATES',
     logos: [
-      'Event/came/21.png',
-      'Event/came/22.png',
-      'Event/came/24.png',
-      'Event/came/29.png',
-      'Event/came/30.png',
-      'Event/came/31.png',
-      'Event/came/32.png',
-      'Event/came/34.png',
-      'Event/came/37.png',
-      'Event/came/38.png',
-      'Event/came/39.png',
-      'Event/came/40.png',
-      'Event/came/46.png',
-      'Event/came/47.png',
-      'Event/came/48.png',
-      'Event/came/50.png',
+      'Event/came/21.avif',
+      'Event/came/22.avif',
+      'Event/came/24.avif',
+      'Event/came/29.avif',
+      'Event/came/30.avif',
+      'Event/came/31.avif',
+      'Event/came/32.avif',
+      'Event/came/34.avif',
+      'Event/came/37.avif',
+      'Event/came/38.avif',
+      'Event/came/39.avif',
+      'Event/came/40.avif',
+      'Event/came/46.avif',
+      'Event/came/47.avif',
+      'Event/came/48.avif',
+      'Event/came/50.avif',
     ],
   },
 ];
@@ -67,7 +67,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex justify-center items-center py-6 md:py-12 bg-white px-0 md:px-16">
+    <div className="flex justify-center items-center py-6 md:py-12 bg-white px-0 md:px-16 font-poppins">
       <Slider {...settings} className="w-full">
         {sponsorsData.map((slide, index) => (
           <div key={index} className="flex flex-col items-center">
@@ -76,7 +76,10 @@ const App = () => {
               <div className="flex flex-row justify-between items-center w-full px-4">
                 <div
                   className="text-sm md:text-lg font-semibold text-gray-800"
-                  style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                  style={{
+                    writingMode: 'vertical-rl',
+                    transform: 'rotate(180deg)', // Normal orientation on left
+                  }}
                 >
                   {slide.title}
                 </div>
@@ -93,7 +96,10 @@ const App = () => {
                 </div>
                 <div
                   className="text-sm md:text-lg font-semibold text-gray-800"
-                  style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                  style={{
+                    writingMode: 'vertical-rl',
+                    transform: 'rotate(0deg)', // Upside-down and facing inside
+                  }}
                 >
                   {slide.title}
                 </div>
@@ -102,7 +108,10 @@ const App = () => {
               <div className="flex flex-row justify-between items-center w-full px-4">
                 <div
                   className="text-sm md:text-lg font-semibold text-gray-800"
-                  style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                  style={{
+                    writingMode: 'vertical-rl',
+                    transform: 'rotate(180deg)', // Normal orientation on left
+                  }}
                 >
                   {slide.title}
                 </div>
@@ -122,7 +131,10 @@ const App = () => {
                 </div>
                 <div
                   className="text-sm md:text-lg font-semibold text-gray-800"
-                  style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                  style={{
+                    writingMode: 'vertical-rl',
+                    transform: 'rotate(0deg)', // Upside-down and facing inside
+                  }}
                 >
                   {slide.title}
                 </div>

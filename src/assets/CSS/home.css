@@ -1,5 +1,6 @@
 /* General Reset */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -46,7 +47,8 @@ body, html {
   height: 100%;
 }
 
-.first-word, .last-word {
+.first-word,
+.last-word {
   position: absolute; /* Position the words absolutely inside their containers */
   font-size: 1.5rem;
   width: auto; /* Allow the width of the word to be as wide as the word itself */
@@ -103,10 +105,11 @@ body, html {
 
 /* Adjust font size for first and last words on smaller screens */
 @media (max-width: 768px) {
-  .first-word, .last-word {
+  .first-word,
+  .last-word {
     font-size: 1rem; /* Smaller font size for small screens */
   }
-  
+
   /* Ensure hero words remain horizontal but scale nicely */
   .hero-words {
     justify-content: space-evenly; /* Evenly space out the elements */
@@ -123,9 +126,8 @@ body, html {
 
   .hero-bridge {
     max-width: auto; /* Ensure image fits well on mobile */
-  } 
+  }
 }
-
 
 .progress-bar-container {
   width: 100%;
@@ -139,11 +141,10 @@ body, html {
 
 .progress-bar {
   height: 100%;
-  background: #FFC80E;
+  background: #ffc80e;
   width: 0;
   transition: width 0.2s ease;
 }
-
 
 /* Navbar Styles */
 .top-navigation {
@@ -187,13 +188,12 @@ body, html {
   text-align: left;
   overflow-wrap: break-word; /* Ensure long words wrap */
   transition: margin-bottom 0.3s ease; /* Smooth transition for bottom margin */
-  
+
   /* Add a fixed height and center text vertically */
   height: 60px; /* Adjust this value as per your design */
   display: flex;
   align-items: top; /* Vertically center the content */
 }
-
 
 .underline {
   width: 20%; /* Initial width of the underline */
@@ -215,7 +215,7 @@ body, html {
 
 .stick-top-nav-ul li a {
   text-decoration: none;
-  color: #FFC80E;
+  color: #ffc80e;
   display: inline-block; /* Change to inline-block */
   padding: 10px 10px; /* Use padding for spacing */
   font-size: 16px;
@@ -224,7 +224,6 @@ body, html {
   transition: opacity 0.5s ease; /* Smooth transition for text visibility */
   width: 100%; /* Make anchor tag take full width of li */
   text-align: left; /* Center the text horizontally */
- 
 }
 
 /* Ensure hover state works smoothly */
@@ -259,6 +258,7 @@ body, html {
   transform: translateX(0); /* Move into view */
 }
 
+/* Sidebar list styles (for both main and sub items) */
 .sidebar ul {
   list-style-type: none;
   padding: 0;
@@ -275,7 +275,7 @@ body, html {
 
 .sidebar ul li a {
   text-decoration: none;
-  color: #01224F;
+  color: #01224f;
   display: block;
   padding: 10px;
   border-radius: 5px;
@@ -283,27 +283,30 @@ body, html {
   position: relative;
 }
 
+/* Underline effect for large screens */
 .sidebar ul li a::after {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 2px;
-  background: #01224F;
+  background: #01224f;
   transition: width 0.3s ease;
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
+/* Hover effect for large screens */
 .sidebar ul li a:hover::after {
   width: 100%;
 }
 
 .sidebar ul li a:hover {
-  color: #01224F;
+  color: #01224f;
   padding-bottom: 7px;
 }
 
+/* Sub-menu styles */
 .sidebar ul li ul {
   list-style-type: none;
   padding: 0;
@@ -313,7 +316,7 @@ body, html {
 }
 
 .sidebar ul li:hover ul {
-  display: flex;
+  display: flex; /* Show sub-menu on hover */
 }
 
 .sidebar ul li ul li {
@@ -327,12 +330,7 @@ body, html {
 }
 
 .sidebar ul li ul li a::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #01224F;
-  transition: width 0.3s ease;
+  width: 0; /* Sub-item hover effect */
 }
 
 .sidebar ul li ul li a:hover::after {
@@ -340,8 +338,135 @@ body, html {
 }
 
 .sidebar ul li ul li a:hover {
-  color: #01224F;
+  color: #01224f;
 }
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  position: fixed;
+  top: 35px;
+  right: 60px; /* Default distance from the right side */
+  background: #ffc80e;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 11;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar i {
+  margin-right: 10px;
+  font-size: 18px; /* Adjust size */
+}
+
+/* Toggle Button Icon */
+.sidebar-toggle::before,
+.sidebar-toggle::after,
+.sidebar-toggle div {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #01224f;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-toggle::before {
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sidebar-toggle div {
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sidebar-toggle::after {
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sidebar-toggle.cross::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+  top: 50%;
+}
+
+.sidebar-toggle.cross div {
+  opacity: 0;
+}
+
+.sidebar-toggle.cross::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+  top: 50%;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Medium Screens (up to 1024px) */
+@media (max-width: 1024px) {
+  .sidebar-toggle {
+    right: 30px; /* Adjusted distance for medium screens */
+  }
+
+  /* Remove underline effect on medium screens */
+  .sidebar ul li a::after,
+  .sidebar ul li a:hover::after {
+    width: 0 !important; /* Prevent underline */
+  }
+
+  .sidebar ul li a.active::after {
+    width: 0 !important; /* No active underline */
+  }
+}
+
+/* Small Screens (up to 768px) */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    right: 15px; /* Further adjustment for small screens */
+  }
+
+  .hidden-on-large {
+    display: block; /* Show on smaller screens */
+  }
+
+  .sidebar ul li {
+    display: block; /* Ensure all items are block elements */
+    margin: 10px 0; /* Adjust spacing if needed */
+  }
+
+  /* Show sub-items on hover for Training menu */
+  .sidebar ul li:hover > ul {
+    display: flex;
+  }
+
+  /* Show sub-menu by default */
+  .sidebar ul li ul {
+    display: flex; /* Stack items vertically */
+    flex-direction: column;
+  }
+
+  /* Remove underline effect on small screens */
+  .sidebar ul li a::after,
+  .sidebar ul li a:hover::after {
+    width: 0 !important; /* Prevent underline */
+  }
+
+  .sidebar ul li a.active::after {
+    width: 0 !important; /* No active underline */
+  }
+}
+
+
 
 /* Section Styles */
 .section {
@@ -357,30 +482,30 @@ body, html {
 }
 
 .section h2 {
-  color: #FFC80E;
+  color: #ffc80e;
 }
 
-#hero_slider { 
-  background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730803138/Rectangle_48try_vdlvku.avif');
-  background-position: right;  /* Align the background image to the right side */
-  background-size: contain;             /* Ensure the background image covers the section */
-  background-repeat: no-repeat;       /* Prevent image repetition */
+#hero_slider {
+  background-image: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1730803138/Rectangle_48try_vdlvku.avif");
+  background-position: right; /* Align the background image to the right side */
+  background-size: contain; /* Ensure the background image covers the section */
+  background-repeat: no-repeat; /* Prevent image repetition */
 }
 
-#core_capabilities { 
-  background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland2_iiwltn.avif'); 
+#core_capabilities {
+  background-image: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland2_iiwltn.avif");
 }
 
-#operating_models { 
-  background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland3_konwok.avif'); 
+#operating_models {
+  background-image: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland3_konwok.avif");
 }
 
-#talent_transformations { 
-  background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland4_cel82n.avif'); 
+#talent_transformations {
+  background-image: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland4_cel82n.avif");
 }
 
-#do_more { 
-  background-image: url('https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland5_fjba9x.avif'); 
+#do_more {
+  background-image: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland5_fjba9x.avif");
 }
 
 /* Default styling for large screens (background-size: contain) */
@@ -405,7 +530,6 @@ body, html {
     background-repeat: no-repeat; /* Prevent image repetition */
   }
 }
-
 
 .section-content {
   max-width: 700px;
@@ -448,7 +572,7 @@ body, html {
   margin-bottom: 20px;
 }
 
-/* Button Styles */
+/* Default Button Styles (For Desktop & Larger Screens) */
 .btn-know-more {
   position: relative;
   display: inline-block;
@@ -460,17 +584,19 @@ body, html {
   border: 0.5px solid #ffffff;
   text-decoration: none;
   overflow: hidden;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  outline: none; /* Remove default outline */
 }
 
+/* Button background transition effect */
 .btn-know-more::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background-color: #FFC80E;
+  background-color: #ffc80e;
   transition: left 0.3s ease;
   z-index: 0;
 }
@@ -481,8 +607,7 @@ body, html {
 
 .btn-know-more:hover {
   color: #01224f;
-  transform: translateY(-3px);
-  transform: scale(1.05); /* Add slight scaling on hover */
+  transform: translateY(-3px) scale(1.05); /* Slight scaling on hover */
 }
 
 .btn-know-more span {
@@ -490,82 +615,32 @@ body, html {
   z-index: 1;
 }
 
-/* Sidebar Toggle Button */
-.sidebar-toggle {
-  position: fixed;
-  top: 35px;
-  right: 60px; /* Default distance from the right side */
-  background: #FFC80E;
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 11;
-  transition: background-color 0.3s ease;
-}
-
-/* Adjust position for medium screens */
-@media (max-width: 1024px) {
-  .sidebar-toggle {
-    right: 30px; /* Adjusted distance for medium screens */
-  }
-}
-
-/* Adjust position for small screens */
+/* Mobile Styles (Under 768px) */
 @media (max-width: 768px) {
-  .sidebar-toggle {
-    right: 15px; /* Further adjustment for small screens */
+  .btn-know-more {
+    padding: 6px 12px;
+    font-size: 1rem;
+    background-color: transparent; /* Set background to transparent */
+    border: 0.5px solid #ffffff; /* Keep border visible */
+    color: #ffffff; /* Set text color to white */
+    text-align: center; /* Center the text */
+  }
+
+  .btn-know-more::before {
+    display: none; /* Remove the background transition on mobile */
+  }
+
+  .btn-know-more:hover {
+    color: #ffc80e; /* Text color turns black on hover */
+    transform: none; /* No scaling or transition effect on hover */
+  }
+
+  .btn-know-more span {
+    z-index: 1;
   }
 }
 
-.sidebar-toggle::before, 
-.sidebar-toggle::after, 
-.sidebar-toggle div {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 24px;
-  height: 2px;
-  background-color: #01224F;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
 
-.sidebar-toggle::before {
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.sidebar-toggle div {
-  top: 22px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.sidebar-toggle::after {
-  top: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.sidebar-toggle.cross::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-  top: 50%;
-}
-
-.sidebar-toggle.cross div {
-  opacity: 0;
-}
-
-.sidebar-toggle.cross::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-  top: 50%;
-}
 
 /* Company Logo */
 .company-logo-link {
@@ -587,27 +662,7 @@ body, html {
   }
 }
 
-@media (max-width: 768px) {
-  .hidden-on-large {
-    display: block; /* Show on smaller screens */
-  }
 
-  .sidebar ul li {
-    display: block; /* Ensure all items are block elements */
-    margin: 10px 0; /* Adjust spacing if needed */
-  }
-
-  /* If you want the Training item to also show its sub-items */
-  .sidebar ul li:hover > ul {
-    display: flex; /* Ensure sub-items appear on hover */
-  }
-
-  /* Show the submenu by default */
-  .sidebar ul li ul {
-    display: flex; /* Show the sub-list by default */
-    flex-direction: column; /* Stack items vertically */
-  }
-}
 
 .hidden-on-large {
   display: none; /* Hide by default */
@@ -616,7 +671,8 @@ body, html {
 .company-logo {
   width: 100%;
   height: 100%;
-  background: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1732608342/NewLogo_glaelo.webp") no-repeat center center;
+  background: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1732608342/NewLogo_glaelo.webp")
+    no-repeat center center;
   background-size: contain;
 }
 
@@ -697,7 +753,6 @@ body, html {
     width: 100%;
     z-index: 1;
     text-align: left;
-
   }
 
   /* Position side images */

@@ -14,7 +14,7 @@ const ScheduleDetails = () => {
   const schedule = [
     {
       time: "03:00 PM - 04:00 PM",
-      event: "Networking & Registration",
+      event: "Networking",
       icon: "Event/connection.png", // Use your custom image here
     },
     {
@@ -23,7 +23,7 @@ const ScheduleDetails = () => {
       host: {
         name: "Mr. Ummeaiman Ansari",
         title: "Co-Founder - Gryphon Academy",
-        image: "About/cf.PNG" // Replace with actual image path
+        image: "Event/cf.avif" // Replace with actual image path
       }
     },
     {
@@ -60,7 +60,7 @@ const ScheduleDetails = () => {
         {
           name: "Mr. Ramchandra Honap",
           title: " Head HR - Coca Cola",
-          image: "Advisory/Ram Honap.png"
+          image: "Advisory/Ram Honap.avif"
         },
         {
           name: "Ms. Aanchal Tandon",
@@ -116,7 +116,7 @@ const ScheduleDetails = () => {
       host: {
         name: "Mr. Shashi Bhat",
         title: "Founder - Gryphon Academy",
-        image: "About/foun.PNG"
+        image: "Event/foun.avif"
       }
     },
     {
@@ -163,7 +163,7 @@ const ScheduleDetails = () => {
                     index % 2 === 0
                       ? "bg-gray-50 text-[#371D0A]"
                       : "bg-gray-50 text-[#371D0A]"
-                  } border-r border-gray-300 w-[120px] sm:w-[180px] md:w-[220px] lg:w-[250px] transition-all duration-300 ease-in-out hover:shadow-2xl break-words`}
+                  } border-r border-gray-300 w-[80px] sm:w-[140px] md:w-[180px]  transition-all duration-300 ease-in-out hover:shadow-2xl break-words`}
                 >
                   <p
                     className="font-bold"

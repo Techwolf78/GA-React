@@ -1,34 +1,40 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const blogPosts = [
     {
       id: 1,
       title: "How to Avoid Student Fall-Out Ratio In Placements?",
-      description: "Looks like a frequent topic that is bit of a challenge right here? The placement season can be a stressful time for both students and colleges.",
-      image: 'Blogs/post1C.jfif',
-      path: '/post1',
+      description:
+        "Looks like a frequent topic that is bit of a challenge right here? The placement season can be a stressful time for both students and colleges.",
+      image: "Blogs/post1C.jfif",
+      path: "/post1",
     },
     {
       id: 2,
-      title: "   A Call to Integrity: Gryphon Academy's Pure Approach to Training and Placements",
-      description: " As the festival of Diwali approaches, our hearts are filled with excitement, and our homes are adorned with radiant lights, symbolizing the victory of light over darkness.",
-      image: 'Blogs/post2A.jfif',
-      path: '/post2',
+      title:
+        "   A Call to Integrity: Gryphon Academy's Pure Approach to Training and Placements",
+      description:
+        " As the festival of Diwali approaches, our hearts are filled with excitement, and our homes are adorned with radiant lights, symbolizing the victory of light over darkness.",
+      image: "Blogs/post2A.jfif",
+      path: "/post2",
     },
     {
       id: 3,
       title: "Technical Training: Navigating the Engineering Realm",
-      description: "Technical trainings play a pivotal role in the world of engineering, offering a multitude of benefits for students pursuing various engineering disciplines, such as mechanical, civil, and IT.",
-      image: 'Blogs/post3A.jfif',
-      path: '/post3',
+      description:
+        "Technical trainings play a pivotal role in the world of engineering, offering a multitude of benefits for students pursuing various engineering disciplines, such as mechanical, civil, and IT.",
+      image: "Blogs/post3A.jfif",
+      path: "/post3",
     },
     {
       id: 4,
-      title: "The Future of Engineering: Trainings and Skills Shaping the Industry",
-      description: "Discussing the emerging trends and innovations in engineering, highlighting the need for specialized training and skills.",
-      image: 'Blogs/post4A.jfif',
-      path: '/post4',
+      title:
+        "The Future of Engineering: Trainings and Skills Shaping the Industry",
+      description:
+        "Discussing the emerging trends and innovations in engineering, highlighting the need for specialized training and skills.",
+      image: "Blogs/post4A.jfif",
+      path: "/post4",
     },
     // {
     //   id: 5,
@@ -50,7 +56,7 @@ const Blog = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // For smooth scrolling
+      behavior: "smooth", // For smooth scrolling
     });
   };
 
@@ -68,16 +74,23 @@ const Blog = () => {
             >
               <div
                 className="bg-[#1e3a8a] border border-gray-300 rounded-2xl overflow-hidden transition-transform hover:scale-105 hover:shadow-xl"
-                style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                }}
               >
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-64 object-cover rounded-t-2xl"
+                  className="w-full h-auto object-contain object-top"
                 />
+
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-[#ffc700] text-2xl mb-3">{post.title}</h3>
-                  <p className="text-white mb-4 flex-grow">{post.description}</p>
+                  <p className="text-white mb-4 flex-grow">
+                    {post.description}
+                  </p>
                   <Link
                     to={post.path}
                     onClick={scrollToTop} // Add scroll to top function

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Select from 'react-select';  // Import React Select
-
+import Select from 'react-select';  
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [category, setCategory] = useState(null);
@@ -183,7 +182,7 @@ const Contact = () => {
       </section>
 
       {/* CSS for Floating Effect and Horizontal Movement */}
-      <style jsx>{`
+      <style>{`
         .floating-image {
           animation: float 3s ease-in-out infinite;
         }
