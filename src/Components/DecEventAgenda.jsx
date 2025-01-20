@@ -46,7 +46,6 @@ const ScheduleDetails = () => {
       time: "05:35 PM - 06:30 PM",
       event: "The Skill Gap Dilemma: Between Industry & Academia",
       hosts: [
-
         {
           name: "Prof. Chetan Wakalkar",
           title: "Academic Advisor - IGI",
@@ -59,7 +58,7 @@ const ScheduleDetails = () => {
         },
         {
           name: "Mr. Ramchandra Honap",
-          title: " Head HR - Coca Cola",
+          title: "Head HR - Coca Cola",
           image: "Advisory/Ram Honap.avif"
         },
         {
@@ -133,7 +132,14 @@ const ScheduleDetails = () => {
   return (
     <div className="mx-auto bg-gradient-to-b from-[#371D0A] to-[#84451E] px-4 sm:px-8 md:px-16 py-4 sm:py-6 md:py-12 font-poppins">
       <p className="text-xs sm:text-sm text-gray-300 text-center mb-4 sm:mb-6 break-words">EVENT SUMMARY</p>
-      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-6 sm:mb-8 text-gold sparkle-text text-white break-words">Event Agenda</h2>
+      
+      {/* Heading with AOS applied */}
+      <h2
+        className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-6 sm:mb-8 text-gold sparkle-text text-white break-words"
+        data-aos="fade-up" // AOS applied here
+      >
+        Event Agenda
+      </h2>
 
       <div
         className="overflow-x-auto border-8 shadow-[8px_8px_10px_rgba(255,255,255,0.6),-8px_-8px_10px_rgba(255,255,255,0.6),8px_-8px_10px_rgba(255,255,255,0.4),-8px_8px_10px_rgba(255,255,255,0.4)]"
@@ -157,24 +163,20 @@ const ScheduleDetails = () => {
                 key={index}
                 className="border-t border-b border-dashed border-gray-300"
               >
-                {/* Time column */}
+                {/* Time column with AOS for text only */}
                 <td
                   className={`px-4 sm:px-6 md:px-8 py-4 text-xs sm:text-sm md:text-lg ${
                     index % 2 === 0
                       ? "bg-gray-50 text-[#371D0A]"
                       : "bg-gray-50 text-[#371D0A]"
-                  } border-r border-gray-300 w-[80px] sm:w-[140px] md:w-[180px]  transition-all duration-300 ease-in-out hover:shadow-2xl break-words`}
+                  } border-r border-gray-300 w-[80px] sm:w-[140px] md:w-[180px] transition-all duration-300 ease-in-out hover:shadow-2xl break-words`}
                 >
-                  <p
-                    className="font-bold"
-                    data-aos="zoom-in"
-                    data-aos-delay="100"
-                  >
+                  <span className="font-bold" data-aos="zoom-in" data-aos-delay="100">
                     {item.time}
-                  </p>
+                  </span>
                 </td>
 
-                {/* Event column */}
+                {/* Event column with AOS */}
                 <td
                   className={`px-4 sm:px-6 md:px-8 py-4 text-xs sm:text-sm md:text-lg text-black ${
                     index % 2 === 0

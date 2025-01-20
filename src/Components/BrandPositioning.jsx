@@ -1,3 +1,6 @@
+
+
+
 import React, { useRef } from 'react';
 import NavbarBrandPositioning from './NavbarBrandPositioning';
 import ThreeFiberComponent from './ThreeFiberComponent';
@@ -8,6 +11,8 @@ import BusinessServices from './BusinessServices';
 import BrandPositioningWhyChoose from './BrandPositioningWhyChoose';
 import Guest from './Guest';
 import BrandContact from './BrandContact';
+import DmEvents from './DmEvents';
+import Dmvideo from './Dmvideo';
 
 const BrandPositioning = () => {
   const tryPageRef = useRef(null);
@@ -29,19 +34,22 @@ const BrandPositioning = () => {
   return (
     <div>
       <NavbarBrandPositioning />
-      <ThreeFiberComponent handleScrollClick={handleScrollToTryPage} />
+      <Dmvideo />
+      {/* <ThreeFiberComponent handleScrollClick={handleScrollToTryPage} /> */}
       
       {/* Attach ref to TryPage component */}
-      <div ref={tryPageRef}>
+      {/* <div ref={tryPageRef}>
         <TryPage />
-      </div>
+      </div> */}
 
       {/* Other Sections */}
-      <Events />
-      <DmHookLine />
+
+      {/* <DmEvents /> */}
+      {/* <Events /> */}
+      {/* <DmHookLine /> */}
       <BusinessServices />
       <BrandPositioningWhyChoose />
-      <Guest />
+      {/* <Guest /> */}
       <BrandContact />
     </div>
   );

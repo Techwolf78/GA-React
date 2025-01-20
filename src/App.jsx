@@ -181,7 +181,7 @@ function App() {
         <Route path="/post6" element={<><Navbar /><Post6 /></>} />
         <Route path="/placement" element={<><Navbar /><Placement /></>} />
         <Route path="/contact" element={<><Navbar /><Contact /></>} />
-        <Route path="/brandPositioning" element={<><BrandPositioning /></>} />  {/* Brand Positioning Route */}
+        <Route path="/brandPositioning" element={<><Navbar /><BrandPositioning /></>} />  {/* Brand Positioning Route */}
         <Route path="/training" element={<><Navbar /><Training /></>} />
         <Route path="/test" element={<><Navbar /><Home /></>} />
         

@@ -271,7 +271,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      <div className="pt-16">{/* Your main content goes here */}</div>
+    
     </>
   );
 };

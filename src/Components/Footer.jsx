@@ -9,7 +9,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-800 text-white py-8 px-4">
+<footer className="text-white py-8 px-4"
+  style={{
+    background: 'linear-gradient(to top right, rgba(29, 35, 52, 0.9) 0%, rgba(29, 48, 110, 0.9) 40%, rgba(29, 35, 52, 0.9) 100%)',
+  }}>
+ 
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         
         {/* Logo Section */}

@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { gsap } from "gsap";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Highlights = () => {
   // List of image URLs for the highlights section
@@ -18,6 +21,12 @@ const Highlights = () => {
 
   // Simulate image loading (replace with your actual image loading logic)
   useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000, // Duration of animation
+      once: true, // Animation only happens once (not repeated)
+    });
+
     const loadImages = () => {
       setTimeout(() => {
         setLoading(Array(imageUrls.length).fill(false)); // Simulate all images loaded
@@ -34,6 +43,12 @@ const Highlights = () => {
       newLoadingState[index] = false;
       return newLoadingState;
     });
+    // GSAP animation to fade in the images when they load
+    gsap.fromTo(
+      `.highlight-image-${index}`,
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, duration: 1, ease: "power2.out" }
+    );
   };
 
   return (
@@ -44,14 +59,18 @@ const Highlights = () => {
       <div className="grid grid-cols-12 gap-4">
         {/* First Column (Large Image on Top, Small Images Below) */}
         <div className="col-span-12 md:col-span-5 flex flex-col gap-4">
-          <div className="relative w-full h-72 group">
+          <div
+            className="relative w-full h-72 group"
+            data-aos="fade-up" // Add AOS animation here
+            data-aos-delay="100" // Add delay for a staggered effect
+          >
             {loading[0] ? (
               <div className="w-full h-full bg-blue-700 shimmer rounded-lg"></div>
             ) : (
               <img
                 src={imageUrls[0]}
                 alt="Main Event Highlight"
-                className="w-full h-full object-cover rounded-lg"
+                className="highlight-image-0 w-full h-full object-cover rounded-lg"
                 onLoad={() => handleImageLoad(0)}
               />
             )}
@@ -62,14 +81,18 @@ const Highlights = () => {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="relative w-1/2 h-56 group">
+            <div
+              className="relative w-1/2 h-56 group"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               {loading[1] ? (
                 <div className="w-full h-full bg-blue-700 shimmer rounded-lg"></div>
               ) : (
                 <img
                   src={imageUrls[1]}
                   alt="Ground Zero Session"
-                  className="w-full h-full object-cover rounded-lg"
+                  className="highlight-image-1 w-full h-full object-cover rounded-lg"
                   onLoad={() => handleImageLoad(1)}
                 />
               )}
@@ -79,14 +102,18 @@ const Highlights = () => {
                 </p>
               </div>
             </div>
-            <div className="relative w-1/2 h-56 group">
+            <div
+              className="relative w-1/2 h-56 group"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               {loading[2] ? (
                 <div className="w-full h-full bg-blue-700 shimmer rounded-lg"></div>
               ) : (
                 <img
                   src={imageUrls[2]}
                   alt="Networking Event"
-                  className="w-full h-full object-cover rounded-lg"
+                  className="highlight-image-2 w-full h-full object-cover rounded-lg"
                   onLoad={() => handleImageLoad(2)}
                 />
               )}
@@ -100,7 +127,11 @@ const Highlights = () => {
         </div>
 
         {/* Second Column (Tall Event Image with Small One Below) */}
-        <div className="col-span-12 md:col-span-3 flex flex-col gap-4">
+        <div
+          className="col-span-12 md:col-span-3 flex flex-col gap-4"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           {/* First Tall Image */}
           <div className="relative w-full h-80 group">
             {loading[3] ? (
@@ -109,7 +140,7 @@ const Highlights = () => {
               <img
                 src={imageUrls[3]}
                 alt="Guest Speaker Session"
-                className="w-full h-full object-cover rounded-lg"
+                className="highlight-image-3 w-full h-full object-cover rounded-lg"
                 onLoad={() => handleImageLoad(3)}
               />
             )}
@@ -121,14 +152,14 @@ const Highlights = () => {
           </div>
 
           {/* Second Smaller Image */}
-          <div className="relative w-full h-48 group">
+          <div className="relative w-full h-48 group" data-aos="fade-up" data-aos-delay="500">
             {loading[4] ? (
               <div className="w-full h-full bg-blue-700 shimmer rounded-lg"></div>
             ) : (
               <img
                 src={imageUrls[4]}
                 alt="Panel Discussion"
-                className="w-full h-full object-cover rounded-lg"
+                className="highlight-image-4 w-full h-full object-cover rounded-lg"
                 onLoad={() => handleImageLoad(4)}
               />
             )}
@@ -141,7 +172,11 @@ const Highlights = () => {
         </div>
 
         {/* Third Column (Wide Event Image with Small One Below and Another Image) */}
-        <div className="col-span-12 md:col-span-4 flex flex-col gap-4">
+        <div
+          className="col-span-12 md:col-span-4 flex flex-col gap-4"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
           {/* First Wide Image */}
           <div className="relative w-full h-60 group">
             {loading[5] ? (
@@ -150,7 +185,7 @@ const Highlights = () => {
               <img
                 src={imageUrls[5]}
                 alt="Closing Note"
-                className="w-full h-full object-cover rounded-lg"
+                className="highlight-image-5 w-full h-full object-cover rounded-lg"
                 onLoad={() => handleImageLoad(5)}
               />
             )}
@@ -162,14 +197,14 @@ const Highlights = () => {
           </div>
 
           {/* Second Smaller Image */}
-          <div className="relative w-full h-24 group">
+          <div className="relative w-full h-24 group" data-aos="fade-up" data-aos-delay="700">
             {loading[6] ? (
               <div className="w-full h-full bg-blue-700 shimmer rounded-lg"></div>
             ) : (
               <img
                 src={imageUrls[6]}
                 alt="Academic Addressal"
-                className="w-full h-full object-cover rounded-lg"
+                className="highlight-image-6 w-full h-full object-cover rounded-lg"
                 onLoad={() => handleImageLoad(6)}
               />
             )}
@@ -181,14 +216,14 @@ const Highlights = () => {
           </div>
 
           {/* Third Image (Additional Image Below) */}
-          <div className="relative w-full h-40 group">
+          <div className="relative w-full h-40 group" data-aos="fade-up" data-aos-delay="800">
             {loading[7] ? (
               <div className="w-full h-full bg-blue-700 shimmer rounded-lg"></div>
             ) : (
               <img
                 src={imageUrls[7]}
                 alt="Networking"
-                className="w-full h-full object-cover rounded-lg object-top"
+                className="highlight-image-7 w-full h-full object-cover rounded-lg object-top"
                 onLoad={() => handleImageLoad(7)}
               />
             )}

@@ -1,6 +1,9 @@
+import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';  // Import AOS CSS
 
 const sponsorsData = [
   {
@@ -462,10 +465,22 @@ const App = () => {
     return chunks;
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Set animation duration (in milliseconds)
+      once: true,     // Trigger animation only once when it enters the viewport
+    });
+  }, []);
+
   return (
     <div className="flex flex-col items-center py-4 sm:py-8 md:py-12 bg-white px-4 sm:px-8 md:px-12 font-poppins ">
-      {/* Common Heading */}
-      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-6 sm:mb-8 lg:mb-10">Our Distinguished Guests</h2>
+      {/* Heading with AOS Animation */}
+      <h2 
+        className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-6 sm:mb-8 lg:mb-10"
+        data-aos="fade-up" // AOS animation applied to heading only
+      >
+        Our Distinguished Guests
+      </h2>
 
       <Slider {...settings} className="w-full ">
         {sponsorsData.map((slide, index) => {

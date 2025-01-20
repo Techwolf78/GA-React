@@ -11,7 +11,7 @@ const eventData = {
       "Network with industry leaders and peers",
     ],
     image: "CollegeSliding/Training Photo 1.png",
-    logo: "journey/Ankita.jpeg",
+    logo: "journey/IDA-23.png",
   },
   2: {
     number: "02",
@@ -23,7 +23,7 @@ const eventData = {
       "Engage in insightful discussions with experts.",
     ],
     image: "CollegeSliding/Training Photo 2.png",
-    logo: "journey/Mridhiba.jpeg",
+    logo: "journey/IWA-24.png",
   },
   3: {
     number: "03",
@@ -35,7 +35,7 @@ const eventData = {
       "Interactive sessions for hands-on learning.",
     ],
     image: "CollegeSliding/Training Photo 3.png",
-    logo: "journey/rimpi.jpeg",
+    logo: "journey/masterclass-1.png",
   },
   4: {
     number: "04",
@@ -47,12 +47,24 @@ const eventData = {
       "Collaborate with peers for growth and success.",
     ],
     image: "CollegeSliding/Training Photo 1.png",
-    logo: "journey/Shatakshi.webp",
+    logo: "journey/masterclass-2.png",
   },
   5: {
     number: "05",
     heading: "Induction Programmes",
     line: "Welcome to New Beginnings",
+    para: [
+      "Join us for an immersive introduction to our organization.",
+      "Engage with mentors and peers in various workshops.",
+      "Understand our vision, values, and future directions.",
+    ],
+    image: "CollegeSliding/Training Photo 2.png",
+    logo: "journey/induction.png",
+  },
+  6: {
+    number: "06",
+    heading: "Synergy Sphere 2024",
+    line: "Unison of Academia & Industry",
     para: [
       "Join us for an immersive introduction to our organization.",
       "Engage with mentors and peers in various workshops.",

@@ -166,7 +166,7 @@ const Stair = (props) => {
         roughness={1}
         transparent
         opacity={0.6}
-        color={clicked ? "lightblue" : hovered ? "aquamarine" : "#fff"}
+        color={clicked ? "lightblue" : hovered ? "aquamarine" : "aquamarine"}
       />
     </mesh>
   );
