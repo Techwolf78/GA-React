@@ -39,7 +39,6 @@ const VideoBackground = () => {
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src="journey/1.mp4" type="video/mp4" />
-        <source src="journey/1.mp4" type="video/webm" />
       </video>
 
       {/* Content inside the page */}

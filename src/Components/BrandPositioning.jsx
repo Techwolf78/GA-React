@@ -13,6 +13,7 @@ import Guest from './Guest';
 import BrandContact from './BrandContact';
 import DmEvents from './DmEvents';
 import Dmvideo from './Dmvideo';
+import DigitalHero from './DigitalHero';
 
 const BrandPositioning = () => {
   const tryPageRef = useRef(null);
@@ -34,7 +35,8 @@ const BrandPositioning = () => {
   return (
     <div>
       <NavbarBrandPositioning />
-      <Dmvideo />
+      <DigitalHero />
+      {/* <Dmvideo /> */}
       {/* <ThreeFiberComponent handleScrollClick={handleScrollToTryPage} /> */}
       
       {/* Attach ref to TryPage component */}
@@ -42,7 +44,7 @@ const BrandPositioning = () => {
         <TryPage />
       </div> */}
 
-      {/* Other Sections */}
+      {/* Other Sections
 
       {/* <DmEvents /> */}
       {/* <Events /> */}

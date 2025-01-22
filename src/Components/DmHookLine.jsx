@@ -11,61 +11,50 @@ const HookLine = ({ scrollDirection }) => {
     <span key="6" className="messinasans-regular">Disruption</span>,
     <span key="7">Transformation</span>,
     <span key="8">Growth</span>,
+    <span key="9" className="messinasans-regular">Leadership</span>,
+    <span key="10">Collaboration</span>,
+    <span key="11" className="messinasans-regular">Masterclass</span>,
+    <span key="12">Networking</span>,
+    <span key="13" className="messinasans-regular">Branding</span>,
+    <span key="14">Synergy</span>,
+    <span key="15" className="messinasans-regular">Connection</span>,
+    <span key="16">Empowerment</span>,
+    <span key="17" className="messinasans-regular">Inspiration</span>,
+    <span key="18">Events</span>,
+    <span key="19" className="messinasans-regular">Opportunities</span>,
   ];
 
-  // Duplicate the hookLines to create the infinite effect (3 sets of lines)
-  const combinedHookLines = [...hookLines, ...hookLines, ...hookLines]; // 3 sets
-
-  const containerStyle = {
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    padding: '0.5rem', // Equivalent to py-2
-    position: 'relative',
-  };
-
-  const hookLineStyle = {
-    display: 'inline-flex',
-    alignItems: 'center',
-    color: '#ffffff',
-    fontSize: '60px', // Font size set to 101px
-    fontFamily: 'Messina Sans, sans-serif', // Messina Sans font style
-    fontWeight: 'normal',
-    animation: `scroll 30s linear infinite ${scrollDirection === 'right' ? 'reverse' : 'normal'}`,
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)', // Light shadow for a soft, 3D effect (neumorphism style)
-    transition: 'transform 1s ease-in-out',
-
-  };
-
-  const dividerStyle = {
-    height: '15px',  // Height of the circle
-    width: '15px',   // Width of the circle
-    backgroundColor: '#ffffff', // Circle color
-    borderRadius: '50%', // Make it a circle
-    margin: '0 1rem',  // Space around the circle
-  };
+  const combinedHookLines = [...hookLines, ...hookLines, ...hookLines]; // 3 sets for the infinite effect
 
   return (
-    <div style={containerStyle}>
-      <div style={hookLineStyle}>
+    <div className="w-full overflow-hidden relative">
+      <div className={`inline-flex items-center text-black font-normal text-xl md:text-3xl lg:text-4xl animate-scroll ${scrollDirection === 'right' ? 'reverse' : ''}`}>
         {combinedHookLines.map((hookLine, index) => (
           <React.Fragment key={index}>
             {hookLine}
             {index < combinedHookLines.length - 1 && (
-              <span style={dividerStyle}></span> // Red circular divider with neumorphism
+              <span className="bg-black rounded-full h-2 md:h-4 w-2 md:w-4 mx-4 md:mx-6"></span> // Divider with responsive margin
             )}
           </React.Fragment>
         ))}
       </div>
 
-      {/* Inline CSS styles */}
       <style>{`
         @keyframes scroll {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-33.33%); /* Adjust to scroll by 1/3rd of the content */
+            transform: translateX(-33.33%);
           }
+        }
+
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+
+        .reverse {
+          animation-direction: reverse;
         }
       `}</style>
     </div>
