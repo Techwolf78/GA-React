@@ -62,52 +62,53 @@ const BusinessServices = () => {
           Memorable Moments, Seamless Execution
         </p>
 
-        {/* Single line display with no wrapping and distinct light color boxes */}
-        <div className="flex flex-wrap justify-center sm:justify-between items-stretch gap-6 sm:gap-8 mb-12">
-          {/* HR Events Card with Icon at the Top */}
-          <div className="flex-1 text-left bg-[#1a237e] p-4 rounded-lg shadow-lg relative sm:w-1/2 md:w-1/4">
-            <FaBullhorn style={iconStyle} />
-            <div className="pt-12">
-              <h3 className="font-extrabold text-xl sm:text-2xl text-white mb-2">HR Events</h3>
-              <p className="font-medium text-sm sm:text-base text-gray-300">
-                Empower students with industry-focused HR conclaves and workshops.
-              </p>
-            </div>
-          </div>
+{/* Single line display with no wrapping and distinct light color boxes */}
+<div className="flex flex-wrap justify-center sm:justify-between items-stretch gap-6 sm:gap-8 mb-12">
+  {/* HR Events Card with Icon at the Top */}
+  <div className="flex-1 text-left bg-[#1a237e] p-4 rounded-lg shadow-lg relative sm:w-1/2 md:w-1/4 transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-[#283593]">
+    <FaBullhorn style={iconStyle} />
+    <div className="pt-12">
+      <h3 className="font-extrabold text-xl sm:text-2xl text-white mb-2">HR Events</h3>
+      <p className="font-medium text-sm sm:text-base text-gray-300">
+        Empower students with industry-focused HR conclaves and workshops.
+      </p>
+    </div>
+  </div>
 
-          {/* Annual Events Card with Icon at the Top */}
-          <div className="flex-1 text-left bg-[#1a237e] p-4 rounded-lg shadow-lg relative sm:w-1/2 md:w-1/4">
-            <FaCalendarAlt style={iconStyle} />
-            <div className="pt-12">
-              <h3 className="font-extrabold text-xl sm:text-2xl text-white mb-2">Annual Events</h3>
-              <p className="font-medium text-sm sm:text-base text-gray-300">
-                From cultural fests to annual celebrations, we make them extraordinary.
-              </p>
-            </div>
-          </div>
+  {/* Annual Events Card with Icon at the Top */}
+  <div className="flex-1 text-left bg-[#1a237e] p-4 rounded-lg shadow-lg relative sm:w-1/2 md:w-1/4 transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-[#283593]">
+    <FaCalendarAlt style={iconStyle} />
+    <div className="pt-12">
+      <h3 className="font-extrabold text-xl sm:text-2xl text-white mb-2">Annual Events</h3>
+      <p className="font-medium text-sm sm:text-base text-gray-300">
+        From cultural fests to annual celebrations, we make them extraordinary.
+      </p>
+    </div>
+  </div>
 
-          {/* Placement Drives Card with Icon at the Top */}
-          <div className="flex-1 text-left bg-[#1a237e] p-4 rounded-lg shadow-lg relative sm:w-1/2 md:w-1/4">
-            <FaUsers style={iconStyle} />
-            <div className="pt-12">
-              <h3 className="font-extrabold text-xl sm:text-2xl text-white mb-2">Placement Drives</h3>
-              <p className="font-medium text-sm sm:text-base text-gray-300">
-                Tailored events to connect students with top recruiters.
-              </p>
-            </div>
-          </div>
+  {/* Placement Drives Card with Icon at the Top */}
+  <div className="flex-1 text-left bg-[#1a237e] p-4 rounded-lg shadow-lg relative sm:w-1/2 md:w-1/4 transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-[#283593]">
+    <FaUsers style={iconStyle} />
+    <div className="pt-12">
+      <h3 className="font-extrabold text-xl sm:text-2xl text-white mb-2">Placement Drives</h3>
+      <p className="font-medium text-sm sm:text-base text-gray-300">
+        Tailored events to connect students with top recruiters.
+      </p>
+    </div>
+  </div>
 
-          {/* Student Development Programs Card with Icon at the Top */}
-          <div className="flex-1 text-left bg-[#1a237e] p-4 rounded-lg shadow-lg relative sm:w-1/2 md:w-1/4">
-            <FaLaptopCode style={iconStyle} />
-            <div className="pt-12">
-              <h3 className="font-extrabold text-xl sm:text-2xl text-white mb-2">Student Development Programs</h3>
-              <p className="font-medium text-sm sm:text-base text-gray-300">
-                Organize engaging sessions to enhance student skills.
-              </p>
-            </div>
-          </div>
-        </div>
+  {/* Student Development Programs Card with Icon at the Top */}
+  <div className="flex-1 text-left bg-[#1a237e] p-4 rounded-lg shadow-lg relative sm:w-1/2 md:w-1/4 transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-[#283593]">
+    <FaLaptopCode style={iconStyle} />
+    <div className="pt-12">
+      <h3 className="font-extrabold text-xl sm:text-2xl text-white mb-2">Student Development Programs</h3>
+      <p className="font-medium text-sm sm:text-base text-gray-300">
+        Organize engaging sessions to enhance student skills.
+      </p>
+    </div>
+  </div>
+</div>
+
       </div>
 
       {/* Dynamic Content for Corporates */}
@@ -120,7 +121,7 @@ const BusinessServices = () => {
         </p>
 
         {/* Grid layout for cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 px-4 items-center justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-4 items-center justify-items-center">
   {/* Cards for digital marketing services */}
   {['Paid Ads', 'Performance Marketing', 'Lead Generation', 'Social Media Marketing', 'Website Design & Development'].map((title, index) => (
     <div

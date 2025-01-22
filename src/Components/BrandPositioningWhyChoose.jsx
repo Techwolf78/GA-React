@@ -38,41 +38,39 @@ const BrandPositioningWhyChoose = () => {
   ];
 
   return (
-    <div className="bg-[#1e3a8a] h-auto py-4 md:py-8 px-8 md:px-16">
+    <div className="bg-[#1e3a8a] h-auto py-4 md:py-8 px-6 sm:px-8 md:px-16">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-extrabold text-white">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
           Why Choose Gryphon Academy for Your Digital Marketing Needs?
         </h2>
-        <p className="mt-4 max-w-2xl text-lg text-gray-300 mx-auto">
+        <p className="mt-4 max-w-2xl text-base sm:text-lg text-gray-300 mx-auto">
           Proven expertise in delivering exceptional results for clients across diverse industries.
         </p>
 
         {/* Icons and Content Section */}
-        <div className="mt-10 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 gap-x-8">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           {/* Card Blocks */}
           {blocks.map((block, index) => (
-           <div
-           key={index}
-           className="relative flex flex-col items-center text-center bg-[#01224F] transform transition-all duration-300 hover:bg-[#1A237E] hover:text-white hover:shadow-[0px_10px_30px_rgba(0,0,0,1)] hover:-translate-y-4 p-6 rounded-lg"
-           onMouseEnter={() => setHoveredIndex(index)}
-           onMouseLeave={() => setHoveredIndex(null)}
-           style={{ position: 'relative', overflow: 'hidden', borderRadius: '16px' }}
-         >
-         
+            <div
+              key={index}
+              className="relative flex flex-col items-center text-center bg-[#01224F] transform transition-all duration-300 hover:bg-[#1A237E] hover:text-white hover:shadow-[0px_10px_30px_rgba(0,0,0,1)] hover:-translate-y-4 p-6 rounded-lg"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              style={{ position: 'relative', overflow: 'hidden', borderRadius: '16px' }}
+            >
               {/* Shine effect */}
               <div
                 className={`shine-effect ${hoveredIndex === index ? 'shine-animation' : ''}`}
               />
-
               <div className="mb-4">
                 <img
                   src={block.image}
                   alt={block.title}
-                  className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
+                  className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
                 />
               </div>
-              <h3 className="text-lg leading-6 font-medium text-white">{block.title}</h3>
-              <p className="mt-2 text-base text-gray-300">{block.description}</p>
+              <h3 className="text-sm sm:text-lg md:text-xl leading-6 font-medium text-white">{block.title}</h3>
+              <p className="mt-2 text-sm sm:text-base text-gray-300">{block.description}</p>
             </div>
           ))}
         </div>
