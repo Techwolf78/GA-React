@@ -14,7 +14,6 @@ const MeetTheLeaders = () => {
     name: 'Mr. Shashi Bhat',
     message: 'When I look back and see how Gryphon collaboration with academia is creating a huge pool of talent for the industry, I feel we have set the right mission and vision. Still a long road ahead, but gratified with the progress we have made.',
     profilePic: '/About/foun.PNG', // Replace with actual image path
-    bgImage: '/About/fbg.png', // Path to your horizontal background image
   };
 
   const coFounder = {
@@ -22,7 +21,6 @@ const MeetTheLeaders = () => {
     name: 'Ms. Ummeaiman Ansari',
     message: 'Holding ranks but a trainer beneath, it thrills me to witness an amazing pool of talent being created with our best of trainers and equally supported by amazing career opportunities from our corporate partners. Gryphon is 3 years today, floating but on the course to sail through.',
     profilePic: '/About/cf.PNG', // Replace with actual image path
-    bgImage: '/About/fbg.png', // Add a new background image path for Co-Founder
   };
 
   const renderMessage = (name, message) => (
@@ -37,7 +35,15 @@ const MeetTheLeaders = () => {
   );
 
   return (
-    <div className="flex flex-col items-center mx-auto bg-gradient-to-r from-blue-100 to-blue-200 relative ">
+<div 
+  className="flex flex-col items-center mx-auto bg-gradient-to-r from-blue-100 to-blue-200 relative"
+  style={{ 
+    backgroundImage: `url('/About/leader-bg.png')`, 
+    backgroundSize: 'cover', 
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'  // Prevent the background from repeating
+  }}
+>
       {/* The wave element */}
       <WaveElement />
 
@@ -45,10 +51,9 @@ const MeetTheLeaders = () => {
         Meet the Leaders
       </h2>
 
-      {/* Founder Section with Horizontal Background Image */}
+      {/* Founder Section */}
       <div
-        className="flex flex-col md:flex-row mb-12 items-center justify-between bg-contain bg-center p-8 "
-        style={{ backgroundImage: `url(${founder.bgImage})` }} // Apply background image to founder's section
+        className="flex flex-col md:flex-row mb-12 items-center justify-between p-8"
         data-aos="fade-up"
         data-aos-once="true"
       >
@@ -79,10 +84,9 @@ const MeetTheLeaders = () => {
         </div>
       </div>
 
-      {/* Co-Founder Section with a Different Background Image */}
+      {/* Co-Founder Section */}
       <div
-        className="flex flex-col md:flex-row items-center justify-between bg-contain bg-bottom p-8 "
-        style={{ backgroundImage: `url(${coFounder.bgImage})` }} // Apply background image to Co-Founder's section
+        className="flex flex-col md:flex-row items-center justify-between p-8"
         data-aos="fade-up"
         data-aos-once="true"
         data-aos-delay="200"
