@@ -74,7 +74,12 @@ const ImageGallery = () => {
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <img src={images[0]} alt={`Gallery 1`} className="w-full h-full object-cover" />
+                <img
+                  src={images[0]}
+                  alt={`Gallery 1`}
+                  className="w-full h-full object-cover"
+                  loading="lazy" // Lazy load added here
+                />
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>
@@ -87,7 +92,12 @@ const ImageGallery = () => {
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                <img src={images[1]} alt={`Gallery 2`} className="w-full h-full object-cover" />
+                <img
+                  src={images[1]}
+                  alt={`Gallery 2`}
+                  className="w-full h-full object-cover"
+                  loading="lazy" // Lazy load added here
+                />
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>
@@ -102,7 +112,12 @@ const ImageGallery = () => {
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <img src={images[2]} alt={`Gallery 3`} className="w-full h-full object-cover" />
+              <img
+                src={images[2]}
+                alt={`Gallery 3`}
+                className="w-full h-full object-cover"
+                loading="lazy" // Lazy load added here
+              />
               <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
             </div>
           </div>
@@ -117,7 +132,12 @@ const ImageGallery = () => {
                 data-aos="fade-up"
                 data-aos-delay="400"
               >
-                <img src={images[6]} alt={`Gallery 7`} className="w-full h-full object-cover" />
+                <img
+                  src={images[6]}
+                  alt={`Gallery 7`}
+                  className="w-full h-full object-cover"
+                  loading="lazy" // Lazy load added here
+                />
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>
@@ -130,7 +150,12 @@ const ImageGallery = () => {
                 data-aos="fade-up"
                 data-aos-delay="500"
               >
-                <img src={images[7]} alt={`Gallery 8`} className="w-full h-full object-cover" />
+                <img
+                  src={images[7]}
+                  alt={`Gallery 8`}
+                  className="w-full h-full object-cover"
+                  loading="lazy" // Lazy load added here
+                />
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>
@@ -150,7 +175,12 @@ const ImageGallery = () => {
                 data-aos="fade-up"
                 data-aos-delay="600"
               >
-                <img src={images[4]} alt={`Gallery 5`} className="w-full h-full object-cover" />
+                <img
+                  src={images[4]}
+                  alt={`Gallery 5`}
+                  className="w-full h-full object-cover"
+                  loading="lazy" // Lazy load added here
+                />
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>
@@ -163,7 +193,12 @@ const ImageGallery = () => {
                 data-aos="fade-up"
                 data-aos-delay="700"
               >
-                <img src={images[5]} alt={`Gallery 6`} className="w-full h-full object-cover" />
+                <img
+                  src={images[5]}
+                  alt={`Gallery 6`}
+                  className="w-full h-full object-cover"
+                  loading="lazy" // Lazy load added here
+                />
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>
@@ -178,7 +213,12 @@ const ImageGallery = () => {
               data-aos="fade-up"
               data-aos-delay="800"
             >
-              <img src={images[3]} alt={`Gallery 4`} className="w-full h-full object-cover" />
+              <img
+                src={images[3]}
+                alt={`Gallery 4`}
+                className="w-full h-full object-cover"
+                loading="lazy" // Lazy load added here
+              />
               <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
             </div>
           </div>
@@ -193,7 +233,12 @@ const ImageGallery = () => {
                 data-aos="fade-up"
                 data-aos-delay="900"
               >
-                <img src={images[8]} alt={`Gallery 9`} className="w-full h-full object-cover" />
+                <img
+                  src={images[8]}
+                  alt={`Gallery 9`}
+                  className="w-full h-full object-cover"
+                  loading="lazy" // Lazy load added here
+                />
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>
@@ -206,7 +251,12 @@ const ImageGallery = () => {
                 data-aos="fade-up"
                 data-aos-delay="1000"
               >
-                <img src={images[9]} alt={`Gallery 10`} className="w-full h-full object-cover" />
+                <img
+                  src={images[9]}
+                  alt={`Gallery 10`}
+                  className="w-full h-full object-cover"
+                  loading="lazy" // Lazy load added here
+                />
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>

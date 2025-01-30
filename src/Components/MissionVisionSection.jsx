@@ -17,19 +17,21 @@ const MissionVisionSection = () => {
   const fixedHeight = '450px'; // Set a fixed height for both cards
 
   return (
-    <section className="flex flex-col w-full lg:min-h-[80vh] md:min-h-[50vh] bg-gray-100 px-4 sm:px-8 md:px-16 lg:px-24 py-4 roboto-regular">
+    <section 
+      className="flex flex-col w-full lg:min-h-[80vh] md:min-h-[50vh] bg-gray-100 px-4 sm:px-8 md:px-16 lg:px-24 py-4 roboto-regular overflow-hidden"
+    >
       <div className="flex flex-col md:flex-row w-full max-w-7xl">
 
         {/* Vision Card */}
         <div
           className="flex-1 mx-4 md:mx-6 lg:mx-8 mt-2"
-          style={{ height: fixedHeight, boxSizing: 'border-box' }}
+          style={{ minHeight: fixedHeight, boxSizing: 'border-box' }}
           data-aos="fade-right" // Animation effect for vision card
         >
           <h3 className="text-lg sm:text-xl md:text-4xl font-semibold text-black mb-4 md:mb-4 lg:mb-8">
             Our <span className='text-[#01224F]'>Vision</span>
           </h3>
-          <div className="shadow-lg rounded-3xl p-4 md:p-6" style={{ backgroundColor: '#d5e2f5', height: '100%', boxSizing: 'border-box' }}>
+          <div className="shadow-lg rounded-3xl p-4 md:p-6" style={{ backgroundColor: '#f3f9fc', minHeight: '80%', boxSizing: 'border-box' }}>
             <div className="flex flex-col items-start mb-4">
               <img src={visionDotImage} alt="Vision Dot" className="w-32 h-32 mb-1" />
               <img src={arrowImage} alt="Arrow" className="w-auto h-auto mb-2" />
@@ -43,14 +45,14 @@ const MissionVisionSection = () => {
         {/* Mission Card */}
         <div
           className="flex-1 mx-4 md:mx-6 lg:mx-8 mt-2"
-          style={{ height: fixedHeight, boxSizing: 'border-box' }}
+          style={{ minHeight: fixedHeight, boxSizing: 'border-box' }}
           data-aos="fade-left" // Animation effect for mission card
           data-aos-delay="200" // Staggered delay for the mission card
         >
           <h3 className="text-lg sm:text-xl md:text-4xl font-semibold text-black mb-4 md:mb-4 lg:mb-8">
             Our <span className='text-[#01224F]'>Mission</span>
           </h3>
-          <div className="shadow-lg rounded-3xl p-4 md:p-6" style={{ backgroundColor: '#d5e2f5', height: '100%', boxSizing: 'border-box' }}>
+          <div className="shadow-lg rounded-3xl p-4 md:p-6" style={{ backgroundColor: '#f3f9fc', minHeight: '80%', boxSizing: 'border-box' }}>
             <div className="flex flex-col items-start mb-4">
               <img src={missionDotImage} alt="Mission Dot" className="w-32 h-32 mb-1" />
               <img src={arrowImage} alt="Arrow" className="w-auto h-auto mb-2" />
@@ -62,7 +64,6 @@ const MissionVisionSection = () => {
         </div>
 
       </div>
-     
     </section>
   );
 };

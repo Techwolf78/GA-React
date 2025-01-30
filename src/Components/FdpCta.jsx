@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useInView } from "react-intersection-observer";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 // Testimonials Data
 const testimonials = [
@@ -111,7 +111,6 @@ TestimonialCard.propTypes = {
   }).isRequired,
 };
 
-
 // Testimonials Component
 const Testimonials = () => {
   return (
@@ -171,7 +170,7 @@ const ContactForm = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        if (data.status === 'success') {
+        if (data.status === "success") {
           toast.success("Form successfully submitted!", {
             position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
             autoClose: 2000,
@@ -316,8 +315,7 @@ const ContactForm = () => {
                 />
               </div>
 
-             
-<form onSubmit={handleSubmit} className="flex flex-col gap-2">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-2">
                 <InputField
                   label="Name"
                   type="text"
@@ -367,10 +365,18 @@ const ContactForm = () => {
                 />
                 <button
                   type="submit"
-                  className={`bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors w-full ${isSubmitting || isFormSubmitted ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  className={`bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors w-full ${
+                    isSubmitting || isFormSubmitted
+                      ? "opacity-50 cursor-not-allowed"
+                      : ""
+                  }`}
                   disabled={isSubmitting || isFormSubmitted} // Disable if submitting or form is already submitted
                 >
-                  {isSubmitting ? 'Submitting...' : isFormSubmitted ? 'Already Submitted' : 'Send Message'}
+                  {isSubmitting
+                    ? "Submitting..."
+                    : isFormSubmitted
+                    ? "Already Submitted"
+                    : "Send Message"}
                 </button>
               </form>
             </div>
@@ -420,7 +426,6 @@ InputField.propTypes = {
   fadeInStyle: PropTypes.object,
 };
 
-
 const SelectField = ({ label, name, value, onChange, fadeInStyle }) => (
   <div style={fadeInStyle}>
     <label className="visually-hidden" htmlFor={name}>
@@ -434,11 +439,11 @@ const SelectField = ({ label, name, value, onChange, fadeInStyle }) => (
       required
       className="w-full border border-gray-300 rounded-lg p-1 lg:p-2 text-black focus:ring-2 focus:ring-yellow-400 transition-all bg-white"
       style={{
-        backgroundColor: 'white', // Keeps the background white
-        color: value === '' ? '#9da0a6' : '#1F2937', // Gray color for placeholder text, black for other options
-        padding: '0.5rem', // Optional padding to space the text
-        fontSize: '1rem', // Optional font size adjustment
-        borderRadius: '0.375rem', // Tailwind's rounded-lg equivalent
+        backgroundColor: "white", // Keeps the background white
+        color: value === "" ? "#9da0a6" : "#1F2937", // Gray color for placeholder text, black for other options
+        padding: "0.5rem", // Optional padding to space the text
+        fontSize: "1rem", // Optional font size adjustment
+        borderRadius: "0.375rem", // Tailwind's rounded-lg equivalent
       }}
     >
       <option value="" disabled className="text-gray-500">
@@ -465,8 +470,6 @@ SelectField.propTypes = {
   onChange: PropTypes.func.isRequired,
   fadeInStyle: PropTypes.object,
 };
-
-
 
 const TextareaField = ({
   label,
@@ -502,6 +505,5 @@ TextareaField.propTypes = {
   onChange: PropTypes.func.isRequired,
   fadeInStyle: PropTypes.object,
 };
-
 
 export default ContactForm;

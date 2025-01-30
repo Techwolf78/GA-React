@@ -10,7 +10,7 @@ import AboutIntro from "./AboutIntro";
 import AboutHero from "./AboutHero";
 import AboutOffer from "./AboutOffer";
 import AboutLeaders from "./AboutLeaders";
-import AboutAwards from "./AboutAwards";
+// import AboutAwards from "./AboutAwards";
 import ConnectWithUs from "./ConnectWithUs";
 
 const About = () => {
@@ -19,7 +19,7 @@ const About = () => {
       <AboutHero />
       <MissionVisionSection />
       <AboutLeaders />
-      <AboutAwards />
+      {/* <AboutAwards /> */}
       <AboutIntro />
     
       {/* Our Impact Section */}
