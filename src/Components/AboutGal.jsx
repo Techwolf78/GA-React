@@ -3,16 +3,16 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 
 const images = [
-  "/About/gallery1.jpg",
-  "/About/gallery3.jfif",
-  "/About/gallery2.jpg",
-  "/About/gallery4.jpg",
-  "/About/gallery5.jpg",
-  "/About/gallery6.jpg",
-  "/About/gallery7.jpg", // New image 1 (left side)
-  "/About/gallery8.jpg", // New image 2 (left side)
-  "/About/gallery9.jpg", // New image 3 (right side)
-  "/About/gallery10.jpg", // New image 4 (right side)
+  "/Event/h2.avif",
+  "/About/gal.jpeg",
+  "/About/gal1.jpeg",
+  "/About/gal3.jpg",
+  "/About/gal2.jpg",
+  "/About/gl4.avif",
+  "/About/gallery1.jpg ", // New image 1 (left side)
+  "/About/gal5.JPG", // New image 2 (left side)
+  "/About/gallery7.jpg", // New image 3 (right side)
+  "/About/Sanjivani.jpg", // New image 4 (right side)
 ];
 
 const ImageGallery = () => {
@@ -56,7 +56,7 @@ const ImageGallery = () => {
     <div className="flex flex-col items-center justify-center py-10 bg-white roboto-regular">
       <div className="flex w-full mb-8 items-center justify-center text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#01224F]">
-          Team <span className="text-4xl md:text-5xl font-semibold text-[#1e3a8a]">Galleries</span>
+          Event <span className="text-4xl md:text-5xl font-semibold text-[#1e3a8a]">Galleries</span>
         </h1>
       </div>
 

@@ -37,7 +37,7 @@ const ImpactSection = () => {
             className="w-full md:w-1/2 text-center md:text-left"
             data-aos="fade-right"
           >
-            <p className="text-sm md:text-base text-black mb-1">OUR IMPACT</p>
+            <p className="text-sm md:text-base text-black mb-3">OUR IMPACT</p>
             <h3
               className="text-3xl sm:text-4xl font-bold mb-6"
               style={{ color: "#1e3a8a" }}
