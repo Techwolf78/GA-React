@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // Update testimonials array to include batch, department, and college
 const testimonials = [
   {
-    review: "My experience at Gryphon Academy was fantastic! I got placed at Force Motors, and I'm truly grateful to Gryphon Academy for their incredible support during my placement. Thank you!",
+    review: "Gryphon has provided with best training. The teachers were super helping and punctual. They have given us lessons for life. I would extend a special thanks to the trainers who motivated us at every step.",
     name: "Mr. Siddhant Kadam",
     companyLogo: "/Logos/12.jpg",
     companyName: "Juspay",
@@ -14,7 +14,7 @@ const testimonials = [
   },
  
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review: "The trainings on aptitude and soft skills proved to be highly beneficial, equipping us with valuable objects and preparing us knowledge across various subjects for the industry demands.",
     name: "Ms. Kritika Raina",
     companyLogo: "/Logos/22.png",
     companyName: "Mastercard",
@@ -24,7 +24,8 @@ const testimonials = [
     college: "Indira College of Engineering & Management, Pune",
   },
   {
-    review: "Gryphon has provided with best training. The teachers were super helping and punctual. They have given us lessons for life. I would extend a special thanks to the trainers who motivated us at every step.",
+    review: "I feel fortunate to have undergone Gryphon's Industry Readiness Program . It equipped me with not just the skills to excel but also the mindset to adapt growth . It was perfect preparation for a successful MBA graduate.",
+
     name: "Mr. Amitsingh Tanwar",
     companyLogo: "/Logos/12.jpg",
     companyName: "Juspay",
@@ -36,7 +37,7 @@ const testimonials = [
 
  
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review:'The placement I secured were directly due to the comprehensive training at the Gryphon Academy , They helped me identify my strengths , overcome my weaknesses , and present myself as a well-rounded professional to recruiters.',
     name: "Ms. Pranali Kudche",
     companyLogo: "/Logos/2.jpg",
     companyName: "thyssenkrupp",
@@ -47,7 +48,7 @@ const testimonials = [
   },
 
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review: "The Industry Readiness Program at Gryphon Academy was a game-changer for my career. From softskills to technical expertise, every session was designed to prepare us for real-world challenges . It gave me the confidence to excel in the interviews and thrive in my new role .",
     name: "Mr. Omkar Hatte",
     companyLogo: "/Logos/piaggio.png",
     companyName: "Piaggio",
@@ -57,7 +58,7 @@ const testimonials = [
     college: "Indira College of Engineering & Management, Pune",
   },
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review: "Thanks to Gryphon Academy , I transitioned from a student to a professional seamlessly. The practical insights ,resume workshops and mock interview helped me secure a role at my dream company. the training was invaluable.",
     name: "Mr. Arjun Mahamuni",
     companyLogo: "/Logos/28.png",
     companyName: "Philips",
@@ -78,7 +79,8 @@ const testimonials = [
   },
 
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review: "The tailored approach of Gryphon's Industry Readiness Program was exactly what I needed.The focus on current industry trends and in-demand skills has only made me confident but also made me confident but also highly competitive in the job market.",
+
     name: "Ms. Trisha Chowdhary",
     companyLogo: "/Logos/faurecia.png",
     companyName: "Faurecia",
@@ -98,7 +100,8 @@ const testimonials = [
     college: "RIIM - Ramachandran International Institute of Management, Pune",
   },
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review: "The sessions at the gryphon academy were intense , informative and incredibly rewarding. From mock interviews to skill-specific training , everything was geared towards making us industry-ready. Its the best decision I made during my MBA journey.",
+
     name: "Mr. Ajinkya Joshi",
     companyLogo: "/Logos/12.jpg",
     companyName: "Juspay",
@@ -108,7 +111,7 @@ const testimonials = [
     college: "ISBS - Indira School of Business, Pune",
   },
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review: "The program was more than just training ; it was a transformation. Gryphon Academy helped me refine ,my skills, build my confidence and understand what the industry truly expects from professionals like me.",
     name: "Mr. Rithik Prakash",
     companyLogo: "/Logos/IDFC.png",
     companyName: "IDFC First Bank",
@@ -118,7 +121,7 @@ const testimonials = [
     college: "LEAD College of Management, Pune",
   },
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review: "Gryphon has provided with best training. The teachers were super helping and punctual. They have given us lessons for life. I would extend a special thanks to the trainers who motivated us at every step.",
     name: "Mr. Rohit Mulik",
     companyLogo: "/Logos/daloopa.png",
     companyName: "daloopa",
@@ -128,7 +131,7 @@ const testimonials = [
     college: "RIIM-Ramchandran International Institute of Management, Pune",
   },
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review: "I feel fortunate to have undergone Gryphon's Industry Readiness Program . It equipped me with not just the skills to excel but also the mindset to adapt growth . It was perfect preparation for a successful MBA graduate.",
     name: "Ms.Srushti Ainpure",
     companyLogo: "/Logos/2.jpg",
     companyName: "thyssenkrupp",
@@ -138,7 +141,7 @@ const testimonials = [
     college: "DKTE Society's Textile & Engineering Institute, Ichalkaranji",
   },
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review: "The sessions at the gryphon academy were intense , informative and incredibly rewarding. From mock interviews to skill-specific training , everything was geared towards making us industry-ready. Its the best decision I made during my MBA journey.",
     name: "Mr. Aniket Khatore",
     companyLogo: "/Logos/28.png",
     companyName: "Philips",
@@ -158,8 +161,7 @@ const testimonials = [
     college: "Sanjivani College Of Engineering , Kopargaon",
   },
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
-    name: "Mr.Akshat Pare",
+    review: "Gryphon Academy's industry readiness sessions were tailored to current market trends and the mentors provided valuable insights. From sharpening my aptitude to enhancing my interpersonal skills, every module was designed to ensure we are job-ready.",
     companyLogo: "/Logos/HDFC.png",
     companyName: "HDFC",
     rating: "★★★★★",
@@ -168,7 +170,7 @@ const testimonials = [
     college: "Lexicon Management Institute of Leadership and Excellence, Pune",
   },
   {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    review: "The trainings on aptitude and soft skills proved to be highly beneficial, equipping us with valuable objects and preparing us knowledge across various subjects for the industry demands.",
     name: "Mr.Vishal Thorat",
     companyLogo: "/Logos/ceasefire.png",
     companyName: "Cease Fire",

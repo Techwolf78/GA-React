@@ -19,7 +19,7 @@ const AboutHero = () => {
           Bridging the Gap Between Industry and Academia
         </h2>
         <p className="text-base md:text-lg font-medium mb-12" style={{ color: '#F0F0F0' }} data-aos="fade-up">
-          As India&apos;s premier non-ed-tech organization, we are committed to bridging the gap between industry and academia. Providing customized training solutions as per the Industry-centric needs, we help your students to be industry ready.
+        <b>We are the India's, premier non-ed-tech training and placement organization,</b> committed to bridging the gap between industry and academia, through customized training programmes which are tailored as per the Industry-centric needs.  
         </p>
       </div>
       <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0" data-aos="zoom-in">
