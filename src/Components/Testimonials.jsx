@@ -12,36 +12,7 @@ const testimonials = [
     department: "B.E Computer Engineering",
     college: "Indira College of Engineering & Management, Pune",
   },
-  {
-    review: "Gryphon has provided with best training. The teachers were super helping and punctual. They have given us lessons for life. I would extend a special thanks to the trainers who motivated us at every step.",
-    name: "Mr. Amitsingh Tanwar",
-    companyLogo: "/Logos/12.jpg",
-    companyName: "Juspay",
-    rating: "★★★★★",
-    batch: "2025",
-    department: "B.E Computer Engineering",
-    college: "Indira College of Engineering & Management, Pune",
-  },
-  {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
-    name: "Ms. Poornima Theurkar",
-    companyLogo: "/Logos/12.jpg",
-    companyName: "Juspay",
-    rating: "★★★★★",
-    batch: "2025",
-    department: "B.E Computer Engineering",
-    college: "Indira College of Engineering & Management, Pune",
-  },
-  {
-    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
-    name: "Mr. Ajinkya Joshi",
-    companyLogo: "/Logos/12.jpg",
-    companyName: "Juspay",
-    rating: "★★★★★",
-    batch: "2025",
-    department: "PGDM - Marketing",
-    college: "ISBS - Indira School of Business, Pune",
-  },
+ 
   {
     review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
     name: "Ms. Kritika Raina",
@@ -52,6 +23,17 @@ const testimonials = [
     department: "MBA - Human Resource",
     college: "Indira College of Engineering & Management, Pune",
   },
+  {
+    review: "Gryphon has provided with best training. The teachers were super helping and punctual. They have given us lessons for life. I would extend a special thanks to the trainers who motivated us at every step.",
+    name: "Mr. Amitsingh Tanwar",
+    companyLogo: "/Logos/12.jpg",
+    companyName: "Juspay",
+    rating: "★★★★★",
+    batch: "2025",
+    department: "B.E Computer Engineering",
+    college: "Indira College of Engineering & Management, Pune",
+  },
+
  
   {
     review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
@@ -63,6 +45,7 @@ const testimonials = [
     department: "Diploma - Electronics",
     college: "DKTE Society's Textile & Engineering Institute, Ichalkaranji",
   },
+
   {
     review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
     name: "Mr. Omkar Hatte",
@@ -85,6 +68,17 @@ const testimonials = [
   },
   {
     review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    name: "Ms. Poornima Theurkar",
+    companyLogo: "/Logos/12.jpg",
+    companyName: "Juspay",
+    rating: "★★★★★",
+    batch: "2025",
+    department: "B.E Computer Engineering",
+    college: "Indira College of Engineering & Management, Pune",
+  },
+
+  {
+    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
     name: "Ms. Trisha Chowdhary",
     companyLogo: "/Logos/faurecia.png",
     companyName: "Faurecia",
@@ -102,6 +96,16 @@ const testimonials = [
     batch: "2025",
     department: "MBA - Marketing",
     college: "RIIM - Ramachandran International Institute of Management, Pune",
+  },
+  {
+    review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
+    name: "Mr. Ajinkya Joshi",
+    companyLogo: "/Logos/12.jpg",
+    companyName: "Juspay",
+    rating: "★★★★★",
+    batch: "2025",
+    department: "PGDM - Marketing",
+    college: "ISBS - Indira School of Business, Pune",
   },
   {
     review: "Gryphon Academy provided me with best opportunities. Their trainings and teachers were very helpful for us in building our profession.",
@@ -175,15 +179,20 @@ const testimonials = [
   },
 ];
 
-const cardColors = [
-  "#F1FAF9", // very light teal
-  "#FFF9E8", // very light orange
-  "#F2FBFF", // very light blue
-  "#F6F0FC", // very light lavender
-  "#FCEDEE", // very light blush
-  "#F4FBFF", // very light sky blue
-  "#FDEDF2", // very light pink
-];
+const companyColors = {
+  "Juspay": "#cae7fa", // Light blue (as per Juspay's logo)
+  "Mastercard": "#f7e8df", // Light red (as per Mastercard's logo)
+  "thyssenkrupp": "#dfeff7", // Light purple
+  "Piaggio": "#edfdff", // Light orange
+  "Philips": "#d6e9ff", // Light cyan
+  "Faurecia": "#edf8ff", // Light green
+  "FinDestination": "#e1edfa", // Light yellow
+  "IDFC First Bank": "#f7e0da", // Light blue
+  "daloopa": "#dee6fa", // Light coral
+  "Cease Fire": "#faedeb", // Light red
+  "HDFC": "#ebeffa", // Light blue
+  // Add more companies and their colors as needed
+};
 
 const Testimonials = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -199,7 +208,7 @@ const Testimonials = () => {
     };
   }, []);
 
-  const cardStyle = {
+  const cardStyle = (companyName) => ({
     borderRadius: "8px",
     padding: "24px",
     boxShadow: "none",
@@ -212,17 +221,17 @@ const Testimonials = () => {
     flexDirection: "column",
     justifyContent: "space-between",
     transition: "transform 0.3s",
-    height: "auto", // Remove fixed height
-   
-  };
-  
+    height: "auto",
+    background: `linear-gradient(to bottom, ${companyColors[companyName] || "#FFFFFF"} 0%, white 100%)`, // Fallback to white if company not found
+  });
+
   const logoStyle = {
     width: "auto",
     height: "52px",
     objectFit: "contain",
     marginBottom: "12px",
   };
-  
+
   const logoContainerStyle = {
     display: "flex",
     justifyContent: "center",
@@ -243,10 +252,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              style={{
-                ...cardStyle,
-                background: `linear-gradient(to bottom, ${cardColors[index % cardColors.length]} 0%, white 100%)`,
-              }}
+              style={cardStyle(testimonial.companyName)}
               className="testimonial_card"
             >
               <div style={logoContainerStyle}>
@@ -266,8 +272,8 @@ const Testimonials = () => {
                   {testimonial.department}
                 </p>
                 <p style={{ color: "#000000", fontSize: "14px", marginBottom: "0px" }}>
-  {testimonial.college}
-</p>
+                  {testimonial.college}
+                </p>
               </div>
             </div>
           ))}
@@ -275,10 +281,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={`duplicate-${index}`}
-              style={{
-                ...cardStyle,
-                background: `linear-gradient(to bottom, ${cardColors[index % cardColors.length]} 0%, white 100%)`,
-              }}
+              style={cardStyle(testimonial.companyName)}
               className="testimonial_card"
             >
               <div style={logoContainerStyle}>
@@ -298,8 +301,8 @@ const Testimonials = () => {
                   {testimonial.department}
                 </p>
                 <p style={{ color: "#000000", fontSize: "14px", marginBottom: "0px" }}>
-  {testimonial.college}
-</p>
+                  {testimonial.college}
+                </p>
               </div>
             </div>
           ))}
