@@ -37,17 +37,14 @@ const ImpactSection = () => {
             className="w-full md:w-1/2 text-center md:text-left"
             data-aos="fade-right"
           >
-            <p className="text-sm md:text-base text-black mb-3">OUR IMPACT</p>
             <h3
               className="text-3xl sm:text-4xl font-bold mb-6"
               style={{ color: "#1e3a8a" }}
             >
-              Transforming Education Through Technology
+              OUR IMPACT
             </h3>
             <p className="text-lg text-gray-600 mb-8">
-              For over a decade, we've been pioneering digital learning
-              solutions that empower institutions, educators, and students to
-              thrive in the modern educational landscape.
+            For years, we have been pioneering customized training skills that help students thrive in the ever evolving landscape of industry. 
             </p>
             <a href="/contact">
               <button className="bg-[#f3f9fc] text-black px-2 py-2 border-2 border-[#1e3a8a] font-semibold hover:bg-[#15306d] hover:text-white transition-colors">

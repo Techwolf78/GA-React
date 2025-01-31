@@ -12,14 +12,15 @@ const MeetTheLeaders = () => {
   const founder = {
     designation: 'Founder',
     name: 'Mr. Shashi Bhat',
-    message: 'When I look back and see how Gryphon collaboration with academia is creating a huge pool of talent for the industry, I feel we have set the right mission and vision. Still a long road ahead, but gratified with the progress we have made.',
+    message: "At Gryphon Academy, our mission is to bridge the gap between academia and industry by creating an industry-ready workforce within educational institutions. Through customized learning programs tailored for professional courses, we ensure students are equipped not just with theoretical knowledge but with practical skills to contribute from day one. With over 15 years of expertise in engineering academia and corporate relations, I've built strong partnerships with top recruiters, opening exceptional career opportunities for students. Gryphon Academy's vast network of industry leaders reflects our commitment to aligning education with real-world demands and shaping the future of professional growth.",
+
     profilePic: '/About/foun.PNG', // Replace with actual image path
   };
 
   const coFounder = {
     designation: 'Co-Founder',
     name: 'Ms. Ummeaiman Ansari',
-    message: 'Holding ranks but a trainer beneath, it thrills me to witness an amazing pool of talent being created with our best of trainers and equally supported by amazing career opportunities from our corporate partners. Gryphon is 3 years today, floating but on the course to sail through.',
+    message: 'At Gryphon Academy, we envision a transformative approach to education-one that bridges the gap between academia and industry. Drawing from my 15 years of enriching experience in manufacturing, I have witnessed firsthand the challenges industries face in finding and nurturing talent equipped for real-world complexities. This understanding drives our mission to create an industry-ready workforce within the walls of our campus. What sets Gryphon Academy apart is our unwavering focus on customization. We begin by engaging directly with industry leaders to understand their unique challenges, skill requirements, and future goals. These insights form the foundation of our curriculum, ensuring it is tailored to meet specific demands. From technical expertise to behavioral skills, we design every training module with precision and purpose.',
     profilePic: '/About/cf.PNG', // Replace with actual image path
   };
 
