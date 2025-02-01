@@ -1,52 +1,60 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
+import NavbarBrandPositioning from './NavbarBrandPositioning';
+import ThreeFiberComponent from './ThreeFiberComponent';
+import TryPage from './TryPage';
+import Events from './Events';
+import DmHookLine from './DmHookLine';
+import BusinessServices from './BusinessServices';
+import BrandPositioningWhyChoose from './BrandPositioningWhyChoose';
+import Guest from './Guest';
+import BrandContact from './BrandContact';
+import DmEvents from './DmEvents';
+import Dmvideo from './Dmvideo';
+import DigitalHero from './DigitalHero';
 
-const ComingSoon = () => {
+const BrandPositioning = () => {
+  const tryPageRef = useRef(null);
+
+  const handleScrollToTryPage = () => {
+    if (tryPageRef.current) {
+      // Calculate the scroll position to leave 10vh at the top
+      const topOffset = 10 * window.innerHeight / 100; // 10vh in pixels
+      const elementTop = tryPageRef.current.offsetTop; // Get the offset of the TryPage component
+      const scrollToPosition = elementTop - topOffset; // Subtract 10vh from the element's position
+
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-blue-900 text-white p-4 roboto-regular">
-      <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-4 animate-bounce z-10">Coming Soon!</h1>
-      <p className="text-lg sm:text-xl md:text-2xl mb-4 z-10">Exciting things are on the way. Stay tuned!</p>
+    <div>
+      <NavbarBrandPositioning />
+      {/* <DigitalHero /> */}
+      <Dmvideo />
+      {/* <ThreeFiberComponent handleScrollClick={handleScrollToTryPage} /> */}
       
-      {/* Fun message */}
-      <p className="text-lg sm:text-xl md:text-2xl mb-4 z-10 italic text-center">
-        Our developers are still in the kitchen, adding a pinch of code and a dash of creativity!
-      </p>
+      {/* Attach ref to TryPage component */}
+      {/* <div ref={tryPageRef}>
+   
+      </div> */}
+     {/* <TryPage /> */}
+      {/* Other Sections
 
-      {/* Background Dots */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float bg-blue-300 rounded-full w-24 h-24 md:w-32 md:h-32 absolute" style={{ top: '20%', left: '10%' }} />
-        <div className="animate-float bg-purple-300 rounded-full w-20 h-20 md:w-24 md:h-24 absolute" style={{ top: '50%', left: '70%' }} />
-        <div className="animate-float bg-yellow-300 rounded-full w-16 h-16 md:w-20 md:h-20 absolute" style={{ top: '70%', left: '30%' }} />
-      </div>
-
-      {/* Inline styles */}
-      <style>{`
-        body {
-          font-family: 'Montserrat', sans-serif;
-        }
-
-        @keyframes float {
-          0% { transform: translateY(0); }
-          50% { transform: translateY(-20px); }
-          100% { transform: translateY(0); }
-        }
-
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-          opacity: 0.8;
-        }
-
-        .animate-float:nth-child(odd) {
-          animation-delay: 1s;
-        }
-
-        .animate-float:nth-child(even) {
-          animation-delay: 2s;
-        }
-      `}</style>
+      {/**/}
+      {/* <Events /> */}
+      {/* <DmHookLine /> */}
+      {/* <DmEvents />  */}
+      <BusinessServices />
+      <BrandPositioningWhyChoose />
+      {/* <Guest /> */}
+      <BrandContact />
     </div>
   );
 };
 
-export default ComingSoon;
+export default BrandPositioning;
 
