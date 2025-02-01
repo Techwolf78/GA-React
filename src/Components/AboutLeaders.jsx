@@ -46,7 +46,7 @@ const MeetTheLeaders = () => {
       }}
     >
       {/* Black overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10 z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 z-10"></div>
 
       {/* The wave element */}
       <WaveElement />

@@ -28,12 +28,12 @@ const HookLine = ({ scrollDirection }) => {
 
   return (
     <div className="w-full overflow-hidden relative">
-      <div className={`inline-flex items-center text-black font-normal text-xl md:text-3xl lg:text-4xl animate-scroll ${scrollDirection === 'right' ? 'reverse' : ''}`}>
+      <div className={`inline-flex items-center text-white font-normal text-xl md:text-3xl lg:text-4xl animate-scroll ${scrollDirection === 'right' ? 'reverse' : ''}`}>
         {combinedHookLines.map((hookLine, index) => (
           <React.Fragment key={index}>
             {hookLine}
             {index < combinedHookLines.length - 1 && (
-              <span className="bg-black rounded-full h-2 md:h-4 w-2 md:w-4 mx-4 md:mx-6"></span> // Divider with responsive margin
+              <span className="bg-white rounded-full h-2 md:h-4 w-2 md:w-4 mx-4 md:mx-6"></span> // Divider with responsive margin
             )}
           </React.Fragment>
         ))}
