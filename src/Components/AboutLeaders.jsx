@@ -25,7 +25,7 @@ const MeetTheLeaders = () => {
   };
 
   const renderMessage = (name, message) => (
-    <div className="relative pl-10">
+    <div className="relative md:pl-10">
       <div className="absolute top-0 left-0 w-8 h-8">
         <img src={QuotesSVG} alt="Quotes" className="w-full h-full" />
       </div>

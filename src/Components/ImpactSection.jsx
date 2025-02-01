@@ -20,7 +20,6 @@ const ImpactSection = () => {
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
     borderBottom: "1.5px solid #1e3a8a", // Add bottom border
   };
-  
 
   const hoverStyle = {
     transform: "scale(1.05)",
@@ -29,12 +28,11 @@ const ImpactSection = () => {
 
   return (
     <div id="stats" className="py-12 bg-[#f5f4f4]">
-      {/* Container with max-width and consistent padding */}
-      <div className="mx-auto px-8 md:px-16 ">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+      <div className="mx-auto px-8 sm:px-6 md:px-8 lg:px-16">
+        <div className="flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
           {/* Left Text Section */}
           <div
-            className="w-full md:w-1/2 text-center md:text-left"
+            className="w-full sm:w-1/2 text-center sm:text-left"
             data-aos="fade-right"
           >
             <h3
@@ -43,11 +41,13 @@ const ImpactSection = () => {
             >
               OUR IMPACT
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
-            For years, we have been pioneering customized training skills that help students thrive in the ever evolving landscape of industry. 
+            <p className="text-lg sm:text-xl text-gray-600 mb-8">
+              For years, we have been pioneering customized training skills
+              that help students thrive in the ever-evolving landscape of the
+              industry.
             </p>
             <a href="/contact">
-              <button className="bg-[#f3f9fc] text-black px-2 py-2 border-2 border-[#1e3a8a] font-semibold hover:bg-[#15306d] hover:text-white transition-colors">
+              <button className="bg-[#f3f9fc] text-black px-4 py-2 border-2 border-[#1e3a8a] font-semibold hover:bg-[#15306d] hover:text-white transition-colors">
                 Contact Us
               </button>
             </a>
@@ -55,7 +55,7 @@ const ImpactSection = () => {
 
           {/* Right Grid Section */}
           <div
-            className="w-full md:w-1/2 grid grid-cols-2 gap-4"
+            className="w-full sm:w-1/2 grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2"
             data-aos="fade-left"
           >
             {[
