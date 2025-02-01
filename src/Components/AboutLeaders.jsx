@@ -30,7 +30,7 @@ const MeetTheLeaders = () => {
         <img src={QuotesSVG} alt="Quotes" className="w-full h-full" />
       </div>
       <p className="text-base md:text-lg lg:text-xl mt-2 text-gray-900">
-        <i>{message}</i>
+        <p>{message}</p>
       </p>
     </div>
   );
