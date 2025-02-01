@@ -8,11 +8,11 @@ const images = [
   "/About/gal1.jpeg",
   "/About/gal3.jpg",
   "/About/gal2.jpg",
-  "/About/gl4.avif",
+  "/About/h3.avif",
   "/About/gallery1.jpg ", // New image 1 (left side)
   "/About/gal5.JPG", // New image 2 (left side)
   "/About/gallery7.jpg", // New image 3 (right side)
-  "/About/Sanjivani.jpg", // New image 4 (right side)
+  "/About/gl4.avif", // New image 4 (right side)
 ];
 
 const ImageGallery = () => {

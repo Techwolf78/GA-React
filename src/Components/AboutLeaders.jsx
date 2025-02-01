@@ -29,32 +29,35 @@ const MeetTheLeaders = () => {
       <div className="absolute top-0 left-0 w-8 h-8">
         <img src={QuotesSVG} alt="Quotes" className="w-full h-full" />
       </div>
-      <p className="text-base md:text-lg lg:text-xl mt-2 text-gray-600">
+      <p className="text-base md:text-lg lg:text-xl mt-2 text-gray-900">
         <i>{message}</i>
       </p>
     </div>
   );
 
   return (
-<div 
-  className="flex flex-col items-center mx-auto bg-gradient-to-r from-blue-100 to-blue-200 relative"
-  style={{ 
-    backgroundImage: `url('/About/leader-bg.png')`, 
-    backgroundSize: 'cover', 
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat'  // Prevent the background from repeating
-  }}
->
+    <div
+      className="flex flex-col items-center mx-auto bg-gradient-to-r from-blue-100 to-blue-200 relative"
+      style={{
+        backgroundImage: `url('/About/leader-bg.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat', // Prevent the background from repeating
+      }}
+    >
+      {/* Black overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10 z-10"></div>
+
       {/* The wave element */}
       <WaveElement />
 
-      <h2 className="text-center mt-4 text-2xl md:text-3xl lg:text-4xl text-blue-700 font-bold" data-aos="fade-down" data-aos-once="true">
+      <h2 className="text-center mt-4 text-2xl md:text-3xl lg:text-4xl text-blue-700 font-bold z-20" data-aos="fade-down" data-aos-once="true">
         Meet the Leaders
       </h2>
 
       {/* Founder Section */}
       <div
-        className="flex flex-col md:flex-row mb-12 items-center justify-between p-8"
+        className="flex flex-col md:flex-row mb-12 items-center justify-between p-8 relative z-20"
         data-aos="fade-up"
         data-aos-once="true"
       >
@@ -73,7 +76,7 @@ const MeetTheLeaders = () => {
             <img
               src={founder.profilePic}
               alt={`${founder.name}'s profile`}
-              className="rounded-lg shadow-xl w-full max-h-72 object-cover relative z-10 border-4 border-white"
+              className="rounded-lg shadow-xl w-full max-h-80 object-cover relative z-10 border-4 border-white"
               loading="lazy"
             />
 
@@ -87,7 +90,7 @@ const MeetTheLeaders = () => {
 
       {/* Co-Founder Section */}
       <div
-        className="flex flex-col md:flex-row items-center justify-between p-8"
+        className="flex flex-col md:flex-row items-center justify-between p-8 relative z-20"
         data-aos="fade-up"
         data-aos-once="true"
         data-aos-delay="200"
@@ -106,7 +109,7 @@ const MeetTheLeaders = () => {
             <img
               src={coFounder.profilePic}
               alt={`${coFounder.name}'s profile`}
-              className="rounded-lg shadow-xl w-full max-h-72 object-cover relative z-10 border-4 border-white"
+              className="rounded-lg shadow-xl w-full max-h-80 object-cover relative z-10 border-4 border-white"
               loading="lazy"
               data-aos="fade-up"
               data-aos-delay="100"
