@@ -14,11 +14,11 @@ const MissionVisionSection = () => {
     });
   }, []);
 
-  const fixedHeight = '450px'; // Set a fixed height for both cards
+  const fixedHeight = '250px'; // Set a fixed height for both cards
 
   return (
     <section 
-      className="flex flex-col w-full lg:min-h-[80vh] md:min-h-[50vh] bg-gray-100 px-4 sm:px-8 md:px-16 lg:px-24 py-4 roboto-regular overflow-hidden"
+      className="flex flex-col w-full h-auto bg-gray-100 px-4 sm:px-8 md:px-16 lg:px-24 py-4 roboto-regular overflow-hidden"
     >
       <div className="flex flex-col md:flex-row w-full max-w-7xl">
 

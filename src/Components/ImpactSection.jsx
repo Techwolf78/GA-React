@@ -32,7 +32,7 @@ const ImpactSection = () => {
         <div className="flex flex-col sm:flex-row items-center gap-8 sm:gap-12">
           {/* Left Text Section */}
           <div
-            className="w-full sm:w-1/2 text-center sm:text-left"
+            className="w-full md:w-5/12 text-center sm:text-left"
             data-aos="fade-right"
           >
             <h3
@@ -55,7 +55,7 @@ const ImpactSection = () => {
 
           {/* Right Grid Section */}
           <div
-            className="w-full sm:w-1/2 grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2"
+            className="w-full md:w-7/12 grid grid-cols-2 sm:grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2"
             data-aos="fade-left"
           >
             {[
