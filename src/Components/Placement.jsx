@@ -23,7 +23,7 @@ const Placement = () => {
       <CollegeAccreditation />
       
       {/* Use the new HookLine component */}
-          {/* Use the new HookLine component */}
+  
       <HookLine />
 
       <PartneredCollege />
