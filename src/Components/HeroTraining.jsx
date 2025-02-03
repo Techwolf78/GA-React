@@ -1,31 +1,94 @@
-import React from "react";
-import { FaChalkboardTeacher, FaTools } from "react-icons/fa"; // Import new icons
+import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
 
 const HeroTraining = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const handleScroll = () => {
+    window.scrollTo({
+      top: window.innerHeight * 1,
+      behavior: "smooth",
+    });
+  };
+
+  const fadeInStyle = {
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translateX(0)" : "translateX(-20px)",
+    transition: "opacity 0.8s ease-in-out, transform 0.8s ease-in-out",
+  };
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // For top positioning of heading in large screens
+  const headingStyle = isMobile
+    ? {}
+    : {
+        marginTop: "10vh", // This ensures the heading starts 10% from the top of the screen on larger screens
+      };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 h-screen bg-[#091327]">
-      {/* Left Section: Heading, Paragraph, and Button */}
-      <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
-        <div className="text-center md:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-2 text-[#ffffff] -mt-8">
-            Better <span className="text-[#FFC80E]">Learning Future</span> Starts With Us
+    <div className="bg-[#091327] relative roboto-regular">
+      <div
+        ref={ref}
+        className={`flex flex-col justify-between  ${
+          isMobile ? "bg-[#01224F] h-auto" : "bg-cover lg:bg-cover h-[50vh] lg:h-screen"
+        } mx-auto md:px-16 `}
+        style={{
+          backgroundImage: isMobile ? "none" : "url('trainherofinals.png')",
+          backgroundPosition: isMobile
+            ? "center center"
+            : "center left", // Make the image crop from the right side
+          backgroundSize: isMobile ? "auto" : "cover", // 'cover' for large screens, 'auto' for mobile
+        }}
+      >
+        <div
+          className={`flex ${isMobile ? "flex-col items-center justify-center h-full" : ""} text-center ${isMobile ? "mt-10" : "md:text-left mt-20 "}`}
+          style={headingStyle}
+        >
+          <h1
+            className={`text-[1.5rem] sm:text-[2rem] md:text-[2rem] lg:text-[2.5rem] xl:text-[3rem] font-bold mb-2 ${isMobile ? "text-white" : "text-[#000000]"} ${fadeInStyle} ${!isMobile ? "hidden" : ""}`}
+          >
+            <span
+              className={`${isMobile ? "text-[#FFC80E] text-[1.5rem]" : "text-[#003073] text-[1.5rem] md:text-[3rem]"}`}
+            >
+              THE LEARNING TRINITY:
+            </span>
+            <br />
+            <span
+              className={`text-[1.25rem] sm:text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] xl:text-[2.5rem] font-bold mb-2 ${isMobile ? "text-white" : "text-[#000000]"}`}
+            >
+              Where <span className={`${isMobile ? "text-[#FFC80E]" : ""}`}>Academia</span> Meets{" "}
+              <span className={`${isMobile ? "text-[#FFC80E]" : ""}`}>Industry</span>
+            </span>
           </h1>
-          <img
-            src="/Hero-bg.png"
-            alt="Placeholder"
-            className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px] mx-auto mb-2 -mt-4 border-0 shadow-none md:hidden"
-          />
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-[#ffffff] mb-4 font-light">
-            It is a long established fact that reader will be distracted readable content of a page when.
+        </div>
+
+        <div className={`text-left mb-0 ${isMobile ? "text-center" : "mt-10"}`} style={fadeInStyle}>
+          <p className="text-[0.875rem] mb-4 sm:text-[1rem] md:text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] text-[#ffffff] font-light lg:text-white lg:mt-6">
+            The Tri-Force of Excellence: Powering Education, Faculty, and Industry
           </p>
 
-          <a
-            href="#explore-courses"
-            className="btn-know-more relative inline-flex items-center justify-center px-5 py-3 text-sm sm:text-base font-semibold text-[#ffffff] group whitespace-nowrap"
+          <button
+            onClick={handleScroll}
+            className="btn-know-more relative inline-flex items-center px-3 py-2 sm:px-4 sm:py-2.5 text-[0.75rem] sm:text-[0.875rem] md:text-[0.875rem] lg:text-[1rem] font-semibold text-[#ffffff] group whitespace-nowrap lg:inline-flex mt-4 lg:mt-6"
           >
-            <span className="relative z-10">Explore Our Trainings</span>
+            <span className="relative z-10 text-[0.75rem] sm:text-[0.875rem] md:text-[0.875rem] lg:text-[1rem]">
+              Explore Our Trainings
+            </span>
             <svg
-              className="ml-2 w-4 h-4 text-[#ffffff] relative z-10 transition-colors duration-300 ease-in-out group-hover:text-[#000000]"
+              className="ml-1 w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 text-[#ffffff] relative z-10 transition-colors duration-300 ease-in-out group-hover:text-[#000000]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -38,71 +101,19 @@ const HeroTraining = () => {
                 d="M13 7l5 5m0 0l-5 5m5-5H6"
               />
             </svg>
-          </a>
+          </button>
         </div>
-      </div>
-      {/* Right Section: Image and Floating Stat Boxes */}
-      <div className="relative flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
-        <div className="relative w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px]">
-          <img
-            src="/Hero-bg.png"
-            alt="Placeholder"
-            className="w-full h-auto border-0 shadow-none"
-          />
-          {/* Stat boxes */}
-          <div className="absolute top-4 left-4 bg-[#003073] p-2 sm:p-3 md:p-4 rounded-2xl shadow-md flex items-center space-x-2 sm:space-x-3">
-            <FaTools className="text-[#FFC80E] text-xl sm:text-2xl md:text-3xl" />
-            <div className="text-center">
-              <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#FFC80E]">Customized Trainings</h3>
-              <span className="text-[#ffffff] block text-xs sm:text-sm md:text-sm">Tailored to your needs</span>
-            </div>
+
+        {isMobile && (
+          <div className="mt-4">
+            <img
+              src="Training Page/successful-career.svg"
+              alt="Vector Illustration"
+              className="mx-auto"
+            />
           </div>
-          <div className="absolute bottom-4 right-4 bg-[#003073] p-2 sm:p-3 md:p-4 rounded-2xl shadow-md flex items-center space-x-2 sm:space-x-3">
-            <FaChalkboardTeacher className="text-[#FFC80E] text-xl sm:text-2xl md:text-3xl" />
-            <div className="text-center">
-              <h3 className="text-sm sm:text-base md:text-lg font-bold text-[#FFC80E]">Expert Trainers</h3>
-              <span className="text-[#ffffff] block text-xs sm:text-sm md:text-sm">Learn from industry experts</span>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
-      <style jsx>{`
-        .btn-know-more {
-          position: relative;
-          display: inline-flex;
-          align-items: center;
-          font-weight: bold;
-          padding: 10px 20px;
-          font-size: 1rem;
-          background-color: transparent;
-          border: 0.5px solid #ffffff;
-          text-decoration: none;
-          overflow: hidden;
-          transition: color 0.3s ease;
-        }
-        .btn-know-more::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background-color: #FFC80E;
-          transition: left 0.3s ease;
-          z-index: 0;
-        }
-        .btn-know-more:hover::before {
-          left: 0;
-        }
-        .btn-know-more:hover {
-          color: #000000;
-          transform: translateY(-3px);
-        }
-        .btn-know-more span {
-          position: relative;
-          z-index: 1;
-        }
-      `}</style>
     </div>
   );
 };

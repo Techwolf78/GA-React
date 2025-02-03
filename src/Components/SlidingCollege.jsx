@@ -1,59 +1,46 @@
 import React from 'react';
 
 const SlidingCollege = () => {
+  const logos = [
+    "Clgimage/1-1.png",
+    "Clgimage/13-1.png",
+    "Clgimage/14-1.png",
+    "Clgimage/15-1.png",
+    "Clgimage/16-1.png",
+    "Clgimage/6-2.png",
+    "Clgimage/7-2.png",
+    "Clgimage/8-2.png",
+    "Clgimage/9-2.png",
+    "Clgimage/10-2.png",
+    "Clgimage/11-2.png",
+    "Clgimage/12-2.png"
+  ];
+
   return (
-    <div className="logo-slider-section bg-[#091327] py-8 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto px-4">
-        <p className="section-heading text-[#FFC80E] text-center text-4xl font-bold mb-4">
-        OUR COLLEGE PARTNERS
-        </p>
-        <div className="logo-slider relative overflow-hidden w-full">
-          <div className="logo-slider-track flex animate-scroll">
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/1-1.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
+    <div className="logo-slider-section bg-[#01224F] py-4 roboto-regular">
+      <p className="section-heading text-[#FFC80E] text-center text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold mb-4">
+        Our College Partners
+      </p>
+      <div className="logo-slider relative overflow-hidden w-full">
+        <div className="logo-slider-track flex animate-scroll">
+          {logos.map((logo, index) => (
+            <div key={index} className="logo-slider-item flex-none mx-3 sm:mx-4 md:mx-5">
+              <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[120px] object-contain" />
             </div>
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/13-1.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
+          ))}
+          {/* Duplicate the logos for seamless scrolling */}
+          {logos.map((logo, index) => (
+            <div key={`duplicate-${index}`} className="logo-slider-item flex-none mx-3 sm:mx-4 md:mx-5">
+              <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[120px] object-contain" />
             </div>
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/14-1.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
-            </div>
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/15-1.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
-            </div>
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/16-1.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
-            </div>
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/6-2.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
-            </div>
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/7-2.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
-            </div>
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/8-2.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
-            </div>
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/9-2.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
-            </div>
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/10-2.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
-            </div>
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/11-2.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
-            </div>
-            <div className="logo-slider-item flex-none mx-5">
-              <img src="Clgimage/12-2.png" alt="College Logo" className="h-24 max-w-[150px] object-contain" />
-            </div>
-            {/* Add more logo items as needed */}
-          </div>
+          ))}
         </div>
       </div>
 
       {/* Inline styles for custom CSS */}
-      <style jsx>{`
+      <style>{`
         .logo-slider-track {
-          width: calc(150px * 12); /* Adjust based on the number of logos */
+          width: calc(120px * ${logos.length * 2}); /* Adjust based on the number of logos */
           animation: scroll 20s linear infinite;
         }
 
@@ -63,7 +50,7 @@ const SlidingCollege = () => {
 
         @keyframes scroll {
           0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-150px * 6)); } /* Adjust based on the number of logos */
+          100% { transform: translateX(calc(-120px * ${logos.length})); } /* Adjust based on the number of logos */
         }
       `}</style>
     </div>

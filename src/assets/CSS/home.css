@@ -1,28 +1,167 @@
 /* General Reset */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #01224f;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
 }
 
-/* General Navbar Styling */
+/* Hero Text Styling */
+.hero-text {
+  text-align: center; /* Center the text */
+}
+
+.hero-words {
+  display: flex;
+  justify-content: space-between; /* Space out elements */
+  align-items: center; /* Center vertically */
+  width: 100%; /* Full width of container */
+  margin-top: 1rem; /* Adjust spacing as needed */
+  flex-wrap: nowrap; /* Prevent wrapping of child elements */
+}
+
+.word-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.first-word-container {
+  flex: 0 0 25%; /* Takes up 25% of the width */
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /* Align the first word to the right */
+  align-items: center; /* Center vertically */
+  height: 100%;
+}
+
+.last-word-container {
+  flex: 0 0 25%; /* Takes up 25% of the width */
+  position: relative;
+  display: flex;
+  justify-content: flex-start; /* Align the last word to the left */
+  align-items: center; /* Center vertically */
+  height: 100%;
+}
+
+.first-word,
+.last-word {
+  position: absolute; /* Position the words absolutely inside their containers */
+  font-size: 1.5rem;
+  width: auto; /* Allow the width of the word to be as wide as the word itself */
+  transition: opacity 0.5s ease;
+}
+
+/* Fade Transition for Vertical Bounce Removed */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Smooth fade-in without bounce */
+}
+
+.fade-out {
+  opacity: 0;
+  text-shadow: none;
+}
+
+/* Bridge Image Container */
+.image-container {
+  flex: 0 0 50%; /* Bridge image takes 50% of the width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Bridge Image Styling */
+.hero-bridge {
+  width: 100%; /* Ensure image takes up 100% of the container width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Keep the image's aspect ratio intact */
+  opacity: 1; /* Fully visible */
+  transition: width 0.5s ease; /* Optional smooth transition for resizing */
+}
+
+/* Small Font Styling */
+.small-font {
+  font-size: 1.5rem; /* Adjust this value for the smaller font */
+}
+
+/* Fade Transition */
+.fade {
+  transition: opacity 0.5s ease; /* Smooth fade transition */
+}
+
+.fade-in {
+  opacity: 1;
+  text-shadow: 2px 2px 5px rgba(255, 200, 14, 0.7); /* Add text-shadow for fade-in */
+}
+
+.fade-out {
+  opacity: 0;
+  text-shadow: none; /* Remove shadow during fade-out */
+}
+
+/* Adjust font size for first and last words on smaller screens */
+@media (max-width: 768px) {
+  .first-word,
+  .last-word {
+    font-size: 1rem; /* Smaller font size for small screens */
+  }
+
+  /* Ensure hero words remain horizontal but scale nicely */
+  .hero-words {
+    justify-content: space-evenly; /* Evenly space out the elements */
+    align-items: center; /* Center vertically */
+  }
+
+  /* Adjust container widths */
+  .first-word-container,
+  .image-container,
+  .last-word-container {
+    flex: 1 1 30%; /* Allow each container to take 30% of the screen width */
+    max-width: 33%; /* Ensure they don't stretch too much */
+  }
+
+  .hero-bridge {
+    max-width: auto; /* Ensure image fits well on mobile */
+  }
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #ffc80e;
+  width: 0;
+  transition: width 0.2s ease;
+}
+
+/* Navbar Styles */
 .top-navigation {
   position: fixed;
-  top: 15px;
-  left: 0;
-  width: 100%;
-  background: transparent;
-  height: 60px;
+  top: 50%;
+  left: 15px; /* Increase this value for more gap from the left */
+  width: 200px;
+  height: 100%;
+  transform: translateY(-50%);
   z-index: 10;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  background: transparent;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Navbar visibility styles */
 .top-navigation.hidden {
   opacity: 0;
   visibility: hidden;
@@ -33,105 +172,93 @@ body, html {
   visibility: visible;
 }
 
-/* Ensure navbar items are in a single line and centered */
 .stick-top-nav-ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
+  flex-direction: column;
   width: 100%;
-  justify-content: center;
-  position: relative;
-  white-space: nowrap; /* Prevent line breaks */
 }
 
-/* Navbar list items styling */
 .stick-top-nav-ul li {
-  position: relative;
-  margin-right: 20px;
-  flex: 1;
-  text-align: center;
-  white-space: nowrap; /* Prevent line breaks */
+  width: 150px; /* Fixed width for li */
+  margin: 0; /* Remove vertical margin */
+  position: relative; /* For positioning the underline */
+  text-align: left;
+  overflow-wrap: break-word; /* Ensure long words wrap */
+  transition: margin-bottom 0.3s ease; /* Smooth transition for bottom margin */
+
+  /* Add a fixed height and center text vertically */
+  height: 60px; /* Adjust this value as per your design */
+  display: flex;
+  align-items: top; /* Vertically center the content */
+}
+
+.underline {
+  width: 20%; /* Initial width of the underline */
+  height: 1.5px; /* Height of the underline */
+  background: #fff; /* Underline color */
+  position: absolute;
+  top: 0; /* Position it at the top of the text */
+  left: 10px; /* Space from the left */
+  opacity: 1; /* Always show underline */
+  transition: width 0.3s ease; /* Transition for width */
+}
+
+/* Underline adjustment */
+.stick-top-nav-ul li:hover .underline,
+.stick-top-nav-ul li.nav-active .underline {
+  width: 40%; /* Width when hovered or active */
+  height: 4px; /* Increase height for better visibility */
 }
 
 .stick-top-nav-ul li a {
   text-decoration: none;
-  color: #fff;
-  display: block;
-  padding: 10px 15px;
+  color: #ffc80e;
+  display: inline-block; /* Change to inline-block */
+  padding: 10px 10px; /* Use padding for spacing */
   font-size: 16px;
-  transition: all 0.3s ease;
-  opacity: 0.5; /* Slightly transparent initially */
+  position: relative; /* Make it relative for the text */
+  opacity: 0; /* Hide text initially */
+  transition: opacity 0.5s ease; /* Smooth transition for text visibility */
+  width: 100%; /* Make anchor tag take full width of li */
+  text-align: left; /* Center the text horizontally */
 }
 
-.stick-top-nav-ul li a:hover {
-  opacity: 1; /* Fully visible on hover */
-}
-
+/* Ensure hover state works smoothly */
+.stick-top-nav-ul li:hover a,
 .stick-top-nav-ul li.nav-active a {
-  font-weight: bold;
-  opacity: 1; /* Fully visible for active section */
+  opacity: 1; /* Show text on hover or when active */
+}
+/* Add bottom margin for the active list item */
+.stick-top-nav-ul li.nav-active {
+  margin-bottom: 40px; /* Space below the active item */
 }
 
-.stick-top-nav-ul li .line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #fff;
-  transition: width 0.3s ease;
-  z-index: -1;
-}
-
-.stick-top-nav-ul li.nav-active .line {
-  width: 0;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  /* Hide the navbar items on small screens */
-  .top-navigation {
-    display: none; /* Completely hide the navbar on screens smaller than 768px */
-  }
-
-  /* Apply the background color to sections */
-  .section {
-    background-color: #01224f; /* Change background color to match the body */
-    background-image: none !important; /* Remove background image */
-
-    .left-side-image,
-    .right-side-image {
-      display: none; /* Hide left and right side images */
-    }
-  }
-}
-
-/* Add this to your sidebar styling */
+/* Sidebar Styles */
 .sidebar {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0; /* Align to the left */
   width: 300px;
   height: 100%;
   background: rgba(255, 255, 255, 0.9);
-  border-left: 1px solid #ddd;
-  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  border-right: 1px solid #ddd; /* Adjust border for left opening */
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); /* Shadow from the right */
+  z-index: 20000;
   display: flex;
   flex-direction: column;
   padding-top: 60px;
   transition: transform 0.3s ease;
-  transform: translateX(100%);
-  background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 75%, transparent 75%, transparent);
-  background-size: 10px 10px; /* Adjust the size of the pattern */
+  transform: translateX(-100%); /* Start hidden off-screen */
 }
-
 
 .sidebar.open {
-  transform: translateX(0);
+  transform: translateX(0); /* Move into view */
 }
 
+/* Sidebar list styles (for both main and sub items) */
 .sidebar ul {
   list-style-type: none;
   padding: 0;
@@ -140,52 +267,51 @@ body, html {
   flex-direction: column;
 }
 
-/* Sidebar Styling */
 .sidebar ul li {
   margin: 20px 0;
-  position: relative; /* Necessary for positioning the underline */
-  padding-bottom: 5px; /* Space for the underline */
+  position: relative;
+  padding-bottom: 5px;
 }
 
 .sidebar ul li a {
   text-decoration: none;
-  color: #000;
+  color: #01224f;
   display: block;
   padding: 10px;
   border-radius: 5px;
-  transition: color 0.3s ease, padding-bottom 0.3s ease; /* Smooth color and padding transition */
-  position: relative; /* Allow positioning of the pseudo-element */
+  transition: color 0.3s ease, padding-bottom 0.3s ease;
+  position: relative;
 }
 
-/* Blue Underline Effect */
+/* Underline effect for large screens */
 .sidebar ul li a::after {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 2px;
-  background: #000000; /* Blue underline color */
-  transition: width 0.3s ease; /* Smooth underline transition */
+  background: #01224f;
+  transition: width 0.3s ease;
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
-/* Hover Effect */
+/* Hover effect for large screens */
 .sidebar ul li a:hover::after {
-  width: 100%; /* Full width underline on hover */
+  width: 100%;
 }
 
 .sidebar ul li a:hover {
-  color: #000000; /* Change text color on hover */
-  padding-bottom: 7px; /* Increase padding to make space for the underline */
+  color: #01224f;
+  padding-bottom: 7px;
 }
 
-/* Sub-Menu Styling */
+/* Sub-menu styles */
 .sidebar ul li ul {
   list-style-type: none;
   padding: 0;
   margin: 10px 0 0 20px;
-  display: none; /* Hidden by default */
+  display: none;
   flex-direction: column;
 }
 
@@ -194,315 +320,460 @@ body, html {
 }
 
 .sidebar ul li ul li {
-  margin: 10px 0; /* Space between sub-menu items */
+  margin: 10px 0;
 }
 
 .sidebar ul li ul li a {
-  font-size: 14px; /* Smaller font for sub-menu items */
-  padding-left: 15px; /* Indentation for sub-menu items */
-  position: relative; /* Allow positioning of the pseudo-element */
+  font-size: 14px;
+  padding-left: 15px;
+  position: relative;
 }
 
-/* Blue Underline Effect for Sub-Menu Items */
 .sidebar ul li ul li a::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #000000; /* Blue underline color */
-  transition: width 0.3s ease; /* Smooth underline transition */
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  width: 0; /* Sub-item hover effect */
 }
 
-/* Hover Effect for Sub-Menu Items */
 .sidebar ul li ul li a:hover::after {
-  width: 100%; /* Full width underline on hover */
+  width: 100%;
 }
 
 .sidebar ul li ul li a:hover {
-  color: #000000; /* Change text color on hover */
+  color: #01224f;
 }
 
-/* Section Styling */
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  position: fixed;
+  top: 35px;
+  right: 60px; /* Default distance from the right side */
+  background: #ffc80e;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 11;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar i {
+  margin-right: 10px;
+  font-size: 18px; /* Adjust size */
+}
+
+/* Toggle Button Icon */
+.sidebar-toggle::before,
+.sidebar-toggle::after,
+.sidebar-toggle div {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #01224f;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-toggle::before {
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sidebar-toggle div {
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sidebar-toggle::after {
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sidebar-toggle.cross::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+  top: 50%;
+}
+
+.sidebar-toggle.cross div {
+  opacity: 0;
+}
+
+.sidebar-toggle.cross::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+  top: 50%;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Medium Screens (up to 1024px) */
+@media (max-width: 1024px) {
+  .sidebar-toggle {
+    right: 30px; /* Adjusted distance for medium screens */
+  }
+
+  /* Remove underline effect on medium screens */
+  .sidebar ul li a::after,
+  .sidebar ul li a:hover::after {
+    width: 0 !important; /* Prevent underline */
+  }
+
+  .sidebar ul li a.active::after {
+    width: 0 !important; /* No active underline */
+  }
+}
+
+/* Small Screens (up to 768px) */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    right: 15px; /* Further adjustment for small screens */
+  }
+
+  .hidden-on-large {
+    display: block; /* Show on smaller screens */
+  }
+
+  .sidebar ul li {
+    display: block; /* Ensure all items are block elements */
+    margin: 10px 0; /* Adjust spacing if needed */
+  }
+
+  /* Show sub-items on hover for Training menu */
+  .sidebar ul li:hover > ul {
+    display: flex;
+  }
+
+  /* Show sub-menu by default */
+  .sidebar ul li ul {
+    display: flex; /* Stack items vertically */
+    flex-direction: column;
+  }
+
+  /* Remove underline effect on small screens */
+  .sidebar ul li a::after,
+  .sidebar ul li a:hover::after {
+    width: 0 !important; /* Prevent underline */
+  }
+
+  .sidebar ul li a.active::after {
+    width: 0 !important; /* No active underline */
+  }
+}
+
+
+
+/* Section Styles */
 .section {
-  height: 100vh; /* Full viewport height */
-  background-size: cover; /* Ensure the background image covers the entire section */
-  background-position: center center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent image repetition */
+  position: relative;
+  height: 100vh; /* Default for larger screens */
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 2rem;
-  padding: 0 20px; /* General padding for sections */
-}
-.section h2 {
-  color: #FFC80E; /* Yellow text color */
+  padding: 0 20px;
 }
 
-/* Unique Section Styles */
+.section h2 {
+  color: #ffc80e;
+}
+
 #hero_slider {
-  background-image: url('/LandingImage/homeland1.png');
+  background-image: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1730803138/Rectangle_48try_vdlvku.avif");
+  background-position: right; /* Align the background image to the right side */
+  background-size: contain; /* Ensure the background image covers the section */
+  background-repeat: no-repeat; /* Prevent image repetition */
 }
 
 #core_capabilities {
-  background-image: url('/LandingImage/homeland2.png');
+  background-image: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland2_iiwltn.avif");
 }
 
 #operating_models {
-  background-image: url('/LandingImage/Landing-Pages-3.png');
+  background-image: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland3_konwok.avif");
 }
 
 #talent_transformations {
-  background-image: url('/LandingImage/Landing-Pages-4.png');
+  background-image: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland4_cel82n.avif");
 }
 
 #do_more {
-  background-image: url('/LandingImage/Landing-Pages-5.png');
+  background-image: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1730786473/homeland5_fjba9x.avif");
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .section {
-    background-color: #01224f; /* Background color to apply when navbar is hidden */
-    background-image: none !important; /* Remove background image */
+/* Default styling for large screens (background-size: contain) */
+#core_capabilities,
+#operating_models,
+#talent_transformations,
+#do_more {
+  background-size: contain; /* Default to contain for large screens */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+}
+
+/* Media query for screens between 768px and 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #hero_slider,
+  #core_capabilities,
+  #operating_models,
+  #talent_transformations,
+  #do_more {
+    background-size: cover; /* Use cover for medium-large screens (between 768px and 1024px) */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
   }
 }
 
-
-/* Content Alignment and Padding */
 .section-content {
-  max-width: 600px;
+  max-width: 700px;
   padding: 20px;
   box-sizing: border-box;
-  position: relative; /* Allow positioning of content relative to its container */
-  z-index: 1; /* Ensure content is above the background */
+  position: relative;
+  z-index: 1;
 }
 
 .section-content.left {
   text-align: left;
   margin-right: auto;
-  padding-left: 5vw; /* Add padding to the left side */
+  padding-left: 5vw; /* Default for small screens */
 }
 
 .section-content.right {
   text-align: left;
-  margin-left: auto;
-  padding-right: 5vw; /* Add padding to the right side */
+  margin-left: 10px;
+  padding-right: 5vw; /* Default for small screens */
 }
 
-/* Heading Styling */
+@media (min-width: 768px) {
+  .section-content.left {
+    padding-left: 13vw; /* Change to 8vw for larger screens */
+  }
+
+  .section-content.right {
+    padding-right: 8vw; /* Change to 8vw for larger screens */
+    margin-left: auto;
+  }
+}
+
 .section-content h2 {
-  font-size: 2rem; /* Default size for small screens */
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
-/* Paragraph Styling */
 .section-content p {
-  font-size: 1.2rem; /* Default size for small screens */
+  font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
-
-
-
-/* Button Styling */
+/* Default Button Styles (For Desktop & Larger Screens) */
 .btn-know-more {
-  position: relative; /* Make positioning relative to handle the pseudo-element */
+  position: relative;
   display: inline-block;
   font-weight: bold;
   padding: 10px 20px;
   font-size: 1rem;
-  color: #ffffff; /* White text color */
-  background-color: transparent; /* Transparent background */
-  border: 0.5px solid #ffffff; /* White border */
+  color: #ffffff;
+  background-color: transparent;
+  border: 0.5px solid #ffffff;
   text-decoration: none;
-
-  overflow: hidden; /* Hide overflow for smooth effect */
-  transition: color 0.3s ease; /* Transition for text color */
+  overflow: hidden;
+  transition: color 0.3s ease, transform 0.3s ease;
+  outline: none; /* Remove default outline */
 }
 
-/* Button Hover Effect */
-
+/* Button background transition effect */
 .btn-know-more::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
-  left: -100%; /* Start off-screen to the left */
+  left: -100%;
   width: 100%;
   height: 100%;
-  background-color: #FFC80E; /* Change the background color to #FFC80E */
-  transition: left 0.3s ease; /* Transition for the curtain effect */
-  z-index: 0; /* Behind the text */
+  background-color: #ffc80e;
+  transition: left 0.3s ease;
+  z-index: 0;
 }
 
-/* Move the yellow background curtain on hover */
 .btn-know-more:hover::before {
-  left: 0; /* Move the background to cover the button */
+  left: 0;
 }
 
 .btn-know-more:hover {
-  color: #01224f; /* Black text color on hover */
-  transform: translateY(-3px); /* Slight lift effect on hover */
+  color: #01224f;
+  transform: translateY(-3px) scale(1.05); /* Slight scaling on hover */
 }
 
 .btn-know-more span {
-  position: relative; /* Ensure the text is above the pseudo-element */
-  z-index: 1; /* Above the yellow background curtain */
+  position: relative;
+  z-index: 1;
 }
 
+/* Mobile Styles (Under 768px) */
+@media (max-width: 768px) {
+  .btn-know-more {
+    padding: 6px 12px;
+    font-size: 1rem;
+    background-color: transparent; /* Set background to transparent */
+    border: 0.5px solid #ffffff; /* Keep border visible */
+    color: #ffffff; /* Set text color to white */
+    text-align: center; /* Center the text */
+  }
 
-/* Sidebar Toggle Button */
-/* Sidebar Toggle Button Styling */
-.sidebar-toggle {
-  position: fixed; /* Fixed positioning */
-  top: 15px; /* Distance from top */
-  right: 15px; /* Distance from right */
-  background: #007bff; /* Button color */
-  color: white; /* Text color */
-  border: none; /* Remove default border */
-  border-radius: 50%; /* Circular button */
-  width: 50px; /* Button width */
-  height: 50px; /* Button height */
-  display: flex; /* Flexbox for alignment */
-  align-items: center; /* Center alignment vertically */
-  justify-content: center; /* Center alignment horizontally */
-  cursor: pointer; /* Pointer cursor on hover */
-  z-index: 11; /* Ensure it's above other elements */
-  transition: background-color 0.3s ease; /* Smooth color transition */
-  overflow: hidden; /* Hide overflow */
+  .btn-know-more::before {
+    display: none; /* Remove the background transition on mobile */
+  }
+
+  .btn-know-more:hover {
+    color: #ffc80e; /* Text color turns black on hover */
+    transform: none; /* No scaling or transition effect on hover */
+  }
+
+  .btn-know-more span {
+    z-index: 1;
+  }
 }
 
-/* Lines for hamburger icon */
-.sidebar-toggle::before, 
-.sidebar-toggle::after, 
-.sidebar-toggle div {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 24px; /* Line width */
-  height: 2px; /* Line height */
-  background-color: #fff; /* Line color */
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
-}
-
-/* Create the vertical lines for hamburger icon */
-.sidebar-toggle::before {
-  top: 12px; /* Position of the first line */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center the line */
-}
-
-.sidebar-toggle div {
-  top: 22px; /* Position of the second line */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center the line */
-}
-
-.sidebar-toggle::after {
-  top: 32px; /* Position of the third line */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center the line */
-}
-
-/* Cross effect when sidebar is open */
-.sidebar-toggle.cross::before {
-  transform: translate(-50%, -50%) rotate(45deg); /* Rotate first line */
-  top: 50%; /* Center vertically */
-}
-
-.sidebar-toggle.cross div {
-  opacity: 0; /* Hide the second line */
-}
-
-.sidebar-toggle.cross::after {
-  transform: translate(-50%, -50%) rotate(-45deg); /* Rotate second line */
-  top: 50%; /* Center vertically */
-}
 
 
 /* Company Logo */
 .company-logo-link {
   position: fixed;
-  top: -35px;
-  left: 25px;
+  top: -25px;
+  left: 8vw;
   width: 150px;
   height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 11;
-  text-decoration: none; /* Remove underline from link */
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .company-logo-link {
+    left: 13vw;
+  }
+}
+
+
+
+.hidden-on-large {
+  display: none; /* Hide by default */
 }
 
 .company-logo {
   width: 100%;
   height: 100%;
-  background: url("https://gryphonacademy.co.in/wp-content/uploads/2022/06/Ashar-1-e1656757693750.png") no-repeat center center;
+  background: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1732608342/NewLogo_glaelo.webp")
+    no-repeat center center;
   background-size: contain;
 }
 
-/* Disable scrolling */
-.no-scroll {
-  overflow: hidden;
-  /* Optionally, you can also set the height to 100% to ensure no scrolling */
-  height: 100%;
-  position: fixed;
-  width: 100%;
-}
-
-
-#core_capabilities {
-  position: relative; /* Positioning context for the image */
-}
-
+/* Image Styles */
 .right-side-image {
-  position: absolute; /* Position it absolutely */
-  right: 0; /* Align to the right */
-  top: 50%; /* Start from the center vertically */
-  transform: translateY(-50%); /* Center it vertically */
-  width: 25%; /* Set the desired width */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 100%; /* Limit height to avoid full section height */
-  z-index: 0; /* Behind the text */
-}
-
-.section-content {
-  position: relative; /* Ensure content is above the image */
-  z-index: 1; /* Bring the text content above the image */
-}
-
-#operating_models {
-  position: relative; /* Positioning context for the image */
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25%;
+  height: auto;
+  max-height: 100%;
+  z-index: 0;
 }
 
 .left-side-image {
-  position: absolute; /* Position it absolutely */
-  left: 0; /* Align to the left */
-  top: 50%; /* Start from the center vertically */
-  transform: translateY(-50%) scaleX(-1); /* Center it vertically and flip horizontally */
-  width: 25%; /* Set the desired width */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 100%; /* Limit height to avoid full section height */
-  z-index: 0; /* Behind the text */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleX(-1);
+  width: 25%;
+  height: auto;
+  max-height: 100%;
+  z-index: 0;
 }
 
-
-.section-content {
-  position: relative; /* Ensure content is above the image */
-  z-index: 1; /* Bring the text content above the image */
+/* Adjust mobile-vector-image styling */
+.mobile-vector-image {
+  display: none; /* Hide by default */
 }
 
+/* Show only on small screens */
+@media (max-width: 768px) {
+  .mobile-vector-image {
+    display: block; /* Show on small screens */
+    position: relative; /* Allow positioning */
+    margin-top: 20px; /* Space below the section content */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Center correction */
+  }
 
-#talent_transformations {
-  position: relative; /* Positioning context for the image */
+  /* Align section content to left */
+  .section-content {
+    text-align: left; /* Align to left */
+    padding: 0 10px; /* Adjust padding as needed */
+  }
 }
 
+/* Media Queries */
+@media (max-width: 768px) {
+  .top-navigation {
+    display: none;
+  }
 
-#do_more {
-  position: relative; /* Positioning context for the image */
+  .hero-slider-section {
+    margin-top: 80px;
+  }
+
+  .section {
+    background-color: #01224f;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    height: auto; /* Removed 100vh for small screens */
+  }
+
+  #hero_slider,
+  #core_capabilities,
+  #operating_models,
+  #talent_transformations,
+  #do_more {
+    background-image: none;
+  }
+
+  .section-content {
+    position: relative;
+    top: 20px;
+    width: 100%;
+    z-index: 1;
+    text-align: left;
+  }
+
+  /* Position side images */
+  .right-side-image,
+  .left-side-image {
+    position: absolute;
+    top: 30%; /* Center vertically */
+    width: auto; /* Use original width */
+    height: auto; /* Use original height */
+    max-height: none; /* Remove max-height restriction */
+    opacity: 0.9; /* Make the image semi-transparent */
+    z-index: 0;
+  }
+
+  .right-side-image {
+    right: 0; /* Stick to the right edge */
+    transform: translateY(-50%); /* Center horizontally */
+  }
+
+  .left-side-image {
+    left: 0; /* Stick to the left edge */
+    transform: translateY(-50%) scaleX(-1); /* Flip horizontally and center */
+  }
 }
-

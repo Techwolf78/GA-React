@@ -1,72 +1,140 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChalkboardTeacher, // Pedagogy Enhancement
+  faBookOpen, // Curriculum Development
+  faLaptopCode, // Technology Integration in Teaching
+  faClipboardCheck, // Assessment and Evaluation Strategies
+  faBook, // Research and Publication Guidance
+  faUserTie, // Leadership and Management Skills for Educators
+  faGraduationCap, // Comprehensive Development
+  faSyncAlt, // Real Time Based Approach
+  faChalkboardTeacher as EliteGuidanceIcon, // Elite Guidance (Industry Experts)
+} from "@fortawesome/free-solid-svg-icons";
 
-function FacultyModule() {
+function WhyTraining() {
+  const lightBlue = "#003073";
+  const highlightYellow = "#FFC80E";
+  const darkGray = "#333333";
+
+  const items = [
+    { icon: faChalkboardTeacher, text: <>Pedagogy<br />Enhancement</> },
+    { icon: faBookOpen, text: <>Curriculum<br />Development</> },
+    { icon: faGraduationCap, text: <>Comprehensive<br /> Development</> },
+    { icon: faBook, text: "Research and Publication Guidance" },
+    { icon: faLaptopCode, text: "Technology Integration in Teaching" },
+    { icon: faSyncAlt, text: "Real Time Based Approach" },
+    { icon: faClipboardCheck, text: "Assessment and Evaluation Strategies" },
+    { icon: EliteGuidanceIcon, text: "Elite Guidance (Industry Experts)" },
+    { icon: faUserTie, text: "Leadership and Management Skills for Educators" },
+  ];
+  
+
   return (
-    <div>
-      <main className="flex-1 bg-[#091327]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row bg-[#003073] p-6 sm:p-8 lg:p-10 rounded-[20px] shadow-md">
-            {/* Left Content */}
-            <div className="flex-1 text-white pr-0 lg:pr-8 mb-6 lg:mb-0 flex flex-col justify-center items-center lg:items-start">
-              <div className="flex items-center mb-6">
-              <img src="/whyGA.png" alt="Illustration" className="h-56 sm:h-64 lg:h-72 xl:h-80" />
-
-              </div>
-              <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-6 text-center lg:text-left text-[#ffc700] ">
-                What Do Our <br />FDP Modules Include?
+    <div className="roboto-regular">
+      <main className="flex-1 py-8">
+        <div className="container mx-auto px-8 md:px-16">
+          {/* Layout for large screens */}
+          <div className="hidden lg:flex flex-col lg:flex-row bg-[#003073] rounded-2xl shadow-lg p-6">
+            {/* Left Content - 30% width */}
+            <div className="flex-1 mb-6 lg:mb-0 flex flex-col items-center lg:items-start w-3/12">
+              <p
+                className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-extrabold mb-4 text-center lg:text-left tracking-widest" // Use tracking-widest for more letter spacing
+                style={{ color: highlightYellow }}
+              >
+                What Do Our FDP Modules Include?
               </p>
-            </div>
-            {/* Right Content */}
-            <div className="flex-1 flex items-center justify-center">
-              <div className="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full md:w-[380px]">
-                <ul className="space-y-3 sm:space-y-4">
-                  <li className="flex items-center text-[#000000] font-medium">
-                    <span className="text-[#ffc700] text-base mr-3">●</span>
-                    Pedagogy Enhancement
-                  </li>
-                  <li className="flex items-center text-[#000000] font-medium">
-                    <span className="text-[#ffc700] text-base mr-3">●</span>
-                    Curriculum Development
-                  </li>
-                  <li className="flex items-center text-[#000000] font-medium">
-                    <span className="text-[#ffc700] text-base mr-3">●</span>
-                    Technology Integration in Teaching
-                  </li>
-                  <li className="flex items-center text-[#000000] font-medium">
-                    <span className="text-[#ffc700] text-base mr-3">●</span>
-                    Assessment and Evaluation Strategies
-                  </li>
-                  <li className="flex items-center text-[#000000] font-medium">
-                    <span className="text-[#ffc700] text-base mr-3">●</span>
-                    Research and Publication Guidance
-                  </li>
-                  <li className="flex items-center text-[#000000] font-medium">
-                    <span className="text-[#ffc700] text-base mr-3">●</span>
-                    Leadership and Management Skills for Educators
-                  </li>
-                </ul>
+              <div className="flex items-center justify-center">
+                <img
+                  src="placement-bg/Training - Thinking Man.avif"
+                  alt="Illustration"
+                  className="h-64 sm:h-72 lg:h-80 xl:h-96"
+                  style={{ transform: "scaleX(-1)" }}
+                />
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* CTA Section */}
-        <div className="relative bg-[#003073] text-white py-12 mt-6 px-6 sm:px-12 shadow-lg">
-          <div className="container mx-auto text-center">
-            <p className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
-              Join Gryphon Academy's FDP Today
-            </p>
-            <p className="text-lg sm:text-xl mb-8">
-              Embark on a transformative journey towards academic excellence. Empower your faculty, inspire your students, and lead your institution to greater heights with us.
-            </p>
-            <Link 
-              to="/contact" 
-              className="relative inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-[#ffffff] bg-transparent border border-[#ffffff] rounded-none overflow-hidden group transition-all duration-300 ease-in-out"
+            {/* Right Content - 70% width */}
+            <div className="flex-1 flex items-center justify-center w-9/12">
+  <div className="grid grid-cols-3 gap-6 w-full">
+    {items.map((item, index) => (
+      <div
+        key={index}
+        className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400 hover:border-2 hover:border-yellow-400"
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: "0.5rem",
+          }}
+        >
+          <FontAwesomeIcon
+            icon={item.icon}
+            style={{
+              color: lightBlue,
+              fontSize: "2rem",
+            }}
+          />
+        </div>
+        <p style={{ color: darkGray, fontWeight: "500" }}>
+          {item.text}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
+          </div>
+
+          {/* Layout for medium and small screens */}
+          <div className="flex lg:hidden flex-col bg-[#003073] rounded-2xl shadow-lg p-6">
+            <p
+              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-6 text-center tracking-wider"
+              style={{ color: highlightYellow }}
             >
-              <span className="relative z-10">Contact Us</span>
-              <span className="absolute inset-0 bg-[#091327] transform -translate-x-full transition-transform duration-300 ease-in-out group-hover:translate-x-0 z-0"></span>
-            </Link>
+              WHAT DO OUR FDP MODULES INCLUDE?
+            </p>
+            <div className="flex items-center mb-6 justify-center">
+              <img
+                src="placement-bg/Training - Thinking Man.avif"
+                alt="Illustration"
+                className="h-64 sm:h-72 lg:h-80 xl:h-96"
+                style={{ transform: "scaleX(-1)" }}
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {items.slice(0, 8).map(
+                (
+                  item,
+                  index // Only take the first 8 items
+                ) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center p-4 bg-white rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400 hover:border-2 hover:border-yellow-400"
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <FontAwesomeIcon
+                        icon={item.icon}
+                        style={{
+                          color: lightBlue,
+                          fontSize: "2rem",
+                        }}
+                      />
+                    </div>
+                    <p>{item.text}</p>
+                  </div>
+                )
+              )}
+            </div>
           </div>
         </div>
       </main>
@@ -74,4 +142,4 @@ function FacultyModule() {
   );
 }
 
-export default FacultyModule;
+export default WhyTraining;

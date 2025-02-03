@@ -1,91 +1,130 @@
-import React, { useEffect } from "react";
-import WebFont from "webfontloader";
-import { FaCalendarCheck, FaCogs, FaBriefcase, FaThumbsUp } from 'react-icons/fa'; // Importing React Icons
+import React, { useEffect, useRef, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
-const CorporateAppoarch = () => {
+const CorporateApproach = () => {
+  const [isMediumOrLarger, setIsMediumOrLarger] = useState(window.innerWidth >= 768);
+  const ref = useRef(null);
+
   useEffect(() => {
-    WebFont.load({
-      google: {
-        families: ["Varela"],
-      },
-    });
+    AOS.init(); // Initialize AOS
+
+    const handleResize = () => {
+      setIsMediumOrLarger(window.innerWidth >= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
+  const approaches = [
+    {
+      title: "Easy to Implement",
+      items: [
+        {
+          imgSrc: "CorporatePage/1.png",
+          text: "Streamlined Training Delivery: Our offline and blended learning formats seamlessly integrate into your existing curriculum, minimizing disruption.",
+          aosEffect: "fade-right",
+        },
+        {
+          imgSrc: "CorporatePage/2.png",
+          text: "Flexible Scheduling: Modular courses and on-demand access allow for customization to fit your organization’s schedule.",
+          aosEffect: "fade-up",
+        },
+        {
+          imgSrc: "CorporatePage/3.png",
+          text: "Enhanced Employee Engagement: Our engaging and interactive training programs foster a culture of learning and development, leading to a more motivated and engaged workforce.",
+          aosEffect: "fade-left",
+        },
+      ],
+    },
+    {
+      title: "Customized Content",
+      items: [
+        {
+          imgSrc: "CorporatePage/1.png",
+          text: "Needs Assessment: We work with you to identify specific skill gaps and tailor training to address your college’s unique requirements.",
+          aosEffect: "zoom-in",
+        },
+        {
+          imgSrc: "CorporatePage/2.png",
+          text: "Industry-Specific Modules: Choose from a diverse range of modules aligned with current industry trends and job demands.",
+          aosEffect: "flip-up",
+        },
+        {
+          imgSrc: "CorporatePage/3.png",
+          text: "Alignment with Organizational Goals: Our customized approach ensures that training programs are directly aligned with your strategic objectives, propelling your organization towards achieving its goals.",
+          aosEffect: "fade-down",
+        },
+      ],
+    },
+    {
+      title: "Industry Relevant",
+      items: [
+        {
+          imgSrc: "CorporatePage/1.png",
+          text: "Advisory Board: Our board comprises industry experts who ensure our training programs stay current and prepare students for in-demand skills.",
+          aosEffect: "slide-up",
+        },
+        {
+          imgSrc: "CorporatePage/2.png",
+          text: "Real-World Case Studies: Students tackle authentic industry challenges through project-based learning, gaining practical experience.",
+          aosEffect: "fade-in",
+        },
+        {
+          imgSrc: "CorporatePage/3.png",
+          text: "Improved Productivity & Performance: By addressing skills gaps and equipping employees with the necessary tools, we empower them to perform at their peak, boosting overall productivity and efficiency.",
+          aosEffect: "zoom-out",
+        },
+      ],
+    },
+  ];
+
   return (
-    <div className="bg-[#091327] p-10">
-      <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between mb-12">
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <p className="text-lg font-semibold text-[#ffffff] mb-2 underline">OUR APPROACH</p>
-            <h1
-              className="text-4xl font-bold text-[#ffc700]"
-              style={{ fontFamily: "Varela, sans-serif" }}
-            >
-              Comprehensive Corporate Training Solutions
-            </h1>
-          </div>
-          <div className="md:w-1/2">
-            <p className="text-[#ffffff]">
-              Gryphon's corporate training programs are designed to seamlessly integrate into your organization’s operations, offering flexible scheduling and customized content to address your specific needs. Our approach ensures that training is not only relevant but also impactful, fostering a culture of continuous learning and development.
-            </p>
-          </div>
+    <div ref={ref} className="corporate-approach-container bg-[#01224F] py-4 roboto-regular">
+      <div className="corporate-approach-content container mx-auto px-8 sm:px-8 md:px-16 lg:px-16">
+        <div className="corporate-approach-header flex flex-col items-center mb-12">
+          <h1
+            className="heading-text text-3xl md:text-4xl font-bold text-[#ffc700] text-center"
+            data-aos="fade-up" // AOS effect for the header
+            data-aos-duration="600" // Animation duration
+          >
+            The Approach
+          </h1>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
-            <div className="flex items-center mb-4">
-              <div className="text-4xl text-[#ffc700] mr-4">
-                <FaCalendarCheck />
-              </div>
-              <h4 className="text-xl font-semibold text-[#ffc700]">Easy to Implement</h4>
+        <div className="corporate-approach-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {approaches.map((approach, index) => (
+            <div
+              key={index}
+              className="approach-card bg-[#ffffff] text-[#000000] p-6 rounded-lg shadow-lg flex flex-col transition-transform duration-300 hover:shadow-xl hover:bg-[#f8f9fa]"
+              data-aos="fade-up" // AOS attribute for card
+              data-aos-duration="800" // Animation duration for card
+              data-aos-delay={`${index * 100}`} // Delay based on index
+            >
+              <h2 className="card-heading text-xl font-semibold mb-4 text-center">
+                {approach.title}
+              </h2>
+              {approach.items.map((item, itemIndex) => (
+                <div className="card-item flex items-start mb-2" key={itemIndex} data-aos={item.aosEffect} data-aos-duration="500" data-aos-delay={`${itemIndex * 100}`}>
+                  <img
+                    src={item.imgSrc}
+                    alt=""
+                    className="icon w-14 h-14 transition-transform duration-300 hover:scale-110"
+                  />
+                  <p className="card-text ml-2 transition-opacity duration-300 hover:opacity-75">
+                    <strong>{item.text.split(":")[0]}:</strong> {item.text.split(":")[1]}
+                  </p>
+                </div>
+              ))}
             </div>
-            <p className="text-[#ffffff] mb-2">
-              <strong>Streamlined Training Delivery:</strong> Our offline and blended learning formats seamlessly integrate into your existing curriculum, minimizing disruption.
-            </p>
-            <p className="text-[#ffffff]">
-              <strong>Flexible Scheduling:</strong> Modular courses and on-demand access allow for customization to fit your organization’s schedule.
-            </p>
-          </div>
-
-          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
-            <div className="flex items-center mb-4">
-              <div className="text-4xl text-[#ffc700] mr-4">
-                <FaCogs />
-              </div>
-              <h4 className="text-xl font-semibold text-[#ffc700]">Customized Content</h4>
-            </div>
-            <p className="text-[#ffffff] mb-2">
-              <strong>Needs Assessment:</strong> We work with you to identify specific skill gaps and tailor training to address your organization’s unique requirements.
-            </p>
-            <p className="text-[#ffffff] mb-2">
-              <strong>Industry Specific Modules:</strong> Choose from a diverse range of modules aligned with current industry trends and job demands.
-            </p>
-            <p className="text-[#ffffff]">
-              <strong>Student Centric Learning:</strong> Interactive activities and case studies cater to diverse learning styles and real-world applications.
-            </p>
-          </div>
-
-          <div className="bg-[#003073] text-[#ffffff] p-6 rounded-lg shadow-lg flex flex-col">
-            <div className="flex items-center mb-4">
-              <div className="text-4xl text-[#ffc700] mr-4">
-                <FaBriefcase />
-              </div>
-              <h4 className="text-xl font-semibold text-[#ffc700]">Industry Relevant</h4>
-            </div>
-            <p className="text-[#ffffff] mb-2">
-              <strong>Advisory Board:</strong> Our board comprises industry experts who ensure our training programs stay current and prepare participants for in-demand skills.
-            </p>
-            <p className="text-[#ffffff] mb-2">
-              <strong>Real World Case Studies:</strong> Participants tackle authentic industry challenges through project-based learning, gaining practical experience.
-            </p>
-            <p className="text-[#ffffff]">
-              <strong>Employer Connections:</strong> We facilitate partnerships with leading companies in various fields and domains.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default CorporateAppoarch;
+export default CorporateApproach;

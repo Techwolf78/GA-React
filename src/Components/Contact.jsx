@@ -1,42 +1,73 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Select from 'react-select';  // Import React Select
 
 const Contact = () => {
-  const [notification, setNotification] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [category, setCategory] = useState(null); // State to track selected category
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false); // New state to track if form is submitted
+
+  // Category options for the React Select dropdown
+  const categoryOptions = [
+    { value: 'student', label: 'Student' },
+    { value: 'company', label: 'Company' },
+    { value: 'college', label: 'College' },
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const formData = new FormData(e.target);
 
-    fetch('https://script.google.com/macros/s/AKfycbyuXURJAJrCfyYBIhYtOpcOrPy4zjmLmTLVHofgR6_zV6isMzP5BW0h_7V8uipANhLT/exec', {
+    // Add the source as a hidden field
+    formData.append('source', 'Contact Form');
+    formData.append('category', category?.value); // Append selected category
+
+    fetch('https://script.google.com/macros/s/AKfycbzD2p4mf2qIUGsFQn0kyIfd9RelTaFbzJXaWAzp7TQ03Bd9IELeBA4y4Nl-dv_KbSznlg/exec', {
       method: 'POST',
       body: formData,
     })
-      .then((response) => {
-        setNotification('Form successfully submitted!');
-        setTimeout(() => {
-          setNotification('');
-          e.target.reset();
-        }, 2000);
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === 'success') {
+          toast.success('Form successfully submitted!');
+          setIsFormSubmitted(true); // Mark form as submitted
+          setTimeout(() => {
+            e.target.reset(); // Reset all form fields except category
+            setCategory(null); // Reset category to placeholder
+            setIsSubmitting(false);
+          }, 2000);
+        } else {
+          toast.error(`Error: ${data.message}`);
+          setIsSubmitting(false);
+        }
       })
       .catch(() => {
-        setNotification('Error submitting form. Please try again.');
+        toast.error('Error submitting form. Please try again.');
+        setIsSubmitting(false);
       });
   };
 
   return (
     <>
+      <ToastContainer position="top-center" autoClose={3000} hideProgressBar={true} />
+
       {/* Contact Us Section */}
-      <section className="py-16 bg-[#091327] mx-auto mt-6 mb-6 px-4 md:max-w-6xl">
+      <section className="py-16 bg-[#01224F] mx-auto mt-6 mb-6 px-8 md:px-16">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-7xl font-bold  text-[#ffffff] text-center">
-              Let's <span className="text-[#ffffff]">Bridge</span> <br />
-              <span className="text-[#ffc700] text-center">the Gap</span>
+            <h1 className="text-7xl font-bold text-[#ffffff] text-center">
+              Let&apos;s <span className="text-[#ffffff]">Bridge</span> <br />
+              <span className="text-[#FFC80E] text-center">the Gap</span>
             </h1>
           </div>
 
           <div>
             <form id="contactForm" onSubmit={handleSubmit} className="space-y-3">
+              {/* Hidden Source Field */}
+              <input type="hidden" name="source" value="Contact Form" />
+
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block mb-1 font-medium text-[#ffffff]">
@@ -48,7 +79,7 @@ const Contact = () => {
                   name="name"
                   placeholder="Your Name"
                   required
-                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#ffc700] focus:border-[#ffc700]"
+                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#FFC80E] focus:border-[#FFC80E]"
                 />
               </div>
 
@@ -63,7 +94,7 @@ const Contact = () => {
                   name="email"
                   placeholder="Your Email"
                   required
-                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#ffc700] focus:border-[#ffc700]"
+                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#FFC80E] focus:border-[#FFC80E]"
                 />
               </div>
 
@@ -78,26 +109,47 @@ const Contact = () => {
                   name="phone"
                   placeholder="Your Phone Number"
                   required
-                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#ffc700] focus:border-[#ffc700]"
+                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#FFC80E] focus:border-[#FFC80E]"
                 />
               </div>
 
-              {/* Category */}
+              {/* Category (Custom React Select Dropdown) */}
               <div>
                 <label htmlFor="category" className="block mb-1 font-medium text-[#ffffff]">
                   Category
                 </label>
-                <select
+                <Select
                   id="category"
                   name="category"
-                  required
-                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#ffc700] focus:border-[#ffc700]"
-                >
-                  <option value="">Select Category</option>
-                  <option value="student">Student</option>
-                  <option value="company">Company</option>
-                  <option value="college">College</option>
-                </select>
+                  value={category}
+                  onChange={setCategory} // Update state on change
+                  options={categoryOptions}
+                  placeholder="Select Category"
+                  className="react-select-container"
+                  classNamePrefix="react-select"
+                  isSearchable={false} // Optional: Disable search functionality
+                  styles={{
+                    control: (styles) => ({
+                      ...styles,
+                      borderColor: '#2e4d80',
+                      borderRadius: '8px',
+                      padding: '2px',
+                      minHeight: '40px',
+                    }),
+                    placeholder: (styles) => ({
+                      ...styles,
+                      color: '#a3a0a0', // Grey color for placeholder
+                    }),
+                    singleValue: (styles) => ({
+                      ...styles,
+                      color: '#091327', // Black color for selected option
+                    }),
+                    option: (styles) => ({
+                      ...styles,
+                      color: '#091327', // Black color for options
+                    }),
+                  }}
+                />
               </div>
 
               {/* Message */}
@@ -111,55 +163,51 @@ const Contact = () => {
                   rows="4"
                   placeholder="Your Message"
                   required
-                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#ffc700] focus:border-[#ffc700]"
+                  className="w-full border border-[#2e4d80] rounded-lg p-2 focus:ring focus:ring-[#FFC80E] focus:border-[#FFC80E]"
                 ></textarea>
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#ffc700] text-[#091327] py-3 rounded-lg font-bold hover:bg-[#e0a800] transition-colors"
+                disabled={isSubmitting || isFormSubmitted}  // Disable if submitting or already submitted
+                className={`w-full text-[#091327] py-3 rounded-lg font-bold transition-all duration-300 ${isSubmitting || isFormSubmitted ? 'bg-gradient-to-r from-[#FFC80E] to-[#e0a800] opacity-50 cursor-not-allowed' : 'bg-gradient-to-r from-[#FFC80E] to-[#ffab00] hover:scale-105 hover:from-[#ff9a00] hover:to-[#f4a261]'} `}
               >
-                Send Message
+                {isSubmitting ? 'Submitting...' : isFormSubmitted ? 'Submitted' : 'Send Message'}
               </button>
             </form>
-
-            {/* Notification */}
-            {notification && (
-              <div className="mt-3 text-center text-lg text-[#ffc700]">{notification}</div>
-            )}
           </div>
         </div>
       </section>
 
       {/* Information Section */}
-      <div className="py-12 bg-[#091327]">
+      <div className="py-12 bg-[#01224F] px-8 md:px-16">
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
           {/* Address */}
-          <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
-            <i className="bx bx-location-plus text-4xl text-[#ffc700] mb-4"></i>
-            <h4 className="text-xl font-bold text-[#ffc700] mb-2">Address</h4>
+          <div className="p-6 text-center bg-[#1e3a8a] rounded-lg shadow-lg transition-transform hover:scale-105">
+            <i className="bx bx-location-plus text-4xl text-[#FFC80E] mb-4"></i>
+            <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Address</h4>
             <p className="text-[#ffffff]">9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Banglore, Highway Baner, Pune Maharashtra - 411045</p>
           </div>
 
           {/* Phone */}
-          <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
-            <i className="bx bx-phone text-4xl text-[#ffc700] mb-4"></i>
-            <h4 className="text-xl font-bold text-[#ffc700] mb-2">Phone</h4>
+          <div className="p-6 text-center bg-[#1e3a8a] rounded-lg shadow-lg transition-transform hover:scale-105">
+            <i className="bx bx-phone text-4xl text-[#FFC80E] mb-4"></i>
+            <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Phone</h4>
             <p className="text-[#ffffff]">+91 89836 14509 / 8983339099</p>
           </div>
 
           {/* Email */}
-          <div className="p-6 text-center bg-[#003073] rounded-lg shadow-lg transition-transform hover:scale-105">
-            <i className="bx bx-envelope text-4xl text-[#ffc700] mb-4"></i>
-            <h4 className="text-xl font-bold text-[#ffc700] mb-2">Email</h4>
-            <p className="text-[#ffffff]">gryphonx@gryphonacademy.co.in</p>
+          <div className="p-6 text-center bg-[#1e3a8a] rounded-lg shadow-lg transition-transform hover:scale-105">
+            <i className="bx bx-envelope text-4xl text-[#FFC80E] mb-4"></i>
+            <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Email</h4>
+            <p className="text-[#ffffff] break-all overflow-wrap-break-word">connect@gryphonacademy.co.in</p>
           </div>
         </div>
       </div>
 
       {/* Get in Touch Section */}
-      <section className="py-24 bg-[#091327]"> {/* Dark blue background */}
+      <section className="py-24 bg-[#01224F] px-8 md:px-16">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
             <iframe
@@ -173,7 +221,7 @@ const Contact = () => {
 
           <h1 className="text-7xl font-bold text-[#ffffff] text-center md:text-center">
             Get <span className="text-[#ffffff]">in</span> <br />
-            <span className="text-[#ffc700]">Touch</span>
+            <span className="text-[#FFC80E]">Touch</span>
           </h1>
         </div>
       </section>

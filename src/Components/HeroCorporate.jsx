@@ -1,107 +1,103 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
-const carouselItems = [
-  "/Corporate Training Page Zip/Corporate Training.svg1_Images/Corporate Training.svg1_ImgID1.png",
-  "/Corporate Training Page Zip/Corporate Training.svg2_Images/Corporate Training.svg2_ImgID1.png",
-  "/Corporate Training Page Zip/Corporate Training.svg3_Images/Corporate Training.svg3_ImgID1.png",
-  "/Corporate Training Page Zip/Corporate Training.svg1_Images/Corporate Training.svg1_ImgID1.png",
-  "/Corporate Training Page Zip/Corporate Training.svg2_Images/Corporate Training.svg2_ImgID1.png"
-];
+const backgroundImage = "https://res.cloudinary.com/dcjmaapvi/image/upload/v1729943835/Corporate_Training_1_eaeb56.avif"; // Static image
+
+const content = [
+  "Delivering Tailored Solutions That Drive Measurable Success and Enhance Organizational Readiness Within the Learning Technology Ecosystem",
+  "Seamless Execution, Digital Transformation, Talent Retention Strength, Drive Sales ROI"
+]
+;
+
+const corporateTrainingParagraph = "Our customized corporate training programmes are specifically designed to meet your organization’s unique needs. In a rapidly evolving corporate landscape, we address critical challenges that hinder growth and productivity. By focusing on essential skills such as communication, negotiation, critical thinking, Operational Resilience and Adaptability, Workforce Management and Engagement & leadership, we empower teams to overcome obstacles and enhance collaboration.";
 
 function HeroCorporate() {
-  const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
+    AOS.init(); // Initialize AOS
+
+    const intervalDuration = currentIndex === 0 ? 6000 : 4000; // 6 seconds for the first heading, 4 seconds for others
+
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
-    }, 3000); // Change slide every 3 seconds
+      setIsExiting(true);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % content.length);
+        setIsExiting(false);
+      }, 500); // Duration of the slide-out animation
+    }, intervalDuration);
 
-    return () => clearInterval(interval); // Clean up interval on component unmount
-  }, []);
-
-  const handleDotClick = (index) => {
-    setCurrentIndex(index);
-  };
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   return (
-    <div>
-      <div className="relative w-full h-[50vh]">
-        {/* Carousel Container */}
-        <div
-          id="default-carousel"
-          className="relative w-full h-full"
-          ref={carouselRef}
+    <div className="relative w-full overflow-hidden box-border">
+      {/* Background Image */}
+      <img
+        src={backgroundImage}
+        className="w-full h-auto object-cover max-h-screen" // Limit height to max screen height
+        alt="Corporate training illustration"
+      />
+
+      {/* Overlay for Heading Section */}
+      <div className="absolute inset-0 bg-black opacity-70 z-0"></div>
+
+      {/* Heading Section */}
+      <div className="absolute left-0 right-0 text-center z-10 px-4 md:px-8 lg:px-16 xl:px-32 py-2 top-[10vh] md:top-1/4">
+        <h1
+          className={`text-sm sm:text-xl tracking-wide md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 sm:mb-1   text-white ${
+            isExiting ? 'slide-exit' : 'slide-enter'
+          }`}
+          data-aos="fade-up"
+          data-aos-duration="800"
         >
-          {/* Carousel wrapper */}
-          <div className="relative w-full h-full overflow-hidden">
-            {carouselItems.map((src, index) => (
-              <div
-                key={index}
-                className={`duration-700 ease-in-out absolute w-full h-full ${currentIndex === index ? 'opacity-100' : 'opacity-0'}`}
-              >
-                <img
-                  src={src}
-                  className="w-full h-full object-cover"
-                  alt={`Slide ${index + 1}`}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Slider Indicators */}
-          <div className="absolute z-30 flex justify-center bottom-5 left-1/2 -translate-x-1/2 space-x-3">
-            {carouselItems.map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-[#ffc700]' : 'bg-[#2e4d80]'}`}
-                aria-label={`Slide ${index + 1}`}
-                onClick={() => handleDotClick(index)}
-              ></button>
-            ))}
-          </div>
-
-          {/* Centered Heading */}
-          <div className="absolute inset-0 flex items-center justify-center z-20">
-            <div className="text-center p-6 max-w-4xl bg-transparent"> {/* Adjusted for full transparency */}
-              <h1 className="text-3xl font-bold mb-4 text-[#ffc700]">
-                Invest in Your Employees, Invest in Your Organization’s Future: Gryphon Academy Corporate Training
-              </h1>
-            </div>
-          </div>
-        </div>
+          {content[currentIndex]}
+        </h1>
       </div>
 
-      {/* New Section */}
-      <section className="bg-[#003073] py-16">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="text-4xl font-semibold mb-6 text-[#ffc700] underline">Elevate Your Workforce</p>
-            <p className="text-lg text-[#ffffff]">
-              Elevate your workforce to new heights with Gryphon Academy’s time-tested approach to corporate skill development.
-            </p>
-          </div>
-          <div className="flex flex-col lg:flex-row lg:space-x-12">
-            <div className="lg:w-1/2 mb-8 lg:mb-0">
-              <h3 className="text-2xl font-semibold mb-4 text-[#ffc700]">Customized Training Programs</h3>
-              <p className="text-lg text-[#ffffff] mb-6">
-                Our specifically curated customized Corporate trainings are designed to meet your unique needs and requirements. With affiliations to over 450+ corporate entities across diverse industries such as manufacturing, telecommunications, IT, power, textile and government, we address industry-specific challenges and provide corporate learning solutions.
-              </p>
-              <h3 className="text-2xl font-semibold mb-4 text-[#ffc700]">Measurable Business Impact</h3>
-              <p className="text-lg text-[#ffffff]">
-                The result? Measurable business impact. Our data-driven approach ensures your training investment delivers a clear ROI.
-              </p>
-            </div>
-            <div className="lg:w-1/2">
-              <h3 className="text-2xl font-semibold mb-4 text-[#ffc700]">Targeted Training Solutions</h3>
-              <p className="text-lg text-[#ffffff]">
-                At Gryphon Academy, we use industry-specific assessments to uncover your workforce’s critical skill gaps. We then partner with you to design targeted training programs that directly address your pain points and strategic goals.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <style>
+        {`
+          @keyframes slide-in {
+            0% {
+              transform: translateX(100%);
+              opacity: 0;
+            }
+            100% {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+
+          @keyframes slide-out {
+            0% {
+              transform: translateX(0);
+              opacity: 1;
+            }
+            100% {
+              transform: translateX(-100%);
+              opacity: 0;
+            }
+          }
+
+          .slide-enter {
+            animation: slide-in 0.5s forwards;
+          }
+
+          .slide-exit {
+            animation: slide-out 0.5s forwards;
+          }
+        `}
+      </style>
+
+      {/* New Corporate Training Section */}
+      <div className="bg-gray-100 py-4 shadow-md relative z-10" data-aos="fade-up" data-aos-duration="800">
+  <p className="mx-auto lg:text-2xl md:text-xl sm:text-lg text-left sm:text-center px-8 sm:px-16 text-gray-500">
+    {corporateTrainingParagraph}
+  </p>
+</div>
+
     </div>
   );
 }

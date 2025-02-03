@@ -1,6 +1,7 @@
 :root {
-  --color-text: #ffeeff;
-  --color-neon: #1331db;
+  --color-text: #ffffff;
+  --color-neon: #FFC80E;
+  --color-black: #01224F; /* Define black color */
 }
 
 *,
@@ -12,38 +13,48 @@
 }
 
 .app-container {
-  font-family: "Nunito", sans-serif;
-  background: #01224f; /* Dark blue background */
+  font-family: "Roboto", sans-serif;
   font-weight: 600;
   display: grid;
   place-items: center;
-  padding: 20px; /* Optional padding */
-  margin-bottom: 50px; /* Optional margin */
+  padding: 10px 20px 50px; /* Increased top padding */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
 }
 
 .neon-link-button {
-  font-size: 2rem;
-  border: 0.1em solid var(--color-text);
-  color: var(--color-text);
+  font-size: 1.5rem; /* Default larger font size */
+  border: 0.05em solid var(--color-text); /* Thinner border */
+  color: var(--color-black); /* Set text color to black */
   display: inline-block;
   cursor: pointer;
   border-radius: 0.25em;
   text-decoration: none;
-  box-shadow: 0 0 0.75em 0 var(--color-neon),
-    inset 0 0 0.75em 0 var(--color-neon),
+  box-shadow: 0 0 0.5em 0 var(--color-neon),
+    inset 0 0 0.5em 0 var(--color-neon),
     0 0 0.1em 0.05em var(--color-text),
     inset 0 0 0.1em 0.05em var(--color-text);
   text-shadow: 0 0 0.5em var(--color-neon), 0 0 0.1em var(--color-text);
-  background: transparent;
-  padding: 0.2em 1em;
+  background: var(--color-neon); /* Solid yellow background */
+  padding: 0.25em 1em; /* Default padding */
   position: relative;
+  margin-top: 20px; /* Added margin for space above */
+}
+
+/* Add Fade-In effect */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.neon-link-button::before,
+.neon-link-button::after {
+  content: "";
+  position: absolute;
+  transition: opacity 50ms linear;
 }
 
 .neon-link-button::before {
-  content: "";
-  display: block;
-  position: absolute;
-  transition: opacity 50ms linear;
   top: 120%;
   left: 0;
   width: 100%;
@@ -56,9 +67,6 @@
 }
 
 .neon-link-button::after {
-  content: "";
-  position: absolute;
-  transition: opacity 50ms linear;
   top: -0.1em;
   right: -0.1em;
   bottom: -0.1em;
@@ -69,28 +77,6 @@
   opacity: 0;
 }
 
-@keyframes blink {
-  0%,
-  10%,
-  55%,
-  90% {
-    color: inherit;
-  }
-  11%,
-  15%,
-  56%,
-  91% {
-    color: black;
-  }
-  16%,
-  58%,
-  99% {
-    color: inherit;
-  }
-}
-
-
-
 .neon-link-button:focus {
   outline: none;
 }
@@ -100,4 +86,21 @@
 .neon-link-button:hover::after,
 .neon-link-button:focus::after {
   opacity: 1;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .neon-link-button {
+    font-size: 1.3rem; /* Slightly larger font size */
+    padding: 0.2em 0.9em; /* Slightly larger padding */
+    margin-top: 18px; /* Adjusted margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .neon-link-button {
+    font-size: 1.3rem; /* Slightly larger font size */
+    padding: 0.15em 0.75em; /* Slightly larger padding */
+    margin-top: 12px; /* Slightly reduced margin */
+  }
 }

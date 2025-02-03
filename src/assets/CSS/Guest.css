@@ -1,0 +1,37 @@
+/* Tooltip basic styles */
+.tooltip {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Adjust positioning dynamically (example) */
+  [data-position='top'] .tooltip {
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  [data-position='bottom'] .tooltip {
+    top: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  [data-position='left'] .tooltip {
+    top: 50%;
+    right: 110%;
+    transform: translateY(-50%);
+  }
+  
+  [data-position='right'] .tooltip {
+    top: 50%;
+    left: 110%;
+    transform: translateY(-50%);
+  }
+  
