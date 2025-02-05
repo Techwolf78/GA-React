@@ -53,17 +53,22 @@ const AboutIntro = () => {
           </div>
         </div>
 
-        {/* Right Side (Image) - 70% width on large screens */}
+        {/* Right Side (Video) - 70% width on large screens */}
         <div
           className="lg:w-[60%] w-full flex justify-center items-center"
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          <img
-            src="About/4pointers.png" // Replace with your image URL or path
-            alt="About Us"
-            className="w-full object-cover rotate-infinite" // Add the rotate-infinite class here
-          />
+<video
+  src="About/Intro-2.mp4"
+  alt="About Us"
+  className="w-full object-cover"
+  loop
+  autoPlay
+  muted // Add muted to ensure autoplay works
+/>
+
+
         </div>
       </div>
     </div>

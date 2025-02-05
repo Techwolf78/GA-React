@@ -39,7 +39,7 @@ const MeetTheLeaders = () => {
       <WaveElement />
 
       <h2
-        className="text-center mt-0 text-2xl md:text-3xl lg:text-4xl text-white font-bold z-20"
+        className="text-center mt-4 text-2xl md:text-3xl lg:text-4xl text-white font-bold z-20"
         data-aos="fade-down"
         data-aos-once="true"
       >
@@ -71,7 +71,7 @@ const MeetTheLeaders = () => {
           {/* Message Section */}
           <div className="relative w-2/3">
   {/* Background Patch for Message and Quote Icon */}
-  <div className="absolute top-0 left-4 w-full h-full bg-blue-800 bg-opacity-70 rounded-lg  z-0" />
+  <div className="absolute top-0 mt-1 left-4 w-full h-full bg-blue-800 bg-opacity-30 rounded-lg  z-0" />
 
   {/* Quote Icon */}
   <div className="absolute top-0 left-0 w-6 h-6 ml-12 z-10">
@@ -117,7 +117,8 @@ const MeetTheLeaders = () => {
 
           {/* Message Section (on the right for Co-Founder) */}
           <div className="relative w-2/3 order-0 md:order-0 ">
-            <div className="absolute top-0 left-0 w-6 h-6">
+          <div className="absolute top-0 right-8 w-full h-full bg-blue-800 bg-opacity-30 mt-1 rounded-lg z-0" />
+            <div className="absolute top-0 left-0 w-6 h-6 z-10">
               <img
                 src={QuotesSVG}
                 alt="Quotes"
@@ -126,7 +127,7 @@ const MeetTheLeaders = () => {
               />
             </div>
 
-            <p className="text-xs mt-2 mr-12 text-white">{coFounder.message}</p>
+            <p className="text-xs mt-2 mr-12 text-white z-20 relative">{coFounder.message}</p>
           </div>
         </div>
       </div>

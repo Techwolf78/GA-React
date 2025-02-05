@@ -7,7 +7,7 @@ function AboutNew() {
       <div className="w-full  bg-[#ffffff] relative">
         <link rel="preload" href="About/rect-h.png" as="image" />
         <img 
-          src="About/rect-h.png" 
+          src="About/rect-i.png" 
           alt="Infographic" 
           className="w-full  block mx-auto"
         />

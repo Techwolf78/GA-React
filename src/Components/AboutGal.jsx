@@ -37,14 +37,15 @@ const ImageGallery = () => {
     AOS.init({
       duration: 1200,
       easing: 'ease-in-out',
-      once: false, // We allow the animation to trigger multiple times initially
+      once: false, // Allow the animation to trigger multiple times initially
+      offset: '5%', // Trigger AOS animations as soon as the element is within 5% of the viewport
     });
 
     // Function to handle scroll event and set scroll state
     const handleScroll = () => {
       if (!hasScrolled) {
         setHasScrolled(true); // Mark that user has scrolled
-        AOS.refresh(); // Refresh AOS
+        AOS.refresh(); // Refresh AOS to make it aware of the scroll position and trigger animations
         // Optionally stop listening for scroll after the first scroll
         window.removeEventListener('scroll', handleScroll); 
       }
@@ -65,7 +66,8 @@ const ImageGallery = () => {
       AOS.init({
         duration: 1200,
         easing: 'ease-in-out',
-        once: true, // Disable AOS re-triggering
+        once: true, // Disable AOS re-triggering after the first scroll
+        offset: '5%', // Keep the offset value to trigger animations early
       });
     }
   }, [hasScrolled]);
@@ -78,12 +80,12 @@ const ImageGallery = () => {
         </h1>
       </div>
 
-      <div className="flex flex-col md:flex-row w-full mb-8 px-4">
+      <div className="flex flex-col md:flex-row w-full mb-4 px-4">
         {/* Left Side */}
-        <div className="flex flex-col w-full md:w-1/2 pr-0 md:pr-4 mb-6 md:mb-0">
+        <div className="flex flex-col w-full md:w-1/2 pr-0 md:pr-4 mb-3 md:mb-0">
           {/* First Row */}
-          <div className="flex mb-4 flex-col md:flex-row">
-            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-4 relative">
+          <div className="flex mb-2 flex-col md:flex-row">
+            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-2 relative">
               <div
                 className="h-64 overflow-hidden rounded-3xl shadow-lg"
                 ref={(el) => (imageRefs.current[0] = el)}
@@ -101,7 +103,7 @@ const ImageGallery = () => {
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>
-            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-4 relative">
+            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-2 relative">
               <div
                 className="h-48 overflow-hidden rounded-3xl shadow-lg"
                 ref={(el) => (imageRefs.current[1] = el)}
@@ -121,7 +123,7 @@ const ImageGallery = () => {
             </div>
           </div>
           {/* Second Row */}
-          <div className="gallery-img-wrap w-full mb-4 relative">
+          <div className="gallery-img-wrap w-full mb-2 relative">
             <div
               className="h-56 overflow-hidden rounded-3xl shadow-lg"
               ref={(el) => (imageRefs.current[2] = el)}
@@ -140,8 +142,8 @@ const ImageGallery = () => {
             </div>
           </div>
           {/* New Images Row */}
-          <div className="flex mb-4 flex-col md:flex-row">
-            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-4 relative">
+          <div className="flex mb-2 flex-col md:flex-row">
+            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-2 relative">
               <div
                 className="h-72 overflow-hidden rounded-3xl shadow-lg"
                 ref={(el) => (imageRefs.current[6] = el)}
@@ -159,7 +161,7 @@ const ImageGallery = () => {
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>
-            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-4 relative">
+            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-2 relative">
               <div
                 className="h-80 overflow-hidden rounded-3xl shadow-lg"
                 ref={(el) => (imageRefs.current[7] = el)}
@@ -183,8 +185,8 @@ const ImageGallery = () => {
         {/* Right Side */}
         <div className="flex flex-col w-full md:w-1/2 pl-0 md:pl-4">
           {/* New Images Row Above First Row */}
-          <div className="flex mb-4">
-            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-4 relative">
+          <div className="flex mb-2">
+            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-2 relative">
               <div
                 className="h-56 overflow-hidden rounded-3xl shadow-lg"
                 ref={(el) => (imageRefs.current[4] = el)}
@@ -202,7 +204,7 @@ const ImageGallery = () => {
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>
-            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-4 relative">
+            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-2 relative">
               <div
                 className="h-64 overflow-hidden rounded-3xl shadow-lg"
                 ref={(el) => (imageRefs.current[5] = el)}
@@ -222,7 +224,7 @@ const ImageGallery = () => {
             </div>
           </div>
           {/* First Row */}
-          <div className="gallery-img-wrap w-full mb-4 relative">
+          <div className="gallery-img-wrap w-full mb-2 relative">
             <div
               className="h-72 overflow-hidden rounded-3xl shadow-lg"
               ref={(el) => (imageRefs.current[3] = el)}
@@ -241,8 +243,8 @@ const ImageGallery = () => {
             </div>
           </div>
           {/* New Images Row Below Second Row */}
-          <div className="flex mb-4 flex-col md:flex-row">
-            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-4 relative">
+          <div className="flex mb-2 flex-col md:flex-row">
+            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-2 relative">
               <div
                 className="h-64 overflow-hidden rounded-3xl shadow-lg"
                 ref={(el) => (imageRefs.current[8] = el)}
@@ -260,7 +262,7 @@ const ImageGallery = () => {
                 <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 hover:opacity-30 rounded-3xl"></div>
               </div>
             </div>
-            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-4 relative">
+            <div className="gallery-img-wrap w-full md:w-1/2 px-2 mb-2 relative">
               <div
                 className="h-56 overflow-hidden rounded-3xl shadow-lg"
                 ref={(el) => (imageRefs.current[9] = el)}
