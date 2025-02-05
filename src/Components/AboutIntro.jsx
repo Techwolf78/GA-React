@@ -20,7 +20,7 @@ const AboutIntro = () => {
       <div className="flex flex-col lg:flex-row justify-between mx-auto">
         {/* Left Side (Text and Button) - 30% width on large screens */}
         <div className="lg:w-[40%] w-full text-left mb-4 sm:mb-6" data-aos="fade-up">
-          <p className="text-lg sm:text-xl text-[#1e3a8a] font-extralight mb-2">
+          <p className="text-lg sm:text-xl text-[#FFC80E] font-extralight mb-2">
             WHAT WE DO
           </p>
           <h1
@@ -28,7 +28,7 @@ const AboutIntro = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            We Provide <span className="text-[#1e3a8a]">360<sup>0</sup></span>
+            We Provide <span className="text-[#FFC80E]">360<sup className="text-[#FFC80E]">0</sup></span>
             <br className="hidden md:block" /> Approach
           </h1>
 
@@ -44,7 +44,7 @@ const AboutIntro = () => {
             </p>
             <button
               onClick={handleNavigate}
-              className="inline-block text-base font-bold mt-4 sm:mt-6 mb-4 sm:mb-6 border-2 border-[#1e3a8a] rounded-lg py-2 px-4 transition duration-300 ease-in-out transform hover:bg-[#1e3a8a] hover:text-[#ffffff] hover:scale-105"
+              className="inline-block text-base font-bold mt-4 sm:mt-6 mb-4 sm:mb-6 border-2 border-[#1e3a8a] hover:border-[#000] rounded-lg py-2 px-2 transition duration-300 ease-in-out transform hover:bg-[#1e3a8a] hover:text-[#ffffff] hover:scale-105"
               data-aos="fade-up"
               data-aos-delay="400"
             >
@@ -62,7 +62,7 @@ const AboutIntro = () => {
           <img
             src="About/4pointers.png" // Replace with your image URL or path
             alt="About Us"
-            className="w-full object-cover"
+            className="w-full object-cover rotate-infinite" // Add the rotate-infinite class here
           />
         </div>
       </div>

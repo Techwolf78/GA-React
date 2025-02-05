@@ -41,7 +41,7 @@ const BrandPositioning = () => {
       {/* <div ref={tryPageRef}>
    
       </div> */}
-     {/* <TryPage /> */}
+     <TryPage />
       {/* Other Sections
 
       {/**/}
@@ -57,4 +57,19 @@ const BrandPositioning = () => {
 };
 
 export default BrandPositioning;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -12,12 +12,14 @@ import AboutOffer from "./AboutOffer";
 import AboutLeaders from "./AboutLeaders";
 // import AboutAwards from "./AboutAwards";
 import ConnectWithUs from "./ConnectWithUs";
+import AboutNew from "./AboutNew";
 
 const About = () => {
   return (
-    <div>
+    <div className="roboto-regular">
       <AboutHero />
-      <MissionVisionSection />
+      <AboutNew />
+      {/* <MissionVisionSection /> */}
       <AboutLeaders />
       {/* <AboutAwards /> */}
       <AboutIntro />
