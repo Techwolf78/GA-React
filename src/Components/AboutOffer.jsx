@@ -63,8 +63,8 @@ function AboutOffer() {
   ];
 
   return (
-<div className="bg-white mx-auto px-4 md:px-8 lg:px-16 py-2 max-w-5xl rounded-lg shadow-xl backdrop-blur-lg bg-opacity-30" data-aos="fade-up">
-      <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC80E] text-center mb-6">
+    <div className="bg-[#01224F] mx-auto px-4 md:px-8 lg:px-16 py-2 max-w-5xl" data-aos="fade-up">
+      <p className="text-2xl md:text-3xl lg:text-4xl  font-bold text-[#FFC80E] text-center mb-6">
         What We Offer
       </p>
       <div className="flex flex-row justify-between gap-8">
@@ -77,7 +77,7 @@ function AboutOffer() {
                 <div className="bg-white rounded-full flex items-center justify-center w-12 h-12 mr-4 shadow-lg hover:shadow-xl transition-shadow">
                   <span className="text-[#FFC80E] text-3xl">{offer.icon}</span>
                 </div>
-                <p className="text-base md:text-xl text-gray-100 font-medium flex-1">
+                <p className="text-base md:text-xl text-gray-200 font-medium flex-1">
                   {offer.description}
                 </p>
               </div>
@@ -94,7 +94,7 @@ function AboutOffer() {
                 <div className="bg-white rounded-full flex items-center justify-center w-12 h-12 mr-4 shadow-lg hover:shadow-xl transition-shadow">
                   <span className="text-[#FFC80E] text-3xl">{offer.icon}</span>
                 </div>
-                <p className="text-base md:text-xl text-gray-100 font-medium flex-1">
+                <p className="text-base md:text-xl text-gray-200 font-medium flex-1">
                   {offer.description}
                 </p>
               </div>
