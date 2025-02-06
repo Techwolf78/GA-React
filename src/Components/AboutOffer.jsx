@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import { FaArrowRight, FaChalkboardTeacher, FaUsers, FaRegBuilding } from 'react-icons/fa'; 
+
 function AboutOffer() {
   useEffect(() => {
     AOS.init({
-      duration: 600,  // Animation duration
-      once: true,     // Trigger animation only once
+      duration: 600,  
+      once: true,     
     });
 
     AOS.refresh();
@@ -14,92 +16,95 @@ function AboutOffer() {
 
   const collegeOffers = [
     {
-      icon: '→', // Right arrow symbol
+      icon: <FaChalkboardTeacher className="text-4xl text-[#FFC80E]" />,
       description: 'Training Need Analysis and Competence Mapping',
     },
     {
-      icon: '→',
+      icon: <FaArrowRight className="text-4xl text-[#FFC80E]" />,
       description: 'Customized Industry Ready Programmes',
     },
     {
-      icon: '→',
+      icon: <FaUsers className="text-4xl text-[#FFC80E]" />,
       description: 'Industry Guest Lectures',
     },
     {
-      icon: '→',
+      icon: <FaRegBuilding className="text-4xl text-[#FFC80E]" />,
       description: 'Empanelment with Industry: 450+ recruiters',
     },
     {
-      icon: '→',
+      icon: <FaArrowRight className="text-4xl text-[#FFC80E]" />,
       description: 'Job opportunities for Final Year Students',
     },
     {
-      icon: '→',
+      icon: <FaChalkboardTeacher className="text-4xl text-[#FFC80E]" />,
       description: 'Last mile programmes',
     },
   ];
 
   const corporateOffers = [
     {
-      icon: '→',
+      icon: <FaUsers className="text-4xl text-[#FFC80E]" />,
       description: 'Provide Trained Pool of students',
     },
     {
-      icon: '→',
+      icon: <FaArrowRight className="text-4xl text-[#FFC80E]" />,
       description: 'Curated HR Summits',
     },
     {
-      icon: '→',
+      icon: <FaRegBuilding className="text-4xl text-[#FFC80E]" />,
       description: 'HR Excellence Awards',
     },
     {
-      icon: '→',
+      icon: <FaUsers className="text-4xl text-[#FFC80E]" />,
       description: 'Talent from PAN India',
     },
     {
-      icon: '→',
+      icon: <FaChalkboardTeacher className="text-4xl text-[#FFC80E]" />,
       description: 'Corporate Trainings',
     },
   ];
 
   return (
-    <div className="bg-[#01224F] mx-auto px-4 md:px-8 lg:px-16 py-2 max-w-5xl" data-aos="fade-up">
-      <p className="text-2xl md:text-3xl lg:text-4xl  font-bold text-[#FFC80E] text-center mb-6">
+    <div className="bg-[#01224F] mx-auto px-4 md:px-8 lg:px-16 py-4 " data-aos="fade-up">
+      <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC80E] text-center mb-4">
         What We Offer
       </p>
-      <div className="flex flex-row justify-between gap-8">
-        {/* Left Side - Colleges Section */}
-        <div className="w-full md:w-1/2">
-          <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4">For Colleges</p>
-          <div className="flex flex-col items-start">
-            {collegeOffers.map((offer, index) => (
-              <div key={index} className="flex items-center mb-5">
-                <div className="bg-white rounded-full flex items-center justify-center w-12 h-12 mr-4 shadow-lg hover:shadow-xl transition-shadow">
-                  <span className="text-[#FFC80E] text-3xl">{offer.icon}</span>
-                </div>
-                <p className="text-base md:text-xl text-gray-200 font-medium flex-1">
-                  {offer.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        {/* Right Side - Corporates Section */}
-        <div className="w-full md:w-1/2">
-          <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4">For Corporates</p>
-          <div className="flex flex-col items-start">
-            {corporateOffers.map((offer, index) => (
-              <div key={index} className="flex items-center mb-5">
-                <div className="bg-white rounded-full flex items-center justify-center w-12 h-12 mr-4 shadow-lg hover:shadow-xl transition-shadow">
-                  <span className="text-[#FFC80E] text-3xl">{offer.icon}</span>
+      {/* Colleges Section */}
+      <div className="mb-8">
+        <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4">For Colleges</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {collegeOffers.map((offer, index) => (
+            <div key={index} className="bg-[#1e3a8a] p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <div className="mb-4">
+                <div className="flex justify-start">
+                  {offer.icon}
                 </div>
-                <p className="text-base md:text-xl text-gray-200 font-medium flex-1">
-                  {offer.description}
-                </p>
               </div>
-            ))}
-          </div>
+              <div>
+                <p className="text-left text-sm md:text-base font-extralight text-gray-200">{offer.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Corporates Section */}
+      <div>
+        <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4">For Corporates</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {corporateOffers.map((offer, index) => (
+            <div key={index} className="bg-[#1e3a8a] p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+              <div className="mb-4">
+                <div className="flex justify-start">
+                  {offer.icon}
+                </div>
+              </div>
+              <div>
+                <p className="text-left text-sm md:text-base font-extralight text-gray-200">{offer.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
