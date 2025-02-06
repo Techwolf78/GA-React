@@ -1,19 +1,6 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { 
-  FaBuilding, 
-  FaBriefcase, 
-  FaCertificate, 
-  FaUserTie 
-} from 'react-icons/fa';
-import { 
-  School, 
-  People, 
-  LocalOffer, 
-  Business, 
-  WorkOutline 
-} from '@mui/icons-material'; // Material-UI Icons
 
 function AboutOffer() {
   useEffect(() => {
@@ -27,57 +14,57 @@ function AboutOffer() {
 
   const collegeOffers = [
     {
-      icon: <School className="text-[#FFC80E] text-3xl" />, // Training Need Analysis
+      icon: '→', // Right arrow symbol
       description: 'Training Need Analysis and Competence Mapping',
     },
     {
-      icon: <LocalOffer className="text-[#FFC80E] text-3xl" />, // Customized Industry Programs
+      icon: '→',
       description: 'Customized Industry Ready Programmes',
     },
     {
-      icon: <People className="text-[#FFC80E] text-3xl" />, // Industry Guest Lectures
+      icon: '→',
       description: 'Industry Guest Lectures',
     },
     {
-      icon: <FaBuilding className="text-[#FFC80E] text-3xl" />, // Empanelment with Industry
+      icon: '→',
       description: 'Empanelment with Industry: 450+ recruiters',
     },
     {
-      icon: <WorkOutline className="text-[#FFC80E] text-3xl" />, // Job Opportunities
+      icon: '→',
       description: 'Job opportunities for Final Year Students',
     },
     {
-      icon: <FaCertificate className="text-[#FFC80E] text-3xl" />, // Last Mile Programs
+      icon: '→',
       description: 'Last mile programmes',
     },
   ];
 
   const corporateOffers = [
     {
-      icon: <FaUserTie className="text-[#FFC80E] text-3xl" />, // Provide Trained Pool of Students
+      icon: '→',
       description: 'Provide Trained Pool of students',
     },
     {
-      icon: <Business className="text-[#FFC80E] text-3xl" />, // Curated HR Summits
+      icon: '→',
       description: 'Curated HR Summits',
     },
     {
-      icon: <FaCertificate className="text-[#FFC80E] text-3xl" />, // HR Excellence Awards
+      icon: '→',
       description: 'HR Excellence Awards',
     },
     {
-      icon: <FaBuilding className="text-[#FFC80E] text-3xl" />, // Talent from PAN India
+      icon: '→',
       description: 'Talent from PAN India',
     },
     {
-      icon: <FaBriefcase className="text-[#FFC80E] text-3xl" />, // Corporate Trainings
+      icon: '→',
       description: 'Corporate Trainings',
     },
   ];
 
   return (
-    <div className="bg-[#01224F] mx-auto px-4 md:px-8 lg:px-16 py-2 max-w-5xl" data-aos="fade-up">
-      <p className="text-2xl md:text-3xl lg:text-4xl  font-bold text-[#FFC80E] text-center mb-6">
+<div className="bg-white mx-auto px-4 md:px-8 lg:px-16 py-2 max-w-5xl rounded-lg shadow-xl backdrop-blur-lg bg-opacity-30" data-aos="fade-up">
+      <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC80E] text-center mb-6">
         What We Offer
       </p>
       <div className="flex flex-row justify-between gap-8">
@@ -88,9 +75,9 @@ function AboutOffer() {
             {collegeOffers.map((offer, index) => (
               <div key={index} className="flex items-center mb-5">
                 <div className="bg-white rounded-full flex items-center justify-center w-12 h-12 mr-4 shadow-lg hover:shadow-xl transition-shadow">
-                  {offer.icon}
+                  <span className="text-[#FFC80E] text-3xl">{offer.icon}</span>
                 </div>
-                <p className="text-base md:text-xl text-gray-200 font-medium flex-1">
+                <p className="text-base md:text-xl text-gray-100 font-medium flex-1">
                   {offer.description}
                 </p>
               </div>
@@ -105,9 +92,9 @@ function AboutOffer() {
             {corporateOffers.map((offer, index) => (
               <div key={index} className="flex items-center mb-5">
                 <div className="bg-white rounded-full flex items-center justify-center w-12 h-12 mr-4 shadow-lg hover:shadow-xl transition-shadow">
-                  {offer.icon}
+                  <span className="text-[#FFC80E] text-3xl">{offer.icon}</span>
                 </div>
-                <p className="text-base md:text-xl text-gray-200 font-medium flex-1">
+                <p className="text-base md:text-xl text-gray-100 font-medium flex-1">
                   {offer.description}
                 </p>
               </div>

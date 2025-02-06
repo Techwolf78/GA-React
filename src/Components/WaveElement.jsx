@@ -19,7 +19,7 @@ const WaveElement = () => {
         className="w-full h-full mt-12"
       />
     </div> */}
-    <div className="absolute top-3/4  left-0 w-10 h-16 md:w-24 z-30">
+    <div className="absolute top-3/4  left-16 w-10 h-16 md:w-24 z-30">
       <img
         src="/LandingImage/union-design-img.svg"  // Path from the public directory
         alt="Wave Design"        // Ummi mam traingle image 
