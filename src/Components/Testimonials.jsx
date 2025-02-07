@@ -241,14 +241,14 @@ const Testimonials = () => {
   };
 
   return (
-    <section style={{ background: "#01224f", padding: "12px 0" }} className="roboto-regular">
-      <div style={{ textAlign: "center", marginBottom: "32px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-2 mt-2"> 
+    <section style={{ background: "#01224f", padding: "6px 0" }} className="roboto-regular">
+      <div style={{ textAlign: "center", marginBottom: "24px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <h3 className="text-2xl  lg:text-4xl  font-bold text-[#FFC80E]  mt-2"> 
           <span className="text-white">Students</span> Spotlight
         </h3>
       </div>
 
-      <div className="testimonials_outer_container" style={{ position: "relative", overflow: "hidden", width: "100%", height: "auto", paddingTop: "20px" }}>
+      <div className="testimonials_outer_container" style={{ position: "relative", overflow: "hidden", width: "100%", height: "auto", paddingTop: "10px" }}>
         <div className={`testimonials_track ${isVisible ? 'testimonials_animate' : ''}`}>
           {/* First set of testimonials */}
           {testimonials.map((testimonial, index) => (

@@ -16,11 +16,11 @@ const AboutIntro = () => {
   };
 
   return (
-    <div className="relative overflow-hidden px-4 sm:px-6 md:px-8 lg:px-16 py-8 sm:py-10 md:py-12 bg-[#fdfdfd]">
+    <div className="relative overflow-hidden px-4 sm:px-6 md:px-8 lg:px-16 py-4 md:py-6 bg-[#fdfdfd]">
       <div className="flex flex-col lg:flex-row justify-between mx-auto">
         {/* Left Side (Text and Button) - 30% width on large screens */}
         <div className="lg:w-[40%] w-full text-left mb-4 sm:mb-6" data-aos="fade-up">
-          <p className="text-lg sm:text-xl text-[#FFC80E] font-extralight mb-2">
+          <p className="text-base sm:text-xl text-[#FFC80E] font-extralight mb-2">
             WHAT WE DO
           </p>
           <h1
@@ -33,7 +33,7 @@ const AboutIntro = () => {
           </h1>
 
           {/* Bottom-left text and button */}
-          <div className="mt-8 sm:mt-12">
+          <div className="mt-4 md:mt-8">
             <p className="text-base sm:text-lg text-black mb-0">
               As India’s premier non-ed-tech
               organization, we are committed to bridging the gap between industry
@@ -44,11 +44,11 @@ const AboutIntro = () => {
             </p>
             <button
               onClick={handleNavigate}
-              className="inline-block text-base font-bold mt-4 sm:mt-6 mb-4 sm:mb-6 border-2 border-[#1e3a8a] hover:border-[#000] rounded-lg py-2 px-2 transition duration-300 ease-in-out transform hover:bg-[#1e3a8a] hover:text-[#ffffff] hover:scale-105"
+              className="inline-block text-base font-bold mt-2 md:mt-6 mb-2 md:mb-6 border-2 border-[#1e3a8a] hover:border-[#000]  py-1 md:py-2 px-2 transition duration-300 ease-in-out transform hover:bg-[#1e3a8a] hover:text-[#ffffff] hover:scale-105"
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              GET IN TOUCH WITH US
+              Get In Touch With Us
             </button>
           </div>
         </div>

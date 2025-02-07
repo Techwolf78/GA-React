@@ -2,8 +2,12 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-// Online Icons for Corporates
-import { FaArrowRight, FaChalkboardTeacher, FaUsers, FaRegBuilding } from 'react-icons/fa';
+// Local Images for Corporates
+import corporateIcon1 from '/About/reading-group.png';
+import corporateIcon2 from '/About/hr-a.png';
+import corporateIcon3 from '/About/trophy-a.png';
+import corporateIcon4 from '/About/leadership.png';
+import corporateIcon5 from '/About/owner.png';
 
 function AboutOffer() {
   useEffect(() => {
@@ -44,23 +48,23 @@ function AboutOffer() {
 
   const corporateOffers = [
     {
-      icon: <FaUsers className="text-4xl text-[#FFC80E]" />,
+      icon: <img src={corporateIcon1} alt="Trained Students Icon" className="w-16 h-16" />,
       description: 'Provide Trained Pool of students',
     },
     {
-      icon: <FaArrowRight className="text-4xl text-[#FFC80E]" />,
+      icon: <img src={corporateIcon2} alt="HR Summits Icon" className="w-16 h-16" />,
       description: 'Curated HR Summits',
     },
     {
-      icon: <FaRegBuilding className="text-4xl text-[#FFC80E]" />,
+      icon: <img src={corporateIcon3} alt="HR Awards Icon" className="w-16 h-16" />,
       description: 'HR Excellence Awards',
     },
     {
-      icon: <FaUsers className="text-4xl text-[#FFC80E]" />,
+      icon: <img src={corporateIcon4} alt="PAN India Talent Icon" className="w-16 h-16" />,
       description: 'Talent from PAN India',
     },
     {
-      icon: <FaChalkboardTeacher className="text-4xl text-[#FFC80E]" />,
+      icon: <img src={corporateIcon5} alt="Corporate Trainings Icon" className="w-16 h-16" />,
       description: 'Corporate Trainings',
     },
   ];
@@ -73,30 +77,30 @@ function AboutOffer() {
 
       <div className="flex flex-col md:flex-row gap-8">
         {/* Colleges Section - Left Side */}
-        <div className="flex-1">
-          <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4">For Colleges</p>
+        <div className="flex-1 flex flex-col items-center">
+          <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4 text-center">For Colleges :</p>
           <div className="space-y-4">
             {collegeOffers.map((offer, index) => (
-              <div key={index} className="flex items-start space-x-4">
-                <div className="flex-shrink-0">
+              <div key={index} className="flex flex-col sm:flex-row items-center sm:space-x-4 sm:items-center">
+                <div className="flex-shrink-0 mb-2 sm:mb-0">
                   {offer.icon}
                 </div>
-                <p className="text-sm md:text-base font-extralight text-gray-200">{offer.description}</p>
+                <p className="text-sm md:text-xl  text-gray-200 text-center sm:text-left">{offer.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Corporates Section - Right Side */}
-        <div className="flex-1">
-          <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4">For Corporates</p>
+        <div className="flex-1 flex flex-col items-center">
+          <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4 text-center">For Corporates :</p>
           <div className="space-y-4">
             {corporateOffers.map((offer, index) => (
-              <div key={index} className="flex items-start space-x-4">
-                <div className="flex-shrink-0">
+              <div key={index} className="flex flex-col sm:flex-row items-center sm:space-x-4 sm:items-center">
+                <div className="flex-shrink-0 mb-2 sm:mb-0">
                   {offer.icon}
                 </div>
-                <p className="text-sm md:text-base font-extralight text-white">{offer.description}</p>
+                <p className="text-sm md:text-xl  text-white text-center sm:text-left">{offer.description}</p>
               </div>
             ))}
           </div>

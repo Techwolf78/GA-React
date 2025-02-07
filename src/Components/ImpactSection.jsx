@@ -18,7 +18,7 @@ const ImpactSection = () => {
     textAlign: "center",
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
     borderBottom: "1.5px solid #1e3a8a",
-    padding: "0.75rem 1rem",
+    padding: "1rem", // Increased padding for better spacing
     margin: "0",
     width: "auto", // Let the width be determined by content
     maxWidth: "250px", // Optional: limit the max width of each stat card
@@ -30,20 +30,16 @@ const ImpactSection = () => {
   };
 
   return (
-    <div className="bg-[#f5f4f4] ">
-    <div id="stats" className="py-3 bg-[#f5f4f4] max-w-4xl  mx-auto ">
-      <div className="mx-auto ">
-        <div className="flex flex-col sm:flex-row items-center ">
+    <div className="bg-[#ffffff]">
+      <div id="stats" className="py-4 md:py-8 bg-[#f6f6f4]  mx-auto px-8 md:px-16">
+        <div className="flex flex-col sm:flex-row justify-center items-center">
           {/* Left Text Section */}
           <div
-            className="w-full md:w-5/12 text-center sm:text-left"
+            className="w-full sm:w-5/12 text-center sm:text-left mb-12 sm:mb-0"
             data-aos="fade-right"
           >
-            <h3
-              className="text-3xl sm:text-4xl font-bold mb-6"
-              style={{ color: "#1e3a8a" }}
-            >
-              OUR IMPACT
+            <h3 className="text-3xl md:text-4xl font-bold mb-2 md:mb-6" style={{ color: "#1e3a8a" }}>
+              Our Impact
             </h3>
             <p className="text-lg md:text-xl text-gray-600 mb-8">
               For years, we have been pioneering customized training skills
@@ -51,7 +47,7 @@ const ImpactSection = () => {
               industry.
             </p>
             <a href="/contact">
-              <button className="bg-[#f3f9fc] text-black px-4 py-2 border-2 border-[#1e3a8a] font-semibold hover:bg-[#15306d] hover:text-white transition-colors">
+              <button className="bg-[#f6f6f4] text-black px-4 py-2 border-2 border-[#1e3a8a] font-semibold hover:bg-[#15306d] hover:text-white transition-colors">
                 Contact Us
               </button>
             </a>
@@ -59,7 +55,7 @@ const ImpactSection = () => {
 
           {/* Right Grid Section */}
           <div
-            className="w-full md:w-6/12 grid grid-cols-1 sm:grid-cols-2 gap-6"
+            className="w-full sm:w-7/12 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 justify-items-center"
             data-aos="fade-left"
           >
             {[
@@ -115,7 +111,6 @@ const ImpactSection = () => {
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
