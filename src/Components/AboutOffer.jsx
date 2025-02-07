@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { FaArrowRight, FaChalkboardTeacher, FaUsers, FaRegBuilding } from 'react-icons/fa'; 
+// Online Icons for Corporates
+import { FaArrowRight, FaChalkboardTeacher, FaUsers, FaRegBuilding } from 'react-icons/fa';
 
 function AboutOffer() {
   useEffect(() => {
     AOS.init({
-      duration: 600,  
-      once: true,     
+      duration: 600,
+      once: true,
     });
 
     AOS.refresh();
@@ -16,27 +17,27 @@ function AboutOffer() {
 
   const collegeOffers = [
     {
-      icon: <FaChalkboardTeacher className="text-4xl text-[#FFC80E]" />,
+      icon: <img src="About/training-program.png" alt="Training Icon" className="w-16 h-16" />,
       description: 'Training Need Analysis and Competence Mapping',
     },
     {
-      icon: <FaArrowRight className="text-4xl text-[#FFC80E]" />,
+      icon: <img src="About/adaptability.png" alt="Customized Program Icon" className="w-16 h-16" />,
       description: 'Customized Industry Ready Programmes',
     },
     {
-      icon: <FaUsers className="text-4xl text-[#FFC80E]" />,
+      icon: <img src="About/lecture.png" alt="Guest Icon" className="w-16 h-16" />,
       description: 'Industry Guest Lectures',
     },
     {
-      icon: <FaRegBuilding className="text-4xl text-[#FFC80E]" />,
+      icon: <img src="About/recruitment.png" alt="Recruiter Icon" className="w-16 h-16" />,
       description: 'Empanelment with Industry: 450+ recruiters',
     },
     {
-      icon: <FaArrowRight className="text-4xl text-[#FFC80E]" />,
+      icon: <img src="About/job-opportunities.png" alt="Job Icon" className="w-16 h-16" />,
       description: 'Job opportunities for Final Year Students',
     },
     {
-      icon: <FaChalkboardTeacher className="text-4xl text-[#FFC80E]" />,
+      icon: <img src="About/project.png" alt="Last Mile Icon" className="w-16 h-16" />,
       description: 'Last mile programmes',
     },
   ];
@@ -65,46 +66,40 @@ function AboutOffer() {
   ];
 
   return (
-    <div className="bg-[#01224F] mx-auto px-4 md:px-8 lg:px-16 py-4 " data-aos="fade-up">
-      <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC80E] text-center mb-4">
+    <div className="bg-[#01224F] max-w-6xl mx-auto px-4 md:px-8 lg:px-16 py-4" data-aos="fade-up">
+      <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC80E] text-center mb-8">
         What We Offer
       </p>
 
-      {/* Colleges Section */}
-      <div className="mb-8">
-        <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4">For Colleges</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {collegeOffers.map((offer, index) => (
-            <div key={index} className="bg-[#1e3a8a] p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div className="mb-4">
-                <div className="flex justify-start">
+      <div className="flex flex-col md:flex-row gap-8">
+        {/* Colleges Section - Left Side */}
+        <div className="flex-1">
+          <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4">For Colleges</p>
+          <div className="space-y-4">
+            {collegeOffers.map((offer, index) => (
+              <div key={index} className="flex items-start space-x-4">
+                <div className="flex-shrink-0">
                   {offer.icon}
                 </div>
+                <p className="text-sm md:text-base font-extralight text-gray-200">{offer.description}</p>
               </div>
-              <div>
-                <p className="text-left text-sm md:text-base font-extralight text-gray-200">{offer.description}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Corporates Section */}
-      <div>
-        <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4">For Corporates</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {corporateOffers.map((offer, index) => (
-            <div key={index} className="bg-[#1e3a8a] p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div className="mb-4">
-                <div className="flex justify-start">
+        {/* Corporates Section - Right Side */}
+        <div className="flex-1">
+          <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4">For Corporates</p>
+          <div className="space-y-4">
+            {corporateOffers.map((offer, index) => (
+              <div key={index} className="flex items-start space-x-4">
+                <div className="flex-shrink-0">
                   {offer.icon}
                 </div>
+                <p className="text-sm md:text-base font-extralight text-white">{offer.description}</p>
               </div>
-              <div>
-                <p className="text-left text-sm md:text-base font-extralight text-gray-200">{offer.description}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
