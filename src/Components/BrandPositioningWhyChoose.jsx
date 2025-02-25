@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
+ 
 const BrandPositioningWhyChoose = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-
+ 
   // Data for the blocks
   const blocks = [
     {
@@ -36,7 +36,7 @@ const BrandPositioningWhyChoose = () => {
       description: 'Our digital efforts complement your offline marketing for maximum impact.',
     },
   ];
-
+ 
   return (
     <div className="bg-[#1e3a8a] h-auto py-4 md:py-8 px-6 sm:px-8 md:px-16">
       <div className="max-w-7xl mx-auto text-center">
@@ -46,7 +46,7 @@ const BrandPositioningWhyChoose = () => {
         <p className="mt-4 max-w-2xl text-base sm:text-lg text-gray-300 mx-auto">
           Proven expertise in delivering exceptional results for clients across diverse industries.
         </p>
-
+ 
         {/* Icons and Content Section */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           {/* Card Blocks */}
@@ -59,9 +59,9 @@ const BrandPositioningWhyChoose = () => {
               style={{ position: 'relative', overflow: 'hidden', borderRadius: '16px' }}
             >
               {/* Shine effect */}
-              <div
-                className={`shine-effect ${hoveredIndex === index ? 'shine-animation' : ''}`}
-              />
+              {hoveredIndex === index && (
+                <div className="shine-effect shine-animation" />
+              )}
               <div className="mb-4">
                 <img
                   src={block.image}
@@ -75,14 +75,13 @@ const BrandPositioningWhyChoose = () => {
           ))}
         </div>
       </div>
-
+ 
       <style>
         {`
-          /* Basic shine effect styles */
           .shine-effect {
             position: absolute;
             top: 0;
-            left: -100%;
+            left: -150%;
             width: 100%;
             height: 100%;
             background: linear-gradient(45deg, rgba(255, 255, 255, 0.3) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 75%);
@@ -90,21 +89,19 @@ const BrandPositioningWhyChoose = () => {
             opacity: 0;
             pointer-events: none;
             z-index: 1;
-            transition: opacity 0.1s ease-in-out;
           }
-
-          /* Shine animation only when hovered */
+ 
           @keyframes shineMove {
             0% {
-              left: -100%;
+              left: -150%;
             }
             100% {
-              left: 100%;
+              left: 150%;
             }
           }
-
+ 
           .shine-animation {
-            animation: shineMove 0.9s linear infinite;
+            animation: shineMove 0.9s linear forwards;
             opacity: 1;
           }
         `}
@@ -112,5 +109,5 @@ const BrandPositioningWhyChoose = () => {
     </div>
   );
 };
-
+ 
 export default BrandPositioningWhyChoose;

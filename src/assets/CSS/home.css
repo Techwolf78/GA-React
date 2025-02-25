@@ -645,10 +645,10 @@ html {
 /* Company Logo */
 .company-logo-link {
   position: fixed;
-  top: -25px;
+  top: 6px;
   left: 8vw;
-  width: 150px;
-  height: 150px;
+  width: 90px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -656,13 +656,31 @@ html {
   text-decoration: none;
 }
 
-@media (min-width: 768px) {
+/* For older MacBook Pro 13-inch (with resolution less than 1440px) */
+@media (max-width: 1439px) {
   .company-logo-link {
-    left: 13vw;
+    width: 250px; /* Adjust for older models */
+    height: 100px; /* Adjust for older models */
+  }
+}
+
+/* For new MacBooks (with resolution 1440px or more) */
+@media (min-width: 1440px) {
+  .company-logo-link {
+    width: 300px; /* Keep the width same for new MacBooks */
+    height: 150px; /* Keep the height same for new MacBooks */
   }
 }
 
 
+/* For latest iPhones in landscape mode */
+@media (min-width: 331px) and (max-width: 844px) {
+  .company-logo-link {
+    left: 0vw; /* Adjust left position */
+    width: 220px; /* Slightly larger size for landscape */
+    height: 80px; /* Adjust height accordingly */
+  }
+}
 
 .hidden-on-large {
   display: none; /* Hide by default */
@@ -671,7 +689,7 @@ html {
 .company-logo {
   width: 100%;
   height: 100%;
-  background: url("https://res.cloudinary.com/dcjmaapvi/image/upload/v1732608342/NewLogo_glaelo.webp")
+  background: url("ga-hori.png")
     no-repeat center center;
   background-size: contain;
 }

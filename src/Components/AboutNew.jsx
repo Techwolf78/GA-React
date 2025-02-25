@@ -5,9 +5,9 @@ function AboutNew() {
     <div className="p-0 text-center roboto-regular relative">
       {/* New Section: TRAINING EVALUATION JOURNEY */}
       <div className="w-full  bg-[#ffffff] relative">
-        <link rel="preload" href="About/rect-h.png" as="image" />
+        <link rel="preload" href="About/rect-i.avif" as="image" />
         <img 
-          src="About/rect-i.png" 
+          src="About/rect-i.avif" 
           alt="Infographic" 
           className="w-full  block mx-auto"
         />

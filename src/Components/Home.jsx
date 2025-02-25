@@ -281,7 +281,7 @@ const Home = () => {
               </div>
 
               {/* Bridge Image Container */}
-              <div className="image-container">
+              <div className="image-container px-2">
                 <img
                   src="bridge.avif" // Replace with actual image URL
                   alt="Bridge"

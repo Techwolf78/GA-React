@@ -231,7 +231,7 @@ const Testimonials = () => {
     width: "auto",
     height: "52px",
     objectFit: "contain",
-    marginBottom: "12px",
+    marginBottom: "10px",
   };
 
   const logoContainerStyle = {
@@ -260,20 +260,20 @@ const Testimonials = () => {
               <div style={logoContainerStyle}>
                 <img src={testimonial.companyLogo} alt={testimonial.companyName} style={logoStyle} />
               </div>
-              <p style={{ fontSize: "16px", color: "#000000", marginBottom: "8px", fontStyle: "italic", flexGrow: 1 }}>
+              <p style={{ fontSize: "13px", color: "#000000", marginBottom: "8px", fontStyle: "italic", flexGrow: 1 }}>
                 {`"${testimonial.review}"`}
               </p>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <p style={{ color: "#000000", fontWeight: "bold", fontSize: "16px", marginBottom: "0" }}>
+                <p style={{ color: "#000000", fontWeight: "bold", fontSize: "13px", marginBottom: "0" }}>
                   {testimonial.name}
                 </p>
-                <p style={{ color: "#000000", fontSize: "14px", marginBottom: "0" }}>
+                <p style={{ color: "#000000", fontSize: "11px", marginBottom: "0" }}>
                   {`Batch: ${testimonial.batch}`}
                 </p>
-                <p style={{ color: "#000000", fontSize: "14px", marginBottom: "0" }}>
+                <p style={{ color: "#000000", fontSize: "11px", marginBottom: "0" }}>
                   {testimonial.department}
                 </p>
-                <p style={{ color: "#000000", fontSize: "14px", marginBottom: "0px" }}>
+                <p style={{ color: "#000000", fontSize: "11px", marginBottom: "0px" }}>
                   {testimonial.college}
                 </p>
               </div>
@@ -289,20 +289,20 @@ const Testimonials = () => {
               <div style={logoContainerStyle}>
                 <img src={testimonial.companyLogo} alt={testimonial.companyName} style={logoStyle} />
               </div>
-              <p style={{ fontSize: "16px", color: "#000000", marginBottom: "8px", fontStyle: "italic", flexGrow: 1 }}>
+              <p style={{ fontSize: "13px", color: "#000000", marginBottom: "8px", fontStyle: "italic", flexGrow: 1 }}>
                 {`"${testimonial.review}"`}
               </p>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <p style={{ color: "#000000", fontWeight: "bold", fontSize: "16px", marginBottom: "0" }}>
+                <p style={{ color: "#000000", fontWeight: "bold", fontSize: "13px", marginBottom: "0" }}>
                   {testimonial.name}
                 </p>
-                <p style={{ color: "#000000", fontSize: "14px", marginBottom: "0" }}>
+                <p style={{ color: "#000000", fontSize: "11px", marginBottom: "0" }}>
                   {`Batch: ${testimonial.batch}`}
                 </p>
-                <p style={{ color: "#000000", fontSize: "14px", marginBottom: "0" }}>
+                <p style={{ color: "#000000", fontSize: "11px", marginBottom: "0" }}>
                   {testimonial.department}
                 </p>
-                <p style={{ color: "#000000", fontSize: "14px", marginBottom: "0px" }}>
+                <p style={{ color: "#000000", fontSize: "11px", marginBottom: "0px" }}>
                   {testimonial.college}
                 </p>
               </div>

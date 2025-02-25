@@ -4,14 +4,14 @@ import "aos/dist/aos.css"; // Import AOS styles
 
 const images = [
   "/Event/h2.avif",
-  "/About/hr1.JPG",
-  "/About/gal1.jpeg",
+  "/About/hr1.avif",
+  "/About/gal1.avif",
   "/About/gal3.avif",
-  "/About/hr.JPG",
+  "/About/hr.avif",
   "/About/h3.avif",
-  "/About/eventlogo.JPG", // New image 1 (left side)
+  "/About/eventlogo.avif", // New image 1 (left side)
   "/About/gal5.avif", // New image 2 (left side)
-  "/About/hr3.JPG", // New image 3 (right side)
+  "/About/hr3.avif", // New image 3 (right side)
   "/About/gl4.avif", // New image 4 (right side)
 ];
 

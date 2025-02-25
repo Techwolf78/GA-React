@@ -29,7 +29,7 @@ const MeetTheLeaders = () => {
     <div
       className="flex flex-col items-center mx-auto bg-gradient-to-r from-blue-100 to-blue-200 relative"
       style={{
-        backgroundImage: `url('/About/lead.png')`,
+        backgroundImage: `url('/About/lead.avif')`,
         backgroundSize: "contain",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat", // Prevent the background from repeating
