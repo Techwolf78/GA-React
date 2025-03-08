@@ -196,7 +196,8 @@ function App() {
             )}
           </>
         } />
-        <Route path="/collegeTraining" element={<><Navbar /><CollegeTraining /></>} />
+       <Route path="/collegetraining" element={<><Navbar /><CollegeTraining /></>} />
+
         <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />
         <Route path="*" element={<NotFound />} />

@@ -18,7 +18,7 @@ const DecEvent = () => {
       {/* Display components directly */}
       <DecEventBoundary />
       <DecEventHighLights />
-      <DecEventArrivedGuest />
+      {/* <DecEventArrivedGuest /> */}
       <DecEventAgenda />
       <DecEventSlider />
 

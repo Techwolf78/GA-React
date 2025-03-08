@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from "react"; 
-
+import { useState, useEffect, useRef } from "react";
 
 const Navbar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -84,7 +83,7 @@ const Navbar = () => {
             className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
-             Home
+            Home
           </a>
 
           <div
@@ -99,7 +98,7 @@ const Navbar = () => {
               aria-expanded={isDropdownOpen}
               className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-2 flex items-center justify-center transition-colors duration-300"
             >
-               Learning & Development
+              Learning & Development
               <i className="fas fa-chevron-down ml-1"></i>
             </button>
 
@@ -132,7 +131,7 @@ const Navbar = () => {
               className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-2 flex items-center justify-center transition-colors duration-300"
               onClick={handleCrossBrandClick}
             >
-               Synergy Sphere 2024
+              Synergy Sphere 2024
               <i className="fas fa-chevron-down ml-1"></i>
             </button>
 
@@ -157,7 +156,7 @@ const Navbar = () => {
             className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
-             Campus Placement
+            Campus Placement
           </a>
           <a
             href="/blogs"

@@ -3,7 +3,7 @@ import React from 'react';
 const Post6 = () => {
   return (
     <main
-      className="container roboto-regular mx-auto px-4 py-8 bg-cover"
+      className="container roboto-regular mx-auto px-4 py-8 md:mt-10 bg-cover"
       style={{
         backgroundImage: "url('Blogs/blogBG.jpg')",
         backgroundSize: "cover", // Cover the entire area without stretching

@@ -249,57 +249,49 @@ const CourseSection = () => {
               showCards[key] &&
               courses[key].map((course, index) => (
                 <div key={`${key}-${index}`} className="flip-card">
-                <div className="flip-card-inner">
-                  {/* Front of the Card */}
-                  <div className="flip-card-front aspect-[3/2]">
+                  <div className="flip-card-inner">
+                    {/* Front of the Card */}
+                    <div className="flip-card-front aspect-[3/2]">
+                      <div
+                        className={`w-full h-48 bg-gray-300 rounded dark:bg-gray-700 lg:hidden ${
+                          isImageLoaded ? "hidden" : "block"
+                        }`}
+                      ></div>
+                      <img
+                        src={course.image}
+                        alt={course.title}
+                        className={`object-cover w-full h-full ${
+                          isImageLoaded ? "block" : "hidden"
+                        }`}
+                        onLoad={handleImageLoad}
+                      />
+                    </div>
+
+                    {/* Back of the Card */}
                     <div
-                      className={`w-full h-48 bg-gray-300 rounded dark:bg-gray-700 lg:hidden ${
-                        isImageLoaded ? "hidden" : "block"
-                      }`}
-                    ></div>
-                    <img
-                      src={course.image}
-                      alt={course.title}
-                      className={`object-cover w-full h-full ${
-                        isImageLoaded ? "block" : "hidden"
-                      }`}
-                      onLoad={handleImageLoad}
-                    />
-                  </div>
-              
-                  {/* Back of the Card */}
-                  <div
-                    className="flip-card-back aspect-[3/2]"
-                    style={{
-                      backgroundImage: `url('${backSideImageUrl}')`, // Show background image for all tabs (including MBA)
-                    }}
-                  >
-                    {/* Only show description for MBA on smaller screens or larger screens with MBA tab selected */}
-                    {(isMobile || selectedCourse !== "MBA") && (
-                      <ul className="list-disc list-outside text-black text-sm lg:text-base">
-                        {course.description.map((item, idx) => (
-                          <li key={idx} className="pl-0">
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-              
-                    {/* Show description as text pointers for MBA (no background image, but now we show it) */}
-                    {selectedCourse === "MBA" && (
-                      <ul className="list-disc list-outside text-black text-sm lg:text-base p-4">
-                        {course.description.map((item, idx) => (
-                          <li key={idx} className="pl-0">
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                      className="flip-card-back aspect-[3/2]"
+                      style={{
+                        backgroundImage:
+                          isMobile || selectedCourse !== "MBA"
+                            ? `url('${backSideImageUrl}')` // Default back image for mobile and non-MBA tabs
+                            : `url('${course.backImage || backSideImageUrl}')`, // Custom back image for MBA tab on larger screens
+                      }}
+                    >
+                      {/* Only show description for MBA on smaller screens or larger screens with MBA tab selected */}
+                      {(isMobile || selectedCourse !== "MBA") && (
+                        <ul
+                          className={`list-disc list-outside text-black text-sm lg:text-base`}
+                        >
+                          {course.description.map((item, idx) => (
+                            <li key={idx} className="pl-0">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-              
-              
               ))
           )}
         </div>

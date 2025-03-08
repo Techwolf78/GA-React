@@ -7,14 +7,12 @@ const backgroundImage = "https://res.cloudinary.com/dcjmaapvi/image/upload/v1729
 const content = [
   "Delivering Tailored Solutions That Drive Measurable Success and Enhance Organizational Readiness Within the Learning Technology Ecosystem",
   "Seamless Execution, Digital Transformation, Talent Retention Strength, Drive Sales ROI"
-]
-;
-
-const corporateTrainingParagraph = "Our customized corporate training programmes are specifically designed to meet your organization’s unique needs. In a rapidly evolving corporate landscape, we address critical challenges that hinder growth and productivity. By focusing on essential skills such as communication, negotiation, critical thinking, Operational Resilience and Adaptability, Workforce Management and Engagement & leadership, we empower teams to overcome obstacles and enhance collaboration.";
+];
 
 function HeroCorporate() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     AOS.init(); // Initialize AOS
@@ -32,24 +30,27 @@ function HeroCorporate() {
     return () => clearInterval(interval);
   }, [currentIndex]);
 
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
-    <div className="relative w-full overflow-hidden box-border">
-      {/* Background Image */}
+    <div className="relative w-full h-screen overflow-hidden">
+      {/* Background Image with load event */}
       <img
         src={backgroundImage}
-        className="w-full h-auto object-cover max-h-screen" // Limit height to max screen height
+        className={`w-full h-full object-cover ${imageLoaded ? 'opacity-100' : 'opacity-0 transition-opacity duration-1000'}`}
         alt="Corporate training illustration"
+        onLoad={handleImageLoad}
       />
-
+      
       {/* Overlay for Heading Section */}
       <div className="absolute inset-0 bg-black opacity-70 z-0"></div>
 
-      {/* Heading Section */}
-      <div className="absolute left-0 right-0 text-center z-10 px-4 md:px-8 lg:px-16 xl:px-32 py-2 top-[10vh] md:top-1/4">
+      {/* Sliding Heading Text */}
+      <div className="absolute inset-0 flex justify-center items-center z-10 px-4 md:px-8 lg:px-16 xl:px-32 text-center">
         <h1
-          className={`text-sm sm:text-xl tracking-wide md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-1 sm:mb-1   text-white ${
-            isExiting ? 'slide-exit' : 'slide-enter'
-          }`}
+          className={`text-sm sm:text-xl tracking-wide md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white ${isExiting ? 'slide-exit' : 'slide-enter'}`}
           data-aos="fade-up"
           data-aos-duration="800"
         >
@@ -59,6 +60,7 @@ function HeroCorporate() {
 
       <style>
         {`
+          /* Slide-in and slide-out animations */
           @keyframes slide-in {
             0% {
               transform: translateX(100%);
@@ -82,22 +84,14 @@ function HeroCorporate() {
           }
 
           .slide-enter {
-            animation: slide-in 0.5s forwards;
+            animation: slide-in 0.5s ease-in-out forwards;
           }
 
           .slide-exit {
-            animation: slide-out 0.5s forwards;
+            animation: slide-out 0.5s ease-in-out forwards;
           }
         `}
       </style>
-
-      {/* New Corporate Training Section */}
-      <div className="bg-gray-100 py-4 shadow-md relative z-10" data-aos="fade-up" data-aos-duration="800">
-  <p className="mx-auto lg:text-2xl md:text-xl sm:text-lg text-left sm:text-center px-8 sm:px-16 text-gray-500">
-    {corporateTrainingParagraph}
-  </p>
-</div>
-
     </div>
   );
 }

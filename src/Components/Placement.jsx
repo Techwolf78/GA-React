@@ -2,7 +2,7 @@
 import HeroPlacement from "./HeroPlacement";
 import PartneredUniversities from "./PartneredUniversities";
 import PartneredCollege from "./PartneredCollege";
-import '../assets/CSS/Placement.css';
+import "../assets/CSS/Placement.css";
 
 import CollegeAccreditation from "./CollegeAccreditation";
 import Advisory from "./Advisory";
@@ -21,27 +21,26 @@ const Placement = () => {
       <MajorRecruiter />
       <PartneredUniversities />
       <CollegeAccreditation />
-      
+
       {/* Use the new HookLine component */}
-  
+
       <HookLine />
 
       <PartneredCollege />
 
       {/* New Section: TRAINING EVALUATION JOURNEY */}
-<div className="p-0 text-center roboto-regular relative">
-  <div className="w-full h-auto bg-[#ffffff] relative">
-    <img 
-      src="placement-bg/evatrain.avif" 
-      alt="Infographic" 
-      className="w-full h-auto block mx-auto"
-    />
-  </div>
-</div>
+      <div className="p-0 text-center roboto-regular relative">
+        <div className="w-full h-auto bg-[#ffffff] relative">
+          <img
+            src="placement-bg/evatrain.avif"
+            alt="Infographic"
+            className="w-full h-auto block mx-auto"
+          />
+        </div>
+      </div>
 
-      
-     <PlacementKnowMore />
-     <PlacementProfiles />
+      <PlacementKnowMore />
+      <PlacementProfiles />
       <Advisory />
       <SuccessfulDrives />
       <RecruiterTestimonial />
