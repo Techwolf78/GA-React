@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import '../src/Components/App.css';
 import "@fontsource/roboto";
 import './App.css'; 
 import Home from './Components/Home.jsx'; 
+import MasterClass3 from './Components/MasterClass3';
 import About from './Components/About'; 
 import GAX from './Components/GAX'; 
 import Blogs from './Components/Blogs'; 
@@ -56,6 +57,9 @@ function App() {
     switch (location.pathname) {
       case "/":
         pageTitle = "Home";
+        break;
+      case "/masterclass3":
+        pageTitle = "Masterclass 3.0";
         break;
       case "/test":
         pageTitle = "Home";
@@ -167,6 +171,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/masterclass3" element={<MasterClass3 />} />
         <Route path="/agenda" element={<><Navbar /><DecEventAgenda /></>} />
         <Route path="/ground-zero" element={<DecEventGroundZero />} />
         <Route path="/about-us" element={<><Navbar /><About /></>} />
@@ -203,8 +208,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {/* Conditionally render the WhatsApp Widget only on the /brandPositioning page after scrolling down */}
-      {location.pathname === '/brandPositioning' && showWhatsAppWidget && <WhatsAppWidget />}
+      {showWhatsAppWidget && (<WhatsAppWidget />)}
       
       <ScrollToTopButton visible={scrollVisible} />
       <Footer />
