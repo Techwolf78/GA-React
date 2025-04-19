@@ -177,7 +177,7 @@ function App() {
         <Route path="/about-us" element={<><Navbar /><About /></>} />
         <Route path="/about-us/" element={<><Navbar /><About /></>} />
         <Route path="/gax" element={<><Navbar /><GAX /></>} />
-        <Route path="/masterclass3" element={<MasterClass3 />} />
+        <Route path="/masterclass3" element={<><Navbar /><MasterClass3 /></>} />
         <Route path="/blogs" element={<><Navbar /><Blogs /></>} />
         <Route path="/post1" element={<><Navbar /><Post1 /></>} />
         <Route path="/post2" element={<><Navbar /><Post2 /></>} />
