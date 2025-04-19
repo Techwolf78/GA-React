@@ -22,7 +22,7 @@ import WhatsAppWidget from './Components/WhatsAppWidget';
 import ScrollToTopButton from './Components/ScrollToTopButton'; 
 import Post1 from './Components/BlogPages/Post1';
 import Post2 from './Components/BlogPages/Post2';
-import Post3 from './Components/BlogPages/Post3';
+import Post3 from './Components/Cloud';
 import Post4 from './Components/BlogPages/Post4';
 import Post5 from './Components/BlogPages/Post5';
 import Post6 from './Components/BlogPages/Post6';
