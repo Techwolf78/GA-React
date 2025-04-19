@@ -11,14 +11,14 @@ const GallerySlider = () => {
     ];
   
     const column2Images = [
-      "/MasterClass/9.JPG",
-      "/MasterClass/10.JPG",
-      "/MasterClass/11.JPG",
-      "/MasterClass/12.JPG",
-      "/MasterClass/13.JPG",
-      "/MasterClass/14.JPG",
-      "/MasterClass/15.JPG",
-      "/MasterClass/16.JPG",
+      "/MasterClass/9.jpg",
+      "/MasterClass/10.jpg",
+      "/MasterClass/11.jpg",
+      "/MasterClass/12.jpg",
+      "/MasterClass/13.jpg",
+      "/MasterClass/14.jpg",
+      "/MasterClass/15.jpg",
+      "/MasterClass/16.jpg",
     ];
   
     // Duplicate arrays for seamless loop
