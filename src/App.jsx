@@ -22,7 +22,7 @@ import WhatsAppWidget from './Components/WhatsAppWidget';
 import ScrollToTopButton from './Components/ScrollToTopButton'; 
 import Post1 from './Components/BlogPages/Post1';
 import Post2 from './Components/BlogPages/Post2';
-import Post3 from './Components/Cloud';
+import Post3 from './Components/BlogPages/Post3';
 import Post4 from './Components/BlogPages/Post4';
 import Post5 from './Components/BlogPages/Post5';
 import Post6 from './Components/BlogPages/Post6';
@@ -31,7 +31,7 @@ import DecEvent from './Components/DecEvent';
 import DecEventGroundZero from './Components/DecEventGroundZero'; 
 import Loader from './Components/Loader'; 
 import DecEventAgenda from './Components/DecEventAgenda';
-import Cloud from './Components/Cloud'; // ✅ Import Cloud Component
+
 
 function App() {
   const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
@@ -122,9 +122,6 @@ function App() {
       case "/forget-password":
         pageTitle = "Forget Password";
         break;
-      case "/cloud":
-        pageTitle = "Cloud Services"; // ✅ Added Cloud page title
-        break;
       default:
         pageTitle = "Page Not Found";
     }
@@ -191,7 +188,6 @@ function App() {
         <Route path="/collegeTraining" element={<><Navbar /><CollegeTraining /></>} />
         <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />
-        <Route path="/cloud" element={<><Navbar /><Cloud /></>} /> {/* ✅ Added new route */}
         <Route path="*" element={<NotFound />} />
       </Routes>
 
