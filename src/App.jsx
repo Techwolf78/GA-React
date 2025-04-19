@@ -1,8 +1,9 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import '../src/Components/App.css';
 import "@fontsource/roboto";
 import './App.css'; 
+
 import Home from './Components/Home.jsx'; 
 import MasterClass3 from './Components/MasterClass3';
 import About from './Components/About'; 
@@ -13,7 +14,7 @@ import Navbar from './Components/Navbar';
 import Placement from './Components/Placement'; 
 import Contact from './Components/Contact'; 
 import Training from './Components/Training';
-import BrandPositioning from './Components/BrandPositioning'; // Import the page
+import BrandPositioning from './Components/BrandPositioning'; 
 import CollegeTraining from './Components/CollegeTraining';
 import CorporateTraining from './Components/CorporateTraining';
 import FacultyTraining from './Components/FacultyTraining'; 
@@ -25,44 +26,41 @@ import Post3 from './Components/BlogPages/Post3';
 import Post4 from './Components/BlogPages/Post4';
 import Post5 from './Components/BlogPages/Post5';
 import Post6 from './Components/BlogPages/Post6';
-import NotFound from './Components/NotFound'; // Import the NotFound component
-import DecEvent from './Components/DecEvent'; // Import the DecEvent component
-import DecEventGroundZero from './Components/DecEventGroundZero'; // Import the Ground Zero page component
-import Loader from './Components/Loader'; // Import the loader component
-import DecEventAgenda from './Components/DecEventAgenda'; // Import the DecEventAgenda component
+import NotFound from './Components/NotFound'; 
+import DecEvent from './Components/DecEvent'; 
+import DecEventGroundZero from './Components/DecEventGroundZero'; 
+import Loader from './Components/Loader'; 
+import DecEventAgenda from './Components/DecEventAgenda';
+import Cloud from './Components/Cloud'; // ✅ Import Cloud Component
 
 function App() {
   const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
   const [scrollVisible, setScrollVisible] = useState(false);
-  const [loaderFinished, setLoaderFinished] = useState(false); // State to track loader finish
-  const location = useLocation(); // Get the current route location
-  const navigate = useNavigate(); // Hook to navigate to different paths
+  const [loaderFinished, setLoaderFinished] = useState(false); 
+  const location = useLocation(); 
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     if (location.pathname.endsWith('/') && location.pathname !== '/') {
-      // Only navigate if there's a trailing slash and the pathname isn't already the root
       navigate(location.pathname.slice(0, -1), { replace: true });
     }
-  }, [location, navigate]); // Run this only when `location` changes
+  }, [location, navigate]); 
   
   const handleLoaderFinish = () => {
-    setLoaderFinished(true); // Set the loader as finished
+    setLoaderFinished(true); 
   };
 
-  // Dynamically set the page title based on the route
   useEffect(() => {
     const baseTitle = "Gryphon Academy | Bridging the Gap Between Industry and Academia";
     let pageTitle = "";
 
     switch (location.pathname) {
       case "/":
+      case "/test":
         pageTitle = "Home";
         break;
       case "/masterclass3":
         pageTitle = "Masterclass 3.0";
-        break;
-      case "/test":
-        pageTitle = "Home";
         break;
       case "/about-us":
         pageTitle = "About Us";
@@ -88,10 +86,10 @@ function App() {
       case "/collegeTraining":
         pageTitle = "College Training";
         break;
-      case "/corporatetraining":
+      case "/corporateTraining":
         pageTitle = "Corporate Training";
         break;
-      case "/facultytraining":
+      case "/facultyTraining":
         pageTitle = "Faculty Training";
         break;
       case "/events":
@@ -124,17 +122,19 @@ function App() {
       case "/forget-password":
         pageTitle = "Forget Password";
         break;
+      case "/cloud":
+        pageTitle = "Cloud Services"; // ✅ Added Cloud page title
+        break;
       default:
         pageTitle = "Page Not Found";
     }
 
     document.title = `${pageTitle} | ${baseTitle}`;
     
-    // Track the page view with Google Analytics
     window.gtag('event', 'page_view', {
       page_path: location.pathname + location.search,
     });
-  }, [location]); // Re-run whenever location changes
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -142,27 +142,16 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Display the WhatsApp Widget only after scrolling on /brandPositioning page
   useEffect(() => {
     if (location.pathname === '/brandPositioning') {
       const handleScroll = () => {
-        if (window.scrollY > 100) {
-          setShowWhatsAppWidget(true); // Show widget after scrolling
-        } else {
-          setShowWhatsAppWidget(false); // Hide widget if not scrolled
-        }
+        setShowWhatsAppWidget(window.scrollY > 100);
       };
 
-      // Listen to scroll event when on /brandPositioning page
       window.addEventListener('scroll', handleScroll);
-
-      // Cleanup event listener on component unmount or route change
       return () => window.removeEventListener('scroll', handleScroll);
     }
   }, [location.pathname]);
@@ -171,13 +160,12 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/agenda" element={<><Navbar /><DecEventAgenda /></>} />
         <Route path="/ground-zero" element={<DecEventGroundZero />} />
         <Route path="/about-us" element={<><Navbar /><About /></>} />
         <Route path="/about-us/" element={<><Navbar /><About /></>} />
         <Route path="/gax" element={<><Navbar /><GAX /></>} />
-        <Route path="/masterclass3" element={<><Navbar /><MasterClass3 /></>} />
+        <Route path="/masterclass3" element={<><MasterClass3 /></>} />
         <Route path="/blogs" element={<><Navbar /><Blogs /></>} />
         <Route path="/post1" element={<><Navbar /><Post1 /></>} />
         <Route path="/post2" element={<><Navbar /><Post2 /></>} />
@@ -187,30 +175,27 @@ function App() {
         <Route path="/post6" element={<><Navbar /><Post6 /></>} />
         <Route path="/placement" element={<><Navbar /><Placement /></>} />
         <Route path="/contact" element={<><Navbar /><Contact /></>} />
-        <Route path="/brandPositioning" element={<><Navbar /><BrandPositioning /></>} />  {/* Brand Positioning Route */}
+        <Route path="/brandPositioning" element={<><Navbar /><BrandPositioning /></>} />
         <Route path="/training" element={<><Navbar /><Training /></>} />
         <Route path="/test" element={<><Navbar /><Home /></>} />
-        
-        {/* /events route showing loader and then event content */}
         <Route path="/events" element={
           <>
-            <Navbar /> {/* Navbar always visible */}
+            <Navbar />
             {!loaderFinished ? (
-              <Loader onFinish={handleLoaderFinish} /> // Show loader until it's finished
+              <Loader onFinish={handleLoaderFinish} />
             ) : (
-              <DecEvent /> // Show DecEvent once loader is finished
+              <DecEvent />
             )}
           </>
         } />
-       <Route path="/collegetraining" element={<><Navbar /><CollegeTraining /></>} />
-
+        <Route path="/collegeTraining" element={<><Navbar /><CollegeTraining /></>} />
         <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />
+        <Route path="/cloud" element={<><Navbar /><Cloud /></>} /> {/* ✅ Added new route */}
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {showWhatsAppWidget && (<WhatsAppWidget />)}
-      
+      {showWhatsAppWidget && <WhatsAppWidget />}
       <ScrollToTopButton visible={scrollVisible} />
       <Footer />
     </>
