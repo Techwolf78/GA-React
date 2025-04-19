@@ -171,12 +171,13 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/masterclass3" element={<MasterClass3 />} />
+
         <Route path="/agenda" element={<><Navbar /><DecEventAgenda /></>} />
         <Route path="/ground-zero" element={<DecEventGroundZero />} />
         <Route path="/about-us" element={<><Navbar /><About /></>} />
         <Route path="/about-us/" element={<><Navbar /><About /></>} />
         <Route path="/gax" element={<><Navbar /><GAX /></>} />
+        <Route path="/masterclass3" element={<MasterClass3 />} />
         <Route path="/blogs" element={<><Navbar /><Blogs /></>} />
         <Route path="/post1" element={<><Navbar /><Post1 /></>} />
         <Route path="/post2" element={<><Navbar /><Post2 /></>} />
