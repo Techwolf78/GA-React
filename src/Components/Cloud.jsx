@@ -1,14 +1,22 @@
-// src/Components/Cloud.jsx
-import React from 'react';
+import "react";
+import Home from "./MasterClass3/Home";
+import Navbar from "./MasterClass3/Navbar";
+import Pointers from "./MasterClass3/Pointers";
+import Highlights from "./MasterClass3/Highlights";
+import GuestSpeakers from "./MasterClass3/Guests";
+import Agenda from "./MasterClass3/Agenda";
 
-const Cloud = () => {
+const MasterClass3 = () => {
   return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h1>Cloud Services</h1>
-      <p>Welcome to the Cloud Services page at Gryphon Academy!</p>
-      <p>Explore how we bridge the gap between academia and cloud technologies.</p>
+    <div>
+      <Navbar />
+      <Home />
+      <Pointers />
+      <Highlights />
+      <GuestSpeakers />
+      <Agenda />
     </div>
   );
 };
 
-export default Cloud;
+export default MasterClass3;
