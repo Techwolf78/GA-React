@@ -10,7 +10,9 @@ function Home() {
           Masterclass 3.0: Empowering Trainers and Students to Drive Industry-Ready Skills
         </h1>
         <p className="text-lg text-[#000000] mb-6">
-          Masterclass 3.0 empowers both trainers and students by bridging the gap between education and industry needs. The program equips trainers with innovative teaching methods, while providing students with hands-on, industry-relevant skills that enhance their employability. This initiative ensures that graduates are well-prepared to meet the demands of today’s competitive job market.
+        Masterclass 3.0 isn’t just another training session — it&apos;s a launchpad
+            for talent. We combine hands-on, real-world training with futuristic
+            pedagogy to produce confident, industry-ready professionals.
         </p>
         <button className="hover:bg-transparent  border-[#027093] border-2  px-6 py-2  hover:bg-gradient-to-r bg-[#027093] hover:border-[#027093] text-white hover:text-black transition-all duration-300">
           Explore More {">"}

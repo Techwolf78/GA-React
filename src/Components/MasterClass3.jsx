@@ -5,6 +5,7 @@ import Pointers from "./MasterClass3/Pointers";
 import Highlights from "./MasterClass3/Highlights";
 import GuestSpeakers from "./MasterClass3/Guests";
 import Agenda from "./MasterClass3/Agenda";
+import Overview from "./MasterClass3/Overview";
 
 const MasterClass3 = () => {
   return (
@@ -12,6 +13,7 @@ const MasterClass3 = () => {
       <Navbar />
       <Home />
       <Pointers />
+      <Overview />
       <Highlights />
       <GuestSpeakers />
       <Agenda />

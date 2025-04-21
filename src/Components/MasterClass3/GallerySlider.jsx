@@ -90,7 +90,7 @@ const GallerySlider = () => {
           }
   
           .animate-fadeOutUp {
-            animation: fadeOutUp 40s linear infinite;
+            animation: fadeOutUp 60s linear infinite;
           }
         `}</style>
       </div>
