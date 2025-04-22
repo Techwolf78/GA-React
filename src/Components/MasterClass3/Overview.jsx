@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import skillWorkshop from "../../../public/MasterClass/o1.webp";
-import studentCollab from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241742/o2_cqidtk.webp";
-import instructorSession from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241740/o4_y21exh.webp";
-import realProjects from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241740/o3_nxevy5.webp";
-import inside3 from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241728/5_p24yqh.webp";
-import img6 from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241729/6_opakln.webp";
-import img7 from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241726/7_exbppl.webp";
-import img8 from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241726/8_an4mtt.webp";
-import img9 from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241732/9_g8pwyv.webp";
-import img10 from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241726/10_kklp0d.webp";
-import img11 from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241728/11_rn1p7y.webp";
-import img12 from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241728/12_agyrsh.webp";
-import img13 from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241727/13_v49nh0.webp";
-import img14 from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241727/14_kbfcjw.webp";
-import img15 from "https://res.cloudinary.com/dcjmaapvi/image/upload/v1745241738/15_luutxe.webp";
+import studentCollab from "../../../public/MasterClass/o2.webp";
+import instructorSession from "../../../public/MasterClass/o4.webp";
+import realProjects from "../../../public/MasterClass/o3.webp";
+import inside3 from "../../../public/MasterClass/5.webp";
+import img6 from "../../../public/MasterClass/6.webp";
+import img7 from "../../../public/MasterClass/7.webp";
+import img8 from "../../../public/MasterClass/8.webp";
+import img9 from "../../../public/MasterClass/9.webp";
+import img10 from "../../../public/MasterClass/10.webp";
+import img11 from "../../../public/MasterClass/11.webp";
+import img12 from "../../../public/MasterClass/12.webp";
+import img13 from "../../../public/MasterClass/13.webp";
+import img14 from "../../../public/MasterClass/14.webp";
+import img15 from "../../../public/MasterClass/15.webp";
 
 const allImages = [
   skillWorkshop,
