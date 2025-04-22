@@ -55,30 +55,7 @@ function Overview() {
     <>
       <style>
         {`
-          @font-face {
-            font-family: 'BritannicBold';
-            src: url('/fonts/BritannicBold-Regular.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-          }
-
-          .embedded-number {
-            font-family: 'BritannicBold', sans-serif;
-            font-size: 380px;
-            font-weight: 1000;
-            background-image: url(${inside3});
-            background-size: cover;
-            background-position: center;
-            color: transparent;
-            -webkit-text-stroke: 2px #00BFA6;
-            -webkit-background-clip: text;
-            background-clip: text;
-            text-fill-color: transparent;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-          }
-
-          /* .circle-grid-3x3 {
+          .circle-grid-3x3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 1fr);
@@ -92,18 +69,25 @@ function Overview() {
             height: 100%;
             object-fit: cover;
             transition: opacity 0.3s ease-in-out;
-          } */
+          }
         `}
       </style>
 
-      <section className="flex flex-col md:flex-row w-full bg-white px-6 md:px-16 py-12 gap-10 md:items-stretch">
+      <section
+  id="overview"
+  className="scroll-mt-24 flex flex-col md:flex-row w-full bg-white px-6 md:px-16 py-12 gap-10 md:items-stretch"
+>
+
+
         {/* Left Side */}
         <div className="md:w-1/2 flex flex-col justify-center">
-          <div className="mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
             <h2 className="text-3xl md:text-5xl font-bold text-[#027093]">
-              <span className="inline-block relative">
-                Bridging
-                <span className="absolute left-0 bottom-0 h-1 w-12 bg-[#00A59F] my-2 rounded-full translate-y-2"></span>
+              <span className="inline-block">
+                <span className="inline-block relative">
+                  Bridging
+                  <span className="absolute left-0 bottom-0 h-1 w-12 bg-[#00A59F] my-2 rounded-full translate-y-2"></span>
+                </span>
               </span>{" "}
               Skills with Opportunity
             </h2>
@@ -125,13 +109,8 @@ function Overview() {
           </ul>
         </div>
 
-        {/* Right Side: Big 3.0 Only */}
+        {/* Right Side: Circle w/ Live Grid */}
         <div className="md:w-1/2 flex justify-center items-center">
-          <div className="embedded-number">3.0</div>
-        </div>
-
-        {/* Uncomment to bring back the circle grid */}
-        {/* <div className="md:w-1/2 flex justify-center items-center">
           <div className="w-full max-w-[500px] aspect-square md:aspect-auto md:h-full rounded-full overflow-hidden shadow-xl">
             <div className="circle-grid-3x3 w-full h-full">
               {visibleImages.map((img, idx) => (
@@ -139,7 +118,7 @@ function Overview() {
               ))}
             </div>
           </div>
-        </div> */}
+        </div>
       </section>
     </>
   );

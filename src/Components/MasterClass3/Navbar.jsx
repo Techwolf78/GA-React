@@ -192,7 +192,7 @@ const Navbar = () => {
           }`}
         >
           <button
-            className="absolute top-2 right-2 w-12 h-12 rounded-full bg-[#00BFA6] flex items-center justify-center text-black text-4xl focus:outline-none"
+            className="absolute top-2 right-2 w-8 h-8 rounded-full bg-[#00BFA6] flex items-center justify-center text-black text-2xl focus:outline-none"
             onClick={toggleSidebar}
           >
             <i className="fas fa-times"></i>

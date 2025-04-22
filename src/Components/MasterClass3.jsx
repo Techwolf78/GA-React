@@ -4,7 +4,7 @@ import Navbar from "./MasterClass3/Navbar";
 import Pointers from "./MasterClass3/Pointers";
 import Highlights from "./MasterClass3/Highlights";
 import GuestSpeakers from "./MasterClass3/Guests";
-import Agenda from "./MasterClass3/Agenda";
+// import Agenda from "./MasterClass3/Agenda";
 import Overview from "./MasterClass3/Overview";
 
 const MasterClass3 = () => {
@@ -16,7 +16,7 @@ const MasterClass3 = () => {
       <Overview />
       <Highlights />
       <GuestSpeakers />
-      <Agenda />
+      {/* <Agenda /> */}
     </div>
   );
 };

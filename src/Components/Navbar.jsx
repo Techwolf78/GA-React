@@ -180,7 +180,7 @@ const Navbar = () => {
           className={`fixed top-0 left-0 h-full bg-white bg-opacity-90 text-black z-40 overflow-x-hidden transition-all duration-300 transform ${isSidebarOpen ? "translate-x-0 w-full" : "-translate-x-full w-0"}`}
         >
           <button
-            className="absolute top-2 right-2 w-12 h-12 rounded-full bg-[#ffc700] flex items-center justify-center text-black text-4xl focus:outline-none"
+            className="absolute top-2 right-2 w-8 h-8 rounded-full bg-[#ffc700] flex items-center justify-center text-black text-2xl focus:outline-none"
             onClick={toggleSidebar}
           >
             <i className="fas fa-times"></i>
