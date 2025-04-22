@@ -32,6 +32,7 @@ import Post3 from "./Components/BlogPages/Post3";
 import Post4 from "./Components/BlogPages/Post4";
 import Post5 from "./Components/BlogPages/Post5";
 import Post6 from "./Components/BlogPages/Post6";
+import Post7 from "./Components/BlogPages/Post7";
 import NotFound from "./Components/NotFound";
 import DecEvent from "./Components/DecEvent";
 import DecEventGroundZero from "./Components/DecEventGroundZero";
@@ -78,6 +79,7 @@ function App() {
       "/post4": "Blog Post 4",
       "/post5": "Blog Post 5",
       "/post6": "Blog Post 6",
+      "/post7": "Blog Post 7",
       "/login": "Login",
       "/forget-password": "Forget Password",
       "/cloud": "Cloud Services",
@@ -128,6 +130,7 @@ function App() {
         <Route path="/post4" element={<><Navbar /><Post4 /></>} />
         <Route path="/post5" element={<><Navbar /><Post5 /></>} />
         <Route path="/post6" element={<><Navbar /><Post6 /></>} />
+        <Route path="/post7" element={<><Navbar /><Post7 /></>} />
         <Route path="/placement" element={<><Navbar /><Placement /></>} />
         <Route path="/contact" element={<><Navbar /><Contact /></>} />
         <Route path="/brandPositioning" element={<><Navbar /><BrandPositioning /></>} />

@@ -1,24 +1,24 @@
 const GallerySlider = () => {
     const column1Images = [
-      "/MasterClass/1.jpg",
-      "/MasterClass/2.jpg",
-      "/MasterClass/3.jpg",
-      "/MasterClass/4.jpg",
-      "/MasterClass/5.jpg",
-      "/MasterClass/6.jpg",
-      "/MasterClass/7.jpg",
-      "/MasterClass/8.jpg",
+      "/MasterClass/1.webp",
+      "/MasterClass/2.webp",
+      "/MasterClass/3.webp",
+      "/MasterClass/4.webp",
+      "/MasterClass/5.webp",
+      "/MasterClass/6.webp",
+      "/MasterClass/7.webp",
+      "/MasterClass/8.webp",
     ];
   
     const column2Images = [
-      "/MasterClass/9.jpg",
-      "/MasterClass/10.jpg",
-      "/MasterClass/11.jpg",
-      "/MasterClass/12.jpg",
-      "/MasterClass/13.jpg",
-      "/MasterClass/14.jpg",
-      "/MasterClass/15.jpg",
-      "/MasterClass/16.jpg",
+      "/MasterClass/9.webp",
+      "/MasterClass/10.webp",
+      "/MasterClass/11.webp",
+      "/MasterClass/12.webp",
+      "/MasterClass/13.webp",
+      "/MasterClass/14.webp",
+      "/MasterClass/15.webp",
+      "/MasterClass/16.webp",
     ];
   
     // Duplicate arrays for seamless loop
