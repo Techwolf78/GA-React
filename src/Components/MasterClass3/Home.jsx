@@ -67,12 +67,11 @@ function Home() {
             </h1>
           </div>
           <p className="text-xl md:text-3xl text-[#000000] font-medium mb-3 md:mb-6">
-            Empowering Trainers and Students to Drive Industry-Ready Skills
+          The Trident Traverse: Training. Hiring. Transformation. 
           </p>
           <p className="text-base md:text-xl text-[#000000] mb-3 md:mb-6">
-            Masterclass 3.0 isn’t just another training session — it&apos;s a launchpad
-            for talent. We combine hands-on, real-world training with futuristic
-            pedagogy to produce confident, industry-ready professionals.
+          Masterclass 3.0 is a powerful confluence of decision-makers, industry leaders and academic visionaries. <br />
+          Gryphon Academy’s flagship initiative returns with a sharper focus, stronger presence, and a single goal: aligning the future of talent with the pulse of the real world. 
           </p>
           <a href="#overview">
             <button className="hover:bg-transparent border-[#027093] border-2 px-3 md:px-6 py-2 hover:bg-gradient-to-r bg-[#027093] hover:border-[#027093] text-white hover:text-black transition-all duration-300">

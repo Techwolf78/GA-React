@@ -1,49 +1,59 @@
-import { UserCheck, BadgeCheck, Users, BriefcaseBusiness } from "lucide-react";
+import {
+  HiOutlineSpeakerphone,
+} from "react-icons/hi";
+import { MdOutlineGroups } from "react-icons/md"; // Corrected icon
+import { RiTeamLine } from "react-icons/ri";
+import { GiGraduateCap } from "react-icons/gi";
 
 const features = [
   {
-    icon: <UserCheck className="text-[#00A59F] w-10 h-10 mx-auto" />,
-    title: "Designed for Working Professionals",
+    icon: (
+      <HiOutlineSpeakerphone className="text-[#00A59F] w-10 h-10 mx-auto" />
+    ),
+    title: "Keynote Insights",
     description:
-      "Flexible learning crafted for professionals, tackling real challenges and shaping future opportunities.",
+      "Gain powerful insights from business leaders and IIM dignitaries driving real-world change.",
   },
   {
-    icon: <BadgeCheck className="text-[#00A59F] w-10 h-10 mx-auto" />,
-    title: "Industry Acknowledged Certificates",
+    icon: <MdOutlineGroups className="text-[#00A59F] w-10 h-10 mx-auto" />, // Updated icon here
+    title: "Future-Ready Dialogues",
     description:
-      "Earn certificates recognized by industry leaders upon program completion.",
+      "Thought-provoking debates and actionable insights from panels shaping the future of talent and technology.",
   },
   {
-    icon: <Users className="text-[#00A59F] w-10 h-10 mx-auto" />,
-    title: "Peer to Peer Cohort Learning",
+    icon: <RiTeamLine className="text-[#00A59F] w-10 h-10 mx-auto" />,
+    title: "Cross-Sector Networking",
     description:
-      "Collaborative group learning that celebrates individual strengths and fosters impactful knowledge sharing.",
+      "A dynamic platform to connect academic minds and corporate powerhouses under one roof.",
   },
   {
-    icon: <BriefcaseBusiness className="text-[#00A59F] w-10 h-10 mx-auto" />,
-    title: "Learn from Industry Leaders",
+    icon: <GiGraduateCap className="text-[#00A59F] w-10 h-10 mx-auto" />,
+    title: "Vision for Campus Hiring 5.0",
     description:
-      "Get trained by top industry experts through hands-on sessions for real-world professional growth.",
+      "Strategies and insights shaping the next wave of placements and student readiness.",
   },
 ];
 
 const Highlights = () => {
   return (
-    <section className="bg-white py-8 px-4 md:px-16">
-      <h2 className="text-4xl text-[#000000] font-bold mb-6 flex flex-col relative ">
-        Empowering Growth. Enabling Futures.
-        <span className="block h-1 w-12 bg-[#00A59F] mt-2 rounded-full"></span>
+    <section className="bg-white py-4 md:py-8 px-4 md:px-16">
+      <h2 className="text-3xl md:text-4xl text-[#000000] font-bold mb-6 relative inline-block leading-snug">
+        <span className="relative inline-block">
+          Masterclass
+          <span className="absolute left-0 bottom-[-4px] h-1 w-12 bg-[#00A59F] my-2 rounded-full translate-y-2"></span>
+        </span>{" "}
+        3.0 Highlights
       </h2>
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid space-x-0 md:space-x-12 gap-2 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="text-center p-6 rounded-lg border-2 border-solid border-[#00BFA6] 
-    bg-gradient-to-br from-white via-[#F0FBFA] to-[#E6FAF8] backdrop-blur-sm
-    shadow-[0_4px_6px_rgba(0,0,0,0.1),0_10px_15px_rgba(0,0,0,0.09)]
-    transition duration-300 transform-gpu hover:-translate-y-2 hover:scale-[1.02] hover:rotate-x-2 hover:rotate-y-1"
+              className="text-center p-4 md:p-6 rounded-lg border-2 border-solid border-[#00BFA6] 
+                bg-gradient-to-br from-white via-[#F0FBFA] to-[#E6FAF8] backdrop-blur-sm
+                shadow-[0_4px_6px_rgba(0,0,0,0.1),0_10px_15px_rgba(0,0,0,0.09)]
+                transition duration-300 transform-gpu hover:-translate-y-2 hover:scale-[1.02] hover:rotate-x-2 hover:rotate-y-1"
             >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-2 text-gray-700">
