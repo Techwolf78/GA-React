@@ -6,6 +6,7 @@ import HomeSliderClg from "./HomeSliderClg";
 import ConnectWithUs from "./ConnectWithUs";
 import HomeSliderComp from "./HomeSliderComp";
 import SidebarToggle from "./SidebarToggle";  // Import the SidebarToggle component
+import PopupBanner from "../Components/MasterClass3/Popup"; // Import the Popup component
 
 // ProgressBar Component
 const ProgressBar = ({ scrollPercent }) => {
@@ -395,6 +396,7 @@ const Home = () => {
         <HomeSliderComp />
         <HomeSliderClg />
         <Testimonials />
+        <PopupBanner />
       </div>
       <ConnectWithUs />
     </div>
