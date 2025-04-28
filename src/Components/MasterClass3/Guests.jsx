@@ -1,20 +1,63 @@
+import chetanWakalkar from "../../../public/MasterClass/chetan-sir.jpg";
+import amitKolhe from "../../../public/MasterClass/amitsir.jpg";
+import pratapPawar from "../../../public/MasterClass/pratapsir.jpeg";
+import manishKothari from "../../../public/MasterClass/manish.jpeg";
+import vimalSumbly from "../../../public/MasterClass/Vimal-Sumbly.jpg";
+import dilipChoudhary from "../../../public/MasterClass/dilip.jpeg";
+import sahilNayar from "../../../public/MasterClass/sahil.webp";
+import sushantKumar from "../../../public/MasterClass/sushant.jpeg";
+import santoshBhave from "../../../public/MasterClass/santosh.jpeg";
+
+
 const guests = [
   {
-    name: "Ananya Mehta",
-    title: "VP of Engineering, TechNova",
-    image: "https://randomuser.me/api/portraits/women/68.jpg", // Dummy image URL
+    name: "Mr. Chetan Wakalkar",
+    title: "Academic Advisor",
+    image: chetanWakalkar,
   },
   {
-    name: "Rohit Khanna",
-    title: "Director of Learning, EduSphere",
-    image: "https://randomuser.me/api/portraits/men/32.jpg", // Dummy image URL
+    name: "Mr. Amit Kolhe",
+    title: "Managing Trustee",
+    image: amitKolhe,
   },
   {
-    name: "Meera Iyer",
-    title: "Lead Data Scientist, NexaAI",
-    image: "https://randomuser.me/api/portraits/women/8.jpg", // Dummy image URL
+    name: "Cdr. Pratap Pawar",
+    title: "Director HR & IT",
+    image: pratapPawar,
+  },
+  {
+    name: "Dr. Manish Kothari",
+    title: "Managing Director",
+    image: manishKothari,
+  },
+  {
+    name: "Mr. Vimal Sumbly",
+    title: "Business Head Premium",
+    image: vimalSumbly,
+  },
+  {
+    name: "Mr. Dilip K Choudhary",
+    title: "Talent Acquisition Leader",
+    image: dilipChoudhary,
+  },
+  {
+    name: "Mr. Sahil Nayar",
+    title: "Senior Associate Director",
+    image: sahilNayar,
+  },
+  {
+    name: "Mr. Sushant Kumar",
+    title: "Talent Acquisition Manager",
+    image: sushantKumar,
+  },
+  {
+    name: "Dr. Santosh Bhave",
+    title: "Director - HR & IR",
+    image: santoshBhave,
   },
 ];
+
+
 
 const GuestSpeakers = () => {
   return (
