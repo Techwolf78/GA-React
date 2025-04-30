@@ -1,5 +1,5 @@
-import GallerySlider from './GallerySlider';
-import inside3 from '../../../public/MasterClass/5.webp';
+import GallerySlider from "./GallerySlider";
+import inside3 from "../../../public/MasterClass/5.webp";
 
 function Home() {
   return (
@@ -22,7 +22,7 @@ function Home() {
             background-size: cover;
             background-position: center;
             color: transparent;
-            -webkit-text-stroke: 2px #00BFA6;
+            -webkit-text-stroke: 2px #000000;
             -webkit-background-clip: text;
             background-clip: text;
             text-fill-color: transparent;
@@ -67,15 +67,18 @@ function Home() {
             </h1>
           </div>
           <p className="text-xl md:text-3xl text-[#000000] font-medium mb-3 md:mb-6">
-          The Trident Traverse: Training. Hiring. Transformation. 
+            The Trident Traverse: Training. Hiring. Transformation.
           </p>
           <p className="text-base md:text-xl text-[#000000] mb-3 md:mb-6">
-          Masterclass 3.0 is a powerful confluence of decision-makers, industry leaders and academic visionaries. <br />
-          Gryphon Academy’s flagship initiative returns with a sharper focus, stronger presence, and a single goal: aligning the future of talent with the pulse of the real world. 
+            Masterclass 3.0 is a powerful confluence of decision-makers,
+            industry leaders and academic visionaries. <br />
+            Gryphon Academy’s flagship initiative returns with a sharper focus,
+            stronger presence, and a single goal: aligning the future of talent
+            with the pulse of the real world.
           </p>
           <a href="#overview">
             <button className="hover:bg-transparent border-[#027093] border-2 px-3 md:px-6 py-2 hover:bg-gradient-to-r bg-[#027093] hover:border-[#027093] text-white hover:text-black transition-all duration-300">
-              Explore More {'>'}
+              Explore More {">"}
             </button>
           </a>
         </div>

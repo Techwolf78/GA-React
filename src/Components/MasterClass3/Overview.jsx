@@ -41,11 +41,9 @@ function Overview() {
     const interval = setInterval(() => {
       setVisibleImages(getRandomImages(9));
     }, 2000);
-
     return () => clearInterval(interval);
   }, []);
 
-  // Lazy load images when they come into view
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -65,9 +63,7 @@ function Overview() {
       if (img) observer.observe(img);
     });
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, [visibleImages]);
 
   function getRandomImages(count) {
@@ -112,29 +108,35 @@ function Overview() {
         id="overview"
         className="scroll-mt-24 flex flex-col md:flex-row w-full bg-white px-6 md:px-16 py-6 md:py-12 gap-10 md:items-stretch"
       >
-        {/* Left Side */}
-        <div className="md:w-1/2 flex flex-col justify-center">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 md:mb-8 gap-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#027093] leading-normal">
-              <span className="inline-block">
-                <span className="inline-block relative">
-                  Only
-                  <span className="absolute left-0 bottom-[-4px] h-1 w-12 bg-[#00A59F] my-2 rounded-full translate-y-2"></span>
-                </span>
-              </span>{" "}
-              platform where training, hiring, and transformation happen side by
-              side.
-            </h2>
+        {/* Left Side with Background 3 */}
+        <div className="md:w-1/2 flex flex-col justify-center relative">
+          <div className="absolute  right-0 text-[18rem] md:text-[36rem] leading-none font-black text-black/10 select-none pointer-events-none z-0">
+            3
           </div>
 
-          <p className="text-lg md:text-xl text-gray-700 mb-6">
-            Since its inception, the Masterclass series has stood apart — for
-            how grand it looks & for how deeply it connects. It’s where India&apos;s
-            top corporates, trainers, and college stakeholders sit together to
-            redefine education, placements, and skill-building. With each
-            edition, the stakes have risen — and Masterclass 3.0 is the ultimate
-            elevation.
-          </p>
+          <div className="relative z-10">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 md:mb-8 gap-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#027093] leading-normal">
+                <span className="inline-block">
+                  <span className="inline-block relative">
+                    Only
+                    <span className="absolute left-0 bottom-[-4px] h-1 w-12 bg-[#00A59F] my-2 rounded-full translate-y-2"></span>
+                  </span>
+                </span>{" "}
+                platform where training, hiring, and transformation happen side
+                by side.
+              </h2>
+            </div>
+
+            <p className="text-lg md:text-xl text-gray-700 mb-6">
+              Since its inception, the Masterclass series has stood apart — for
+              how grand it looks & for how deeply it connects. It’s where
+              India's top corporates, trainers, and college stakeholders sit
+              together to redefine education, placements, and skill-building.
+              With each edition, the stakes have risen — and Masterclass 3.0 is
+              the ultimate elevation.
+            </p>
+          </div>
         </div>
 
         {/* Right Side: Circle Grid */}

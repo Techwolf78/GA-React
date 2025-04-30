@@ -1,7 +1,7 @@
 function Pointers() {
   const stats = [
-    { value: "10,000+", label: "Students" },
-    { value: "200+", label: "Trainers" },
+    { value: "65,000+", label: "Students" },
+    { value: "270+", label: "Trainers" },
     { value: "10,000+", label: "Hours" },
     { value: "4.5/5", label: "Average Rating" },
   ];
