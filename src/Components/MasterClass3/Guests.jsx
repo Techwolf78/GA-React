@@ -1,21 +1,21 @@
 import PropTypes from "prop-types";
-import chetanWakalkar from "../../../public/MasterClass/chetan-sir.jpg";
-import amitKolhe from "../../../public/MasterClass/amit-sir.jpg";
+import chetanWakalkar from "../../../public/MasterClass/chetan-sir.avif";
+import amitKolhe from "../../../public/MasterClass/amit-sir.avif";
 import pratapPawar from "../../../public/MasterClass/pratapsir.jpeg";
-import manishKothari from "../../../public/MasterClass/manish-sir.jpg";
-import vimalSumbly from "../../../public/MasterClass/Vimal-Sumbly.jpg";
+import manishKothari from "../../../public/MasterClass/manish-sir.avif";
+import vimalSumbly from "../../../public/MasterClass/Vimal-Sumbly.avif";
 import dilipChoudhary from "../../../public/MasterClass/dilip.jpeg";
 import sahilNayar from "../../../public/MasterClass/sahil.webp";
 import sushantKumar from "../../../public/MasterClass/sushant.jpeg";
 import santoshBhave from "../../../public/MasterClass/santosh.jpeg";
-import taritaShankar from "../../../public/MasterClass/tarita-mam.jpg";
-import ummiAnsari from "../../../public/MasterClass/ummi-ansari-mam.jpg";
+import taritaShankar from "../../../public/MasterClass/tarita-mam.avif";
+import ummiAnsari from "../../../public/MasterClass/ummi-ansari-mam.avif";
 import sangwan from "../../../public/MasterClass/sangwan.jpeg";
 import sushilBhasin from "../../../public/MasterClass/Brigadier-Sushil-Bhasin.jpg";
 import sandeep from "../../../public/MasterClass/sandip-sir.jpeg";
 import ravinder from "../../../public/MasterClass/ravinder.jpeg";
 import rahul from "../../../public/MasterClass/rahul.jpeg";
-import urvish from "../../../public/MasterClass/urvish.jpeg";
+import urvish from "../../../public/MasterClass/urvish.avif";
 import upendra from "../../../public/MasterClass/upendra.jpeg";
 
 // College Owners List
@@ -45,7 +45,7 @@ const collegeOwners = [
 // ✅ Updated Master Trainers List (only 4)
 const masterTrainers = [
   {
-    name: "Mrs. Ummi Ansari",
+    name: "Ms. Ummi Ansari",
     title: "Cofounder - Gryphon Academy",
     image: ummiAnsari,
   },

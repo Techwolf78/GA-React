@@ -1,24 +1,24 @@
 const GallerySlider = () => {
   const column1Images = [
-    "/MasterClass/1.webp",
-    "/MasterClass/2.webp",
-    "/MasterClass/3.webp",
-    "/MasterClass/4.webp",
-    "/MasterClass/5.webp",
-    "/MasterClass/6.webp",
-    "/MasterClass/7.webp",
-    "/MasterClass/8.webp",
+    "/MasterClass/1.avif",
+    "/MasterClass/2.avif",
+    "/MasterClass/3.avif",
+    "/MasterClass/4.avif",
+    "/MasterClass/5.avif",
+    "/MasterClass/6.avif",
+    "/MasterClass/7.avif",
+    "/MasterClass/8.avif",
   ];
 
   const column2Images = [
-    "/MasterClass/9.webp",
-    "/MasterClass/10.webp",
-    "/MasterClass/11.webp",
-    "/MasterClass/12.webp",
-    "/MasterClass/13.webp",
-    "/MasterClass/14.webp",
-    "/MasterClass/15.webp",
-    "/MasterClass/16.webp",
+    "/MasterClass/9.avif",
+    "/MasterClass/10.avif",
+    "/MasterClass/11.avif",
+    "/MasterClass/12.avif",
+    "/MasterClass/13.avif",
+    "/MasterClass/14.avif",
+    "/MasterClass/15.avif",
+    "/MasterClass/16.avif",
   ];
 
   const doubledColumn1 = [...column1Images, ...column1Images];

@@ -1,5 +1,5 @@
 import GallerySlider from "./GallerySlider";
-import inside3 from "../../../public/MasterClass/5.webp";
+import inside3 from "../../../public/MasterClass/5.avif";
 
 function Home() {
   return (

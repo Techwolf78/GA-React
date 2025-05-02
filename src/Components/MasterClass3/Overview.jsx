@@ -1,19 +1,19 @@
 import { useEffect, useState, useRef } from "react";
-import skillWorkshop from "../../../public/MasterClass/o1.webp";
-import studentCollab from "../../../public/MasterClass/o2.webp";
-import instructorSession from "../../../public/MasterClass/o4.webp";
-import realProjects from "../../../public/MasterClass/o3.webp";
-import inside3 from "../../../public/MasterClass/5.webp";
-import img6 from "../../../public/MasterClass/6.webp";
-import img7 from "../../../public/MasterClass/16.webp";
-import img8 from "../../../public/MasterClass/8.webp";
-import img9 from "../../../public/MasterClass/9.webp";
-import img10 from "../../../public/MasterClass/10.webp";
-import img11 from "../../../public/MasterClass/1.webp";
-import img12 from "../../../public/MasterClass/12.webp";
-import img13 from "../../../public/MasterClass/13.webp";
-import img14 from "../../../public/MasterClass/14.webp";
-import img15 from "../../../public/MasterClass/15.webp";
+import skillWorkshop from "../../../public/MasterClass/o1.avif";
+import studentCollab from "../../../public/MasterClass/o2.avif";
+import instructorSession from "../../../public/MasterClass/o4.avif";
+import realProjects from "../../../public/MasterClass/o3.avif";
+import inside3 from "../../../public/MasterClass/5.avif";
+import img6 from "../../../public/MasterClass/6.avif";
+import img7 from "../../../public/MasterClass/16.avif";
+import img8 from "../../../public/MasterClass/8.avif";
+import img9 from "../../../public/MasterClass/9.avif";
+import img10 from "../../../public/MasterClass/10.avif";
+import img11 from "../../../public/MasterClass/1.avif";
+import img12 from "../../../public/MasterClass/12.avif";
+import img13 from "../../../public/MasterClass/13.avif";
+import img14 from "../../../public/MasterClass/14.avif";
+import img15 from "../../../public/MasterClass/15.avif";
 
 const allImages = [
   skillWorkshop,
@@ -131,7 +131,7 @@ function Overview() {
             <p className="text-lg md:text-xl text-gray-700 mb-6">
               Since its inception, the Masterclass series has stood apart — for
               how grand it looks & for how deeply it connects. It’s where
-              India's top corporates, trainers, and college stakeholders sit
+              India&apos;s top corporates, trainers, and college stakeholders sit
               together to redefine education, placements, and skill-building.
               With each edition, the stakes have risen — and Masterclass 3.0 is
               the ultimate elevation.
