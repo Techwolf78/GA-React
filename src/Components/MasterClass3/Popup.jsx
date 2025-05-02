@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import bgImage from "../../../public/MasterClass/15.webp"; // Import background image
+import bgImage from "../../../public/MasterClass/15.avif"; // Import background image
 
 const calculateTimeLeft = () => {
   const targetDate = new Date("2025-05-31T00:00:00");
