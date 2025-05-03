@@ -1,4 +1,8 @@
+import { useEffect } from "react";
 import PropTypes from "prop-types";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import chetanWakalkar from "../../../public/MasterClass/chetan-sir.avif";
 import amitKolhe from "../../../public/MasterClass/amit-sir.avif";
 import pratapPawar from "../../../public/MasterClass/pratapsir.jpeg";
@@ -22,7 +26,8 @@ import upendra from "../../../public/MasterClass/upendra.jpeg";
 const collegeOwners = [
   {
     name: "Dr. Tarita Shankar",
-    title: "Chairperson & Chief Mentor, Indira Group of Institutes, Pune",
+    title:
+      "President Designate - India University & Chairperson </br> and Chief Mentor - Indira Group of Institutes, Pune",
     image: taritaShankar,
   },
   {
@@ -42,7 +47,7 @@ const collegeOwners = [
   },
 ];
 
-// ✅ Updated Master Trainers List (only 4)
+// Master Trainers
 const masterTrainers = [
   {
     name: "Ms. Ummi Ansari",
@@ -52,21 +57,21 @@ const masterTrainers = [
   {
     name: "Mr. K S Sagwan",
     title: "Chair Professor - BITS Pilani",
-    image: sangwan, // Add image path if available
+    image: sangwan,
   },
   {
     name: "Brigadier Sushil Bhasin",
     title: "Founder and CEO - SB Consulting",
-    image: sushilBhasin, // Add image path if available
+    image: sushilBhasin,
   },
   {
     name: "Mr. Sandip Paul",
     title: "Chief Industrial Designer Founder - Paul Studios",
-    image: sandeep, // Add image path if available
+    image: sandeep,
   },
 ];
 
-// ✅ All others moved to Guest Speakers
+// Guest Speakers
 const guestSpeakers = [
   {
     name: "Mr. Vimal Sumbly",
@@ -90,8 +95,7 @@ const guestSpeakers = [
   },
   {
     name: "Mr. Dilip K Choudhary",
-    title:
-      "Senior Talent Recruitment Leader - Technology, India - GE Healthcare",
+    title: "Senior Talent Recruitment Leader - Technology, India - GE Healthcare",
     image: dilipChoudhary,
   },
   {
@@ -112,7 +116,7 @@ const guestSpeakers = [
   {
     name: "Mr. Urvish Pandey",
     title:
-      "Mr. Urvish Pandey India Head-University Recruitment & Early Talent Engagement, Mastercard",
+      "India Head - University Recruitment & Early Talent Engagement, Mastercard",
     image: urvish,
   },
   {
@@ -131,7 +135,7 @@ const Section = ({
   gridCols = 4,
   noGap = false,
 }) => (
-  <div className="mb-16">
+  <div className="mb-16" data-aos="fade-up" data-aos-offset="50">
     <h3 className="text-2xl font-semibold text-gray-800 mb-6 border-b-2 border-[#00A59F] inline-block pb-1">
       {title}
     </h3>
@@ -150,6 +154,9 @@ const Section = ({
               ? "flex items-center gap-4"
               : "flex flex-col items-center text-center"
           }`}
+          data-aos="zoom-in"
+          data-aos-delay={index * 100}
+          data-aos-offset="50"
         >
           <img
             src={guest.image}
@@ -176,7 +183,7 @@ const Section = ({
   </div>
 );
 
-// PropTypes Validation
+// PropTypes
 Section.propTypes = {
   title: PropTypes.string.isRequired,
   people: PropTypes.arrayOf(
@@ -192,11 +199,23 @@ Section.propTypes = {
   noGap: PropTypes.bool,
 };
 
-// Main GuestSpeakers Component
+// GuestSpeakers Component
 const GuestSpeakers = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 600,
+      offset: 50,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
   return (
     <section className="bg-white py-6 px-4 md:px-16">
-      <h2 className="text-4xl font-bold text-[#1a1a1a] mb-6 text-center">
+      <h2
+        className="text-4xl font-bold text-[#1a1a1a] mb-6 text-center"
+        data-aos="fade-up"
+      >
         Meet the Leaders Behind the Vision
       </h2>
 

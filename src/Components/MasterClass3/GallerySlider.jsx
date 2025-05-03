@@ -25,7 +25,10 @@ const GallerySlider = () => {
   const doubledColumn2 = [...column2Images, ...column2Images];
 
   return (
-    <div className="w-full md:w-1/2 flex justify-center overflow-hidden h-[600px] md:h-screen bg-[#00A59F] space-x-2  relative">
+    <div
+      className="w-full md:w-1/2 flex justify-center overflow-hidden h-[600px] md:h-screen bg-[#00A59F] space-x-2 relative"
+      data-aos="fade-left"
+    >
       {/* Column 1 */}
       <div className="w-1/2 relative overflow-hidden">
         <div className="absolute animate-scrollUp">
@@ -42,7 +45,7 @@ const GallerySlider = () => {
         </div>
       </div>
 
-      {/* Column 2 - funky offset, no animation delay */}
+      {/* Column 2 */}
       <div className="w-1/2 relative overflow-hidden">
         <div className="absolute animate-scrollUp">
           <div

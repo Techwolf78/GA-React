@@ -1,4 +1,8 @@
 import { useEffect, useState, useRef } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Images
 import skillWorkshop from "../../../public/MasterClass/o1.avif";
 import studentCollab from "../../../public/MasterClass/o2.avif";
 import instructorSession from "../../../public/MasterClass/o4.avif";
@@ -33,38 +37,63 @@ const allImages = [
   img15,
 ];
 
+// Loader component for each image
+const ImageWithLoader = ({ src, alt }) => {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className="relative w-full h-full">
+      {!loaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white">
+          <div className="w-6 h-6 border-2 border-t-2 border-[#00A59F] rounded-full animate-spin"></div>
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        onLoad={() => setLoaded(true)}
+        className={`w-full h-full object-cover transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"}`}
+      />
+    </div>
+  );
+};
+
 function Overview() {
   const [visibleImages, setVisibleImages] = useState(() => getRandomImages(9));
-  const imageRefs = useRef([]);
+  const [hasEntered, setHasEntered] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
+    AOS.init({
+      duration: 700,
+      offset: 60,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
+  // Detect when section comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasEntered(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Rotate images every 2 seconds after entry
+  useEffect(() => {
+    if (!hasEntered) return;
     const interval = setInterval(() => {
       setVisibleImages(getRandomImages(9));
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            const src = img.getAttribute("data-src");
-            img.src = src;
-            observer.unobserve(img);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    imageRefs.current.forEach((img) => {
-      if (img) observer.observe(img);
-    });
-
-    return () => observer.disconnect();
-  }, [visibleImages]);
+  }, [hasEntered]);
 
   function getRandomImages(count) {
     const shuffled = [...allImages].sort(() => 0.5 - Math.random());
@@ -75,84 +104,61 @@ function Overview() {
     <>
       <style>
         {`
-          .circle-wrapper {
-            width: 100%;
-            max-width: 500px;
-            aspect-ratio: 1 / 1;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
+        .circle-wrapper {
+          width: 100%;
+          max-width: 500px;
+          aspect-ratio: 1 / 1;
+          border-radius: 50%;
+          overflow: hidden;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
-          .circle-grid-3x3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            width: 100%;
-            height: 100%;
-          }
-
-          .circle-grid-3x3 img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: opacity 0.3s ease-in-out;
-          }
-        `}
+        .circle-grid-3x3 {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(3, 1fr);
+          width: 100%;
+          height: 100%;
+        }
+      `}
       </style>
 
       <section
         id="overview"
+        ref={sectionRef}
         className="scroll-mt-24 flex flex-col md:flex-row w-full bg-white px-6 md:px-16 py-6 md:py-12 gap-10 md:items-stretch"
       >
-        {/* Left Side with Background 3 */}
-        <div className="md:w-1/2 flex flex-col justify-center relative">
-          <div className="absolute  right-0 text-[18rem] md:text-[36rem] leading-none font-black text-black/10 select-none pointer-events-none z-0">
+        {/* Left Side */}
+        <div className="md:w-1/2 flex flex-col justify-center relative" data-aos="fade-up">
+          <div className="absolute right-0 text-[18rem] md:text-[36rem] leading-none font-black text-black/10 select-none pointer-events-none z-0">
             3
           </div>
 
           <div className="relative z-10">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 md:mb-8 gap-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#027093] leading-normal">
-                <span className="inline-block">
-                  <span className="inline-block relative">
-                    Only
-                    <span className="absolute left-0 bottom-[-4px] h-1 w-12 bg-[#00A59F] my-2 rounded-full translate-y-2"></span>
-                  </span>
-                </span>{" "}
-                platform where training, hiring, and transformation happen side
-                by side.
-              </h2>
-            </div>
-
-            <p className="text-lg md:text-xl text-gray-700 mb-6">
-              Since its inception, the Masterclass series has stood apart — for
-              how grand it looks & for how deeply it connects. It’s where
-              India&apos;s top corporates, trainers, and college stakeholders sit
-              together to redefine education, placements, and skill-building.
-              With each edition, the stakes have risen — and Masterclass 3.0 is
-              the ultimate elevation.
+            <h2 className="text-3xl md:text-4xl font-bold text-[#027093] leading-normal mb-4">
+              <span className="relative inline-block">
+                Only
+                <span className="absolute left-0 bottom-[-4px] h-1 w-12 bg-[#00A59F] my-2 rounded-full translate-y-2"></span>
+              </span>{" "}
+              platform where training, hiring, and transformation happen side by side.
+            </h2>
+            <p className="text-lg md:text-xl text-gray-700">
+              Since its inception, the Masterclass series has stood apart — for how grand it looks & for how deeply it connects. It’s where India's top corporates, trainers, and college stakeholders sit together to redefine education, placements, and skill-building. With each edition, the stakes have risen — and Masterclass 3.0 is the ultimate elevation.
             </p>
           </div>
         </div>
 
-        {/* Right Side: Circle Grid */}
-        <div className="md:w-1/2 flex justify-center items-center">
+        {/* Right Side - Circle Grid */}
+        <div className="md:w-1/2 flex justify-center items-center" data-aos="zoom-in">
           <div className="circle-wrapper">
             <div className="circle-grid-3x3">
-              {visibleImages.map((img, idx) => (
-                <img
-                  key={idx}
-                  ref={(el) => (imageRefs.current[idx] = el)}
-                  data-src={img}
-                  alt={`Grid Img ${idx}`}
-                  src=""
-                  className="lazyload"
-                />
-              ))}
+              {hasEntered &&
+                visibleImages.map((img, idx) => (
+                  <ImageWithLoader key={idx} src={img} alt={`Grid Img ${idx}`} />
+                ))}
             </div>
           </div>
         </div>
