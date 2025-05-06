@@ -27,7 +27,7 @@ const collegeOwners = [
   {
     name: "Dr. Tarita Shankar",
     title:
-      "President Designate - India University & Chairperson </br> and Chief Mentor - Indira Group of Institutes, Pune",
+      "President Designate - India University & Chairperson and Chief Mentor - Indira Group of Institutes, Pune",
     image: taritaShankar,
   },
   {
@@ -213,7 +213,7 @@ const GuestSpeakers = () => {
   return (
     <section className="bg-white py-6 px-4 md:px-16">
       <h2
-        className="text-4xl font-bold text-[#1a1a1a] mb-6 text-center"
+        className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6 text-center"
         data-aos="fade-up"
       >
         Meet the Leaders Behind the Vision
@@ -236,7 +236,7 @@ const GuestSpeakers = () => {
         title="Guest Speakers"
         people={guestSpeakers}
         horizontal
-        gridCols={4}
+        gridCols={3}
       />
     </section>
   );

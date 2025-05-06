@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import PropTypes from "prop-types";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -133,9 +134,14 @@ function Overview() {
       >
         {/* Left Side */}
         <div className="md:w-1/2 flex flex-col justify-center relative" data-aos="fade-up">
-          <div className="absolute right-0 text-[18rem] md:text-[36rem] leading-none font-black text-black/10 select-none pointer-events-none z-0">
-            3
-          </div>
+        <div
+  className="absolute text-[28rem] md:text-[36rem] leading-none font-black text-black/10 select-none pointer-events-none z-0 
+             left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
+             md:left-auto md:right-0 md:top-0 md:translate-x-0 md:translate-y-0"
+>
+  3
+</div>
+
 
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold text-[#027093] leading-normal mb-4">
@@ -146,13 +152,13 @@ function Overview() {
               platform where training, hiring, and transformation happen side by side.
             </h2>
             <p className="text-lg md:text-xl text-gray-700">
-              Since its inception, the Masterclass series has stood apart — for how grand it looks & for how deeply it connects. It’s where India's top corporates, trainers, and college stakeholders sit together to redefine education, placements, and skill-building. With each edition, the stakes have risen — and Masterclass 3.0 is the ultimate elevation.
+              Since its inception, the Masterclass series has stood apart — for how grand it looks & for how deeply it connects. It’s where India&apos;s top corporates, trainers, and college stakeholders sit together to redefine education, placements, and skill-building. With each edition, the stakes have risen — and Masterclass 3.0 is the ultimate elevation.
             </p>
           </div>
         </div>
 
         {/* Right Side - Circle Grid */}
-        <div className="md:w-1/2 flex justify-center items-center" data-aos="zoom-in">
+        <div className="md:w-1/2 flex justify-center items-center" >
           <div className="circle-wrapper">
             <div className="circle-grid-3x3">
               {hasEntered &&
@@ -166,5 +172,10 @@ function Overview() {
     </>
   );
 }
+ImageWithLoader.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+};
 
 export default Overview;
+
