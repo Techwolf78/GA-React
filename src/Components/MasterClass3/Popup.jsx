@@ -58,15 +58,14 @@ const PopupBanner = () => {
             backgroundPosition: "center",
           }}
         >
-          {/* Close Button Wrapper */}
-          <div className="absolute top-4 right-4 z-10">
-            <button
-              onClick={() => setShowPopup(false)}
-              className="text-white hover:text-gray-200 text-3xl font-bold"
-            >
-              &times;
-            </button>
-          </div>
+<button
+  onClick={() => setShowPopup(false)}
+  className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 text-white hover:text-gray-200 text-3xl font-bold bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center"
+  aria-label="Close"
+>
+  &times;
+</button>
+
 
           <div className="p-4 sm:p-6 md:p-8">
 
