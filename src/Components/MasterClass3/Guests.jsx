@@ -220,7 +220,7 @@ const GuestSpeakers = () => {
       </h2>
 
       <Section
-        title="College Owners"
+        title="Academic Leaders"
         people={collegeOwners}
         imageFull
         gridCols={4}

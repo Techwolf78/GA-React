@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import  { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -71,7 +71,7 @@ function AboutOffer() {
 
   return (
     <div className="bg-[#01224F] max-w-6xl mx-auto px-4 md:px-8 lg:px-16 py-4" data-aos="fade-up">
-      <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFC80E] text-center mb-8">
+      <p className="text-3xl md:text-3xl lg:text-4xl font-bold text-[#FFC80E] text-center mb-6">
         What We Offer
       </p>
 
@@ -79,31 +79,33 @@ function AboutOffer() {
         {/* Colleges Section - Left Side */}
         <div className="flex-1 flex flex-col items-center">
           <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4 text-center">For Colleges :</p>
-          <div className="space-y-4">
-            {collegeOffers.map((offer, index) => (
-              <div key={index} className="flex flex-col sm:flex-row items-center sm:space-x-4 sm:items-center">
-                <div className="flex-shrink-0 mb-2 sm:mb-0">
-                  {offer.icon}
-                </div>
-                <p className="text-sm md:text-xl  text-gray-200 text-center sm:text-left">{offer.description}</p>
-              </div>
-            ))}
-          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 w-full">
+  {collegeOffers.map((offer, index) => (
+    <div key={index} className="flex flex-col items-center text-center space-y-2">
+      <div className="flex-shrink-0">
+        {offer.icon}
+      </div>
+      <p className="text-sm md:text-xl text-gray-200">{offer.description}</p>
+    </div>
+  ))}
+</div>
+
         </div>
 
         {/* Corporates Section - Right Side */}
         <div className="flex-1 flex flex-col items-center">
           <p className="text-xl md:text-2xl font-semibold text-gray-100 mb-4 text-center">For Corporates :</p>
-          <div className="space-y-4">
-            {corporateOffers.map((offer, index) => (
-              <div key={index} className="flex flex-col sm:flex-row items-center sm:space-x-4 sm:items-center">
-                <div className="flex-shrink-0 mb-2 sm:mb-0">
-                  {offer.icon}
-                </div>
-                <p className="text-sm md:text-xl  text-white text-center sm:text-left">{offer.description}</p>
-              </div>
-            ))}
-          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 w-full">
+  {corporateOffers.map((offer, index) => (
+    <div key={index} className="flex flex-col items-center text-center space-y-2">
+      <div className="flex-shrink-0">
+        {offer.icon}
+      </div>
+      <p className="text-sm md:text-xl text-gray-200">{offer.description}</p>
+    </div>
+  ))}
+</div>
+
         </div>
       </div>
     </div>

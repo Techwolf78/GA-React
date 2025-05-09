@@ -65,7 +65,7 @@ const GallerySlider = () => {
       </div>
 
       {/* Gradient Overlay */}
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#00BFA6] to-transparent animate-fadeOutUp"></div>
+      <div className="absolute bottom-0 -left-2 w-full h-24 bg-gradient-to-t from-[#00BFA6] to-transparent animate-fadeOutUp"></div>
 
       <style>{`
         @keyframes scrollUp {
