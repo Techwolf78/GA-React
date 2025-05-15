@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Image, ScrollControls, useScroll } from '@react-three/drei';
 import { easing } from 'maath';
-import '../Components/util.js'; // Ensure you have the bent plane geometry and sine material defined
+import './util.js'; // Ensure you have the bent plane geometry and sine material defined
 
 const SuccessfulDrives = () => {
   const images = [

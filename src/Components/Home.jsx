@@ -1,14 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'; // Add this import
 import "../assets/CSS/home.css";
 import Testimonials from "./Testimonials";
 import HomeSliderClg from "./HomeSliderClg";
-import ConnectWithUs from "./ConnectWithUs";
+import ConnectWithUs from "./CollegeTraining/ConnectWithUs";
 import HomeSliderComp from "./HomeSliderComp";
-import SidebarToggle from "./SidebarToggle";  // Import the SidebarToggle component
-import PopupBanner from "../Components/MasterClass3/Popup"; // Import the Popup component
+import SidebarToggle from "./SidebarToggle";
+// import PopupBanner from "./MasterClass3/Popup";
 
-// ProgressBar Component
+// ProgressBar Component with PropTypes
 const ProgressBar = ({ scrollPercent }) => {
   return (
     <div className="progress-bar-container">
@@ -18,6 +19,16 @@ const ProgressBar = ({ scrollPercent }) => {
       ></div>
     </div>
   );
+};
+
+// Add PropTypes for ProgressBar
+ProgressBar.propTypes = {
+  scrollPercent: PropTypes.number.isRequired,
+};
+
+// Default props for ProgressBar
+ProgressBar.defaultProps = {
+  scrollPercent: 0,
 };
 
 const Home = () => {
@@ -76,31 +87,33 @@ const Home = () => {
     const navLinks = document.querySelectorAll(".stick-top-nav-ul li");
 
     let index = sections.length;
-    while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+    while (--index && window.scrollY + 50 < sections[index].offsetTop) {
+      // Intentionally left empty to find the active section index
+    }
     navLinks.forEach((link) => link.classList.remove("nav-active"));
     if (navLinks[index]) {
       navLinks[index].classList.add("nav-active");
     }
   };
 
-  useEffect(() => {
-    const cycleWords = () => {
-      setFadeFirst(true);
-      setFadeLast(true);
+useEffect(() => {
+  const cycleWords = () => {
+    setFadeFirst(true);
+    setFadeLast(true);
 
-      setTimeout(() => {
-        setFirstWordIndex((prevIndex) => (prevIndex + 1) % firstWords.length);
-        setLastWordIndex((prevIndex) => (prevIndex + 1) % lastWords.length);
+    setTimeout(() => {
+      setFirstWordIndex((prevIndex) => (prevIndex + 1) % firstWords.length);
+      setLastWordIndex((prevIndex) => (prevIndex + 1) % lastWords.length);
 
-        setFadeFirst(false);
-        setFadeLast(false);
-      }, 400);
-    };
+      setFadeFirst(false);
+      setFadeLast(false);
+    }, 400);
+  };
 
-    const interval = setInterval(cycleWords, 2000);
+  const interval = setInterval(cycleWords, 2000);
 
-    return () => clearInterval(interval);
-  }, []);
+  return () => clearInterval(interval);
+}, [firstWords.length, lastWords.length]); 
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -396,7 +409,7 @@ const Home = () => {
         <HomeSliderComp />
         <HomeSliderClg />
         <Testimonials />
-        <PopupBanner />
+        {/* <PopupBanner /> */}
       </div>
       <ConnectWithUs />
     </div>

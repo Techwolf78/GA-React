@@ -1,41 +1,81 @@
-import  { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Select from 'react-select';  // Import React Select
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ReCAPTCHA from "react-google-recaptcha";
+import Select from "react-select";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [category, setCategory] = useState(null); // State to track selected category
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false); // New state to track if form is submitted
+  const [category, setCategory] = useState(null);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
+  const [isOnCooldown, setIsOnCooldown] = useState(false);
 
-  // Category options for the React Select dropdown
   const categoryOptions = [
-    { value: 'student', label: 'Student' },
-    { value: 'company', label: 'Company' },
-    { value: 'college', label: 'College' },
+    { value: "student", label: "Student" },
+    { value: "company", label: "Company" },
+    { value: "college", label: "College" },
   ];
 
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+
+    // Rate-limiting check (if the form is on cooldown, prevent submitting)
+    if (isOnCooldown) {
+      toast.error("Please wait before submitting again.");
+      return;
+    }
+
+    // Check reCAPTCHA token
+    if (!recaptchaToken) {
+      toast.error("Please verify that you're not a robot.");
+      return;
+    }
+
     const formData = new FormData(e.target);
 
-    // Add the source as a hidden field
-    formData.append('source', 'Contact Form');
-    formData.append('category', category?.value); // Append selected category
+    // 🛡️ Honeypot spam check
+    if (formData.get("botcheck")) {
+      toast.error("Spam detected. Submission blocked.");
+      return;
+    }
 
-    fetch('https://script.google.com/macros/s/AKfycbzD2p4mf2qIUGsFQn0kyIfd9RelTaFbzJXaWAzp7TQ03Bd9IELeBA4y4Nl-dv_KbSznlg/exec', {
-      method: 'POST',
-      body: formData,
-    })
+    // ✅ Manual required check for category
+    if (!category) {
+      toast.error("Please select a category.");
+      return;
+    }
+
+    // Start the rate-limiting cooldown
+    setIsOnCooldown(true);
+
+    // Set cooldown timeout (30 seconds)
+    setTimeout(() => {
+      setIsOnCooldown(false); // Reset cooldown after 30 seconds
+    }, 30000);
+
+    setIsSubmitting(true);
+
+    formData.append("source", "Contact Form");
+    formData.append("category", category.value);
+    formData.append("recaptchaToken", recaptchaToken); // Add reCAPTCHA token to form data
+
+    // Send form data to server (Google Sheets API)
+    fetch(
+      "https://script.google.com/macros/s/AKfycbzD2p4mf2qIUGsFQn0kyIfd9RelTaFbzJXaWAzp7TQ03Bd9IELeBA4y4Nl-dv_KbSznlg/exec",
+      {
+        method: "POST",
+        body: formData,
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
-        if (data.status === 'success') {
-          toast.success('Form successfully submitted!');
-          setIsFormSubmitted(true); // Mark form as submitted
+        if (data.status === "success") {
+          toast.success("Form successfully submitted!");
+          setIsFormSubmitted(true);
           setTimeout(() => {
-            e.target.reset(); // Reset all form fields except category
-            setCategory(null); // Reset category to placeholder
+            e.target.reset();
+            setCategory(null);
             setIsSubmitting(false);
           }, 2000);
         } else {
@@ -44,16 +84,15 @@ const Contact = () => {
         }
       })
       .catch(() => {
-        toast.error('Error submitting form. Please try again.');
+        toast.error("Error submitting form. Please try again.");
         setIsSubmitting(false);
       });
   };
 
   return (
     <>
-      <ToastContainer position="top-center" autoClose={3000} hideProgressBar={true} />
+      <ToastContainer position="top-center" autoClose={3000} hideProgressBar />
 
-      {/* Contact Us Section */}
       <section className="py-16 bg-[#01224F] mx-auto mt-6 mb-6 px-8 md:px-16">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
@@ -64,13 +103,26 @@ const Contact = () => {
           </div>
 
           <div>
-            <form id="contactForm" onSubmit={handleSubmit} className="space-y-3">
-              {/* Hidden Source Field */}
-              <input type="hidden" name="source" value="Contact Form" />
+            <form
+              id="contactForm"
+              onSubmit={handleSubmit}
+              className="space-y-3"
+            >
+              {/* Hidden Honeypot Field */}
+              <input
+                type="text"
+                name="botcheck"
+                style={{ display: "none" }}
+                autoComplete="off"
+                tabIndex="-1"
+              />
 
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block mb-1 font-medium text-[#ffffff]">
+                <label
+                  htmlFor="name"
+                  className="block mb-1 font-medium text-[#ffffff]"
+                >
                   Name
                 </label>
                 <input
@@ -85,7 +137,10 @@ const Contact = () => {
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block mb-1 font-medium text-[#ffffff]">
+                <label
+                  htmlFor="email"
+                  className="block mb-1 font-medium text-[#ffffff]"
+                >
                   Email
                 </label>
                 <input
@@ -100,7 +155,10 @@ const Contact = () => {
 
               {/* Phone */}
               <div>
-                <label htmlFor="phone" className="block mb-1 font-medium text-[#ffffff]">
+                <label
+                  htmlFor="phone"
+                  className="block mb-1 font-medium text-[#ffffff]"
+                >
                   Phone Number
                 </label>
                 <input
@@ -113,48 +171,43 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Category (Custom React Select Dropdown) */}
+              {/* Category */}
               <div>
-                <label htmlFor="category" className="block mb-1 font-medium text-[#ffffff]">
+                <label
+                  htmlFor="category"
+                  className="block mb-1 font-medium text-[#ffffff]"
+                >
                   Category
                 </label>
                 <Select
                   id="category"
                   name="category"
                   value={category}
-                  onChange={setCategory} // Update state on change
+                  onChange={setCategory}
                   options={categoryOptions}
                   placeholder="Select Category"
-                  className="react-select-container"
-                  classNamePrefix="react-select"
-                  isSearchable={false} // Optional: Disable search functionality
+                  isSearchable={false}
                   styles={{
                     control: (styles) => ({
                       ...styles,
-                      borderColor: '#2e4d80',
-                      borderRadius: '8px',
-                      padding: '2px',
-                      minHeight: '40px',
+                      borderColor: "#2e4d80",
+                      borderRadius: "8px",
+                      padding: "2px",
+                      minHeight: "40px",
                     }),
-                    placeholder: (styles) => ({
-                      ...styles,
-                      color: '#a3a0a0', // Grey color for placeholder
-                    }),
-                    singleValue: (styles) => ({
-                      ...styles,
-                      color: '#091327', // Black color for selected option
-                    }),
-                    option: (styles) => ({
-                      ...styles,
-                      color: '#091327', // Black color for options
-                    }),
+                    placeholder: (styles) => ({ ...styles, color: "#a3a0a0" }),
+                    singleValue: (styles) => ({ ...styles, color: "#091327" }),
+                    option: (styles) => ({ ...styles, color: "#091327" }),
                   }}
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block mb-1 font-medium text-[#ffffff]">
+                <label
+                  htmlFor="message"
+                  className="block mb-1 font-medium text-[#ffffff]"
+                >
                   Message
                 </label>
                 <textarea
@@ -167,14 +220,26 @@ const Contact = () => {
                 ></textarea>
               </div>
 
+              <ReCAPTCHA
+                sitekey="6LclNjkrAAAAACgSlm5lRuUtzi2H9EIIdi62NPCb"
+                onChange={(token) => setRecaptchaToken(token)}
+                theme="light" // or "dark"
+                className="my-4"
+              />
+
               {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isSubmitting || isFormSubmitted}  // Disable if submitting or already submitted
-                className={`w-full text-[#091327] py-3 rounded-lg font-bold transition-all duration-300 ${isSubmitting || isFormSubmitted ? 'bg-gradient-to-r from-[#FFC80E] to-[#e0a800] opacity-50 cursor-not-allowed' : 'bg-gradient-to-r from-[#FFC80E] to-[#ffab00] hover:scale-105 hover:from-[#ff9a00] hover:to-[#f4a261]'} `}
-              >
-                {isSubmitting ? 'Submitting...' : isFormSubmitted ? 'Submitted' : 'Send Message'}
-              </button>
+<button
+  type="submit"
+  disabled={isSubmitting || isOnCooldown || isFormSubmitted}
+  className={`w-full text-[#091327] py-3 rounded-lg font-bold transition-all duration-300 ${
+    isSubmitting || isOnCooldown || isFormSubmitted
+      ? "bg-gradient-to-r from-[#FFC80E] to-[#e0a800] opacity-50 cursor-not-allowed"
+      : "bg-gradient-to-r from-[#FFC80E] to-[#ffab00] hover:scale-105 hover:from-[#ff9a00] hover:to-[#f4a261]"
+  }`}
+>
+  {isSubmitting ? "Submitting..." : isFormSubmitted ? "Submitted" : "Send Message"}
+</button>
+
             </form>
           </div>
         </div>
@@ -187,7 +252,10 @@ const Contact = () => {
           <div className="p-6 text-center bg-[#1e3a8a] rounded-lg shadow-lg transition-transform hover:scale-105">
             <i className="bx bx-location-plus text-4xl text-[#FFC80E] mb-4"></i>
             <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Address</h4>
-            <p className="text-[#ffffff]">9th Floor, Olympia Business House (Achalare), Next to Supreme HQ, Mumbai - Banglore, Highway Baner, Pune Maharashtra - 411045</p>
+            <p className="text-[#ffffff]">
+              9th Floor, Olympia Business House (Achalare), Next to Supreme HQ,
+              Mumbai - Banglore, Highway Baner, Pune Maharashtra - 411045
+            </p>
           </div>
 
           {/* Phone */}
@@ -202,7 +270,9 @@ const Contact = () => {
           <div className="p-6 text-center bg-[#1e3a8a] rounded-lg shadow-lg transition-transform hover:scale-105">
             <i className="bx bx-envelope text-4xl text-[#FFC80E] mb-4"></i>
             <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Email</h4>
-            <p className="text-[#ffffff] break-all overflow-wrap-break-word">connect@gryphonacademy.co.in</p>
+            <p className="text-[#ffffff] break-all overflow-wrap-break-word">
+              connect@gryphonacademy.co.in
+            </p>
           </div>
         </div>
       </div>

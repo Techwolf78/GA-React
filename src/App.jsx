@@ -1,35 +1,35 @@
 import  { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import '../src/Components/App.css';
+import './components/App.css';
 import "@fontsource/roboto";
 import './App.css'; 
-import Home from './Components/Home.jsx'; 
-import MasterClass3 from './Components/MasterClass3';
-import About from './Components/About'; 
-import GAX from './Components/GAX'; 
-import Blogs from './Components/Blogs'; 
-import Footer from './Components/Footer'; 
-import Navbar from './Components/Navbar'; 
-import Placement from './Components/Placement'; 
-import Contact from './Components/Contact'; 
-import Training from './Components/Training';
-import BrandPositioning from './Components/BrandPositioning'; // Import the page
-import CollegeTraining from './Components/CollegeTraining';
-import CorporateTraining from './Components/CorporateTraining';
-import FacultyTraining from './Components/FacultyTraining'; 
-import WhatsAppWidget from './Components/WhatsAppWidget'; 
-import ScrollToTopButton from './Components/ScrollToTopButton'; 
-import Post1 from './Components/BlogPages/Post1';
-import Post2 from './Components/BlogPages/Post2';
-import Post3 from './Components/BlogPages/Post3';
-import Post4 from './Components/BlogPages/Post4';
-import Post5 from './Components/BlogPages/Post5';
-import Post6 from './Components/BlogPages/Post6';
-import NotFound from './Components/NotFound'; // Import the NotFound component
-import DecEvent from './Components/DecEvent'; // Import the DecEvent component
-import DecEventGroundZero from './Components/DecEventGroundZero'; // Import the Ground Zero page component
-import Loader from './Components/Loader'; // Import the loader component
-import DecEventAgenda from './Components/DecEventAgenda'; // Import the DecEventAgenda component
+import Home from './components/Home.jsx'; 
+import MasterClass3 from './components/MasterClass3';
+import About from './components/About'; 
+import GAX from './components/GAX'; 
+import Blogs from './components/Blogs'; 
+import Footer from './components/Footer'; 
+import Navbar from './components/Navbar'; 
+import Placement from './components/Placement'; 
+import Contact from './components/Contact'; 
+import Training from './pages/Training';
+import BrandPositioning from './components/BrandPositioning'; // Import the page
+import CollegeTraining from './pages/CollegeTraining';
+import CorporateTraining from './pages/CorporateTraining';
+import FacultyTraining from './pages/FacultyTraining'; 
+import WhatsAppWidget from './components/WhatsAppWidget'; 
+import ScrollToTopButton from './components/ScrollToTopButton'; 
+import Post1 from './components/BlogPages/Post1';
+import Post2 from './components/BlogPages/Post2';
+import Post3 from './components/BlogPages/Post3';
+import Post4 from './components/BlogPages/Post4';
+import Post5 from './components/BlogPages/Post5';
+import Post6 from './components/BlogPages/Post6';
+import NotFound from './components/NotFound'; // Import the NotFound component
+import DecEvent from './components/DecEvent'; // Import the DecEvent component
+import DecEventGroundZero from './components/DecEventGroundZero'; // Import the Ground Zero page component
+import Loader from './components/Loader'; // Import the loader component
+import DecEventAgenda from './components/DecEventAgenda'; // Import the DecEventAgenda component
 
 function App() {
   const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
@@ -99,30 +99,18 @@ function App() {
     };
   }, []);
 
-  // Display the WhatsApp Widget only after scrolling on /brandPositioning page
-  useEffect(() => {
-    if (location.pathname === '/brandPositioning') {
-      const handleScroll = () => {
-        if (window.scrollY > 100) {
-          setShowWhatsAppWidget(true); // Show widget after scrolling
-        } else {
-          setShowWhatsAppWidget(false); // Hide widget if not scrolled
-        }
-      };
+useEffect(() => {
+  const timer = setTimeout(() => {
+    setShowWhatsAppWidget(true); // Show after 3 seconds
+  }, 3000);
 
-      // Listen to scroll event when on /brandPositioning page
-      window.addEventListener('scroll', handleScroll);
-
-      // Cleanup event listener on component unmount or route change
-      return () => window.removeEventListener('scroll', handleScroll);
-    }
-  }, [location.pathname]);
+  return () => clearTimeout(timer); // Cleanup on unmount
+}, []);
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/agenda" element={<><Navbar /><DecEventAgenda /></>} />
         <Route path="/ground-zero" element={<DecEventGroundZero />} />
         <Route path="/about-us" element={<><Navbar /><About /></>} />

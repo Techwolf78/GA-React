@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useInView } from "react-intersection-observer";
@@ -243,7 +243,7 @@ const ContactForm = () => {
               <div className="w-full lg:h-auto flex flex-col lg:flex-row justify-between items-center mb-4 relative p-4">
                 <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-center text-white mb-4 lg:mb-0 lg:mr-4 flex-1">
                   <span className="text-[#FFC80E]">Elevate </span> Your Team:
-                  Learn More About Gryphon's{" "}
+                  Learn More About Gryphon&apos;s{" "}
                   <span className="text-[#FFC80E]">
                     Corporate Training Programs
                   </span>{" "}
@@ -303,6 +303,7 @@ const ContactForm = () => {
                   onChange={(e) =>
                     setFormState({ ...formState, name: e.target.value })
                   }
+                   fadeInStyle={fadeInStyle}
                 />
                 <InputField
                   label="Email"
@@ -313,6 +314,7 @@ const ContactForm = () => {
                   onChange={(e) =>
                     setFormState({ ...formState, email: e.target.value })
                   }
+                   fadeInStyle={fadeInStyle}
                 />
                 <InputField
                   label="Phone Number"
@@ -323,6 +325,7 @@ const ContactForm = () => {
                   onChange={(e) =>
                     setFormState({ ...formState, phone: e.target.value })
                   }
+                   fadeInStyle={fadeInStyle}
                 />
                 <SelectField
                   label="Category"
@@ -331,6 +334,7 @@ const ContactForm = () => {
                   onChange={(e) =>
                     setFormState({ ...formState, category: e.target.value })
                   }
+                   fadeInStyle={fadeInStyle}
                 />
                 <TextareaField
                   label="Message"
@@ -340,11 +344,12 @@ const ContactForm = () => {
                   onChange={(e) =>
                     setFormState({ ...formState, message: e.target.value })
                   }
+                   fadeInStyle={fadeInStyle}
                 />
                 <button
                   type="submit"
                   className={`bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors w-full ${isSubmitting || isFormSubmitted ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  disabled={isSubmitting || isFormSubmitted} // Disable if submitting or form is already submitted
+                  disabled={isSubmitting || isFormSubmitted} // Disable if submitting or form is already submitted 
                 >
                   {isSubmitting ? 'Submitting...' : isFormSubmitted ? 'Already Submitted' : 'Send Message'}
                 </button>

@@ -11,7 +11,7 @@ import AboutHero from "./AboutHero";
 import AboutOffer from "./AboutOffer";
 import AboutLeaders from "./AboutLeaders";
 // import AboutAwards from "./AboutAwards";
-import ConnectWithUs from "./ConnectWithUs";
+import ConnectWithUs from "./CollegeTraining/ConnectWithUs";
 import AboutNew from "./AboutNew";
 
 const About = () => {

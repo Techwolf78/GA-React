@@ -50,7 +50,7 @@ function WhyTraining() {
             {/* Left Content */}
             <div className="flex-1 mb-6 lg:mb-0 flex flex-col items-center lg:items-start w-full lg:w-3/12">
               <p
-                className="text-1xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold mb-4 text-center lg:text-left "
+                className="text-2xl  md:text-3xl lg:text-4xl font-extrabold mb-4 text-center lg:text-left "
                 style={{ color: '#FFC80E' }}
               >
                 How This Training Creates Industry Fit?
