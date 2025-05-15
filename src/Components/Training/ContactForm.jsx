@@ -158,7 +158,7 @@ const ContactForm = () => {
     // Append the source value to formData
     formData.append("source", formState.source);
 
-    if (isSubmitting || isFormSubmitted) return; // Prevent submission if already submitted
+    if (isSubmitting || isFormSubmitted) return; // Prevent submission if already submitt
 
     setIsSubmitting(true);
 
