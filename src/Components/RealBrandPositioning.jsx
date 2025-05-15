@@ -12,6 +12,8 @@ import BrandContact from './BrandContact';
 import DmEvents from './DmEvents';
 import Dmvideo from './Dmvideo';
 import DigitalHero from './DigitalHero';
+import DigitalMarketing from './DigitalMarketing';
+import DigitalMarketingSM from './DigitalMarketingSM';
 
 const BrandPositioning = () => {
   const tryPageRef = useRef(null);
@@ -41,14 +43,16 @@ const BrandPositioning = () => {
       {/* <div ref={tryPageRef}>
    
       </div> */}
-     {/* <TryPage /> */}
+     <TryPage />
       {/* Other Sections
 
       {/**/}
       {/* <Events /> */}
       {/* <DmHookLine /> */}
       {/* <DmEvents />  */}
-      <BusinessServices />
+      {/* <BusinessServices /> */}
+      <DigitalMarketing />
+      <DigitalMarketingSM />
       <BrandPositioningWhyChoose />
       {/* <Guest /> */}
       <BrandContact />
@@ -57,4 +61,3 @@ const BrandPositioning = () => {
 };
 
 export default BrandPositioning;
-

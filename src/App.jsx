@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import '../src/Components/App.css';
 import "@fontsource/roboto";
 import './App.css'; 
 import Home from './Components/Home.jsx'; 
+import MasterClass3 from './Components/MasterClass3';
 import About from './Components/About'; 
 import GAX from './Components/GAX'; 
 import Blogs from './Components/Blogs'; 
@@ -48,89 +49,43 @@ function App() {
     setLoaderFinished(true); // Set the loader as finished
   };
 
-  // Dynamically set the page title based on the route
   useEffect(() => {
     const baseTitle = "Gryphon Academy | Bridging the Gap Between Industry and Academia";
-    let pageTitle = "";
-
-    switch (location.pathname) {
-      case "/":
-        pageTitle = "Home";
-        break;
-      case "/test":
-        pageTitle = "Home";
-        break;
-      case "/about-us":
-        pageTitle = "About Us";
-        break;
-      case "/gax":
-        pageTitle = "GAX";
-        break;
-      case "/blogs":
-        pageTitle = "Blogs";
-        break;
-      case "/placement":
-        pageTitle = "Placement";
-        break;
-      case "/contact":
-        pageTitle = "Contact Us";
-        break;
-      case "/brandPositioning":
-        pageTitle = "Brand Positioning";
-        break;
-      case "/training":
-        pageTitle = "Training";
-        break;
-      case "/collegeTraining":
-        pageTitle = "College Training";
-        break;
-      case "/corporatetraining":
-        pageTitle = "Corporate Training";
-        break;
-      case "/facultytraining":
-        pageTitle = "Faculty Training";
-        break;
-      case "/events":
-        pageTitle = "Events";
-        break;
-      case "/agenda":
-        pageTitle = "Agenda";
-        break;
-      case "/post1":
-        pageTitle = "Blog Post 1";
-        break;
-      case "/post2":
-        pageTitle = "Blog Post 2";
-        break;
-      case "/post3":
-        pageTitle = "Blog Post 3";
-        break;
-      case "/post4":
-        pageTitle = "Blog Post 4";
-        break;
-      case "/post5":
-        pageTitle = "Blog Post 5";
-        break;
-      case "/post6":
-        pageTitle = "Blog Post 6";
-        break;
-      case "/login":
-        pageTitle = "Login";
-        break;
-      case "/forget-password":
-        pageTitle = "Forget Password";
-        break;
-      default:
-        pageTitle = "Page Not Found";
-    }
-
+  
+    const titleMap = {
+      "/": "Home",
+      "/masterclass3": "Masterclass 3.0",
+      "/test": "Home",
+      "/about-us": "About Us",
+      "/gax": "GAX",
+      "/blogs": "Blogs",
+      "/placement": "Placement",
+      "/contact": "Contact Us",
+      "/brandPositioning": "Brand Positioning",
+      "/training": "Training",
+      "/collegeTraining": "College Training",
+      "/corporatetraining": "Corporate Training",
+      "/facultytraining": "Faculty Training",
+      "/events": "Events",
+      "/agenda": "Agenda",
+      "/post1": "Blog Post 1",
+      "/post2": "Blog Post 2",
+      "/post3": "Blog Post 3",
+      "/post4": "Blog Post 4",
+      "/post5": "Blog Post 5",
+      "/post6": "Blog Post 6",
+    };
+  
+    const pageTitle = titleMap[location.pathname] || "Page Not Found";
+  
     document.title = `${pageTitle} | ${baseTitle}`;
-    
+  
     // Track the page view with Google Analytics
     window.gtag('event', 'page_view', {
       page_path: location.pathname + location.search,
     });
-  }, [location]); // Re-run whenever location changes
+  }, [location]);
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -167,11 +122,13 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/agenda" element={<><Navbar /><DecEventAgenda /></>} />
         <Route path="/ground-zero" element={<DecEventGroundZero />} />
         <Route path="/about-us" element={<><Navbar /><About /></>} />
         <Route path="/about-us/" element={<><Navbar /><About /></>} />
         <Route path="/gax" element={<><Navbar /><GAX /></>} />
+        <Route path="/masterclass3" element={<MasterClass3 />} />
         <Route path="/blogs" element={<><Navbar /><Blogs /></>} />
         <Route path="/post1" element={<><Navbar /><Post1 /></>} />
         <Route path="/post2" element={<><Navbar /><Post2 /></>} />
@@ -196,14 +153,14 @@ function App() {
             )}
           </>
         } />
-        <Route path="/collegeTraining" element={<><Navbar /><CollegeTraining /></>} />
+       <Route path="/collegetraining" element={<><Navbar /><CollegeTraining /></>} />
+
         <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {/* Conditionally render the WhatsApp Widget only on the /brandPositioning page after scrolling down */}
-      {location.pathname === '/brandPositioning' && showWhatsAppWidget && <WhatsAppWidget />}
+      {showWhatsAppWidget && (<WhatsAppWidget />)}
       
       <ScrollToTopButton visible={scrollVisible} />
       <Footer />

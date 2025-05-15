@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faMobileAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -64,7 +64,8 @@ const Footer = () => {
             <li className="flex items-center justify-center md:justify-start">
               <FontAwesomeIcon icon={faMobileAlt} className="text-yellow-400 mr-2" />
               <p className="text-sm">
-                <a href="tel:+918983614509" className="hover:underline hover:text-yellow-400 transition duration-300">+91 89836 14509 / 8983339099</a>
+                {/* <a href="tel:+918983614509" className="hover:underline hover:text-yellow-400 transition duration-300">+91 89836 14509 / 8983339099</a> */}
+                <a href="tel:+918983614509" className="hover:underline hover:text-yellow-400 transition duration-300">+91 78758 95160</a>
               </p>
             </li>
             <li className="flex items-center justify-center md:justify-start">

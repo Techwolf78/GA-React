@@ -1,47 +1,48 @@
 import React, { useState } from "react";
-
+ 
 const ServicesSection = () => {
   const [activeIndex, setActiveIndex] = useState(1);
-
+ 
   const slides = [
     {
       img: "https://www.digitalsilk.com/wp-content/uploads/2022/11/Digital-marketing-agency-services-marketing-strategy-1820x559.jpg",
       alt: "Digital marketing agency services digital marketing",
-      title: "Marketing Strategy",
+      title: "HR Events ",
       description:
-        "Create effective marketing strategies for growth. We help you to create a marketing strategy that will help you to grow your business.",
+        "Empower students with industry-focused HR conclaves and workshops.",
+     
       bgColor: "#ab598f", // Add a custom background color for each slide
     },
     {
       img: "https://www.digitalsilk.com/wp-content/uploads/2022/11/Digital-marketing-agency-services-SEO-1-1820x559.jpg",
       alt: "Digital marketing agency services SEO",
-      title: "SEO Services",
+      title: "Annual Events ",
       description:
-        "Optimize your website for better search rankings. We help you to optimize your website for better search rankings.",
+        "From cultural fests to annual celebrations, we make them extraordinary.",
       bgColor: "#4a61dd", // Custom background color
     },
     {
       img: "https://www.digitalsilk.com/wp-content/uploads/2022/11/Digital-marketing-agency-services-Social-and-paid-Media-1820x559.jpg",
       alt: "Digital marketing agency services social and paid media",
-      title: "Social & Paid Media",
+      title: "Placement Drives",
       description:
-        "Drive engagement with targeted social and paid campaigns. We help you to drive engagement with targeted social and paid campaigns.",
+        "Tailored events to connect students with top recruiters.",
       bgColor: "#a00ab2", // Custom background color
     },
     {
       img: "https://www.digitalsilk.com/wp-content/uploads/2022/11/Digital-marketing-agency-services-Copywriting-1-1820x559.jpg",
       alt: "Digital marketing agency services copywriting and content creation",
-      title: "Content Creation",
+      title: "Student Development Programs",
       description:
-        "Create high-quality copy for engaging content. We help you to create high-quality copy for engaging content.",
+        "Organize engaging sessions to enhance student skills.",
       bgColor: "#0fb0a9", // Custom background color
     },
   ];
-
+ 
   const handleColumnHover = (index) => {
     setActiveIndex(index);
   };
-
+ 
   return (
     <section
       className="services-section roboto-regular"
@@ -51,12 +52,13 @@ const ServicesSection = () => {
       }}
     >
       <div className="container px-8 md:px-16">
-        <div className="text-center text-semibold text-4xl">
+        <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-4xl font-extrabold text-gray-950 mb-6 sm:mb-8 text-center">
           <h1>
-            Digital Marketing Services
-            <br />
-            At a Glance
+          WE CREATE IMPACTFUL EVENTS FOR COLLEGES
           </h1>
+          <p className="text-lg sm:text-xl font-medium text-gray-200 mb-12">
+          Memorable Moments, Seamless Execution
+        </p>
         </div>
         {/* Background change on hover effect */}
         <div className="slider-container">
@@ -85,7 +87,7 @@ const ServicesSection = () => {
           </div>
         </div>
       </div>
-
+ 
       {/* Internal styles */}
       <style>{`
 .services-section {
@@ -94,12 +96,12 @@ const ServicesSection = () => {
   position: relative;
   transition: background-color 0.3s ease; /* Smooth transition for background */
 }
-
+ 
 .container {
   width: 100%;
   margin: 0 auto;
 }
-
+ 
 .text-center h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -107,14 +109,15 @@ const ServicesSection = () => {
   font-weight: bold;
   color: white;
 }
-
+ 
+ 
 .slider-container {
   position: relative;
   height: 400px; /* Fixed height for the background image */
   background-color: #333;
   transition: background-image 0.3s ease;
 }
-
+ 
 .slider-background {
   position: absolute;
   top: 0;
@@ -126,7 +129,7 @@ const ServicesSection = () => {
   opacity: 0.9;  /* To make sure text is visible */
   z-index: 1;
 }
-
+ 
 .columns {
   display: flex;
   justify-content: space-between;
@@ -136,7 +139,7 @@ const ServicesSection = () => {
   z-index: 2; /* Ensure text appears above the background */
   height: 100%; /* Make columns fill the height of the slider container */
 }
-
+ 
 .column {
   flex: 1;
   height: 100%;  /* Ensure columns take the full height of the slider container */
@@ -150,11 +153,11 @@ const ServicesSection = () => {
   border: 1px solid #333;  /* Optional: add a border for better visibility */
   overflow: hidden; /* Prevent content from overflowing */
 }
-
+ 
 .column.active {
   background-color: rgba(0, 0, 0, 0.3); /* Black overlay only for the active column */
 }
-
+ 
 .column-title {
   font-size: 1.5rem;
   margin: 0;
@@ -164,7 +167,7 @@ const ServicesSection = () => {
   align-items: flex-start; /* Align both the number and title to the left */
   transition: transform 0.3s ease, padding-bottom 0.3s ease; /* Smooth transition for title movement */
 }
-
+ 
 .number {
   font-size: 2.5rem;
   margin: 0;
@@ -173,12 +176,12 @@ const ServicesSection = () => {
   line-height: 1; /* Prevent the number from taking up extra space */
   margin-bottom: 0.25rem; /* Space between the number and the title */
 }
-
+ 
 .column-title span {
   white-space: normal; /* Allow wrapping of the title */
   word-wrap: break-word; /* Break long words if necessary */
 }
-
+ 
 .column-description {
   font-size: 1rem;
   margin-top: 0.5rem;
@@ -187,30 +190,31 @@ const ServicesSection = () => {
   transform: translateY(20px);  /* Start below the viewport */
   transition: opacity 0.3s ease, visibility 0s ease 0.3s, transform 0.3s ease; /* Smooth transition for description */
 }
-
+ 
 /* New style for the yellow number */
 .column-title .number {
   color: #FFCC00; /* Yellow color for the number */
   font-weight: bold;
   margin-right: 0.5rem;
 }
-
+ 
 /* Hover Effects */
 .column.active .column-title {
   transform: translateY(-20px); /* Move the title up */
  
 }
-
+ 
 .column.active .column-description {
   opacity: 1; /* Make description visible */
   visibility: visible; /* Make it take space */
   transform: translateY(0); /* Bring the description into view */
   transition: opacity 0.3s ease, visibility 0s ease 0s, transform 0.3s ease; /* Smooth transition for description */
 }
-
+ 
       `}</style>
     </section>
   );
 };
-
+ 
 export default ServicesSection;
+ 

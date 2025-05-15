@@ -5,6 +5,8 @@ import Testimonials from "./Testimonials";
 import HomeSliderClg from "./HomeSliderClg";
 import ConnectWithUs from "./ConnectWithUs";
 import HomeSliderComp from "./HomeSliderComp";
+import SidebarToggle from "./SidebarToggle";  // Import the SidebarToggle component
+import PopupBanner from "../Components/MasterClass3/Popup"; // Import the Popup component
 
 // ProgressBar Component
 const ProgressBar = ({ scrollPercent }) => {
@@ -186,72 +188,12 @@ const Home = () => {
         </nav>
       </div>
 
-      <div
-        className={`sidebar ${isSidebarOpen ? "open" : ""}`}
-        ref={sidebarRef}
-      >
-        <ul>
-          <li>
-            <Link to="/training" onClick={scrollToTop}>
-              <i className="fas fa-chalkboard-teacher"></i>
-              <span>Learning & Development</span>
-            </Link>
-            <ul>
-              <li>
-                <Link to="/collegeTraining" onClick={scrollToTop}>
-                  <i className="fas fa-university"></i>
-                  <span>Industry Readiness Program</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/corporateTraining" onClick={scrollToTop}>
-                  <i className="fas fa-briefcase"></i>
-                  <span>Corporate Training</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/facultyTraining" onClick={scrollToTop}>
-                  <i className="fas fa-user-graduate"></i>
-                  <span>Faculty Training</span>
-                </Link>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <Link to="/placement" onClick={scrollToTop}>
-              <i className="fas fa-handshake"></i>
-              <span>Campus Placements</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/events" onClick={scrollToTop}>
-              <i className="fas fa-bullhorn"></i>
-              <span>Synergy Sphere 2024</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/blogs" onClick={scrollToTop}>
-              <i className="fas fa-pencil-alt"></i>
-              <span>Blogs</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" onClick={scrollToTop}>
-              <i className="fas fa-phone-alt"></i>
-              <span>Contact Us</span>
-            </Link>
-          </li>
-        </ul>
-      </div>
-
-      <button
-        ref={sidebarToggleRef}
-        className={`sidebar-toggle ${isSidebarOpen ? "cross" : ""}`}
-        id="sidebar-toggle"
-        onClick={toggleSidebar}
-      >
-        <div></div>
-      </button>
+      <SidebarToggle
+        isSidebarOpen={isSidebarOpen}
+        toggleSidebar={toggleSidebar}
+        sidebarToggleRef={sidebarToggleRef}
+        scrollToTop={scrollToTop}
+      />
 
       <Link to="#" className="company-logo-link">
         <div className="company-logo"></div>
@@ -281,7 +223,7 @@ const Home = () => {
               </div>
 
               {/* Bridge Image Container */}
-              <div className="image-container">
+              <div className="image-container px-2">
                 <img
                   src="bridge.avif" // Replace with actual image URL
                   alt="Bridge"
@@ -454,6 +396,7 @@ const Home = () => {
         <HomeSliderComp />
         <HomeSliderClg />
         <Testimonials />
+        <PopupBanner />
       </div>
       <ConnectWithUs />
     </div>

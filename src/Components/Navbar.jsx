@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from "react"; 
-
+import { useState, useEffect, useRef } from "react";
 
 const Navbar = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -72,9 +71,9 @@ const Navbar = () => {
       >
         <a className="navbar-brand" href="/">
           <img
-            src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1732608342/NewLogo_glaelo.webp"
+            src="../../ga-hori.png"
             alt="Company logo"
-            className="w-36 h-auto"
+            className="w-36 md:w-56 h-auto"
           />
         </a>
 
@@ -84,7 +83,7 @@ const Navbar = () => {
             className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
-             Home
+            Home
           </a>
 
           <div
@@ -99,7 +98,7 @@ const Navbar = () => {
               aria-expanded={isDropdownOpen}
               className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-2 flex items-center justify-center transition-colors duration-300"
             >
-               Learning & Development
+              Learning & Development
               <i className="fas fa-chevron-down ml-1"></i>
             </button>
 
@@ -132,7 +131,7 @@ const Navbar = () => {
               className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-2 flex items-center justify-center transition-colors duration-300"
               onClick={handleCrossBrandClick}
             >
-               Synergy Sphere 2024
+              Synergy Sphere 2024
               <i className="fas fa-chevron-down ml-1"></i>
             </button>
 
@@ -157,7 +156,7 @@ const Navbar = () => {
             className="hover:bg-[#ffc700] hover:text-[#1a1a1a] py-2 px-4 transition-colors duration-300"
             onClick={handleSidebarItemClick}
           >
-             Campus Placement
+            Campus Placement
           </a>
           <a
             href="/blogs"
@@ -181,7 +180,7 @@ const Navbar = () => {
           className={`fixed top-0 left-0 h-full bg-white bg-opacity-90 text-black z-40 overflow-x-hidden transition-all duration-300 transform ${isSidebarOpen ? "translate-x-0 w-full" : "-translate-x-full w-0"}`}
         >
           <button
-            className="absolute top-2 right-2 w-12 h-12 rounded-full bg-[#ffc700] flex items-center justify-center text-black text-4xl focus:outline-none"
+            className="absolute top-2 right-2 w-8 h-8 rounded-full bg-[#ffc700] flex items-center justify-center text-black text-2xl focus:outline-none"
             onClick={toggleSidebar}
           >
             <i className="fas fa-times"></i>

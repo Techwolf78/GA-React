@@ -24,7 +24,7 @@ const AboutHero = () => {
       </div>
       <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0" data-aos="zoom-in">
         <img 
-          src="/About/heroNew1.png" // Replace with your vector graphic path
+          src="/About/heroNew1.avif" // Replace with your vector graphic path
           alt="Vector Graphic"
           className="max-w-full h-auto"
         />

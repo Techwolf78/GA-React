@@ -63,7 +63,7 @@ const Blog = () => {
   return (
     <section className="py-10 px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16 text-center bg-[#01224F] roboto-regular">
       <div className="container mx-auto">
-        <p className="text-[#ffc700] mb-12 text-4xl md:text-4xl font-bold">
+        <p className="text-[#ffc700] mb-12 md:mt-8 text-4xl md:text-4xl font-bold">
           Latest Blog Posts
         </p>
         <div className="flex flex-wrap -mx-4">

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import HeroCorporate from './HeroCorporate';
 import ElevateYourWorkforce from './ElevateYourWorkforce'; 
 import CorporateChallenge from './CorporateChallenge';
@@ -8,14 +7,6 @@ import ConnectWithUs from './ConnectWithUs';
 // import CorporateTrainers from './CorporateTrainers';
 
 const CorporateTraining = () => {
-  useEffect(() => {
-    const loadComponents = async () => {
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate delay
-    };
-
-    loadComponents();
-  }, []);
-
   return (
     <div>
       <HeroCorporate />
@@ -24,7 +15,7 @@ const CorporateTraining = () => {
       <CorporateAppoarch />
       {/* <CorporateTrainers /> */}
       <ContactCorporate />
-      <div style={{ margin: '20px 0' }}> {/* Add margin above and below */}
+      <div style={{ margin: '20px 0' }}> {/* Add margin above and below */} 
         <ConnectWithUs />
       </div>
     </div>
