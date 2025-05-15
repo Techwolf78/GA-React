@@ -1,19 +1,35 @@
-import React, { useEffect, useRef } from 'react';
+import  { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
 const WhatsAppWidget = () => {
-  const widgetRef = useRef(null); // Reference for the WhatsApp widget
+  const widgetRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isSmallMobile, setIsSmallMobile] = useState(false);
 
   useEffect(() => {
-    // GSAP animation for the floating effect
+    // GSAP animation
     gsap.to(widgetRef.current, {
-      y: '+=15', // Move 15px vertically
-      repeat: -1, // Infinite loop
-      yoyo: true, // Reverse the animation
-      duration: 2, // 2 seconds for the full up and down movement
-      ease: 'power1.inOut', // Smooth easing
+      y: '+=15',
+      repeat: -1,
+      yoyo: true,
+      duration: 2,
+      ease: 'power1.inOut',
     });
+
+    // Media query check
+    const checkScreenSize = () => {
+      setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+      setIsSmallMobile(window.matchMedia('(max-width: 480px)').matches);
+    };
+
+    checkScreenSize(); // Initial check
+    window.addEventListener('resize', checkScreenSize); // Listen for resize
+
+    return () => window.removeEventListener('resize', checkScreenSize); // Cleanup
   }, []);
+
+  // Determine icon size based on screen width
+  const iconSize = isSmallMobile ? 40 : isMobile ? 50 : 60;
 
   return (
     <a
@@ -21,12 +37,12 @@ const WhatsAppWidget = () => {
       target="_blank"
       rel="noopener noreferrer"
       style={styles.widget}
-      ref={widgetRef} // Apply ref to the widget
+      ref={widgetRef}
     >
       <img
-        src="/LandingImage/whatsapp.avif" // Add your icon image
+        src="/LandingImage/whatsapp.avif"
         alt="WhatsApp"
-        style={styles.icon}
+        style={{ ...styles.icon, width: `${iconSize}px`, height: `${iconSize}px` }}
       />
     </a>
   );
@@ -40,8 +56,7 @@ const styles = {
     zIndex: 1000,
   },
   icon: {
-    width: '60px',
-    height: '60px',
+    transition: 'all 0.3s ease',
   },
 };
 

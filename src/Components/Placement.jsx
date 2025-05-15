@@ -9,7 +9,7 @@ import Advisory from "./Advisory";
 import RecruiterTestimonial from "./RecruiterTestimonial";
 import SuccessfulDrives from "./SuccessfulDrives";
 import MajorRecruiter from "./MajorRecruiter";
-import ConnectWithUs from "./ConnectWithUs";
+import ConnectWithUs from "./CollegeTraining/ConnectWithUs";
 import HookLine from "./HookLine"; // Import the new component
 import PlacementKnowMore from "./PlacementKnowMore";
 import PlacementProfiles from "./PlacementProfiles";

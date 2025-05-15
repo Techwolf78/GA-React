@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [showFullForms, setShowFullForms] = useState(false);
@@ -16,12 +16,12 @@ const HeroSection = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Optional: Adds a smooth scroll effect
+      behavior: "smooth", // Optional: Adds a smooth scroll effect
     });
   };
 
   return (
-    <div className="bg-[#01224F] text-white py-12 px-4 md:py-20 md:px-8 lg:px-24">
+    <div className="bg-[#01224F] text-white py-12  md:py-20 px-4 md:px-8 lg:px-16">
       <style>
         {`
           @keyframes float {
@@ -41,33 +41,44 @@ const HeroSection = () => {
           }
         `}
       </style>
-      <div className="container mx-auto flex flex-col md:flex-row items-start justify-between space-y-10 md:space-y-0">
+      <div className="container w-full flex flex-col md:flex-row items-start justify-between space-y-10 md:space-y-0">
         {/* Left Content - F D P */}
-        <div className="w-full md:w-1/2 flex flex-col items-start md:pl-8 lg:pl-16 xl:pl-32">
+        <div className="w-full md:w-1/2 flex flex-col items-start ">
           <div className="definitions flex flex-col mb-6">
-            {['F', 'D', 'P'].map((letter, index) => (
-              <div key={index} className="flex items-center text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#FFC80E] mb-2">
+            {["F", "D", "P"].map((letter, index) => (
+              <div
+                key={index}
+                className="flex items-center text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#FFC80E] mb-2"
+              >
                 <span>{letter}</span>
                 {showFullForms && (
                   <span className="ml-2 text-lg sm:text-xl lg:text-2xl xl:text-3xl">
-                    {index === 0 ? ' - FACILITATING GROWTH' : index === 1 ? ' - DIVERSE SKILLSETS' : ' - PROFESSIONAL ADVANCEMENT'}
+                    {index === 0
+                      ? " - FACILITATING GROWTH"
+                      : index === 1
+                      ? " - DIVERSE SKILLSETS"
+                      : " - PROFESSIONAL ADVANCEMENT"}
                   </span>
                 )}
               </div>
             ))}
           </div>
-      
-          <p className="text-lg sm:text-xl lg:text-2xl mb-6 lg:mb-8 max-w-lg">
-            Our comprehensive programs focus on enhancing teaching skills, integrating modern pedagogical strategies, and fostering a culture of continuous professional growth. By addressing these critical challenges, we help transform your college into a vibrant hub of educational excellence.
+
+          <p className="text-lg sm:text-xl lg:text-2xl mb-6 md:mb-8 ">
+            Our comprehensive programs focus on enhancing teaching skills,
+            integrating modern pedagogical strategies, and fostering a culture
+            of continuous professional growth. By addressing these critical
+            challenges, we help transform your college into a vibrant hub of
+            educational excellence.
           </p>
           <Link to="/contact">
             <button
-              onClick={scrollToTop} // Add scrollToTop function here
-              className="btn-know-more relative inline-flex px-5 py-3 text-sm sm:text-base font-semibold text-[#ffffff] group whitespace-nowrap lg:inline-flex"
+              onClick={scrollToTop}
+              className="btn-know-more relative inline-flex items-center px-3 md:px-5 py-2 md:py-3 text-sm sm:text-base font-semibold text-white group whitespace-nowrap"
             >
               <span className="relative z-10">Get in touch today</span>
               <svg
-                className="ml-2 w-4 h-4 text-[#ffffff] relative z-10 transition-colors duration-300 ease-in-out group-hover:text-[#01224F]"
+                className="ml-2 w-4 h-4 text-white relative z-10 transition-colors duration-300 ease-in-out group-hover:text-[#01224F]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

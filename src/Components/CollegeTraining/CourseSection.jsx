@@ -3,7 +3,7 @@ import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "tailwindcss/tailwind.css";
-import { courses, buttonLabels } from "./CourseArray"; // Import from new file
+import { courses, buttonLabels } from "../CourseArray"; // Import from new file
 import PropTypes from 'prop-types';
 
 const backSideImageUrl =

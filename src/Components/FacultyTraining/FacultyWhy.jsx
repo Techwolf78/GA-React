@@ -11,7 +11,7 @@ const FeatureCard = ({ feature, index }) => (
     transition={{ delay: index * 0.2, duration: 0.5 }}
   >
     <div className="absolute top-0 left-0 w-1 bg-[#FFC80E] h-16 rounded-r-xl"></div>
-    <h2 className="text-xl sm:text-2xl font-semibold text-[#01224F] mb-4 relative group">
+    <h2 className="text-lg md:text-2xl font-semibold text-[#01224F] mb-2 md:mb-4 relative group">
       {feature.title}
       <span className="absolute bottom-0 left-0 w-full h-1 bg-[#FFC80E] transform scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100" />
     </h2>
