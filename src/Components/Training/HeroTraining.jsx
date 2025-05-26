@@ -80,28 +80,29 @@ const HeroTraining = () => {
             The Tri-Force of Excellence: Powering Education, Faculty, and Industry
           </p>
 
-          <button
-            onClick={handleScroll}
-            className="btn-know-more relative inline-flex items-center px-3 py-2 sm:px-4 sm:py-2.5 text-[0.75rem] sm:text-[0.875rem] md:text-[0.875rem] lg:text-[1rem] font-semibold text-[#ffffff] group whitespace-nowrap lg:inline-flex mt-4 lg:mt-6"
-          >
-            <span className="relative z-10 text-[0.75rem] sm:text-[0.875rem] md:text-[0.875rem] lg:text-[1rem]">
-              Explore Our Trainings
-            </span>
-            <svg
-              className="ml-1 w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 text-[#ffffff] relative z-10 transition-colors duration-300 ease-in-out group-hover:text-[#000000]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </button>
+<button
+  onClick={handleScroll}
+  className="btn-know-more relative inline-flex items-center px-3 py-2 sm:px-4 sm:py-2.5 text-[0.75rem] sm:text-[0.875rem] md:text-[0.875rem] lg:text-[1rem] font-semibold text-[#ffffff] group whitespace-nowrap lg:inline-flex mt-4 lg:mt-6"
+>
+  <span className="relative z-10 text-[0.75rem] sm:text-[0.875rem] md:text-[0.875rem] lg:text-[1rem]">
+    Explore Our Trainings
+  </span>
+  <svg
+    className="ml-1 w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5 text-[#ffffff] relative z-10 transition-colors duration-300 ease-in-out group-hover:text-[#000000] group-focus:text-[#000000] group-active:text-[#000000]"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M13 7l5 5m0 0l-5 5m5-5H6"
+    />
+  </svg>
+</button>
+
         </div>
 
         {isMobile && (

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Use direct URLs from public folder
+// Image list
 const allImages = [
   "/MasterClass/o1.avif",
   "/MasterClass/o2.avif",
@@ -22,20 +22,35 @@ const allImages = [
   "/MasterClass/15.avif",
 ];
 
-// Loader component for each image
+// Component with square skeleton + simulated image load
 const ImageWithLoader = ({ src, alt }) => {
   const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setLoaded(true), 1500); // Simulate image load after 1.5s
+    return () => clearTimeout(timeout);
+  }, []);
+
+  const skeletonStyle = {
+    width: "100%",
+    height: "100%",
+    backgroundColor: "#DDDBDD",
+    position: "relative",
+    overflow: "hidden",
+  };
+
   return (
     <div className="relative w-full h-full">
       {!loaded && (
         <div className="absolute inset-0 flex items-center justify-center bg-white">
-          <div className="w-6 h-6 border-2 border-t-2 border-[#00A59F] rounded-full animate-spin"></div>
+          <div style={skeletonStyle}>
+            <div className="shimmer-inner"></div>
+          </div>
         </div>
       )}
       <img
         src={src}
         alt={alt}
-        onLoad={() => setLoaded(true)}
         className={`w-full h-full object-cover transition-opacity duration-500 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
@@ -55,12 +70,7 @@ function Overview() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    AOS.init({
-      duration: 700,
-      offset: 60,
-      once: true,
-      easing: "ease-in-out",
-    });
+    AOS.init({ duration: 700, offset: 60, once: true, easing: "ease-in-out" });
   }, []);
 
   useEffect(() => {
@@ -81,7 +91,7 @@ function Overview() {
     if (!hasEntered) return;
     const interval = setInterval(() => {
       setVisibleImages(getRandomImages(9));
-    }, 2000);
+    }, 4000); // Refresh every 4 seconds
     return () => clearInterval(interval);
   }, [hasEntered]);
 
@@ -92,8 +102,28 @@ function Overview() {
 
   return (
     <>
-      <style>
-        {`
+      <style>{`
+        @keyframes shimmer {
+          100% {
+            transform: translateX(100%);
+          }
+        }
+        .shimmer-inner {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          transform: translateX(-100%);
+          background-image: linear-gradient(
+            90deg,
+            rgba(255,255,255,0) 0%,
+            rgba(255,255,255,0.2) 20%,
+            rgba(255,255,255,0.5) 60%,
+            rgba(255,255,255,0) 100%
+          );
+          animation: shimmer 1.5s infinite;
+        }
         .circle-wrapper {
           width: 100%;
           max-width: 500px;
@@ -105,23 +135,23 @@ function Overview() {
           align-items: center;
           justify-content: center;
         }
-
         .circle-grid-3x3 {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           grid-template-rows: repeat(3, 1fr);
           width: 100%;
           height: 100%;
+          gap: 4px;
+          padding: 4px;
         }
-      `}
-      </style>
+      `}</style>
 
       <section
         id="overview"
         ref={sectionRef}
         className="scroll-mt-24 flex flex-col md:flex-row w-full bg-white px-6 md:px-16 py-6 md:py-12 gap-10 md:items-stretch"
       >
-        {/* Left Side */}
+        {/* Left */}
         <div
           className="md:w-1/2 flex flex-col justify-center relative"
           data-aos="fade-up"
@@ -154,17 +184,13 @@ function Overview() {
           </div>
         </div>
 
-        {/* Right Side - Circle Grid */}
+        {/* Right - Circle Grid */}
         <div className="md:w-1/2 flex justify-center items-center">
           <div className="circle-wrapper">
             <div className="circle-grid-3x3">
               {hasEntered &&
                 visibleImages.map((img, idx) => (
-                  <ImageWithLoader
-                    key={idx}
-                    src={img}
-                    alt={`Grid Img ${idx}`}
-                  />
+                  <ImageWithLoader key={idx} src={img} alt={`Grid Img ${idx}`} />
                 ))}
             </div>
           </div>
