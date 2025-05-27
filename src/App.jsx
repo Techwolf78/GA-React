@@ -1,34 +1,35 @@
 import  { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import './components/App.css';
 import "@fontsource/roboto";
-import '../src/App.css'; // Import the main CSS file
-import Home from '../src/components/Home'; // Import the Home component
-import MasterClass3 from '../src/components/MasterClass3';
-import About from '../src/components/About'; 
-import GAX from '../src/components/GAX'; 
-import Blogs from '../src/components/Blogs'; 
-import Footer from '../src/components/Footer'; 
-import Navbar from '../src/components/Navbar'; 
-import Placement from '../src/components/Placement'; 
-import Contact from '../src/components/Contact'; 
+import './App.css'; 
+import Home from './components/Home.jsx'; 
+import MasterClass3 from './components/MasterClass3';
+import About from './components/About'; 
+import GAX from './components/GAX'; 
+import Blogs from './components/Blogs'; 
+import Footer from './components/Footer'; 
+import Navbar from './components/Navbar'; 
+import Placement from './components/Placement'; 
+import Contact from './components/Contact'; 
 import Training from './pages/Training';
-import BrandPositioning from '../src/components/BrandPositioning'; // Import the page
+import BrandPositioning from './components/BrandPositioning'; // Import the page
 import CollegeTraining from './pages/CollegeTraining';
 import CorporateTraining from './pages/CorporateTraining';
 import FacultyTraining from './pages/FacultyTraining'; 
-import WhatsAppWidget from '../src/components/WhatsAppWidget'; 
-import ScrollToTopButton from '../src/components/ScrollToTopButton'; 
-import Post1 from '../src/components/BlogPages/Post1';
-import Post2 from '../src/components/BlogPages/Post2';
-import Post3 from '../src/components/BlogPages/Post3';
-import Post4 from '../src/components/BlogPages/Post4';
-import Post5 from '../src/components/BlogPages/Post5';
-import Post6 from '../src/components/BlogPages/Post6';
-import NotFound from '../src/components/NotFound'; // Import the NotFound component
-import DecEvent from '../src/components/DecEvent'; // Import the DecEvent component
-import DecEventGroundZero from '../src/components/DecEventGroundZero'; // Import the Ground Zero page component
-import Loader from '../src/components/Loader'; // Import the loader component
-import DecEventAgenda from '../src/components/DecEventAgenda'; // Import the DecEventAgenda component
+import WhatsAppWidget from './components/WhatsAppWidget'; 
+import ScrollToTopButton from './components/ScrollToTopButton'; 
+import Post1 from './components/BlogPages/Post1';
+import Post2 from './components/BlogPages/Post2';
+import Post3 from './components/BlogPages/Post3';
+import Post4 from './components/BlogPages/Post4';
+import Post5 from './components/BlogPages/Post5';
+import Post6 from './components/BlogPages/Post6';
+import NotFound from './components/NotFound'; // Import the NotFound component
+import DecEvent from './components/DecEvent'; // Import the DecEvent component
+import DecEventGroundZero from './components/DecEventGroundZero'; // Import the Ground Zero page component
+import Loader from './components/Loader'; // Import the loader component
+import DecEventAgenda from './components/DecEventAgenda'; // Import the DecEventAgenda component
 
 function App() {
   const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
