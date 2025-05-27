@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from
 import './components/App.css';
 import "@fontsource/roboto";
 import './App.css'; 
-import Home from './components/Home.jsx'; 
+import Home from './components/Home'; 
 import MasterClass3 from './components/MasterClass3';
 import About from './components/About'; 
 import GAX from './components/GAX'; 
