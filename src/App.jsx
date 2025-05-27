@@ -2,7 +2,7 @@ import  { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import './components/App.css';
 import "@fontsource/roboto";
-import './App.css'; 
+import '../src/App.css'; // Import the main CSS file
 import Home from './components/Home.jsx'; 
 import MasterClass3 from './components/MasterClass3';
 import About from './components/About'; 
