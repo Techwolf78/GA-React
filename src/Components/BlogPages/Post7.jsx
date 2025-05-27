@@ -1,5 +1,5 @@
 import "react";
-import Home from "../MasterClass3/Home";
+import Home from "../MasterClass3/HomeMaster";
 import Navbar from "../MasterClass3/Navbar";
 import Pointers from "../MasterClass3/Pointers";
 import Highlights from "../MasterClass3/Highlights";
