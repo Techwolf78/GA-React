@@ -1,6 +1,5 @@
 import  { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import './components/App.css';
 import "@fontsource/roboto";
 import './App.css'; 
 import Home from './components/Home'; 
