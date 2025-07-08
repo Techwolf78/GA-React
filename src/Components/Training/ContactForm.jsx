@@ -3,7 +3,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useInView } from "react-intersection-observer";
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
 
 // Testimonials Data
 const testimonials = [
@@ -138,7 +137,6 @@ const ContactForm = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-  const navigate = useNavigate();
 
   const [formState, setFormState] = useState({
     name: "",
@@ -146,19 +144,18 @@ const ContactForm = () => {
     phone: "",
     category: "",
     message: "",
-    source: "L&D Contact Form", // Permanent value for the source
+    source: "L&D Contact Form", // Update this if needed
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false); // New state for form submission
-  const [conversionFired, setConversionFired] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     formData.append("source", formState.source);
 
-    if (isSubmitting || conversionFired) return;
+    if (isSubmitting || isFormSubmitted) return;
 
     setIsSubmitting(true);
 
@@ -172,18 +169,13 @@ const ContactForm = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.status === "success") {
-          if (window.gtag && !conversionFired) {
-            window.gtag('event', 'conversion', {
-              'send_to': 'AW-17187277283/Yb_sCIu1pOkaEOOTxINA',
-              'event_callback': function() {
-                console.log('Form conversion tracked!');
-                // Navigate only after conversion is tracked
-                navigate('/thank-you');
-              }
-            });
-          } else {
-            navigate('/thank-you');
-          }
+          toast.success("Form submitted successfully!", {
+            position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
+          });
+          setIsFormSubmitted(true);
+          setTimeout(() => {
+            window.location.href = "/thank-you"; // Simple redirect
+          }, 2000);
         }
       })
       .catch(() => {

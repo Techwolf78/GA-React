@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faMobileAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -9,11 +8,11 @@ const Footer = () => {
   };
 
   return (
-<footer className="text-white py-8 px-4"
-  style={{
-    background: 'linear-gradient(to top right, rgba(29, 35, 52, 0.9) 0%, rgba(29, 48, 110, 0.9) 40%, rgba(29, 35, 52, 0.9) 100%)',
-  }}>
- 
+    <footer className="text-white py-8 px-4"
+      style={{
+        background: 'linear-gradient(to top right, rgba(29, 35, 52, 0.9) 0%, rgba(29, 48, 110, 0.9) 40%, rgba(29, 35, 52, 0.9) 100%)',
+      }}>
+    
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         
         {/* Logo Section */}
@@ -64,7 +63,6 @@ const Footer = () => {
             <li className="flex items-center justify-center md:justify-start">
               <FontAwesomeIcon icon={faMobileAlt} className="text-yellow-400 mr-2" />
               <p className="text-sm">
-                {/* <a href="tel:+918983614509" className="hover:underline hover:text-yellow-400 transition duration-300">+91 89836 14509 / 8983339099</a> */}
                 <a href="tel:+918983614509" className="hover:underline hover:text-yellow-400 transition duration-300">+91 78758 95160</a>
               </p>
             </li>
@@ -80,7 +78,7 @@ const Footer = () => {
         {/* Follow Us Section */}
         <div className="flex flex-col">
           <h2 className="text-2xl font-bold mb-4 text-center md:text-left">Follow Us</h2>
-          <div className="flex justify-center md:justify-start space-x-4">
+          <div className="flex justify-center md:justify-start space-x-4 mb-4">
             <a href="https://www.facebook.com/gryphonnacademy" target="_blank" rel="noopener noreferrer">
               <img src="/LandingImage/social-fb.svg" alt="Facebook" className="w-8 h-8 hover:opacity-80 transition duration-300" />
             </a>
@@ -93,6 +91,16 @@ const Footer = () => {
             <a href="https://www.youtube.com/channel/UCVn2uVWEHg8cMFd8ht3CQBw" target="_blank" rel="noopener noreferrer">
               <img src="/LandingImage/youtube.png" alt="YouTube" className="w-8 h-8 hover:opacity-80 transition duration-300" />
             </a>
+          </div>
+          
+          {/* Badge Image */}
+          <div className="mt-4 flex justify-center md:justify-start">
+            <img 
+              src="/public/badge.png" 
+              alt="Badge" 
+              className="w-32 md:w-40 object-contain" 
+              style={{ maxWidth: '120px' }}
+            />
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useInView } from "react-intersection-observer";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom"; // Added for navigation
 
 // Testimonials Data
 const testimonials = [
@@ -132,14 +133,13 @@ const Testimonials = () => {
   );
 };
 
-// Contact Form Component
-// Contact Form Component
 const ContactForm = () => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
+  const navigate = useNavigate(); // Added for navigation
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -149,16 +149,15 @@ const ContactForm = () => {
     source: "College Form", // Permanent value for the source
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false); // New state to track form submission
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [conversionFired, setConversionFired] = useState(false); // Track conversion
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-
-    // Append the source value to formData
     formData.append("source", formState.source);
 
-    if (isSubmitting || isFormSubmitted) return; // Prevent submission if already submitted
+    if (isSubmitting || conversionFired) return;
 
     setIsSubmitting(true);
 
@@ -172,42 +171,22 @@ const ContactForm = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.status === "success") {
-          toast.success("Form successfully submitted!", {
-            position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
-            autoClose: 2000,
-            className: window.innerWidth <= 768 ? "text-sm" : "",
-          });
-
-          setFormState({
-            name: "",
-            email: "",
-            phone: "",
-            category: "",
-            message: "",
-            source: "College Form",
-          });
-          e.target.reset();
-
-          setIsFormSubmitted(true);
-
-          // Redirect after 2 seconds
-          setTimeout(() => {
-            window.location.href = "/thank-you";
-          }, 2000);
-        } else {
-          toast.error(`Error: ${data.message}`, {
-            position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
-            autoClose: 2000,
-            className: window.innerWidth <= 768 ? "text-sm" : "",
-          });
+          if (window.gtag && !conversionFired) {
+            window.gtag('event', 'conversion', {
+              'send_to': 'AW-17187277283/Yb_sCIu1pOkaEOOTxINA',
+              'event_callback': function() {
+                console.log('Form conversion tracked!');
+                navigate('/thank-you'); // Navigate after tracking
+              }
+            });
+            setConversionFired(true); // Prevent duplicate tracking
+          } else {
+            navigate('/thank-you'); // Fallback navigation
+          }
         }
       })
       .catch(() => {
-        toast.error("Error submitting form. Please try again.", {
-          position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
-          autoClose: 2000,
-          className: window.innerWidth <= 768 ? "text-sm" : "",
-        });
+        toast.error("Error submitting form");
       })
       .finally(() => {
         setIsSubmitting(false);
