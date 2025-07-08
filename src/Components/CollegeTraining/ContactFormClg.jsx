@@ -184,11 +184,16 @@ const ContactForm = () => {
             phone: "",
             category: "",
             message: "",
-            source: "College Form", // Reset source to default
+            source: "College Form",
           });
           e.target.reset();
 
-          setIsFormSubmitted(true); // Mark the form as submitted
+          setIsFormSubmitted(true);
+
+          // Redirect after 2 seconds
+          setTimeout(() => {
+            window.location.href = "/thank-you";
+          }, 2000);
         } else {
           toast.error(`Error: ${data.message}`, {
             position: window.innerWidth <= 768 ? "bottom-center" : "top-center",

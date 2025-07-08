@@ -2,8 +2,8 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useInView } from "react-intersection-observer";
-import PropTypes from 'prop-types';
-
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 // Testimonials Data
 const testimonials = [
@@ -138,6 +138,7 @@ const ContactForm = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
+  const navigate = useNavigate();
 
   const [formState, setFormState] = useState({
     name: "",
@@ -150,15 +151,14 @@ const ContactForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false); // New state for form submission
+  const [conversionFired, setConversionFired] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-
-    // Append the source value to formData
     formData.append("source", formState.source);
 
-    if (isSubmitting || isFormSubmitted) return; // Prevent submission if already submitt
+    if (isSubmitting || conversionFired) return;
 
     setIsSubmitting(true);
 
@@ -172,36 +172,22 @@ const ContactForm = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.status === "success") {
-          toast.success("Form successfully submitted!", {
-            position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
-            autoClose: 2000,
-            className: window.innerWidth <= 768 ? "text-sm" : "",
-          });
-
-          setFormState({
-            name: "",
-            email: "",
-            phone: "",
-            category: "",
-            message: "",
-            source: "L&D Contact Form", // Reset source to default
-          });
-          e.target.reset();
-          setIsFormSubmitted(true); // Mark form as submitted
-        } else {
-          toast.error(`Error: ${data.message}`, {
-            position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
-            autoClose: 2000,
-            className: window.innerWidth <= 768 ? "text-sm" : "",
-          });
+          if (window.gtag && !conversionFired) {
+            window.gtag('event', 'conversion', {
+              'send_to': 'AW-17187277283/Yb_sCIu1pOkaEOOTxINA',
+              'event_callback': function() {
+                console.log('Form conversion tracked!');
+                // Navigate only after conversion is tracked
+                navigate('/thank-you');
+              }
+            });
+          } else {
+            navigate('/thank-you');
+          }
         }
       })
       .catch(() => {
-        toast.error("Error submitting form. Please try again.", {
-          position: window.innerWidth <= 768 ? "bottom-center" : "top-center",
-          autoClose: 2000,
-          className: window.innerWidth <= 768 ? "text-sm" : "",
-        });
+        toast.error("Error submitting form");
       })
       .finally(() => {
         setIsSubmitting(false);
@@ -369,7 +355,9 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   className={`bg-yellow-400 text-gray-800 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors w-full ${
-                    isSubmitting || isFormSubmitted ? "opacity-50 cursor-not-allowed" : ""
+                    isSubmitting || isFormSubmitted
+                      ? "opacity-50 cursor-not-allowed"
+                      : ""
                   }`}
                   disabled={isSubmitting || isFormSubmitted} // Disable if submitting or already submitted
                 >
@@ -427,7 +415,6 @@ InputField.propTypes = {
   fadeInStyle: PropTypes.object,
 };
 
-
 const SelectField = ({ label, name, value, onChange, fadeInStyle }) => (
   <div style={fadeInStyle}>
     <label className="visually-hidden" htmlFor={name}>
@@ -441,11 +428,11 @@ const SelectField = ({ label, name, value, onChange, fadeInStyle }) => (
       required
       className="w-full border border-gray-300 rounded-lg p-1 lg:p-2 text-black focus:ring-2 focus:ring-yellow-400 transition-all bg-white"
       style={{
-        backgroundColor: 'white', // Keeps the background white
-        color: value === '' ? '#9da0a6' : '#1F2937', // Gray color for placeholder text, black for other options
-        padding: '0.5rem', // Optional padding to space the text
-        fontSize: '1rem', // Optional font size adjustment
-        borderRadius: '0.375rem', // Tailwind's rounded-lg equivalent
+        backgroundColor: "white", // Keeps the background white
+        color: value === "" ? "#9da0a6" : "#1F2937", // Gray color for placeholder text, black for other options
+        padding: "0.5rem", // Optional padding to space the text
+        fontSize: "1rem", // Optional font size adjustment
+        borderRadius: "0.375rem", // Tailwind's rounded-lg equivalent
       }}
     >
       <option value="" disabled className="text-gray-500">
@@ -472,8 +459,6 @@ SelectField.propTypes = {
   onChange: PropTypes.func.isRequired,
   fadeInStyle: PropTypes.object,
 };
-
-
 
 const TextareaField = ({
   label,
@@ -509,6 +494,5 @@ TextareaField.propTypes = {
   onChange: PropTypes.func.isRequired,
   fadeInStyle: PropTypes.object,
 };
-
 
 export default ContactForm;

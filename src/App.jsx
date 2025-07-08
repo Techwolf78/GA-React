@@ -29,6 +29,7 @@ import DecEvent from './components/DecEvent'; // Import the DecEvent component
 import DecEventGroundZero from './components/DecEventGroundZero'; // Import the Ground Zero page component
 import Loader from './components/Loader'; // Import the loader component
 import DecEventAgenda from './components/DecEventAgenda'; // Import the DecEventAgenda component
+import ThankYou from './pages/ThankYou'; // Import the ThankYou page
 
 function App() {
   const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
@@ -128,6 +129,7 @@ useEffect(() => {
         <Route path="/brandPositioning" element={<><Navbar /><BrandPositioning /></>} />  {/* Brand Positioning Route */}
         <Route path="/training" element={<><Navbar /><Training /></>} />
         <Route path="/test" element={<><Navbar /><Home /></>} />
+        <Route path="/thank-you" element={<><Navbar /><ThankYou /></>} />
         
         {/* /events route showing loader and then event content */}
         <Route path="/events" element={
