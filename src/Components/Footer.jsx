@@ -33,7 +33,8 @@ const Footer = () => {
               { name: 'About Us', path: '/about-us' },
               { name: 'Learning & Development', path: '/training' },
               { name: 'Campus Placement', path: '/placement' },
-              { name: 'Blogs', path: '/blogs' }
+              { name: 'Blogs', path: '/blogs' },
+              { name: 'Privacy Policy', path: '/privacy-policy' }
             ].map((link, index) => (
               <li key={index} className="relative">
                 <Link
@@ -96,10 +97,10 @@ const Footer = () => {
           {/* Badge Image */}
           <div className="mt-4 flex justify-center md:justify-start">
             <img 
-              src="/public/badge.png" 
+              src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1751965794/badge_yoxxtj.png" 
               alt="Badge" 
-              className="w-32 md:w-40 object-contain" 
-              style={{ maxWidth: '120px' }}
+              className="w-32 md:w-48 object-contain" 
+              style={{ maxWidth: '176px' }}
             />
           </div>
         </div>
