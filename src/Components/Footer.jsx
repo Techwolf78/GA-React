@@ -64,8 +64,9 @@ const Footer = () => {
             <li className="flex items-center justify-center md:justify-start">
               <FontAwesomeIcon icon={faMobileAlt} className="text-yellow-400 mr-2" />
               <p className="text-sm">
-                <a href="tel:+918983614509" className="hover:underline hover:text-yellow-400 transition duration-300">+91 78758 95160</a>
+                <a href="tel:+918983614509" className="hover:underline hover:text-yellow-400 transition duration-300">+91 89836 14509</a>
               </p>
+
             </li>
             <li className="flex items-center justify-center md:justify-start">
               <FontAwesomeIcon icon={faEnvelope} className="text-yellow-400 mr-2" />

@@ -262,8 +262,8 @@ const handleSubmit = (e) => {
           <div className="p-6 text-center bg-[#1e3a8a] rounded-lg shadow-lg transition-transform hover:scale-105">
             <i className="bx bx-phone text-4xl text-[#FFC80E] mb-4"></i>
             <h4 className="text-xl font-bold text-[#FFC80E] mb-2">Phone</h4>
-            {/* <p className="text-[#ffffff]">+91 89836 14509 / 8983339099</p> */}
-            <p className="text-[#ffffff]">+91 78758 95160</p>
+            <p className="text-[#ffffff]">+91 89836 14509 / 8983339099</p>
+            {/* <p className="text-[#ffffff]">+91 78758 95160</p> */}
           </div>
 
           {/* Email */}

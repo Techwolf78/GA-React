@@ -81,7 +81,7 @@ const ThankYou = () => {
               </h2>
               <p className="mt-3 text-gray-600 text-sm sm:text-base leading-relaxed">
                 Our team will review your information and respond within 24
-                hours. You'll receive a confirmation email shortly.
+                hours. You&apos;ll receive a confirmation email shortly.
               </p>
             </div>
 
