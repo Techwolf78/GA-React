@@ -1,0 +1,51 @@
+# Redirect non-www to www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^gryphonacademy\.co\.in [NC]
+RewriteRule ^(.*)$ https://www.gryphonacademy.co.in/$1 [L,R=301]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Handle client-side routing for React SPA
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Set caching headers
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 24 hours"
+  ExpiresByType image/jpeg "access plus 24 hours"
+  ExpiresByType image/gif "access plus 24 hours"
+  ExpiresByType image/png "access plus 24 hours"
+  ExpiresByType text/css "access plus 24 hours"
+  ExpiresByType application/pdf "access plus 1 week"
+  ExpiresByType text/javascript "access plus 24 hours"
+  ExpiresByType text/html "access plus 2 hours"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresDefault "access plus 24 hours"
+</IfModule>
+
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header set X-Endurance-Cache-Level "2"
+  Header set X-nginx-cache "WordPress"
+</IfModule>
+
+# BEGIN LiteSpeed
+<IfModule Litespeed>
+  SetEnv noabort 1
+</IfModule>
+# END LiteSpeed
+
+# PHP handler (from cPanel)
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74___lsphp .php .php7 .phtml
+</IfModule>

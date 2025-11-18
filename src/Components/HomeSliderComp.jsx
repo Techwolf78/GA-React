@@ -53,7 +53,7 @@ const HomeSliderClg = () => {
               <img 
                 src={logo} 
                 alt={`College Logo ${index + 1}`} 
-                className="h-16 sm:h-20 max-w-[120px] object-contain"
+                className="h-16 sm:h-20 max-w-[150px] rounded-lg"
               />
             </div>
           ))}
@@ -63,7 +63,7 @@ const HomeSliderClg = () => {
               <img 
                 src={logo} 
                 alt={`College Logo ${index + 1}`} 
-                className="h-16 sm:h-20 max-w-[120px] object-contain"
+                className="h-16 sm:h-20 max-w-[150px] rounded-lg"
               />
             </div>
           ))}

@@ -3,7 +3,6 @@ import HeroPlacement from "./HeroPlacement";
 import PartneredUniversities from "./PartneredUniversities";
 import PartneredCollege from "./PartneredCollege";
 import "../assets/CSS/Placement.css";
-
 import CollegeAccreditation from "./CollegeAccreditation";
 import Advisory from "./Advisory";
 import RecruiterTestimonial from "./RecruiterTestimonial";
@@ -32,7 +31,7 @@ const Placement = () => {
       <div className="p-0 text-center roboto-regular relative">
         <div className="w-full h-auto bg-[#ffffff] relative">
           <img
-            src="placement-bg/evatrain.avif"
+            src="placement-bg/traineva.avif"
             alt="Infographic"
             className="w-full h-auto block mx-auto"
           />

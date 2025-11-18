@@ -2,13 +2,14 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import GallerySlider from "./GallerySlider";
+import ExploreButton from "./ExploreButton"; // Import the new component
 import inside3 from "../../../public/MasterClass/5.avif";
 
 function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 600,        // Faster animation
-      offset: 50,           // Triggers earlier
+      duration: 600,
+      offset: 50,
       easing: "ease-in-out",
       once: true,
     });
@@ -80,7 +81,7 @@ function Home() {
             <h1
               className="text-4xl md:text-6xl whitespace-nowrap font-bold mb-2 text-[#000000] flex items-center gap-2"
               data-aos="zoom-in"
-              data-aos-offset="30" // even faster
+              data-aos-offset="30"
             >
               Masterclass <span className="embedded-number">3.0</span>
             </h1>
@@ -99,15 +100,11 @@ function Home() {
           >
             Masterclass 3.0 is a powerful confluence of decision-makers,
             industry leaders and academic visionaries. <br />
-            Gryphon Academy’s flagship initiative returns with a sharper focus,
+            Gryphon Academy's flagship initiative returns with a sharper focus,
             stronger presence, and a single goal: aligning the future of talent
             with the pulse of the real world.
           </p>
-          <a href="#overview" data-aos="fade-up" data-aos-delay="150">
-            <button className="hover:bg-transparent border-[#027093] border-2 px-3 md:px-6 py-2 hover:bg-gradient-to-r bg-[#027093] hover:border-[#027093] text-white hover:text-black transition-all duration-300">
-              Explore More {">"}
-            </button>
-          </a>
+          <ExploreButton /> {/* Use the new component here */}
         </div>
 
         {/* Right Side - GallerySlider with AOS already added */}

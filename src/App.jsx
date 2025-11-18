@@ -1,9 +1,8 @@
 import  { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import './components/App.css';
 import "@fontsource/roboto";
 import './App.css'; 
-import Home from './components/Home.jsx'; 
+import Home from './components/Home'; 
 import MasterClass3 from './components/MasterClass3';
 import About from './components/About'; 
 import GAX from './components/GAX'; 
@@ -19,6 +18,7 @@ import CorporateTraining from './pages/CorporateTraining';
 import FacultyTraining from './pages/FacultyTraining'; 
 import WhatsAppWidget from './components/WhatsAppWidget'; 
 import ScrollToTopButton from './components/ScrollToTopButton'; 
+import PrivacyPolicy from './pages/PrivacyPolicy'; // Import the Privacy Policy page
 import Post1 from './components/BlogPages/Post1';
 import Post2 from './components/BlogPages/Post2';
 import Post3 from './components/BlogPages/Post3';
@@ -30,6 +30,7 @@ import DecEvent from './components/DecEvent'; // Import the DecEvent component
 import DecEventGroundZero from './components/DecEventGroundZero'; // Import the Ground Zero page component
 import Loader from './components/Loader'; // Import the loader component
 import DecEventAgenda from './components/DecEventAgenda'; // Import the DecEventAgenda component
+import ThankYou from './pages/ThankYou'; // Import the ThankYou page
 
 function App() {
   const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
@@ -57,6 +58,8 @@ function App() {
       "/masterclass3": "Masterclass 3.0",
       "/test": "Home",
       "/about-us": "About Us",
+      "/privacy-policy": "Privacy Policy",
+      "/thank-you": "Thank You",
       "/gax": "GAX",
       "/blogs": "Blogs",
       "/placement": "Placement",
@@ -129,7 +132,8 @@ useEffect(() => {
         <Route path="/brandPositioning" element={<><Navbar /><BrandPositioning /></>} />  {/* Brand Positioning Route */}
         <Route path="/training" element={<><Navbar /><Training /></>} />
         <Route path="/test" element={<><Navbar /><Home /></>} />
-        
+        <Route path="/thank-you" element={<><Navbar /><ThankYou /></>} />
+        <Route path="/privacy-policy" element={<><Navbar /><PrivacyPolicy /></>} />
         {/* /events route showing loader and then event content */}
         <Route path="/events" element={
           <>

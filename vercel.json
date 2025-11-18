@@ -1,5 +1,12 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    {
+      "source": "/visit/:path*",
+      "destination": "https://track-mate-app.vercel.app/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ]
 }

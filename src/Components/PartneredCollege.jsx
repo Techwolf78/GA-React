@@ -20,6 +20,18 @@ const PartneredCollege = () => {
     { name: 'Ajeenkya DY Patil University', imageUrl: 'Clgimage/16-1.png' },
     { name: 'Ramachandran International Institute of Management', imageUrl: 'placement-bg/College logo 5 1.png' },
     { name: 'Yashoda Technical Campus', imageUrl: 'placement-bg/College logo 6 1.png' },
+    { name: 'ASM\'s IBMR Pune Institute of Management & Research', imageUrl: 'Clgimage/ASM\'s IBMR Pune Institute of Management & Research.avif' },
+    { name: 'Ideal Institute Of Technology', imageUrl: 'Clgimage/Ideal Institute Of Technology.avif' },
+    { name: 'Indira University', imageUrl: 'Clgimage/Indira University.avif' },
+    { name: 'International School of Management Excellence', imageUrl: 'Clgimage/International School of Management Excellence.avif' },
+    { name: 'Mauli College of Engineering & Technology', imageUrl: 'Clgimage/Mauli College of Engineering & Technology.avif' },
+    { name: 'Nagpur Institute of Technology', imageUrl: 'Clgimage/Nagpur Institute of Technology.avif' },
+    { name: 'P. R. Pote Patil College of Engineering and Management', imageUrl: 'Clgimage/P. R. Pote Patil College of Engineering and Management.avif' },
+    { name: 'Pune District Education Association College Of Engineering', imageUrl: 'Clgimage/Pune District Education Association College Of Engineering.avif' },
+    { name: 'Sharda University', imageUrl: 'Clgimage/Sharda University.avif' },
+    { name: 'Shri Ramdeobaba College of Engineering and Management', imageUrl: 'Clgimage/Shri Ramdeobaba College of Engineering and Management.avif' },
+    { name: 'Sri Eshwar College of Engineering', imageUrl: 'Clgimage/Sri Eshwar College of Engineering.avif' },
+    { name: 'Sanjivani KBP Polytechnic', imageUrl: 'Clgimage/sce.png' },
   ];
 
   return (
@@ -37,7 +49,7 @@ const PartneredCollege = () => {
                   <img 
                     src={college.imageUrl} 
                     alt={college.name} 
-                    className="max-h-full max-w-full object-contain"
+                    className="max-h-full max-w-full object-contain rounded-xl"
                   />
                 </div>
               </div>

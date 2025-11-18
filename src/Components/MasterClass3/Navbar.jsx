@@ -65,7 +65,7 @@ const Navbar = () => {
   return (
     <>
       <header
-        className="fixed roboto-regular top-0 left-0 w-full flex justify-between items-center px-8 md:px-16 py-2 z-50"
+        className="fixed roboto-regular top-0 left-0 w-full flex justify-between items-center px-4 md:px-8 lg:px-16 py-2 z-50"
         style={{
           backgroundColor: `rgba(0, 165, 159, ${navbarOpacity})`,
           color: "#ffffff",

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types'; // Add this import
+import PropTypes from "prop-types"; // Add this import
 import "../assets/CSS/home.css";
 import Testimonials from "./Testimonials";
 import HomeSliderClg from "./HomeSliderClg";
@@ -96,24 +96,24 @@ const Home = () => {
     }
   };
 
-useEffect(() => {
-  const cycleWords = () => {
-    setFadeFirst(true);
-    setFadeLast(true);
+  useEffect(() => {
+    const cycleWords = () => {
+      setFadeFirst(true);
+      setFadeLast(true);
 
-    setTimeout(() => {
-      setFirstWordIndex((prevIndex) => (prevIndex + 1) % firstWords.length);
-      setLastWordIndex((prevIndex) => (prevIndex + 1) % lastWords.length);
+      setTimeout(() => {
+        setFirstWordIndex((prevIndex) => (prevIndex + 1) % firstWords.length);
+        setLastWordIndex((prevIndex) => (prevIndex + 1) % lastWords.length);
 
-      setFadeFirst(false);
-      setFadeLast(false);
-    }, 400);
-  };
+        setFadeFirst(false);
+        setFadeLast(false);
+      }, 400);
+    };
 
-  const interval = setInterval(cycleWords, 2000);
+    const interval = setInterval(cycleWords, 2000);
 
-  return () => clearInterval(interval);
-}, [firstWords.length, lastWords.length]); 
+    return () => clearInterval(interval);
+  }, [firstWords.length, lastWords.length]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -144,7 +144,11 @@ useEffect(() => {
 
   // Click outside handler to close the sidebar
   const handleClickOutside = (event) => {
-    if (sidebarRef.current && !sidebarRef.current.contains(event.target) && !sidebarToggleRef.current.contains(event.target)) {
+    if (
+      sidebarRef.current &&
+      !sidebarRef.current.contains(event.target) &&
+      !sidebarToggleRef.current.contains(event.target)
+    ) {
       setSidebarOpen(false);
       document.body.classList.remove("no-scroll");
     }
@@ -257,8 +261,14 @@ useEffect(() => {
             </div>
           </h2>
           <p>
-            Making students Industry Ready with our Customized Industry
-            Readiness Programme
+            <span className="text-base font-medium">
+              Creating Industry-Ready Force, Enhancing Fresher&apos;s
+              Employability
+            </span>
+            <br />
+            <span className="text-sm">
+              With our Customized <span className="text-[#FFC80E]">Industry Readiness Programme</span>
+            </span>
           </p>
           <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
             <span>Know More</span>
