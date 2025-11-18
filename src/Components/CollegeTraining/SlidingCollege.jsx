@@ -2,6 +2,17 @@ import React from 'react';
 
 const SlidingCollege = () => {
   const logos = [
+    "Clgimage/ASM's IBMR Pune Institute of Management & Research.png",
+    "Clgimage/Ideal Institute Of Technology.png",
+    "Clgimage/Indira University.png",
+    "Clgimage/International School of Management Excellence.png",
+    "Clgimage/Mauli College of Engineering & Technology.png",
+    "Clgimage/Nagpur Institute of Technology.png",
+    "Clgimage/P. R. Pote Patil College of Engineering and Management.png",
+    "Clgimage/Pune District Education Association College Of Engineering.png",
+    "Clgimage/Sharda University.png",
+    "Clgimage/Shri Ramdeobaba College of Engineering and Management.png",
+    "Clgimage/Sri Eshwar College of Engineering.png",
     "Clgimage/1-1.png",
     "Clgimage/13-1.png",
     "Clgimage/14-1.png",
@@ -25,22 +36,21 @@ const SlidingCollege = () => {
         <div className="logo-slider-track flex animate-scroll">
           {logos.map((logo, index) => (
             <div key={index} className="logo-slider-item flex-none mx-3 sm:mx-4 md:mx-5">
-              <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[120px] object-contain" />
+              <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[150px] rounded-lg" />
             </div>
           ))}
           {/* Duplicate the logos for seamless scrolling */}
           {logos.map((logo, index) => (
             <div key={`duplicate-${index}`} className="logo-slider-item flex-none mx-3 sm:mx-4 md:mx-5">
-              <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[120px] object-contain" />
+              <img src={logo} alt="College Logo" className="h-16 sm:h-20 max-w-[150px] rounded-lg" />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Inline styles for custom CSS */}
       <style>{`
         .logo-slider-track {
-          width: calc(120px * ${logos.length * 2}); /* Adjust based on the number of logos */
+          width: calc(150px * ${logos.length * 2}); /* Adjust based on the number of logos */
           animation: scroll 20s linear infinite;
         }
 
@@ -50,7 +60,7 @@ const SlidingCollege = () => {
 
         @keyframes scroll {
           0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-120px * ${logos.length})); } /* Adjust based on the number of logos */
+          100% { transform: translateX(calc(-150px * ${logos.length})); } /* Adjust based on the number of logos */
         }
       `}</style>
     </div>

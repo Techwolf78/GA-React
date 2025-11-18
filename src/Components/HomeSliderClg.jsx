@@ -4,6 +4,17 @@ const HomeSliderClg = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   const logos = [
+    "Clgimage/ASM's IBMR Pune Institute of Management & Research.png",
+    "Clgimage/Ideal Institute Of Technology.png",
+    "Clgimage/Indira University.png",
+    "Clgimage/International School of Management Excellence.png",
+    "Clgimage/Mauli College of Engineering & Technology.png",
+    "Clgimage/Nagpur Institute of Technology.png",
+    "Clgimage/P. R. Pote Patil College of Engineering and Management.png",
+    "Clgimage/Pune District Education Association College Of Engineering.png",
+    "Clgimage/Sharda University.png",
+    "Clgimage/Shri Ramdeobaba College of Engineering and Management.png",
+    "Clgimage/Sri Eshwar College of Engineering.png",
     "Clgimage/1-1.avif",
     "Clgimage/13-1.avif",
     "Clgimage/14-1.avif",
@@ -39,7 +50,7 @@ const HomeSliderClg = () => {
               <img 
                 src={logo} 
                 alt={`College Logo ${index + 1}`} 
-                className="h-16 sm:h-20 max-w-[120px] object-contain"
+                className="h-16 sm:h-20 max-w-[150px] rounded-lg"
               />
             </div>
           ))}
@@ -49,7 +60,7 @@ const HomeSliderClg = () => {
               <img 
                 src={logo} 
                 alt={`College Logo ${index + 1}`} 
-                className="h-16 sm:h-20 max-w-[120px] object-contain"
+                className="h-16 sm:h-20 max-w-[150px] rounded-lg"
               />
             </div>
           ))}
