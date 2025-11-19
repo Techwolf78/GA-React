@@ -3,7 +3,7 @@ import React from 'react';
 const PartneredUniversities = () => {
   return (
     <div className="relative px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16 pt-6 bg-[#01224F] text-white roboto-regular">
-      <h1 className=" sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-center mb-4 text-[#FFC80E]">
+      <h1 className="text-xl md:text-4xl font-bold text-center mb-4 text-[#FFC80E]">
         Partnered with 60+ College/Universities
       </h1>
       

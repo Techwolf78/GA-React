@@ -5,7 +5,7 @@ function CollegeAccreditation() {
     <div className="relative p-2 md:p-4 lg:p-6 bg-gradient-to-b from-[#003073] to-[#091327] text-white roboto-regular">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
         <p 
-          className=" sm:text-3xl lg:text-4xl xl:text-4xl font-bold text-[#FFC80E] mb-2 text-center"
+          className="text-2xl md:text-4xl font-bold text-[#FFC80E] mb-2 text-center"
         >
           Partnered Colleges Accreditation
         </p>

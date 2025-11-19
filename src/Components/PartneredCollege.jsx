@@ -37,7 +37,7 @@ const PartneredCollege = () => {
   return (
     <div className="bg-[#01224F] py-8 roboto-regular">
       <div className="container mx-auto px-8 sm:px-8 md:px-16 lg:px-16 xl:px-16">
-        <p className="sm:text-3xl lg:text-4xl xl:text-4xl font-bold sm:mb-2 md:mb-4 lg:mb-6 xl:mb-8 text-center text-[#ffc700]">
+        <p className="text-2xl md:text-4xl  font-bold mb-2 md:mb-4 lg:mb-6 xl:mb-8 text-center text-[#ffc700]">
           Partnered Colleges
         </p>
 
@@ -45,7 +45,7 @@ const PartneredCollege = () => {
           <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-3  lg:gap-y-6 gap-x-4">
             {colleges.map((college, index) => (
               <div key={index} className="flex flex-col items-center overflow-hidden">
-                <div className="h-28 flex items-center">
+                <div className="h-20 sm:h-28 flex items-center">
                   <img 
                     src={college.imageUrl} 
                     alt={college.name} 
