@@ -96,14 +96,14 @@ const Footer = () => {
           </div>
           
           {/* Badge Image */}
-          <div className="mt-4 flex justify-center md:justify-start">
+          {/* <div className="mt-4 flex justify-center md:justify-start">
             <img 
               src="https://res.cloudinary.com/dcjmaapvi/image/upload/v1751965794/badge_yoxxtj.png" 
               alt="Badge" 
               className="w-32 md:w-48 object-contain" 
               style={{ maxWidth: '176px' }}
             />
-          </div>
+          </div> */}
         </div>
       </div>
 
