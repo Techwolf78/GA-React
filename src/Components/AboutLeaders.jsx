@@ -27,194 +27,128 @@ const MeetTheLeaders = () => {
 
   return (
     <div
-      className="flex flex-col items-center mx-auto bg-gradient-to-r from-blue-100 to-blue-200 relative"
+      className="flex flex-col items-center mx-auto bg-slate-900 relative py-6 overflow-hidden"
       style={{
-        backgroundImage: `url('/About/lead.avif')`,
-        backgroundSize: "contain",
+        backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/About/lead.avif')`,
+        backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat", // Prevent the background from repeating
+        backgroundAttachment: "fixed",
       }}
     >
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-400 rounded-full blur-[120px]"></div>
+      </div>
+
       {/* The wave element */}
       <WaveElement />
 
-      <h2
-        className="text-center mt-4 mb-8 md:mb-0 text-2xl md:text-3xl lg:text-4xl text-white font-bold z-20"
-        data-aos="fade-down"
-        data-aos-once="true"
-      >
-        Meet the Leaders
-      </h2>
-
-      {/* Desktop version */}
-      <div className="hidden md:block px-8 md:px-16">
-        {/* Founder Section */}
-        <div
-          className="flex flex-col md:flex-row mb-12 items-center justify-between p-8 relative z-20"
-          data-aos="fade-up"
+      <div className="relative z-20 text-center mb-10">
+        <h2
+          className="text-3xl md:text-4xl  text-white font-extrabold tracking-tight"
+          data-aos="fade-down"
           data-aos-once="true"
         >
-          {/* Combined Profile and Message for Founder */}
-          <div className="w-full md:w-2/3 flex items-center justify-start space-x-6">
-            {/* Profile Image */}
-            <div className="relative transition-transform transform hover:scale-105 duration-300">
-              <div className="bg-blue-500 h-16 w-16 absolute -top-6 -left-6 rounded-lg shadow-lg z-0"></div>
+          Meet the Leaders
+        </h2>
+        <div className="h-1.5 w-24 bg-blue-600 mx-auto mt-2 rounded-full"></div>
+      </div>
+
+      {/* Desktop version */}
+      <div className="hidden md:block w-full max-w-6xl px-8">
+        {/* Founder Section */}
+        <div
+          className="flex flex-col md:flex-row mb-16 items-center gap-10 relative z-20"
+          data-aos="fade-right"
+          data-aos-once="true"
+        >
+          <div className="w-full md:w-1/4 relative group">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-blue-400 rounded-2xl opacity-20 group-hover:opacity-40 transition duration-500 blur-xl"></div>
+            <div className="relative">
               <img
                 src={founder.profilePic}
-                alt={`${founder.name}'s profile`}
-                className="rounded-lg shadow-xl w-full max-h-60 object-cover relative z-10 border-4 border-white"
+                alt={founder.name}
+                className="rounded-2xl shadow-2xl w-full h-64 md:h-72 object-cover object-top border-2 border-white/10"
                 loading="lazy"
               />
-              <div className="bg-blue-700 text-white text-center text-lg md:text-xl lg:text-xl font-semibold py-1 px-4 absolute bottom-0 left-1/2 transform -translate-x-1/2 -mb-3 rounded-md z-20 shadow-lg">
+              <div className="absolute -bottom-3 right-2 bg-blue-600 text-white px-4 py-1 rounded-lg font-bold shadow-xl text-sm transform group-hover:translate-y-[-3px] transition-transform duration-300">
                 {founder.designation}
               </div>
             </div>
-
-            {/* Message Section */}
-            <div className="relative w-2/3">
-              {/* Background Patch for Message and Quote Icon */}
-              <div className="absolute top-0 mt-1 left-4 w-full h-full bg-blue-800 bg-opacity-30 rounded-lg z-0" />
-
-              {/* Quote Icon */}
-              <div className="absolute top-0 left-0 w-6 h-6 ml-12 z-10">
-                <img
-                  src={QuotesSVG}
-                  alt="Quotes"
-                  className="w-full h-full"
-                  style={{ marginLeft: "-24px", marginTop: "-24px" }}
-                />
-              </div>
-
-              {/* Message Text */}
-              <p className="text-xs mt-2 ml-12 text-white relative z-20">
-                {founder.message}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Co-Founder Section */}
-        <div
-          className="flex flex-col md:flex-row mb-12 items-center justify-end p-8 relative z-20"
-          data-aos="fade-up"
-          data-aos-once="true"
-          data-aos-delay="200"
-        >
-          {/* Combined Profile and Message for Co-Founder */}
-          <div className="w-full md:w-2/3 flex items-center justify-end space-x-6">
-            {/* Profile Image (on the right side for Co-Founder) */}
-            <div className="relative transition-transform transform hover:scale-105 duration-300 order-1 md:order-1">
-              <div className="bg-blue-500 h-16 w-16 absolute -top-6 -left-6 rounded-lg shadow-lg z-0"></div>
-              <img
-                src={coFounder.profilePic}
-                alt={`${coFounder.name}'s profile`}
-                className="rounded-lg shadow-xl w-full max-h-60 object-cover relative z-10 border-4 border-white"
-                loading="lazy"
-              />
-              <div className="bg-blue-700 text-white text-center text-lg md:text-xl lg:text-xl font-semibold py-1 px-4 absolute bottom-0 left-1/2 transform -translate-x-1/2 -mb-3 rounded-md z-20 shadow-lg whitespace-nowrap">
-                {coFounder.designation}
-              </div>
-            </div>
-
-            {/* Message Section (on the right for Co-Founder) */}
-            <div className="relative w-2/3 order-0 md:order-0 ">
-              <div className="absolute top-0 right-8 w-full h-full bg-blue-800 bg-opacity-30 mt-1 rounded-lg z-0" />
-              <div className="absolute top-0 left-0 w-6 h-6 z-10">
-                <img
-                  src={QuotesSVG}
-                  alt="Quotes"
-                  className="w-full h-full"
-                  style={{ marginLeft: "-24px", marginTop: "-24px" }}
-                />
-              </div>
-
-              <p className="text-xs mt-2 mr-12 text-white z-20 relative">
-                {coFounder.message}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile version */}
-      <div className="block md:hidden px-8 md:px-16">
-        {/* Founder Section */}
-        <div
-          className="flex flex-col mb-12 items-center justify-center relative z-20 flex-wrap"
-          data-aos="fade-up"
-          data-aos-once="true"
-        >
-          {/* Profile Image */}
-          <div className="relative transition-transform transform hover:scale-105 duration-300 mb-6">
-            <div className="bg-blue-500 h-12 w-12 absolute -top-6 -left-6 rounded-lg shadow-lg z-0"></div>
-            <img
-              src={founder.profilePic}
-              alt={`${founder.name}'s profile`}
-              className="rounded-lg shadow-xl w-32 h-32 object-cover relative z-10 border-4 border-white mx-auto"
-              loading="lazy"
-            />
-            <div className="bg-blue-700 text-white text-center text-sm md:text-lg font-semibold py-1 px-4 absolute bottom-0 left-1/2 transform -translate-x-1/2 -mb-3 rounded-md z-20 shadow-lg">
-              {founder.designation}
-            </div>
           </div>
 
-          {/* Message Section (Full width on mobile) */}
-          <div className="relative w-full">
-            {/* Background Patch for Message and Quote Icon */}
-            <div className="absolute top-0 left-0 w-full h-full bg-blue-800 bg-opacity-30 rounded-lg z-0" />
-
-            {/* Quote Icon */}
-            <div className="absolute top-0 left-0 w-6 h-6 ml-12 z-10">
-              <img
-                src={QuotesSVG}
-                alt="Quotes"
-                className="w-full h-full"
-                style={{ marginLeft: "-24px", marginTop: "-24px" }}
-              />
-            </div>
-
-            {/* Message Text (Full width) */}
-            <p className="text-xs mt-2 ml-6 text-white relative z-20">
-              {founder.message}
+          <div className="w-full md:w-3/4 bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl relative">
+            <img src={QuotesSVG} alt="" className="absolute -top-4 -left-4 w-8 h-8 opacity-50 invert" />
+            <h3 className="text-2xl font-bold text-white mb-2">{founder.name}</h3>
+            <p className="text-slate-300 leading-relaxed text-base italic">
+              &quot;{founder.message}&quot;
             </p>
           </div>
         </div>
 
         {/* Co-Founder Section */}
         <div
-          className="flex flex-col mb-12 items-center justify-center relative z-20 flex-wrap"
-          data-aos="fade-up"
+          className="flex flex-col md:flex-row-reverse mb-6 items-center gap-10 relative z-20"
+          data-aos="fade-left"
           data-aos-once="true"
-          data-aos-delay="200"
         >
-          {/* Profile Image (on the right side for Co-Founder) */}
-          <div className="relative transition-transform transform hover:scale-105 duration-300 mb-6">
-            <div className="bg-blue-500 h-12 w-12 absolute -top-6 -left-6 rounded-lg shadow-lg z-0"></div>
-            <img
-              src={coFounder.profilePic}
-              alt={`${coFounder.name}'s profile`}
-              className="rounded-lg shadow-xl w-32 h-32 object-cover relative z-10 border-4 border-white mx-auto"
-              loading="lazy"
-            />
-            <div className="bg-blue-700 text-white text-center text-sm md:text-lg font-semibold py-1 px-4 absolute bottom-0 left-1/2 transform -translate-x-1/2 -mb-3 rounded-md z-20 shadow-lg whitespace-nowrap">
-              {coFounder.designation}
+          <div className="w-full md:w-1/4 relative group">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-blue-400 rounded-2xl opacity-20 group-hover:opacity-40 transition duration-500 blur-xl"></div>
+            <div className="relative">
+              <img
+                src={coFounder.profilePic}
+                alt={coFounder.name}
+                className="rounded-2xl shadow-2xl w-full h-64 md:h-72 object-cover object-top border-2 border-white/10"
+                loading="lazy"
+              />
+              <div className="absolute -bottom-3 left-2 bg-blue-600 text-white px-4 py-1 rounded-lg font-bold shadow-xl text-sm transform group-hover:translate-y-[-3px] transition-transform duration-300">
+                {coFounder.designation}
+              </div>
             </div>
           </div>
 
-          {/* Message Section (Full width on mobile) */}
-          <div className="relative w-full ml-4">
-            <div className="absolute  w-full h-full bg-blue-800 bg-opacity-30 mt-1 rounded-lg z-0" />
-            <div className="absolute top-0 left-0 w-6 h-6 z-10">
-              <img
-                src={QuotesSVG}
-                alt="Quotes"
-                className="w-full h-full"
-                style={{ marginLeft: "-24px", marginTop: "-24px" }}
-              />
-            </div>
+          <div className="w-full md:w-3/4 bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl relative">
+            <img src={QuotesSVG} alt="" className="absolute -top-4 -right-4 w-8 h-8 opacity-50 invert rotate-180" />
+            <h3 className="text-2xl font-bold text-white mb-2">{coFounder.name}</h3>
+            <p className="text-slate-300 leading-relaxed text-base italic text-right">
+              &quot;{coFounder.message}&quot;
+            </p>
+          </div>
+        </div>
+      </div>
 
-            <p className="text-xs p-2 mt-2 text-white z-20 relative">
-              {coFounder.message}
+      {/* Mobile version */}
+      <div className="block md:hidden px-6 space-y-10">
+        {/* Founder Mobile */}
+        <div className="flex flex-col items-center" data-aos="fade-up">
+          <div className="relative w-40 mb-6">
+            <div className="absolute -inset-2 bg-blue-500/20 rounded-2xl blur-lg"></div>
+            <img src={founder.profilePic} alt={founder.name} className="relative rounded-2xl border-2 border-white/10 shadow-xl w-full h-56 object-cover object-top" />
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold whitespace-nowrap shadow-lg">
+              {founder.designation}
+            </div>
+          </div>
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-xl text-center">
+            <h3 className="text-lg font-bold text-white mb-2">{founder.name}</h3>
+            <p className="text-slate-300 text-xs leading-relaxed italic">
+              &quot;{founder.message}&quot;
+            </p>
+          </div>
+        </div>
+
+        {/* Co-Founder Mobile */}
+        <div className="flex flex-col items-center" data-aos="fade-up">
+          <div className="relative w-40 mb-6">
+            <div className="absolute -inset-2 bg-blue-500/20 rounded-2xl blur-lg"></div>
+            <img src={coFounder.profilePic} alt={coFounder.name} className="relative rounded-2xl border-2 border-white/10 shadow-xl w-full h-56 object-cover object-top" />
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold whitespace-nowrap shadow-lg">
+              {coFounder.designation}
+            </div>
+          </div>
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-xl text-center">
+            <h3 className="text-lg font-bold text-white mb-2">{coFounder.name}</h3>
+            <p className="text-slate-300 text-xs leading-relaxed italic">
+              &quot;{coFounder.message}&quot;
             </p>
           </div>
         </div>

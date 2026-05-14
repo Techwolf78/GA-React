@@ -5,7 +5,7 @@ import ImpactSection from "./ImpactSection";
 import AboutGal from "./AboutGal";
 import Testimonials from "./Testimonials"; // Import the Testimonials component
 // import JourneySection from "./JourneySection";
-import MissionVisionSection from "./MissionVisionSection";
+// import MissionVisionSection from "./MissionVisionSection";
 import AboutIntro from "./AboutIntro";
 import AboutHero from "./AboutHero";
 import AboutOffer from "./AboutOffer";
