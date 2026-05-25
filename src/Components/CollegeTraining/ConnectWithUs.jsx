@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
-import '../../assets/CSS/connect.css';
+import '../../assets/CSS/Connect.css';
 
 const ConnectWithUs = () => {
   const { ref, inView } = useInView({
