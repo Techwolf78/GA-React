@@ -31,6 +31,8 @@ import DecEventGroundZero from './components/DecEventGroundZero'; // Import the 
 import Loader from './components/Loader'; // Import the loader component
 import DecEventAgenda from './components/DecEventAgenda'; // Import the DecEventAgenda component
 import ThankYou from './pages/ThankYou'; // Import the ThankYou page
+import SynergySphere2 from './components/SynergySphere2'; // Import the SynergySphere2 page
+
 
 function App() {
   const [showWhatsAppWidget, setShowWhatsAppWidget] = useState(false);
@@ -70,6 +72,7 @@ function App() {
       "/corporatetraining": "Corporate Training",
       "/facultytraining": "Faculty Training",
       "/events": "Events",
+      "/synergysphere2": "Coming Soon: Master Class 3.0 X Synergy Sphere 2.0",
       "/agenda": "Agenda",
       "/post1": "Blog Post 1",
       "/post2": "Blog Post 2",
@@ -145,17 +148,18 @@ useEffect(() => {
             )}
           </>
         } />
-       <Route path="/collegetraining" element={<><Navbar /><CollegeTraining /></>} />
+        <Route path="/synergysphere2" element={<SynergySphere2 />} />
+        <Route path="/collegetraining" element={<><Navbar /><CollegeTraining /></>} />
 
         <Route path="/corporateTraining" element={<><Navbar /><CorporateTraining /></>} />
         <Route path="/facultyTraining" element={<><Navbar /><FacultyTraining /></>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {showWhatsAppWidget && (<WhatsAppWidget />)}
+      {location.pathname !== '/synergysphere2' && showWhatsAppWidget && (<WhatsAppWidget />)}
       
-      <ScrollToTopButton visible={scrollVisible} />
-      <Footer />
+      {location.pathname !== '/synergysphere2' && <ScrollToTopButton visible={scrollVisible} />}
+      {location.pathname !== '/synergysphere2' && <Footer />}
     </>
   );
 }

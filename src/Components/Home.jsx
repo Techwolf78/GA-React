@@ -7,7 +7,7 @@ import HomeSliderClg from "./HomeSliderClg";
 import ConnectWithUs from "./CollegeTraining/ConnectWithUs";
 import HomeSliderComp from "./HomeSliderComp";
 import SidebarToggle from "./SidebarToggle";
-// import PopupBanner from "./MasterClass3/Popup";
+import SynergySpherePopup from "./SynergySpherePopup";
 
 // ProgressBar Component with PropTypes
 const ProgressBar = ({ scrollPercent }) => {
@@ -419,9 +419,40 @@ const Home = () => {
         <HomeSliderComp />
         <HomeSliderClg />
         <Testimonials />
-        {/* <PopupBanner /> */}
+        <SynergySpherePopup />
       </div>
       <ConnectWithUs />
+
+      {/* Permanent Bottom Marquee Banner */}
+      <div className="fixed bottom-0 left-0 w-full bg-[#070c18]/80 backdrop-blur-md border-t border-white/10 overflow-hidden z-[50] py-2 sm:py-3 flex items-center shadow-[0_-5px_20px_rgba(13,211,197,0.1)]">
+        <style>{`
+          @keyframes marqueeSlide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee-infinite {
+            animation: marqueeSlide 30s linear infinite;
+            display: flex;
+            width: max-content;
+          }
+        `}</style>
+        <div className="animate-marquee-infinite flex items-center whitespace-nowrap">
+          {/* Repeat enough times to cover ultra-wide screens */}
+          {[...Array(15)].map((_, i) => (
+            <div key={i} className="flex items-center whitespace-nowrap shrink-0">
+              <span className="mx-6 text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] whitespace-nowrap">
+                <span className="text-[#0dd3c5]">Master Class 3.0</span>
+                <span className="text-white/50 mx-2">×</span>
+                <span className="text-[#ff5100]">Synergy Sphere 2.0</span>
+              </span>
+              <span className="mx-6 text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white whitespace-nowrap">
+                June 27, 2026
+              </span>
+              <div className="w-1.5 h-1.5 rounded-full bg-white/20 mx-2 shrink-0"></div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
