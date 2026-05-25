@@ -1,12 +1,12 @@
 import  { useRef, useEffect } from "react";
-import CourseSection from "../components/CollegeTraining/CourseSection"; 
-import HeroCollege from "../components/CollegeTraining/HeroCollege"; 
-import CollegeInfoSection from '../components/CollegeTraining/CollegeInfoSection'; 
-import CollegeBox from "../components/CollegeTraining/CollegeBox"; 
-import CollegeCourse from "../components/CollegeTraining/CollegeCourse"; 
-import SlidingCollege from "../components/CollegeTraining/SlidingCollege";
-import ContactFormClg from "../components/CollegeTraining/ContactFormClg";
-import ConnectWithUs from "../components/CollegeTraining/ConnectWithUs";
+import CourseSection from "../Components/CollegeTraining/CourseSection"; 
+import HeroCollege from "../Components/CollegeTraining/HeroCollege"; 
+import CollegeInfoSection from '../Components/CollegeTraining/CollegeInfoSection'; 
+import CollegeBox from "../Components/CollegeTraining/CollegeBox"; 
+import CollegeCourse from "../Components/CollegeTraining/CollegeCourse"; 
+import SlidingCollege from "../Components/CollegeTraining/SlidingCollege";
+import ContactFormClg from "../Components/CollegeTraining/ContactFormClg";
+import ConnectWithUs from "../Components/CollegeTraining/ConnectWithUs";
 
 const CollegeTraining = () => {
   // Create a reference for the CourseSection

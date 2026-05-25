@@ -2,36 +2,36 @@ import  { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import "@fontsource/roboto";
 import './App.css'; 
-import Home from './components/Home'; 
-import MasterClass3 from './components/MasterClass3';
-import About from './components/About'; 
-import GAX from './components/GAX'; 
-import Blogs from './components/Blogs'; 
-import Footer from './components/Footer'; 
-import Navbar from './components/Navbar'; 
-import Placement from './components/Placement'; 
-import Contact from './components/Contact'; 
+import Home from './Components/Home'; 
+import MasterClass3 from './Components/MasterClass3';
+import About from './Components/About'; 
+import GAX from './Components/GAX'; 
+import Blogs from './Components/Blogs'; 
+import Footer from './Components/Footer'; 
+import Navbar from './Components/Navbar'; 
+import Placement from './Components/Placement'; 
+import Contact from './Components/Contact'; 
 import Training from './pages/Training';
-import BrandPositioning from './components/BrandPositioning'; // Import the page
+import BrandPositioning from './Components/BrandPositioning'; // Import the page
 import CollegeTraining from './pages/CollegeTraining';
 import CorporateTraining from './pages/CorporateTraining';
 import FacultyTraining from './pages/FacultyTraining'; 
-import WhatsAppWidget from './components/WhatsAppWidget'; 
-import ScrollToTopButton from './components/ScrollToTopButton'; 
+import WhatsAppWidget from './Components/WhatsAppWidget'; 
+import ScrollToTopButton from './Components/ScrollToTopButton'; 
 import PrivacyPolicy from './pages/PrivacyPolicy'; // Import the Privacy Policy page
-import Post1 from './components/BlogPages/Post1';
-import Post2 from './components/BlogPages/Post2';
-import Post3 from './components/BlogPages/Post3';
-import Post4 from './components/BlogPages/Post4';
-import Post5 from './components/BlogPages/Post5';
-import Post6 from './components/BlogPages/Post6';
-import NotFound from './components/NotFound'; // Import the NotFound component
-import DecEvent from './components/DecEvent'; // Import the DecEvent component
-import DecEventGroundZero from './components/DecEventGroundZero'; // Import the Ground Zero page component
-import Loader from './components/Loader'; // Import the loader component
-import DecEventAgenda from './components/DecEventAgenda'; // Import the DecEventAgenda component
+import Post1 from './Components/BlogPages/Post1';
+import Post2 from './Components/BlogPages/Post2';
+import Post3 from './Components/BlogPages/Post3';
+import Post4 from './Components/BlogPages/Post4';
+import Post5 from './Components/BlogPages/Post5';
+import Post6 from './Components/BlogPages/Post6';
+import NotFound from './Components/NotFound'; // Import the NotFound component
+import DecEvent from './Components/DecEvent'; // Import the DecEvent component
+import DecEventGroundZero from './Components/DecEventGroundZero'; // Import the Ground Zero page component
+import Loader from './Components/Loader'; // Import the loader component
+import DecEventAgenda from './Components/DecEventAgenda'; // Import the DecEventAgenda component
 import ThankYou from './pages/ThankYou'; // Import the ThankYou page
-import SynergySphere2 from './components/SynergySphere2'; // Import the SynergySphere2 page
+import SynergySphere2 from './Components/SynergySphere2'; // Import the SynergySphere2 page
 
 
 function App() {

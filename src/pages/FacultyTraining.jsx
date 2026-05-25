@@ -1,10 +1,10 @@
-import FacultyHero from "../components/FacultyTraining/FacultyHero";
-import FacultyWhy from "../components/FacultyTraining/FacultyWhy";
-import FacultyModule from "../components/FacultyTraining/FacultyModule";
-import FDPContact from '../components/FacultyTraining/FDPContact';
-import ConnectWithUs from "../components/CollegeTraining/ConnectWithUs";
-import FacultyHeroPara from "../components/FacultyTraining/FacultyHeroPara";
-import FdpCta from "../components/FacultyTraining/FdpCta";
+import FacultyHero from "../Components/FacultyTraining/FacultyHero";
+import FacultyWhy from "../Components/FacultyTraining/FacultyWhy";
+import FacultyModule from "../Components/FacultyTraining/FacultyModule";
+import FDPContact from '../Components/FacultyTraining/FDPContact';
+import ConnectWithUs from "../Components/CollegeTraining/ConnectWithUs";
+import FacultyHeroPara from "../Components/FacultyTraining/FacultyHeroPara";
+import FdpCta from "../Components/FacultyTraining/FdpCta";
 
 
 const FacultyTraining = () => {

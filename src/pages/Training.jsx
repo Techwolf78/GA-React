@@ -1,11 +1,11 @@
-import HeroTraining from "../components/Training/HeroTraining";
-import TrainingAbout from "../components/Training/TrainingAbout"; 
-import WhyTraining from "../components/Training/WhyTraining";
-import LearningOutcomes from "../components/Training/LearningOutcomes";
-import SlidingCollege from "../components/CollegeTraining/SlidingCollege";
-import ContactForm from "../components/Training/ContactForm";
-import ConnectWithUs from "../components/CollegeTraining/ConnectWithUs";
-import BrochureSection from "../components/Training/BrochureSection";
+import HeroTraining from "../Components/Training/HeroTraining";
+import TrainingAbout from "../Components/Training/TrainingAbout"; 
+import WhyTraining from "../Components/Training/WhyTraining";
+import LearningOutcomes from "../Components/Training/LearningOutcomes";
+import SlidingCollege from "../Components/CollegeTraining/SlidingCollege";
+import ContactForm from "../Components/Training/ContactForm";
+import ConnectWithUs from "../Components/CollegeTraining/ConnectWithUs";
+import BrochureSection from "../Components/Training/BrochureSection";
 
 const LearningAndDevelopment = () => {
   return (
