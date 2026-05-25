@@ -63,15 +63,23 @@ const MeetTheLeaders = () => {
           data-aos-once="true"
         >
           <div className="w-full md:w-1/4 relative group">
+            {/* Dot Grid Background - Top Left (Moved slightly more outwards) */}
+            <div className="absolute -top-7 -left-7 w-20 h-20 grid grid-cols-4 grid-rows-4 gap-1 opacity-70 group-hover:opacity-80 transition-all duration-500 pointer-events-none ">
+              {[...Array(16)].map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.4)]"></div>
+              ))}
+            </div>
+            
             <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-blue-400 rounded-2xl opacity-20 group-hover:opacity-40 transition duration-500 blur-xl"></div>
-            <div className="relative">
+            <div className="relative text-center">
               <img
                 src={founder.profilePic}
                 alt={founder.name}
-                className="rounded-2xl shadow-2xl w-full h-64 md:h-72 object-cover object-top border-2 border-white/10"
+                className="rounded-2xl shadow-2xl w-full h-64 md:h-72 object-cover object-top border-2 border-white/10 mb-3"
                 loading="lazy"
               />
-              <div className="absolute -bottom-3 right-2 bg-blue-600 text-white px-4 py-1 rounded-lg font-bold shadow-xl text-sm transform group-hover:translate-y-[-3px] transition-transform duration-300">
+              <h3 className="text-white font-bold text-xl mb-1">{founder.name}</h3>
+              <div className="bg-blue-600 text-white px-4 py-1 rounded-lg font-bold shadow-xl text-xs inline-block">
                 {founder.designation}
               </div>
             </div>
@@ -79,7 +87,6 @@ const MeetTheLeaders = () => {
 
           <div className="w-full md:w-3/4 bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl relative">
             <img src={QuotesSVG} alt="" className="absolute -top-4 -left-4 w-8 h-8 opacity-50 invert" />
-            <h3 className="text-2xl font-bold text-white mb-2">{founder.name}</h3>
             <p className="text-slate-300 leading-relaxed text-base italic">
               &quot;{founder.message}&quot;
             </p>
@@ -92,25 +99,30 @@ const MeetTheLeaders = () => {
           data-aos="fade-left"
           data-aos-once="true"
         >
-          <div className="w-full md:w-1/4 relative group">
+          <div className="w-full md:w-1/4 relative group text-center">
+            {/* Dot Grid Background - Top Right (Moved slightly more outwards) */}
+            <div className="absolute -top-7 -right-7 w-20 h-20 grid grid-cols-4 grid-rows-4 gap-1 opacity-70 group-hover:opacity-80 transition-all duration-500 pointer-events-none ">
+              {[...Array(16)].map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.4)]"></div>
+              ))}
+            </div>
+
             <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 to-blue-400 rounded-2xl opacity-20 group-hover:opacity-40 transition duration-500 blur-xl"></div>
-            <div className="relative">
-              <img
-                src={coFounder.profilePic}
-                alt={coFounder.name}
-                className="rounded-2xl shadow-2xl w-full h-64 md:h-72 object-cover object-top border-2 border-white/10"
-                loading="lazy"
-              />
-              <div className="absolute -bottom-3 left-2 bg-blue-600 text-white px-4 py-1 rounded-lg font-bold shadow-xl text-sm transform group-hover:translate-y-[-3px] transition-transform duration-300">
-                {coFounder.designation}
-              </div>
+            <img
+              src={coFounder.profilePic}
+              alt={coFounder.name}
+              className="rounded-2xl shadow-2xl w-full h-64 md:h-72 object-cover object-top border-2 border-white/10 mb-3 relative z-10"
+              loading="lazy"
+            />
+            <h3 className="text-white font-bold text-xl mb-1 relative z-10">{coFounder.name}</h3>
+            <div className="bg-blue-600 text-white px-4 py-1 rounded-lg font-bold shadow-xl text-xs inline-block relative z-10">
+              {coFounder.designation}
             </div>
           </div>
 
           <div className="w-full md:w-3/4 bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl relative">
             <img src={QuotesSVG} alt="" className="absolute -top-4 -right-4 w-8 h-8 opacity-50 invert rotate-180" />
-            <h3 className="text-2xl font-bold text-white mb-2">{coFounder.name}</h3>
-            <p className="text-slate-300 leading-relaxed text-base italic text-right">
+            <p className="text-slate-300 leading-relaxed text-base italic text-left">
               &quot;{coFounder.message}&quot;
             </p>
           </div>
@@ -121,15 +133,17 @@ const MeetTheLeaders = () => {
       <div className="block md:hidden px-6 space-y-10">
         {/* Founder Mobile */}
         <div className="flex flex-col items-center" data-aos="fade-up">
-          <div className="relative w-40 mb-6">
+          <div className="relative w-40 mb-10">
             <div className="absolute -inset-2 bg-blue-500/20 rounded-2xl blur-lg"></div>
-            <img src={founder.profilePic} alt={founder.name} className="relative rounded-2xl border-2 border-white/10 shadow-xl w-full h-56 object-cover object-top" />
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold whitespace-nowrap shadow-lg">
-              {founder.designation}
+            <img src={founder.profilePic} alt={founder.name} className="relative rounded-2xl border-2 border-white/10 shadow-xl w-full h-56 object-cover object-top mb-3" />
+            <div className="text-center">
+              <h3 className="text-white font-bold text-lg mb-1">{founder.name}</h3>
+              <div className="bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold inline-block shadow-lg">
+                {founder.designation}
+              </div>
             </div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-xl text-center">
-            <h3 className="text-lg font-bold text-white mb-2">{founder.name}</h3>
             <p className="text-slate-300 text-xs leading-relaxed italic">
               &quot;{founder.message}&quot;
             </p>
@@ -138,15 +152,17 @@ const MeetTheLeaders = () => {
 
         {/* Co-Founder Mobile */}
         <div className="flex flex-col items-center" data-aos="fade-up">
-          <div className="relative w-40 mb-6">
+          <div className="relative w-40 mb-10">
             <div className="absolute -inset-2 bg-blue-500/20 rounded-2xl blur-lg"></div>
-            <img src={coFounder.profilePic} alt={coFounder.name} className="relative rounded-2xl border-2 border-white/10 shadow-xl w-full h-56 object-cover object-top" />
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold whitespace-nowrap shadow-lg">
-              {coFounder.designation}
+            <img src={coFounder.profilePic} alt={coFounder.name} className="relative rounded-2xl border-2 border-white/10 shadow-xl w-full h-56 object-cover object-top mb-3" />
+            <div className="text-center">
+              <h3 className="text-white font-bold text-lg mb-1">{coFounder.name}</h3>
+              <div className="bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold inline-block shadow-lg">
+                {coFounder.designation}
+              </div>
             </div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-xl text-center">
-            <h3 className="text-lg font-bold text-white mb-2">{coFounder.name}</h3>
             <p className="text-slate-300 text-xs leading-relaxed italic">
               &quot;{coFounder.message}&quot;
             </p>
