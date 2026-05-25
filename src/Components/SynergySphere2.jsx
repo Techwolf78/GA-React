@@ -18,6 +18,10 @@ const SynergySphere2 = () => {
 
   // Calculate time remaining until June 27, 2026
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const targetDate = new Date("June 27, 2026 09:00:00").getTime();
 
     const updateCountdown = () => {

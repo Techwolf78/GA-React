@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types"; // Add this import
+import { Link, useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import "../assets/CSS/home.css";
 import Testimonials from "./Testimonials";
 import HomeSliderClg from "./HomeSliderClg";
@@ -38,6 +38,7 @@ const Home = () => {
   const [lastWordIndex, setLastWordIndex] = useState(0);
   const [fadeFirst, setFadeFirst] = useState(false);
   const [fadeLast, setFadeLast] = useState(false);
+  const navigate = useNavigate();
 
   const firstWords = ["Campus", "Students", "Academia"];
   const lastWords = ["Corporate", "Professionals", "Industry"];
@@ -63,7 +64,7 @@ const Home = () => {
       if (brandPositioningSection) {
         const sectionHeight = brandPositioningSection.offsetHeight;
         setNavbarVisible(
-          scrollTop <= brandPositioningSection.offsetTop + sectionHeight / 2
+          scrollTop <= brandPositioningSection.offsetTop + sectionHeight / 2,
         );
       }
 
@@ -142,6 +143,11 @@ const Home = () => {
     }
   };
 
+  const handleMarqueeClick = () => {
+    window.scrollTo({ top: 0 });
+    navigate("/synergysphere2");
+  };
+
   // Click outside handler to close the sidebar
   const handleClickOutside = (event) => {
     if (
@@ -156,6 +162,7 @@ const Home = () => {
 
   // Add event listener when component mounts, and clean up when unmounts
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -241,11 +248,7 @@ const Home = () => {
 
               {/* Bridge Image Container */}
               <div className="image-container px-2">
-                <img
-                  src="bridge.avif" // Replace with actual image URL
-                  alt="Bridge"
-                  className="hero-bridge"
-                />
+                <img src="bridge.avif" alt="Bridge" className="hero-bridge" />
               </div>
 
               {/* Last Word Container */}
@@ -267,7 +270,10 @@ const Home = () => {
             </span>
             <br />
             <span className="text-sm">
-              With our Customized <span className="text-[#FFC80E]">Industry Readiness Programme</span>
+              With our Customized{" "}
+              <span className="text-[#FFC80E]">
+                Industry Readiness Programme
+              </span>
             </span>
           </p>
           <Link to="/training" className="btn-know-more" onClick={scrollToTop}>
@@ -423,7 +429,7 @@ const Home = () => {
       </div>
       <ConnectWithUs />
 
-      {/* Permanent Bottom Marquee Banner */}
+      {/* Permanent Bottom Marquee Banner - Now Clickable */}
       <div className="fixed bottom-0 left-0 w-full bg-[#070c18]/80 backdrop-blur-md border-t border-white/10 overflow-hidden z-[50] py-2 sm:py-3 flex items-center shadow-[0_-5px_20px_rgba(13,211,197,0.1)]">
         <style>{`
           @keyframes marqueeSlide {
@@ -435,15 +441,44 @@ const Home = () => {
             display: flex;
             width: max-content;
           }
+          .marquee-text-hover {
+            transition: all 0.3s ease;
+            cursor: pointer;
+          }
+          .marquee-text-hover:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+          }
+          .marquee-text-hover:hover .event-title {
+            text-shadow: 0 0 10px rgba(13, 211, 197, 0.5);
+          }
         `}</style>
-        <div className="animate-marquee-infinite flex items-center whitespace-nowrap">
+        <div
+          className="animate-marquee-infinite flex items-center whitespace-nowrap marquee-text-hover"
+          onClick={handleMarqueeClick}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              handleMarqueeClick();
+            }
+          }}
+        >
           {/* Repeat enough times to cover ultra-wide screens */}
           {[...Array(15)].map((_, i) => (
-            <div key={i} className="flex items-center whitespace-nowrap shrink-0">
+            <div
+              key={i}
+              className="flex items-center whitespace-nowrap shrink-0"
+            >
               <span className="mx-6 text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] whitespace-nowrap">
-                <span className="text-[#0dd3c5]">Master Class 3.0</span>
+                <span className="text-cyan-300 event-title transition-all duration-300">
+                  Master Class 3.0
+                </span>
                 <span className="text-white/50 mx-2">×</span>
-                <span className="text-[#ff5100]">Synergy Sphere 2.0</span>
+                <span className="text-orange-400 event-title transition-all duration-300">
+                  Synergy Sphere 2.0
+                </span>
               </span>
               <span className="mx-6 text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white whitespace-nowrap">
                 June 27, 2026

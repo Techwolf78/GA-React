@@ -138,6 +138,16 @@ const Navbar = () => {
             {isCrossBrandDropdownOpen && (
               <div className="absolute top-full left-0 mt-0 bg-[#ffffff] text-[#1a1a1a] shadow-lg z-50 whitespace-nowrap">
                 <a
+                  href="/synergysphere2"
+                  className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
+                  onClick={() => {
+                    handleDropdownItemClick();
+                    handleSidebarItemClick();
+                  }}
+                >
+                  Synergy Sphere 2.0
+                </a>
+                <a
                   href="/brandPositioning"
                   className="block px-4 py-2 hover:bg-[#f2b800] transition-colors duration-300"
                   onClick={() => {
@@ -239,6 +249,13 @@ const Navbar = () => {
           </a>
 
           <div>
+            <a
+              href="/synergysphere2"
+              className="block py-2 pl-12 hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
+              onClick={handleSidebarItemClick}
+            >
+              <i className="fas fa-bolt"></i> Synergy Sphere 2.0
+            </a>
             <a
               href="/brandPositioning"
               className="block py-2 pl-12 hover:bg-[#f2b800] hover:text-[#1a1a1a] transition-colors duration-300"
